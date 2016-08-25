@@ -75,6 +75,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "109 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
 [v _lcd_putrs `(v ~T0 @X0 0 ef1`*Cuc ]
+[v F8298 `(*uc ~T0 @X0 0 tf1`*uc ]
 "5275 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
 [s S395 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S395 . RA0 RA1 RA2 RA3 . RA5 RA6 RA7 ]
@@ -151,6 +152,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S415 . . . . . . . . . . . . ]
 "5857
 [v _PORTCbits `VS415 ~T0 @X0 0 e@3970 ]
+[v F8303 `(*uc ~T0 @X0 0 tf ]
 "6232
 [s S436 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S436 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
@@ -8239,6 +8241,341 @@ Version 3.2 HI-TECH Software Intermediate Code
 "14 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h
 [v _key `uc ~T0 @X0 1 e ]
 [; ;headers\unmc_inout_02.h: 14: char key;
+"14 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
+[v _ocultar_teclas `i ~T0 @X0 1 e ]
+[; ;headers\teclado.h: 14: int ocultar_teclas;
+"15
+[v _visualizar_tecla_presionada `i ~T0 @X0 1 e ]
+[i _visualizar_tecla_presionada
+-> 1 `i
+]
+[; ;headers\teclado.h: 15: int visualizar_tecla_presionada=1;
+"16
+[v _datos `uc ~T0 @X0 -> 16 `i e ]
+[i _datos
+:U ..
+-> 0 `c
+..
+]
+[; ;headers\teclado.h: 16: char datos[16]="";
+"17
+[v _comando `uc ~T0 @X0 -> 3 `i e ]
+[i _comando
+:U ..
+-> 0 `c
+..
+]
+[; ;headers\teclado.h: 17: char comando[3] ="";
+"18
+[v _tamanio_comando `i ~T0 @X0 1 e ]
+[i _tamanio_comando
+-> 0 `i
+]
+[; ;headers\teclado.h: 18: int tamanio_comando = 0;
+"20
+[v _guardar_comando `(i ~T0 @X0 1 ef1`uc ]
+{
+[; ;headers\teclado.h: 20: guardar_comando(char tecla){
+[e :U _guardar_comando ]
+[v _tecla `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;headers\teclado.h: 22: sprintf(buffer2,"%01u",tecla);
+"22
+[e ( _sprintf (1 , (. , &U _buffer2 :s 1C -> _tecla `i ]
+[; ;headers\teclado.h: 23: if (tamanio_comando <3){
+"23
+[e $ ! < _tamanio_comando -> 3 `i 1040  ]
+{
+[; ;headers\teclado.h: 24: comando[tamanio_comando] = *buffer2;
+"24
+[e = *U + &U _comando * -> -> _tamanio_comando `ui `ux -> -> # *U &U _comando `ui `ux *U &U _buffer2 ]
+[; ;headers\teclado.h: 25: comando [tamanio_comando+1] = '\0';
+"25
+[e = *U + &U _comando * -> -> + _tamanio_comando -> 1 `i `ui `ux -> -> # *U &U _comando `ui `ux -> -> 0 `ui `uc ]
+[; ;headers\teclado.h: 26: tamanio_comando++;
+"26
+[e ++ _tamanio_comando -> 1 `i ]
+"27
+}
+[e :U 1040 ]
+[; ;headers\teclado.h: 27: }
+[; ;headers\teclado.h: 29: }
+"29
+[e :UE 1039 ]
+}
+"31
+[v _validar_comando `(i ~T0 @X0 1 ef2`*uc`*i ]
+{
+[; ;headers\teclado.h: 31: validar_comando(char * candidato, int * validar){
+[e :U _validar_comando ]
+[v _candidato `*uc ~T0 @X0 1 r1 ]
+[v _validar `*i ~T0 @X0 1 r2 ]
+[f ]
+[v _i `i ~T0 @X0 1 a ]
+[; ;headers\teclado.h: 33: int i = 0;
+"33
+[e = _i -> 0 `i ]
+[; ;headers\teclado.h: 34: while (i < 3){
+"34
+[e $U 1042  ]
+[e :U 1043 ]
+{
+[; ;headers\teclado.h: 36: if (comando[i] != candidato[i])
+"36
+[e $ ! != -> *U + &U _comando * -> -> _i `ui `ux -> -> # *U &U _comando `ui `ux `i -> *U + _candidato * -> _i `x -> -> # *U _candidato `i `x `i 1045  ]
+[; ;headers\teclado.h: 37: validar = 0;
+"37
+[e = _validar -> -> 0 `i `*i ]
+[e :U 1045 ]
+[; ;headers\teclado.h: 39: i++;
+"39
+[e ++ _i -> 1 `i ]
+"40
+}
+[e :U 1042 ]
+"34
+[e $ < _i -> 3 `i 1043  ]
+[e :U 1044 ]
+[; ;headers\teclado.h: 40: }
+[; ;headers\teclado.h: 41: }
+"41
+[e :UE 1041 ]
+}
+"43
+[v _imprimir_tecla `(i ~T0 @X0 1 ef1`uc ]
+{
+[; ;headers\teclado.h: 43: imprimir_tecla(char tecla){
+[e :U _imprimir_tecla ]
+[v _tecla `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;headers\teclado.h: 45: if (!visualizar_tecla_presionada) return 0;
+"45
+[e $ ! ! != _visualizar_tecla_presionada -> 0 `i 1047  ]
+[e ) -> 0 `i ]
+[e $UE 1046  ]
+[e :U 1047 ]
+[; ;headers\teclado.h: 47: sprintf(buffer2,"%01u",tecla);
+"47
+[e ( _sprintf (1 , (. , &U _buffer2 :s 2C -> _tecla `i ]
+[; ;headers\teclado.h: 48: if (ocultar_teclas == 1){
+"48
+[e $ ! == _ocultar_teclas -> 1 `i 1048  ]
+{
+[; ;headers\teclado.h: 49: lcd_putrs("*");
+"49
+[e ( _lcd_putrs (1 :s 3C ]
+"51
+}
+[; ;headers\teclado.h: 51: }else{
+[e $U 1049  ]
+[e :U 1048 ]
+{
+[; ;headers\teclado.h: 52: lcd_putrs(buffer2);
+"52
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
+"53
+}
+[e :U 1049 ]
+[; ;headers\teclado.h: 53: }
+[; ;headers\teclado.h: 54: }
+"54
+[e :UE 1046 ]
+}
+"57
+[v _guardar_tecla_presionada `(i ~T0 @X0 1 ef3`*uc`i`*F8298 ]
+{
+[; ;headers\teclado.h: 57: guardar_tecla_presionada(char * letra, int i,char* (*doit)(char *)){
+[e :U _guardar_tecla_presionada ]
+[v _letra `*uc ~T0 @X0 1 r1 ]
+[v _i `i ~T0 @X0 1 r2 ]
+[v _doit `*F8298 ~T0 @X0 1 r3 ]
+[f ]
+[; ;headers\teclado.h: 58: if (PORTAbits.RA5==1){key=i; doit(key);while(PORTAbits.RA5==1){};}
+"58
+[e $ ! == -> . . _PORTAbits 0 5 `i -> 1 `i 1051  ]
+{
+[e = _key -> _i `uc ]
+[e ( *U _doit (1 -> _key `*uc ]
+[e $U 1052  ]
+[e :U 1053 ]
+{
+}
+[e :U 1052 ]
+[e $ == -> . . _PORTAbits 0 5 `i -> 1 `i 1053  ]
+[e :U 1054 ]
+}
+[e :U 1051 ]
+[; ;headers\teclado.h: 59: if (PORTAbits.RA7==1){key=(i)+1; doit(key);while(PORTAbits.RA7==1){};}
+"59
+[e $ ! == -> . . _PORTAbits 0 7 `i -> 1 `i 1055  ]
+{
+[e = _key -> + _i -> 1 `i `uc ]
+[e ( *U _doit (1 -> _key `*uc ]
+[e $U 1056  ]
+[e :U 1057 ]
+{
+}
+[e :U 1056 ]
+[e $ == -> . . _PORTAbits 0 7 `i -> 1 `i 1057  ]
+[e :U 1058 ]
+}
+[e :U 1055 ]
+[; ;headers\teclado.h: 60: if (PORTAbits.RA6==1){key=(i)+2; doit(key);while(PORTAbits.RA6==1){};}
+"60
+[e $ ! == -> . . _PORTAbits 0 6 `i -> 1 `i 1059  ]
+{
+[e = _key -> + _i -> 2 `i `uc ]
+[e ( *U _doit (1 -> _key `*uc ]
+[e $U 1060  ]
+[e :U 1061 ]
+{
+}
+[e :U 1060 ]
+[e $ == -> . . _PORTAbits 0 6 `i -> 1 `i 1061  ]
+[e :U 1062 ]
+}
+[e :U 1059 ]
+[; ;headers\teclado.h: 61: if (PORTCbits.RC2==1){key=(i)+10;lcd_putrs(letra);while(PORTCbits.RC2==1){};}
+"61
+[e $ ! == -> . . _PORTCbits 0 2 `i -> 1 `i 1063  ]
+{
+[e = _key -> + _i -> 10 `i `uc ]
+[e ( _lcd_putrs (1 -> _letra `*Cuc ]
+[e $U 1064  ]
+[e :U 1065 ]
+{
+}
+[e :U 1064 ]
+[e $ == -> . . _PORTCbits 0 2 `i -> 1 `i 1065  ]
+[e :U 1066 ]
+}
+[e :U 1063 ]
+[; ;headers\teclado.h: 62: }
+"62
+[e :UE 1050 ]
+}
+"64
+[v _leer_teclado `(i ~T0 @X0 1 ef2`i`*F8303 ]
+{
+[; ;headers\teclado.h: 64: leer_teclado(int ocultar,char* (*doit)()){
+[e :U _leer_teclado ]
+[v _ocultar `i ~T0 @X0 1 r1 ]
+[v _doit `*F8303 ~T0 @X0 1 r2 ]
+[f ]
+[v _i `i ~T0 @X0 1 a ]
+[; ;headers\teclado.h: 65: int i;
+[; ;headers\teclado.h: 66: ocultar_teclas = ocultar;
+"66
+[e = _ocultar_teclas _ocultar ]
+[; ;headers\teclado.h: 68: LATAbits.LATA0=1;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=0;i=1;
+"68
+[e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+[e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
+[e = _i -> 1 `i ]
+[; ;headers\teclado.h: 69: guardar_tecla_presionada("A",i,doit);
+"69
+[e ( _guardar_tecla_presionada (3 , , -> :s 4C `*uc _i -> _doit `*F8298 ]
+[; ;headers\teclado.h: 71: LATAbits.LATA0=0;LATAbits.LATA1=1;LATAbits.LATA2=0;LATAbits.LATA3=0;i=4;
+"71
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+[e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
+[e = _i -> 4 `i ]
+[; ;headers\teclado.h: 72: guardar_tecla_presionada("B",i,doit);
+"72
+[e ( _guardar_tecla_presionada (3 , , -> :s 5C `*uc _i -> _doit `*F8298 ]
+[; ;headers\teclado.h: 74: LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=1;LATAbits.LATA3=0;i=7;
+"74
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+[e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
+[e = _i -> 7 `i ]
+[; ;headers\teclado.h: 75: guardar_tecla_presionada("C",i,doit);
+"75
+[e ( _guardar_tecla_presionada (3 , , -> :s 6C `*uc _i -> _doit `*F8298 ]
+[; ;headers\teclado.h: 77: LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=1;
+"77
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+[e = . . _LATAbits 0 3 -> -> 1 `i `uc ]
+[; ;headers\teclado.h: 78: {
+"78
+{
+[; ;headers\teclado.h: 79: if (PORTAbits.RA5==1){key=18;lcd_putrs("*");while(PORTAbits.RA5==1){};}
+"79
+[e $ ! == -> . . _PORTAbits 0 5 `i -> 1 `i 1068  ]
+{
+[e = _key -> -> 18 `i `uc ]
+[e ( _lcd_putrs (1 :s 7C ]
+[e $U 1069  ]
+[e :U 1070 ]
+{
+}
+[e :U 1069 ]
+[e $ == -> . . _PORTAbits 0 5 `i -> 1 `i 1070  ]
+[e :U 1071 ]
+}
+[e :U 1068 ]
+[; ;headers\teclado.h: 80: if (PORTAbits.RA7==1){key=0;doit(key);while(PORTAbits.RA7==1){};}
+"80
+[e $ ! == -> . . _PORTAbits 0 7 `i -> 1 `i 1072  ]
+{
+[e = _key -> -> 0 `i `uc ]
+[e ( *U _doit -> _key `i ]
+[e $U 1073  ]
+[e :U 1074 ]
+{
+}
+[e :U 1073 ]
+[e $ == -> . . _PORTAbits 0 7 `i -> 1 `i 1074  ]
+[e :U 1075 ]
+}
+[e :U 1072 ]
+[; ;headers\teclado.h: 81: if (PORTAbits.RA6==1){key=19;lcd_putrs("#");while(PORTAbits.RA6==1){};}
+"81
+[e $ ! == -> . . _PORTAbits 0 6 `i -> 1 `i 1076  ]
+{
+[e = _key -> -> 19 `i `uc ]
+[e ( _lcd_putrs (1 :s 8C ]
+[e $U 1077  ]
+[e :U 1078 ]
+{
+}
+[e :U 1077 ]
+[e $ == -> . . _PORTAbits 0 6 `i -> 1 `i 1078  ]
+[e :U 1079 ]
+}
+[e :U 1076 ]
+[; ;headers\teclado.h: 82: if (PORTCbits.RC2==1){key='D';lcd_putrs("D");while(PORTCbits.RC2==1){};}
+"82
+[e $ ! == -> . . _PORTCbits 0 2 `i -> 1 `i 1080  ]
+{
+[e = _key -> -> 68 `ui `uc ]
+[e ( _lcd_putrs (1 :s 9C ]
+[e $U 1081  ]
+[e :U 1082 ]
+{
+}
+[e :U 1081 ]
+[e $ == -> . . _PORTCbits 0 2 `i -> 1 `i 1082  ]
+[e :U 1083 ]
+}
+[e :U 1080 ]
+"83
+}
+[; ;headers\teclado.h: 83: }
+[; ;headers\teclado.h: 84: _delay((unsigned long)((98)*(8000000/4000.0)));
+"84
+[e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;headers\teclado.h: 86: }
+"86
+[e :UE 1067 ]
+}
 "7 C:/Archivos de programa/Unimic/unmc_01/headers\password.h
 [v _password `uc ~T0 @X0 -> 6 `i e ]
 [i _password
@@ -8281,7 +8618,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;headers\password.h: 15: if (tamanio_password < 6){
 "15
-[e $ ! < _tamanio_password -> 6 `i 1040  ]
+[e $ ! < _tamanio_password -> 6 `i 1085  ]
 {
 [; ;headers\password.h: 16: current_password[tamanio_password] = valor;
 "16
@@ -8294,11 +8631,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ++ _tamanio_password -> 1 `i ]
 "19
 }
-[e :U 1040 ]
+[e :U 1085 ]
 [; ;headers\password.h: 19: }
 [; ;headers\password.h: 20: }
 "20
-[e :UE 1039 ]
+[e :UE 1084 ]
 }
 "22
 [v _validar_password `(i ~T0 @X0 1 ef ]
@@ -8315,547 +8652,412 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _i -> 0 `i ]
 [; ;headers\password.h: 26: while (i < 6 && autorizado==1){
 "26
-[e $U 1042  ]
-[e :U 1043 ]
+[e $U 1087  ]
+[e :U 1088 ]
 {
 [; ;headers\password.h: 28: if (current_password[i] != password[i])
 "28
-[e $ ! != -> *U + &U _current_password * -> -> _i `ui `ux -> -> # *U &U _current_password `ui `ux `i -> *U + &U _password * -> -> _i `ui `ux -> -> # *U &U _password `ui `ux `i 1045  ]
+[e $ ! != -> *U + &U _current_password * -> -> _i `ui `ux -> -> # *U &U _current_password `ui `ux `i -> *U + &U _password * -> -> _i `ui `ux -> -> # *U &U _password `ui `ux `i 1090  ]
 [; ;headers\password.h: 29: autorizado = 0;
 "29
 [e = _autorizado -> 0 `i ]
-[e :U 1045 ]
+[e :U 1090 ]
 [; ;headers\password.h: 31: i++;
 "31
 [e ++ _i -> 1 `i ]
 "32
 }
-[e :U 1042 ]
+[e :U 1087 ]
 "26
-[e $ && < _i -> 6 `i == _autorizado -> 1 `i 1043  ]
-[e :U 1044 ]
+[e $ && < _i -> 6 `i == _autorizado -> 1 `i 1088  ]
+[e :U 1089 ]
 [; ;headers\password.h: 32: }
 [; ;headers\password.h: 33: }
 "33
-[e :UE 1041 ]
-}
-"15 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
-[v _ocultar_teclas `i ~T0 @X0 1 e ]
-[; ;headers\teclado.h: 15: int ocultar_teclas;
-"17
-[v _imprimir_tecla `(i ~T0 @X0 1 ef1`uc ]
-{
-[; ;headers\teclado.h: 17: imprimir_tecla(char tecla){
-[e :U _imprimir_tecla ]
-[v _tecla `uc ~T0 @X0 1 r1 ]
-[f ]
-[; ;headers\teclado.h: 19: sprintf(buffer2,"%01u",tecla);
-"19
-[e ( _sprintf (1 , (. , &U _buffer2 :s 1C -> _tecla `i ]
-[; ;headers\teclado.h: 20: if (ocultar_teclas == 1){
-"20
-[e $ ! == _ocultar_teclas -> 1 `i 1047  ]
-{
-[; ;headers\teclado.h: 21: lcd_putrs("*");
-"21
-[e ( _lcd_putrs (1 :s 2C ]
-[; ;headers\teclado.h: 22: guardar_current_password(*buffer2);
-"22
-[e ( _guardar_current_password (1 *U &U _buffer2 ]
-"23
-}
-[; ;headers\teclado.h: 23: }else{
-[e $U 1048  ]
-[e :U 1047 ]
-{
-[; ;headers\teclado.h: 24: lcd_putrs(buffer2);
-"24
-[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
-"25
-}
-[e :U 1048 ]
-[; ;headers\teclado.h: 25: }
-[; ;headers\teclado.h: 26: }
-"26
-[e :UE 1046 ]
-}
-"28
-[v _guardar_tecla_presionada `(i ~T0 @X0 1 ef2`*uc`i ]
-{
-[; ;headers\teclado.h: 28: guardar_tecla_presionada(char * letra, int i){
-[e :U _guardar_tecla_presionada ]
-[v _letra `*uc ~T0 @X0 1 r1 ]
-[v _i `i ~T0 @X0 1 r2 ]
-[f ]
-[; ;headers\teclado.h: 29: if (PORTAbits.RA5==1){key=i;imprimir_tecla(key);while(PORTAbits.RA5==1){};}
-"29
-[e $ ! == -> . . _PORTAbits 0 5 `i -> 1 `i 1050  ]
-{
-[e = _key -> _i `uc ]
-[e ( _imprimir_tecla (1 _key ]
-[e $U 1051  ]
-[e :U 1052 ]
-{
-}
-[e :U 1051 ]
-[e $ == -> . . _PORTAbits 0 5 `i -> 1 `i 1052  ]
-[e :U 1053 ]
-}
-[e :U 1050 ]
-[; ;headers\teclado.h: 30: if (PORTAbits.RA7==1){key=(i)+1;imprimir_tecla(key);while(PORTAbits.RA7==1){};}
-"30
-[e $ ! == -> . . _PORTAbits 0 7 `i -> 1 `i 1054  ]
-{
-[e = _key -> + _i -> 1 `i `uc ]
-[e ( _imprimir_tecla (1 _key ]
-[e $U 1055  ]
-[e :U 1056 ]
-{
-}
-[e :U 1055 ]
-[e $ == -> . . _PORTAbits 0 7 `i -> 1 `i 1056  ]
-[e :U 1057 ]
-}
-[e :U 1054 ]
-[; ;headers\teclado.h: 31: if (PORTAbits.RA6==1){key=(i)+2;imprimir_tecla(key);while(PORTAbits.RA6==1){};}
-"31
-[e $ ! == -> . . _PORTAbits 0 6 `i -> 1 `i 1058  ]
-{
-[e = _key -> + _i -> 2 `i `uc ]
-[e ( _imprimir_tecla (1 _key ]
-[e $U 1059  ]
-[e :U 1060 ]
-{
-}
-[e :U 1059 ]
-[e $ == -> . . _PORTAbits 0 6 `i -> 1 `i 1060  ]
-[e :U 1061 ]
-}
-[e :U 1058 ]
-[; ;headers\teclado.h: 32: if (PORTCbits.RC2==1){key=(i)+10;lcd_putrs(letra);while(PORTCbits.RC2==1){};}
-"32
-[e $ ! == -> . . _PORTCbits 0 2 `i -> 1 `i 1062  ]
-{
-[e = _key -> + _i -> 10 `i `uc ]
-[e ( _lcd_putrs (1 -> _letra `*Cuc ]
-[e $U 1063  ]
-[e :U 1064 ]
-{
-}
-[e :U 1063 ]
-[e $ == -> . . _PORTCbits 0 2 `i -> 1 `i 1064  ]
-[e :U 1065 ]
-}
-[e :U 1062 ]
-[; ;headers\teclado.h: 33: }
-"33
-[e :UE 1049 ]
+[e :UE 1086 ]
 }
 "35
-[v _leer_teclado `(i ~T0 @X0 1 ef1`i ]
+[v _limpiar_comando `(i ~T0 @X0 1 ef ]
 {
-[; ;headers\teclado.h: 35: leer_teclado(int ocultar){
-[e :U _leer_teclado ]
-[v _ocultar `i ~T0 @X0 1 r1 ]
+[; ;headers\password.h: 35: limpiar_comando(){
+[e :U _limpiar_comando ]
 [f ]
-[v _i `i ~T0 @X0 1 a ]
-[; ;headers\teclado.h: 36: int i;
-[; ;headers\teclado.h: 37: ocultar_teclas = ocultar;
+[; ;headers\password.h: 36: tamanio_password = 0;
+"36
+[e = _tamanio_password -> 0 `i ]
+[; ;headers\password.h: 37: }
 "37
-[e = _ocultar_teclas _ocultar ]
-[; ;headers\teclado.h: 39: LATAbits.LATA0=1;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=0;i=1;
-"39
-[e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-[e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
-[e = _i -> 1 `i ]
-[; ;headers\teclado.h: 40: guardar_tecla_presionada("A",i);
-"40
-[e ( _guardar_tecla_presionada (2 , -> :s 3C `*uc _i ]
-[; ;headers\teclado.h: 42: LATAbits.LATA0=0;LATAbits.LATA1=1;LATAbits.LATA2=0;LATAbits.LATA3=0;i=4;
-"42
-[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-[e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
-[e = _i -> 4 `i ]
-[; ;headers\teclado.h: 43: guardar_tecla_presionada("B",i);
-"43
-[e ( _guardar_tecla_presionada (2 , -> :s 4C `*uc _i ]
-[; ;headers\teclado.h: 45: LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=1;LATAbits.LATA3=0;i=7;
-"45
-[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
-[e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
-[e = _i -> 7 `i ]
-[; ;headers\teclado.h: 46: guardar_tecla_presionada("C",i);
-"46
-[e ( _guardar_tecla_presionada (2 , -> :s 5C `*uc _i ]
-[; ;headers\teclado.h: 48: LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=1;
-"48
-[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-[e = . . _LATAbits 0 3 -> -> 1 `i `uc ]
-[; ;headers\teclado.h: 49: {
-"49
-{
-[; ;headers\teclado.h: 50: if (PORTAbits.RA5==1){key=18;lcd_putrs("*");while(PORTAbits.RA5==1){};}
-"50
-[e $ ! == -> . . _PORTAbits 0 5 `i -> 1 `i 1067  ]
-{
-[e = _key -> -> 18 `i `uc ]
-[e ( _lcd_putrs (1 :s 6C ]
-[e $U 1068  ]
-[e :U 1069 ]
-{
+[e :UE 1091 ]
 }
-[e :U 1068 ]
-[e $ == -> . . _PORTAbits 0 5 `i -> 1 `i 1069  ]
-[e :U 1070 ]
-}
-[e :U 1067 ]
-[; ;headers\teclado.h: 51: if (PORTAbits.RA7==1){key=0;imprimir_tecla(key);while(PORTAbits.RA7==1){};}
-"51
-[e $ ! == -> . . _PORTAbits 0 7 `i -> 1 `i 1071  ]
-{
-[e = _key -> -> 0 `i `uc ]
-[e ( _imprimir_tecla (1 _key ]
-[e $U 1072  ]
-[e :U 1073 ]
-{
-}
-[e :U 1072 ]
-[e $ == -> . . _PORTAbits 0 7 `i -> 1 `i 1073  ]
-[e :U 1074 ]
-}
-[e :U 1071 ]
-[; ;headers\teclado.h: 52: if (PORTAbits.RA6==1){key=19;lcd_putrs("#");while(PORTAbits.RA6==1){};}
-"52
-[e $ ! == -> . . _PORTAbits 0 6 `i -> 1 `i 1075  ]
-{
-[e = _key -> -> 19 `i `uc ]
-[e ( _lcd_putrs (1 :s 7C ]
-[e $U 1076  ]
-[e :U 1077 ]
-{
-}
-[e :U 1076 ]
-[e $ == -> . . _PORTAbits 0 6 `i -> 1 `i 1077  ]
-[e :U 1078 ]
-}
-[e :U 1075 ]
-[; ;headers\teclado.h: 53: if (PORTCbits.RC2==1){key=20;lcd_putrs("D");while(PORTCbits.RC2==1){};}
-"53
-[e $ ! == -> . . _PORTCbits 0 2 `i -> 1 `i 1079  ]
-{
-[e = _key -> -> 20 `i `uc ]
-[e ( _lcd_putrs (1 :s 8C ]
-[e $U 1080  ]
-[e :U 1081 ]
-{
-}
-[e :U 1080 ]
-[e $ == -> . . _PORTCbits 0 2 `i -> 1 `i 1081  ]
-[e :U 1082 ]
-}
-[e :U 1079 ]
-"54
-}
-[; ;headers\teclado.h: 54: }
-[; ;headers\teclado.h: 55: _delay((unsigned long)((98)*(8000000/4000.0)));
-"55
-[e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;headers\teclado.h: 57: }
-"57
-[e :UE 1066 ]
-}
-"32 main.c
+"35 main.c
 [v _caratula `(v ~T0 @X0 1 ef1`*uc ]
-"33
-{
-[; ;main.c: 32: void caratula(char * titulo)
-[; ;main.c: 33: {
-[e :U _caratula ]
-"32
-[v _titulo `*uc ~T0 @X0 1 r1 ]
-"33
-[f ]
-"35
-[v _clear `uc ~T0 @X0 -> 16 `i a ]
-[; ;main.c: 35: char clear[16];
-[; ;main.c: 36: for (int i=0;i<16;i++) clear[i]=' ';
 "36
 {
+[; ;main.c: 35: void caratula(char * titulo)
+[; ;main.c: 36: {
+[e :U _caratula ]
+"35
+[v _titulo `*uc ~T0 @X0 1 r1 ]
+"36
+[f ]
+"38
+[v _clear `uc ~T0 @X0 -> 16 `i a ]
+[; ;main.c: 38: char clear[16];
+[; ;main.c: 39: for (int i=0;i<16;i++) clear[i]=' ';
+"39
+{
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 16 `i 1084  ]
-[e $U 1085  ]
-[e :U 1084 ]
+[e $ < _i -> 16 `i 1093  ]
+[e $U 1094  ]
+[e :U 1093 ]
 [e = *U + &U _clear * -> -> _i `ui `ux -> -> # *U &U _clear `ui `ux -> -> 32 `ui `uc ]
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 16 `i 1084  ]
-[e :U 1085 ]
+[e $ < _i -> 16 `i 1093  ]
+[e :U 1094 ]
 }
-[; ;main.c: 38: lcd_comand(0b00001100);
-"38
+[; ;main.c: 41: lcd_comand(0b00001100);
+"41
 [e ( _lcd_comand (1 -> -> 12 `i `uc ]
-[; ;main.c: 39: lcd_gotoxy(1,1);
-"39
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 40: lcd_putrs(titulo);
-"40
-[e ( _lcd_putrs (1 -> _titulo `*Cuc ]
-[; ;main.c: 42: sprintf(buffer2,"%02u/%02u/%02u",dia,mes,anio);
+[; ;main.c: 42: lcd_gotoxy(1,1);
 "42
-[e ( _sprintf (1 , , , (. , &U _buffer2 :s 9C _dia _mes _anio ]
-[; ;main.c: 43: lcd_gotoxy(9,1);
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 43: lcd_putrs(titulo);
 "43
-[e ( _lcd_gotoxy (2 , -> -> 9 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 44: lcd_putrs(buffer2);
-"44
-[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
-[; ;main.c: 46: sprintf(buffer2,"  %02u:%02u:%02u",hora,minuto,segundo);
+[e ( _lcd_putrs (1 -> _titulo `*Cuc ]
+[; ;main.c: 45: sprintf(buffer2,"%02u/%02u/%02u",dia,mes,anio);
+"45
+[e ( _sprintf (1 , , , (. , &U _buffer2 :s 10C _dia _mes _anio ]
+[; ;main.c: 46: lcd_gotoxy(9,1);
 "46
-[e ( _sprintf (1 , , , (. , &U _buffer2 :s 10C _hora _minuto _segundo ]
-[; ;main.c: 47: lcd_gotoxy(1,2);
+[e ( _lcd_gotoxy (2 , -> -> 9 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 47: lcd_putrs(buffer2);
 "47
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;main.c: 48: lcd_putrs(buffer2);
-"48
 [e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
-[; ;main.c: 50: }
+[; ;main.c: 49: sprintf(buffer2,"  %02u:%02u:%02u",hora,minuto,segundo);
+"49
+[e ( _sprintf (1 , , , (. , &U _buffer2 :s 11C _hora _minuto _segundo ]
+[; ;main.c: 50: lcd_gotoxy(1,2);
 "50
-[e :UE 1083 ]
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+[; ;main.c: 51: lcd_putrs(buffer2);
+"51
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
+[; ;main.c: 53: }
+"53
+[e :UE 1092 ]
 }
-"58
+"61
 [v _Setup `(v ~T0 @X0 1 ef ]
-"59
+"62
 {
-[; ;main.c: 58: void Setup(void)
-[; ;main.c: 59: {
+[; ;main.c: 61: void Setup(void)
+[; ;main.c: 62: {
 [e :U _Setup ]
 [f ]
-[; ;main.c: 60: OSCTUNEbits.INTSRC=1;
-"60
-[e = . . _OSCTUNEbits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 61: OSCTUNEbits.PLLEN=0;
-"61
-[e = . . _OSCTUNEbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 62: OSCCONbits.IRCF0=1;
-"62
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-[; ;main.c: 63: OSCCONbits.IRCF1=1;
+[; ;main.c: 63: OSCTUNEbits.INTSRC=1;
 "63
-[e = . . _OSCCONbits 1 4 -> -> 1 `i `uc ]
-[; ;main.c: 64: OSCCONbits.IRCF2=1;
+[e = . . _OSCTUNEbits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 64: OSCTUNEbits.PLLEN=0;
 "64
-[e = . . _OSCCONbits 1 5 -> -> 1 `i `uc ]
-[; ;main.c: 65: OSCCONbits.SCS0=0;
+[e = . . _OSCTUNEbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 65: OSCCONbits.IRCF0=1;
 "65
-[e = . . _OSCCONbits 1 0 -> -> 0 `i `uc ]
-[; ;main.c: 66: OSCCONbits.SCS1=0;
+[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
+[; ;main.c: 66: OSCCONbits.IRCF1=1;
 "66
-[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-[; ;main.c: 67: TRISA = 0b11110000;
+[e = . . _OSCCONbits 1 4 -> -> 1 `i `uc ]
+[; ;main.c: 67: OSCCONbits.IRCF2=1;
 "67
-[e = _TRISA -> -> 240 `i `uc ]
-[; ;main.c: 68: TRISB = 0;
+[e = . . _OSCCONbits 1 5 -> -> 1 `i `uc ]
+[; ;main.c: 68: OSCCONbits.SCS0=0;
 "68
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;main.c: 69: TRISC = 0b00000111;
+[e = . . _OSCCONbits 1 0 -> -> 0 `i `uc ]
+[; ;main.c: 69: OSCCONbits.SCS1=0;
 "69
+[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
+[; ;main.c: 70: TRISA = 0b11110000;
+"70
+[e = _TRISA -> -> 240 `i `uc ]
+[; ;main.c: 71: TRISB = 0;
+"71
+[e = _TRISB -> -> 0 `i `uc ]
+[; ;main.c: 72: TRISC = 0b00000111;
+"72
 [e = _TRISC -> -> 7 `i `uc ]
-[; ;main.c: 73: ANCON0=0b11111111;
-"73
-[e = _ANCON0 -> -> 255 `i `uc ]
-[; ;main.c: 75: ANCON1=0b11111111;
-"75
-[e = _ANCON1 -> -> 255 `i `uc ]
-[; ;main.c: 76: ADCON0=0b00101101;
+[; ;main.c: 76: ANCON0=0b11111111;
 "76
-[e = _ADCON0 -> -> 45 `i `uc ]
-[; ;main.c: 77: ADCON1=0b00010000;
-"77
-[e = _ADCON1 -> -> 16 `i `uc ]
-[; ;main.c: 78: RTCCFGbits.RTCEN=1;
+[e = _ANCON0 -> -> 255 `i `uc ]
+[; ;main.c: 78: ANCON1=0b11111111;
 "78
-[e = . . _RTCCFGbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 79: RTCCFGbits.RTCWREN=1;
+[e = _ANCON1 -> -> 255 `i `uc ]
+[; ;main.c: 79: ADCON0=0b00101101;
 "79
-[e = . . _RTCCFGbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 80: T1CONbits.T1OSCEN=1;
+[e = _ADCON0 -> -> 45 `i `uc ]
+[; ;main.c: 80: ADCON1=0b00010000;
 "80
-[e = . . _T1CONbits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 81: Write_RTC();
+[e = _ADCON1 -> -> 16 `i `uc ]
+[; ;main.c: 81: RTCCFGbits.RTCEN=1;
 "81
-[e ( _Write_RTC ..  ]
-[; ;main.c: 82: lcd_init();
+[e = . . _RTCCFGbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 82: RTCCFGbits.RTCWREN=1;
 "82
-[e ( _lcd_init ..  ]
-[; ;main.c: 83: lcd_comand(0b00001100);
+[e = . . _RTCCFGbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 83: T1CONbits.T1OSCEN=1;
 "83
-[e ( _lcd_comand (1 -> -> 12 `i `uc ]
-[; ;main.c: 84: LATBbits.LATB1 = 1;;
+[e = . . _T1CONbits 0 3 -> -> 1 `i `uc ]
+[; ;main.c: 84: Write_RTC();
 "84
-[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 85: LATBbits.LATB0 = 1;;
+[e ( _Write_RTC ..  ]
+[; ;main.c: 85: lcd_init();
 "85
-[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 86: }
+[e ( _lcd_init ..  ]
+[; ;main.c: 86: lcd_comand(0b00001100);
 "86
-[e :UE 1087 ]
-}
+[e ( _lcd_comand (1 -> -> 12 `i `uc ]
+[; ;main.c: 87: LATBbits.LATB1 = 1;;
+"87
+[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 88: LATBbits.LATB0 = 1;;
 "88
+[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 89: }
+"89
+[e :UE 1096 ]
+}
+"91
 [v _ingresar_password `(i ~T0 @X0 1 ef ]
 {
-[; ;main.c: 88: ingresar_password(){
+[; ;main.c: 91: ingresar_password(){
 [e :U _ingresar_password ]
 [f ]
-"89
+"92
 [v _clear `uc ~T0 @X0 -> 16 `i a ]
-[; ;main.c: 89: char clear[16];
-[; ;main.c: 90: for (int i=0;i<16;i++) clear[i]=' ';
-"90
+[; ;main.c: 92: char clear[16];
+[; ;main.c: 93: for (int i=0;i<16;i++) clear[i]=' ';
+"93
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 16 `i 1089  ]
-[e $U 1090  ]
-[e :U 1089 ]
+[e $ < _i -> 16 `i 1098  ]
+[e $U 1099  ]
+[e :U 1098 ]
 [e = *U + &U _clear * -> -> _i `ui `ux -> -> # *U &U _clear `ui `ux -> -> 32 `ui `uc ]
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 16 `i 1089  ]
-[e :U 1090 ]
+[e $ < _i -> 16 `i 1098  ]
+[e :U 1099 ]
 }
-[; ;main.c: 92: if(tamanio_password < 6){
-"92
-[e $ ! < _tamanio_password -> 6 `i 1092  ]
-{
-[; ;main.c: 94: lcd_comand(0b00001100);
-"94
-[e ( _lcd_comand (1 -> -> 12 `i `uc ]
-[; ;main.c: 95: lcd_gotoxy(1,1);
+[; ;main.c: 95: if(tamanio_password < 6){
 "95
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 96: lcd_putrs("Ingrese pass:");
-"96
-[e ( _lcd_putrs (1 :s 11C ]
-[; ;main.c: 97: lcd_gotoxy(tamanio_password+1,2);
+[e $ ! < _tamanio_password -> 6 `i 1101  ]
+{
+[; ;main.c: 97: lcd_comand(0b00001100);
 "97
-[e ( _lcd_gotoxy (2 , -> + _tamanio_password -> 1 `i `uc -> -> 2 `i `uc ]
+[e ( _lcd_comand (1 -> -> 12 `i `uc ]
+[; ;main.c: 98: lcd_gotoxy(1,1);
+"98
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 99: lcd_putrs("Inserte password");
 "99
-}
-[e :U 1092 ]
-[; ;main.c: 99: }
-[; ;main.c: 101: validar_password();
-"101
-[e ( _validar_password ..  ]
-[; ;main.c: 102: if (tamanio_password >= 6 && !autorizado){
-"102
-[e $ ! && >= _tamanio_password -> 6 `i ! != _autorizado -> 0 `i 1093  ]
-{
-[; ;main.c: 103: tamanio_password = 0;
-"103
-[e = _tamanio_password -> 0 `i ]
-[; ;main.c: 104: lcd_gotoxy(1,2);
-"104
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;main.c: 105: lcd_putrs("ERROR pass");
-"105
 [e ( _lcd_putrs (1 :s 12C ]
-[; ;main.c: 106: for (int i=0;i<9;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
-"106
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 9 `i 1094  ]
-[e $U 1095  ]
-[e :U 1094 ]
-[e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 9 `i 1094  ]
-[e :U 1095 ]
+[; ;main.c: 100: lcd_gotoxy(tamanio_password+1,2);
+"100
+[e ( _lcd_gotoxy (2 , -> + _tamanio_password -> 1 `i `uc -> -> 2 `i `uc ]
+"102
 }
+[e :U 1101 ]
+[; ;main.c: 102: }
+[; ;main.c: 104: validar_password();
+"104
+[e ( _validar_password ..  ]
+[; ;main.c: 105: if (tamanio_password >= 6 && !autorizado){
+"105
+[e $ ! && >= _tamanio_password -> 6 `i ! != _autorizado -> 0 `i 1102  ]
+{
+[; ;main.c: 106: tamanio_password = 0;
+"106
+[e = _tamanio_password -> 0 `i ]
 [; ;main.c: 107: lcd_gotoxy(1,2);
 "107
 [e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;main.c: 108: lcd_putrs(clear);
+[; ;main.c: 108: lcd_putrs("ERROR pass");
 "108
-[e ( _lcd_putrs (1 -> &U _clear `*Cuc ]
+[e ( _lcd_putrs (1 :s 13C ]
+[; ;main.c: 109: for (int i=0;i<9;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
 "109
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 9 `i 1103  ]
+[e $U 1104  ]
+[e :U 1103 ]
+[e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 9 `i 1103  ]
+[e :U 1104 ]
 }
-[e :U 1093 ]
-[; ;main.c: 109: }
-[; ;main.c: 110: }
+[; ;main.c: 110: lcd_gotoxy(1,2);
 "110
-[e :UE 1088 ]
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+[; ;main.c: 111: lcd_putrs(clear);
+"111
+[e ( _lcd_putrs (1 -> &U _clear `*Cuc ]
+"112
 }
-"118
-[v _main `(i ~T0 @X0 1 ef ]
-"119
-{
-[; ;main.c: 118: int main(void)
-[; ;main.c: 119: {
-[e :U _main ]
-[f ]
-[; ;main.c: 120: Setup();
-"120
-[e ( _Setup ..  ]
-[; ;main.c: 122: while(1)
-"122
-[e :U 1099 ]
-[; ;main.c: 123: {
-"123
-{
-[; ;main.c: 124: Read_RTC();
-"124
-[e ( _Read_RTC ..  ]
-[; ;main.c: 125: leer_teclado(1);
-"125
-[e ( _leer_teclado (1 -> 1 `i ]
-[; ;main.c: 126: ingresar_password();
-"126
-[e ( _ingresar_password ..  ]
-[; ;main.c: 128: if (autorizado){
-"128
-[e $ ! != _autorizado -> 0 `i 1101  ]
-{
-[; ;main.c: 129: caratula("Welcome ");
-"129
-[e ( _caratula (1 -> :s 13C `*uc ]
-"130
-}
-[e :U 1101 ]
-"135
-}
-[e :U 1098 ]
-"122
-[e $U 1099  ]
-[e :U 1100 ]
-[; ;main.c: 130: }
-[; ;main.c: 135: }
-[; ;main.c: 137: return 0;
-"137
-[e ) -> 0 `i ]
-[e $UE 1097  ]
-[; ;main.c: 138: }
-"138
+[e :U 1102 ]
+[; ;main.c: 112: }
+[; ;main.c: 113: }
+"113
 [e :UE 1097 ]
 }
+"116
+[v _mostrar_guardar_password `(i ~T0 @X0 1 ef1`uc ]
+{
+[; ;main.c: 116: mostrar_guardar_password(char tecla){
+[e :U _mostrar_guardar_password ]
+[v _tecla `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;main.c: 118: imprimir_tecla(tecla);
+"118
+[e ( _imprimir_tecla (1 _tecla ]
+[; ;main.c: 119: sprintf(buffer2,"%01u",tecla);
+"119
+[e ( _sprintf (1 , (. , &U _buffer2 :s 14C -> _tecla `i ]
+[; ;main.c: 120: guardar_current_password(*buffer2);
+"120
+[e ( _guardar_current_password (1 *U &U _buffer2 ]
+[; ;main.c: 122: }
+"122
+[e :UE 1106 ]
+}
+"124
+[v _ingresar_comando `(i ~T0 @X0 1 ef1`uc ]
+{
+[; ;main.c: 124: ingresar_comando(char key){
+[e :U _ingresar_comando ]
+[v _key `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;main.c: 125: guardar_comando(key);
+"125
+[e ( _guardar_comando (1 _key ]
+[; ;main.c: 126: }
+"126
+[e :UE 1107 ]
+}
+"133
+[v _main `(i ~T0 @X0 1 ef ]
+"134
+{
+[; ;main.c: 133: int main(void)
+[; ;main.c: 134: {
+[e :U _main ]
+[f ]
+[; ;main.c: 135: Setup();
+"135
+[e ( _Setup ..  ]
+[v _i `i ~T0 @X0 1 a ]
+[; ;main.c: 136: int i = 1;
+"136
+[e = _i -> 1 `i ]
+"137
+[v _validar `i ~T0 @X0 1 a ]
+[; ;main.c: 137: int validar = 1;
+[e = _validar -> 1 `i ]
+[v _ocultar_teclas `i ~T0 @X0 1 a ]
+[; ;main.c: 138: int ocultar_teclas = 1;
+"138
+[e = _ocultar_teclas -> 1 `i ]
+"139
+[v _candidato `*uc ~T0 @X0 1 a ]
+[; ;main.c: 139: char *candidato;
+[; ;main.c: 141: while(1)
+"141
+[e :U 1110 ]
+[; ;main.c: 142: {
+"142
+{
+[; ;main.c: 143: Read_RTC();
+"143
+[e ( _Read_RTC ..  ]
+[; ;main.c: 145: if (!autorizado){
+"145
+[e $ ! ! != _autorizado -> 0 `i 1112  ]
+{
+[; ;main.c: 146: leer_teclado(ocultar_teclas,mostrar_guardar_password);
+"146
+[e ( _leer_teclado (2 , _ocultar_teclas -> &U _mostrar_guardar_password `*F8303 ]
+[; ;main.c: 147: ingresar_password();
+"147
+[e ( _ingresar_password ..  ]
+"148
+}
+[; ;main.c: 148: }else{
+[e $U 1113  ]
+[e :U 1112 ]
+{
+[; ;main.c: 149: visualizar_tecla_presionada=0;
+"149
+[e = _visualizar_tecla_presionada -> 0 `i ]
+[; ;main.c: 150: leer_teclado(!ocultar_teclas,ingresar_comando);
+"150
+[e ( _leer_teclado (2 , -> ! != _ocultar_teclas -> 0 `i `i -> &U _ingresar_comando `*F8303 ]
+[; ;main.c: 152: caratula("Welcome ");
+"152
+[e ( _caratula (1 -> :s 15C `*uc ]
+[; ;main.c: 154: validar_comando("001",&validar);
+"154
+[e ( _validar_comando (2 , -> :s 16C `*uc &U _validar ]
+[; ;main.c: 155: if(validar){
+"155
+[e $ ! != _validar -> 0 `i 1114  ]
+{
+[; ;main.c: 156: lcd_gotoxy(1,2);
+"156
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+[; ;main.c: 157: lcd_putrs("Menu fecha");
+"157
+[e ( _lcd_putrs (1 :s 17C ]
+[; ;main.c: 158: limpiar_comando();
+"158
+[e ( _limpiar_comando ..  ]
+"159
+}
+[e :U 1114 ]
+"160
+}
+[e :U 1113 ]
+"161
+}
+[e :U 1109 ]
+"141
+[e $U 1110  ]
+[e :U 1111 ]
+[; ;main.c: 159: }
+[; ;main.c: 160: }
+[; ;main.c: 161: }
+[; ;main.c: 162: return 0;
+"162
+[e ) -> 0 `i ]
+[e $UE 1108  ]
+[; ;main.c: 163: }
+"163
+[e :UE 1108 ]
+}
 [p f _sprintf 8422404 ]
-[a 10C 32 32 37 48 50 117 58 37 48 50 117 58 37 48 50 117 0 ]
-[a 9C 37 48 50 117 47 37 48 50 117 47 37 48 50 117 0 ]
+[a 11C 32 32 37 48 50 117 58 37 48 50 117 58 37 48 50 117 0 ]
+[a 10C 37 48 50 117 47 37 48 50 117 47 37 48 50 117 0 ]
 [a 1C 37 48 49 117 0 ]
-[a 12C 69 82 82 79 82 32 112 97 115 115 0 ]
-[a 8C 68 0 ]
-[a 5C 67 0 ]
-[a 4C 66 0 ]
-[a 3C 65 0 ]
-[a 11C 73 110 103 114 101 115 101 32 112 97 115 115 58 0 ]
-[a 2C 42 0 ]
-[a 6C 42 0 ]
-[a 7C 35 0 ]
-[a 13C 87 101 108 99 111 109 101 32 0 ]
+[a 2C 37 48 49 117 0 ]
+[a 14C 37 48 49 117 0 ]
+[a 13C 69 82 82 79 82 32 112 97 115 115 0 ]
+[a 12C 73 110 115 101 114 116 101 32 112 97 115 115 119 111 114 100 0 ]
+[a 17C 77 101 110 117 32 102 101 99 104 97 0 ]
+[a 9C 68 0 ]
+[a 6C 67 0 ]
+[a 5C 66 0 ]
+[a 4C 65 0 ]
+[a 16C 48 48 49 0 ]
+[a 3C 42 0 ]
+[a 7C 42 0 ]
+[a 8C 35 0 ]
+[a 15C 87 101 108 99 111 109 101 32 0 ]

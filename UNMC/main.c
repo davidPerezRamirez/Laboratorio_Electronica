@@ -22,12 +22,15 @@
 #include <delays.h>
 #include <stdio.h>
 #include <teclado.h>
+#include <password.h>
 
 //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
 /// Funcion Caratula
 /// Display presentation day hour
 /// variable lecture diasem, anio, dia, hora, etc
 //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
+
+#define C "17"
 
     void caratula(char * titulo)
     {
@@ -93,9 +96,9 @@ ingresar_password(){
         
         lcd_comand(0b00001100);             //Enciende display sin cursor y sin blink  
         lcd_gotoxy(1,1);        
-        lcd_putrs("Ingrese pass:");
+        lcd_putrs("Inserte password");
         lcd_gotoxy(tamanio_password+1,2);        
-        //leer_teclado(1);         
+        //leer_teclado(1);
     }
     
     validar_password();
@@ -109,6 +112,18 @@ ingresar_password(){
     }
 }    
 
+
+mostrar_guardar_password(char tecla){
+   
+    imprimir_tecla(tecla);
+    sprintf(buffer2,"%01u",tecla);
+    guardar_current_password(*buffer2);
+    
+}
+
+ingresar_comando(char key){
+    guardar_comando(key);
+}
 /*------------------------------------------------------------------------------
 ********************************************************************************
 Funcion main
@@ -118,21 +133,31 @@ Funcion principal del programa
 int main(void)
 {
 Setup();
+int i = 1;
+int validar = 1;
+int ocultar_teclas = 1;
+char *candidato;
 
 while(1)
    {
-    Read_RTC();
-    leer_teclado(1);    
-    ingresar_password();
+    Read_RTC();        
     
-    if (autorizado){
+    if (!autorizado){       
+        leer_teclado(ocultar_teclas,mostrar_guardar_password);  
+        ingresar_password();
+    }else{
+        visualizar_tecla_presionada=0;
+        leer_teclado(!ocultar_teclas,ingresar_comando);
+        
         caratula("Welcome ");
-    }
-      
-    //lcd_gotoxy(1,2);
-    //ingresar_password(current_password);
-    //sprintf(buffer2,"%01u",tamanio_password);    
-   }
-
+                        
+        validar_comando("001",&validar);         
+        if(validar){
+            lcd_gotoxy(1,2);
+            lcd_putrs("Menu fecha");
+            limpiar_comando();
+        }
+    }        
+}
 return 0;
 }

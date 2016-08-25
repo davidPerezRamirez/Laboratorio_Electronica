@@ -9991,6 +9991,81 @@ anio=anio_d*10+anio_u;
 # 14 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
 char key;
 
+# 14 "C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h"
+int ocultar_teclas;
+int visualizar_tecla_presionada=1;
+char datos[16]="";
+char comando[3] ="";
+int tamanio_comando = 0;
+
+guardar_comando(char tecla){
+
+sprintf(buffer2,"%01u",tecla);
+if (tamanio_comando <3){
+comando[tamanio_comando] = *buffer2;
+comando [tamanio_comando+1] = '\0';
+tamanio_comando++;
+}
+
+}
+
+validar_comando(char * candidato, int * validar){
+
+int i = 0;
+while (i < 3){
+
+if (comando[i] != candidato[i])
+validar = 0;
+
+i++;
+}
+}
+
+imprimir_tecla(char tecla){
+
+if (!visualizar_tecla_presionada) return 0;
+
+sprintf(buffer2,"%01u",tecla);
+if (ocultar_teclas == 1){
+lcd_putrs("*");
+
+}else{
+lcd_putrs(buffer2);
+}
+}
+
+
+guardar_tecla_presionada(char * letra, int i,char* (*doit)(char *)){
+if (PORTAbits.RA5==1){key=i; doit(key);while(PORTAbits.RA5==1){};}
+if (PORTAbits.RA7==1){key=(i)+1; doit(key);while(PORTAbits.RA7==1){};}
+if (PORTAbits.RA6==1){key=(i)+2; doit(key);while(PORTAbits.RA6==1){};}
+if (PORTCbits.RC2==1){key=(i)+10;lcd_putrs(letra);while(PORTCbits.RC2==1){};}
+}
+
+leer_teclado(int ocultar,char* (*doit)()){
+int i;
+ocultar_teclas = ocultar;
+
+LATAbits.LATA0=1;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=0;i=1;
+guardar_tecla_presionada("A",i,doit);
+
+LATAbits.LATA0=0;LATAbits.LATA1=1;LATAbits.LATA2=0;LATAbits.LATA3=0;i=4;
+guardar_tecla_presionada("B",i,doit);
+
+LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=1;LATAbits.LATA3=0;i=7;
+guardar_tecla_presionada("C",i,doit);
+
+LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=1;
+{
+if (PORTAbits.RA5==1){key=18;lcd_putrs("*");while(PORTAbits.RA5==1){};}
+if (PORTAbits.RA7==1){key=0;doit(key);while(PORTAbits.RA7==1){};}
+if (PORTAbits.RA6==1){key=19;lcd_putrs("#");while(PORTAbits.RA6==1){};}
+if (PORTCbits.RC2==1){key='D';lcd_putrs("D");while(PORTCbits.RC2==1){};}
+}
+_delay((unsigned long)((98)*(8000000/4000.0)));
+
+}
+
 # 7 "C:/Archivos de programa/Unimic/unmc_01/headers\password.h"
 char password[6]="123456";
 char current_password[6]="";
@@ -10020,52 +10095,11 @@ i++;
 }
 }
 
-# 15 "C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h"
-int ocultar_teclas;
-
-imprimir_tecla(char tecla){
-
-sprintf(buffer2,"%01u",tecla);
-if (ocultar_teclas == 1){
-lcd_putrs("*");
-guardar_current_password(*buffer2);
-}else{
-lcd_putrs(buffer2);
-}
+limpiar_comando(){
+tamanio_password = 0;
 }
 
-guardar_tecla_presionada(char * letra, int i){
-if (PORTAbits.RA5==1){key=i;imprimir_tecla(key);while(PORTAbits.RA5==1){};}
-if (PORTAbits.RA7==1){key=(i)+1;imprimir_tecla(key);while(PORTAbits.RA7==1){};}
-if (PORTAbits.RA6==1){key=(i)+2;imprimir_tecla(key);while(PORTAbits.RA6==1){};}
-if (PORTCbits.RC2==1){key=(i)+10;lcd_putrs(letra);while(PORTCbits.RC2==1){};}
-}
-
-leer_teclado(int ocultar){
-int i;
-ocultar_teclas = ocultar;
-
-LATAbits.LATA0=1;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=0;i=1;
-guardar_tecla_presionada("A",i);
-
-LATAbits.LATA0=0;LATAbits.LATA1=1;LATAbits.LATA2=0;LATAbits.LATA3=0;i=4;
-guardar_tecla_presionada("B",i);
-
-LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=1;LATAbits.LATA3=0;i=7;
-guardar_tecla_presionada("C",i);
-
-LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=1;
-{
-if (PORTAbits.RA5==1){key=18;lcd_putrs("*");while(PORTAbits.RA5==1){};}
-if (PORTAbits.RA7==1){key=0;imprimir_tecla(key);while(PORTAbits.RA7==1){};}
-if (PORTAbits.RA6==1){key=19;lcd_putrs("#");while(PORTAbits.RA6==1){};}
-if (PORTCbits.RC2==1){key=20;lcd_putrs("D");while(PORTCbits.RC2==1){};}
-}
-_delay((unsigned long)((98)*(8000000/4000.0)));
-
-}
-
-# 32 "main.c"
+# 35 "main.c"
 void caratula(char * titulo)
 {
 
@@ -10086,7 +10120,7 @@ lcd_putrs(buffer2);
 
 }
 
-# 58
+# 61
 void Setup(void)
 {
 OSCTUNEbits.INTSRC=1;
@@ -10125,7 +10159,7 @@ if(tamanio_password < 6){
 
 lcd_comand(0b00001100);
 lcd_gotoxy(1,1);
-lcd_putrs("Ingrese pass:");
+lcd_putrs("Inserte password");
 lcd_gotoxy(tamanio_password+1,2);
 
 }
@@ -10141,25 +10175,48 @@ lcd_putrs(clear);
 }
 }
 
-# 118
+
+mostrar_guardar_password(char tecla){
+
+imprimir_tecla(tecla);
+sprintf(buffer2,"%01u",tecla);
+guardar_current_password(*buffer2);
+
+}
+
+ingresar_comando(char key){
+guardar_comando(key);
+}
+
+# 133
 int main(void)
 {
 Setup();
+int i = 1;
+int validar = 1;
+int ocultar_teclas = 1;
+char *candidato;
 
 while(1)
 {
 Read_RTC();
-leer_teclado(1);
+
+if (!autorizado){
+leer_teclado(ocultar_teclas,mostrar_guardar_password);
 ingresar_password();
+}else{
+visualizar_tecla_presionada=0;
+leer_teclado(!ocultar_teclas,ingresar_comando);
 
-if (autorizado){
 caratula("Welcome ");
+
+validar_comando("001",&validar);
+if(validar){
+lcd_gotoxy(1,2);
+lcd_putrs("Menu fecha");
+limpiar_comando();
 }
-
-
-
-
 }
-
+}
 return 0;
 }
