@@ -90,17 +90,17 @@ RTCCPTR_MASK_YEAR 3
 [v _guardar_current_password guardar_current_password `(i  1 e 2 0 ]
 "22
 [v _validar_password validar_password `(i  1 e 2 0 ]
-"35
-[v _limpiar_comando limpiar_comando `(i  1 e 2 0 ]
-"20 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
+"18 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
 [v _guardar_comando guardar_comando `(i  1 e 2 0 ]
-"31
+"28
 [v _validar_comando validar_comando `(i  1 e 2 0 ]
-"43
+"40
 [v _imprimir_tecla imprimir_tecla `(i  1 e 2 0 ]
-"57
+"50
+[v _restaurar_comando restaurar_comando `(i  1 e 2 0 ]
+"59
 [v _guardar_tecla_presionada guardar_tecla_presionada `(i  1 e 2 0 ]
-"64
+"66
 [v _leer_teclado leer_teclado `(i  1 e 2 0 ]
 "74 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
 [v _Write_RTC Write_RTC `(v  1 e 0 0 ]
@@ -170,17 +170,17 @@ RTCCPTR_MASK_YEAR 3
 [v _RtccWriteTime RtccWriteTime `(E7337  1 e 1 0 ]
 "21 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWrOn.c
 [v _RtccWrOn RtccWrOn `(v  1 e 0 0 ]
-"35 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
+"33 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
 [v _caratula caratula `(v  1 e 0 0 ]
-"61
+"59
 [v _Setup Setup `(v  1 e 0 0 ]
-"91
+"89
 [v _ingresar_password ingresar_password `(i  1 e 2 0 ]
-"116
+"114
 [v _mostrar_guardar_password mostrar_guardar_password `(i  1 e 2 0 ]
-"124
+"122
 [v _ingresar_comando ingresar_comando `(i  1 e 2 0 ]
-"133
+"131
 [v _main main `(i  1 e 2 0 ]
 "7 C:/Archivos de programa/Unimic/unmc_01/headers\password.h
 [v _password password `[6]uc  1 e 6 0 ]
@@ -193,10 +193,8 @@ RTCCPTR_MASK_YEAR 3
 "14 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
 [v _ocultar_teclas ocultar_teclas `i  1 e 2 0 ]
 "15
-[v _visualizar_tecla_presionada visualizar_tecla_presionada `i  1 e 2 0 ]
-"17
 [v _comando comando `[3]uc  1 e 3 0 ]
-"18
+"16
 [v _tamanio_comando tamanio_comando `i  1 e 2 0 ]
 "14 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h
 [v _key key `uc  1 e 1 0 ]
@@ -620,70 +618,75 @@ RTCCPTR_MASK_YEAR 3
 [v _INTCONbits INTCONbits `VES1347  1 e 1 @4082 ]
 "354 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\doprnt.c
 [v _dpowers dpowers `C[5]ui  1 s 10 dpowers ]
-"133 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
+"131 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"137
-[v main@ocultar_teclas ocultar_teclas `i  1 a 2 59 ]
-[v main@validar validar `i  1 a 2 57 ]
+"164
+[v main@i_995 i `i  1 a 2 60 ]
+"156
+[v main@i i `i  1 a 2 58 ]
 "135
-[v main@i i `i  1 a 2 55 ]
-"163
+[v main@validacion validacion `i  1 a 2 62 ]
+"133
+[v main@ocultar_teclas ocultar_teclas `i  1 a 2 56 ]
+"171
 } 0
-"31 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
+"28 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
 [v _validar_comando validar_comando `(i  1 e 2 0 ]
 {
+"30
 [v validar_comando@i i `i  1 a 2 7 ]
+"28
 [v validar_comando@candidato candidato `*.25uc  1 p 2 0 ]
 [v validar_comando@validar validar `*.39i  1 p 2 2 ]
-"41
+"38
 } 0
-"35 C:/Archivos de programa/Unimic/unmc_01/headers\password.h
-[v _limpiar_comando limpiar_comando `(i  1 e 2 0 ]
+"50
+[v _restaurar_comando restaurar_comando `(i  1 e 2 0 ]
 {
-"37
+"57
 } 0
-"64 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
+"66
 [v _leer_teclado leer_teclado `(i  1 e 2 0 ]
 {
 [v leer_teclado@i i `i  1 a 2 50 ]
 [v leer_teclado@ocultar ocultar `i  1 p 2 45 ]
 [v leer_teclado@doit doit `*.37(*.2uc  1 p 2 47 ]
-"86
+"88
 } 0
-"57
+"59
 [v _guardar_tecla_presionada guardar_tecla_presionada `(i  1 e 2 0 ]
 {
 [v guardar_tecla_presionada@letra letra `*.25uc  1 p 2 39 ]
 [v guardar_tecla_presionada@i i `i  1 p 2 41 ]
 [v guardar_tecla_presionada@doit doit `*.37(*.2uc  1 p 2 43 ]
-"62
+"64
 } 0
-"124 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
+"122 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
 [v _ingresar_comando ingresar_comando `(i  1 e 2 0 ]
 {
 [v ingresar_comando@key key `uc  1 a 1 wreg ]
 [v ingresar_comando@key key `uc  1 a 1 wreg ]
 [v ingresar_comando@key key `uc  1 a 1 38 ]
-"126
+"124
 } 0
-"116
+"114
 [v _mostrar_guardar_password mostrar_guardar_password `(i  1 e 2 0 ]
 {
 [v mostrar_guardar_password@tecla tecla `uc  1 a 1 wreg ]
 [v mostrar_guardar_password@tecla tecla `uc  1 a 1 wreg ]
-"118
+"116
 [v mostrar_guardar_password@tecla tecla `uc  1 a 1 36 ]
-"122
+"120
 } 0
-"43 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
+"40 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
 [v _imprimir_tecla imprimir_tecla `(i  1 e 2 0 ]
 {
 [v imprimir_tecla@tecla tecla `uc  1 a 1 wreg ]
 [v imprimir_tecla@tecla tecla `uc  1 a 1 wreg ]
-"45
+"42
 [v imprimir_tecla@tecla tecla `uc  1 a 1 35 ]
-"54
+"48
 } 0
 "12 C:/Archivos de programa/Unimic/unmc_01/headers\password.h
 [v _guardar_current_password guardar_current_password `(i  1 e 2 0 ]
@@ -694,25 +697,25 @@ RTCCPTR_MASK_YEAR 3
 [v guardar_current_password@valor valor `uc  1 a 1 2 ]
 "20
 } 0
-"20 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
+"18 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
 [v _guardar_comando guardar_comando `(i  1 e 2 0 ]
 {
 [v guardar_comando@tecla tecla `uc  1 a 1 wreg ]
 [v guardar_comando@tecla tecla `uc  1 a 1 wreg ]
-"22
+"20
 [v guardar_comando@tecla tecla `uc  1 a 1 37 ]
-"29
+"26
 } 0
-"91 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
+"89 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
 [v _ingresar_password ingresar_password `(i  1 e 2 0 ]
 {
-"109
-[v ingresar_password@i_972 i `i  1 a 2 27 ]
-"93
+"107
+[v ingresar_password@i_969 i `i  1 a 2 27 ]
+"91
 [v ingresar_password@i i `i  1 a 2 29 ]
-"92
+"90
 [v ingresar_password@clear clear `[16]uc  1 a 16 11 ]
-"113
+"111
 } 0
 "22 C:/Archivos de programa/Unimic/unmc_01/headers\password.h
 [v _validar_password validar_password `(i  1 e 2 0 ]
@@ -721,16 +724,16 @@ RTCCPTR_MASK_YEAR 3
 [v validar_password@i i `i  1 a 2 2 ]
 "33
 } 0
-"35 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
+"33 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
 [v _caratula caratula `(v  1 e 0 0 ]
 {
-"39
+"37
 [v caratula@i i `i  1 a 2 53 ]
-"38
+"36
 [v caratula@clear clear `[16]uc  1 a 16 37 ]
-"35
+"33
 [v caratula@titulo titulo `*.25uc  1 p 2 35 ]
-"53
+"51
 } 0
 "492 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
@@ -820,10 +823,10 @@ RTCCPTR_MASK_YEAR 3
 [v lcd_gotoxy@x x `uc  1 a 1 5 ]
 "168
 } 0
-"61 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
+"59 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
 [v _Setup Setup `(v  1 e 0 0 ]
 {
-"89
+"87
 } 0
 "119 C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c
 [v _lcd_init lcd_init `(v  1 e 0 0 ]

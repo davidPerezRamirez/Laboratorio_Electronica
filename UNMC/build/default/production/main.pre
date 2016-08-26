@@ -9993,9 +9993,7 @@ char key;
 
 # 14 "C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h"
 int ocultar_teclas;
-int visualizar_tecla_presionada=1;
-char datos[16]="";
-char comando[3] ="";
+char comando[3]="xxx";
 int tamanio_comando = 0;
 
 guardar_comando(char tecla){
@@ -10006,16 +10004,15 @@ comando[tamanio_comando] = *buffer2;
 comando [tamanio_comando+1] = '\0';
 tamanio_comando++;
 }
-
 }
 
 validar_comando(char * candidato, int * validar){
 
+*validar=1;
 int i = 0;
 while (i < 3){
-
-if (comando[i] != candidato[i])
-validar = 0;
+if (comando[i] != *(candidato+i))
+*validar = 0;
 
 i++;
 }
@@ -10023,17 +10020,22 @@ i++;
 
 imprimir_tecla(char tecla){
 
-if (!visualizar_tecla_presionada) return 0;
-
 sprintf(buffer2,"%01u",tecla);
 if (ocultar_teclas == 1){
 lcd_putrs("*");
-
 }else{
 lcd_putrs(buffer2);
 }
 }
 
+restaurar_comando(){
+tamanio_comando = 0;
+
+comando[0]='x';
+comando[1]='x';
+comando[2]='x';
+comando[3]='\0';
+}
 
 guardar_tecla_presionada(char * letra, int i,char* (*doit)(char *)){
 if (PORTAbits.RA5==1){key=i; doit(key);while(PORTAbits.RA5==1){};}
@@ -10095,11 +10097,7 @@ i++;
 }
 }
 
-limpiar_comando(){
-tamanio_password = 0;
-}
-
-# 35 "main.c"
+# 33 "main.c"
 void caratula(char * titulo)
 {
 
@@ -10120,7 +10118,7 @@ lcd_putrs(buffer2);
 
 }
 
-# 61
+# 59
 void Setup(void)
 {
 OSCTUNEbits.INTSRC=1;
@@ -10169,7 +10167,7 @@ if (tamanio_password >= 6 && !autorizado){
 tamanio_password = 0;
 lcd_gotoxy(1,2);
 lcd_putrs("ERROR pass");
-for (int i=0;i<9;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
+for (int i=0;i<6;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
 lcd_gotoxy(1,2);
 lcd_putrs(clear);
 }
@@ -10188,14 +10186,13 @@ ingresar_comando(char key){
 guardar_comando(key);
 }
 
-# 133
+# 131
 int main(void)
 {
 Setup();
-int i = 1;
-int validar = 1;
 int ocultar_teclas = 1;
-char *candidato;
+int validacion;
+restaurar_comando();
 
 while(1)
 {
@@ -10205,17 +10202,28 @@ if (!autorizado){
 leer_teclado(ocultar_teclas,mostrar_guardar_password);
 ingresar_password();
 }else{
-visualizar_tecla_presionada=0;
 leer_teclado(!ocultar_teclas,ingresar_comando);
 
+validar_comando("xxx",&validacion);
+if(validacion)
 caratula("Welcome ");
 
-validar_comando("001",&validar);
-if(validar){
+validar_comando("001",&validacion);
+if(validacion){
 lcd_gotoxy(1,2);
 lcd_putrs("Menu fecha");
-limpiar_comando();
+for (int i=0;i<10;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
+restaurar_comando();
 }
+
+validar_comando("002",&validacion);
+if(validacion){
+lcd_gotoxy(1,2);
+lcd_putrs("cambiar pass");
+for (int i=0;i<10;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
+restaurar_comando();
+}
+
 }
 }
 return 0;

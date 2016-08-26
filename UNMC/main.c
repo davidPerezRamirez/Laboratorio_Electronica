@@ -30,8 +30,6 @@
 /// variable lecture diasem, anio, dia, hora, etc
 //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
 
-#define C "17"
-
     void caratula(char * titulo)
     {
         
@@ -106,7 +104,7 @@ ingresar_password(){
         tamanio_password = 0;        
         lcd_gotoxy(1,2);
         lcd_putrs("ERROR pass");
-        for (int i=0;i<9;i++)__delay_ms(98);      
+        for (int i=0;i<6;i++)__delay_ms(98);      
         lcd_gotoxy(1,2);
         lcd_putrs(clear);
     }
@@ -133,31 +131,41 @@ Funcion principal del programa
 int main(void)
 {
 Setup();
-int i = 1;
-int validar = 1;
 int ocultar_teclas = 1;
-char *candidato;
+int validacion;
+ restaurar_comando();
 
 while(1)
    {
-    Read_RTC();        
+    Read_RTC();   
     
     if (!autorizado){       
         leer_teclado(ocultar_teclas,mostrar_guardar_password);  
         ingresar_password();
     }else{
-        visualizar_tecla_presionada=0;
         leer_teclado(!ocultar_teclas,ingresar_comando);
         
-        caratula("Welcome ");
-                        
-        validar_comando("001",&validar);         
-        if(validar){
-            lcd_gotoxy(1,2);
+        validar_comando("xxx",&validacion);            
+        if(validacion)
+            caratula("Welcome ");
+        
+        validar_comando("001",&validacion);            
+        if(validacion){
+            lcd_gotoxy(1,2);            
             lcd_putrs("Menu fecha");
-            limpiar_comando();
+            for (int i=0;i<10;i++)__delay_ms(98);
+            restaurar_comando();
         }
+        
+        validar_comando("002",&validacion);            
+        if(validacion){
+            lcd_gotoxy(1,2);            
+            lcd_putrs("cambiar pass");
+            for (int i=0;i<10;i++)__delay_ms(98);
+            restaurar_comando();
+        }
+                
     }        
-}
+   }
 return 0;
 }
