@@ -23,33 +23,45 @@
 #include <stdio.h>
 #include <teclado.h>
 #include <password.h>
+#include <fecha.h>
 
 //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
 /// Funcion Caratula
 /// Display presentation day hour
 /// variable lecture diasem, anio, dia, hora, etc
 //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
+    
+    clear(int limpiar){
+        
+        if(limpiar == 1){
+            char clear[16];
+            for (int i=0;i<16;i++) clear[i]=' ';
+
+            lcd_gotoxy(1,1);
+            lcd_putrs(clear);
+
+            lcd_gotoxy(1,2);
+            lcd_putrs(clear);        
+        }
+    }
 
     void caratula(char * titulo)
-    {
+    {   
+        clear(1);
         
-        char clear[16];
-        for (int i=0;i<16;i++) clear[i]=' ';
-          
         lcd_comand(0b00001100);             //Enciende display sin cursor y sin blink  
         lcd_gotoxy(1,1);        
         lcd_putrs(titulo);
         
-        sprintf(buffer2,"%02u/%02u/%02u",dia,mes,anio);
+        sprintf(buffer2,"%s/%s/%s",day,month,year);
         lcd_gotoxy(9,1);
         lcd_putrs(buffer2);
         
         sprintf(buffer2,"  %02u:%02u:%02u",hora,minuto,segundo);
         lcd_gotoxy(1,2);
-        lcd_putrs(buffer2);
-     
+        lcd_putrs(buffer2);     
     }
-
+    
 //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
 /// Funcion Setup
 ///
@@ -96,7 +108,6 @@ ingresar_password(){
         lcd_gotoxy(1,1);        
         lcd_putrs("Inserte password");
         lcd_gotoxy(tamanio_password+1,2);        
-        //leer_teclado(1);
     }
     
     validar_password();
@@ -110,9 +121,8 @@ ingresar_password(){
     }
 }    
 
-
-mostrar_guardar_password(char tecla){
-   
+mostrar_guardar_password(char tecla){    
+    
     imprimir_tecla(tecla);
     sprintf(buffer2,"%01u",tecla);
     guardar_current_password(*buffer2);
@@ -121,6 +131,12 @@ mostrar_guardar_password(char tecla){
 
 ingresar_comando(char key){
     guardar_comando(key);
+}
+
+cambiar_day(char key){
+    cambiar_dia(key);
+    imprimir_tecla(key);
+    
 }
 /*------------------------------------------------------------------------------
 ********************************************************************************
@@ -131,9 +147,13 @@ Funcion principal del programa
 int main(void)
 {
 Setup();
+inicializar_fecha();
+restaurar_comando();
+
 int ocultar_teclas = 1;
 int validacion;
- restaurar_comando();
+int limpiar = 1;
+char * puntero_funcion = ingresar_comando;
 
 while(1)
    {
@@ -142,29 +162,43 @@ while(1)
     if (!autorizado){       
         leer_teclado(ocultar_teclas,mostrar_guardar_password);  
         ingresar_password();
-    }else{
-        leer_teclado(!ocultar_teclas,ingresar_comando);
+    }else{                        
         
         validar_comando("xxx",&validacion);            
-        if(validacion)
+        if(validacion){            
             caratula("Welcome ");
+        }
         
         validar_comando("001",&validacion);            
         if(validacion){
-            lcd_gotoxy(1,2);            
-            lcd_putrs("Menu fecha");
-            for (int i=0;i<10;i++)__delay_ms(98);
-            restaurar_comando();
+            puntero_funcion = cambiar_dia;
+            
+            clear(limpiar);
+            limpiar = 0;            
+            
+            lcd_gotoxy(1,1);            
+            lcd_putrs("Inserte dia:");
+            
+            lcd_gotoxy(1,2);               
+            lcd_putrs(day);
+            
+            if (tamanio_dia >= 2){
+                for (int i=0;i<6;i++)__delay_ms(98);
+                tamanio_dia = 0;                
+                restaurar_comando();
+            }
         }
         
         validar_comando("002",&validacion);            
         if(validacion){
+            clear(limpiar);
             lcd_gotoxy(1,2);            
             lcd_putrs("cambiar pass");
             for (int i=0;i<10;i++)__delay_ms(98);
             restaurar_comando();
         }
-                
+        
+        leer_teclado(!ocultar_teclas,puntero_funcion);
     }        
    }
 return 0;

@@ -10,6 +10,7 @@
       <itemPath>C:/Archivos de programa/Unimic/unmc_01/headers/unmc_inout_02.h</itemPath>
       <itemPath>../../../../../../Program Files/Unimic/unmc_01/headers/password.h</itemPath>
       <itemPath>../../../../../../Program Files/Unimic/unmc_01/headers/teclado.h</itemPath>
+      <itemPath>../../../../../../Program Files/Unimic/unmc_01/headers/fecha.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

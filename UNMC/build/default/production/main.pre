@@ -9993,7 +9993,7 @@ char key;
 
 # 14 "C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h"
 int ocultar_teclas;
-char comando[3]="xxx";
+char comando[4]="xxx";
 int tamanio_comando = 0;
 
 guardar_comando(char tecla){
@@ -10034,7 +10034,7 @@ tamanio_comando = 0;
 comando[0]='x';
 comando[1]='x';
 comando[2]='x';
-comando[3]='\0';
+comando[3]=0;
 }
 
 guardar_tecla_presionada(char * letra, int i,char* (*doit)(char *)){
@@ -10097,28 +10097,182 @@ i++;
 }
 }
 
-# 33 "main.c"
-void caratula(char * titulo)
-{
+# 27 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdlib.h"
+typedef struct {
+int rem;
+int quot;
+} div_t;
+typedef struct {
+unsigned rem;
+unsigned quot;
+} udiv_t;
+typedef struct {
+long quot;
+long rem;
+} ldiv_t;
+typedef struct {
+unsigned long quot;
+unsigned long rem;
+} uldiv_t;
 
+# 65
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+
+# 98
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+
+# 4 "C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h"
+char day[3] = "";
+char month[3] = "";
+char year[3] = "";
+
+int tamanio_dia = 0;
+int tamanio_mes = 0;
+int tamanio_anio = 0;
+
+inicializar_elemento(char * array, int val){
+
+sprintf(buffer2,"%d",val);
+array[0] = buffer2[0];
+array[1] = buffer2[1];
+array[2] = '\0';
+}
+
+inicializar_fecha(){
+inicializar_elemento(day,dia);
+inicializar_elemento(month,mes);
+inicializar_elemento(year,anio);
+}
+
+guardar_elemento(char tecla, char * array, int * tamanio_array){
+
+sprintf(buffer2,"%01u",tecla);
+array[*tamanio_array] = *buffer2;
+array [(*tamanio_array)+1] = '\0';
+(*tamanio_array)++;
+}
+
+convertir_a_int(char * array, int * valor){
+*valor = atoi(array);
+}
+
+cambiar_dia(char tecla){
+int valor = 0;
+
+if (tamanio_dia < 3 && tamanio_mes == 0 && tamanio_anio == 0){
+guardar_elemento(tecla,day,&tamanio_dia);
+}
+
+if (tamanio_dia == 1){
+convertir_a_int(dia,&valor);
+dia = valor;
+}
+}
+
+cambiar_mes(char tecla){
+int valor = 0;
+
+if (tamanio_dia == 0 && tamanio_mes >= 2 && tamanio_anio == 0){
+guardar_elemento(tecla,month,tamanio_mes);
+convertir_a_int(mes,&valor);
+mes = valor;
+tamanio_mes = 0;
+}
+}
+
+cambiar_anio(char tecla){
+int valor = 0;
+
+if (tamanio_dia == 0 && tamanio_mes == 0 && tamanio_anio >= 2){
+guardar_elemento(tecla,year,tamanio_anio);
+convertir_a_int(anio,&valor);
+anio = valor;
+tamanio_anio = 0;
+}
+}
+cambiar_fecha(char tecla){
+
+cambiar_dia(tecla);
+cambiar_mes(tecla);
+cambiar_anio(tecla);
+}
+
+# 34 "main.c"
+clear(int limpiar){
+
+if(limpiar == 1){
 char clear[16];
 for (int i=0;i<16;i++) clear[i]=' ';
+
+lcd_gotoxy(1,1);
+lcd_putrs(clear);
+
+lcd_gotoxy(1,2);
+lcd_putrs(clear);
+}
+}
+
+void caratula(char * titulo)
+{
+clear(1);
 
 lcd_comand(0b00001100);
 lcd_gotoxy(1,1);
 lcd_putrs(titulo);
 
-sprintf(buffer2,"%02u/%02u/%02u",dia,mes,anio);
+sprintf(buffer2,"%s/%s/%s",day,month,year);
 lcd_gotoxy(9,1);
 lcd_putrs(buffer2);
 
 sprintf(buffer2,"  %02u:%02u:%02u",hora,minuto,segundo);
 lcd_gotoxy(1,2);
 lcd_putrs(buffer2);
-
 }
 
-# 59
+# 71
 void Setup(void)
 {
 OSCTUNEbits.INTSRC=1;
@@ -10159,7 +10313,6 @@ lcd_comand(0b00001100);
 lcd_gotoxy(1,1);
 lcd_putrs("Inserte password");
 lcd_gotoxy(tamanio_password+1,2);
-
 }
 
 validar_password();
@@ -10173,7 +10326,6 @@ lcd_putrs(clear);
 }
 }
 
-
 mostrar_guardar_password(char tecla){
 
 imprimir_tecla(tecla);
@@ -10186,13 +10338,23 @@ ingresar_comando(char key){
 guardar_comando(key);
 }
 
-# 131
+cambiar_day(char key){
+cambiar_dia(key);
+imprimir_tecla(key);
+
+}
+
+# 147
 int main(void)
 {
 Setup();
+inicializar_fecha();
+restaurar_comando();
+
 int ocultar_teclas = 1;
 int validacion;
-restaurar_comando();
+int limpiar = 1;
+char * puntero_funcion = ingresar_comando;
 
 while(1)
 {
@@ -10202,28 +10364,42 @@ if (!autorizado){
 leer_teclado(ocultar_teclas,mostrar_guardar_password);
 ingresar_password();
 }else{
-leer_teclado(!ocultar_teclas,ingresar_comando);
 
 validar_comando("xxx",&validacion);
-if(validacion)
+if(validacion){
 caratula("Welcome ");
+}
 
 validar_comando("001",&validacion);
 if(validacion){
+puntero_funcion = cambiar_dia;
+
+clear(limpiar);
+limpiar = 0;
+
+lcd_gotoxy(1,1);
+lcd_putrs("Inserte dia:");
+
 lcd_gotoxy(1,2);
-lcd_putrs("Menu fecha");
-for (int i=0;i<10;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
+lcd_putrs(day);
+
+if (tamanio_dia >= 2){
+for (int i=0;i<6;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
+tamanio_dia = 0;
 restaurar_comando();
+}
 }
 
 validar_comando("002",&validacion);
 if(validacion){
+clear(limpiar);
 lcd_gotoxy(1,2);
 lcd_putrs("cambiar pass");
 for (int i=0;i<10;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
 restaurar_comando();
 }
 
+leer_teclado(!ocultar_teclas,puntero_funcion);
 }
 }
 return 0;
