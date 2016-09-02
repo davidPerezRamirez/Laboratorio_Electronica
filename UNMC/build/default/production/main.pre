@@ -10038,9 +10038,9 @@ comando[3]=0;
 }
 
 guardar_tecla_presionada(char * letra, int i,char* (*doit)(char *)){
-if (PORTAbits.RA5==1){key=i; doit(key);while(PORTAbits.RA5==1){};}
-if (PORTAbits.RA7==1){key=(i)+1; doit(key);while(PORTAbits.RA7==1){};}
-if (PORTAbits.RA6==1){key=(i)+2; doit(key);while(PORTAbits.RA6==1){};}
+if (PORTAbits.RA5==1){key=i;doit(key);while(PORTAbits.RA5==1){};}
+if (PORTAbits.RA7==1){key=(i)+1;doit(key);while(PORTAbits.RA7==1){};}
+if (PORTAbits.RA6==1){key=(i)+2;doit(key);while(PORTAbits.RA6==1){};}
 if (PORTCbits.RC2==1){key=(i)+10;lcd_putrs(letra);while(PORTCbits.RC2==1){};}
 }
 
@@ -10164,7 +10164,21 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 4 "C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h"
+# 98 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h"
+void lcd_send_nibble(int8 nibble);
+int8 lcd_read_nibble(void);
+int8 lcd_read_byte(void);
+void lcd_send_byte(int8 address, int8 n);
+
+void lcd_init(void);
+void lcd_gotoxy(int8 x, int8 y);
+void lcd_putc(int8 c);
+void lcd_comand(int8 d);
+void lcd_setcursor_vb(int8 visible, int8 blink);
+void lcd_puts(char *ptr);
+void lcd_putrs(const char *ptr);
+
+# 5 "C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h"
 char day[3] = "";
 char month[3] = "";
 char year[3] = "";
@@ -10173,25 +10187,11 @@ int tamanio_dia = 0;
 int tamanio_mes = 0;
 int tamanio_anio = 0;
 
-inicializar_elemento(char * array, int val){
-
-sprintf(buffer2,"%d",val);
-array[0] = buffer2[0];
-array[1] = buffer2[1];
-array[2] = '\0';
-}
-
-inicializar_fecha(){
-inicializar_elemento(day,dia);
-inicializar_elemento(month,mes);
-inicializar_elemento(year,anio);
-}
-
 guardar_elemento(char tecla, char * array, int * tamanio_array){
 
 sprintf(buffer2,"%01u",tecla);
 array[*tamanio_array] = *buffer2;
-array [(*tamanio_array)+1] = '\0';
+array [(*tamanio_array)+1] = 0;
 (*tamanio_array)++;
 }
 
@@ -10202,35 +10202,45 @@ convertir_a_int(char * array, int * valor){
 cambiar_dia(char tecla){
 int valor = 0;
 
-if (tamanio_dia < 3 && tamanio_mes == 0 && tamanio_anio == 0){
+if (tamanio_dia < 3 - 1 && tamanio_mes == 0 && tamanio_anio == 0){
 guardar_elemento(tecla,day,&tamanio_dia);
 }
 
-if (tamanio_dia == 1){
-convertir_a_int(dia,&valor);
+if (tamanio_dia >= 3 - 1){
+convertir_a_int(day,&valor);
+tamanio_dia++;
 dia = valor;
+Write_RTC();
 }
 }
 
 cambiar_mes(char tecla){
 int valor = 0;
 
-if (tamanio_dia == 0 && tamanio_mes >= 2 && tamanio_anio == 0){
-guardar_elemento(tecla,month,tamanio_mes);
-convertir_a_int(mes,&valor);
+if (tamanio_mes < 3 && tamanio_dia == 3 && tamanio_anio == 0){
+guardar_elemento(tecla,month,&tamanio_mes);
+}
+
+if (tamanio_mes >= 3 - 1){
+convertir_a_int(month,&valor);
+tamanio_mes++;
 mes = valor;
-tamanio_mes = 0;
+Write_RTC();
 }
 }
 
 cambiar_anio(char tecla){
 int valor = 0;
 
-if (tamanio_dia == 0 && tamanio_mes == 0 && tamanio_anio >= 2){
-guardar_elemento(tecla,year,tamanio_anio);
-convertir_a_int(anio,&valor);
+if (tamanio_anio < 3 && tamanio_mes == 3 && tamanio_dia == 3){
+guardar_elemento(tecla,year,&tamanio_anio);
+}
+
+if (tamanio_anio >= 3 - 1){
+convertir_a_int(year,&valor);
+tamanio_anio++;
 anio = valor;
-tamanio_anio = 0;
+Write_RTC();
 }
 }
 cambiar_fecha(char tecla){
@@ -10241,29 +10251,13 @@ cambiar_anio(tecla);
 }
 
 # 34 "main.c"
-clear(int limpiar){
-
-if(limpiar == 1){
-char clear[16];
-for (int i=0;i<16;i++) clear[i]=' ';
-
-lcd_gotoxy(1,1);
-lcd_putrs(clear);
-
-lcd_gotoxy(1,2);
-lcd_putrs(clear);
-}
-}
-
 void caratula(char * titulo)
 {
-clear(1);
-
 lcd_comand(0b00001100);
 lcd_gotoxy(1,1);
 lcd_putrs(titulo);
 
-sprintf(buffer2,"%s/%s/%s",day,month,year);
+sprintf(buffer2,"%02u/%02u/%02u",dia,mes,anio);
 lcd_gotoxy(9,1);
 lcd_putrs(buffer2);
 
@@ -10272,7 +10266,7 @@ lcd_gotoxy(1,2);
 lcd_putrs(buffer2);
 }
 
-# 71
+# 55
 void Setup(void)
 {
 OSCTUNEbits.INTSRC=1;
@@ -10338,68 +10332,61 @@ ingresar_comando(char key){
 guardar_comando(key);
 }
 
-cambiar_day(char key){
-cambiar_dia(key);
-imprimir_tecla(key);
+mostrar_actualizacion_dia(){
 
+lcd_gotoxy(1,1);
+lcd_putrs("Inserte dia:     ");
+lcd_gotoxy(1,2);
+lcd_putrs(day);
+lcd_gotoxy(3,2);
+lcd_putrs("         ");
+
+if (tamanio_dia >=3){
+for (int i=0;i<6;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
+restaurar_comando();
+tamanio_dia = 0;
+}
 }
 
-# 147
+# 141
 int main(void)
 {
 Setup();
-inicializar_fecha();
 restaurar_comando();
 
 int ocultar_teclas = 1;
 int validacion;
-int limpiar = 1;
-char * puntero_funcion = ingresar_comando;
+void *puntero_funcion;
 
 while(1)
 {
 Read_RTC();
-
 if (!autorizado){
 leer_teclado(ocultar_teclas,mostrar_guardar_password);
 ingresar_password();
 }else{
+puntero_funcion = ingresar_comando;
 
 validar_comando("xxx",&validacion);
 if(validacion){
-caratula("Welcome ");
+caratula("Welcome");
 }
 
 validar_comando("001",&validacion);
 if(validacion){
 puntero_funcion = cambiar_dia;
-
-clear(limpiar);
-limpiar = 0;
-
-lcd_gotoxy(1,1);
-lcd_putrs("Inserte dia:");
-
-lcd_gotoxy(1,2);
-lcd_putrs(day);
-
-if (tamanio_dia >= 2){
-for (int i=0;i<6;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
-tamanio_dia = 0;
-restaurar_comando();
-}
+mostrar_actualizacion_dia();
 }
 
 validar_comando("002",&validacion);
 if(validacion){
-clear(limpiar);
 lcd_gotoxy(1,2);
 lcd_putrs("cambiar pass");
 for (int i=0;i<10;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
 restaurar_comando();
 }
-
 leer_teclado(!ocultar_teclas,puntero_funcion);
+
 }
 }
 return 0;

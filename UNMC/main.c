@@ -29,31 +29,15 @@
 /// Funcion Caratula
 /// Display presentation day hour
 /// variable lecture diasem, anio, dia, hora, etc
-//[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
-    
-    clear(int limpiar){
-        
-        if(limpiar == 1){
-            char clear[16];
-            for (int i=0;i<16;i++) clear[i]=' ';
-
-            lcd_gotoxy(1,1);
-            lcd_putrs(clear);
-
-            lcd_gotoxy(1,2);
-            lcd_putrs(clear);        
-        }
-    }
+//[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[      
 
     void caratula(char * titulo)
-    {   
-        clear(1);
-        
+    {                
         lcd_comand(0b00001100);             //Enciende display sin cursor y sin blink  
         lcd_gotoxy(1,1);        
         lcd_putrs(titulo);
         
-        sprintf(buffer2,"%s/%s/%s",day,month,year);
+        sprintf(buffer2,"%02u/%02u/%02u",dia,mes,anio);
         lcd_gotoxy(9,1);
         lcd_putrs(buffer2);
         
@@ -133,10 +117,20 @@ ingresar_comando(char key){
     guardar_comando(key);
 }
 
-cambiar_day(char key){
-    cambiar_dia(key);
-    imprimir_tecla(key);
+mostrar_actualizacion_dia(){            
     
+    lcd_gotoxy(1,1);            
+    lcd_putrs("Inserte dia:     ");
+    lcd_gotoxy(1,2); 
+    lcd_putrs(day);
+    lcd_gotoxy(3,2);
+    lcd_putrs("         ");
+            
+    if (tamanio_dia >=3){
+        for (int i=0;i<5;i++)__delay_ms(98);
+        restaurar_comando();
+        tamanio_dia = 0;
+    }     
 }
 /*------------------------------------------------------------------------------
 ********************************************************************************
@@ -146,59 +140,42 @@ Funcion principal del programa
 --------------------------------------------------------------------------------*/
 int main(void)
 {
-Setup();
-inicializar_fecha();
+Setup();  
 restaurar_comando();
 
 int ocultar_teclas = 1;
 int validacion;
-int limpiar = 1;
-char * puntero_funcion = ingresar_comando;
+void *puntero_funcion;
 
 while(1)
-   {
-    Read_RTC();   
-    
-    if (!autorizado){       
+   {       
+    Read_RTC();
+    if (!autorizado){ 
         leer_teclado(ocultar_teclas,mostrar_guardar_password);  
-        ingresar_password();
-    }else{                        
+        ingresar_password();        
+    }else{                                
+        puntero_funcion = ingresar_comando;
         
         validar_comando("xxx",&validacion);            
-        if(validacion){            
-            caratula("Welcome ");
+        if(validacion){     
+            caratula("Welcome");
         }
         
         validar_comando("001",&validacion);            
-        if(validacion){
-            puntero_funcion = cambiar_dia;
-            
-            clear(limpiar);
-            limpiar = 0;            
-            
-            lcd_gotoxy(1,1);            
-            lcd_putrs("Inserte dia:");
-            
-            lcd_gotoxy(1,2);               
-            lcd_putrs(day);
-            
-            if (tamanio_dia >= 2){
-                for (int i=0;i<6;i++)__delay_ms(98);
-                tamanio_dia = 0;                
-                restaurar_comando();
-            }
+        if(validacion){            
+            puntero_funcion = cambiar_dia;           
+            mostrar_actualizacion_dia();                        
         }
         
         validar_comando("002",&validacion);            
-        if(validacion){
-            clear(limpiar);
+        if(validacion){            
             lcd_gotoxy(1,2);            
             lcd_putrs("cambiar pass");
             for (int i=0;i<10;i++)__delay_ms(98);
             restaurar_comando();
         }
-        
         leer_teclado(!ocultar_teclas,puntero_funcion);
+        
     }        
    }
 return 0;
