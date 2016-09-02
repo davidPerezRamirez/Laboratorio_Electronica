@@ -1,5 +1,5 @@
 
-# 1 "main.c"
+# 1 "../../../../../../Program Files/Unimic/unmc_01/sources/unmc_rtcc_02.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -8576,261 +8576,22 @@ extern volatile __bit nWRITE1 @ (((unsigned) &SSP1STAT)*8) + 2;
 
 extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
-# 2008 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\adc.h"
-union ADCResult
-{
-int lr;
-char br[2];
-};
+# 18 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18.h"
+__attribute__((__unsupported__("The flash_write routine is no longer supported. Please use the peripheral library functions: WriteBytesFlash, WriteBlockFlash or WriteWordFlash"))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 
-char BusyADC (void);
 
-void ConvertADC (void);
+# 41
+#pragma intrinsic(__nop)
+extern void __nop(void);
 
-void CloseADC(void);
 
-# 2026
-int ReadADC(void);
-
-# 2059
-void OpenADC ( unsigned char ,
-unsigned char ,
-unsigned int );
-
-# 2084
-void SetChanADC(unsigned char );
-
-# 2100
-void SelChanConvADC( unsigned char );
-
-# 202 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\ancomp.h"
-void Close_ancomp1( void );
-void Open_ancomp1(unsigned char config);
-void Close_ancomp2( void );
-void Open_ancomp2(unsigned char config);
-
-# 236 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\spi.h"
-void OpenSPI1( unsigned char sync_mode,
-unsigned char bus_mode,
-unsigned char smp_phase );
-
-signed char WriteSPI1( unsigned char data_out );
-
-void getsSPI1( unsigned char *rdptr, unsigned char length );
-
-void putsSPI1( unsigned char *wrptr );
-
-unsigned char ReadSPI1( void );
-
-# 441
-void OpenSPI2( unsigned char sync_mode,
-unsigned char bus_mode,
-unsigned char smp_phase );
-
-signed char WriteSPI2( unsigned char data_out );
-
-void getsSPI2( unsigned char *rdptr, unsigned char length );
-
-void putsSPI2( unsigned char *wrptr );
-
-unsigned char ReadSPI2( void );
-
-# 414 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\can2510.h"
-void CAN2510Initialize(  unsigned int configuration,
- unsigned char brp,
- unsigned char interruptFlags,
- unsigned char SPI_syncMode,
- unsigned char SPI_busMode,
- unsigned char SPI_smpPhase );
-
-signed char CAN2510Init(  unsigned long BufferConfig,
- unsigned long BitTimeConfig,
- unsigned char interruptEnables,
- unsigned char SPI_syncMode,
- unsigned char SPI_busMode,
- unsigned char SPI_smpPhase );
-
-void CAN2510Enable( void );
-
-void CAN2510Disable( void );
-
-void CAN2510Reset( void );
-
-void CAN2510SetMode(  unsigned char mode );
-
-unsigned char CAN2510ReadMode( void );
-
-unsigned char CAN2510ReadStatus( void );
-
-unsigned char CAN2510ErrorState( void );
-
-unsigned char CAN2510InterruptStatus( void );
-
-void CAN2510InterruptEnable( unsigned char interruptFlags );
-
-unsigned char CAN2510ByteRead(  unsigned char addr );
-
-void CAN2510ByteWrite(  unsigned char addr,  unsigned char value );
-
-void CAN2510SequentialRead(  unsigned char *DataArray,
- unsigned char CAN2510addr,
- unsigned char numbytes );
-
-void CAN2510SequentialWrite(  unsigned char *DataArray,
- unsigned char CAN2510addr,
- unsigned char numbytes );
-
-void CAN2510BitModify(  unsigned char address,
- unsigned char mask,
- unsigned char data );
-
-void CAN2510SetSingleMaskStd(  unsigned char maskNum,  unsigned int mask );
-
-void CAN2510SetSingleMaskXtd(  unsigned char maskNum,  unsigned long mask );
-
-void CAN2510SetSingleFilterStd(  unsigned char filterNum,  unsigned int filter );
-
-void CAN2510SetSingleFilterXtd(  unsigned char filterNum,  unsigned long filter );
-
-signed char CAN2510SetMsgFilterStd(  unsigned char bufferNum,
- unsigned int mask,
- unsigned int *filters );
-
-signed char CAN2510SetMsgFilterXtd(  unsigned char bufferNum,
- unsigned long mask,
- unsigned long *filters );
-
-signed char CAN2510WriteStd(  unsigned int msgId,
- unsigned char msgPriority,
- unsigned char numBytes,
- unsigned char *data );
-
-signed char CAN2510WriteXtd(  unsigned long msgId,
- unsigned char msgPriority,
- unsigned char numBytes,
- unsigned char *data );
-
-void CAN2510LoadBufferStd(  unsigned char bufferNum,
- unsigned int msgId,
- unsigned char numBytes,
- unsigned char *data );
-
-void CAN2510LoadBufferXtd(  unsigned char bufferNum,
- unsigned long msgId,
- unsigned char numBytes,
- unsigned char *data );
-
-void CAN2510LoadRTRStd(  unsigned char bufferNum,
- unsigned int msgId,
- unsigned char numBytes );
-
-void CAN2510LoadRTRXtd(  unsigned char bufferNum,
- unsigned long msgId,
- unsigned char numBytes );
-
-void CAN2510SetBufferPriority(  unsigned char bufferNum,
- unsigned char bufferPriority );
-
-void CAN2510SendBuffer(  unsigned char bufferNumber );
-
-signed char CAN2510WriteBuffer(  unsigned char bufferNum );
-
-unsigned char CAN2510DataReady(  unsigned char bufferNum );
-
-unsigned char CAN2510DataRead(  unsigned char bufferNum,
- unsigned long *msgId,
- unsigned char *numBytes,
- unsigned char *data );
-
-# 64 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\capture.h"
-union capstatus
-{
-
-# 73
-struct
-{
-
-# 77
-unsigned Cap1OVF:1;
-
-# 82
-unsigned Cap2OVF:1;
-
-# 115
-};
-
-unsigned :8;
-
-};
-
-extern union capstatus CapStatus;
-
-union CapResult
-{
-unsigned int lc;
-char bc[2];
-};
-
-# 474
-void OpenCapture1 ( unsigned char config);
-unsigned int ReadCapture1 (void);
-void CloseCapture1 (void);
-
-# 484
-void OpenCapture2 ( unsigned char config);
-unsigned int ReadCapture2 (void);
-void CloseCapture2 (void);
-
-# 385 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\compare.h"
-void OpenCompare1(unsigned char config,unsigned int period);
-void CloseCompare1(void);
-
-# 392
-void OpenCompare2(unsigned char config, unsigned int period);
-void CloseCompare2(void);
-
-# 374 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\ctmu.h"
-void OpenCTMU(unsigned char config1,unsigned char config2,unsigned char config3);
-
-# 379
-void CurrentControlCTMU(unsigned char config);
-void CloseCTMU(void);
-
-# 49 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\dpslp.h"
-typedef union
-{
-struct
-{
-unsigned char DS_POR:1;
-unsigned char DS_MCLR:1;
-unsigned char DS_RTC:1;
-unsigned char DS_WDT:1;
-unsigned char DS_FLT:1;
-unsigned char DS_INT0:1;
-unsigned char DS_BOR:1;
-unsigned char DS_ULP:1;
-}WK_SRC;
-
-unsigned char WKSRC;
-
-}SRC;
-
-
-typedef struct
-{
-unsigned char Reg0;
-unsigned char Reg1;
-}CONTEXT;
-
-# 164
-extern void DeepSleepWakeUpSource(SRC* ptr);
-extern void GotoDeepSleep( unsigned int config);
-extern signed char IsResetFromDeepSleep( void );
-extern void ReadDSGPR( CONTEXT* ptr );
-
-
-
-extern void ULPWakeUpEnable( void );
+# 160
+#pragma intrinsic(_delay)
+extern __nonreentrant void _delay(unsigned long);
+#pragma intrinsic(_delaywdt)
+extern __nonreentrant void _delaywdt(unsigned long);
+#pragma intrinsic(_delay3)
+extern __nonreentrant void _delay3(unsigned char);
 
 # 2 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stddef.h"
 typedef int ptrdiff_t;
@@ -9275,130 +9036,7 @@ struct
 } bits;
 } QWORD_VAL;
 
-# 113 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\flash.h"
-extern void ReadFlash(unsigned long startaddr, unsigned int num_bytes, unsigned char *flash_array);
-
-# 120
-extern void EraseFlash(unsigned long startaddr, unsigned long endaddr);
-
-extern void WriteBlockFlash(unsigned long startaddr, unsigned char num_blocks, unsigned char *flash_array);
-
-extern void WriteBytesFlash(unsigned long startaddr, unsigned int num_bytes, unsigned char *flash_array);
-
-
-extern void WriteWordFlash(unsigned long startaddr, unsigned int data);
-
-# 244 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\i2c.h"
-void OpenI2C1( unsigned char sync_mode, unsigned char slew );
-
-# 264
-unsigned char ReadI2C1( void );
-
-# 279
-signed char WriteI2C1( unsigned char data_out );
-
-# 294
-signed char getsI2C1( unsigned char *rdptr, unsigned char length );
-
-
-signed char putsI2C1( unsigned char *wrptr );
-
-# 305
-signed char EEAckPolling1( unsigned char control );
-
-
-signed char EEByteWrite1( unsigned char control,
-unsigned char address,
-unsigned char data );
-
-
-signed int EECurrentAddRead1( unsigned char control );
-
-
-signed char EEPageWrite1( unsigned char control,
-unsigned char address,
-unsigned char *wrptr );
-
-
-signed int EERandomRead1( unsigned char control, unsigned char address );
-
-
-signed char EESequentialRead1( unsigned char control,
-unsigned char address,
-unsigned char *rdptr,
-unsigned char length );
-
-# 200 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\mwire.h"
-void OpenMwire1( unsigned char sync_mode );
-
-
-unsigned char ReadMwire1( unsigned char high_byte,
-unsigned char low_byte );
-
-# 219
-signed char WriteMwire1( unsigned char data_out );
-
-# 234
-void getsMwire1( unsigned char *rdptr, unsigned char length );
-
-# 126 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\portb.h"
-void OpenPORTB( unsigned char config);
-
-# 176
-void OpenRB0INT( unsigned char config);
-
-# 194
-void OpenRB1INT( unsigned char config);
-
-# 211
-void OpenRB2INT( unsigned char config);
-
-# 230
-void OpenRB3INT( unsigned char config);
-
-# 85 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\pwm.h"
-union PWMDC
-{
-unsigned int lpwm;
-char bpwm[2];
-};
-
-# 467
-void OpenPWM1 ( char period);
-void SetDCPWM1 ( unsigned int duty_cycle);
-
-# 474
-void SetOutputPWM1 ( unsigned char output_config,
-unsigned char pwm_mode);
-
-void ClosePWM1 (void);
-
-# 485
-void OpenPWM2 ( char period);
-void SetDCPWM2( unsigned int duty_cycle);
-
-# 492
-void ClosePWM2 (void);
-
-# 16 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\reset.h"
-char isMCLR(void);
-void StatusReset(void);
-char isPOR(void);
-char isWU(void);
-
-
-char isBOR(void);
-
-
-
-char isWDTTO(void);
-char isWDTWU(void);
-
-
-
-char isLVD(void);
-
-# 43 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\rtcc.h"
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib/rtcc.h"
 typedef union _WORD_VAL
 {
 unsigned int Val;
@@ -9574,401 +9212,6 @@ void Open_RTCC(void);
 void Close_RTCC(void);
 unsigned char update_RTCC(void);
 
-# 97 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\sw_i2c.h"
-void SWStopI2C ( void );
-void SWStartI2C ( void );
-void SWRestartI2C ( void );
-void SWStopI2C ( void );
-
-signed char SWAckI2C( void );
-signed char Clock_test( void );
-signed int SWReadI2C( void );
-signed char SWWriteI2C(  unsigned char data_out );
-signed char SWGetsI2C(  unsigned char *rdptr,  unsigned char length );
-signed char SWPutsI2C(  unsigned char *wrptr );
-
-# 84 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\sw_spi.h"
-void OpenSWSPI(void);
-
-
-char WriteSWSPI( char output);
-
-
-void SetCSSWSPI(void);
-
-
-void ClearCSSWSPI(void);
-
-# 47 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\sw_uart.h"
-void OpenUART(void);
-
-unsigned char ReadUART(void);
-
-void WriteUART( unsigned char);
-
-void getsUART( char *, unsigned char);
-
-void putsUART( char *);
-
-# 79
-extern void DelayRXBitUART (void);
-extern void DelayRXHalfBitUART(void);
-extern void DelayTXBitUART (void);
-
-# 36 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\timers.h"
-union Timers
-{
-unsigned int lt;
-char bt[2];
-};
-
-# 118
-void OpenTimer0 ( unsigned char config);
-void CloseTimer0 (void);
-unsigned int ReadTimer0 (void);
-void WriteTimer0 ( unsigned int timer0);
-
-# 185
-void OpenTimer1 ( unsigned char config, unsigned char config1);
-void CloseTimer1 (void);
-unsigned int ReadTimer1 (void);
-void WriteTimer1 ( unsigned int timer1);
-
-# 325
-void OpenTimer2 ( unsigned char config);
-void CloseTimer2 (void);
-
-# 452
-void OpenTimer3 ( unsigned char config, unsigned char config1);
-void CloseTimer3 (void);
-unsigned int ReadTimer3 (void);
-void WriteTimer3 ( unsigned int timer3);
-
-# 541
-void OpenTimer4 ( unsigned char config);
-void CloseTimer4 (void);
-
-# 1179
-void SetTmrCCPSrc( unsigned char );
-
-# 200 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\usart.h"
-union USART1
-{
-unsigned char val;
-struct
-{
-unsigned RX_NINE:1;
-unsigned TX_NINE:1;
-unsigned FRAME_ERROR:1;
-unsigned OVERRUN_ERROR:1;
-unsigned fill:4;
-};
-};
-extern union USART1 USART1_Status;
-
-void Open1USART ( unsigned char config, unsigned int spbrg);
-
-# 244
-char Read1USART (void);
-void Write1USART ( char data);
-void gets1USART ( char *buffer, unsigned char len);
-void puts1USART ( char *data);
-void putrs1USART ( const  char *data);
-
-# 305
-union USART2
-{
-unsigned char val;
-struct
-{
-unsigned RX_NINE:1;
-unsigned TX_NINE:1;
-unsigned FRAME_ERROR:1;
-unsigned OVERRUN_ERROR:1;
-unsigned fill:4;
-};
-};
-extern union USART2 USART2_Status;
-void Open2USART ( unsigned char config, unsigned int spbrg);
-
-# 333
-char Read2USART (void);
-void Write2USART ( char data);
-void gets2USART ( char *buffer, unsigned char len);
-void puts2USART ( char *data);
-void putrs2USART ( const  char *data);
-
-# 660
-void baud1USART ( unsigned char baudconfig);
-
-# 665
-void baud2USART ( unsigned char baudconfig);
-
-# 87 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\xlcd.h"
-void OpenXLCD( unsigned char);
-
-# 92
-void SetCGRamAddr( unsigned char);
-
-# 97
-void SetDDRamAddr( unsigned char);
-
-# 102
-unsigned char BusyXLCD(void);
-
-# 107
-unsigned char ReadAddrXLCD(void);
-
-# 112
-char ReadDataXLCD(void);
-
-# 117
-void WriteCmdXLCD( unsigned char);
-
-# 122
-void WriteDataXLCD( char);
-
-# 132
-void putsXLCD( char *);
-
-# 137
-void putrsXLCD(const char *);
-
-
-extern void DelayFor18TCY(void);
-extern void DelayPORXLCD(void);
-extern void DelayXLCD(void);
-
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\delays.h"
-void Delay1TCYx(unsigned char);
-
-# 19
-void Delay10TCYx(unsigned char);
-
-# 25
-void Delay100TCYx(unsigned char);
-
-# 31
-void Delay1KTCYx(unsigned char);
-
-# 37
-void Delay10KTCYx(unsigned char);
-
-# 18 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18.h"
-__attribute__((__unsupported__("The flash_write routine is no longer supported. Please use the peripheral library functions: WriteBytesFlash, WriteBlockFlash or WriteWordFlash"))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
-
-
-# 41
-#pragma intrinsic(__nop)
-extern void __nop(void);
-
-
-# 160
-#pragma intrinsic(_delay)
-extern __nonreentrant void _delay(unsigned long);
-#pragma intrinsic(_delaywdt)
-extern __nonreentrant void _delaywdt(unsigned long);
-#pragma intrinsic(_delay3)
-extern __nonreentrant void _delay3(unsigned char);
-
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdarg.h"
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 24 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h"
-extern int errno;
-
-# 55
-struct __prbuf
-{
-char * ptr;
-void (* func)(char);
-};
-
-# 17 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\conio.h"
-extern int errno;
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 31
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 100 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-
-# 192
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
-# 33 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h"
-typedef unsigned char int8;
-typedef unsigned int int16;
-typedef unsigned long int32;
-
-# 98
-void lcd_send_nibble(int8 nibble);
-int8 lcd_read_nibble(void);
-int8 lcd_read_byte(void);
-void lcd_send_byte(int8 address, int8 n);
-
-void lcd_init(void);
-void lcd_gotoxy(int8 x, int8 y);
-void lcd_putc(int8 c);
-void lcd_comand(int8 d);
-void lcd_setcursor_vb(int8 visible, int8 blink);
-void lcd_puts(char *ptr);
-void lcd_putrs(const char *ptr);
-
-# 14 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
-char key;
-
-
-# 15 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_config_01.h"
-#pragma config CPUDIV=OSC1
-#pragma config CP0=OFF
-#pragma config WDTEN=OFF
-#pragma config PLLDIV=1
-#pragma config STVREN=ON
-#pragma config XINST=OFF
-#pragma config XINST=OFF
-#pragma config OSC=INTOSC
-#pragma config T1DIG=ON
-#pragma config LPT1OSC=OFF
-#pragma config FCMEN=OFF
-#pragma config IESO=OFF
-#pragma config WDTPS=32768
-#pragma config DSWDTOSC=INTOSCREF
-#pragma config RTCOSC=T1OSCREF
-#pragma config DSBOREN=OFF
-#pragma config DSWDTEN=OFF
-#pragma config DSWDTPS=G2
-#pragma config IOL1WAY=OFF
-#pragma config MSSP7B_EN=MSK7
-#pragma config WPCFG=OFF
-#pragma config WPDIS=OFF
-
-# 12 "C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h"
-int ocultar_teclas;
-char comando[4]="xxx";
-int tamanio_comando = 0;
-
-void guardar_comando(char);
-void validar_comando(char *, int *);
-void imprimir_tecla(char);
-void restaurar_comando();
-void guardar_tecla_presionada(char *, int,char* (*doit)(char *));
-void leer_teclado(int ocultar,char* (*doit)());
-
-# 7 "C:/Archivos de programa/Unimic/unmc_01/headers\password.h"
-char password[6]="123456";
-char current_password[6]="";
-int tamanio_password=0;
-int autorizado=0;
-
-void guardar_current_password(char);
-void validar_password();
-
-# 27 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdlib.h"
-typedef struct {
-int rem;
-int quot;
-} div_t;
-typedef struct {
-unsigned rem;
-unsigned quot;
-} udiv_t;
-typedef struct {
-long quot;
-long rem;
-} ldiv_t;
-typedef struct {
-unsigned long quot;
-unsigned long rem;
-} uldiv_t;
-
-# 65
-extern double atof(const char *);
-extern double strtod(const char *, const char **);
-extern int atoi(const char *);
-extern unsigned xtoi(const char *);
-extern long atol(const char *);
-extern long strtol(const char *, char **, int);
-
-extern int rand(void);
-extern void srand(unsigned int);
-extern void * calloc(size_t, size_t);
-extern div_t div(int numer, int denom);
-extern udiv_t udiv(unsigned numer, unsigned denom);
-extern ldiv_t ldiv(long numer, long denom);
-extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-extern unsigned int _rotl(unsigned int value, unsigned int shift);
-extern unsigned int _rotr(unsigned int value, unsigned int shift);
-
-
-
-
-extern void * malloc(size_t);
-extern void free(void *);
-extern void * realloc(void *, size_t);
-
-# 98
-extern int atexit(void (*)(void));
-extern char * getenv(const char *);
-extern char ** environ;
-extern int system(char *);
-extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-extern int abs(int);
-extern long labs(long);
-
-
-extern char * itoa(char * buf, int val, int base);
-extern char * utoa(char * buf, unsigned val, int base);
-
-
-
-
-extern char * ltoa(char * buf, long val, int base);
-extern char * ultoa(char * buf, unsigned long val, int base);
-
-extern char * ftoa(float f, int * status);
-
 # 16 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_02.h"
 rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
 
@@ -10014,167 +9257,91 @@ void DelayPORXLCD(void);
 void Write_RTC(void);
 void Read_RTC(void);
 
-# 6 "C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h"
-char day[3] = "";
-char month[3] = "";
-char year[3] = "";
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\delays.h"
+void Delay1TCYx(unsigned char);
 
-int tamanio_dia = 0;
-int tamanio_mes = 0;
-int tamanio_anio = 0;
+# 19
+void Delay10TCYx(unsigned char);
 
-void inicializar();
-void guardar_elemento(char, char *, int *);
-void convertir_a_int(char *, int *);
-void cambiar_dia(char);
-void cambiar_mes(char);
-void cambiar_anio(char);
-void cambiar_fecha(char);
+# 25
+void Delay100TCYx(unsigned char);
 
-# 34 "main.c"
-void caratula(char * titulo)
+# 31
+void Delay1KTCYx(unsigned char);
+
+# 37
+void Delay10KTCYx(unsigned char);
+
+# 17 "../../../../../../Program Files/Unimic/unmc_01/sources/unmc_rtcc_02.c"
+void DelayFor18TCY(void)
 {
-lcd_comand(0b00001100);
-lcd_gotoxy(1,1);
-lcd_putrs(titulo);
+Delay10TCYx(10);
 
-sprintf(buffer2,"%02u/%02u/%02u",dia,mes,anio);
-lcd_gotoxy(9,1);
-lcd_putrs(buffer2);
-
-sprintf(buffer2,"%02u:%02u:%02u",hora,minuto,segundo);
-lcd_gotoxy(1,2);
-lcd_putrs(buffer2);
 }
 
-# 55
-void Setup(void)
+void DelayPORXLCD(void)
 {
-OSCTUNEbits.INTSRC=1;
-OSCTUNEbits.PLLEN=0;
-OSCCONbits.IRCF0=1;
-OSCCONbits.IRCF1=1;
-OSCCONbits.IRCF2=1;
-OSCCONbits.SCS0=0;
-OSCCONbits.SCS1=0;
-TRISA = 0b11110000;
-TRISB = 0;
-TRISC = 0b00000111;
-
-
-
-ANCON0=0b11111111;
-
-ANCON1=0b11111111;
-ADCON0=0b00101101;
-ADCON1=0b00010000;
-RTCCFGbits.RTCEN=1;
-RTCCFGbits.RTCWREN=1;
-T1CONbits.T1OSCEN=1;
-Write_RTC();
-lcd_init();
-lcd_comand(0b00001100);
-LATBbits.LATB1 = 1;;
-LATBbits.LATB0 = 1;;
-}
-
-ingresar_password(){
-char clear[16];
-for (int i=0;i<16;i++) clear[i]=' ';
-
-if(tamanio_password < 6){
-
-lcd_comand(0b00001100);
-lcd_gotoxy(1,1);
-lcd_putrs("Inserte password");
-lcd_gotoxy(tamanio_password+1,2);
-}
-
-validar_password();
-if (tamanio_password >= 6 && !autorizado){
-tamanio_password = 0;
-lcd_gotoxy(1,2);
-lcd_putrs("ERROR pass");
-for (int i=0;i<4;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
-lcd_gotoxy(1,2);
-lcd_putrs(clear);
-}
-}
-
-mostrar_guardar_password(char tecla){
-
-imprimir_tecla(tecla);
-sprintf(buffer2,"%01u",tecla);
-guardar_current_password(*buffer2);
+Delay1KTCYx(20);
 
 }
 
-ingresar_comando(char key){
-guardar_comando(key);
-}
-
-# 125
-int main(void)
+# 35
+void Write_RTC(void)
 {
-Setup();
-restaurar_comando();
+RtccWrOn();
 
-int ocultar_teclas = 1;
-int validacion;
-void *puntero_funcion;
+PIE3bits.RTCCIE=1;
+segundo_d=segundo/10;
+segundo_u=segundo-segundo_d*10;
+RtccTime.f.sec =segundo_d*16+segundo_u;
+minuto_d=minuto/10;
+minuto_u=minuto-minuto_d*10;
+RtccTime.f.min =minuto_d*16+minuto_u;
+hora_d=hora/10;
+hora_u=hora-hora_d*10;
+RtccTime.f.hour=hora_d*16+hora_u;
+anio_d=anio/10;
+anio_u=anio-anio_d*10;
+RtccDate.f.year=anio_d*16+anio_u;
+mes_d=mes/10;
+mes_u=mes-mes_d*10;
+RtccDate.f.mon=mes_d*16+mes_u;
+fecha_d=dia/10;
+fecha_u=dia-fecha_d*10;
+RtccDate.f.mday=fecha_d*16+fecha_u;
+dia_semana=diasem;
+RtccDate.f.wday =diasem;
+RtccWriteTime(&RtccTime,1);
+RtccWriteDate(&RtccDate,1);
+(RTCCFGbits.RTCEN=1);
+}
 
-while(1)
+# 72
+void Read_RTC(void)
+
 {
-Read_RTC();
+RtccReadTime(&RtccTime);
+segundo_u=(RtccTime.f.sec & 0x0F);
+segundo_d=((RtccTime.f.sec & 0xF0)>>4);
+minuto_u=(RtccTime.f.min & 0x0F);
+minuto_d=((RtccTime.f.min & 0xF0)>>4);
+hora_u=(RtccTime.f.hour & 0x0F);
+hora_d=((RtccTime.f.hour & 0xF0)>>4);
+RtccReadDate(&RtccDate);
+fecha_u=(RtccDate.f.mday & 0x0F);
+fecha_d=((RtccDate.f.mday & 0xF0)>>4);
+mes_u=(RtccDate.f.mon & 0x0F);
+mes_d=((RtccDate.f.mon & 0xF0)>>4);
+dia_semana=RtccDate.f.wday;
+anio_u=(RtccDate.f.year & 0x0F);
+anio_d=((RtccDate.f.year & 0xF0)>>4);
 
-if (!autorizado){
-leer_teclado(ocultar_teclas,mostrar_guardar_password);
-ingresar_password();
-}else{
-puntero_funcion = ingresar_comando;
-
-validar_comando("xxx",&validacion);
-if(validacion){
-caratula("Welcome");
+segundo=segundo_d*10+segundo_u;
+minuto=minuto_d*10+minuto_u;
+hora=hora_d*10+hora_u;
+dia=fecha_d*10+fecha_u;
+diasem=dia_semana;
+mes=mes_d*10+mes_u;
+anio=anio_d*10+anio_u;
 }
 
-validar_comando("001",&validacion);
-if(validacion){
-if (tamanio_dia != 2){
-lcd_gotoxy(1,1);
-lcd_putrs("Inserte dia:     ");
-lcd_gotoxy(1,2);
-lcd_putrs("            ");
-
-puntero_funcion = cambiar_dia;
-}else if (tamanio_mes != 2){
-
-lcd_gotoxy(1,1);
-lcd_putrs("Inserte mes:     ");
-lcd_gotoxy(1,2);
-lcd_putrs("  ");
-
-puntero_funcion = cambiar_mes;
-}else if (tamanio_anio != 2){
-
-lcd_gotoxy(1,1);
-lcd_putrs("Inserte anio:     ");
-lcd_gotoxy(1,2);
-lcd_putrs("  ");
-
-puntero_funcion = cambiar_anio;
-}
-}
-
-validar_comando("002",&validacion);
-if(validacion){
-lcd_gotoxy(1,2);
-lcd_putrs("cambiar pass");
-for (int i=0;i<10;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
-restaurar_comando();
-}
-leer_teclado(!ocultar_teclas,puntero_funcion);
-}
-}
-return 0;
-}

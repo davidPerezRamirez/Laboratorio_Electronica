@@ -41,9 +41,9 @@
         lcd_gotoxy(9,1);
         lcd_putrs(buffer2);
         
-        sprintf(buffer2,"  %02u:%02u:%02u",hora,minuto,segundo);
+        sprintf(buffer2,"%02u:%02u:%02u",hora,minuto,segundo);
         lcd_gotoxy(1,2);
-        lcd_putrs(buffer2);     
+        lcd_putrs(buffer2);
     }
     
 //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
@@ -99,7 +99,7 @@ ingresar_password(){
         tamanio_password = 0;        
         lcd_gotoxy(1,2);
         lcd_putrs("ERROR pass");
-        for (int i=0;i<6;i++)__delay_ms(98);      
+        for (int i=0;i<4;i++)__delay_ms(98);      
         lcd_gotoxy(1,2);
         lcd_putrs(clear);
     }
@@ -115,22 +115,6 @@ mostrar_guardar_password(char tecla){
 
 ingresar_comando(char key){
     guardar_comando(key);
-}
-
-mostrar_actualizacion_dia(){            
-    
-    lcd_gotoxy(1,1);            
-    lcd_putrs("Inserte dia:     ");
-    lcd_gotoxy(1,2); 
-    lcd_putrs(day);
-    lcd_gotoxy(3,2);
-    lcd_putrs("         ");
-            
-    if (tamanio_dia >=3){
-        for (int i=0;i<5;i++)__delay_ms(98);
-        restaurar_comando();
-        tamanio_dia = 0;
-    }     
 }
 /*------------------------------------------------------------------------------
 ********************************************************************************
@@ -149,12 +133,13 @@ void *puntero_funcion;
 
 while(1)
    {       
-    Read_RTC();
+    Read_RTC();    
+    
     if (!autorizado){ 
         leer_teclado(ocultar_teclas,mostrar_guardar_password);  
         ingresar_password();        
-    }else{                                
-        puntero_funcion = ingresar_comando;
+    }else{
+        puntero_funcion = ingresar_comando;       
         
         validar_comando("xxx",&validacion);            
         if(validacion){     
@@ -162,9 +147,31 @@ while(1)
         }
         
         validar_comando("001",&validacion);            
-        if(validacion){            
-            puntero_funcion = cambiar_dia;           
-            mostrar_actualizacion_dia();                        
+        if(validacion){
+            if (tamanio_dia != 2){
+                lcd_gotoxy(1,1);            
+                lcd_putrs("Inserte dia:     ");
+                lcd_gotoxy(1,2);
+                lcd_putrs("            ");
+                
+                puntero_funcion = cambiar_dia;                
+            }else if (tamanio_mes != 2){                            
+
+                lcd_gotoxy(1,1);            
+                lcd_putrs("Inserte mes:     ");
+                lcd_gotoxy(1,2);
+                lcd_putrs("  ");
+
+                puntero_funcion = cambiar_mes;
+            }else if (tamanio_anio != 2){
+                
+                lcd_gotoxy(1,1);            
+                lcd_putrs("Inserte anio:     ");
+                lcd_gotoxy(1,2);
+                lcd_putrs("  ");
+
+                puntero_funcion = cambiar_anio;
+            }
         }
         
         validar_comando("002",&validacion);            
@@ -173,9 +180,8 @@ while(1)
             lcd_putrs("cambiar pass");
             for (int i=0;i<10;i++)__delay_ms(98);
             restaurar_comando();
-        }
-        leer_teclado(!ocultar_teclas,puntero_funcion);
-        
+        }        
+         leer_teclado(!ocultar_teclas,puntero_funcion);
     }        
    }
 return 0;

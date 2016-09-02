@@ -1,160 +1,93 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"144 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\rtcc.h
-[s S1028 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S1028 . year rsvd mday mon hour wday sec min ]
+"144 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib/rtcc.h
+[s S1024 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1024 . year rsvd mday mon hour wday sec min ]
 "142
-[u S1027 `S1028 1 `uc -> 8 `i `ui -> 4 `i `ul -> 2 `i ]
-[n S1027 . f b w l ]
-"113
-[s S1024 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S1024 . rsvd sec min hour ]
-"111
-[u S1023 `S1024 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
+[u S1023 `S1024 1 `uc -> 8 `i `ui -> 4 `i `ul -> 2 `i ]
 [n S1023 . f b w l ]
+"113
+[s S1020 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1020 . rsvd sec min hour ]
+"111
+[u S1019 `S1020 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
+[n S1019 . f b w l ]
 "128
-[s S1026 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S1026 . wday mday mon year ]
+[s S1022 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1022 . wday mday mon year ]
 "126
-[u S1025 `S1026 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
-[n S1025 . f b w l ]
-"106 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
-[v _lcd_comand `(v ~T0 @X0 0 ef1`uc ]
-"104
+[u S1021 `S1022 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
+[n S1021 . f b w l ]
+"206 C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"67 C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdlib.h
+[v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
+"104 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
 [v _lcd_gotoxy `(v ~T0 @X0 0 ef2`uc`uc ]
 "109
 [v _lcd_putrs `(v ~T0 @X0 0 ef1`*Cuc ]
-"206 C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"7249 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
-[s S503 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S503 . TUN PLLEN INTSRC ]
-"7254
-[s S504 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S504 . TUN0 TUN1 TUN2 TUN3 TUN4 TUN5 ]
-"7248
-[u S502 `S503 1 `S504 1 ]
-[n S502 . . . ]
-"7263
-[v _OSCTUNEbits `VS502 ~T0 @X0 0 e@3995 ]
-"14040
-[s S897 :2 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S897 . SCS . OSTS IRCF IDLEN ]
-"14047
-[s S898 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S898 . SCS0 SCS1 . IRCF0 IRCF1 IRCF2 ]
-"14039
-[u S896 `S897 1 `S898 1 ]
-[n S896 . . . ]
-"14056
-[v _OSCCONbits `VS896 ~T0 @X0 0 e@4051 ]
-"6794
-[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
-"6850
-[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
-"6911
-[v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
-"2534
-[v _ANCON0 `Vuc ~T0 @X0 0 e@3912 ]
-"2577
-[v _ANCON1 `Vuc ~T0 @X0 0 e@3913 ]
-"10784
-[v _ADCON0 `Vuc ~T0 @X0 0 e@4034 ]
-"10682
-[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
-"2409
-[s S175 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S175 . RTCPTR0 RTCPTR1 RTCOE HALFSEC RTCSYNC RTCWREN . RTCEN ]
-"2408
-[u S174 `S175 1 ]
-[n S174 . . ]
-"2420
-[v _RTCCFGbits `VS174 ~T0 @X0 0 e@3903 ]
-"13132
-[s S844 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :2 `uc 1 ]
-[n S844 . TMR1ON RD16 T1SYNC T1OSCEN T1CKPS TMR1CS ]
-"13140
-[s S845 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S845 . . T1CKPS0 T1CKPS1 TMR1CS0 TMR1CS1 ]
-"13147
-[s S846 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S846 . . RD161 T1SYNC1 T1OSCEN1 T1CKPS01 T1CKPS11 TMR1CS01 TMR1CS11 ]
-"13157
-[s S847 :3 `uc 1 :1 `uc 1 ]
-[n S847 . . SOSCEN ]
-"13161
-[s S848 :7 `uc 1 :1 `uc 1 ]
-[n S848 . . T1RD16 ]
-"13131
-[u S843 `S844 1 `S845 1 `S846 1 `S847 1 `S848 1 ]
-[n S843 . . . . . . ]
-"13166
-[v _T1CONbits `VS843 ~T0 @X0 0 e@4045 ]
 "57 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_02.h
 [v _Write_RTC `(v ~T0 @X0 0 ef ]
-"103 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
-[v _lcd_init `(v ~T0 @X0 0 ef ]
-"6359 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
-[s S446 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S446 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
-"6369
-[s S447 :1 `uc 1 ]
-[n S447 . LB0 ]
-"6372
-[s S448 :1 `uc 1 :1 `uc 1 ]
-[n S448 . . LB1 ]
-"6376
-[s S449 :2 `uc 1 :1 `uc 1 ]
-[n S449 . . LB2 ]
-"6380
-[s S450 :3 `uc 1 :1 `uc 1 ]
-[n S450 . . LB3 ]
-"6384
-[s S451 :4 `uc 1 :1 `uc 1 ]
-[n S451 . . LB4 ]
-"6388
-[s S452 :5 `uc 1 :1 `uc 1 ]
-[n S452 . . LB5 ]
-"6392
-[s S453 :6 `uc 1 :1 `uc 1 ]
-[n S453 . . LB6 ]
-"6396
-[s S454 :7 `uc 1 :1 `uc 1 ]
-[n S454 . . LB7 ]
-"6358
-[u S445 `S446 1 `S447 1 `S448 1 `S449 1 `S450 1 `S451 1 `S452 1 `S453 1 `S454 1 ]
-[n S445 . . . . . . . . . . ]
-"6401
-[v _LATBbits `VS445 ~T0 @X0 0 e@3978 ]
-"13 C:/Archivos de programa/Unimic/unmc_01/headers\password.h
-[v _validar_password `(v ~T0 @X0 0 ef ]
-[v F8145 `(v ~T0 @X0 1 tf1`ul ]
+[v F7232 `(v ~T0 @X0 1 tf1`ul ]
 "161 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18.h
-[v __delay `JF8145 ~T0 @X0 0 e ]
+[v __delay `JF7232 ~T0 @X0 0 e ]
 [p i __delay ]
-"18 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
-[v _imprimir_tecla `(v ~T0 @X0 0 ef1`uc ]
-"12 C:/Archivos de programa/Unimic/unmc_01/headers\password.h
-[v _guardar_current_password `(v ~T0 @X0 0 ef1`uc ]
-"16 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
-[v _guardar_comando `(v ~T0 @X0 0 ef1`uc ]
-[p mainexit ]
-"19
+"19 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
 [v _restaurar_comando `(v ~T0 @X0 0 ef ]
-"58 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_02.h
-[v _Read_RTC `(v ~T0 @X0 0 ef ]
-[v F8261 `(*uc ~T0 @X0 0 tf ]
-"21 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
-[v _leer_teclado `(v ~T0 @X0 0 ef2`i`*F8261 ]
-"17
-[v _validar_comando `(v ~T0 @X0 0 ef2`*uc`*i ]
-"17 C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h
-[v _cambiar_dia `(v ~T0 @X0 0 ef1`uc ]
-"18
-[v _cambiar_mes `(v ~T0 @X0 0 ef1`uc ]
-"19
-[v _cambiar_anio `(v ~T0 @X0 0 ef1`uc ]
-[; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
+[; ;stdlib.h: 4: typedef int ptrdiff_t;
+[; ;stdlib.h: 5: typedef unsigned size_t;
+[; ;stdlib.h: 6: typedef unsigned short wchar_t;
+[; ;stdlib.h: 16: extern int errno;
+[; ;stdlib.h: 27: typedef struct {
+[; ;stdlib.h: 28: int rem;
+[; ;stdlib.h: 29: int quot;
+[; ;stdlib.h: 30: } div_t;
+[; ;stdlib.h: 31: typedef struct {
+[; ;stdlib.h: 32: unsigned rem;
+[; ;stdlib.h: 33: unsigned quot;
+[; ;stdlib.h: 34: } udiv_t;
+[; ;stdlib.h: 35: typedef struct {
+[; ;stdlib.h: 36: long quot;
+[; ;stdlib.h: 37: long rem;
+[; ;stdlib.h: 38: } ldiv_t;
+[; ;stdlib.h: 39: typedef struct {
+[; ;stdlib.h: 40: unsigned long quot;
+[; ;stdlib.h: 41: unsigned long rem;
+[; ;stdlib.h: 42: } uldiv_t;
+[; ;stdlib.h: 65: extern double atof(const char *);
+[; ;stdlib.h: 66: extern double strtod(const char *, const char **);
+[; ;stdlib.h: 67: extern int atoi(const char *);
+[; ;stdlib.h: 68: extern unsigned xtoi(const char *);
+[; ;stdlib.h: 69: extern long atol(const char *);
+[; ;stdlib.h: 70: extern long strtol(const char *, char **, int);
+[; ;stdlib.h: 72: extern int rand(void);
+[; ;stdlib.h: 73: extern void srand(unsigned int);
+[; ;stdlib.h: 74: extern void * calloc(size_t, size_t);
+[; ;stdlib.h: 75: extern div_t div(int numer, int denom);
+[; ;stdlib.h: 76: extern udiv_t udiv(unsigned numer, unsigned denom);
+[; ;stdlib.h: 77: extern ldiv_t ldiv(long numer, long denom);
+[; ;stdlib.h: 78: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+[; ;stdlib.h: 79: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 80: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 81: extern unsigned int _rotl(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 82: extern unsigned int _rotr(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 87: extern void * malloc(size_t);
+[; ;stdlib.h: 88: extern void free(void *);
+[; ;stdlib.h: 89: extern void * realloc(void *, size_t);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
+[; ;stdlib.h: 98: extern int atexit(void (*)(void));
+[; ;stdlib.h: 99: extern char * getenv(const char *);
+[; ;stdlib.h: 100: extern char ** environ;
+[; ;stdlib.h: 101: extern int system(char *);
+[; ;stdlib.h: 102: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+[; ;stdlib.h: 103: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+[; ;stdlib.h: 104: extern int abs(int);
+[; ;stdlib.h: 105: extern long labs(long);
+[; ;stdlib.h: 108: extern char * itoa(char * buf, int val, int base);
+[; ;stdlib.h: 109: extern char * utoa(char * buf, unsigned val, int base);
+[; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
+[; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
+[; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
+[; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;pic18f26j50.h: 49: extern volatile unsigned char RPOR0 @ 0xEC6;
 "51 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
 [; ;pic18f26j50.h: 51: asm("RPOR0 equ 0EC6h");
@@ -6834,167 +6767,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18f26j50.h: 17686: extern volatile __bit nWRITE @ (((unsigned) &SSP1STAT)*8) + 2;
 [; ;pic18f26j50.h: 17688: extern volatile __bit nWRITE1 @ (((unsigned) &SSP1STAT)*8) + 2;
 [; ;pic18f26j50.h: 17690: extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
-[; ;adc.h: 2008: union ADCResult
-[; ;adc.h: 2009: {
-[; ;adc.h: 2010: int lr;
-[; ;adc.h: 2011: char br[2];
-[; ;adc.h: 2012: };
-[; ;adc.h: 2014: char BusyADC (void);
-[; ;adc.h: 2016: void ConvertADC (void);
-[; ;adc.h: 2018: void CloseADC(void);
-[; ;adc.h: 2026: int ReadADC(void);
-[; ;adc.h: 2059: void OpenADC ( unsigned char ,
-[; ;adc.h: 2060: unsigned char ,
-[; ;adc.h: 2061: unsigned int );
-[; ;adc.h: 2084: void SetChanADC(unsigned char );
-[; ;adc.h: 2100: void SelChanConvADC( unsigned char );
-[; ;ancomp.h: 202: void Close_ancomp1( void );
-[; ;ancomp.h: 203: void Open_ancomp1(unsigned char config);
-[; ;ancomp.h: 204: void Close_ancomp2( void );
-[; ;ancomp.h: 205: void Open_ancomp2(unsigned char config);
-[; ;spi.h: 236: void OpenSPI1( unsigned char sync_mode,
-[; ;spi.h: 237: unsigned char bus_mode,
-[; ;spi.h: 238: unsigned char smp_phase );
-[; ;spi.h: 240: signed char WriteSPI1( unsigned char data_out );
-[; ;spi.h: 242: void getsSPI1( unsigned char *rdptr, unsigned char length );
-[; ;spi.h: 244: void putsSPI1( unsigned char *wrptr );
-[; ;spi.h: 246: unsigned char ReadSPI1( void );
-[; ;spi.h: 441: void OpenSPI2( unsigned char sync_mode,
-[; ;spi.h: 442: unsigned char bus_mode,
-[; ;spi.h: 443: unsigned char smp_phase );
-[; ;spi.h: 445: signed char WriteSPI2( unsigned char data_out );
-[; ;spi.h: 447: void getsSPI2( unsigned char *rdptr, unsigned char length );
-[; ;spi.h: 449: void putsSPI2( unsigned char *wrptr );
-[; ;spi.h: 451: unsigned char ReadSPI2( void );
-[; ;can2510.h: 414: void CAN2510Initialize(  unsigned int configuration,
-[; ;can2510.h: 415: unsigned char brp,
-[; ;can2510.h: 416: unsigned char interruptFlags,
-[; ;can2510.h: 417: unsigned char SPI_syncMode,
-[; ;can2510.h: 418: unsigned char SPI_busMode,
-[; ;can2510.h: 419: unsigned char SPI_smpPhase );
-[; ;can2510.h: 421: signed char CAN2510Init(  unsigned long BufferConfig,
-[; ;can2510.h: 422: unsigned long BitTimeConfig,
-[; ;can2510.h: 423: unsigned char interruptEnables,
-[; ;can2510.h: 424: unsigned char SPI_syncMode,
-[; ;can2510.h: 425: unsigned char SPI_busMode,
-[; ;can2510.h: 426: unsigned char SPI_smpPhase );
-[; ;can2510.h: 428: void CAN2510Enable( void );
-[; ;can2510.h: 430: void CAN2510Disable( void );
-[; ;can2510.h: 432: void CAN2510Reset( void );
-[; ;can2510.h: 434: void CAN2510SetMode(  unsigned char mode );
-[; ;can2510.h: 436: unsigned char CAN2510ReadMode( void );
-[; ;can2510.h: 438: unsigned char CAN2510ReadStatus( void );
-[; ;can2510.h: 440: unsigned char CAN2510ErrorState( void );
-[; ;can2510.h: 442: unsigned char CAN2510InterruptStatus( void );
-[; ;can2510.h: 444: void CAN2510InterruptEnable( unsigned char interruptFlags );
-[; ;can2510.h: 446: unsigned char CAN2510ByteRead(  unsigned char addr );
-[; ;can2510.h: 448: void CAN2510ByteWrite(  unsigned char addr,  unsigned char value );
-[; ;can2510.h: 450: void CAN2510SequentialRead(  unsigned char *DataArray,
-[; ;can2510.h: 451: unsigned char CAN2510addr,
-[; ;can2510.h: 452: unsigned char numbytes );
-[; ;can2510.h: 454: void CAN2510SequentialWrite(  unsigned char *DataArray,
-[; ;can2510.h: 455: unsigned char CAN2510addr,
-[; ;can2510.h: 456: unsigned char numbytes );
-[; ;can2510.h: 458: void CAN2510BitModify(  unsigned char address,
-[; ;can2510.h: 459: unsigned char mask,
-[; ;can2510.h: 460: unsigned char data );
-[; ;can2510.h: 462: void CAN2510SetSingleMaskStd(  unsigned char maskNum,  unsigned int mask );
-[; ;can2510.h: 464: void CAN2510SetSingleMaskXtd(  unsigned char maskNum,  unsigned long mask );
-[; ;can2510.h: 466: void CAN2510SetSingleFilterStd(  unsigned char filterNum,  unsigned int filter );
-[; ;can2510.h: 468: void CAN2510SetSingleFilterXtd(  unsigned char filterNum,  unsigned long filter );
-[; ;can2510.h: 470: signed char CAN2510SetMsgFilterStd(  unsigned char bufferNum,
-[; ;can2510.h: 471: unsigned int mask,
-[; ;can2510.h: 472: unsigned int *filters );
-[; ;can2510.h: 474: signed char CAN2510SetMsgFilterXtd(  unsigned char bufferNum,
-[; ;can2510.h: 475: unsigned long mask,
-[; ;can2510.h: 476: unsigned long *filters );
-[; ;can2510.h: 478: signed char CAN2510WriteStd(  unsigned int msgId,
-[; ;can2510.h: 479: unsigned char msgPriority,
-[; ;can2510.h: 480: unsigned char numBytes,
-[; ;can2510.h: 481: unsigned char *data );
-[; ;can2510.h: 483: signed char CAN2510WriteXtd(  unsigned long msgId,
-[; ;can2510.h: 484: unsigned char msgPriority,
-[; ;can2510.h: 485: unsigned char numBytes,
-[; ;can2510.h: 486: unsigned char *data );
-[; ;can2510.h: 488: void CAN2510LoadBufferStd(  unsigned char bufferNum,
-[; ;can2510.h: 489: unsigned int msgId,
-[; ;can2510.h: 490: unsigned char numBytes,
-[; ;can2510.h: 491: unsigned char *data );
-[; ;can2510.h: 493: void CAN2510LoadBufferXtd(  unsigned char bufferNum,
-[; ;can2510.h: 494: unsigned long msgId,
-[; ;can2510.h: 495: unsigned char numBytes,
-[; ;can2510.h: 496: unsigned char *data );
-[; ;can2510.h: 498: void CAN2510LoadRTRStd(  unsigned char bufferNum,
-[; ;can2510.h: 499: unsigned int msgId,
-[; ;can2510.h: 500: unsigned char numBytes );
-[; ;can2510.h: 502: void CAN2510LoadRTRXtd(  unsigned char bufferNum,
-[; ;can2510.h: 503: unsigned long msgId,
-[; ;can2510.h: 504: unsigned char numBytes );
-[; ;can2510.h: 506: void CAN2510SetBufferPriority(  unsigned char bufferNum,
-[; ;can2510.h: 507: unsigned char bufferPriority );
-[; ;can2510.h: 509: void CAN2510SendBuffer(  unsigned char bufferNumber );
-[; ;can2510.h: 511: signed char CAN2510WriteBuffer(  unsigned char bufferNum );
-[; ;can2510.h: 513: unsigned char CAN2510DataReady(  unsigned char bufferNum );
-[; ;can2510.h: 515: unsigned char CAN2510DataRead(  unsigned char bufferNum,
-[; ;can2510.h: 516: unsigned long *msgId,
-[; ;can2510.h: 517: unsigned char *numBytes,
-[; ;can2510.h: 518: unsigned char *data );
-[; ;capture.h: 64: union capstatus
-[; ;capture.h: 65: {
-[; ;capture.h: 73: struct
-[; ;capture.h: 74: {
-[; ;capture.h: 77: unsigned Cap1OVF:1;
-[; ;capture.h: 82: unsigned Cap2OVF:1;
-[; ;capture.h: 115: };
-[; ;capture.h: 117: unsigned :8;
-[; ;capture.h: 119: };
-[; ;capture.h: 121: extern union capstatus CapStatus;
-[; ;capture.h: 123: union CapResult
-[; ;capture.h: 124: {
-[; ;capture.h: 125: unsigned int lc;
-[; ;capture.h: 126: char bc[2];
-[; ;capture.h: 127: };
-[; ;capture.h: 474: void OpenCapture1 ( unsigned char config);
-[; ;capture.h: 475: unsigned int ReadCapture1 (void);
-[; ;capture.h: 476: void CloseCapture1 (void);
-[; ;capture.h: 484: void OpenCapture2 ( unsigned char config);
-[; ;capture.h: 485: unsigned int ReadCapture2 (void);
-[; ;capture.h: 486: void CloseCapture2 (void);
-[; ;compare.h: 385: void OpenCompare1(unsigned char config,unsigned int period);
-[; ;compare.h: 386: void CloseCompare1(void);
-[; ;compare.h: 392: void OpenCompare2(unsigned char config, unsigned int period);
-[; ;compare.h: 393: void CloseCompare2(void);
-[; ;ctmu.h: 374: void OpenCTMU(unsigned char config1,unsigned char config2,unsigned char config3);
-[; ;ctmu.h: 379: void CurrentControlCTMU(unsigned char config);
-[; ;ctmu.h: 380: void CloseCTMU(void);
-[; ;dpslp.h: 49: typedef union
-[; ;dpslp.h: 50: {
-[; ;dpslp.h: 51: struct
-[; ;dpslp.h: 52: {
-[; ;dpslp.h: 53: unsigned char DS_POR:1;
-[; ;dpslp.h: 54: unsigned char DS_MCLR:1;
-[; ;dpslp.h: 55: unsigned char DS_RTC:1;
-[; ;dpslp.h: 56: unsigned char DS_WDT:1;
-[; ;dpslp.h: 57: unsigned char DS_FLT:1;
-[; ;dpslp.h: 58: unsigned char DS_INT0:1;
-[; ;dpslp.h: 59: unsigned char DS_BOR:1;
-[; ;dpslp.h: 60: unsigned char DS_ULP:1;
-[; ;dpslp.h: 61: }WK_SRC;
-[; ;dpslp.h: 63: unsigned char WKSRC;
-[; ;dpslp.h: 65: }SRC;
-[; ;dpslp.h: 68: typedef struct
-[; ;dpslp.h: 69: {
-[; ;dpslp.h: 70: unsigned char Reg0;
-[; ;dpslp.h: 71: unsigned char Reg1;
-[; ;dpslp.h: 72: }CONTEXT;
-[; ;dpslp.h: 164: extern void DeepSleepWakeUpSource(SRC* ptr);
-[; ;dpslp.h: 165: extern void GotoDeepSleep( unsigned int config);
-[; ;dpslp.h: 166: extern signed char IsResetFromDeepSleep( void );
-[; ;dpslp.h: 167: extern void ReadDSGPR( CONTEXT* ptr );
-[; ;dpslp.h: 171: extern void ULPWakeUpEnable( void );
-[; ;stddef.h: 2: typedef int ptrdiff_t;
-[; ;stddef.h: 3: typedef unsigned size_t;
-[; ;stddef.h: 4: typedef unsigned short wchar_t;
+[; ;pic18.h: 18: __attribute__((__unsupported__("The flash_write routine is no longer supported. Please use the peripheral library functions: WriteBytesFlash, WriteBlockFlash or WriteWordFlash"))) void flash_write(const unsigned char *, unsigned int, __far unsigned c
+[; ;pic18.h: 42: extern void __nop(void);
+[; ;pic18.h: 161: extern __nonreentrant void _delay(unsigned long);
+[; ;pic18.h: 163: extern __nonreentrant void _delaywdt(unsigned long);
+[; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
 [; ;stddef.h: 13: extern int errno;
 [; ;GenericTypeDefs.h: 65: typedef enum _BOOL { FALSE = 0, TRUE } BOOL;
 [; ;GenericTypeDefs.h: 68: typedef enum _BIT { CLEAR = 0, SET } BIT;
@@ -7395,60 +7172,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;GenericTypeDefs.h: 545: BYTE b63:1;
 [; ;GenericTypeDefs.h: 546: } bits;
 [; ;GenericTypeDefs.h: 547: } QWORD_VAL;
-[; ;flash.h: 113: extern void ReadFlash(unsigned long startaddr, unsigned int num_bytes, unsigned char *flash_array);
-[; ;flash.h: 120: extern void EraseFlash(unsigned long startaddr, unsigned long endaddr);
-[; ;flash.h: 122: extern void WriteBlockFlash(unsigned long startaddr, unsigned char num_blocks, unsigned char *flash_array);
-[; ;flash.h: 124: extern void WriteBytesFlash(unsigned long startaddr, unsigned int num_bytes, unsigned char *flash_array);
-[; ;flash.h: 127: extern void WriteWordFlash(unsigned long startaddr, unsigned int data);
-[; ;i2c.h: 244: void OpenI2C1( unsigned char sync_mode, unsigned char slew );
-[; ;i2c.h: 264: unsigned char ReadI2C1( void );
-[; ;i2c.h: 279: signed char WriteI2C1( unsigned char data_out );
-[; ;i2c.h: 294: signed char getsI2C1( unsigned char *rdptr, unsigned char length );
-[; ;i2c.h: 297: signed char putsI2C1( unsigned char *wrptr );
-[; ;i2c.h: 305: signed char EEAckPolling1( unsigned char control );
-[; ;i2c.h: 308: signed char EEByteWrite1( unsigned char control,
-[; ;i2c.h: 309: unsigned char address,
-[; ;i2c.h: 310: unsigned char data );
-[; ;i2c.h: 313: signed int EECurrentAddRead1( unsigned char control );
-[; ;i2c.h: 316: signed char EEPageWrite1( unsigned char control,
-[; ;i2c.h: 317: unsigned char address,
-[; ;i2c.h: 318: unsigned char *wrptr );
-[; ;i2c.h: 321: signed int EERandomRead1( unsigned char control, unsigned char address );
-[; ;i2c.h: 324: signed char EESequentialRead1( unsigned char control,
-[; ;i2c.h: 325: unsigned char address,
-[; ;i2c.h: 326: unsigned char *rdptr,
-[; ;i2c.h: 327: unsigned char length );
-[; ;mwire.h: 200: void OpenMwire1( unsigned char sync_mode );
-[; ;mwire.h: 203: unsigned char ReadMwire1( unsigned char high_byte,
-[; ;mwire.h: 204: unsigned char low_byte );
-[; ;mwire.h: 219: signed char WriteMwire1( unsigned char data_out );
-[; ;mwire.h: 234: void getsMwire1( unsigned char *rdptr, unsigned char length );
-[; ;portb.h: 126: void OpenPORTB( unsigned char config);
-[; ;portb.h: 176: void OpenRB0INT( unsigned char config);
-[; ;portb.h: 194: void OpenRB1INT( unsigned char config);
-[; ;portb.h: 211: void OpenRB2INT( unsigned char config);
-[; ;portb.h: 230: void OpenRB3INT( unsigned char config);
-[; ;pwm.h: 85: union PWMDC
-[; ;pwm.h: 86: {
-[; ;pwm.h: 87: unsigned int lpwm;
-[; ;pwm.h: 88: char bpwm[2];
-[; ;pwm.h: 89: };
-[; ;pwm.h: 467: void OpenPWM1 ( char period);
-[; ;pwm.h: 468: void SetDCPWM1 ( unsigned int duty_cycle);
-[; ;pwm.h: 474: void SetOutputPWM1 ( unsigned char output_config,
-[; ;pwm.h: 475: unsigned char pwm_mode);
-[; ;pwm.h: 477: void ClosePWM1 (void);
-[; ;pwm.h: 485: void OpenPWM2 ( char period);
-[; ;pwm.h: 486: void SetDCPWM2( unsigned int duty_cycle);
-[; ;pwm.h: 492: void ClosePWM2 (void);
-[; ;reset.h: 16: char isMCLR(void);
-[; ;reset.h: 17: void StatusReset(void);
-[; ;reset.h: 18: char isPOR(void);
-[; ;reset.h: 19: char isWU(void);
-[; ;reset.h: 22: char isBOR(void);
-[; ;reset.h: 26: char isWDTTO(void);
-[; ;reset.h: 27: char isWDTWU(void);
-[; ;reset.h: 31: char isLVD(void);
 [; ;rtcc.h: 43: typedef union _WORD_VAL
 [; ;rtcc.h: 44: {
 [; ;rtcc.h: 45: unsigned int Val;
@@ -7579,316 +7302,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;rtcc.h: 687: void Open_RTCC(void);
 [; ;rtcc.h: 688: void Close_RTCC(void);
 [; ;rtcc.h: 689: unsigned char update_RTCC(void);
-[; ;sw_i2c.h: 97: void SWStopI2C ( void );
-[; ;sw_i2c.h: 98: void SWStartI2C ( void );
-[; ;sw_i2c.h: 99: void SWRestartI2C ( void );
-[; ;sw_i2c.h: 100: void SWStopI2C ( void );
-[; ;sw_i2c.h: 102: signed char SWAckI2C( void );
-[; ;sw_i2c.h: 103: signed char Clock_test( void );
-[; ;sw_i2c.h: 104: signed int SWReadI2C( void );
-[; ;sw_i2c.h: 105: signed char SWWriteI2C(  unsigned char data_out );
-[; ;sw_i2c.h: 106: signed char SWGetsI2C(  unsigned char *rdptr,  unsigned char length );
-[; ;sw_i2c.h: 107: signed char SWPutsI2C(  unsigned char *wrptr );
-[; ;sw_spi.h: 84: void OpenSWSPI(void);
-[; ;sw_spi.h: 87: char WriteSWSPI( char output);
-[; ;sw_spi.h: 90: void SetCSSWSPI(void);
-[; ;sw_spi.h: 93: void ClearCSSWSPI(void);
-[; ;sw_uart.h: 47: void OpenUART(void);
-[; ;sw_uart.h: 49: unsigned char ReadUART(void);
-[; ;sw_uart.h: 51: void WriteUART( unsigned char);
-[; ;sw_uart.h: 53: void getsUART( char *, unsigned char);
-[; ;sw_uart.h: 55: void putsUART( char *);
-[; ;sw_uart.h: 79: extern void DelayRXBitUART (void);
-[; ;sw_uart.h: 80: extern void DelayRXHalfBitUART(void);
-[; ;sw_uart.h: 81: extern void DelayTXBitUART (void);
-[; ;timers.h: 36: union Timers
-[; ;timers.h: 37: {
-[; ;timers.h: 38: unsigned int lt;
-[; ;timers.h: 39: char bt[2];
-[; ;timers.h: 40: };
-[; ;timers.h: 118: void OpenTimer0 ( unsigned char config);
-[; ;timers.h: 119: void CloseTimer0 (void);
-[; ;timers.h: 120: unsigned int ReadTimer0 (void);
-[; ;timers.h: 121: void WriteTimer0 ( unsigned int timer0);
-[; ;timers.h: 185: void OpenTimer1 ( unsigned char config, unsigned char config1);
-[; ;timers.h: 186: void CloseTimer1 (void);
-[; ;timers.h: 187: unsigned int ReadTimer1 (void);
-[; ;timers.h: 188: void WriteTimer1 ( unsigned int timer1);
-[; ;timers.h: 325: void OpenTimer2 ( unsigned char config);
-[; ;timers.h: 326: void CloseTimer2 (void);
-[; ;timers.h: 452: void OpenTimer3 ( unsigned char config, unsigned char config1);
-[; ;timers.h: 453: void CloseTimer3 (void);
-[; ;timers.h: 454: unsigned int ReadTimer3 (void);
-[; ;timers.h: 455: void WriteTimer3 ( unsigned int timer3);
-[; ;timers.h: 541: void OpenTimer4 ( unsigned char config);
-[; ;timers.h: 542: void CloseTimer4 (void);
-[; ;timers.h: 1179: void SetTmrCCPSrc( unsigned char );
-[; ;usart.h: 200: union USART1
-[; ;usart.h: 201: {
-[; ;usart.h: 202: unsigned char val;
-[; ;usart.h: 203: struct
-[; ;usart.h: 204: {
-[; ;usart.h: 205: unsigned RX_NINE:1;
-[; ;usart.h: 206: unsigned TX_NINE:1;
-[; ;usart.h: 207: unsigned FRAME_ERROR:1;
-[; ;usart.h: 208: unsigned OVERRUN_ERROR:1;
-[; ;usart.h: 209: unsigned fill:4;
-[; ;usart.h: 210: };
-[; ;usart.h: 211: };
-[; ;usart.h: 212: extern union USART1 USART1_Status;
-[; ;usart.h: 214: void Open1USART ( unsigned char config, unsigned int spbrg);
-[; ;usart.h: 244: char Read1USART (void);
-[; ;usart.h: 245: void Write1USART ( char data);
-[; ;usart.h: 246: void gets1USART ( char *buffer, unsigned char len);
-[; ;usart.h: 247: void puts1USART ( char *data);
-[; ;usart.h: 248: void putrs1USART ( const  char *data);
-[; ;usart.h: 305: union USART2
-[; ;usart.h: 306: {
-[; ;usart.h: 307: unsigned char val;
-[; ;usart.h: 308: struct
-[; ;usart.h: 309: {
-[; ;usart.h: 310: unsigned RX_NINE:1;
-[; ;usart.h: 311: unsigned TX_NINE:1;
-[; ;usart.h: 312: unsigned FRAME_ERROR:1;
-[; ;usart.h: 313: unsigned OVERRUN_ERROR:1;
-[; ;usart.h: 314: unsigned fill:4;
-[; ;usart.h: 315: };
-[; ;usart.h: 316: };
-[; ;usart.h: 317: extern union USART2 USART2_Status;
-[; ;usart.h: 318: void Open2USART ( unsigned char config, unsigned int spbrg);
-[; ;usart.h: 333: char Read2USART (void);
-[; ;usart.h: 334: void Write2USART ( char data);
-[; ;usart.h: 335: void gets2USART ( char *buffer, unsigned char len);
-[; ;usart.h: 336: void puts2USART ( char *data);
-[; ;usart.h: 337: void putrs2USART ( const  char *data);
-[; ;usart.h: 660: void baud1USART ( unsigned char baudconfig);
-[; ;usart.h: 665: void baud2USART ( unsigned char baudconfig);
-[; ;xlcd.h: 87: void OpenXLCD( unsigned char);
-[; ;xlcd.h: 92: void SetCGRamAddr( unsigned char);
-[; ;xlcd.h: 97: void SetDDRamAddr( unsigned char);
-[; ;xlcd.h: 102: unsigned char BusyXLCD(void);
-[; ;xlcd.h: 107: unsigned char ReadAddrXLCD(void);
-[; ;xlcd.h: 112: char ReadDataXLCD(void);
-[; ;xlcd.h: 117: void WriteCmdXLCD( unsigned char);
-[; ;xlcd.h: 122: void WriteDataXLCD( char);
-[; ;xlcd.h: 132: void putsXLCD( char *);
-[; ;xlcd.h: 137: void putrsXLCD(const char *);
-[; ;xlcd.h: 140: extern void DelayFor18TCY(void);
-[; ;xlcd.h: 141: extern void DelayPORXLCD(void);
-[; ;xlcd.h: 142: extern void DelayXLCD(void);
-[; ;delays.h: 13: void Delay1TCYx(unsigned char);
-[; ;delays.h: 19: void Delay10TCYx(unsigned char);
-[; ;delays.h: 25: void Delay100TCYx(unsigned char);
-[; ;delays.h: 31: void Delay1KTCYx(unsigned char);
-[; ;delays.h: 37: void Delay10KTCYx(unsigned char);
-[; ;pic18.h: 18: __attribute__((__unsupported__("The flash_write routine is no longer supported. Please use the peripheral library functions: WriteBytesFlash, WriteBlockFlash or WriteWordFlash"))) void flash_write(const unsigned char *, unsigned int, __far unsigned c
-[; ;pic18.h: 42: extern void __nop(void);
-[; ;pic18.h: 161: extern __nonreentrant void _delay(unsigned long);
-[; ;pic18.h: 163: extern __nonreentrant void _delaywdt(unsigned long);
-[; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
-[; ;stdarg.h: 7: typedef void * va_list[1];
-[; ;stdarg.h: 10: extern void * __va_start(void);
-[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
-[; ;stdio.h: 24: extern int errno;
-[; ;stdio.h: 55: struct __prbuf
-[; ;stdio.h: 56: {
-[; ;stdio.h: 57: char * ptr;
-[; ;stdio.h: 58: void (* func)(char);
-[; ;stdio.h: 59: };
-[; ;conio.h: 17: extern int errno;
-[; ;conio.h: 20: extern void init_uart(void);
-[; ;conio.h: 22: extern char getch(void);
-[; ;conio.h: 23: extern char getche(void);
-[; ;conio.h: 24: extern void putch(char);
-[; ;conio.h: 25: extern void ungetch(char);
-[; ;conio.h: 27: extern __bit kbhit(void);
-[; ;conio.h: 31: extern char * cgets(char *);
-[; ;conio.h: 32: extern void cputs(const char *);
-[; ;stdio.h: 100: extern int cprintf(char *, ...);
-[; ;stdio.h: 105: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-[; ;stdio.h: 195: extern char * gets(char *);
-[; ;stdio.h: 196: extern int puts(const char *);
-[; ;stdio.h: 197: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-[; ;stdio.h: 198: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-[; ;stdio.h: 199: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-[; ;stdio.h: 200: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-[; ;stdio.h: 201: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-[; ;stdio.h: 202: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-[; ;stdio.h: 206: extern int sprintf(char *, const char *, ...);
-[; ;stdio.h: 207: extern int printf(const char *, ...);
-[; ;headers\unmc_lcd_216.h: 33: typedef unsigned char int8;
-[; ;headers\unmc_lcd_216.h: 34: typedef unsigned int int16;
-[; ;headers\unmc_lcd_216.h: 35: typedef unsigned long int32;
-[; ;headers\unmc_lcd_216.h: 98: void lcd_send_nibble(int8 nibble);
-[; ;headers\unmc_lcd_216.h: 99: int8 lcd_read_nibble(void);
-[; ;headers\unmc_lcd_216.h: 100: int8 lcd_read_byte(void);
-[; ;headers\unmc_lcd_216.h: 101: void lcd_send_byte(int8 address, int8 n);
-[; ;headers\unmc_lcd_216.h: 103: void lcd_init(void);
-[; ;headers\unmc_lcd_216.h: 104: void lcd_gotoxy(int8 x, int8 y);
-[; ;headers\unmc_lcd_216.h: 105: void lcd_putc(int8 c);
-[; ;headers\unmc_lcd_216.h: 106: void lcd_comand(int8 d);
-[; ;headers\unmc_lcd_216.h: 107: void lcd_setcursor_vb(int8 visible, int8 blink);
-[; ;headers\unmc_lcd_216.h: 108: void lcd_puts(char *ptr);
-[; ;headers\unmc_lcd_216.h: 109: void lcd_putrs(const char *ptr);
-"14 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h
-[v _key `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_inout_02.h: 14: char key;
-"15 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_config_01.h
-[p x CPUDIV=OSC1 ]
-"16
-[p x CP0=OFF ]
-"17
-[p x WDTEN=OFF ]
-"18
-[p x PLLDIV=1 ]
-"19
-[p x STVREN=ON ]
-"20
-[p x XINST=OFF ]
-"22
-[p x OSC=INTOSC ]
-"23
-[p x T1DIG=ON ]
-"24
-[p x LPT1OSC=OFF ]
-"25
-[p x FCMEN=OFF ]
-"26
-[p x IESO=OFF ]
-"27
-[p x WDTPS=32768 ]
-"28
-[p x DSWDTOSC=INTOSCREF ]
-"29
-[p x RTCOSC=T1OSCREF ]
-"30
-[p x DSBOREN=OFF ]
-"31
-[p x DSWDTEN=OFF ]
-"32
-[p x DSWDTPS=G2 ]
-"33
-[p x IOL1WAY=OFF ]
-"34
-[p x MSSP7B_EN=MSK7 ]
-"35
-[p x WPCFG=OFF ]
-"36
-[p x WPDIS=OFF ]
-"12 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
-[v _ocultar_teclas `i ~T0 @X0 1 e ]
-[; ;headers\teclado.h: 12: int ocultar_teclas;
-"13
-[v _comando `uc ~T0 @X0 -> 4 `i e ]
-[i _comando
-:U ..
--> 120 `c
--> 120 `c
--> 120 `c
--> 0 `c
-..
-]
-[; ;headers\teclado.h: 13: char comando[4]="xxx";
-"14
-[v _tamanio_comando `i ~T0 @X0 1 e ]
-[i _tamanio_comando
--> 0 `i
-]
-[; ;headers\teclado.h: 14: int tamanio_comando = 0;
-[; ;headers\teclado.h: 16: void guardar_comando(char);
-[; ;headers\teclado.h: 17: void validar_comando(char *, int *);
-[; ;headers\teclado.h: 18: void imprimir_tecla(char);
-[; ;headers\teclado.h: 19: void restaurar_comando();
-[; ;headers\teclado.h: 20: void guardar_tecla_presionada(char *, int,char* (*doit)(char *));
-[; ;headers\teclado.h: 21: void leer_teclado(int ocultar,char* (*doit)());
-"7 C:/Archivos de programa/Unimic/unmc_01/headers\password.h
-[v _password `uc ~T0 @X0 -> 6 `i e ]
-[i _password
-:U ..
--> 49 `c
--> 50 `c
--> 51 `c
--> 52 `c
--> 53 `c
--> 54 `c
-..
-]
-[; ;headers\password.h: 7: char password[6]="123456";
-"8
-[v _current_password `uc ~T0 @X0 -> 6 `i e ]
-[i _current_password
-:U ..
--> 0 `c
-..
-]
-[; ;headers\password.h: 8: char current_password[6]="";
-"9
-[v _tamanio_password `i ~T0 @X0 1 e ]
-[i _tamanio_password
--> 0 `i
-]
-[; ;headers\password.h: 9: int tamanio_password=0;
-"10
-[v _autorizado `i ~T0 @X0 1 e ]
-[i _autorizado
--> 0 `i
-]
-[; ;headers\password.h: 10: int autorizado=0;
-[; ;headers\password.h: 12: void guardar_current_password(char);
-[; ;headers\password.h: 13: void validar_password();
-[; ;stdlib.h: 27: typedef struct {
-[; ;stdlib.h: 28: int rem;
-[; ;stdlib.h: 29: int quot;
-[; ;stdlib.h: 30: } div_t;
-[; ;stdlib.h: 31: typedef struct {
-[; ;stdlib.h: 32: unsigned rem;
-[; ;stdlib.h: 33: unsigned quot;
-[; ;stdlib.h: 34: } udiv_t;
-[; ;stdlib.h: 35: typedef struct {
-[; ;stdlib.h: 36: long quot;
-[; ;stdlib.h: 37: long rem;
-[; ;stdlib.h: 38: } ldiv_t;
-[; ;stdlib.h: 39: typedef struct {
-[; ;stdlib.h: 40: unsigned long quot;
-[; ;stdlib.h: 41: unsigned long rem;
-[; ;stdlib.h: 42: } uldiv_t;
-[; ;stdlib.h: 65: extern double atof(const char *);
-[; ;stdlib.h: 66: extern double strtod(const char *, const char **);
-[; ;stdlib.h: 67: extern int atoi(const char *);
-[; ;stdlib.h: 68: extern unsigned xtoi(const char *);
-[; ;stdlib.h: 69: extern long atol(const char *);
-[; ;stdlib.h: 70: extern long strtol(const char *, char **, int);
-[; ;stdlib.h: 72: extern int rand(void);
-[; ;stdlib.h: 73: extern void srand(unsigned int);
-[; ;stdlib.h: 74: extern void * calloc(size_t, size_t);
-[; ;stdlib.h: 75: extern div_t div(int numer, int denom);
-[; ;stdlib.h: 76: extern udiv_t udiv(unsigned numer, unsigned denom);
-[; ;stdlib.h: 77: extern ldiv_t ldiv(long numer, long denom);
-[; ;stdlib.h: 78: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-[; ;stdlib.h: 79: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 80: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 81: extern unsigned int _rotl(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 82: extern unsigned int _rotr(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 87: extern void * malloc(size_t);
-[; ;stdlib.h: 88: extern void free(void *);
-[; ;stdlib.h: 89: extern void * realloc(void *, size_t);
-[; ;stdlib.h: 98: extern int atexit(void (*)(void));
-[; ;stdlib.h: 99: extern char * getenv(const char *);
-[; ;stdlib.h: 100: extern char ** environ;
-[; ;stdlib.h: 101: extern int system(char *);
-[; ;stdlib.h: 102: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-[; ;stdlib.h: 103: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-[; ;stdlib.h: 104: extern int abs(int);
-[; ;stdlib.h: 105: extern long labs(long);
-[; ;stdlib.h: 108: extern char * itoa(char * buf, int val, int base);
-[; ;stdlib.h: 109: extern char * utoa(char * buf, unsigned val, int base);
-[; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
-[; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
-[; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
 "16 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_02.h
-[v _RtccTimeDate `S1027 ~T0 @X0 1 e ]
-[v _RtccAlrmTimeDate `S1027 ~T0 @X0 1 e ]
-[v _Rtcc_read_TimeDate `S1027 ~T0 @X0 1 e ]
+[v _RtccTimeDate `S1023 ~T0 @X0 1 e ]
+[v _RtccAlrmTimeDate `S1023 ~T0 @X0 1 e ]
+[v _Rtcc_read_TimeDate `S1023 ~T0 @X0 1 e ]
 [; ;headers\unmc_rtcc_02.h: 16: rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
 "18
 [v _segundo_u `uc ~T0 @X0 1 e ]
@@ -8014,13 +7431,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;headers\unmc_rtcc_02.h: 44: int segundo=0;
 "49
-[v _RtccTime `S1023 ~T0 @X0 1 e ]
+[v _RtccTime `S1019 ~T0 @X0 1 e ]
 [; ;headers\unmc_rtcc_02.h: 49: rtccTime RtccTime;
 "50
-[v _RtccTimeVal `S1023 ~T0 @X0 1 e ]
+[v _RtccTimeVal `S1019 ~T0 @X0 1 e ]
 [; ;headers\unmc_rtcc_02.h: 50: rtccTime RtccTimeVal;
 "51
-[v _RtccDate `S1025 ~T0 @X0 1 e ]
+[v _RtccDate `S1021 ~T0 @X0 1 e ]
 [; ;headers\unmc_rtcc_02.h: 51: rtccDate RtccDate;
 "53
 [v _buffer2 `uc ~T0 @X0 -> 20 `i e ]
@@ -8078,460 +7495,417 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;headers\fecha.h: 18: void cambiar_mes(char);
 [; ;headers\fecha.h: 19: void cambiar_anio(char);
 [; ;headers\fecha.h: 20: void cambiar_fecha(char);
-"34 main.c
-[v _caratula `(v ~T0 @X0 1 ef1`*uc ]
-"35
-{
-[; ;main.c: 34: void caratula(char * titulo)
-[; ;main.c: 35: {
-[e :U _caratula ]
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 24: extern int errno;
+[; ;stdio.h: 55: struct __prbuf
+[; ;stdio.h: 56: {
+[; ;stdio.h: 57: char * ptr;
+[; ;stdio.h: 58: void (* func)(char);
+[; ;stdio.h: 59: };
+[; ;conio.h: 17: extern int errno;
+[; ;conio.h: 20: extern void init_uart(void);
+[; ;conio.h: 22: extern char getch(void);
+[; ;conio.h: 23: extern char getche(void);
+[; ;conio.h: 24: extern void putch(char);
+[; ;conio.h: 25: extern void ungetch(char);
+[; ;conio.h: 27: extern __bit kbhit(void);
+[; ;conio.h: 31: extern char * cgets(char *);
+[; ;conio.h: 32: extern void cputs(const char *);
+[; ;stdio.h: 100: extern int cprintf(char *, ...);
+[; ;stdio.h: 105: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 195: extern char * gets(char *);
+[; ;stdio.h: 196: extern int puts(const char *);
+[; ;stdio.h: 197: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 198: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 199: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 200: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 201: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 202: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 206: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 207: extern int printf(const char *, ...);
+[; ;delays.h: 13: void Delay1TCYx(unsigned char);
+[; ;delays.h: 19: void Delay10TCYx(unsigned char);
+[; ;delays.h: 25: void Delay100TCYx(unsigned char);
+[; ;delays.h: 31: void Delay1KTCYx(unsigned char);
+[; ;delays.h: 37: void Delay10KTCYx(unsigned char);
+[; ;headers\unmc_lcd_216.h: 33: typedef unsigned char int8;
+[; ;headers\unmc_lcd_216.h: 34: typedef unsigned int int16;
+[; ;headers\unmc_lcd_216.h: 35: typedef unsigned long int32;
+[; ;headers\unmc_lcd_216.h: 98: void lcd_send_nibble(int8 nibble);
+[; ;headers\unmc_lcd_216.h: 99: int8 lcd_read_nibble(void);
+[; ;headers\unmc_lcd_216.h: 100: int8 lcd_read_byte(void);
+[; ;headers\unmc_lcd_216.h: 101: void lcd_send_byte(int8 address, int8 n);
+[; ;headers\unmc_lcd_216.h: 103: void lcd_init(void);
+[; ;headers\unmc_lcd_216.h: 104: void lcd_gotoxy(int8 x, int8 y);
+[; ;headers\unmc_lcd_216.h: 105: void lcd_putc(int8 c);
+[; ;headers\unmc_lcd_216.h: 106: void lcd_comand(int8 d);
+[; ;headers\unmc_lcd_216.h: 107: void lcd_setcursor_vb(int8 visible, int8 blink);
+[; ;headers\unmc_lcd_216.h: 108: void lcd_puts(char *ptr);
+[; ;headers\unmc_lcd_216.h: 109: void lcd_putrs(const char *ptr);
+[; ;headers\unmc_lcd_216.h: 98: void lcd_send_nibble(int8 nibble);
+[; ;headers\unmc_lcd_216.h: 99: int8 lcd_read_nibble(void);
+[; ;headers\unmc_lcd_216.h: 100: int8 lcd_read_byte(void);
+[; ;headers\unmc_lcd_216.h: 101: void lcd_send_byte(int8 address, int8 n);
+[; ;headers\unmc_lcd_216.h: 103: void lcd_init(void);
+[; ;headers\unmc_lcd_216.h: 104: void lcd_gotoxy(int8 x, int8 y);
+[; ;headers\unmc_lcd_216.h: 105: void lcd_putc(int8 c);
+[; ;headers\unmc_lcd_216.h: 106: void lcd_comand(int8 d);
+[; ;headers\unmc_lcd_216.h: 107: void lcd_setcursor_vb(int8 visible, int8 blink);
+[; ;headers\unmc_lcd_216.h: 108: void lcd_puts(char *ptr);
+[; ;headers\unmc_lcd_216.h: 109: void lcd_putrs(const char *ptr);
+"14 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h
+[v _key `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_inout_02.h: 14: char key;
+"15 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_config_01.h
+[p x CPUDIV=OSC1 ]
+"16
+[p x CP0=OFF ]
+"17
+[p x WDTEN=OFF ]
+"18
+[p x PLLDIV=1 ]
+"19
+[p x STVREN=ON ]
+"20
+[p x XINST=OFF ]
+"22
+[p x OSC=INTOSC ]
+"23
+[p x T1DIG=ON ]
+"24
+[p x LPT1OSC=OFF ]
+"25
+[p x FCMEN=OFF ]
+"26
+[p x IESO=OFF ]
+"27
+[p x WDTPS=32768 ]
+"28
+[p x DSWDTOSC=INTOSCREF ]
+"29
+[p x RTCOSC=T1OSCREF ]
+"30
+[p x DSBOREN=OFF ]
+"31
+[p x DSWDTEN=OFF ]
+"32
+[p x DSWDTPS=G2 ]
+"33
+[p x IOL1WAY=OFF ]
 "34
-[v _titulo `*uc ~T0 @X0 1 r1 ]
+[p x MSSP7B_EN=MSK7 ]
 "35
-[f ]
-[; ;main.c: 36: lcd_comand(0b00001100);
+[p x WPCFG=OFF ]
 "36
-[e ( _lcd_comand (1 -> -> 12 `i `uc ]
-[; ;main.c: 37: lcd_gotoxy(1,1);
-"37
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 38: lcd_putrs(titulo);
-"38
-[e ( _lcd_putrs (1 -> _titulo `*Cuc ]
-[; ;main.c: 40: sprintf(buffer2,"%02u/%02u/%02u",dia,mes,anio);
-"40
-[e ( _sprintf (1 , , , (. , &U _buffer2 :s 1C _dia _mes _anio ]
-[; ;main.c: 41: lcd_gotoxy(9,1);
-"41
-[e ( _lcd_gotoxy (2 , -> -> 9 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 42: lcd_putrs(buffer2);
-"42
-[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
-[; ;main.c: 44: sprintf(buffer2,"%02u:%02u:%02u",hora,minuto,segundo);
-"44
-[e ( _sprintf (1 , , , (. , &U _buffer2 :s 2C _hora _minuto _segundo ]
-[; ;main.c: 45: lcd_gotoxy(1,2);
-"45
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;main.c: 46: lcd_putrs(buffer2);
-"46
-[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
-[; ;main.c: 47: }
-"47
-[e :UE 1039 ]
-}
-"55
-[v _Setup `(v ~T0 @X0 1 ef ]
-"56
+[p x WPDIS=OFF ]
+"12 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
+[v _ocultar_teclas `i ~T0 @X0 1 e ]
+[; ;headers\teclado.h: 12: int ocultar_teclas;
+"13
+[v _comando `uc ~T0 @X0 -> 4 `i e ]
+[i _comando
+:U ..
+-> 120 `c
+-> 120 `c
+-> 120 `c
+-> 0 `c
+..
+]
+[; ;headers\teclado.h: 13: char comando[4]="xxx";
+"14
+[v _tamanio_comando `i ~T0 @X0 1 e ]
+[i _tamanio_comando
+-> 0 `i
+]
+[; ;headers\teclado.h: 14: int tamanio_comando = 0;
+[; ;headers\teclado.h: 16: void guardar_comando(char);
+[; ;headers\teclado.h: 17: void validar_comando(char *, int *);
+[; ;headers\teclado.h: 18: void imprimir_tecla(char);
+[; ;headers\teclado.h: 19: void restaurar_comando();
+[; ;headers\teclado.h: 20: void guardar_tecla_presionada(char *, int,char* (*doit)(char *));
+[; ;headers\teclado.h: 21: void leer_teclado(int ocultar,char* (*doit)());
+"8 ../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c
+[v _inicializar `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 55: void Setup(void)
-[; ;main.c: 56: {
-[e :U _Setup ]
+[; ;fecha.c: 8: void inicializar(){
+[e :U _inicializar ]
 [f ]
-[; ;main.c: 57: OSCTUNEbits.INTSRC=1;
-"57
-[e = . . _OSCTUNEbits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 58: OSCTUNEbits.PLLEN=0;
-"58
-[e = . . _OSCTUNEbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 59: OSCCONbits.IRCF0=1;
-"59
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-[; ;main.c: 60: OSCCONbits.IRCF1=1;
-"60
-[e = . . _OSCCONbits 1 4 -> -> 1 `i `uc ]
-[; ;main.c: 61: OSCCONbits.IRCF2=1;
-"61
-[e = . . _OSCCONbits 1 5 -> -> 1 `i `uc ]
-[; ;main.c: 62: OSCCONbits.SCS0=0;
-"62
-[e = . . _OSCCONbits 1 0 -> -> 0 `i `uc ]
-[; ;main.c: 63: OSCCONbits.SCS1=0;
-"63
-[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-[; ;main.c: 64: TRISA = 0b11110000;
-"64
-[e = _TRISA -> -> 240 `i `uc ]
-[; ;main.c: 65: TRISB = 0;
-"65
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;main.c: 66: TRISC = 0b00000111;
-"66
-[e = _TRISC -> -> 7 `i `uc ]
-[; ;main.c: 70: ANCON0=0b11111111;
-"70
-[e = _ANCON0 -> -> 255 `i `uc ]
-[; ;main.c: 72: ANCON1=0b11111111;
-"72
-[e = _ANCON1 -> -> 255 `i `uc ]
-[; ;main.c: 73: ADCON0=0b00101101;
-"73
-[e = _ADCON0 -> -> 45 `i `uc ]
-[; ;main.c: 74: ADCON1=0b00010000;
-"74
-[e = _ADCON1 -> -> 16 `i `uc ]
-[; ;main.c: 75: RTCCFGbits.RTCEN=1;
-"75
-[e = . . _RTCCFGbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 76: RTCCFGbits.RTCWREN=1;
-"76
-[e = . . _RTCCFGbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 77: T1CONbits.T1OSCEN=1;
-"77
-[e = . . _T1CONbits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 78: Write_RTC();
-"78
-[e ( _Write_RTC ..  ]
-[; ;main.c: 79: lcd_init();
-"79
-[e ( _lcd_init ..  ]
-[; ;main.c: 80: lcd_comand(0b00001100);
-"80
-[e ( _lcd_comand (1 -> -> 12 `i `uc ]
-[; ;main.c: 81: LATBbits.LATB1 = 1;;
-"81
-[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 82: LATBbits.LATB0 = 1;;
-"82
-[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 83: }
-"83
-[e :UE 1040 ]
+[; ;fecha.c: 9: *day = 0;
+"9
+[e = *U &U _day -> -> 0 `i `uc ]
+[; ;fecha.c: 10: *month = 0;
+"10
+[e = *U &U _month -> -> 0 `i `uc ]
+[; ;fecha.c: 11: *year = 0;
+"11
+[e = *U &U _year -> -> 0 `i `uc ]
+[; ;fecha.c: 13: tamanio_dia = 0;
+"13
+[e = _tamanio_dia -> 0 `i ]
+[; ;fecha.c: 14: tamanio_mes = 0;
+"14
+[e = _tamanio_mes -> 0 `i ]
+[; ;fecha.c: 15: tamanio_anio = 0;
+"15
+[e = _tamanio_anio -> 0 `i ]
+[; ;fecha.c: 16: }
+"16
+[e :UE 1026 ]
 }
-"85
-[v _ingresar_password `(i ~T0 @X0 1 ef ]
+"18
+[v _guardar_elemento `(v ~T0 @X0 1 ef3`uc`*uc`*i ]
 {
-[; ;main.c: 85: ingresar_password(){
-[e :U _ingresar_password ]
+[; ;fecha.c: 18: void guardar_elemento(char tecla, char * array, int * tamanio_array){
+[e :U _guardar_elemento ]
+[v _tecla `uc ~T0 @X0 1 r1 ]
+[v _array `*uc ~T0 @X0 1 r2 ]
+[v _tamanio_array `*i ~T0 @X0 1 r3 ]
 [f ]
-"86
-[v _clear `uc ~T0 @X0 -> 16 `i a ]
-[; ;main.c: 86: char clear[16];
-[; ;main.c: 87: for (int i=0;i<16;i++) clear[i]=' ';
-"87
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 16 `i 1042  ]
-[e $U 1043  ]
-[e :U 1042 ]
-[e = *U + &U _clear * -> -> _i `ui `ux -> -> # *U &U _clear `ui `ux -> -> 32 `ui `uc ]
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 16 `i 1042  ]
-[e :U 1043 ]
+[; ;fecha.c: 20: sprintf(buffer2,"%01u",tecla);
+"20
+[e ( _sprintf (1 , (. , &U _buffer2 :s 1C -> _tecla `i ]
+[; ;fecha.c: 21: array[*tamanio_array] = *buffer2;
+"21
+[e = *U + _array * -> *U _tamanio_array `x -> -> # *U _array `i `x *U &U _buffer2 ]
+[; ;fecha.c: 22: array [(*tamanio_array)+1] = 0;
+"22
+[e = *U + _array * -> + *U _tamanio_array -> 1 `i `x -> -> # *U _array `i `x -> -> 0 `i `uc ]
+[; ;fecha.c: 23: (*tamanio_array)++;
+"23
+[e ++ *U _tamanio_array -> 1 `i ]
+[; ;fecha.c: 24: }
+"24
+[e :UE 1027 ]
 }
-[; ;main.c: 89: if(tamanio_password < 6){
-"89
-[e $ ! < _tamanio_password -> 6 `i 1045  ]
+"26
+[v _convertir_a_int `(v ~T0 @X0 1 ef2`*uc`*i ]
 {
-[; ;main.c: 91: lcd_comand(0b00001100);
-"91
-[e ( _lcd_comand (1 -> -> 12 `i `uc ]
-[; ;main.c: 92: lcd_gotoxy(1,1);
-"92
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 93: lcd_putrs("Inserte password");
-"93
-[e ( _lcd_putrs (1 :s 3C ]
-[; ;main.c: 94: lcd_gotoxy(tamanio_password+1,2);
-"94
-[e ( _lcd_gotoxy (2 , -> + _tamanio_password -> 1 `i `uc -> -> 2 `i `uc ]
-"95
+[; ;fecha.c: 26: void convertir_a_int(char * array, int * valor){
+[e :U _convertir_a_int ]
+[v _array `*uc ~T0 @X0 1 r1 ]
+[v _valor `*i ~T0 @X0 1 r2 ]
+[f ]
+[; ;fecha.c: 27: *valor = atoi(array);
+"27
+[e = *U _valor ( _atoi (1 -> _array `*Cuc ]
+[; ;fecha.c: 28: }
+"28
+[e :UE 1028 ]
 }
-[e :U 1045 ]
-[; ;main.c: 95: }
-[; ;main.c: 97: validar_password();
-"97
-[e ( _validar_password ..  ]
-[; ;main.c: 98: if (tamanio_password >= 6 && !autorizado){
-"98
-[e $ ! && >= _tamanio_password -> 6 `i ! != _autorizado -> 0 `i 1046  ]
+"31
+[v _cambiar_dia `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;main.c: 99: tamanio_password = 0;
-"99
-[e = _tamanio_password -> 0 `i ]
-[; ;main.c: 100: lcd_gotoxy(1,2);
-"100
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;main.c: 101: lcd_putrs("ERROR pass");
-"101
-[e ( _lcd_putrs (1 :s 4C ]
-[; ;main.c: 102: for (int i=0;i<4;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
-"102
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 1047  ]
-[e $U 1048  ]
-[e :U 1047 ]
-[e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 1047  ]
-[e :U 1048 ]
-}
-[; ;main.c: 103: lcd_gotoxy(1,2);
-"103
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;main.c: 104: lcd_putrs(clear);
-"104
-[e ( _lcd_putrs (1 -> &U _clear `*Cuc ]
-"105
-}
-[e :U 1046 ]
-[; ;main.c: 105: }
-[; ;main.c: 106: }
-"106
-[e :UE 1041 ]
-}
-"108
-[v _mostrar_guardar_password `(i ~T0 @X0 1 ef1`uc ]
-{
-[; ;main.c: 108: mostrar_guardar_password(char tecla){
-[e :U _mostrar_guardar_password ]
+[; ;fecha.c: 31: void cambiar_dia(char tecla){
+[e :U _cambiar_dia ]
 [v _tecla `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 110: imprimir_tecla(tecla);
-"110
-[e ( _imprimir_tecla (1 _tecla ]
-[; ;main.c: 111: sprintf(buffer2,"%01u",tecla);
-"111
-[e ( _sprintf (1 , (. , &U _buffer2 :s 5C -> _tecla `i ]
-[; ;main.c: 112: guardar_current_password(*buffer2);
-"112
-[e ( _guardar_current_password (1 *U &U _buffer2 ]
-[; ;main.c: 114: }
-"114
-[e :UE 1050 ]
-}
-"116
-[v _ingresar_comando `(i ~T0 @X0 1 ef1`uc ]
+"32
+[v _valor `i ~T0 @X0 1 a ]
+[; ;fecha.c: 32: int valor = 0;
+[e = _valor -> 0 `i ]
+[; ;fecha.c: 34: if (tamanio_dia < 3 - 1 && tamanio_mes == 0 && tamanio_anio == 0){
+"34
+[e $ ! && && < _tamanio_dia - -> 3 `i -> 1 `i == _tamanio_mes -> 0 `i == _tamanio_anio -> 0 `i 1030  ]
 {
-[; ;main.c: 116: ingresar_comando(char key){
-[e :U _ingresar_comando ]
-[v _key `uc ~T0 @X0 1 r1 ]
-[f ]
-[; ;main.c: 117: guardar_comando(key);
-"117
-[e ( _guardar_comando (1 _key ]
-[; ;main.c: 118: }
-"118
-[e :UE 1051 ]
-}
-"125
-[v _main `(i ~T0 @X0 1 ef ]
-"126
-{
-[; ;main.c: 125: int main(void)
-[; ;main.c: 126: {
-[e :U _main ]
-[f ]
-[; ;main.c: 127: Setup();
-"127
-[e ( _Setup ..  ]
-[; ;main.c: 128: restaurar_comando();
-"128
-[e ( _restaurar_comando ..  ]
-[v _ocultar_teclas `i ~T0 @X0 1 a ]
-[; ;main.c: 130: int ocultar_teclas = 1;
-"130
-[e = _ocultar_teclas -> 1 `i ]
-"131
-[v _validacion `i ~T0 @X0 1 a ]
-"132
-[v _puntero_funcion `*v ~T0 @X0 1 a ]
-[; ;main.c: 131: int validacion;
-[; ;main.c: 132: void *puntero_funcion;
-[; ;main.c: 134: while(1)
-"134
-[e :U 1054 ]
-[; ;main.c: 135: {
-"135
-{
-[; ;main.c: 136: Read_RTC();
-"136
-[e ( _Read_RTC ..  ]
-[; ;main.c: 138: if (!autorizado){
-"138
-[e $ ! ! != _autorizado -> 0 `i 1056  ]
-{
-[; ;main.c: 139: leer_teclado(ocultar_teclas,mostrar_guardar_password);
-"139
-[e ( _leer_teclado (2 , _ocultar_teclas -> &U _mostrar_guardar_password `*F8261 ]
-[; ;main.c: 140: ingresar_password();
-"140
-[e ( _ingresar_password ..  ]
-"141
-}
-[; ;main.c: 141: }else{
-[e $U 1057  ]
-[e :U 1056 ]
-{
-[; ;main.c: 142: puntero_funcion = ingresar_comando;
-"142
-[e = _puntero_funcion -> &U _ingresar_comando `*v ]
-[; ;main.c: 144: validar_comando("xxx",&validacion);
-"144
-[e ( _validar_comando (2 , -> :s 6C `*uc &U _validacion ]
-[; ;main.c: 145: if(validacion){
-"145
-[e $ ! != _validacion -> 0 `i 1058  ]
-{
-[; ;main.c: 146: caratula("Welcome");
-"146
-[e ( _caratula (1 -> :s 7C `*uc ]
-"147
-}
-[e :U 1058 ]
-[; ;main.c: 147: }
-[; ;main.c: 149: validar_comando("001",&validacion);
-"149
-[e ( _validar_comando (2 , -> :s 8C `*uc &U _validacion ]
-[; ;main.c: 150: if(validacion){
-"150
-[e $ ! != _validacion -> 0 `i 1059  ]
-{
-[; ;main.c: 151: if (tamanio_dia != 2){
-"151
-[e $ ! != _tamanio_dia -> 2 `i 1060  ]
-{
-[; ;main.c: 152: lcd_gotoxy(1,1);
-"152
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 153: lcd_putrs("Inserte dia:     ");
-"153
-[e ( _lcd_putrs (1 :s 9C ]
-[; ;main.c: 154: lcd_gotoxy(1,2);
-"154
+[; ;fecha.c: 35: guardar_elemento(tecla,day,&tamanio_dia);
+"35
+[e ( _guardar_elemento (3 , , _tecla &U _day &U _tamanio_dia ]
+[; ;fecha.c: 36: lcd_gotoxy(1,2);
+"36
 [e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;main.c: 155: lcd_putrs("            ");
-"155
-[e ( _lcd_putrs (1 :s 10C ]
-[; ;main.c: 157: puntero_funcion = cambiar_dia;
-"157
-[e = _puntero_funcion -> &U _cambiar_dia `*v ]
-"158
+[; ;fecha.c: 37: lcd_putrs(day);
+"37
+[e ( _lcd_putrs (1 -> &U _day `*Cuc ]
+"38
 }
-[; ;main.c: 158: }else if (tamanio_mes != 2){
-[e $U 1061  ]
-[e :U 1060 ]
-[e $ ! != _tamanio_mes -> 2 `i 1062  ]
+[e :U 1030 ]
+[; ;fecha.c: 38: }
+[; ;fecha.c: 40: if (tamanio_dia >= 3 - 1){
+"40
+[e $ ! >= _tamanio_dia - -> 3 `i -> 1 `i 1031  ]
 {
-[; ;main.c: 160: lcd_gotoxy(1,1);
-"160
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 161: lcd_putrs("Inserte mes:     ");
-"161
-[e ( _lcd_putrs (1 :s 11C ]
-[; ;main.c: 162: lcd_gotoxy(1,2);
-"162
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;main.c: 163: lcd_putrs("  ");
-"163
-[e ( _lcd_putrs (1 :s 12C ]
-[; ;main.c: 165: puntero_funcion = cambiar_mes;
-"165
-[e = _puntero_funcion -> &U _cambiar_mes `*v ]
-"166
-}
-[; ;main.c: 166: }else if (tamanio_anio != 2){
-[e $U 1063  ]
-[e :U 1062 ]
-[e $ ! != _tamanio_anio -> 2 `i 1064  ]
-{
-[; ;main.c: 168: lcd_gotoxy(1,1);
-"168
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 169: lcd_putrs("Inserte anio:     ");
-"169
-[e ( _lcd_putrs (1 :s 13C ]
-[; ;main.c: 170: lcd_gotoxy(1,2);
-"170
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;main.c: 171: lcd_putrs("  ");
-"171
-[e ( _lcd_putrs (1 :s 14C ]
-[; ;main.c: 173: puntero_funcion = cambiar_anio;
-"173
-[e = _puntero_funcion -> &U _cambiar_anio `*v ]
-"174
-}
-[e :U 1064 ]
-"175
-[e :U 1063 ]
-[e :U 1061 ]
-}
-[e :U 1059 ]
-[; ;main.c: 174: }
-[; ;main.c: 175: }
-[; ;main.c: 177: validar_comando("002",&validacion);
-"177
-[e ( _validar_comando (2 , -> :s 15C `*uc &U _validacion ]
-[; ;main.c: 178: if(validacion){
-"178
-[e $ ! != _validacion -> 0 `i 1065  ]
-{
-[; ;main.c: 179: lcd_gotoxy(1,2);
-"179
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;main.c: 180: lcd_putrs("cambiar pass");
-"180
-[e ( _lcd_putrs (1 :s 16C ]
-[; ;main.c: 181: for (int i=0;i<10;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
-"181
+[; ;fecha.c: 41: convertir_a_int(day,&valor);
+"41
+[e ( _convertir_a_int (2 , &U _day &U _valor ]
+[; ;fecha.c: 42: dia = valor;
+"42
+[e = _dia _valor ]
+[; ;fecha.c: 43: Write_RTC();
+"43
+[e ( _Write_RTC ..  ]
+[; ;fecha.c: 45: for (int i=0;i<4;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
+"45
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 10 `i 1066  ]
-[e $U 1067  ]
-[e :U 1066 ]
+[e $ < _i -> 4 `i 1032  ]
+[e $U 1033  ]
+[e :U 1032 ]
 [e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 10 `i 1066  ]
-[e :U 1067 ]
+[e $ < _i -> 4 `i 1032  ]
+[e :U 1033 ]
 }
-[; ;main.c: 182: restaurar_comando();
-"182
+"47
+}
+[e :U 1031 ]
+[; ;fecha.c: 47: }
+[; ;fecha.c: 48: }
+"48
+[e :UE 1029 ]
+}
+"50
+[v _cambiar_mes `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;fecha.c: 50: void cambiar_mes(char tecla){
+[e :U _cambiar_mes ]
+[v _tecla `uc ~T0 @X0 1 r1 ]
+[f ]
+"52
+[v _valor `i ~T0 @X0 1 a ]
+[; ;fecha.c: 52: int valor = 0;
+[e = _valor -> 0 `i ]
+[; ;fecha.c: 54: if (tamanio_mes < 3 - 1 && tamanio_anio == 0){
+"54
+[e $ ! && < _tamanio_mes - -> 3 `i -> 1 `i == _tamanio_anio -> 0 `i 1036  ]
+{
+[; ;fecha.c: 55: guardar_elemento(tecla,month,&tamanio_mes);
+"55
+[e ( _guardar_elemento (3 , , _tecla &U _month &U _tamanio_mes ]
+[; ;fecha.c: 56: lcd_gotoxy(1,2);
+"56
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+[; ;fecha.c: 57: lcd_putrs(month);
+"57
+[e ( _lcd_putrs (1 -> &U _month `*Cuc ]
+"58
+}
+[e :U 1036 ]
+[; ;fecha.c: 58: }
+[; ;fecha.c: 60: if (tamanio_mes >= 3 - 1){
+"60
+[e $ ! >= _tamanio_mes - -> 3 `i -> 1 `i 1037  ]
+{
+[; ;fecha.c: 62: convertir_a_int(month,&valor);
+"62
+[e ( _convertir_a_int (2 , &U _month &U _valor ]
+[; ;fecha.c: 63: mes = valor;
+"63
+[e = _mes _valor ]
+[; ;fecha.c: 64: Write_RTC();
+"64
+[e ( _Write_RTC ..  ]
+[; ;fecha.c: 65: for (int i=0;i<4;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
+"65
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 4 `i 1038  ]
+[e $U 1039  ]
+[e :U 1038 ]
+[e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 4 `i 1038  ]
+[e :U 1039 ]
+}
+"66
+}
+[e :U 1037 ]
+[; ;fecha.c: 66: }
+[; ;fecha.c: 67: }
+"67
+[e :UE 1035 ]
+}
+"69
+[v _cambiar_anio `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;fecha.c: 69: void cambiar_anio(char tecla){
+[e :U _cambiar_anio ]
+[v _tecla `uc ~T0 @X0 1 r1 ]
+[f ]
+"70
+[v _valor `i ~T0 @X0 1 a ]
+[; ;fecha.c: 70: int valor = 0;
+[e = _valor -> 0 `i ]
+[; ;fecha.c: 72: if (tamanio_anio < 3 - 1){
+"72
+[e $ ! < _tamanio_anio - -> 3 `i -> 1 `i 1042  ]
+{
+[; ;fecha.c: 73: guardar_elemento(tecla,year,&tamanio_anio);
+"73
+[e ( _guardar_elemento (3 , , _tecla &U _year &U _tamanio_anio ]
+[; ;fecha.c: 74: lcd_gotoxy(1,2);
+"74
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+[; ;fecha.c: 75: lcd_putrs(year);
+"75
+[e ( _lcd_putrs (1 -> &U _year `*Cuc ]
+"76
+}
+[e :U 1042 ]
+[; ;fecha.c: 76: }
+[; ;fecha.c: 78: if (tamanio_anio >= 3 - 1){
+"78
+[e $ ! >= _tamanio_anio - -> 3 `i -> 1 `i 1043  ]
+{
+[; ;fecha.c: 80: convertir_a_int(year,&valor);
+"80
+[e ( _convertir_a_int (2 , &U _year &U _valor ]
+[; ;fecha.c: 81: anio = valor;
+"81
+[e = _anio _valor ]
+[; ;fecha.c: 82: Write_RTC();
+"82
+[e ( _Write_RTC ..  ]
+[; ;fecha.c: 84: restaurar_comando();
+"84
 [e ( _restaurar_comando ..  ]
-"183
+[; ;fecha.c: 85: inicializar();
+"85
+[e ( _inicializar ..  ]
+[; ;fecha.c: 86: for (int i=0;i<4;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
+"86
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 4 `i 1044  ]
+[e $U 1045  ]
+[e :U 1044 ]
+[e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 4 `i 1044  ]
+[e :U 1045 ]
 }
-[e :U 1065 ]
-[; ;main.c: 183: }
-[; ;main.c: 184: leer_teclado(!ocultar_teclas,puntero_funcion);
-"184
-[e ( _leer_teclado (2 , -> ! != _ocultar_teclas -> 0 `i `i -> _puntero_funcion `*F8261 ]
-"185
+"87
 }
-[e :U 1057 ]
-"186
+[e :U 1043 ]
+[; ;fecha.c: 87: }
+[; ;fecha.c: 88: }
+"88
+[e :UE 1041 ]
 }
-[e :U 1053 ]
-"134
-[e $U 1054  ]
-[e :U 1055 ]
-[; ;main.c: 185: }
-[; ;main.c: 186: }
-[; ;main.c: 187: return 0;
-"187
-[e ) -> 0 `i ]
-[e $UE 1052  ]
-[; ;main.c: 188: }
-"188
-[e :UE 1052 ]
+"89
+[v _cambiar_fecha `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;fecha.c: 89: void cambiar_fecha(char tecla){
+[e :U _cambiar_fecha ]
+[v _tecla `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;fecha.c: 91: cambiar_dia(tecla);
+"91
+[e ( _cambiar_dia (1 _tecla ]
+[; ;fecha.c: 92: cambiar_mes(tecla);
+"92
+[e ( _cambiar_mes (1 _tecla ]
+[; ;fecha.c: 93: cambiar_anio(tecla);
+"93
+[e ( _cambiar_anio (1 _tecla ]
+[; ;fecha.c: 94: }
+"94
+[e :UE 1047 ]
 }
 [p f _sprintf 8422404 ]
-[a 6C 120 120 120 0 ]
-[a 2C 37 48 50 117 58 37 48 50 117 58 37 48 50 117 0 ]
-[a 1C 37 48 50 117 47 37 48 50 117 47 37 48 50 117 0 ]
-[a 5C 37 48 49 117 0 ]
-[a 16C 99 97 109 98 105 97 114 32 112 97 115 115 0 ]
-[a 4C 69 82 82 79 82 32 112 97 115 115 0 ]
-[a 7C 87 101 108 99 111 109 101 0 ]
-[a 3C 73 110 115 101 114 116 101 32 112 97 115 115 119 111 114 100 0 ]
-[a 15C 48 48 50 0 ]
-[a 8C 48 48 49 0 ]
-[a 11C 73 110 115 101 114 116 101 32 109 101 115 58 32 32 32 32 32 0 ]
-[a 13C 73 110 115 101 114 116 101 32 97 110 105 111 58 32 32 32 32 32 0 ]
-[a 9C 73 110 115 101 114 116 101 32 100 105 97 58 32 32 32 32 32 0 ]
-[a 10C 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 12C 32 32 0 ]
-[a 14C 32 32 0 ]
+[a 1C 37 48 49 117 0 ]
+

@@ -6,11 +6,11 @@
                    projectFiles="true">
       <itemPath>C:/Archivos de programa/Unimic/unmc_01/headers/unmc_lcd_216.h</itemPath>
       <itemPath>C:/Archivos de programa/Unimic/unmc_01/headers/unmc_config_01.h</itemPath>
-      <itemPath>C:/Archivos de programa/Unimic/unmc_01/headers/unmc_rtcc_01.h</itemPath>
       <itemPath>C:/Archivos de programa/Unimic/unmc_01/headers/unmc_inout_02.h</itemPath>
       <itemPath>../../../../../../Program Files/Unimic/unmc_01/headers/password.h</itemPath>
       <itemPath>../../../../../../Program Files/Unimic/unmc_01/headers/teclado.h</itemPath>
       <itemPath>../../../../../../Program Files/Unimic/unmc_01/headers/fecha.h</itemPath>
+      <itemPath>../../../../../../Program Files/Unimic/unmc_01/headers/unmc_rtcc_02.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -21,6 +21,10 @@
                    projectFiles="true">
       <itemPath>main.c</itemPath>
       <itemPath>C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c</itemPath>
+      <itemPath>../../../../../../Program Files/Unimic/unmc_01/sources/teclado.c</itemPath>
+      <itemPath>../../../../../../Program Files/Unimic/unmc_01/sources/password.c</itemPath>
+      <itemPath>../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c</itemPath>
+      <itemPath>../../../../../../Program Files/Unimic/unmc_01/sources/unmc_rtcc_02.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -33,6 +37,7 @@
     <Elem>C:/Archivos de programa/Unimic/unmc_01/sources</Elem>
     <Elem>../../../../../Program Files/Unimic/unmc_01/headers</Elem>
     <Elem>../../../../../../Program Files/Unimic/unmc_01/headers</Elem>
+    <Elem>../../../../../../Program Files/Unimic/unmc_01/sources</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
