@@ -1,28 +1,164 @@
 
-# 1 "../../../../../../Program Files/Unimic/unmc_01/sources/teclado.c"
+# 1 "../../../../../../Program Files/Unimic/unmc_01/headers/hora.c"
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\delays.h"
-void Delay1TCYx(unsigned char);
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdlib.h"
+typedef int ptrdiff_t;
+typedef unsigned size_t;
+typedef unsigned short wchar_t;
 
-# 19
-void Delay10TCYx(unsigned char);
+# 16
+extern int errno;
 
-# 25
-void Delay100TCYx(unsigned char);
+# 27
+typedef struct {
+int rem;
+int quot;
+} div_t;
+typedef struct {
+unsigned rem;
+unsigned quot;
+} udiv_t;
+typedef struct {
+long quot;
+long rem;
+} ldiv_t;
+typedef struct {
+unsigned long quot;
+unsigned long rem;
+} uldiv_t;
 
-# 31
-void Delay1KTCYx(unsigned char);
+# 65
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+extern long strtol(const char *, char **, int);
 
-# 37
-void Delay10KTCYx(unsigned char);
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
 
-# 26 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\htc.h"
-extern const char __xc8_OPTIM_SPEED;
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
 
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
+
+# 98 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdlib.h"
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+
+# 6 "C:/Archivos de programa/Unimic/unmc_01/headers\hora.h"
+char hour[3] = "";
+char minutes[3] = "";
+
+int tamanio_hora = 0;
+int tamanio_minutos = 0;
+
+void inicializar_hora();
+void guardar_elemento_hora(char, char *, int *);
+void convertir_a_int_hora(char *, int *);
+void cambiar_hora(char);
+void cambiar_minutos(char);
+
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 24 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h"
+extern int errno;
+
+# 55
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 17 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\conio.h"
+extern int errno;
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 31
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 100 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 192
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 26 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\htc.h"
+extern const char __xc8_OPTIM_SPEED;
 
 # 49 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h"
 extern volatile unsigned char RPOR0 @ 0xEC6;
@@ -8847,12 +8983,7 @@ extern void ReadDSGPR( CONTEXT* ptr );
 
 extern void ULPWakeUpEnable( void );
 
-# 2 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stddef.h"
-typedef int ptrdiff_t;
-typedef unsigned size_t;
-typedef unsigned short wchar_t;
-
-# 13
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stddef.h"
 extern int errno;
 
 # 65 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\GenericTypeDefs.h"
@@ -9754,6 +9885,21 @@ extern void DelayFor18TCY(void);
 extern void DelayPORXLCD(void);
 extern void DelayXLCD(void);
 
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\delays.h"
+void Delay1TCYx(unsigned char);
+
+# 19
+void Delay10TCYx(unsigned char);
+
+# 25
+void Delay100TCYx(unsigned char);
+
+# 31
+void Delay1KTCYx(unsigned char);
+
+# 37
+void Delay10KTCYx(unsigned char);
+
 # 18 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18.h"
 __attribute__((__unsupported__("The flash_write routine is no longer supported. Please use the peripheral library functions: WriteBytesFlash, WriteBlockFlash or WriteWordFlash"))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 
@@ -9777,6 +9923,65 @@ typedef unsigned int int16;
 typedef unsigned long int32;
 
 # 98
+void lcd_send_nibble(int8 nibble);
+int8 lcd_read_nibble(void);
+int8 lcd_read_byte(void);
+void lcd_send_byte(int8 address, int8 n);
+
+void lcd_init(void);
+void lcd_gotoxy(int8 x, int8 y);
+void lcd_putc(int8 c);
+void lcd_comand(int8 d);
+void lcd_setcursor_vb(int8 visible, int8 blink);
+void lcd_puts(char *ptr);
+void lcd_putrs(const char *ptr);
+
+# 16 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_02.h"
+rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
+
+char segundo_u;
+char segundo_d;
+char minuto_u;
+char minuto_d;
+char hora_u;
+char hora_d;
+char fecha_u;
+char fecha_d;
+char mes_u;
+char mes_d;
+char dia_semana;
+char anio_u;
+char anio_d;
+bit flag=0;
+int i=0;
+int j=0;
+int a=0;
+int b=0;
+int c=0;
+int k=0;
+int anio=15;
+int mes=9;
+int diasem=3;
+int dia=8;
+int hora=18;
+int minuto=30;
+int segundo=0;
+
+
+
+
+rtccTime RtccTime;
+rtccTime RtccTimeVal;
+rtccDate RtccDate;
+
+unsigned char buffer2[20];
+
+void DelayFor18TCY(void);
+void DelayPORXLCD(void);
+void Write_RTC(void);
+void Read_RTC(void);
+
+# 98 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h"
 void lcd_send_nibble(int8 nibble);
 int8 lcd_read_nibble(void);
 int8 lcd_read_byte(void);
@@ -9831,149 +10036,64 @@ void restaurar_comando();
 void guardar_tecla_presionada(char *, int,char* (*doit)(char *));
 void leer_teclado(int ocultar,char* (*doit)());
 
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdarg.h"
-typedef void * va_list[1];
+# 9 "../../../../../../Program Files/Unimic/unmc_01/headers/hora.c"
+void inicializar_hora(){
+*hour = 0;
+*minutes = 0;
 
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
+tamanio_hora = 0;
+tamanio_minutos = 0;
+}
 
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
+void guardar_elemento_hora(char tecla, char * array, int * tamanio_array){
 
-# 24 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h"
-extern int errno;
+sprintf(buffer2,"%01u",tecla);
+array[*tamanio_array] = *buffer2;
+array [(*tamanio_array)+1] = 0;
+(*tamanio_array)++;
+}
 
-# 55
-struct __prbuf
-{
-char * ptr;
-void (* func)(char);
-};
-
-# 17 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\conio.h"
-extern int errno;
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 31
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 100 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
+void convertir_a_int_hora(char * array, int * valor){
+*valor = atoi(array);
+}
 
 
+void cambiar_hora(char tecla){
+int valor = 0;
 
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+if (tamanio_hora < 3 - 1){
+guardar_elemento_hora(tecla,hour,&tamanio_hora);
+lcd_gotoxy(1,2);
+lcd_putrs(hour);
+}
 
+if (tamanio_hora >= 3 - 1){
+convertir_a_int_hora(hour,&valor);
+hora = valor;
+Write_RTC();
 
-# 192
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
-# 10 "../../../../../../Program Files/Unimic/unmc_01/sources/teclado.c"
-void guardar_comando(char tecla){
-
-unsigned char aux[20];
-sprintf(aux,"%01u",tecla);
-if (tamanio_comando <3){
-comando[tamanio_comando] = *aux;
-comando [tamanio_comando+1] = '\0';
-tamanio_comando++;
+restaurar_comando();
+inicializar_hora();
+for (int i=0;i<4;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
 }
 }
 
-void guardar_array_comando(char * array_comando){
-comando[0] = array_comando[0];
-comando[1] = array_comando[1];
-comando[2] = array_comando[2];
-comando[2] = 0;
+void cambiar_minutos(char tecla){
 
-tamanio_comando = 3;
+int valor = 0;
+
+if (tamanio_minutos < 3 - 1 && tamanio_hora == 0){
+guardar_elemento_hora(tecla,minutes,&tamanio_minutos);
+lcd_gotoxy(1,2);
+lcd_putrs(minutes);
 }
 
-void validar_comando(char * candidato, int * validar){
+if (tamanio_minutos >= 3 - 1){
 
-*validar=1;
-int i = 0;
-while (i < 3){
-if (comando[i] != *(candidato+i))
-*validar = 0;
-
-i++;
+convertir_a_int_hora(minutes,&valor);
+minuto = valor;
+segundo = 00;
+Write_RTC();
+for (int i=0;i<4;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
 }
-}
-
-void imprimir_tecla(char tecla){
-
-unsigned char aux[20];
-sprintf(aux,"%01u",tecla);
-if (ocultar_teclas == 1){
-lcd_putrs("*");
-}else{
-lcd_putrs(aux);
-}
-}
-
-void restaurar_comando(){
-tamanio_comando = 0;
-
-comando[0]='x';
-comando[1]='x';
-comando[2]='x';
-comando[3]=0;
-}
-
-void guardar_tecla_presionada(char * letra, int i,char* (*doit)(char *)){
-if (PORTAbits.RA5==1){key=i;doit(key);while(PORTAbits.RA5==1){};}
-if (PORTAbits.RA7==1){key=(i)+1;doit(key);while(PORTAbits.RA7==1){};}
-if (PORTAbits.RA6==1){key=(i)+2;doit(key);while(PORTAbits.RA6==1){};}
-if (PORTCbits.RC2==1){key=letra[0] ;lcd_putrs(letra);while(PORTCbits.RC2==1){};}
-}
-
-void leer_teclado(int ocultar,char* (*doit)()){
-int i;
-ocultar_teclas = ocultar;
-
-LATAbits.LATA0=1;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=0;i=1;
-guardar_tecla_presionada("A",i,doit);
-
-LATAbits.LATA0=0;LATAbits.LATA1=1;LATAbits.LATA2=0;LATAbits.LATA3=0;i=4;
-guardar_tecla_presionada("B",i,doit);
-
-LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=1;LATAbits.LATA3=0;i=7;
-guardar_tecla_presionada("C",i,doit);
-
-LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=1;
-{
-if (PORTAbits.RA5==1){key='*';lcd_putrs("*");while(PORTAbits.RA5==1){};}
-if (PORTAbits.RA7==1){key=0;doit(key);while(PORTAbits.RA7==1){};}
-if (PORTAbits.RA6==1){key='#';lcd_putrs("#");while(PORTAbits.RA6==1){};}
-if (PORTCbits.RC2==1){key='D';lcd_putrs("D");while(PORTCbits.RC2==1){};}
-}
-_delay((unsigned long)((98)*(8000000/4000.0)));
-
 }

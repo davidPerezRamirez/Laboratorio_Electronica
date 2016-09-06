@@ -22,8 +22,9 @@
 #include <delays.h>
 #include <stdio.h>
 #include <teclado.h>
-#include <password.h>
+#include <alarma.h>
 #include <fecha.h>
+#include <hora.h>
 
 //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
 /// Funcion Caratula
@@ -44,6 +45,9 @@
         sprintf(buffer2,"%02u:%02u:%02u",hora,minuto,segundo);
         lcd_gotoxy(1,2);
         lcd_putrs(buffer2);
+        
+        lcd_gotoxy(13,2);
+        lcd_putrs((encendida)?"ON":"OFF");
     }
     
 //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
@@ -78,8 +82,8 @@
     Write_RTC();
     lcd_init();
     lcd_comand(0b00001100);     //Display=on / Cursor=off / Blink=off
-    LED_2_On;
-    LED_3_On;
+    LED_2_Off;
+    LED_3_Off;
     }
     
 ingresar_password(){
@@ -105,6 +109,13 @@ ingresar_password(){
     }
 }    
 
+mostrar_menu(char * titulo_menu){
+    lcd_gotoxy(1,1);            
+    lcd_putrs(titulo_menu);
+    lcd_gotoxy(1,2);
+    lcd_putrs("  ");
+}
+
 mostrar_guardar_password(char tecla){    
     
     imprimir_tecla(tecla);
@@ -116,6 +127,7 @@ mostrar_guardar_password(char tecla){
 ingresar_comando(char key){
     guardar_comando(key);
 }
+
 /*------------------------------------------------------------------------------
 ********************************************************************************
 Funcion main
@@ -132,13 +144,14 @@ int validacion;
 void *puntero_funcion;
 
 while(1)
-   {       
-    Read_RTC();    
-    
+   {
+    Read_RTC();
+           
     if (!autorizado){ 
         leer_teclado(ocultar_teclas,mostrar_guardar_password);  
-        ingresar_password();        
-    }else{
+        ingresar_password(); 
+        
+    }else{                        
         puntero_funcion = ingresar_comando;       
         
         validar_comando("xxx",&validacion);            
@@ -148,41 +161,51 @@ while(1)
         
         validar_comando("001",&validacion);            
         if(validacion){
-            if (tamanio_dia != 2){
-                lcd_gotoxy(1,1);            
-                lcd_putrs("Inserte dia:     ");
-                lcd_gotoxy(1,2);
-                lcd_putrs("            ");
-                
-                puntero_funcion = cambiar_dia;                
+            //Limpia la fila 2 del display
+            lcd_gotoxy(3,2);
+            lcd_putrs("                 "); 
+            
+            if (tamanio_anio != 2){              
+               mostrar_menu("Inserte anio:     ");
+               puntero_funcion = cambiar_anio;               
+                                
             }else if (tamanio_mes != 2){                            
-
-                lcd_gotoxy(1,1);            
-                lcd_putrs("Inserte mes:     ");
-                lcd_gotoxy(1,2);
-                lcd_putrs("  ");
-
+                mostrar_menu("Inserte mes:     ");
                 puntero_funcion = cambiar_mes;
-            }else if (tamanio_anio != 2){
                 
-                lcd_gotoxy(1,1);            
-                lcd_putrs("Inserte anio:     ");
-                lcd_gotoxy(1,2);
-                lcd_putrs("  ");
-
-                puntero_funcion = cambiar_anio;
+            }else if (tamanio_dia != 2){
+                mostrar_menu("Inserte dia:     ");
+                puntero_funcion = cambiar_dia;
+                
             }
         }
         
         validar_comando("002",&validacion);            
-        if(validacion){            
+        if(validacion){
+            //Limpia la fila 2 del display
+            lcd_gotoxy(3,2);
+            lcd_putrs("                    "); 
+            
+            if (tamanio_minutos != 2){  
+                mostrar_menu("Inserte minutos:     ");
+                puntero_funcion = cambiar_minutos;               
+                                
+            }else if (tamanio_hora != 2){                            
+                mostrar_menu("Inserte hora:     ");
+                puntero_funcion = cambiar_hora;
+                
+            }
+        }
+                   
+        if(key == 'C'){            
             lcd_gotoxy(1,2);            
             lcd_putrs("cambiar pass");
             for (int i=0;i<10;i++)__delay_ms(98);
             restaurar_comando();
         }        
-         leer_teclado(!ocultar_teclas,puntero_funcion);
-    }        
+                 
+        leer_teclado(!ocultar_teclas,puntero_funcion);         
+    }    
    }
 return 0;
 }

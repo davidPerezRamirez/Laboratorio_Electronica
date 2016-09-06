@@ -9327,7 +9327,7 @@ void DelayPORXLCD(void);
 void Write_RTC(void);
 void Read_RTC(void);
 
-# 6 "C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h"
+# 7 "C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h"
 char day[3] = "";
 char month[3] = "";
 char year[3] = "";
@@ -9336,13 +9336,12 @@ int tamanio_dia = 0;
 int tamanio_mes = 0;
 int tamanio_anio = 0;
 
-void inicializar();
-void guardar_elemento(char, char *, int *);
-void convertir_a_int(char *, int *);
+void inicializar_fecha();
+void guardar_elemento_fecha(char, char *, int *);
+void convertir_a_int_fecha(char *, int *);
 void cambiar_dia(char);
 void cambiar_mes(char);
 void cambiar_anio(char);
-void cambiar_fecha(char);
 
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdarg.h"
 typedef void * va_list[1];
@@ -9489,6 +9488,7 @@ char comando[4]="xxx";
 int tamanio_comando = 0;
 
 void guardar_comando(char);
+void guardar_array_comando(char *);
 void validar_comando(char *, int *);
 void imprimir_tecla(char);
 void restaurar_comando();
@@ -9496,7 +9496,7 @@ void guardar_tecla_presionada(char *, int,char* (*doit)(char *));
 void leer_teclado(int ocultar,char* (*doit)());
 
 # 8 "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
-void inicializar(){
+void inicializar_fecha(){
 *day = 0;
 *month = 0;
 *year = 0;
@@ -9506,7 +9506,7 @@ tamanio_mes = 0;
 tamanio_anio = 0;
 }
 
-void guardar_elemento(char tecla, char * array, int * tamanio_array){
+void guardar_elemento_fecha(char tecla, char * array, int * tamanio_array){
 
 sprintf(buffer2,"%01u",tecla);
 array[*tamanio_array] = *buffer2;
@@ -9514,7 +9514,7 @@ array [(*tamanio_array)+1] = 0;
 (*tamanio_array)++;
 }
 
-void convertir_a_int(char * array, int * valor){
+void convertir_a_int_fecha(char * array, int * valor){
 *valor = atoi(array);
 }
 
@@ -9522,19 +9522,20 @@ void convertir_a_int(char * array, int * valor){
 void cambiar_dia(char tecla){
 int valor = 0;
 
-if (tamanio_dia < 3 - 1 && tamanio_mes == 0 && tamanio_anio == 0){
-guardar_elemento(tecla,day,&tamanio_dia);
+if (tamanio_dia < 3 - 1){
+guardar_elemento_fecha(tecla,day,&tamanio_dia);
 lcd_gotoxy(1,2);
 lcd_putrs(day);
 }
 
 if (tamanio_dia >= 3 - 1){
-convertir_a_int(day,&valor);
+convertir_a_int_fecha(day,&valor);
 dia = valor;
 Write_RTC();
 
+restaurar_comando();
+inicializar_fecha();
 for (int i=0;i<4;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
-
 }
 }
 
@@ -9542,15 +9543,15 @@ void cambiar_mes(char tecla){
 
 int valor = 0;
 
-if (tamanio_mes < 3 - 1 && tamanio_anio == 0){
-guardar_elemento(tecla,month,&tamanio_mes);
+if (tamanio_mes < 3 - 1 && tamanio_dia == 0){
+guardar_elemento_fecha(tecla,month,&tamanio_mes);
 lcd_gotoxy(1,2);
 lcd_putrs(month);
 }
 
 if (tamanio_mes >= 3 - 1){
 
-convertir_a_int(month,&valor);
+convertir_a_int_fecha(month,&valor);
 mes = valor;
 Write_RTC();
 for (int i=0;i<4;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
@@ -9560,26 +9561,18 @@ for (int i=0;i<4;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
 void cambiar_anio(char tecla){
 int valor = 0;
 
-if (tamanio_anio < 3 - 1){
-guardar_elemento(tecla,year,&tamanio_anio);
+if (tamanio_anio < 3 - 1 && tamanio_mes == 0 && tamanio_dia == 0){
+guardar_elemento_fecha(tecla,year,&tamanio_anio);
 lcd_gotoxy(1,2);
 lcd_putrs(year);
 }
 
 if (tamanio_anio >= 3 - 1){
 
-convertir_a_int(year,&valor);
+convertir_a_int_fecha(year,&valor);
 anio = valor;
 Write_RTC();
 
-restaurar_comando();
-inicializar();
 for (int i=0;i<4;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
 }
-}
-void cambiar_fecha(char tecla){
-
-cambiar_dia(tecla);
-cambiar_mes(tecla);
-cambiar_anio(tecla);
 }

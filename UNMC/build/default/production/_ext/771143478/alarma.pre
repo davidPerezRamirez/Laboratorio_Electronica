@@ -1,16 +1,19 @@
 
-# 1 "../../../../../../Program Files/Unimic/unmc_01/sources/password.c"
+# 1 "../../../../../../Program Files/Unimic/unmc_01/sources/alarma.c"
 
-# 7 "C:/Archivos de programa/Unimic/unmc_01/headers\password.h"
+# 7 "C:/Archivos de programa/Unimic/unmc_01/headers\alarma.h"
 char password[6]="123456";
 char current_password[6]="";
 int tamanio_password=0;
 int autorizado=0;
+int encendida = 0;
+int activida = 0;
+
 
 void guardar_current_password(char);
 void validar_password();
 
-# 3 "../../../../../../Program Files/Unimic/unmc_01/sources/password.c"
+# 3 "../../../../../../Program Files/Unimic/unmc_01/sources/alarma.c"
 void guardar_current_password(char valor){
 
 
@@ -32,4 +35,7 @@ autorizado = 0;
 
 i++;
 }
+
+if (autorizado == 1)
+encendida = 1;
 }

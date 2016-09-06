@@ -9887,17 +9887,21 @@ char comando[4]="xxx";
 int tamanio_comando = 0;
 
 void guardar_comando(char);
+void guardar_array_comando(char *);
 void validar_comando(char *, int *);
 void imprimir_tecla(char);
 void restaurar_comando();
 void guardar_tecla_presionada(char *, int,char* (*doit)(char *));
 void leer_teclado(int ocultar,char* (*doit)());
 
-# 7 "C:/Archivos de programa/Unimic/unmc_01/headers\password.h"
+# 7 "C:/Archivos de programa/Unimic/unmc_01/headers\alarma.h"
 char password[6]="123456";
 char current_password[6]="";
 int tamanio_password=0;
 int autorizado=0;
+int encendida = 0;
+int activida = 0;
+
 
 void guardar_current_password(char);
 void validar_password();
@@ -10014,7 +10018,7 @@ void DelayPORXLCD(void);
 void Write_RTC(void);
 void Read_RTC(void);
 
-# 6 "C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h"
+# 7 "C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h"
 char day[3] = "";
 char month[3] = "";
 char year[3] = "";
@@ -10023,15 +10027,39 @@ int tamanio_dia = 0;
 int tamanio_mes = 0;
 int tamanio_anio = 0;
 
-void inicializar();
-void guardar_elemento(char, char *, int *);
-void convertir_a_int(char *, int *);
+void inicializar_fecha();
+void guardar_elemento_fecha(char, char *, int *);
+void convertir_a_int_fecha(char *, int *);
 void cambiar_dia(char);
 void cambiar_mes(char);
 void cambiar_anio(char);
-void cambiar_fecha(char);
 
-# 34 "main.c"
+# 108 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdlib.h"
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+
+# 6 "C:/Archivos de programa/Unimic/unmc_01/headers\hora.h"
+char hour[3] = "";
+char minutes[3] = "";
+
+int tamanio_hora = 0;
+int tamanio_minutos = 0;
+
+void inicializar_hora();
+void guardar_elemento_hora(char, char *, int *);
+void convertir_a_int_hora(char *, int *);
+void cambiar_hora(char);
+void cambiar_minutos(char);
+
+# 35 "main.c"
 void caratula(char * titulo)
 {
 lcd_comand(0b00001100);
@@ -10045,9 +10073,12 @@ lcd_putrs(buffer2);
 sprintf(buffer2,"%02u:%02u:%02u",hora,minuto,segundo);
 lcd_gotoxy(1,2);
 lcd_putrs(buffer2);
+
+lcd_gotoxy(13,2);
+lcd_putrs((encendida)?"ON":"OFF");
 }
 
-# 55
+# 59
 void Setup(void)
 {
 OSCTUNEbits.INTSRC=1;
@@ -10074,8 +10105,8 @@ T1CONbits.T1OSCEN=1;
 Write_RTC();
 lcd_init();
 lcd_comand(0b00001100);
-LATBbits.LATB1 = 1;;
-LATBbits.LATB0 = 1;;
+LATBbits.LATB1 = 0;;
+LATBbits.LATB0 = 0;;
 }
 
 ingresar_password(){
@@ -10101,6 +10132,13 @@ lcd_putrs(clear);
 }
 }
 
+mostrar_menu(char * titulo_menu){
+lcd_gotoxy(1,1);
+lcd_putrs(titulo_menu);
+lcd_gotoxy(1,2);
+lcd_putrs("  ");
+}
+
 mostrar_guardar_password(char tecla){
 
 imprimir_tecla(tecla);
@@ -10113,7 +10151,7 @@ ingresar_comando(char key){
 guardar_comando(key);
 }
 
-# 125
+# 137
 int main(void)
 {
 Setup();
@@ -10130,6 +10168,7 @@ Read_RTC();
 if (!autorizado){
 leer_teclado(ocultar_teclas,mostrar_guardar_password);
 ingresar_password();
+
 }else{
 puntero_funcion = ingresar_comando;
 
@@ -10140,39 +10179,49 @@ caratula("Welcome");
 
 validar_comando("001",&validacion);
 if(validacion){
-if (tamanio_dia != 2){
-lcd_gotoxy(1,1);
-lcd_putrs("Inserte dia:     ");
-lcd_gotoxy(1,2);
-lcd_putrs("            ");
 
-puntero_funcion = cambiar_dia;
-}else if (tamanio_mes != 2){
+lcd_gotoxy(3,2);
+lcd_putrs("                 ");
 
-lcd_gotoxy(1,1);
-lcd_putrs("Inserte mes:     ");
-lcd_gotoxy(1,2);
-lcd_putrs("  ");
-
-puntero_funcion = cambiar_mes;
-}else if (tamanio_anio != 2){
-
-lcd_gotoxy(1,1);
-lcd_putrs("Inserte anio:     ");
-lcd_gotoxy(1,2);
-lcd_putrs("  ");
-
+if (tamanio_anio != 2){
+mostrar_menu("Inserte anio:     ");
 puntero_funcion = cambiar_anio;
+
+}else if (tamanio_mes != 2){
+mostrar_menu("Inserte mes:     ");
+puntero_funcion = cambiar_mes;
+
+}else if (tamanio_dia != 2){
+mostrar_menu("Inserte dia:     ");
+puntero_funcion = cambiar_dia;
+
 }
 }
 
 validar_comando("002",&validacion);
 if(validacion){
+
+lcd_gotoxy(3,2);
+lcd_putrs("                    ");
+
+if (tamanio_minutos != 2){
+mostrar_menu("Inserte minutos:     ");
+puntero_funcion = cambiar_minutos;
+
+}else if (tamanio_hora != 2){
+mostrar_menu("Inserte hora:     ");
+puntero_funcion = cambiar_hora;
+
+}
+}
+
+if(key == 'C'){
 lcd_gotoxy(1,2);
 lcd_putrs("cambiar pass");
 for (int i=0;i<10;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
 restaurar_comando();
 }
+
 leer_teclado(!ocultar_teclas,puntero_funcion);
 }
 }

@@ -1,22 +1,22 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"144 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib/rtcc.h
-[s S1024 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S1024 . year rsvd mday mon hour wday sec min ]
+"144 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\rtcc.h
+[s S1033 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1033 . year rsvd mday mon hour wday sec min ]
 "142
-[u S1023 `S1024 1 `uc -> 8 `i `ui -> 4 `i `ul -> 2 `i ]
-[n S1023 . f b w l ]
+[u S1032 `S1033 1 `uc -> 8 `i `ui -> 4 `i `ul -> 2 `i ]
+[n S1032 . f b w l ]
 "113
-[s S1020 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S1020 . rsvd sec min hour ]
+[s S1029 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1029 . rsvd sec min hour ]
 "111
-[u S1019 `S1020 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
-[n S1019 . f b w l ]
+[u S1028 `S1029 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
+[n S1028 . f b w l ]
 "128
-[s S1022 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S1022 . wday mday mon year ]
+[s S1031 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1031 . wday mday mon year ]
 "126
-[u S1021 `S1022 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
-[n S1021 . f b w l ]
+[u S1030 `S1031 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
+[n S1030 . f b w l ]
 "206 C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "67 C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdlib.h
@@ -29,9 +29,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Write_RTC `(v ~T0 @X0 0 ef ]
 "20 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
 [v _restaurar_comando `(v ~T0 @X0 0 ef ]
-[v F7232 `(v ~T0 @X0 1 tf1`ul ]
+[v F8339 `(v ~T0 @X0 1 tf1`ul ]
 "161 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18.h
-[v __delay `JF7232 ~T0 @X0 0 e ]
+[v __delay `JF8339 ~T0 @X0 0 e ]
 [p i __delay ]
 [; ;stdlib.h: 4: typedef int ptrdiff_t;
 [; ;stdlib.h: 5: typedef unsigned size_t;
@@ -87,6 +87,69 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
+"6 C:/Archivos de programa/Unimic/unmc_01/headers\hora.h
+[v _hour `uc ~T0 @X0 -> 3 `i e ]
+[i _hour
+:U ..
+-> 0 `c
+..
+]
+[; ;headers\hora.h: 6: char hour[3] = "";
+"7
+[v _minutes `uc ~T0 @X0 -> 3 `i e ]
+[i _minutes
+:U ..
+-> 0 `c
+..
+]
+[; ;headers\hora.h: 7: char minutes[3] = "";
+"9
+[v _tamanio_hora `i ~T0 @X0 1 e ]
+[i _tamanio_hora
+-> 0 `i
+]
+[; ;headers\hora.h: 9: int tamanio_hora = 0;
+"10
+[v _tamanio_minutos `i ~T0 @X0 1 e ]
+[i _tamanio_minutos
+-> 0 `i
+]
+[; ;headers\hora.h: 10: int tamanio_minutos = 0;
+[; ;headers\hora.h: 12: void inicializar_hora();
+[; ;headers\hora.h: 13: void guardar_elemento_hora(char, char *, int *);
+[; ;headers\hora.h: 14: void convertir_a_int_hora(char *, int *);
+[; ;headers\hora.h: 15: void cambiar_hora(char);
+[; ;headers\hora.h: 16: void cambiar_minutos(char);
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 24: extern int errno;
+[; ;stdio.h: 55: struct __prbuf
+[; ;stdio.h: 56: {
+[; ;stdio.h: 57: char * ptr;
+[; ;stdio.h: 58: void (* func)(char);
+[; ;stdio.h: 59: };
+[; ;conio.h: 17: extern int errno;
+[; ;conio.h: 20: extern void init_uart(void);
+[; ;conio.h: 22: extern char getch(void);
+[; ;conio.h: 23: extern char getche(void);
+[; ;conio.h: 24: extern void putch(char);
+[; ;conio.h: 25: extern void ungetch(char);
+[; ;conio.h: 27: extern __bit kbhit(void);
+[; ;conio.h: 31: extern char * cgets(char *);
+[; ;conio.h: 32: extern void cputs(const char *);
+[; ;stdio.h: 100: extern int cprintf(char *, ...);
+[; ;stdio.h: 105: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 195: extern char * gets(char *);
+[; ;stdio.h: 196: extern int puts(const char *);
+[; ;stdio.h: 197: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 198: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 199: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 200: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 201: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 202: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 206: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 207: extern int printf(const char *, ...);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;pic18f26j50.h: 49: extern volatile unsigned char RPOR0 @ 0xEC6;
 "51 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
@@ -6767,11 +6830,164 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18f26j50.h: 17686: extern volatile __bit nWRITE @ (((unsigned) &SSP1STAT)*8) + 2;
 [; ;pic18f26j50.h: 17688: extern volatile __bit nWRITE1 @ (((unsigned) &SSP1STAT)*8) + 2;
 [; ;pic18f26j50.h: 17690: extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
-[; ;pic18.h: 18: __attribute__((__unsupported__("The flash_write routine is no longer supported. Please use the peripheral library functions: WriteBytesFlash, WriteBlockFlash or WriteWordFlash"))) void flash_write(const unsigned char *, unsigned int, __far unsigned c
-[; ;pic18.h: 42: extern void __nop(void);
-[; ;pic18.h: 161: extern __nonreentrant void _delay(unsigned long);
-[; ;pic18.h: 163: extern __nonreentrant void _delaywdt(unsigned long);
-[; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
+[; ;adc.h: 2008: union ADCResult
+[; ;adc.h: 2009: {
+[; ;adc.h: 2010: int lr;
+[; ;adc.h: 2011: char br[2];
+[; ;adc.h: 2012: };
+[; ;adc.h: 2014: char BusyADC (void);
+[; ;adc.h: 2016: void ConvertADC (void);
+[; ;adc.h: 2018: void CloseADC(void);
+[; ;adc.h: 2026: int ReadADC(void);
+[; ;adc.h: 2059: void OpenADC ( unsigned char ,
+[; ;adc.h: 2060: unsigned char ,
+[; ;adc.h: 2061: unsigned int );
+[; ;adc.h: 2084: void SetChanADC(unsigned char );
+[; ;adc.h: 2100: void SelChanConvADC( unsigned char );
+[; ;ancomp.h: 202: void Close_ancomp1( void );
+[; ;ancomp.h: 203: void Open_ancomp1(unsigned char config);
+[; ;ancomp.h: 204: void Close_ancomp2( void );
+[; ;ancomp.h: 205: void Open_ancomp2(unsigned char config);
+[; ;spi.h: 236: void OpenSPI1( unsigned char sync_mode,
+[; ;spi.h: 237: unsigned char bus_mode,
+[; ;spi.h: 238: unsigned char smp_phase );
+[; ;spi.h: 240: signed char WriteSPI1( unsigned char data_out );
+[; ;spi.h: 242: void getsSPI1( unsigned char *rdptr, unsigned char length );
+[; ;spi.h: 244: void putsSPI1( unsigned char *wrptr );
+[; ;spi.h: 246: unsigned char ReadSPI1( void );
+[; ;spi.h: 441: void OpenSPI2( unsigned char sync_mode,
+[; ;spi.h: 442: unsigned char bus_mode,
+[; ;spi.h: 443: unsigned char smp_phase );
+[; ;spi.h: 445: signed char WriteSPI2( unsigned char data_out );
+[; ;spi.h: 447: void getsSPI2( unsigned char *rdptr, unsigned char length );
+[; ;spi.h: 449: void putsSPI2( unsigned char *wrptr );
+[; ;spi.h: 451: unsigned char ReadSPI2( void );
+[; ;can2510.h: 414: void CAN2510Initialize(  unsigned int configuration,
+[; ;can2510.h: 415: unsigned char brp,
+[; ;can2510.h: 416: unsigned char interruptFlags,
+[; ;can2510.h: 417: unsigned char SPI_syncMode,
+[; ;can2510.h: 418: unsigned char SPI_busMode,
+[; ;can2510.h: 419: unsigned char SPI_smpPhase );
+[; ;can2510.h: 421: signed char CAN2510Init(  unsigned long BufferConfig,
+[; ;can2510.h: 422: unsigned long BitTimeConfig,
+[; ;can2510.h: 423: unsigned char interruptEnables,
+[; ;can2510.h: 424: unsigned char SPI_syncMode,
+[; ;can2510.h: 425: unsigned char SPI_busMode,
+[; ;can2510.h: 426: unsigned char SPI_smpPhase );
+[; ;can2510.h: 428: void CAN2510Enable( void );
+[; ;can2510.h: 430: void CAN2510Disable( void );
+[; ;can2510.h: 432: void CAN2510Reset( void );
+[; ;can2510.h: 434: void CAN2510SetMode(  unsigned char mode );
+[; ;can2510.h: 436: unsigned char CAN2510ReadMode( void );
+[; ;can2510.h: 438: unsigned char CAN2510ReadStatus( void );
+[; ;can2510.h: 440: unsigned char CAN2510ErrorState( void );
+[; ;can2510.h: 442: unsigned char CAN2510InterruptStatus( void );
+[; ;can2510.h: 444: void CAN2510InterruptEnable( unsigned char interruptFlags );
+[; ;can2510.h: 446: unsigned char CAN2510ByteRead(  unsigned char addr );
+[; ;can2510.h: 448: void CAN2510ByteWrite(  unsigned char addr,  unsigned char value );
+[; ;can2510.h: 450: void CAN2510SequentialRead(  unsigned char *DataArray,
+[; ;can2510.h: 451: unsigned char CAN2510addr,
+[; ;can2510.h: 452: unsigned char numbytes );
+[; ;can2510.h: 454: void CAN2510SequentialWrite(  unsigned char *DataArray,
+[; ;can2510.h: 455: unsigned char CAN2510addr,
+[; ;can2510.h: 456: unsigned char numbytes );
+[; ;can2510.h: 458: void CAN2510BitModify(  unsigned char address,
+[; ;can2510.h: 459: unsigned char mask,
+[; ;can2510.h: 460: unsigned char data );
+[; ;can2510.h: 462: void CAN2510SetSingleMaskStd(  unsigned char maskNum,  unsigned int mask );
+[; ;can2510.h: 464: void CAN2510SetSingleMaskXtd(  unsigned char maskNum,  unsigned long mask );
+[; ;can2510.h: 466: void CAN2510SetSingleFilterStd(  unsigned char filterNum,  unsigned int filter );
+[; ;can2510.h: 468: void CAN2510SetSingleFilterXtd(  unsigned char filterNum,  unsigned long filter );
+[; ;can2510.h: 470: signed char CAN2510SetMsgFilterStd(  unsigned char bufferNum,
+[; ;can2510.h: 471: unsigned int mask,
+[; ;can2510.h: 472: unsigned int *filters );
+[; ;can2510.h: 474: signed char CAN2510SetMsgFilterXtd(  unsigned char bufferNum,
+[; ;can2510.h: 475: unsigned long mask,
+[; ;can2510.h: 476: unsigned long *filters );
+[; ;can2510.h: 478: signed char CAN2510WriteStd(  unsigned int msgId,
+[; ;can2510.h: 479: unsigned char msgPriority,
+[; ;can2510.h: 480: unsigned char numBytes,
+[; ;can2510.h: 481: unsigned char *data );
+[; ;can2510.h: 483: signed char CAN2510WriteXtd(  unsigned long msgId,
+[; ;can2510.h: 484: unsigned char msgPriority,
+[; ;can2510.h: 485: unsigned char numBytes,
+[; ;can2510.h: 486: unsigned char *data );
+[; ;can2510.h: 488: void CAN2510LoadBufferStd(  unsigned char bufferNum,
+[; ;can2510.h: 489: unsigned int msgId,
+[; ;can2510.h: 490: unsigned char numBytes,
+[; ;can2510.h: 491: unsigned char *data );
+[; ;can2510.h: 493: void CAN2510LoadBufferXtd(  unsigned char bufferNum,
+[; ;can2510.h: 494: unsigned long msgId,
+[; ;can2510.h: 495: unsigned char numBytes,
+[; ;can2510.h: 496: unsigned char *data );
+[; ;can2510.h: 498: void CAN2510LoadRTRStd(  unsigned char bufferNum,
+[; ;can2510.h: 499: unsigned int msgId,
+[; ;can2510.h: 500: unsigned char numBytes );
+[; ;can2510.h: 502: void CAN2510LoadRTRXtd(  unsigned char bufferNum,
+[; ;can2510.h: 503: unsigned long msgId,
+[; ;can2510.h: 504: unsigned char numBytes );
+[; ;can2510.h: 506: void CAN2510SetBufferPriority(  unsigned char bufferNum,
+[; ;can2510.h: 507: unsigned char bufferPriority );
+[; ;can2510.h: 509: void CAN2510SendBuffer(  unsigned char bufferNumber );
+[; ;can2510.h: 511: signed char CAN2510WriteBuffer(  unsigned char bufferNum );
+[; ;can2510.h: 513: unsigned char CAN2510DataReady(  unsigned char bufferNum );
+[; ;can2510.h: 515: unsigned char CAN2510DataRead(  unsigned char bufferNum,
+[; ;can2510.h: 516: unsigned long *msgId,
+[; ;can2510.h: 517: unsigned char *numBytes,
+[; ;can2510.h: 518: unsigned char *data );
+[; ;capture.h: 64: union capstatus
+[; ;capture.h: 65: {
+[; ;capture.h: 73: struct
+[; ;capture.h: 74: {
+[; ;capture.h: 77: unsigned Cap1OVF:1;
+[; ;capture.h: 82: unsigned Cap2OVF:1;
+[; ;capture.h: 115: };
+[; ;capture.h: 117: unsigned :8;
+[; ;capture.h: 119: };
+[; ;capture.h: 121: extern union capstatus CapStatus;
+[; ;capture.h: 123: union CapResult
+[; ;capture.h: 124: {
+[; ;capture.h: 125: unsigned int lc;
+[; ;capture.h: 126: char bc[2];
+[; ;capture.h: 127: };
+[; ;capture.h: 474: void OpenCapture1 ( unsigned char config);
+[; ;capture.h: 475: unsigned int ReadCapture1 (void);
+[; ;capture.h: 476: void CloseCapture1 (void);
+[; ;capture.h: 484: void OpenCapture2 ( unsigned char config);
+[; ;capture.h: 485: unsigned int ReadCapture2 (void);
+[; ;capture.h: 486: void CloseCapture2 (void);
+[; ;compare.h: 385: void OpenCompare1(unsigned char config,unsigned int period);
+[; ;compare.h: 386: void CloseCompare1(void);
+[; ;compare.h: 392: void OpenCompare2(unsigned char config, unsigned int period);
+[; ;compare.h: 393: void CloseCompare2(void);
+[; ;ctmu.h: 374: void OpenCTMU(unsigned char config1,unsigned char config2,unsigned char config3);
+[; ;ctmu.h: 379: void CurrentControlCTMU(unsigned char config);
+[; ;ctmu.h: 380: void CloseCTMU(void);
+[; ;dpslp.h: 49: typedef union
+[; ;dpslp.h: 50: {
+[; ;dpslp.h: 51: struct
+[; ;dpslp.h: 52: {
+[; ;dpslp.h: 53: unsigned char DS_POR:1;
+[; ;dpslp.h: 54: unsigned char DS_MCLR:1;
+[; ;dpslp.h: 55: unsigned char DS_RTC:1;
+[; ;dpslp.h: 56: unsigned char DS_WDT:1;
+[; ;dpslp.h: 57: unsigned char DS_FLT:1;
+[; ;dpslp.h: 58: unsigned char DS_INT0:1;
+[; ;dpslp.h: 59: unsigned char DS_BOR:1;
+[; ;dpslp.h: 60: unsigned char DS_ULP:1;
+[; ;dpslp.h: 61: }WK_SRC;
+[; ;dpslp.h: 63: unsigned char WKSRC;
+[; ;dpslp.h: 65: }SRC;
+[; ;dpslp.h: 68: typedef struct
+[; ;dpslp.h: 69: {
+[; ;dpslp.h: 70: unsigned char Reg0;
+[; ;dpslp.h: 71: unsigned char Reg1;
+[; ;dpslp.h: 72: }CONTEXT;
+[; ;dpslp.h: 164: extern void DeepSleepWakeUpSource(SRC* ptr);
+[; ;dpslp.h: 165: extern void GotoDeepSleep( unsigned int config);
+[; ;dpslp.h: 166: extern signed char IsResetFromDeepSleep( void );
+[; ;dpslp.h: 167: extern void ReadDSGPR( CONTEXT* ptr );
+[; ;dpslp.h: 171: extern void ULPWakeUpEnable( void );
 [; ;stddef.h: 13: extern int errno;
 [; ;GenericTypeDefs.h: 65: typedef enum _BOOL { FALSE = 0, TRUE } BOOL;
 [; ;GenericTypeDefs.h: 68: typedef enum _BIT { CLEAR = 0, SET } BIT;
@@ -7172,6 +7388,60 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;GenericTypeDefs.h: 545: BYTE b63:1;
 [; ;GenericTypeDefs.h: 546: } bits;
 [; ;GenericTypeDefs.h: 547: } QWORD_VAL;
+[; ;flash.h: 113: extern void ReadFlash(unsigned long startaddr, unsigned int num_bytes, unsigned char *flash_array);
+[; ;flash.h: 120: extern void EraseFlash(unsigned long startaddr, unsigned long endaddr);
+[; ;flash.h: 122: extern void WriteBlockFlash(unsigned long startaddr, unsigned char num_blocks, unsigned char *flash_array);
+[; ;flash.h: 124: extern void WriteBytesFlash(unsigned long startaddr, unsigned int num_bytes, unsigned char *flash_array);
+[; ;flash.h: 127: extern void WriteWordFlash(unsigned long startaddr, unsigned int data);
+[; ;i2c.h: 244: void OpenI2C1( unsigned char sync_mode, unsigned char slew );
+[; ;i2c.h: 264: unsigned char ReadI2C1( void );
+[; ;i2c.h: 279: signed char WriteI2C1( unsigned char data_out );
+[; ;i2c.h: 294: signed char getsI2C1( unsigned char *rdptr, unsigned char length );
+[; ;i2c.h: 297: signed char putsI2C1( unsigned char *wrptr );
+[; ;i2c.h: 305: signed char EEAckPolling1( unsigned char control );
+[; ;i2c.h: 308: signed char EEByteWrite1( unsigned char control,
+[; ;i2c.h: 309: unsigned char address,
+[; ;i2c.h: 310: unsigned char data );
+[; ;i2c.h: 313: signed int EECurrentAddRead1( unsigned char control );
+[; ;i2c.h: 316: signed char EEPageWrite1( unsigned char control,
+[; ;i2c.h: 317: unsigned char address,
+[; ;i2c.h: 318: unsigned char *wrptr );
+[; ;i2c.h: 321: signed int EERandomRead1( unsigned char control, unsigned char address );
+[; ;i2c.h: 324: signed char EESequentialRead1( unsigned char control,
+[; ;i2c.h: 325: unsigned char address,
+[; ;i2c.h: 326: unsigned char *rdptr,
+[; ;i2c.h: 327: unsigned char length );
+[; ;mwire.h: 200: void OpenMwire1( unsigned char sync_mode );
+[; ;mwire.h: 203: unsigned char ReadMwire1( unsigned char high_byte,
+[; ;mwire.h: 204: unsigned char low_byte );
+[; ;mwire.h: 219: signed char WriteMwire1( unsigned char data_out );
+[; ;mwire.h: 234: void getsMwire1( unsigned char *rdptr, unsigned char length );
+[; ;portb.h: 126: void OpenPORTB( unsigned char config);
+[; ;portb.h: 176: void OpenRB0INT( unsigned char config);
+[; ;portb.h: 194: void OpenRB1INT( unsigned char config);
+[; ;portb.h: 211: void OpenRB2INT( unsigned char config);
+[; ;portb.h: 230: void OpenRB3INT( unsigned char config);
+[; ;pwm.h: 85: union PWMDC
+[; ;pwm.h: 86: {
+[; ;pwm.h: 87: unsigned int lpwm;
+[; ;pwm.h: 88: char bpwm[2];
+[; ;pwm.h: 89: };
+[; ;pwm.h: 467: void OpenPWM1 ( char period);
+[; ;pwm.h: 468: void SetDCPWM1 ( unsigned int duty_cycle);
+[; ;pwm.h: 474: void SetOutputPWM1 ( unsigned char output_config,
+[; ;pwm.h: 475: unsigned char pwm_mode);
+[; ;pwm.h: 477: void ClosePWM1 (void);
+[; ;pwm.h: 485: void OpenPWM2 ( char period);
+[; ;pwm.h: 486: void SetDCPWM2( unsigned int duty_cycle);
+[; ;pwm.h: 492: void ClosePWM2 (void);
+[; ;reset.h: 16: char isMCLR(void);
+[; ;reset.h: 17: void StatusReset(void);
+[; ;reset.h: 18: char isPOR(void);
+[; ;reset.h: 19: char isWU(void);
+[; ;reset.h: 22: char isBOR(void);
+[; ;reset.h: 26: char isWDTTO(void);
+[; ;reset.h: 27: char isWDTWU(void);
+[; ;reset.h: 31: char isLVD(void);
 [; ;rtcc.h: 43: typedef union _WORD_VAL
 [; ;rtcc.h: 44: {
 [; ;rtcc.h: 45: unsigned int Val;
@@ -7302,10 +7572,131 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;rtcc.h: 687: void Open_RTCC(void);
 [; ;rtcc.h: 688: void Close_RTCC(void);
 [; ;rtcc.h: 689: unsigned char update_RTCC(void);
+[; ;sw_i2c.h: 97: void SWStopI2C ( void );
+[; ;sw_i2c.h: 98: void SWStartI2C ( void );
+[; ;sw_i2c.h: 99: void SWRestartI2C ( void );
+[; ;sw_i2c.h: 100: void SWStopI2C ( void );
+[; ;sw_i2c.h: 102: signed char SWAckI2C( void );
+[; ;sw_i2c.h: 103: signed char Clock_test( void );
+[; ;sw_i2c.h: 104: signed int SWReadI2C( void );
+[; ;sw_i2c.h: 105: signed char SWWriteI2C(  unsigned char data_out );
+[; ;sw_i2c.h: 106: signed char SWGetsI2C(  unsigned char *rdptr,  unsigned char length );
+[; ;sw_i2c.h: 107: signed char SWPutsI2C(  unsigned char *wrptr );
+[; ;sw_spi.h: 84: void OpenSWSPI(void);
+[; ;sw_spi.h: 87: char WriteSWSPI( char output);
+[; ;sw_spi.h: 90: void SetCSSWSPI(void);
+[; ;sw_spi.h: 93: void ClearCSSWSPI(void);
+[; ;sw_uart.h: 47: void OpenUART(void);
+[; ;sw_uart.h: 49: unsigned char ReadUART(void);
+[; ;sw_uart.h: 51: void WriteUART( unsigned char);
+[; ;sw_uart.h: 53: void getsUART( char *, unsigned char);
+[; ;sw_uart.h: 55: void putsUART( char *);
+[; ;sw_uart.h: 79: extern void DelayRXBitUART (void);
+[; ;sw_uart.h: 80: extern void DelayRXHalfBitUART(void);
+[; ;sw_uart.h: 81: extern void DelayTXBitUART (void);
+[; ;timers.h: 36: union Timers
+[; ;timers.h: 37: {
+[; ;timers.h: 38: unsigned int lt;
+[; ;timers.h: 39: char bt[2];
+[; ;timers.h: 40: };
+[; ;timers.h: 118: void OpenTimer0 ( unsigned char config);
+[; ;timers.h: 119: void CloseTimer0 (void);
+[; ;timers.h: 120: unsigned int ReadTimer0 (void);
+[; ;timers.h: 121: void WriteTimer0 ( unsigned int timer0);
+[; ;timers.h: 185: void OpenTimer1 ( unsigned char config, unsigned char config1);
+[; ;timers.h: 186: void CloseTimer1 (void);
+[; ;timers.h: 187: unsigned int ReadTimer1 (void);
+[; ;timers.h: 188: void WriteTimer1 ( unsigned int timer1);
+[; ;timers.h: 325: void OpenTimer2 ( unsigned char config);
+[; ;timers.h: 326: void CloseTimer2 (void);
+[; ;timers.h: 452: void OpenTimer3 ( unsigned char config, unsigned char config1);
+[; ;timers.h: 453: void CloseTimer3 (void);
+[; ;timers.h: 454: unsigned int ReadTimer3 (void);
+[; ;timers.h: 455: void WriteTimer3 ( unsigned int timer3);
+[; ;timers.h: 541: void OpenTimer4 ( unsigned char config);
+[; ;timers.h: 542: void CloseTimer4 (void);
+[; ;timers.h: 1179: void SetTmrCCPSrc( unsigned char );
+[; ;usart.h: 200: union USART1
+[; ;usart.h: 201: {
+[; ;usart.h: 202: unsigned char val;
+[; ;usart.h: 203: struct
+[; ;usart.h: 204: {
+[; ;usart.h: 205: unsigned RX_NINE:1;
+[; ;usart.h: 206: unsigned TX_NINE:1;
+[; ;usart.h: 207: unsigned FRAME_ERROR:1;
+[; ;usart.h: 208: unsigned OVERRUN_ERROR:1;
+[; ;usart.h: 209: unsigned fill:4;
+[; ;usart.h: 210: };
+[; ;usart.h: 211: };
+[; ;usart.h: 212: extern union USART1 USART1_Status;
+[; ;usart.h: 214: void Open1USART ( unsigned char config, unsigned int spbrg);
+[; ;usart.h: 244: char Read1USART (void);
+[; ;usart.h: 245: void Write1USART ( char data);
+[; ;usart.h: 246: void gets1USART ( char *buffer, unsigned char len);
+[; ;usart.h: 247: void puts1USART ( char *data);
+[; ;usart.h: 248: void putrs1USART ( const  char *data);
+[; ;usart.h: 305: union USART2
+[; ;usart.h: 306: {
+[; ;usart.h: 307: unsigned char val;
+[; ;usart.h: 308: struct
+[; ;usart.h: 309: {
+[; ;usart.h: 310: unsigned RX_NINE:1;
+[; ;usart.h: 311: unsigned TX_NINE:1;
+[; ;usart.h: 312: unsigned FRAME_ERROR:1;
+[; ;usart.h: 313: unsigned OVERRUN_ERROR:1;
+[; ;usart.h: 314: unsigned fill:4;
+[; ;usart.h: 315: };
+[; ;usart.h: 316: };
+[; ;usart.h: 317: extern union USART2 USART2_Status;
+[; ;usart.h: 318: void Open2USART ( unsigned char config, unsigned int spbrg);
+[; ;usart.h: 333: char Read2USART (void);
+[; ;usart.h: 334: void Write2USART ( char data);
+[; ;usart.h: 335: void gets2USART ( char *buffer, unsigned char len);
+[; ;usart.h: 336: void puts2USART ( char *data);
+[; ;usart.h: 337: void putrs2USART ( const  char *data);
+[; ;usart.h: 660: void baud1USART ( unsigned char baudconfig);
+[; ;usart.h: 665: void baud2USART ( unsigned char baudconfig);
+[; ;xlcd.h: 87: void OpenXLCD( unsigned char);
+[; ;xlcd.h: 92: void SetCGRamAddr( unsigned char);
+[; ;xlcd.h: 97: void SetDDRamAddr( unsigned char);
+[; ;xlcd.h: 102: unsigned char BusyXLCD(void);
+[; ;xlcd.h: 107: unsigned char ReadAddrXLCD(void);
+[; ;xlcd.h: 112: char ReadDataXLCD(void);
+[; ;xlcd.h: 117: void WriteCmdXLCD( unsigned char);
+[; ;xlcd.h: 122: void WriteDataXLCD( char);
+[; ;xlcd.h: 132: void putsXLCD( char *);
+[; ;xlcd.h: 137: void putrsXLCD(const char *);
+[; ;xlcd.h: 140: extern void DelayFor18TCY(void);
+[; ;xlcd.h: 141: extern void DelayPORXLCD(void);
+[; ;xlcd.h: 142: extern void DelayXLCD(void);
+[; ;delays.h: 13: void Delay1TCYx(unsigned char);
+[; ;delays.h: 19: void Delay10TCYx(unsigned char);
+[; ;delays.h: 25: void Delay100TCYx(unsigned char);
+[; ;delays.h: 31: void Delay1KTCYx(unsigned char);
+[; ;delays.h: 37: void Delay10KTCYx(unsigned char);
+[; ;pic18.h: 18: __attribute__((__unsupported__("The flash_write routine is no longer supported. Please use the peripheral library functions: WriteBytesFlash, WriteBlockFlash or WriteWordFlash"))) void flash_write(const unsigned char *, unsigned int, __far unsigned c
+[; ;pic18.h: 42: extern void __nop(void);
+[; ;pic18.h: 161: extern __nonreentrant void _delay(unsigned long);
+[; ;pic18.h: 163: extern __nonreentrant void _delaywdt(unsigned long);
+[; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
+[; ;headers\unmc_lcd_216.h: 33: typedef unsigned char int8;
+[; ;headers\unmc_lcd_216.h: 34: typedef unsigned int int16;
+[; ;headers\unmc_lcd_216.h: 35: typedef unsigned long int32;
+[; ;headers\unmc_lcd_216.h: 98: void lcd_send_nibble(int8 nibble);
+[; ;headers\unmc_lcd_216.h: 99: int8 lcd_read_nibble(void);
+[; ;headers\unmc_lcd_216.h: 100: int8 lcd_read_byte(void);
+[; ;headers\unmc_lcd_216.h: 101: void lcd_send_byte(int8 address, int8 n);
+[; ;headers\unmc_lcd_216.h: 103: void lcd_init(void);
+[; ;headers\unmc_lcd_216.h: 104: void lcd_gotoxy(int8 x, int8 y);
+[; ;headers\unmc_lcd_216.h: 105: void lcd_putc(int8 c);
+[; ;headers\unmc_lcd_216.h: 106: void lcd_comand(int8 d);
+[; ;headers\unmc_lcd_216.h: 107: void lcd_setcursor_vb(int8 visible, int8 blink);
+[; ;headers\unmc_lcd_216.h: 108: void lcd_puts(char *ptr);
+[; ;headers\unmc_lcd_216.h: 109: void lcd_putrs(const char *ptr);
 "16 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_02.h
-[v _RtccTimeDate `S1023 ~T0 @X0 1 e ]
-[v _RtccAlrmTimeDate `S1023 ~T0 @X0 1 e ]
-[v _Rtcc_read_TimeDate `S1023 ~T0 @X0 1 e ]
+[v _RtccTimeDate `S1032 ~T0 @X0 1 e ]
+[v _RtccAlrmTimeDate `S1032 ~T0 @X0 1 e ]
+[v _Rtcc_read_TimeDate `S1032 ~T0 @X0 1 e ]
 [; ;headers\unmc_rtcc_02.h: 16: rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
 "18
 [v _segundo_u `uc ~T0 @X0 1 e ]
@@ -7431,13 +7822,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;headers\unmc_rtcc_02.h: 44: int segundo=0;
 "49
-[v _RtccTime `S1019 ~T0 @X0 1 e ]
+[v _RtccTime `S1028 ~T0 @X0 1 e ]
 [; ;headers\unmc_rtcc_02.h: 49: rtccTime RtccTime;
 "50
-[v _RtccTimeVal `S1019 ~T0 @X0 1 e ]
+[v _RtccTimeVal `S1028 ~T0 @X0 1 e ]
 [; ;headers\unmc_rtcc_02.h: 50: rtccTime RtccTimeVal;
 "51
-[v _RtccDate `S1021 ~T0 @X0 1 e ]
+[v _RtccDate `S1030 ~T0 @X0 1 e ]
 [; ;headers\unmc_rtcc_02.h: 51: rtccDate RtccDate;
 "53
 [v _buffer2 `uc ~T0 @X0 -> 20 `i e ]
@@ -7446,103 +7837,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;headers\unmc_rtcc_02.h: 56: void DelayPORXLCD(void);
 [; ;headers\unmc_rtcc_02.h: 57: void Write_RTC(void);
 [; ;headers\unmc_rtcc_02.h: 58: void Read_RTC(void);
-"7 C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h
-[v _day `uc ~T0 @X0 -> 3 `i e ]
-[i _day
-:U ..
--> 0 `c
-..
-]
-[; ;headers\fecha.h: 7: char day[3] = "";
-"8
-[v _month `uc ~T0 @X0 -> 3 `i e ]
-[i _month
-:U ..
--> 0 `c
-..
-]
-[; ;headers\fecha.h: 8: char month[3] = "";
-"9
-[v _year `uc ~T0 @X0 -> 3 `i e ]
-[i _year
-:U ..
--> 0 `c
-..
-]
-[; ;headers\fecha.h: 9: char year[3] = "";
-"11
-[v _tamanio_dia `i ~T0 @X0 1 e ]
-[i _tamanio_dia
--> 0 `i
-]
-[; ;headers\fecha.h: 11: int tamanio_dia = 0;
-"12
-[v _tamanio_mes `i ~T0 @X0 1 e ]
-[i _tamanio_mes
--> 0 `i
-]
-[; ;headers\fecha.h: 12: int tamanio_mes = 0;
-"13
-[v _tamanio_anio `i ~T0 @X0 1 e ]
-[i _tamanio_anio
--> 0 `i
-]
-[; ;headers\fecha.h: 13: int tamanio_anio = 0;
-[; ;headers\fecha.h: 15: void inicializar_fecha();
-[; ;headers\fecha.h: 16: void guardar_elemento_fecha(char, char *, int *);
-[; ;headers\fecha.h: 17: void convertir_a_int_fecha(char *, int *);
-[; ;headers\fecha.h: 18: void cambiar_dia(char);
-[; ;headers\fecha.h: 19: void cambiar_mes(char);
-[; ;headers\fecha.h: 20: void cambiar_anio(char);
-[; ;stdarg.h: 7: typedef void * va_list[1];
-[; ;stdarg.h: 10: extern void * __va_start(void);
-[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
-[; ;stdio.h: 24: extern int errno;
-[; ;stdio.h: 55: struct __prbuf
-[; ;stdio.h: 56: {
-[; ;stdio.h: 57: char * ptr;
-[; ;stdio.h: 58: void (* func)(char);
-[; ;stdio.h: 59: };
-[; ;conio.h: 17: extern int errno;
-[; ;conio.h: 20: extern void init_uart(void);
-[; ;conio.h: 22: extern char getch(void);
-[; ;conio.h: 23: extern char getche(void);
-[; ;conio.h: 24: extern void putch(char);
-[; ;conio.h: 25: extern void ungetch(char);
-[; ;conio.h: 27: extern __bit kbhit(void);
-[; ;conio.h: 31: extern char * cgets(char *);
-[; ;conio.h: 32: extern void cputs(const char *);
-[; ;stdio.h: 100: extern int cprintf(char *, ...);
-[; ;stdio.h: 105: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-[; ;stdio.h: 195: extern char * gets(char *);
-[; ;stdio.h: 196: extern int puts(const char *);
-[; ;stdio.h: 197: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-[; ;stdio.h: 198: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-[; ;stdio.h: 199: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-[; ;stdio.h: 200: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-[; ;stdio.h: 201: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-[; ;stdio.h: 202: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-[; ;stdio.h: 206: extern int sprintf(char *, const char *, ...);
-[; ;stdio.h: 207: extern int printf(const char *, ...);
-[; ;delays.h: 13: void Delay1TCYx(unsigned char);
-[; ;delays.h: 19: void Delay10TCYx(unsigned char);
-[; ;delays.h: 25: void Delay100TCYx(unsigned char);
-[; ;delays.h: 31: void Delay1KTCYx(unsigned char);
-[; ;delays.h: 37: void Delay10KTCYx(unsigned char);
-[; ;headers\unmc_lcd_216.h: 33: typedef unsigned char int8;
-[; ;headers\unmc_lcd_216.h: 34: typedef unsigned int int16;
-[; ;headers\unmc_lcd_216.h: 35: typedef unsigned long int32;
-[; ;headers\unmc_lcd_216.h: 98: void lcd_send_nibble(int8 nibble);
-[; ;headers\unmc_lcd_216.h: 99: int8 lcd_read_nibble(void);
-[; ;headers\unmc_lcd_216.h: 100: int8 lcd_read_byte(void);
-[; ;headers\unmc_lcd_216.h: 101: void lcd_send_byte(int8 address, int8 n);
-[; ;headers\unmc_lcd_216.h: 103: void lcd_init(void);
-[; ;headers\unmc_lcd_216.h: 104: void lcd_gotoxy(int8 x, int8 y);
-[; ;headers\unmc_lcd_216.h: 105: void lcd_putc(int8 c);
-[; ;headers\unmc_lcd_216.h: 106: void lcd_comand(int8 d);
-[; ;headers\unmc_lcd_216.h: 107: void lcd_setcursor_vb(int8 visible, int8 blink);
-[; ;headers\unmc_lcd_216.h: 108: void lcd_puts(char *ptr);
-[; ;headers\unmc_lcd_216.h: 109: void lcd_putrs(const char *ptr);
 [; ;headers\unmc_lcd_216.h: 98: void lcd_send_nibble(int8 nibble);
 [; ;headers\unmc_lcd_216.h: 99: int8 lcd_read_nibble(void);
 [; ;headers\unmc_lcd_216.h: 100: int8 lcd_read_byte(void);
@@ -7626,265 +7920,200 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;headers\teclado.h: 20: void restaurar_comando();
 [; ;headers\teclado.h: 21: void guardar_tecla_presionada(char *, int,char* (*doit)(char *));
 [; ;headers\teclado.h: 22: void leer_teclado(int ocultar,char* (*doit)());
-"8 ../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c
-[v _inicializar_fecha `(v ~T0 @X0 1 ef ]
+"9 ../../../../../../Program Files/Unimic/unmc_01/headers/hora.c
+[v _inicializar_hora `(v ~T0 @X0 1 ef ]
 {
-[; ;fecha.c: 8: void inicializar_fecha(){
-[e :U _inicializar_fecha ]
+[; ;hora.c: 9: void inicializar_hora(){
+[e :U _inicializar_hora ]
 [f ]
-[; ;fecha.c: 9: *day = 0;
-"9
-[e = *U &U _day -> -> 0 `i `uc ]
-[; ;fecha.c: 10: *month = 0;
+[; ;hora.c: 10: *hour = 0;
 "10
-[e = *U &U _month -> -> 0 `i `uc ]
-[; ;fecha.c: 11: *year = 0;
+[e = *U &U _hour -> -> 0 `i `uc ]
+[; ;hora.c: 11: *minutes = 0;
 "11
-[e = *U &U _year -> -> 0 `i `uc ]
-[; ;fecha.c: 13: tamanio_dia = 0;
+[e = *U &U _minutes -> -> 0 `i `uc ]
+[; ;hora.c: 13: tamanio_hora = 0;
 "13
-[e = _tamanio_dia -> 0 `i ]
-[; ;fecha.c: 14: tamanio_mes = 0;
+[e = _tamanio_hora -> 0 `i ]
+[; ;hora.c: 14: tamanio_minutos = 0;
 "14
-[e = _tamanio_mes -> 0 `i ]
-[; ;fecha.c: 15: tamanio_anio = 0;
+[e = _tamanio_minutos -> 0 `i ]
+[; ;hora.c: 15: }
 "15
-[e = _tamanio_anio -> 0 `i ]
-[; ;fecha.c: 16: }
-"16
-[e :UE 1026 ]
+[e :UE 1039 ]
 }
-"18
-[v _guardar_elemento_fecha `(v ~T0 @X0 1 ef3`uc`*uc`*i ]
+"17
+[v _guardar_elemento_hora `(v ~T0 @X0 1 ef3`uc`*uc`*i ]
 {
-[; ;fecha.c: 18: void guardar_elemento_fecha(char tecla, char * array, int * tamanio_array){
-[e :U _guardar_elemento_fecha ]
+[; ;hora.c: 17: void guardar_elemento_hora(char tecla, char * array, int * tamanio_array){
+[e :U _guardar_elemento_hora ]
 [v _tecla `uc ~T0 @X0 1 r1 ]
 [v _array `*uc ~T0 @X0 1 r2 ]
 [v _tamanio_array `*i ~T0 @X0 1 r3 ]
 [f ]
-[; ;fecha.c: 20: sprintf(buffer2,"%01u",tecla);
-"20
+[; ;hora.c: 19: sprintf(buffer2,"%01u",tecla);
+"19
 [e ( _sprintf (1 , (. , &U _buffer2 :s 1C -> _tecla `i ]
-[; ;fecha.c: 21: array[*tamanio_array] = *buffer2;
-"21
+[; ;hora.c: 20: array[*tamanio_array] = *buffer2;
+"20
 [e = *U + _array * -> *U _tamanio_array `x -> -> # *U _array `i `x *U &U _buffer2 ]
-[; ;fecha.c: 22: array [(*tamanio_array)+1] = 0;
-"22
+[; ;hora.c: 21: array [(*tamanio_array)+1] = 0;
+"21
 [e = *U + _array * -> + *U _tamanio_array -> 1 `i `x -> -> # *U _array `i `x -> -> 0 `i `uc ]
-[; ;fecha.c: 23: (*tamanio_array)++;
-"23
+[; ;hora.c: 22: (*tamanio_array)++;
+"22
 [e ++ *U _tamanio_array -> 1 `i ]
-[; ;fecha.c: 24: }
-"24
-[e :UE 1027 ]
+[; ;hora.c: 23: }
+"23
+[e :UE 1040 ]
 }
-"26
-[v _convertir_a_int_fecha `(v ~T0 @X0 1 ef2`*uc`*i ]
+"25
+[v _convertir_a_int_hora `(v ~T0 @X0 1 ef2`*uc`*i ]
 {
-[; ;fecha.c: 26: void convertir_a_int_fecha(char * array, int * valor){
-[e :U _convertir_a_int_fecha ]
+[; ;hora.c: 25: void convertir_a_int_hora(char * array, int * valor){
+[e :U _convertir_a_int_hora ]
 [v _array `*uc ~T0 @X0 1 r1 ]
 [v _valor `*i ~T0 @X0 1 r2 ]
 [f ]
-[; ;fecha.c: 27: *valor = atoi(array);
-"27
+[; ;hora.c: 26: *valor = atoi(array);
+"26
 [e = *U _valor ( _atoi (1 -> _array `*Cuc ]
-[; ;fecha.c: 28: }
-"28
-[e :UE 1028 ]
+[; ;hora.c: 27: }
+"27
+[e :UE 1041 ]
 }
-"31
-[v _cambiar_dia `(v ~T0 @X0 1 ef1`uc ]
+"30
+[v _cambiar_hora `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;fecha.c: 31: void cambiar_dia(char tecla){
-[e :U _cambiar_dia ]
+[; ;hora.c: 30: void cambiar_hora(char tecla){
+[e :U _cambiar_hora ]
 [v _tecla `uc ~T0 @X0 1 r1 ]
 [f ]
-"32
+"31
 [v _valor `i ~T0 @X0 1 a ]
-[; ;fecha.c: 32: int valor = 0;
+[; ;hora.c: 31: int valor = 0;
 [e = _valor -> 0 `i ]
-[; ;fecha.c: 34: if (tamanio_dia < 3 - 1){
+[; ;hora.c: 33: if (tamanio_hora < 3 - 1){
+"33
+[e $ ! < _tamanio_hora - -> 3 `i -> 1 `i 1043  ]
+{
+[; ;hora.c: 34: guardar_elemento_hora(tecla,hour,&tamanio_hora);
 "34
-[e $ ! < _tamanio_dia - -> 3 `i -> 1 `i 1030  ]
-{
-[; ;fecha.c: 35: guardar_elemento_fecha(tecla,day,&tamanio_dia);
+[e ( _guardar_elemento_hora (3 , , _tecla &U _hour &U _tamanio_hora ]
+[; ;hora.c: 35: lcd_gotoxy(1,2);
 "35
-[e ( _guardar_elemento_fecha (3 , , _tecla &U _day &U _tamanio_dia ]
-[; ;fecha.c: 36: lcd_gotoxy(1,2);
-"36
 [e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;fecha.c: 37: lcd_putrs(day);
+[; ;hora.c: 36: lcd_putrs(hour);
+"36
+[e ( _lcd_putrs (1 -> &U _hour `*Cuc ]
 "37
-[e ( _lcd_putrs (1 -> &U _day `*Cuc ]
-"38
 }
-[e :U 1030 ]
-[; ;fecha.c: 38: }
-[; ;fecha.c: 40: if (tamanio_dia >= 3 - 1){
-"40
-[e $ ! >= _tamanio_dia - -> 3 `i -> 1 `i 1031  ]
+[e :U 1043 ]
+[; ;hora.c: 37: }
+[; ;hora.c: 39: if (tamanio_hora >= 3 - 1){
+"39
+[e $ ! >= _tamanio_hora - -> 3 `i -> 1 `i 1044  ]
 {
-[; ;fecha.c: 41: convertir_a_int_fecha(day,&valor);
+[; ;hora.c: 40: convertir_a_int_hora(hour,&valor);
+"40
+[e ( _convertir_a_int_hora (2 , &U _hour &U _valor ]
+[; ;hora.c: 41: hora = valor;
 "41
-[e ( _convertir_a_int_fecha (2 , &U _day &U _valor ]
-[; ;fecha.c: 42: dia = valor;
+[e = _hora _valor ]
+[; ;hora.c: 42: Write_RTC();
 "42
-[e = _dia _valor ]
-[; ;fecha.c: 43: Write_RTC();
-"43
 [e ( _Write_RTC ..  ]
-[; ;fecha.c: 45: restaurar_comando();
-"45
+[; ;hora.c: 44: restaurar_comando();
+"44
 [e ( _restaurar_comando ..  ]
-[; ;fecha.c: 46: inicializar_fecha();
+[; ;hora.c: 45: inicializar_hora();
+"45
+[e ( _inicializar_hora ..  ]
+[; ;hora.c: 46: for (int i=0;i<4;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
 "46
-[e ( _inicializar_fecha ..  ]
-[; ;fecha.c: 47: for (int i=0;i<4;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
-"47
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 1032  ]
-[e $U 1033  ]
-[e :U 1032 ]
+[e $ < _i -> 4 `i 1045  ]
+[e $U 1046  ]
+[e :U 1045 ]
 [e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 1032  ]
-[e :U 1033 ]
+[e $ < _i -> 4 `i 1045  ]
+[e :U 1046 ]
 }
+"47
+}
+[e :U 1044 ]
+[; ;hora.c: 47: }
+[; ;hora.c: 48: }
 "48
+[e :UE 1042 ]
 }
-[e :U 1031 ]
-[; ;fecha.c: 48: }
-[; ;fecha.c: 49: }
-"49
-[e :UE 1029 ]
-}
-"51
-[v _cambiar_mes `(v ~T0 @X0 1 ef1`uc ]
+"50
+[v _cambiar_minutos `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;fecha.c: 51: void cambiar_mes(char tecla){
-[e :U _cambiar_mes ]
+[; ;hora.c: 50: void cambiar_minutos(char tecla){
+[e :U _cambiar_minutos ]
 [v _tecla `uc ~T0 @X0 1 r1 ]
 [f ]
-"53
+"52
 [v _valor `i ~T0 @X0 1 a ]
-[; ;fecha.c: 53: int valor = 0;
+[; ;hora.c: 52: int valor = 0;
 [e = _valor -> 0 `i ]
-[; ;fecha.c: 55: if (tamanio_mes < 3 - 1 && tamanio_dia == 0){
+[; ;hora.c: 54: if (tamanio_minutos < 3 - 1 && tamanio_hora == 0){
+"54
+[e $ ! && < _tamanio_minutos - -> 3 `i -> 1 `i == _tamanio_hora -> 0 `i 1049  ]
+{
+[; ;hora.c: 55: guardar_elemento_hora(tecla,minutes,&tamanio_minutos);
 "55
-[e $ ! && < _tamanio_mes - -> 3 `i -> 1 `i == _tamanio_dia -> 0 `i 1036  ]
-{
-[; ;fecha.c: 56: guardar_elemento_fecha(tecla,month,&tamanio_mes);
+[e ( _guardar_elemento_hora (3 , , _tecla &U _minutes &U _tamanio_minutos ]
+[; ;hora.c: 56: lcd_gotoxy(1,2);
 "56
-[e ( _guardar_elemento_fecha (3 , , _tecla &U _month &U _tamanio_mes ]
-[; ;fecha.c: 57: lcd_gotoxy(1,2);
-"57
 [e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;fecha.c: 58: lcd_putrs(month);
+[; ;hora.c: 57: lcd_putrs(minutes);
+"57
+[e ( _lcd_putrs (1 -> &U _minutes `*Cuc ]
 "58
-[e ( _lcd_putrs (1 -> &U _month `*Cuc ]
-"59
 }
-[e :U 1036 ]
-[; ;fecha.c: 59: }
-[; ;fecha.c: 61: if (tamanio_mes >= 3 - 1){
-"61
-[e $ ! >= _tamanio_mes - -> 3 `i -> 1 `i 1037  ]
+[e :U 1049 ]
+[; ;hora.c: 58: }
+[; ;hora.c: 60: if (tamanio_minutos >= 3 - 1){
+"60
+[e $ ! >= _tamanio_minutos - -> 3 `i -> 1 `i 1050  ]
 {
-[; ;fecha.c: 63: convertir_a_int_fecha(month,&valor);
+[; ;hora.c: 62: convertir_a_int_hora(minutes,&valor);
+"62
+[e ( _convertir_a_int_hora (2 , &U _minutes &U _valor ]
+[; ;hora.c: 63: minuto = valor;
 "63
-[e ( _convertir_a_int_fecha (2 , &U _month &U _valor ]
-[; ;fecha.c: 64: mes = valor;
+[e = _minuto _valor ]
+[; ;hora.c: 64: segundo = 00;
 "64
-[e = _mes _valor ]
-[; ;fecha.c: 65: Write_RTC();
+[e = _segundo -> 0 `i ]
+[; ;hora.c: 65: Write_RTC();
 "65
 [e ( _Write_RTC ..  ]
-[; ;fecha.c: 66: for (int i=0;i<4;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
+[; ;hora.c: 66: for (int i=0;i<4;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
 "66
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 1038  ]
-[e $U 1039  ]
-[e :U 1038 ]
+[e $ < _i -> 4 `i 1051  ]
+[e $U 1052  ]
+[e :U 1051 ]
 [e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 1038  ]
-[e :U 1039 ]
+[e $ < _i -> 4 `i 1051  ]
+[e :U 1052 ]
 }
 "67
 }
-[e :U 1037 ]
-[; ;fecha.c: 67: }
-[; ;fecha.c: 68: }
+[e :U 1050 ]
+[; ;hora.c: 67: }
+[; ;hora.c: 68: }
 "68
-[e :UE 1035 ]
-}
-"70
-[v _cambiar_anio `(v ~T0 @X0 1 ef1`uc ]
-{
-[; ;fecha.c: 70: void cambiar_anio(char tecla){
-[e :U _cambiar_anio ]
-[v _tecla `uc ~T0 @X0 1 r1 ]
-[f ]
-"71
-[v _valor `i ~T0 @X0 1 a ]
-[; ;fecha.c: 71: int valor = 0;
-[e = _valor -> 0 `i ]
-[; ;fecha.c: 73: if (tamanio_anio < 3 - 1 && tamanio_mes == 0 && tamanio_dia == 0){
-"73
-[e $ ! && && < _tamanio_anio - -> 3 `i -> 1 `i == _tamanio_mes -> 0 `i == _tamanio_dia -> 0 `i 1042  ]
-{
-[; ;fecha.c: 74: guardar_elemento_fecha(tecla,year,&tamanio_anio);
-"74
-[e ( _guardar_elemento_fecha (3 , , _tecla &U _year &U _tamanio_anio ]
-[; ;fecha.c: 75: lcd_gotoxy(1,2);
-"75
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;fecha.c: 76: lcd_putrs(year);
-"76
-[e ( _lcd_putrs (1 -> &U _year `*Cuc ]
-"77
-}
-[e :U 1042 ]
-[; ;fecha.c: 77: }
-[; ;fecha.c: 79: if (tamanio_anio >= 3 - 1){
-"79
-[e $ ! >= _tamanio_anio - -> 3 `i -> 1 `i 1043  ]
-{
-[; ;fecha.c: 81: convertir_a_int_fecha(year,&valor);
-"81
-[e ( _convertir_a_int_fecha (2 , &U _year &U _valor ]
-[; ;fecha.c: 82: anio = valor;
-"82
-[e = _anio _valor ]
-[; ;fecha.c: 83: Write_RTC();
-"83
-[e ( _Write_RTC ..  ]
-[; ;fecha.c: 85: for (int i=0;i<4;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
-"85
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 1044  ]
-[e $U 1045  ]
-[e :U 1044 ]
-[e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 1044  ]
-[e :U 1045 ]
-}
-"86
-}
-[e :U 1043 ]
-[; ;fecha.c: 86: }
-[; ;fecha.c: 87: }
-"87
-[e :UE 1041 ]
+[e :UE 1048 ]
 }
 [p f _sprintf 8422404 ]
 [a 1C 37 48 49 117 0 ]

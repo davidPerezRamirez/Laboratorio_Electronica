@@ -1,0 +1,122 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"7 C:/Archivos de programa/Unimic/unmc_01/headers\alarma.h
+[v _password `uc ~T0 @X0 -> 6 `i e ]
+[i _password
+:U ..
+-> 49 `c
+-> 50 `c
+-> 51 `c
+-> 52 `c
+-> 53 `c
+-> 54 `c
+..
+]
+[; ;headers\alarma.h: 7: char password[6]="123456";
+"8
+[v _current_password `uc ~T0 @X0 -> 6 `i e ]
+[i _current_password
+:U ..
+-> 0 `c
+..
+]
+[; ;headers\alarma.h: 8: char current_password[6]="";
+"9
+[v _tamanio_password `i ~T0 @X0 1 e ]
+[i _tamanio_password
+-> 0 `i
+]
+[; ;headers\alarma.h: 9: int tamanio_password=0;
+"10
+[v _autorizado `i ~T0 @X0 1 e ]
+[i _autorizado
+-> 0 `i
+]
+[; ;headers\alarma.h: 10: int autorizado=0;
+"11
+[v _encendida `i ~T0 @X0 1 e ]
+[i _encendida
+-> 0 `i
+]
+[; ;headers\alarma.h: 11: int encendida = 0;
+"12
+[v _activida `i ~T0 @X0 1 e ]
+[i _activida
+-> 0 `i
+]
+[; ;headers\alarma.h: 12: int activida = 0;
+[; ;headers\alarma.h: 15: void guardar_current_password(char);
+[; ;headers\alarma.h: 16: void validar_password();
+"3 ../../../../../../Program Files/Unimic/unmc_01/sources/alarma.c
+[v _guardar_current_password `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;alarma.c: 3: void guardar_current_password(char valor){
+[e :U _guardar_current_password ]
+[v _valor `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;alarma.c: 6: if (tamanio_password < 6){
+"6
+[e $ ! < _tamanio_password -> 6 `i 2  ]
+{
+[; ;alarma.c: 7: current_password[tamanio_password] = valor;
+"7
+[e = *U + &U _current_password * -> -> _tamanio_password `ui `ux -> -> # *U &U _current_password `ui `ux _valor ]
+[; ;alarma.c: 8: current_password [tamanio_password+1] = '\0';
+"8
+[e = *U + &U _current_password * -> -> + _tamanio_password -> 1 `i `ui `ux -> -> # *U &U _current_password `ui `ux -> -> 0 `ui `uc ]
+[; ;alarma.c: 9: tamanio_password++;
+"9
+[e ++ _tamanio_password -> 1 `i ]
+"10
+}
+[e :U 2 ]
+[; ;alarma.c: 10: }
+[; ;alarma.c: 11: }
+"11
+[e :UE 1 ]
+}
+"13
+[v _validar_password `(v ~T0 @X0 1 ef ]
+{
+[; ;alarma.c: 13: void validar_password(){
+[e :U _validar_password ]
+[f ]
+[; ;alarma.c: 15: autorizado = 1;
+"15
+[e = _autorizado -> 1 `i ]
+"16
+[v _i `i ~T0 @X0 1 a ]
+[; ;alarma.c: 16: int i = 0;
+[e = _i -> 0 `i ]
+[; ;alarma.c: 17: while (i < 6 && autorizado==1){
+"17
+[e $U 4  ]
+[e :U 5 ]
+{
+[; ;alarma.c: 19: if (current_password[i] != password[i])
+"19
+[e $ ! != -> *U + &U _current_password * -> -> _i `ui `ux -> -> # *U &U _current_password `ui `ux `i -> *U + &U _password * -> -> _i `ui `ux -> -> # *U &U _password `ui `ux `i 7  ]
+[; ;alarma.c: 20: autorizado = 0;
+"20
+[e = _autorizado -> 0 `i ]
+[e :U 7 ]
+[; ;alarma.c: 22: i++;
+"22
+[e ++ _i -> 1 `i ]
+"23
+}
+[e :U 4 ]
+"17
+[e $ && < _i -> 6 `i == _autorizado -> 1 `i 5  ]
+[e :U 6 ]
+[; ;alarma.c: 23: }
+[; ;alarma.c: 25: if (autorizado == 1)
+"25
+[e $ ! == _autorizado -> 1 `i 8  ]
+[; ;alarma.c: 26: encendida = 1;
+"26
+[e = _encendida -> 1 `i ]
+[e :U 8 ]
+[; ;alarma.c: 27: }
+"27
+[e :UE 3 ]
+}

@@ -3,7 +3,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "109 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
 [v _lcd_putrs `(v ~T0 @X0 0 ef1`*Cuc ]
-[v F8196 `(*uc ~T0 @X0 0 tf1`*uc ]
+[v F8198 `(*uc ~T0 @X0 0 tf1`*uc ]
 "5275 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
 [s S395 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S395 . RA0 RA1 RA2 RA3 . RA5 RA6 RA7 ]
@@ -80,7 +80,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S415 . . . . . . . . . . . . ]
 "5857
 [v _PORTCbits `VS415 ~T0 @X0 0 e@3970 ]
-[v F8201 `(*uc ~T0 @X0 0 tf ]
+[v F8203 `(*uc ~T0 @X0 0 tf ]
 "6232
 [s S436 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S436 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
@@ -7730,11 +7730,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;headers\teclado.h: 14: int tamanio_comando = 0;
 [; ;headers\teclado.h: 16: void guardar_comando(char);
-[; ;headers\teclado.h: 17: void validar_comando(char *, int *);
-[; ;headers\teclado.h: 18: void imprimir_tecla(char);
-[; ;headers\teclado.h: 19: void restaurar_comando();
-[; ;headers\teclado.h: 20: void guardar_tecla_presionada(char *, int,char* (*doit)(char *));
-[; ;headers\teclado.h: 21: void leer_teclado(int ocultar,char* (*doit)());
+[; ;headers\teclado.h: 17: void guardar_array_comando(char *);
+[; ;headers\teclado.h: 18: void validar_comando(char *, int *);
+[; ;headers\teclado.h: 19: void imprimir_tecla(char);
+[; ;headers\teclado.h: 20: void restaurar_comando();
+[; ;headers\teclado.h: 21: void guardar_tecla_presionada(char *, int,char* (*doit)(char *));
+[; ;headers\teclado.h: 22: void leer_teclado(int ocultar,char* (*doit)());
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
 [; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
@@ -7800,305 +7801,331 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 1035 ]
 }
 "21
+[v _guardar_array_comando `(v ~T0 @X0 1 ef1`*uc ]
+{
+[; ;teclado.c: 21: void guardar_array_comando(char * array_comando){
+[e :U _guardar_array_comando ]
+[v _array_comando `*uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;teclado.c: 22: comando[0] = array_comando[0];
+"22
+[e = *U + &U _comando * -> -> -> 0 `i `ui `ux -> -> # *U &U _comando `ui `ux *U + _array_comando * -> -> 0 `i `x -> -> # *U _array_comando `i `x ]
+[; ;teclado.c: 23: comando[1] = array_comando[1];
+"23
+[e = *U + &U _comando * -> -> -> 1 `i `ui `ux -> -> # *U &U _comando `ui `ux *U + _array_comando * -> -> 1 `i `x -> -> # *U _array_comando `i `x ]
+[; ;teclado.c: 24: comando[2] = array_comando[2];
+"24
+[e = *U + &U _comando * -> -> -> 2 `i `ui `ux -> -> # *U &U _comando `ui `ux *U + _array_comando * -> -> 2 `i `x -> -> # *U _array_comando `i `x ]
+[; ;teclado.c: 25: comando[2] = 0;
+"25
+[e = *U + &U _comando * -> -> -> 2 `i `ui `ux -> -> # *U &U _comando `ui `ux -> -> 0 `i `uc ]
+[; ;teclado.c: 27: tamanio_comando = 3;
+"27
+[e = _tamanio_comando -> 3 `i ]
+[; ;teclado.c: 28: }
+"28
+[e :UE 1037 ]
+}
+"30
 [v _validar_comando `(v ~T0 @X0 1 ef2`*uc`*i ]
 {
-[; ;teclado.c: 21: void validar_comando(char * candidato, int * validar){
+[; ;teclado.c: 30: void validar_comando(char * candidato, int * validar){
 [e :U _validar_comando ]
 [v _candidato `*uc ~T0 @X0 1 r1 ]
 [v _validar `*i ~T0 @X0 1 r2 ]
 [f ]
-[; ;teclado.c: 23: *validar=1;
-"23
+[; ;teclado.c: 32: *validar=1;
+"32
 [e = *U _validar -> 1 `i ]
-"24
-[v _i `i ~T0 @X0 1 a ]
-[; ;teclado.c: 24: int i = 0;
-[e = _i -> 0 `i ]
-[; ;teclado.c: 25: while (i < 3){
-"25
-[e $U 1038  ]
-[e :U 1039 ]
-{
-[; ;teclado.c: 26: if (comando[i] != *(candidato+i))
-"26
-[e $ ! != -> *U + &U _comando * -> -> _i `ui `ux -> -> # *U &U _comando `ui `ux `i -> *U + _candidato * -> _i `x -> -> # *U _candidato `i `x `i 1041  ]
-[; ;teclado.c: 27: *validar = 0;
-"27
-[e = *U _validar -> 0 `i ]
-[e :U 1041 ]
-[; ;teclado.c: 29: i++;
-"29
-[e ++ _i -> 1 `i ]
-"30
-}
-[e :U 1038 ]
-"25
-[e $ < _i -> 3 `i 1039  ]
-[e :U 1040 ]
-[; ;teclado.c: 30: }
-[; ;teclado.c: 31: }
-"31
-[e :UE 1037 ]
-}
 "33
+[v _i `i ~T0 @X0 1 a ]
+[; ;teclado.c: 33: int i = 0;
+[e = _i -> 0 `i ]
+[; ;teclado.c: 34: while (i < 3){
+"34
+[e $U 1039  ]
+[e :U 1040 ]
+{
+[; ;teclado.c: 35: if (comando[i] != *(candidato+i))
+"35
+[e $ ! != -> *U + &U _comando * -> -> _i `ui `ux -> -> # *U &U _comando `ui `ux `i -> *U + _candidato * -> _i `x -> -> # *U _candidato `i `x `i 1042  ]
+[; ;teclado.c: 36: *validar = 0;
+"36
+[e = *U _validar -> 0 `i ]
+[e :U 1042 ]
+[; ;teclado.c: 38: i++;
+"38
+[e ++ _i -> 1 `i ]
+"39
+}
+[e :U 1039 ]
+"34
+[e $ < _i -> 3 `i 1040  ]
+[e :U 1041 ]
+[; ;teclado.c: 39: }
+[; ;teclado.c: 40: }
+"40
+[e :UE 1038 ]
+}
+"42
 [v _imprimir_tecla `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;teclado.c: 33: void imprimir_tecla(char tecla){
+[; ;teclado.c: 42: void imprimir_tecla(char tecla){
 [e :U _imprimir_tecla ]
 [v _tecla `uc ~T0 @X0 1 r1 ]
 [f ]
-"35
-[v _aux `uc ~T0 @X0 -> 20 `i a ]
-[; ;teclado.c: 35: unsigned char aux[20];
-[; ;teclado.c: 36: sprintf(aux,"%01u",tecla);
-"36
-[e ( _sprintf (1 , (. , &U _aux :s 2C -> _tecla `i ]
-[; ;teclado.c: 37: if (ocultar_teclas == 1){
-"37
-[e $ ! == _ocultar_teclas -> 1 `i 1043  ]
-{
-[; ;teclado.c: 38: lcd_putrs("*");
-"38
-[e ( _lcd_putrs (1 :s 3C ]
-"39
-}
-[; ;teclado.c: 39: }else{
-[e $U 1044  ]
-[e :U 1043 ]
-{
-[; ;teclado.c: 40: lcd_putrs(aux);
-"40
-[e ( _lcd_putrs (1 -> &U _aux `*Cuc ]
-"41
-}
-[e :U 1044 ]
-[; ;teclado.c: 41: }
-[; ;teclado.c: 42: }
-"42
-[e :UE 1042 ]
-}
 "44
-[v _restaurar_comando `(v ~T0 @X0 1 ef ]
-{
-[; ;teclado.c: 44: void restaurar_comando(){
-[e :U _restaurar_comando ]
-[f ]
-[; ;teclado.c: 45: tamanio_comando = 0;
+[v _aux `uc ~T0 @X0 -> 20 `i a ]
+[; ;teclado.c: 44: unsigned char aux[20];
+[; ;teclado.c: 45: sprintf(aux,"%01u",tecla);
 "45
-[e = _tamanio_comando -> 0 `i ]
-[; ;teclado.c: 47: comando[0]='x';
+[e ( _sprintf (1 , (. , &U _aux :s 2C -> _tecla `i ]
+[; ;teclado.c: 46: if (ocultar_teclas == 1){
+"46
+[e $ ! == _ocultar_teclas -> 1 `i 1044  ]
+{
+[; ;teclado.c: 47: lcd_putrs("*");
 "47
-[e = *U + &U _comando * -> -> -> 0 `i `ui `ux -> -> # *U &U _comando `ui `ux -> -> 120 `ui `uc ]
-[; ;teclado.c: 48: comando[1]='x';
+[e ( _lcd_putrs (1 :s 3C ]
 "48
-[e = *U + &U _comando * -> -> -> 1 `i `ui `ux -> -> # *U &U _comando `ui `ux -> -> 120 `ui `uc ]
-[; ;teclado.c: 49: comando[2]='x';
+}
+[; ;teclado.c: 48: }else{
+[e $U 1045  ]
+[e :U 1044 ]
+{
+[; ;teclado.c: 49: lcd_putrs(aux);
 "49
-[e = *U + &U _comando * -> -> -> 2 `i `ui `ux -> -> # *U &U _comando `ui `ux -> -> 120 `ui `uc ]
-[; ;teclado.c: 50: comando[3]=0;
+[e ( _lcd_putrs (1 -> &U _aux `*Cuc ]
 "50
-[e = *U + &U _comando * -> -> -> 3 `i `ui `ux -> -> # *U &U _comando `ui `ux -> -> 0 `i `uc ]
+}
+[e :U 1045 ]
+[; ;teclado.c: 50: }
 [; ;teclado.c: 51: }
 "51
-[e :UE 1045 ]
+[e :UE 1043 ]
 }
 "53
-[v _guardar_tecla_presionada `(v ~T0 @X0 1 ef3`*uc`i`*F8196 ]
+[v _restaurar_comando `(v ~T0 @X0 1 ef ]
 {
-[; ;teclado.c: 53: void guardar_tecla_presionada(char * letra, int i,char* (*doit)(char *)){
+[; ;teclado.c: 53: void restaurar_comando(){
+[e :U _restaurar_comando ]
+[f ]
+[; ;teclado.c: 54: tamanio_comando = 0;
+"54
+[e = _tamanio_comando -> 0 `i ]
+[; ;teclado.c: 56: comando[0]='x';
+"56
+[e = *U + &U _comando * -> -> -> 0 `i `ui `ux -> -> # *U &U _comando `ui `ux -> -> 120 `ui `uc ]
+[; ;teclado.c: 57: comando[1]='x';
+"57
+[e = *U + &U _comando * -> -> -> 1 `i `ui `ux -> -> # *U &U _comando `ui `ux -> -> 120 `ui `uc ]
+[; ;teclado.c: 58: comando[2]='x';
+"58
+[e = *U + &U _comando * -> -> -> 2 `i `ui `ux -> -> # *U &U _comando `ui `ux -> -> 120 `ui `uc ]
+[; ;teclado.c: 59: comando[3]=0;
+"59
+[e = *U + &U _comando * -> -> -> 3 `i `ui `ux -> -> # *U &U _comando `ui `ux -> -> 0 `i `uc ]
+[; ;teclado.c: 60: }
+"60
+[e :UE 1046 ]
+}
+"62
+[v _guardar_tecla_presionada `(v ~T0 @X0 1 ef3`*uc`i`*F8198 ]
+{
+[; ;teclado.c: 62: void guardar_tecla_presionada(char * letra, int i,char* (*doit)(char *)){
 [e :U _guardar_tecla_presionada ]
 [v _letra `*uc ~T0 @X0 1 r1 ]
 [v _i `i ~T0 @X0 1 r2 ]
-[v F8272 `(*uc ~T0 @X0 0 tf1`*uc ]
-[v _doit `*F8272 ~T0 @X0 1 r3 ]
+[v F8275 `(*uc ~T0 @X0 0 tf1`*uc ]
+[v _doit `*F8275 ~T0 @X0 1 r3 ]
 [f ]
-[; ;teclado.c: 54: if (PORTAbits.RA5==1){key=i;doit(key);while(PORTAbits.RA5==1){};}
-"54
-[e $ ! == -> . . _PORTAbits 0 5 `i -> 1 `i 1047  ]
+[; ;teclado.c: 63: if (PORTAbits.RA5==1){key=i;doit(key);while(PORTAbits.RA5==1){};}
+"63
+[e $ ! == -> . . _PORTAbits 0 5 `i -> 1 `i 1048  ]
 {
 [e = _key -> _i `uc ]
 [e ( *U _doit (1 -> _key `*uc ]
-[e $U 1048  ]
-[e :U 1049 ]
+[e $U 1049  ]
+[e :U 1050 ]
 {
 }
-[e :U 1048 ]
-[e $ == -> . . _PORTAbits 0 5 `i -> 1 `i 1049  ]
-[e :U 1050 ]
+[e :U 1049 ]
+[e $ == -> . . _PORTAbits 0 5 `i -> 1 `i 1050  ]
+[e :U 1051 ]
 }
-[e :U 1047 ]
-[; ;teclado.c: 55: if (PORTAbits.RA7==1){key=(i)+1;doit(key);while(PORTAbits.RA7==1){};}
-"55
-[e $ ! == -> . . _PORTAbits 0 7 `i -> 1 `i 1051  ]
+[e :U 1048 ]
+[; ;teclado.c: 64: if (PORTAbits.RA7==1){key=(i)+1;doit(key);while(PORTAbits.RA7==1){};}
+"64
+[e $ ! == -> . . _PORTAbits 0 7 `i -> 1 `i 1052  ]
 {
 [e = _key -> + _i -> 1 `i `uc ]
 [e ( *U _doit (1 -> _key `*uc ]
-[e $U 1052  ]
-[e :U 1053 ]
+[e $U 1053  ]
+[e :U 1054 ]
 {
 }
-[e :U 1052 ]
-[e $ == -> . . _PORTAbits 0 7 `i -> 1 `i 1053  ]
-[e :U 1054 ]
+[e :U 1053 ]
+[e $ == -> . . _PORTAbits 0 7 `i -> 1 `i 1054  ]
+[e :U 1055 ]
 }
-[e :U 1051 ]
-[; ;teclado.c: 56: if (PORTAbits.RA6==1){key=(i)+2;doit(key);while(PORTAbits.RA6==1){};}
-"56
-[e $ ! == -> . . _PORTAbits 0 6 `i -> 1 `i 1055  ]
+[e :U 1052 ]
+[; ;teclado.c: 65: if (PORTAbits.RA6==1){key=(i)+2;doit(key);while(PORTAbits.RA6==1){};}
+"65
+[e $ ! == -> . . _PORTAbits 0 6 `i -> 1 `i 1056  ]
 {
 [e = _key -> + _i -> 2 `i `uc ]
 [e ( *U _doit (1 -> _key `*uc ]
-[e $U 1056  ]
-[e :U 1057 ]
+[e $U 1057  ]
+[e :U 1058 ]
 {
+}
+[e :U 1057 ]
+[e $ == -> . . _PORTAbits 0 6 `i -> 1 `i 1058  ]
+[e :U 1059 ]
 }
 [e :U 1056 ]
-[e $ == -> . . _PORTAbits 0 6 `i -> 1 `i 1057  ]
-[e :U 1058 ]
-}
-[e :U 1055 ]
-[; ;teclado.c: 57: if (PORTCbits.RC2==1){key=(i)+10;lcd_putrs(letra);while(PORTCbits.RC2==1){};}
-"57
-[e $ ! == -> . . _PORTCbits 0 2 `i -> 1 `i 1059  ]
+[; ;teclado.c: 66: if (PORTCbits.RC2==1){key=letra[0] ;lcd_putrs(letra);while(PORTCbits.RC2==1){};}
+"66
+[e $ ! == -> . . _PORTCbits 0 2 `i -> 1 `i 1060  ]
 {
-[e = _key -> + _i -> 10 `i `uc ]
+[e = _key *U + _letra * -> -> 0 `i `x -> -> # *U _letra `i `x ]
 [e ( _lcd_putrs (1 -> _letra `*Cuc ]
-[e $U 1060  ]
-[e :U 1061 ]
+[e $U 1061  ]
+[e :U 1062 ]
 {
+}
+[e :U 1061 ]
+[e $ == -> . . _PORTCbits 0 2 `i -> 1 `i 1062  ]
+[e :U 1063 ]
 }
 [e :U 1060 ]
-[e $ == -> . . _PORTCbits 0 2 `i -> 1 `i 1061  ]
-[e :U 1062 ]
+[; ;teclado.c: 67: }
+"67
+[e :UE 1047 ]
 }
-[e :U 1059 ]
-[; ;teclado.c: 58: }
-"58
-[e :UE 1046 ]
-}
-"60
-[v _leer_teclado `(v ~T0 @X0 1 ef2`i`*F8201 ]
+"69
+[v _leer_teclado `(v ~T0 @X0 1 ef2`i`*F8203 ]
 {
-[; ;teclado.c: 60: void leer_teclado(int ocultar,char* (*doit)()){
+[; ;teclado.c: 69: void leer_teclado(int ocultar,char* (*doit)()){
 [e :U _leer_teclado ]
 [v _ocultar `i ~T0 @X0 1 r1 ]
-[v F8276 `(*uc ~T0 @X0 0 tf ]
-[v _doit `*F8276 ~T0 @X0 1 r2 ]
+[v F8279 `(*uc ~T0 @X0 0 tf ]
+[v _doit `*F8279 ~T0 @X0 1 r2 ]
 [f ]
-"61
+"70
 [v _i `i ~T0 @X0 1 a ]
-[; ;teclado.c: 61: int i;
-[; ;teclado.c: 62: ocultar_teclas = ocultar;
-"62
+[; ;teclado.c: 70: int i;
+[; ;teclado.c: 71: ocultar_teclas = ocultar;
+"71
 [e = _ocultar_teclas _ocultar ]
-[; ;teclado.c: 64: LATAbits.LATA0=1;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=0;i=1;
-"64
+[; ;teclado.c: 73: LATAbits.LATA0=1;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=0;i=1;
+"73
 [e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
 [e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 [e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
 [e = _i -> 1 `i ]
-[; ;teclado.c: 65: guardar_tecla_presionada("A",i,doit);
-"65
-[e ( _guardar_tecla_presionada (3 , , -> :s 4C `*uc _i -> _doit `*F8196 ]
-[; ;teclado.c: 67: LATAbits.LATA0=0;LATAbits.LATA1=1;LATAbits.LATA2=0;LATAbits.LATA3=0;i=4;
-"67
+[; ;teclado.c: 74: guardar_tecla_presionada("A",i,doit);
+"74
+[e ( _guardar_tecla_presionada (3 , , -> :s 4C `*uc _i -> _doit `*F8198 ]
+[; ;teclado.c: 76: LATAbits.LATA0=0;LATAbits.LATA1=1;LATAbits.LATA2=0;LATAbits.LATA3=0;i=4;
+"76
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
 [e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 [e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
 [e = _i -> 4 `i ]
-[; ;teclado.c: 68: guardar_tecla_presionada("B",i,doit);
-"68
-[e ( _guardar_tecla_presionada (3 , , -> :s 5C `*uc _i -> _doit `*F8196 ]
-[; ;teclado.c: 70: LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=1;LATAbits.LATA3=0;i=7;
-"70
+[; ;teclado.c: 77: guardar_tecla_presionada("B",i,doit);
+"77
+[e ( _guardar_tecla_presionada (3 , , -> :s 5C `*uc _i -> _doit `*F8198 ]
+[; ;teclado.c: 79: LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=1;LATAbits.LATA3=0;i=7;
+"79
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
 [e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 [e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
 [e = _i -> 7 `i ]
-[; ;teclado.c: 71: guardar_tecla_presionada("C",i,doit);
-"71
-[e ( _guardar_tecla_presionada (3 , , -> :s 6C `*uc _i -> _doit `*F8196 ]
-[; ;teclado.c: 73: LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=1;
-"73
+[; ;teclado.c: 80: guardar_tecla_presionada("C",i,doit);
+"80
+[e ( _guardar_tecla_presionada (3 , , -> :s 6C `*uc _i -> _doit `*F8198 ]
+[; ;teclado.c: 82: LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=1;
+"82
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
 [e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 [e = . . _LATAbits 0 3 -> -> 1 `i `uc ]
-[; ;teclado.c: 74: {
-"74
+[; ;teclado.c: 83: {
+"83
 {
-[; ;teclado.c: 75: if (PORTAbits.RA5==1){key=18;lcd_putrs("*");while(PORTAbits.RA5==1){};}
-"75
-[e $ ! == -> . . _PORTAbits 0 5 `i -> 1 `i 1064  ]
+[; ;teclado.c: 84: if (PORTAbits.RA5==1){key='*';lcd_putrs("*");while(PORTAbits.RA5==1){};}
+"84
+[e $ ! == -> . . _PORTAbits 0 5 `i -> 1 `i 1065  ]
 {
-[e = _key -> -> 18 `i `uc ]
+[e = _key -> -> 42 `ui `uc ]
 [e ( _lcd_putrs (1 :s 7C ]
-[e $U 1065  ]
-[e :U 1066 ]
+[e $U 1066  ]
+[e :U 1067 ]
 {
+}
+[e :U 1066 ]
+[e $ == -> . . _PORTAbits 0 5 `i -> 1 `i 1067  ]
+[e :U 1068 ]
 }
 [e :U 1065 ]
-[e $ == -> . . _PORTAbits 0 5 `i -> 1 `i 1066  ]
-[e :U 1067 ]
-}
-[e :U 1064 ]
-[; ;teclado.c: 76: if (PORTAbits.RA7==1){key=0;doit(key);while(PORTAbits.RA7==1){};}
-"76
-[e $ ! == -> . . _PORTAbits 0 7 `i -> 1 `i 1068  ]
+[; ;teclado.c: 85: if (PORTAbits.RA7==1){key=0;doit(key);while(PORTAbits.RA7==1){};}
+"85
+[e $ ! == -> . . _PORTAbits 0 7 `i -> 1 `i 1069  ]
 {
 [e = _key -> -> 0 `i `uc ]
 [e ( *U _doit -> _key `i ]
-[e $U 1069  ]
-[e :U 1070 ]
+[e $U 1070  ]
+[e :U 1071 ]
 {
+}
+[e :U 1070 ]
+[e $ == -> . . _PORTAbits 0 7 `i -> 1 `i 1071  ]
+[e :U 1072 ]
 }
 [e :U 1069 ]
-[e $ == -> . . _PORTAbits 0 7 `i -> 1 `i 1070  ]
-[e :U 1071 ]
-}
-[e :U 1068 ]
-[; ;teclado.c: 77: if (PORTAbits.RA6==1){key=19;lcd_putrs("#");while(PORTAbits.RA6==1){};}
-"77
-[e $ ! == -> . . _PORTAbits 0 6 `i -> 1 `i 1072  ]
+[; ;teclado.c: 86: if (PORTAbits.RA6==1){key='#';lcd_putrs("#");while(PORTAbits.RA6==1){};}
+"86
+[e $ ! == -> . . _PORTAbits 0 6 `i -> 1 `i 1073  ]
 {
-[e = _key -> -> 19 `i `uc ]
+[e = _key -> -> 35 `ui `uc ]
 [e ( _lcd_putrs (1 :s 8C ]
-[e $U 1073  ]
-[e :U 1074 ]
+[e $U 1074  ]
+[e :U 1075 ]
 {
+}
+[e :U 1074 ]
+[e $ == -> . . _PORTAbits 0 6 `i -> 1 `i 1075  ]
+[e :U 1076 ]
 }
 [e :U 1073 ]
-[e $ == -> . . _PORTAbits 0 6 `i -> 1 `i 1074  ]
-[e :U 1075 ]
-}
-[e :U 1072 ]
-[; ;teclado.c: 78: if (PORTCbits.RC2==1){key='D';lcd_putrs("D");while(PORTCbits.RC2==1){};}
-"78
-[e $ ! == -> . . _PORTCbits 0 2 `i -> 1 `i 1076  ]
+[; ;teclado.c: 87: if (PORTCbits.RC2==1){key='D';lcd_putrs("D");while(PORTCbits.RC2==1){};}
+"87
+[e $ ! == -> . . _PORTCbits 0 2 `i -> 1 `i 1077  ]
 {
 [e = _key -> -> 68 `ui `uc ]
 [e ( _lcd_putrs (1 :s 9C ]
-[e $U 1077  ]
-[e :U 1078 ]
+[e $U 1078  ]
+[e :U 1079 ]
 {
 }
+[e :U 1078 ]
+[e $ == -> . . _PORTCbits 0 2 `i -> 1 `i 1079  ]
+[e :U 1080 ]
+}
 [e :U 1077 ]
-[e $ == -> . . _PORTCbits 0 2 `i -> 1 `i 1078  ]
-[e :U 1079 ]
+"88
 }
-[e :U 1076 ]
-"79
-}
-[; ;teclado.c: 79: }
-[; ;teclado.c: 80: _delay((unsigned long)((98)*(8000000/4000.0)));
-"80
+[; ;teclado.c: 88: }
+[; ;teclado.c: 89: _delay((unsigned long)((98)*(8000000/4000.0)));
+"89
 [e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;teclado.c: 82: }
-"82
-[e :UE 1063 ]
+[; ;teclado.c: 91: }
+"91
+[e :UE 1064 ]
 }
 [p f _sprintf 8422404 ]
 [a 1C 37 48 49 117 0 ]
