@@ -7603,16 +7603,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ocultar_teclas `i ~T0 @X0 1 e ]
 [; ;headers\teclado.h: 12: int ocultar_teclas;
 "13
-[v _comando `uc ~T0 @X0 -> 4 `i e ]
+[v _comando `uc ~T0 @X0 -> 3 `i e ]
 [i _comando
 :U ..
--> 120 `c
 -> 120 `c
 -> 120 `c
 -> 0 `c
 ..
 ]
-[; ;headers\teclado.h: 13: char comando[4]="xxx";
+[; ;headers\teclado.h: 13: char comando[3]="xx";
 "14
 [v _tamanio_comando `i ~T0 @X0 1 e ]
 [i _tamanio_comando

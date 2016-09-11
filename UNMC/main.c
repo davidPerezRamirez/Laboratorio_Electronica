@@ -88,15 +88,12 @@
     
 ingresar_password(){
     char clear[16];
-    for (int i=0;i<16;i++) clear[i]=' ';
-    
-    if(tamanio_password < 6){
+    for (int i=0;i<16;i++) clear[i]=' ';     
         
-        lcd_comand(0b00001100);             //Enciende display sin cursor y sin blink  
-        lcd_gotoxy(1,1);        
-        lcd_putrs("Inserte password");
-        lcd_gotoxy(tamanio_password+1,2);        
-    }
+    lcd_comand(0b00001100);             //Enciende display sin cursor y sin blink  
+    lcd_gotoxy(1,1);        
+    lcd_putrs("Inserte password");    
+    lcd_gotoxy(tamanio_password+1,2);            
     
     validar_password();
     if (tamanio_password >= 6 && !autorizado){
@@ -111,9 +108,7 @@ ingresar_password(){
 
 mostrar_menu(char * titulo_menu){
     lcd_gotoxy(1,1);            
-    lcd_putrs(titulo_menu);
-    lcd_gotoxy(1,2);
-    lcd_putrs("  ");
+    lcd_putrs(titulo_menu);    
 }
 
 mostrar_guardar_password(char tecla){    
@@ -122,6 +117,28 @@ mostrar_guardar_password(char tecla){
     sprintf(buffer2,"%01u",tecla);
     guardar_current_password(*buffer2);
     
+}
+
+mostrar_guardar_temporal_password(char tecla){    
+    
+    imprimir_tecla(tecla);
+    sprintf(buffer2,"%01u",tecla);
+    guardar_password_temporal(*buffer2);    
+    
+}
+
+mostrar_guardar_nuevo_password(char tecla){    
+    
+    imprimir_tecla(tecla);
+    sprintf(buffer2,"%01u",tecla);
+    guardar_nuevo_password(*buffer2);    
+    
+}
+
+confirmar_actualizar_password(char tecla){    
+    
+    imprimir_tecla(tecla);
+    sprintf(buffer2,"%01u",tecla);      
 }
 
 ingresar_comando(char key){
@@ -140,8 +157,9 @@ Setup();
 restaurar_comando();
 
 int ocultar_teclas = 1;
+int verifica, confirmar;
 int validacion;
-void *puntero_funcion;
+char *puntero_funcion;
 
 while(1)
    {
@@ -151,15 +169,19 @@ while(1)
         leer_teclado(ocultar_teclas,mostrar_guardar_password);  
         ingresar_password(); 
         
-    }else{                        
-        puntero_funcion = ingresar_comando;       
+    }else{  
+        ocultar_teclas = 1;
+        puntero_funcion = ingresar_comando; 
         
-        validar_comando("xxx",&validacion);            
-        if(validacion){     
+        lcd_gotoxy(10,2);
+        lcd_putrs(password);
+                    
+        validar_comando("xx",&validacion);        
+        if(validacion){         
             caratula("Welcome");
         }
         
-        validar_comando("001",&validacion);            
+        validar_comando("01",&validacion);            
         if(validacion){
             //Limpia la fila 2 del display
             lcd_gotoxy(3,2);
@@ -180,7 +202,7 @@ while(1)
             }
         }
         
-        validar_comando("002",&validacion);            
+        validar_comando("02",&validacion);            
         if(validacion){
             //Limpia la fila 2 del display
             lcd_gotoxy(3,2);
@@ -197,14 +219,45 @@ while(1)
             }
         }
                    
-        if(key == 'C'){            
-            lcd_gotoxy(1,2);            
-            lcd_putrs("cambiar pass");
-            for (int i=0;i<10;i++)__delay_ms(98);
-            restaurar_comando();
-        }        
-                 
-        leer_teclado(!ocultar_teclas,puntero_funcion);         
+        validar_comando("00",&validacion);            
+        if(validacion){                                                                       
+            ocultar_teclas = 1;
+            puntero_funcion = mostrar_guardar_temporal_password;
+            
+            verficar_password(&verifica);
+            if(!verifica){
+                mostrar_menu("Password actual:          "); 
+                lcd_gotoxy(tamanio_password+1,2);
+                lcd_putrs("                         ");
+                lcd_gotoxy(tamanio_password+1,2);
+                
+            }else {                
+                if (tamanio_new_password <= tam_pass){  
+                    puntero_funcion = mostrar_guardar_nuevo_password;
+
+                    mostrar_menu("Nuevo pass:        ");
+                    lcd_gotoxy(tamanio_new_password+1,2);
+                    lcd_putrs("                         ");
+                    lcd_gotoxy(tamanio_new_password+1,2);
+                
+                    if (tamanio_new_password == tam_pass) tamanio_new_password++;
+                    
+                }else{                    
+                    puntero_funcion = confirmar_actualizar_password;
+                    
+                    sprintf(buffer2,"%01u",key);  
+                    actualizar_password(&confirmar,buffer2[0]);
+
+                    mostrar_menu("Confirme pass:        ");
+                    lcd_gotoxy(tamanio_new_password - tam_pass,2);
+                    lcd_putrs("                         ");
+                    lcd_gotoxy(tamanio_new_password - tam_pass,2);
+                                        
+                }                
+            }    
+        }            
+        
+        leer_teclado(ocultar_teclas,puntero_funcion);         
     }    
    }
 return 0;

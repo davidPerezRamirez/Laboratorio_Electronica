@@ -9883,7 +9883,7 @@ char key;
 
 # 12 "C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h"
 int ocultar_teclas;
-char comando[4]="xxx";
+char comando[3]="xx";
 int tamanio_comando = 0;
 
 void guardar_comando(char);
@@ -9894,17 +9894,29 @@ void restaurar_comando();
 void guardar_tecla_presionada(char *, int,char* (*doit)(char *));
 void leer_teclado(int ocultar,char* (*doit)());
 
-# 7 "C:/Archivos de programa/Unimic/unmc_01/headers\alarma.h"
-char password[6]="123456";
-char current_password[6]="";
+# 14 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
+char key;
+
+# 12 "C:/Archivos de programa/Unimic/unmc_01/headers\alarma.h"
+char password[7]="123456";
+char current_password[7]="";
+char temporal[7] = "";
+char new_password[7] = "";
+
 int tamanio_password=0;
+int tamanio_new_password=0;
 int autorizado=0;
 int encendida = 0;
-int activida = 0;
+int activada = 1;
 
 
 void guardar_current_password(char);
 void validar_password();
+
+void verficar_password(int *);
+void guardar_password_temporal(char);
+void guardar_nuevo_password(char);
+void actualizar_password(int *, char);
 
 # 27 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdlib.h"
 typedef struct {
@@ -10113,13 +10125,10 @@ ingresar_password(){
 char clear[16];
 for (int i=0;i<16;i++) clear[i]=' ';
 
-if(tamanio_password < 6){
-
 lcd_comand(0b00001100);
 lcd_gotoxy(1,1);
 lcd_putrs("Inserte password");
 lcd_gotoxy(tamanio_password+1,2);
-}
 
 validar_password();
 if (tamanio_password >= 6 && !autorizado){
@@ -10135,8 +10144,6 @@ lcd_putrs(clear);
 mostrar_menu(char * titulo_menu){
 lcd_gotoxy(1,1);
 lcd_putrs(titulo_menu);
-lcd_gotoxy(1,2);
-lcd_putrs("  ");
 }
 
 mostrar_guardar_password(char tecla){
@@ -10147,19 +10154,42 @@ guardar_current_password(*buffer2);
 
 }
 
+mostrar_guardar_temporal_password(char tecla){
+
+imprimir_tecla(tecla);
+sprintf(buffer2,"%01u",tecla);
+guardar_password_temporal(*buffer2);
+
+}
+
+mostrar_guardar_nuevo_password(char tecla){
+
+imprimir_tecla(tecla);
+sprintf(buffer2,"%01u",tecla);
+guardar_nuevo_password(*buffer2);
+
+}
+
+confirmar_actualizar_password(char tecla){
+
+imprimir_tecla(tecla);
+sprintf(buffer2,"%01u",tecla);
+}
+
 ingresar_comando(char key){
 guardar_comando(key);
 }
 
-# 137
+# 154
 int main(void)
 {
 Setup();
 restaurar_comando();
 
 int ocultar_teclas = 1;
+int verifica, confirmar;
 int validacion;
-void *puntero_funcion;
+char *puntero_funcion;
 
 while(1)
 {
@@ -10170,14 +10200,18 @@ leer_teclado(ocultar_teclas,mostrar_guardar_password);
 ingresar_password();
 
 }else{
+ocultar_teclas = 1;
 puntero_funcion = ingresar_comando;
 
-validar_comando("xxx",&validacion);
+lcd_gotoxy(10,2);
+lcd_putrs(password);
+
+validar_comando("xx",&validacion);
 if(validacion){
 caratula("Welcome");
 }
 
-validar_comando("001",&validacion);
+validar_comando("01",&validacion);
 if(validacion){
 
 lcd_gotoxy(3,2);
@@ -10198,7 +10232,7 @@ puntero_funcion = cambiar_dia;
 }
 }
 
-validar_comando("002",&validacion);
+validar_comando("02",&validacion);
 if(validacion){
 
 lcd_gotoxy(3,2);
@@ -10215,14 +10249,45 @@ puntero_funcion = cambiar_hora;
 }
 }
 
-if(key == 'C'){
-lcd_gotoxy(1,2);
-lcd_putrs("cambiar pass");
-for (int i=0;i<10;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
-restaurar_comando();
+validar_comando("00",&validacion);
+if(validacion){
+ocultar_teclas = 1;
+puntero_funcion = mostrar_guardar_temporal_password;
+
+verficar_password(&verifica);
+if(!verifica){
+mostrar_menu("Password actual:          ");
+lcd_gotoxy(tamanio_password+1,2);
+lcd_putrs("                         ");
+lcd_gotoxy(tamanio_password+1,2);
+
+}else {
+if (tamanio_new_password <= 6){
+puntero_funcion = mostrar_guardar_nuevo_password;
+
+mostrar_menu("Nuevo pass:        ");
+lcd_gotoxy(tamanio_new_password+1,2);
+lcd_putrs("                         ");
+lcd_gotoxy(tamanio_new_password+1,2);
+
+if (tamanio_new_password == 6) tamanio_new_password++;
+
+}else{
+puntero_funcion = confirmar_actualizar_password;
+
+sprintf(buffer2,"%01u",key);
+actualizar_password(&confirmar,buffer2[0]);
+
+mostrar_menu("Confirme pass:        ");
+lcd_gotoxy(tamanio_new_password - 6,2);
+lcd_putrs("                         ");
+lcd_gotoxy(tamanio_new_password - 6,2);
+
+}
+}
 }
 
-leer_teclado(!ocultar_teclas,puntero_funcion);
+leer_teclado(ocultar_teclas,puntero_funcion);
 }
 }
 return 0;

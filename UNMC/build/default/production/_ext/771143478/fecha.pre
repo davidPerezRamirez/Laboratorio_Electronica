@@ -9484,7 +9484,7 @@ char key;
 
 # 12 "C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h"
 int ocultar_teclas;
-char comando[4]="xxx";
+char comando[3]="xx";
 int tamanio_comando = 0;
 
 void guardar_comando(char);

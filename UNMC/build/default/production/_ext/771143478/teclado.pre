@@ -9820,7 +9820,7 @@ char key;
 
 # 12 "C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h"
 int ocultar_teclas;
-char comando[4]="xxx";
+char comando[3]="xx";
 int tamanio_comando = 0;
 
 void guardar_comando(char);
@@ -9899,9 +9899,9 @@ void guardar_comando(char tecla){
 
 unsigned char aux[20];
 sprintf(aux,"%01u",tecla);
-if (tamanio_comando <3){
+if (tamanio_comando < 2){
 comando[tamanio_comando] = *aux;
-comando [tamanio_comando+1] = '\0';
+comando [tamanio_comando+1] = 0;
 tamanio_comando++;
 }
 }
@@ -9909,17 +9909,16 @@ tamanio_comando++;
 void guardar_array_comando(char * array_comando){
 comando[0] = array_comando[0];
 comando[1] = array_comando[1];
-comando[2] = array_comando[2];
 comando[2] = 0;
 
-tamanio_comando = 3;
+tamanio_comando = 2;
 }
 
 void validar_comando(char * candidato, int * validar){
 
 *validar=1;
 int i = 0;
-while (i < 3){
+while (i < 2 && *validar == 1){
 if (comando[i] != *(candidato+i))
 *validar = 0;
 
@@ -9943,15 +9942,14 @@ tamanio_comando = 0;
 
 comando[0]='x';
 comando[1]='x';
-comando[2]='x';
-comando[3]=0;
+comando[2]=0;
 }
 
 void guardar_tecla_presionada(char * letra, int i,char* (*doit)(char *)){
 if (PORTAbits.RA5==1){key=i;doit(key);while(PORTAbits.RA5==1){};}
 if (PORTAbits.RA7==1){key=(i)+1;doit(key);while(PORTAbits.RA7==1){};}
 if (PORTAbits.RA6==1){key=(i)+2;doit(key);while(PORTAbits.RA6==1){};}
-if (PORTCbits.RC2==1){key=letra[0] ;lcd_putrs(letra);while(PORTCbits.RC2==1){};}
+if (PORTCbits.RC2==1){key=letra[0]; }
 }
 
 void leer_teclado(int ocultar,char* (*doit)()){
