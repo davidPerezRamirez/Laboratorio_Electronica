@@ -32,7 +32,7 @@
 /// variable lecture diasem, anio, dia, hora, etc
 //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[      
 
-    void caratula(char * titulo)
+    void caratula(const char * titulo)
     {                
         lcd_comand(0b00001100);             //Enciende display sin cursor y sin blink  
         lcd_gotoxy(1,1);        
@@ -86,7 +86,7 @@
     LED_3_Off;
     }
     
-ingresar_password(){
+void ingresar_password(){
     char clear[16];
     for (int i=0;i<16;i++) clear[i]=' ';     
         
@@ -106,12 +106,12 @@ ingresar_password(){
     }
 }    
 
-mostrar_menu(char * titulo_menu){
+void mostrar_titulo_menu(const char * titulo_menu){
     lcd_gotoxy(1,1);            
     lcd_putrs(titulo_menu);    
 }
 
-mostrar_guardar_password(char tecla){    
+void mostrar_guardar_password(char tecla){    
     
     imprimir_tecla(tecla);
     sprintf(buffer2,"%01u",tecla);
@@ -119,7 +119,7 @@ mostrar_guardar_password(char tecla){
     
 }
 
-mostrar_guardar_temporal_password(char tecla){    
+void mostrar_guardar_temporal_password(char tecla){    
     
     imprimir_tecla(tecla);
     sprintf(buffer2,"%01u",tecla);
@@ -127,7 +127,7 @@ mostrar_guardar_temporal_password(char tecla){
     
 }
 
-mostrar_guardar_nuevo_password(char tecla){    
+void mostrar_guardar_nuevo_password(char tecla){    
     
     imprimir_tecla(tecla);
     sprintf(buffer2,"%01u",tecla);
@@ -135,14 +135,94 @@ mostrar_guardar_nuevo_password(char tecla){
     
 }
 
-confirmar_actualizar_password(char tecla){    
+void confirmar_actualizar_password(char tecla){    
     
     imprimir_tecla(tecla);
     sprintf(buffer2,"%01u",tecla);      
 }
 
-ingresar_comando(char key){
+void ingresar_comando(char key){
     guardar_comando(key);
+}
+void mostrar_caratula(int *validar){
+   
+    validar_comando("xx",validar);        
+        if(*validar){         
+            caratula("Welcome");
+        } 
+}
+
+void clear_display(const int pos){
+    lcd_gotoxy(pos,2);
+    lcd_putrs("                         ");
+    lcd_gotoxy(pos,2);   
+}
+
+void cambiar_fecha(){  
+
+    if (tamanio_anio != 2){              
+        mostrar_titulo_menu("Inserte anio:     ");
+        puntero_funcion = &cambiar_anio;
+        clear_display(tamanio_anio+1);
+               
+    }else if (tamanio_mes != 2){                            
+        mostrar_titulo_menu("Inserte mes:     ");
+        puntero_funcion = &cambiar_mes;
+        clear_display(tamanio_mes+1);
+                
+    }else if (tamanio_dia != 2){
+        mostrar_titulo_menu("Inserte dia:     ");
+        puntero_funcion = &cambiar_dia;
+        clear_display(tamanio_dia+1);
+                
+    }
+}
+
+void cambiar_horario(){
+    
+    if (tamanio_minutos != 2){  
+        mostrar_titulo_menu("Inserte minutos:     ");
+        puntero_funcion = cambiar_minutos;
+        clear_display(tamanio_minutos+1);
+                                
+    }else if (tamanio_hora != 2){                            
+        mostrar_titulo_menu("Inserte hora:     ");
+        puntero_funcion = cambiar_hora;
+        clear_display(tamanio_hora+1);
+                
+    }
+}
+
+void cambiar_password(){
+
+    int verifica, confirmar;
+    
+    puntero_funcion = &mostrar_guardar_temporal_password;
+            
+    verficar_password(&verifica);
+    if(!verifica){
+        mostrar_titulo_menu("Password actual:          ");                 
+        clear_display(tamanio_password+1);
+                
+    }else {                
+        if (tamanio_new_password <= tam_pass){  
+            puntero_funcion = &mostrar_guardar_nuevo_password;
+
+            mostrar_titulo_menu("Nuevo pass:        ");
+            clear_display(tamanio_new_password+1);
+                    
+            if (tamanio_new_password == tam_pass) tamanio_new_password++;
+                    
+        }else{                    
+            puntero_funcion = &confirmar_actualizar_password;
+                    
+            sprintf(buffer2,"%01u",key);  
+            actualizar_password(&confirmar,buffer2[0]);
+
+            mostrar_titulo_menu("Confirme pass:        ");
+            clear_display(tamanio_new_password - tam_pass);                                                            
+        }                
+    }
 }
 
 /*------------------------------------------------------------------------------
@@ -157,107 +237,37 @@ Setup();
 restaurar_comando();
 
 int ocultar_teclas = 1;
-int verifica, confirmar;
 int validacion;
-char *puntero_funcion;
 
 while(1)
    {
     Read_RTC();
            
-    if (!autorizado){ 
-        leer_teclado(ocultar_teclas,mostrar_guardar_password);  
-        ingresar_password(); 
+    if (!autorizado){
+        puntero_funcion = mostrar_guardar_password;
+        leer_teclado(ocultar_teclas);  
+        ingresar_password();
         
     }else{  
-        ocultar_teclas = 1;
-        puntero_funcion = ingresar_comando; 
+        puntero_funcion = &ingresar_comando; 
         
-        lcd_gotoxy(10,2);
-        lcd_putrs(password);
-                    
+         validar_comando("00",&validacion);            
+        if(validacion)
+            cambiar_password();
+        
         validar_comando("xx",&validacion);        
-        if(validacion){         
-            caratula("Welcome");
-        }
+        if(validacion)
+            caratula("Welcome");        
         
         validar_comando("01",&validacion);            
-        if(validacion){
-            //Limpia la fila 2 del display
-            lcd_gotoxy(3,2);
-            lcd_putrs("                 "); 
-            
-            if (tamanio_anio != 2){              
-               mostrar_menu("Inserte anio:     ");
-               puntero_funcion = cambiar_anio;               
-                                
-            }else if (tamanio_mes != 2){                            
-                mostrar_menu("Inserte mes:     ");
-                puntero_funcion = cambiar_mes;
-                
-            }else if (tamanio_dia != 2){
-                mostrar_menu("Inserte dia:     ");
-                puntero_funcion = cambiar_dia;
-                
-            }
-        }
+        if(validacion)
+            cambiar_fecha();        
         
         validar_comando("02",&validacion);            
-        if(validacion){
-            //Limpia la fila 2 del display
-            lcd_gotoxy(3,2);
-            lcd_putrs("                    "); 
-            
-            if (tamanio_minutos != 2){  
-                mostrar_menu("Inserte minutos:     ");
-                puntero_funcion = cambiar_minutos;               
-                                
-            }else if (tamanio_hora != 2){                            
-                mostrar_menu("Inserte hora:     ");
-                puntero_funcion = cambiar_hora;
-                
-            }
-        }
-                   
-        validar_comando("00",&validacion);            
-        if(validacion){                                                                       
-            ocultar_teclas = 1;
-            puntero_funcion = mostrar_guardar_temporal_password;
-            
-            verficar_password(&verifica);
-            if(!verifica){
-                mostrar_menu("Password actual:          "); 
-                lcd_gotoxy(tamanio_password+1,2);
-                lcd_putrs("                         ");
-                lcd_gotoxy(tamanio_password+1,2);
-                
-            }else {                
-                if (tamanio_new_password <= tam_pass){  
-                    puntero_funcion = mostrar_guardar_nuevo_password;
-
-                    mostrar_menu("Nuevo pass:        ");
-                    lcd_gotoxy(tamanio_new_password+1,2);
-                    lcd_putrs("                         ");
-                    lcd_gotoxy(tamanio_new_password+1,2);
-                
-                    if (tamanio_new_password == tam_pass) tamanio_new_password++;
-                    
-                }else{                    
-                    puntero_funcion = confirmar_actualizar_password;
-                    
-                    sprintf(buffer2,"%01u",key);  
-                    actualizar_password(&confirmar,buffer2[0]);
-
-                    mostrar_menu("Confirme pass:        ");
-                    lcd_gotoxy(tamanio_new_password - tam_pass,2);
-                    lcd_putrs("                         ");
-                    lcd_gotoxy(tamanio_new_password - tam_pass,2);
-                                        
-                }                
-            }    
-        }            
+        if(validacion)
+            cambiar_horario();                                         
         
-        leer_teclado(ocultar_teclas,puntero_funcion);         
+        leer_teclado(ocultar_teclas);         
     }    
    }
 return 0;

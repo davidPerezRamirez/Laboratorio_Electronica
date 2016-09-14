@@ -17,6 +17,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "126
 [u S1030 `S1031 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
 [n S1030 . f b w l ]
+[v F8433 `(v ~T0 @X0 0 tf1`uc ]
 "206 C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "67 C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdlib.h
@@ -27,7 +28,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _lcd_putrs `(v ~T0 @X0 0 ef1`*Cuc ]
 "57 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_02.h
 [v _Write_RTC `(v ~T0 @X0 0 ef ]
-"20 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
+"22 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
 [v _restaurar_comando `(v ~T0 @X0 0 ef ]
 [v F8339 `(v ~T0 @X0 1 tf1`ul ]
 "161 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18.h
@@ -7912,13 +7913,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 [; ;headers\teclado.h: 14: int tamanio_comando = 0;
-[; ;headers\teclado.h: 16: void guardar_comando(char);
-[; ;headers\teclado.h: 17: void guardar_array_comando(char *);
-[; ;headers\teclado.h: 18: void validar_comando(char *, int *);
-[; ;headers\teclado.h: 19: void imprimir_tecla(char);
-[; ;headers\teclado.h: 20: void restaurar_comando();
-[; ;headers\teclado.h: 21: void guardar_tecla_presionada(char *, int,char* (*doit)(char *));
-[; ;headers\teclado.h: 22: void leer_teclado(int ocultar,char* (*doit)());
+"16
+[v _puntero_funcion `*F8433 ~T0 @X0 1 e ]
+[; ;headers\teclado.h: 16: void (*puntero_funcion)(char);
+[; ;headers\teclado.h: 18: void guardar_comando(char);
+[; ;headers\teclado.h: 19: void guardar_array_comando(char *);
+[; ;headers\teclado.h: 20: void validar_comando(char *, int *);
+[; ;headers\teclado.h: 21: void imprimir_tecla(char);
+[; ;headers\teclado.h: 22: void restaurar_comando();
+[; ;headers\teclado.h: 23: void guardar_tecla_presionada(char *, int);
+[; ;headers\teclado.h: 24: void leer_teclado(int ocultar);
 "9 ../../../../../../Program Files/Unimic/unmc_01/headers/hora.c
 [v _inicializar_hora `(v ~T0 @X0 1 ef ]
 {

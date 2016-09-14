@@ -1,9 +1,9 @@
 Version 3.2 HI-TECH Software Intermediate Code
+[v F8185 `(v ~T0 @X0 0 tf1`uc ]
 "206 C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "109 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
 [v _lcd_putrs `(v ~T0 @X0 0 ef1`*Cuc ]
-[v F8198 `(*uc ~T0 @X0 0 tf1`*uc ]
 "5275 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
 [s S395 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S395 . RA0 RA1 RA2 RA3 . RA5 RA6 RA7 ]
@@ -80,7 +80,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S415 . . . . . . . . . . . . ]
 "5857
 [v _PORTCbits `VS415 ~T0 @X0 0 e@3970 ]
-[v F8203 `(*uc ~T0 @X0 0 tf ]
 "6232
 [s S436 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S436 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
@@ -7728,13 +7727,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 [; ;headers\teclado.h: 14: int tamanio_comando = 0;
-[; ;headers\teclado.h: 16: void guardar_comando(char);
-[; ;headers\teclado.h: 17: void guardar_array_comando(char *);
-[; ;headers\teclado.h: 18: void validar_comando(char *, int *);
-[; ;headers\teclado.h: 19: void imprimir_tecla(char);
-[; ;headers\teclado.h: 20: void restaurar_comando();
-[; ;headers\teclado.h: 21: void guardar_tecla_presionada(char *, int,char* (*doit)(char *));
-[; ;headers\teclado.h: 22: void leer_teclado(int ocultar,char* (*doit)());
+"16
+[v _puntero_funcion `*F8185 ~T0 @X0 1 e ]
+[; ;headers\teclado.h: 16: void (*puntero_funcion)(char);
+[; ;headers\teclado.h: 18: void guardar_comando(char);
+[; ;headers\teclado.h: 19: void guardar_array_comando(char *);
+[; ;headers\teclado.h: 20: void validar_comando(char *, int *);
+[; ;headers\teclado.h: 21: void imprimir_tecla(char);
+[; ;headers\teclado.h: 22: void restaurar_comando();
+[; ;headers\teclado.h: 23: void guardar_tecla_presionada(char *, int);
+[; ;headers\teclado.h: 24: void leer_teclado(int ocultar);
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
 [; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
@@ -7923,21 +7925,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 1046 ]
 }
 "60
-[v _guardar_tecla_presionada `(v ~T0 @X0 1 ef3`*uc`i`*F8198 ]
+[v _guardar_tecla_presionada `(v ~T0 @X0 1 ef2`*uc`i ]
 {
-[; ;teclado.c: 60: void guardar_tecla_presionada(char * letra, int i,char* (*doit)(char *)){
+[; ;teclado.c: 60: void guardar_tecla_presionada(char * letra, int i){
 [e :U _guardar_tecla_presionada ]
 [v _letra `*uc ~T0 @X0 1 r1 ]
 [v _i `i ~T0 @X0 1 r2 ]
-[v F8275 `(*uc ~T0 @X0 0 tf1`*uc ]
-[v _doit `*F8275 ~T0 @X0 1 r3 ]
 [f ]
-[; ;teclado.c: 61: if (PORTAbits.RA5==1){key=i;doit(key);while(PORTAbits.RA5==1){};}
+[; ;teclado.c: 61: if (PORTAbits.RA5==1){key=i;puntero_funcion(key);while(PORTAbits.RA5==1){};}
 "61
 [e $ ! == -> . . _PORTAbits 0 5 `i -> 1 `i 1048  ]
 {
 [e = _key -> _i `uc ]
-[e ( *U _doit (1 -> _key `*uc ]
+[e ( *U _puntero_funcion (1 _key ]
 [e $U 1049  ]
 [e :U 1050 ]
 {
@@ -7947,12 +7947,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1051 ]
 }
 [e :U 1048 ]
-[; ;teclado.c: 62: if (PORTAbits.RA7==1){key=(i)+1;doit(key);while(PORTAbits.RA7==1){};}
+[; ;teclado.c: 62: if (PORTAbits.RA7==1){key=(i)+1;puntero_funcion(key);while(PORTAbits.RA7==1){};}
 "62
 [e $ ! == -> . . _PORTAbits 0 7 `i -> 1 `i 1052  ]
 {
 [e = _key -> + _i -> 1 `i `uc ]
-[e ( *U _doit (1 -> _key `*uc ]
+[e ( *U _puntero_funcion (1 _key ]
 [e $U 1053  ]
 [e :U 1054 ]
 {
@@ -7962,12 +7962,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1055 ]
 }
 [e :U 1052 ]
-[; ;teclado.c: 63: if (PORTAbits.RA6==1){key=(i)+2;doit(key);while(PORTAbits.RA6==1){};}
+[; ;teclado.c: 63: if (PORTAbits.RA6==1){key=(i)+2;puntero_funcion(key);while(PORTAbits.RA6==1){};}
 "63
 [e $ ! == -> . . _PORTAbits 0 6 `i -> 1 `i 1056  ]
 {
 [e = _key -> + _i -> 2 `i `uc ]
-[e ( *U _doit (1 -> _key `*uc ]
+[e ( *U _puntero_funcion (1 _key ]
 [e $U 1057  ]
 [e :U 1058 ]
 {
@@ -7989,13 +7989,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 1047 ]
 }
 "67
-[v _leer_teclado `(v ~T0 @X0 1 ef2`i`*F8203 ]
+[v _leer_teclado `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;teclado.c: 67: void leer_teclado(int ocultar,char* (*doit)()){
+[; ;teclado.c: 67: void leer_teclado(int ocultar){
 [e :U _leer_teclado ]
 [v _ocultar `i ~T0 @X0 1 r1 ]
-[v F8279 `(*uc ~T0 @X0 0 tf ]
-[v _doit `*F8279 ~T0 @X0 1 r2 ]
 [f ]
 "68
 [v _i `i ~T0 @X0 1 a ]
@@ -8010,9 +8008,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 [e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
 [e = _i -> 1 `i ]
-[; ;teclado.c: 72: guardar_tecla_presionada("A",i,doit);
+[; ;teclado.c: 72: guardar_tecla_presionada("A",i);
 "72
-[e ( _guardar_tecla_presionada (3 , , -> :s 4C `*uc _i -> _doit `*F8198 ]
+[e ( _guardar_tecla_presionada (2 , -> :s 4C `*uc _i ]
 [; ;teclado.c: 74: LATAbits.LATA0=0;LATAbits.LATA1=1;LATAbits.LATA2=0;LATAbits.LATA3=0;i=4;
 "74
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
@@ -8020,9 +8018,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 [e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
 [e = _i -> 4 `i ]
-[; ;teclado.c: 75: guardar_tecla_presionada("B",i,doit);
+[; ;teclado.c: 75: guardar_tecla_presionada("B",i);
 "75
-[e ( _guardar_tecla_presionada (3 , , -> :s 5C `*uc _i -> _doit `*F8198 ]
+[e ( _guardar_tecla_presionada (2 , -> :s 5C `*uc _i ]
 [; ;teclado.c: 77: LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=1;LATAbits.LATA3=0;i=7;
 "77
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
@@ -8030,9 +8028,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 [e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
 [e = _i -> 7 `i ]
-[; ;teclado.c: 78: guardar_tecla_presionada("C",i,doit);
+[; ;teclado.c: 78: guardar_tecla_presionada("C",i);
 "78
-[e ( _guardar_tecla_presionada (3 , , -> :s 6C `*uc _i -> _doit `*F8198 ]
+[e ( _guardar_tecla_presionada (2 , -> :s 6C `*uc _i ]
 [; ;teclado.c: 80: LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=1;
 "80
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
@@ -8057,12 +8055,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1065 ]
 }
 [e :U 1062 ]
-[; ;teclado.c: 83: if (PORTAbits.RA7==1){key=0;doit(key);while(PORTAbits.RA7==1){};}
+[; ;teclado.c: 83: if (PORTAbits.RA7==1){key=0;puntero_funcion(key);while(PORTAbits.RA7==1){};}
 "83
 [e $ ! == -> . . _PORTAbits 0 7 `i -> 1 `i 1066  ]
 {
 [e = _key -> -> 0 `i `uc ]
-[e ( *U _doit -> _key `i ]
+[e ( *U _puntero_funcion (1 _key ]
 [e $U 1067  ]
 [e :U 1068 ]
 {

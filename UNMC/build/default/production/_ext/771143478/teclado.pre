@@ -9823,13 +9823,15 @@ int ocultar_teclas;
 char comando[3]="xx";
 int tamanio_comando = 0;
 
+void (*puntero_funcion)(char);
+
 void guardar_comando(char);
 void guardar_array_comando(char *);
 void validar_comando(char *, int *);
 void imprimir_tecla(char);
 void restaurar_comando();
-void guardar_tecla_presionada(char *, int,char* (*doit)(char *));
-void leer_teclado(int ocultar,char* (*doit)());
+void guardar_tecla_presionada(char *, int);
+void leer_teclado(int ocultar);
 
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdarg.h"
 typedef void * va_list[1];
@@ -9945,30 +9947,30 @@ comando[1]='x';
 comando[2]=0;
 }
 
-void guardar_tecla_presionada(char * letra, int i,char* (*doit)(char *)){
-if (PORTAbits.RA5==1){key=i;doit(key);while(PORTAbits.RA5==1){};}
-if (PORTAbits.RA7==1){key=(i)+1;doit(key);while(PORTAbits.RA7==1){};}
-if (PORTAbits.RA6==1){key=(i)+2;doit(key);while(PORTAbits.RA6==1){};}
+void guardar_tecla_presionada(char * letra, int i){
+if (PORTAbits.RA5==1){key=i;puntero_funcion(key);while(PORTAbits.RA5==1){};}
+if (PORTAbits.RA7==1){key=(i)+1;puntero_funcion(key);while(PORTAbits.RA7==1){};}
+if (PORTAbits.RA6==1){key=(i)+2;puntero_funcion(key);while(PORTAbits.RA6==1){};}
 if (PORTCbits.RC2==1){key=letra[0]; }
 }
 
-void leer_teclado(int ocultar,char* (*doit)()){
+void leer_teclado(int ocultar){
 int i;
 ocultar_teclas = ocultar;
 
 LATAbits.LATA0=1;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=0;i=1;
-guardar_tecla_presionada("A",i,doit);
+guardar_tecla_presionada("A",i);
 
 LATAbits.LATA0=0;LATAbits.LATA1=1;LATAbits.LATA2=0;LATAbits.LATA3=0;i=4;
-guardar_tecla_presionada("B",i,doit);
+guardar_tecla_presionada("B",i);
 
 LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=1;LATAbits.LATA3=0;i=7;
-guardar_tecla_presionada("C",i,doit);
+guardar_tecla_presionada("C",i);
 
 LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=1;
 {
 if (PORTAbits.RA5==1){key='*';lcd_putrs("*");while(PORTAbits.RA5==1){};}
-if (PORTAbits.RA7==1){key=0;doit(key);while(PORTAbits.RA7==1){};}
+if (PORTAbits.RA7==1){key=0;puntero_funcion(key);while(PORTAbits.RA7==1){};}
 if (PORTAbits.RA6==1){key='#';lcd_putrs("#");while(PORTAbits.RA6==1){};}
 if (PORTCbits.RC2==1){key='D';lcd_putrs("D");while(PORTCbits.RC2==1){};}
 }

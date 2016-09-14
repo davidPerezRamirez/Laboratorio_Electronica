@@ -10028,13 +10028,15 @@ int ocultar_teclas;
 char comando[3]="xx";
 int tamanio_comando = 0;
 
+void (*puntero_funcion)(char);
+
 void guardar_comando(char);
 void guardar_array_comando(char *);
 void validar_comando(char *, int *);
 void imprimir_tecla(char);
 void restaurar_comando();
-void guardar_tecla_presionada(char *, int,char* (*doit)(char *));
-void leer_teclado(int ocultar,char* (*doit)());
+void guardar_tecla_presionada(char *, int);
+void leer_teclado(int ocultar);
 
 # 9 "../../../../../../Program Files/Unimic/unmc_01/headers/hora.c"
 void inicializar_hora(){
