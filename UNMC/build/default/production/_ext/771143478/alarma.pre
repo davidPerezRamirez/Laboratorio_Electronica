@@ -10027,10 +10027,11 @@ tamanio_new_password++;
 }
 
 if (*confirmar && tamanio_new_password - 6 - 1 >= 6){
-restaurar_comando();
 
 for (int j=0; j < 6; j++ )
 password[j] = new_password[j];
+
+restaurar_comando();
 
 new_password[0] = 0;
 temporal[0] = 0;

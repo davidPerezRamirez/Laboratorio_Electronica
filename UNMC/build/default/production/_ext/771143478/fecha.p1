@@ -17,23 +17,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 "126
 [u S1021 `S1022 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
 [n S1021 . f b w l ]
-[v F7942 `(v ~T0 @X0 0 tf1`uc ]
-"206 C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+[v F7972 `(v ~T0 @X0 0 tf1`uc ]
 "67 C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdlib.h
 [v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
+[v F7827 `(v ~T0 @X0 0 tf2`*i`Ci ]
+"206 C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "104 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
 [v _lcd_gotoxy `(v ~T0 @X0 0 ef2`uc`uc ]
 "109
 [v _lcd_putrs `(v ~T0 @X0 0 ef1`*Cuc ]
-"57 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_02.h
-[v _Write_RTC `(v ~T0 @X0 0 ef ]
-"22 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
-[v _restaurar_comando `(v ~T0 @X0 0 ef ]
 [v F7232 `(v ~T0 @X0 1 tf1`ul ]
 "161 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18.h
 [v __delay `JF7232 ~T0 @X0 0 e ]
 [p i __delay ]
+"57 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_02.h
+[v _Write_RTC `(v ~T0 @X0 0 ef ]
+"20 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
+[v _restaurar_comando `(v ~T0 @X0 0 ef ]
 [; ;stdlib.h: 4: typedef int ptrdiff_t;
 [; ;stdlib.h: 5: typedef unsigned size_t;
 [; ;stdlib.h: 6: typedef unsigned short wchar_t;
@@ -7447,54 +7448,96 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;headers\unmc_rtcc_02.h: 56: void DelayPORXLCD(void);
 [; ;headers\unmc_rtcc_02.h: 57: void Write_RTC(void);
 [; ;headers\unmc_rtcc_02.h: 58: void Read_RTC(void);
-"7 C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h
-[v _day `uc ~T0 @X0 -> 3 `i e ]
+"6 C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h
+[v _day `uc ~T0 @X0 -> 3 `i s ]
 [i _day
 :U ..
 -> 0 `c
 ..
 ]
-[; ;headers\fecha.h: 7: char day[3] = "";
-"8
-[v _month `uc ~T0 @X0 -> 3 `i e ]
+[; ;headers\fecha.h: 6: static char day[3] = "";
+"7
+[v _month `uc ~T0 @X0 -> 3 `i s ]
 [i _month
 :U ..
 -> 0 `c
 ..
 ]
-[; ;headers\fecha.h: 8: char month[3] = "";
-"9
-[v _year `uc ~T0 @X0 -> 3 `i e ]
+[; ;headers\fecha.h: 7: static char month[3] = "";
+"8
+[v _year `uc ~T0 @X0 -> 3 `i s ]
 [i _year
 :U ..
 -> 0 `c
 ..
 ]
-[; ;headers\fecha.h: 9: char year[3] = "";
+[; ;headers\fecha.h: 8: static char year[3] = "";
+"10
+[v _hour `uc ~T0 @X0 -> 3 `i s ]
+[i _hour
+:U ..
+-> 0 `c
+..
+]
+[; ;headers\fecha.h: 10: static char hour[3] = "";
 "11
+[v _minutes `uc ~T0 @X0 -> 3 `i s ]
+[i _minutes
+:U ..
+-> 0 `c
+..
+]
+[; ;headers\fecha.h: 11: static char minutes[3] = "";
+"13
+[v _tamanio_hora `i ~T0 @X0 1 e ]
+[i _tamanio_hora
+-> 0 `i
+]
+[; ;headers\fecha.h: 13: int tamanio_hora = 0;
+"14
+[v _tamanio_minutos `i ~T0 @X0 1 e ]
+[i _tamanio_minutos
+-> 0 `i
+]
+[; ;headers\fecha.h: 14: int tamanio_minutos = 0;
+"16
 [v _tamanio_dia `i ~T0 @X0 1 e ]
 [i _tamanio_dia
 -> 0 `i
 ]
-[; ;headers\fecha.h: 11: int tamanio_dia = 0;
-"12
+[; ;headers\fecha.h: 16: int tamanio_dia = 0;
+"17
 [v _tamanio_mes `i ~T0 @X0 1 e ]
 [i _tamanio_mes
 -> 0 `i
 ]
-[; ;headers\fecha.h: 12: int tamanio_mes = 0;
-"13
+[; ;headers\fecha.h: 17: int tamanio_mes = 0;
+"18
 [v _tamanio_anio `i ~T0 @X0 1 e ]
 [i _tamanio_anio
 -> 0 `i
 ]
-[; ;headers\fecha.h: 13: int tamanio_anio = 0;
-[; ;headers\fecha.h: 15: void inicializar_fecha();
-[; ;headers\fecha.h: 16: void guardar_elemento_fecha(char, char *, int *);
-[; ;headers\fecha.h: 17: void convertir_a_int_fecha(char *, int *);
-[; ;headers\fecha.h: 18: void cambiar_dia(char);
-[; ;headers\fecha.h: 19: void cambiar_mes(char);
-[; ;headers\fecha.h: 20: void cambiar_anio(char);
+[; ;headers\fecha.h: 18: int tamanio_anio = 0;
+"20
+[v _valor_max `i ~T0 @X0 1 s ]
+[; ;headers\fecha.h: 20: static int valor_max;
+"21
+[v _valor_min `i ~T0 @X0 1 s ]
+[; ;headers\fecha.h: 21: static int valor_min;
+[; ;headers\fecha.h: 23: static void convertir_a_int(char *, int *);
+[; ;headers\fecha.h: 24: static void guardar_elemento(char ,char * ,int * ,int ,int * ,void (*doit) (int *,const int));
+[; ;headers\fecha.h: 25: static void actualiza_elemento(int *,const int);
+[; ;headers\fecha.h: 26: static void obtener_dia_mes();
+[; ;headers\fecha.h: 28: static void actualiza_dia(int *,const int);
+[; ;headers\fecha.h: 29: void inicializar_fecha();
+[; ;headers\fecha.h: 30: void cambiar_dia(char);
+[; ;headers\fecha.h: 31: void cambiar_mes(char);
+[; ;headers\fecha.h: 32: void cambiar_anio(char);
+[; ;headers\fecha.h: 34: static void actualizar_hora(int * ,const int );
+[; ;headers\fecha.h: 35: static void actualizar_minutos(int * ,const int );
+[; ;headers\fecha.h: 36: void inicializar_hora();
+[; ;headers\fecha.h: 37: void cambiar_hora(char);
+[; ;headers\fecha.h: 38: void cambiar_minutos(char);
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
 [; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
@@ -7620,275 +7663,433 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;headers\teclado.h: 14: int tamanio_comando = 0;
 "16
-[v _puntero_funcion `*F7942 ~T0 @X0 1 e ]
+[v _puntero_funcion `*F7972 ~T0 @X0 1 e ]
 [; ;headers\teclado.h: 16: void (*puntero_funcion)(char);
 [; ;headers\teclado.h: 18: void guardar_comando(char);
-[; ;headers\teclado.h: 19: void guardar_array_comando(char *);
-[; ;headers\teclado.h: 20: void validar_comando(char *, int *);
-[; ;headers\teclado.h: 21: void imprimir_tecla(char);
-[; ;headers\teclado.h: 22: void restaurar_comando();
-[; ;headers\teclado.h: 23: void guardar_tecla_presionada(char *, int);
-[; ;headers\teclado.h: 24: void leer_teclado(int ocultar);
+[; ;headers\teclado.h: 19: void imprimir_tecla(char);
+[; ;headers\teclado.h: 20: void restaurar_comando();
+[; ;headers\teclado.h: 21: static void guardar_tecla_presionada(const char *, int);
+[; ;headers\teclado.h: 22: void leer_teclado(int ocultar);
 "8 ../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c
-[v _inicializar_fecha `(v ~T0 @X0 1 ef ]
+[v _convertir_a_int `(v ~T0 @X0 1 sf2`*uc`*i ]
 {
-[; ;fecha.c: 8: void inicializar_fecha(){
-[e :U _inicializar_fecha ]
-[f ]
-[; ;fecha.c: 9: *day = 0;
-"9
-[e = *U &U _day -> -> 0 `i `uc ]
-[; ;fecha.c: 10: *month = 0;
-"10
-[e = *U &U _month -> -> 0 `i `uc ]
-[; ;fecha.c: 11: *year = 0;
-"11
-[e = *U &U _year -> -> 0 `i `uc ]
-[; ;fecha.c: 13: tamanio_dia = 0;
-"13
-[e = _tamanio_dia -> 0 `i ]
-[; ;fecha.c: 14: tamanio_mes = 0;
-"14
-[e = _tamanio_mes -> 0 `i ]
-[; ;fecha.c: 15: tamanio_anio = 0;
-"15
-[e = _tamanio_anio -> 0 `i ]
-[; ;fecha.c: 16: }
-"16
-[e :UE 1026 ]
-}
-"18
-[v _guardar_elemento_fecha `(v ~T0 @X0 1 ef3`uc`*uc`*i ]
-{
-[; ;fecha.c: 18: void guardar_elemento_fecha(char tecla, char * array, int * tamanio_array){
-[e :U _guardar_elemento_fecha ]
-[v _tecla `uc ~T0 @X0 1 r1 ]
-[v _array `*uc ~T0 @X0 1 r2 ]
-[v _tamanio_array `*i ~T0 @X0 1 r3 ]
-[f ]
-[; ;fecha.c: 20: sprintf(buffer2,"%01u",tecla);
-"20
-[e ( _sprintf (1 , (. , &U _buffer2 :s 1C -> _tecla `i ]
-[; ;fecha.c: 21: array[*tamanio_array] = *buffer2;
-"21
-[e = *U + _array * -> *U _tamanio_array `x -> -> # *U _array `i `x *U &U _buffer2 ]
-[; ;fecha.c: 22: array [(*tamanio_array)+1] = 0;
-"22
-[e = *U + _array * -> + *U _tamanio_array -> 1 `i `x -> -> # *U _array `i `x -> -> 0 `i `uc ]
-[; ;fecha.c: 23: (*tamanio_array)++;
-"23
-[e ++ *U _tamanio_array -> 1 `i ]
-[; ;fecha.c: 24: }
-"24
-[e :UE 1027 ]
-}
-"26
-[v _convertir_a_int_fecha `(v ~T0 @X0 1 ef2`*uc`*i ]
-{
-[; ;fecha.c: 26: void convertir_a_int_fecha(char * array, int * valor){
-[e :U _convertir_a_int_fecha ]
+[; ;fecha.c: 8: static void convertir_a_int(char * array, int * valor){
+[e :U _convertir_a_int ]
 [v _array `*uc ~T0 @X0 1 r1 ]
 [v _valor `*i ~T0 @X0 1 r2 ]
 [f ]
-[; ;fecha.c: 27: *valor = atoi(array);
-"27
+[; ;fecha.c: 9: *valor = atoi(array);
+"9
 [e = *U _valor ( _atoi (1 -> _array `*Cuc ]
-[; ;fecha.c: 28: }
-"28
-[e :UE 1028 ]
+[; ;fecha.c: 10: }
+"10
+[e :UE 1026 ]
 }
-"31
-[v _cambiar_dia `(v ~T0 @X0 1 ef1`uc ]
+"12
+[v _guardar_elemento `(v ~T0 @X0 1 sf6`uc`*uc`*i`i`*i`*F7827 ]
 {
-[; ;fecha.c: 31: void cambiar_dia(char tecla){
-[e :U _cambiar_dia ]
+[; ;fecha.c: 12: static void guardar_elemento(char tecla, char * array, int * tamanio_array, int validacion,int * dato_fecha ,void (*doit) (int *,const int)){
+[e :U _guardar_elemento ]
 [v _tecla `uc ~T0 @X0 1 r1 ]
+[v _array `*uc ~T0 @X0 1 r2 ]
+[v _tamanio_array `*i ~T0 @X0 1 r3 ]
+[v _validacion `i ~T0 @X0 1 r4 ]
+[v _dato_fecha `*i ~T0 @X0 1 r5 ]
+[v F7992 `(v ~T0 @X0 0 tf2`*i`Ci ]
+[v _doit `*F7992 ~T0 @X0 1 r6 ]
 [f ]
-"32
+"14
 [v _valor `i ~T0 @X0 1 a ]
-[; ;fecha.c: 32: int valor = 0;
+[; ;fecha.c: 14: int valor = 0;
 [e = _valor -> 0 `i ]
-[; ;fecha.c: 34: if (tamanio_dia < 3 - 1){
-"34
-[e $ ! < _tamanio_dia - -> 3 `i -> 1 `i 1030  ]
+[; ;fecha.c: 16: if (validacion){
+"16
+[e $ ! != _validacion -> 0 `i 1028  ]
 {
-[; ;fecha.c: 35: guardar_elemento_fecha(tecla,day,&tamanio_dia);
-"35
-[e ( _guardar_elemento_fecha (3 , , _tecla &U _day &U _tamanio_dia ]
-[; ;fecha.c: 36: lcd_gotoxy(1,2);
-"36
+[; ;fecha.c: 18: sprintf(buffer2,"%01u",tecla);
+"18
+[e ( _sprintf (1 , (. , &U _buffer2 :s 1C -> _tecla `i ]
+[; ;fecha.c: 19: array[*tamanio_array] = *buffer2;
+"19
+[e = *U + _array * -> *U _tamanio_array `x -> -> # *U _array `i `x *U &U _buffer2 ]
+[; ;fecha.c: 20: array [(*tamanio_array)+1] = 0;
+"20
+[e = *U + _array * -> + *U _tamanio_array -> 1 `i `x -> -> # *U _array `i `x -> -> 0 `i `uc ]
+[; ;fecha.c: 21: (*tamanio_array)++;
+"21
+[e ++ *U _tamanio_array -> 1 `i ]
+[; ;fecha.c: 23: lcd_gotoxy(1,2);
+"23
 [e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;fecha.c: 37: lcd_putrs(day);
-"37
-[e ( _lcd_putrs (1 -> &U _day `*Cuc ]
-"38
+[; ;fecha.c: 24: lcd_putrs(array);
+"24
+[e ( _lcd_putrs (1 -> _array `*Cuc ]
+"25
 }
-[e :U 1030 ]
-[; ;fecha.c: 38: }
-[; ;fecha.c: 40: if (tamanio_dia >= 3 - 1){
-"40
-[e $ ! >= _tamanio_dia - -> 3 `i -> 1 `i 1031  ]
+[e :U 1028 ]
+[; ;fecha.c: 25: }
+[; ;fecha.c: 27: if (*tamanio_array >= 3 - 1){
+"27
+[e $ ! >= *U _tamanio_array - -> 3 `i -> 1 `i 1029  ]
 {
-[; ;fecha.c: 41: convertir_a_int_fecha(day,&valor);
-"41
-[e ( _convertir_a_int_fecha (2 , &U _day &U _valor ]
-[; ;fecha.c: 42: dia = valor;
+[; ;fecha.c: 29: convertir_a_int(array,&valor);
+"29
+[e ( _convertir_a_int (2 , _array &U _valor ]
+[; ;fecha.c: 31: if(valor >= valor_min && valor <= valor_max){
+"31
+[e $ ! && >= _valor _valor_min <= _valor _valor_max 1030  ]
+{
+[; ;fecha.c: 32: doit(dato_fecha,valor);
+"32
+[e ( *U _doit (2 , _dato_fecha _valor ]
+[; ;fecha.c: 33: _delay((unsigned long)((98)*(8000000/4000.0)));
+"33
+[e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"35
+}
+[; ;fecha.c: 35: }else{
+[e $U 1031  ]
+[e :U 1030 ]
+{
+[; ;fecha.c: 36: *tamanio_array = 0;
+"36
+[e = *U _tamanio_array -> 0 `i ]
+[; ;fecha.c: 37: *array = 0;
+"37
+[e = *U _array -> -> 0 `i `uc ]
+[; ;fecha.c: 38: lcd_gotoxy(1,2);
+"38
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+[; ;fecha.c: 39: sprintf(buffer2,"valor >=%d y <=%d",valor_min,valor_max);
+"39
+[e ( _sprintf (1 , , (. , &U _buffer2 :s 2C _valor_min _valor_max ]
+[; ;fecha.c: 40: lcd_putrs(buffer2);
+"40
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
+[; ;fecha.c: 42: for (int i=0;i<4;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
 "42
-[e = _dia _valor ]
-[; ;fecha.c: 43: Write_RTC();
-"43
-[e ( _Write_RTC ..  ]
-[; ;fecha.c: 45: restaurar_comando();
-"45
-[e ( _restaurar_comando ..  ]
-[; ;fecha.c: 46: inicializar_fecha();
-"46
-[e ( _inicializar_fecha ..  ]
-[; ;fecha.c: 47: for (int i=0;i<2;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
-"47
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 2 `i 1032  ]
+[e $ < _i -> 4 `i 1032  ]
 [e $U 1033  ]
 [e :U 1032 ]
 [e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 2 `i 1032  ]
+[e $ < _i -> 4 `i 1032  ]
 [e :U 1033 ]
 }
-"48
+"44
 }
 [e :U 1031 ]
-[; ;fecha.c: 48: }
-[; ;fecha.c: 49: }
-"49
-[e :UE 1029 ]
+"45
 }
+[e :U 1029 ]
+[; ;fecha.c: 44: }
+[; ;fecha.c: 45: }
+[; ;fecha.c: 46: }
+"46
+[e :UE 1027 ]
+}
+"48
+[v _actualiza_elemento `(v ~T0 @X0 1 sf2`*i`Ci ]
+{
+[; ;fecha.c: 48: static void actualiza_elemento(int * elemento,const int valor){
+[e :U _actualiza_elemento ]
+[v _elemento `*i ~T0 @X0 1 r1 ]
+[v _valor `Ci ~T0 @X0 1 r2 ]
+[f ]
+[; ;fecha.c: 50: *elemento = valor;
+"50
+[e = *U _elemento _valor ]
+[; ;fecha.c: 51: Write_RTC();
 "51
+[e ( _Write_RTC ..  ]
+[; ;fecha.c: 52: }
+"52
+[e :UE 1035 ]
+}
+"59
+[v _inicializar_fecha `(v ~T0 @X0 1 ef ]
+{
+[; ;fecha.c: 59: void inicializar_fecha(){
+[e :U _inicializar_fecha ]
+[f ]
+[; ;fecha.c: 60: *day = 0;
+"60
+[e = *U &U _day -> -> 0 `i `uc ]
+[; ;fecha.c: 61: *month = 0;
+"61
+[e = *U &U _month -> -> 0 `i `uc ]
+[; ;fecha.c: 62: *year = 0;
+"62
+[e = *U &U _year -> -> 0 `i `uc ]
+[; ;fecha.c: 64: tamanio_dia = 0;
+"64
+[e = _tamanio_dia -> 0 `i ]
+[; ;fecha.c: 65: tamanio_mes = 0;
+"65
+[e = _tamanio_mes -> 0 `i ]
+[; ;fecha.c: 66: tamanio_anio = 0;
+"66
+[e = _tamanio_anio -> 0 `i ]
+[; ;fecha.c: 67: }
+"67
+[e :UE 1036 ]
+}
+"69
+[v _actualiza_dia `(v ~T0 @X0 1 sf2`*i`Ci ]
+{
+[; ;fecha.c: 69: static void actualiza_dia(int * elemento,const int valor){
+[e :U _actualiza_dia ]
+[v _elemento `*i ~T0 @X0 1 r1 ]
+[v _valor `Ci ~T0 @X0 1 r2 ]
+[f ]
+[; ;fecha.c: 71: actualiza_elemento(elemento,valor);
+"71
+[e ( _actualiza_elemento (2 , _elemento _valor ]
+[; ;fecha.c: 72: restaurar_comando();
+"72
+[e ( _restaurar_comando ..  ]
+[; ;fecha.c: 73: inicializar_fecha();
+"73
+[e ( _inicializar_fecha ..  ]
+[; ;fecha.c: 74: }
+"74
+[e :UE 1037 ]
+}
+"76
+[v _obtener_dia_mes `(v ~T0 @X0 1 sf ]
+{
+[; ;fecha.c: 76: static void obtener_dia_mes(){
+[e :U _obtener_dia_mes ]
+[f ]
+[; ;fecha.c: 78: if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12)
+"78
+[e $ ! || || || || || || == _mes -> 1 `i == _mes -> 3 `i == _mes -> 5 `i == _mes -> 7 `i == _mes -> 8 `i == _mes -> 10 `i == _mes -> 12 `i 1039  ]
+[; ;fecha.c: 79: valor_max = 31;
+"79
+[e = _valor_max -> 31 `i ]
+[e $U 1040  ]
+"80
+[e :U 1039 ]
+[; ;fecha.c: 80: else if (mes == 4 || mes == 6 || mes == 9 || mes == 11)
+[e $ ! || || || == _mes -> 4 `i == _mes -> 6 `i == _mes -> 9 `i == _mes -> 11 `i 1041  ]
+[; ;fecha.c: 81: valor_max = 30;
+"81
+[e = _valor_max -> 30 `i ]
+[e $U 1042  ]
+"82
+[e :U 1041 ]
+[; ;fecha.c: 82: else{
+{
+[; ;fecha.c: 83: if ((anio%4==0) && (anio%100!=0) || anio%400==0)
+"83
+[e $ ! || && == % _anio -> 4 `i -> 0 `i != % _anio -> 100 `i -> 0 `i == % _anio -> 400 `i -> 0 `i 1043  ]
+[; ;fecha.c: 84: valor_max =29;
+"84
+[e = _valor_max -> 29 `i ]
+[e $U 1044  ]
+"85
+[e :U 1043 ]
+[; ;fecha.c: 85: else
+[; ;fecha.c: 86: valor_max =28;
+"86
+[e = _valor_max -> 28 `i ]
+[e :U 1044 ]
+"87
+}
+[e :U 1042 ]
+[e :U 1040 ]
+[; ;fecha.c: 87: }
+[; ;fecha.c: 89: }
+"89
+[e :UE 1038 ]
+}
+"91
+[v _cambiar_dia `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;fecha.c: 91: void cambiar_dia(char tecla){
+[e :U _cambiar_dia ]
+[v _tecla `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;fecha.c: 93: valor_min = 1;
+"93
+[e = _valor_min -> 1 `i ]
+[; ;fecha.c: 94: obtener_dia_mes();
+"94
+[e ( _obtener_dia_mes ..  ]
+"96
+[v _validacion `i ~T0 @X0 1 a ]
+[; ;fecha.c: 96: int validacion = tamanio_dia < 3 - 1;
+[e = _validacion -> < _tamanio_dia - -> 3 `i -> 1 `i `i ]
+[; ;fecha.c: 97: guardar_elemento(tecla,day,&tamanio_dia,validacion,&dia,actualiza_dia);
+"97
+[e ( _guardar_elemento (4 , , , , , _tecla &U _day &U _tamanio_dia _validacion &U _dia &U _actualiza_dia ]
+[; ;fecha.c: 99: }
+"99
+[e :UE 1045 ]
+}
+"101
 [v _cambiar_mes `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;fecha.c: 51: void cambiar_mes(char tecla){
+[; ;fecha.c: 101: void cambiar_mes(char tecla){
 [e :U _cambiar_mes ]
 [v _tecla `uc ~T0 @X0 1 r1 ]
 [f ]
-"53
-[v _valor `i ~T0 @X0 1 a ]
-[; ;fecha.c: 53: int valor = 0;
-[e = _valor -> 0 `i ]
-[; ;fecha.c: 55: if (tamanio_mes < 3 - 1 && tamanio_dia == 0){
-"55
-[e $ ! && < _tamanio_mes - -> 3 `i -> 1 `i == _tamanio_dia -> 0 `i 1036  ]
-{
-[; ;fecha.c: 56: guardar_elemento_fecha(tecla,month,&tamanio_mes);
-"56
-[e ( _guardar_elemento_fecha (3 , , _tecla &U _month &U _tamanio_mes ]
-[; ;fecha.c: 57: lcd_gotoxy(1,2);
-"57
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;fecha.c: 58: lcd_putrs(month);
-"58
-[e ( _lcd_putrs (1 -> &U _month `*Cuc ]
-"59
+[; ;fecha.c: 103: valor_min = 1;
+"103
+[e = _valor_min -> 1 `i ]
+[; ;fecha.c: 104: valor_max = 12;
+"104
+[e = _valor_max -> 12 `i ]
+"106
+[v _validacion `i ~T0 @X0 1 a ]
+[; ;fecha.c: 106: int validacion = (tamanio_mes < 3 - 1 && tamanio_dia == 0);
+[e = _validacion -> && < _tamanio_mes - -> 3 `i -> 1 `i == _tamanio_dia -> 0 `i `i ]
+[; ;fecha.c: 107: guardar_elemento(tecla,month,&tamanio_mes,validacion,&mes,actualiza_elemento);
+"107
+[e ( _guardar_elemento (4 , , , , , _tecla &U _month &U _tamanio_mes _validacion &U _mes &U _actualiza_elemento ]
+[; ;fecha.c: 109: }
+"109
+[e :UE 1046 ]
 }
-[e :U 1036 ]
-[; ;fecha.c: 59: }
-[; ;fecha.c: 61: if (tamanio_mes >= 3 - 1){
-"61
-[e $ ! >= _tamanio_mes - -> 3 `i -> 1 `i 1037  ]
-{
-[; ;fecha.c: 63: convertir_a_int_fecha(month,&valor);
-"63
-[e ( _convertir_a_int_fecha (2 , &U _month &U _valor ]
-[; ;fecha.c: 64: mes = valor;
-"64
-[e = _mes _valor ]
-[; ;fecha.c: 65: Write_RTC();
-"65
-[e ( _Write_RTC ..  ]
-[; ;fecha.c: 66: for (int i=0;i<2;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
-"66
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 2 `i 1038  ]
-[e $U 1039  ]
-[e :U 1038 ]
-[e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 2 `i 1038  ]
-[e :U 1039 ]
-}
-"67
-}
-[e :U 1037 ]
-[; ;fecha.c: 67: }
-[; ;fecha.c: 68: }
-"68
-[e :UE 1035 ]
-}
-"70
+"111
 [v _cambiar_anio `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;fecha.c: 70: void cambiar_anio(char tecla){
+[; ;fecha.c: 111: void cambiar_anio(char tecla){
 [e :U _cambiar_anio ]
 [v _tecla `uc ~T0 @X0 1 r1 ]
 [f ]
-"71
-[v _valor `i ~T0 @X0 1 a ]
-[; ;fecha.c: 71: int valor = 0;
-[e = _valor -> 0 `i ]
-[; ;fecha.c: 73: if (tamanio_anio < 3 - 1 && tamanio_mes == 0 && tamanio_dia == 0){
-"73
-[e $ ! && && < _tamanio_anio - -> 3 `i -> 1 `i == _tamanio_mes -> 0 `i == _tamanio_dia -> 0 `i 1042  ]
-{
-[; ;fecha.c: 74: guardar_elemento_fecha(tecla,year,&tamanio_anio);
-"74
-[e ( _guardar_elemento_fecha (3 , , _tecla &U _year &U _tamanio_anio ]
-[; ;fecha.c: 75: lcd_gotoxy(1,2);
-"75
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;fecha.c: 76: lcd_putrs(year);
-"76
-[e ( _lcd_putrs (1 -> &U _year `*Cuc ]
-"77
+[; ;fecha.c: 113: valor_min = 16;
+"113
+[e = _valor_min -> 16 `i ]
+[; ;fecha.c: 114: valor_max = 99;
+"114
+[e = _valor_max -> 99 `i ]
+"116
+[v _validacion `i ~T0 @X0 1 a ]
+[; ;fecha.c: 116: int validacion = (tamanio_anio < 3 - 1 && tamanio_mes == 0 && tamanio_dia == 0);
+[e = _validacion -> && && < _tamanio_anio - -> 3 `i -> 1 `i == _tamanio_mes -> 0 `i == _tamanio_dia -> 0 `i `i ]
+[; ;fecha.c: 117: guardar_elemento(tecla,year,&tamanio_anio,validacion,&anio,actualiza_elemento);
+"117
+[e ( _guardar_elemento (4 , , , , , _tecla &U _year &U _tamanio_anio _validacion &U _anio &U _actualiza_elemento ]
+[; ;fecha.c: 119: }
+"119
+[e :UE 1047 ]
 }
-[e :U 1042 ]
-[; ;fecha.c: 77: }
-[; ;fecha.c: 79: if (tamanio_anio >= 3 - 1){
-"79
-[e $ ! >= _tamanio_anio - -> 3 `i -> 1 `i 1043  ]
+"127
+[v _inicializar_hora `(v ~T0 @X0 1 ef ]
 {
-[; ;fecha.c: 81: convertir_a_int_fecha(year,&valor);
-"81
-[e ( _convertir_a_int_fecha (2 , &U _year &U _valor ]
-[; ;fecha.c: 82: anio = valor;
-"82
-[e = _anio _valor ]
-[; ;fecha.c: 83: Write_RTC();
-"83
+[; ;fecha.c: 127: void inicializar_hora(){
+[e :U _inicializar_hora ]
+[f ]
+[; ;fecha.c: 128: *hour = 0;
+"128
+[e = *U &U _hour -> -> 0 `i `uc ]
+[; ;fecha.c: 129: *minutes = 0;
+"129
+[e = *U &U _minutes -> -> 0 `i `uc ]
+[; ;fecha.c: 131: tamanio_hora = 0;
+"131
+[e = _tamanio_hora -> 0 `i ]
+[; ;fecha.c: 132: tamanio_minutos = 0;
+"132
+[e = _tamanio_minutos -> 0 `i ]
+[; ;fecha.c: 133: }
+"133
+[e :UE 1048 ]
+}
+"135
+[v _actualizar_hora `(v ~T0 @X0 1 sf2`*i`Ci ]
+{
+[; ;fecha.c: 135: static void actualizar_hora(int * elemento,const int valor){
+[e :U _actualizar_hora ]
+[v _elemento `*i ~T0 @X0 1 r1 ]
+[v _valor `Ci ~T0 @X0 1 r2 ]
+[f ]
+[; ;fecha.c: 137: actualiza_elemento(elemento,valor);
+"137
+[e ( _actualiza_elemento (2 , _elemento _valor ]
+[; ;fecha.c: 138: restaurar_comando();
+"138
+[e ( _restaurar_comando ..  ]
+[; ;fecha.c: 139: inicializar_hora();
+"139
+[e ( _inicializar_hora ..  ]
+[; ;fecha.c: 140: }
+"140
+[e :UE 1049 ]
+}
+"142
+[v _actualizar_minutos `(v ~T0 @X0 1 sf2`*i`Ci ]
+{
+[; ;fecha.c: 142: static void actualizar_minutos(int * elemento,const int valor){
+[e :U _actualizar_minutos ]
+[v _elemento `*i ~T0 @X0 1 r1 ]
+[v _valor `Ci ~T0 @X0 1 r2 ]
+[f ]
+[; ;fecha.c: 144: *elemento = valor;
+"144
+[e = *U _elemento _valor ]
+[; ;fecha.c: 145: segundo = 00;
+"145
+[e = _segundo -> 0 `i ]
+[; ;fecha.c: 146: Write_RTC();
+"146
 [e ( _Write_RTC ..  ]
-[; ;fecha.c: 85: for (int i=0;i<2;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
-"85
+[; ;fecha.c: 147: }
+"147
+[e :UE 1050 ]
+}
+"149
+[v _cambiar_hora `(v ~T0 @X0 1 ef1`uc ]
 {
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 2 `i 1044  ]
-[e $U 1045  ]
-[e :U 1044 ]
-[e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 2 `i 1044  ]
-[e :U 1045 ]
+[; ;fecha.c: 149: void cambiar_hora(char tecla){
+[e :U _cambiar_hora ]
+[v _tecla `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;fecha.c: 151: valor_min = 0;
+"151
+[e = _valor_min -> 0 `i ]
+[; ;fecha.c: 152: valor_max = 23;
+"152
+[e = _valor_max -> 23 `i ]
+"154
+[v _validacion `i ~T0 @X0 1 a ]
+[; ;fecha.c: 154: int validacion = tamanio_hora < 3 - 1;
+[e = _validacion -> < _tamanio_hora - -> 3 `i -> 1 `i `i ]
+[; ;fecha.c: 155: guardar_elemento(tecla,hour,&tamanio_hora,validacion,&hora,actualizar_hora);
+"155
+[e ( _guardar_elemento (4 , , , , , _tecla &U _hour &U _tamanio_hora _validacion &U _hora &U _actualizar_hora ]
+[; ;fecha.c: 156: }
+"156
+[e :UE 1051 ]
 }
-"86
+"158
+[v _cambiar_minutos `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;fecha.c: 158: void cambiar_minutos(char tecla){
+[e :U _cambiar_minutos ]
+[v _tecla `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;fecha.c: 160: valor_min = 0;
+"160
+[e = _valor_min -> 0 `i ]
+[; ;fecha.c: 161: valor_max = 59;
+"161
+[e = _valor_max -> 59 `i ]
+"163
+[v _validacion `i ~T0 @X0 1 a ]
+[; ;fecha.c: 163: int validacion = (tamanio_minutos < 3 - 1 && tamanio_hora == 0);
+[e = _validacion -> && < _tamanio_minutos - -> 3 `i -> 1 `i == _tamanio_hora -> 0 `i `i ]
+[; ;fecha.c: 164: guardar_elemento(tecla,minutes,&tamanio_minutos,validacion,&minuto,actualizar_minutos);
+"164
+[e ( _guardar_elemento (4 , , , , , _tecla &U _minutes &U _tamanio_minutos _validacion &U _minuto &U _actualizar_minutos ]
+[; ;fecha.c: 165: }
+"165
+[e :UE 1052 ]
 }
-[e :U 1043 ]
-[; ;fecha.c: 86: }
-[; ;fecha.c: 87: }
-"87
-[e :UE 1041 ]
-}
-[p f _sprintf 8422404 ]
+[p f _sprintf 8422532 ]
 [a 1C 37 48 49 117 0 ]
-
+[a 2C 118 97 108 111 114 32 62 61 37 100 32 121 32 60 61 37 100 0 ]

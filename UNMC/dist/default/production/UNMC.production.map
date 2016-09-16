@@ -5,9 +5,9 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.34\dat\en_msgs.txt -cs \
   -h+dist/default/production\UNMC.production.sym \
   --cmf=dist/default/production\UNMC.production.cmf -z -Q18F26J50 \
-  -oC:\Users\ddavi\AppData\Local\Temp\s7vg.6 \
+  -oC:\Users\ddavi\AppData\Local\Temp\s8k4.6 \
   -Mdist/default/production/UNMC.production.map -E1 -ver=XC8 \
-  -ASTACK=0F2h-0ebfh -pstack=STACK -ACODE=00h-0FFF7h -ACONST=00h-0FFF7h \
+  -ASTACK=0108h-0ebfh -pstack=STACK -ACODE=00h-0FFF7h -ACONST=00h-0FFF7h \
   -ASMALLCONST=0F00h-0FFFhx240,0FF00h-0FFF7h -AMEDIUMCONST=0F00h-0FFF7h \
   -ACOMRAM=01h-05Fh -AABS1=00h-0EBFh -ABIGRAM=01h-0EBFh \
   -ARAM=060h-0FFh,0100h-01FFhx13,0E00h-0EBFh -ABANK0=060h-0FFh \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\ddavi\AppData\Local\Temp\s7vg.obj \
+  C:\Users\ddavi\AppData\Local\Temp\s8k4.obj \
   dist/default/production\UNMC.production.obj 
 
 Object code version is 3.11
@@ -38,159 +38,170 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ddavi\AppData\Local\Temp\s7vg.obj
+C:\Users\ddavi\AppData\Local\Temp\s8k4.obj
                 end_init                              0        0        4        0       0
                 config                             FFF8     FFF8        8     FFF8       0
 dist/default/production\UNMC.production.obj
-                mediumconst                        FEC2     FEC2      136     7F61       0
-                text59                             EB74     EB74       8E     75BA       0
-                text58                             E6A6     E6A6       6E     7353       0
-                text57                             F852     F852      136     7C29       0
-                text56                             E0E4     E0E4       12     7072       0
-                text55                             F988     F988      146     7CC4       0
-                text54                             F616     F616      10C     7B0B       0
-                text53                             EC94     EC94       96     764A       0
-                text52                             FACE     FACE      190     7D67       0
-                text51                             E0F6     E0F6       12     707B       0
-                text50                             E86C     E86C       76     7436       0
-                text49                             E326     E326       32     7193       0
-                text48                             E0D6     E0D6        E     706B       0
-                text47                             E108     E108       12     7084       0
-                text46                             E95A     E95A       80     74AD       0
-                text45                             E4B4     E4B4       48     725A       0
-                text44                             E206     E206       24     7103       0
-                text43                             E4FC     E4FC       4C     727E       0
-                text42                             E594     E594       54     72CA       0
-                text41                             E1C2     E1C2       22     70E1       0
-                text40                             E11A     E11A       18     708D       0
-                text39                             EC02     EC02       92     7601       0
-                text38                             E644     E644       62     7322       0
-                text37                             E14A     E14A       1E     70A5       0
-                text36                             F722     F722      130     7B91       0
-                text35                             E5E8     E5E8       5C     72F4       0
-                text34                             E548     E548       4C     72A4       0
-                text33                             E24E     E24E       28     7127       0
-                text32                             E1E4     E1E4       22     70F2       0
-                text31                             FC5E     FC5E      264     7E2F       0
-                text30                             E8E2     E8E2       78     7471       0
-                text29                             F0CA     F0CA       D0     7865       0
-                text28                             F26E     F26E       D6     7937       0
-                text27                             EA60     EA60       8A     7530       0
-                text26                             F344     F344       E6     79A2       0
-                text25                             F19A     F19A       D4     78CD       0
-                text24                             E168     E168       1E     70B4       0
-                text23                             E784     E784       74     73C2       0
-                text22                             E276     E276       2C     713B       0
-                text21                             E186     E186       1E     70C3       0
-                text20                             E7F8     E7F8       74     73FC       0
-                text19                             E1A4     E1A4       1E     70D2       0
-                text18                             E39C     E39C       46     71CE       0
-                text17                             E714     E714       70     738A       0
-                text16                             E3E2     E3E2       46     71F1       0
-                text15                             E428     E428       46     7214       0
-                text14                             E46E     E46E       46     7237       0
-                text13                             E2A2     E2A2       2C     7151       0
-                text12                             EF4C     EF4C       BE     77A6       0
-                text11                             ED2A     ED2A       B6     7695       0
-                text10                             EDE0     EDE0       B6     76F0       0
-                text9                              F00A     F00A       C0     7805       0
-                text8                              EE96     EE96       B6     774B       0
-                text7                              E2CE     E2CE       2C     7167       0
-                text6                              E2FA     E2FA       2C     717D       0
-                text5                              E22A     E22A       24     7115       0
-                text4                              E0CC     E0CC        A     7066       0
-                text3                              EAEA     EAEA       8A     7575       0
-                text2                              F510     F510      106     7A88       0
-                text1                              E9DA     E9DA       86     74ED       0
-                text0                              F42A     F42A       E6     7A15       0
-                cstackCOMRAM                          1        1       48        1       1
-                dataBANK0                            CE       CE       18       60       1
-                bssBANK0                             60       60       6E       60       1
-                bssCOMRAM                            49       49       15        1       1
+                mediumconst                        FEBA     FEBA      13E     7F5D       0
+                text62                             EB56     EB56       8E     75AB       0
+                text61                             E5BE     E5BE       6E     72DF       0
+                text60                             F4E4     F4E4      122     7A72       0
+                text59                             DF94     DF94       12     6FCA       0
+                text58                             F736     F736      146     7B9B       0
+                text57                             F3D8     F3D8      10C     79EC       0
+                text56                             EC74     EC74       96     763A       0
+                text55                             F87C     F87C      186     7C3E       0
+                text54                             DFA6     DFA6       12     6FD3       0
+                text53                             E860     E860       76     7430       0
+                text52                             E22A     E22A       32     7115       0
+                text51                             DF86     DF86        E     6FC3       0
+                text50                             DFB8     DFB8       12     6FDC       0
+                text49                             E9CA     E9CA       80     74E5       0
+                text48                             E374     E374       48     71BA       0
+                text47                             E108     E108       24     7084       0
+                text46                             E3BC     E3BC       4C     71DE       0
+                text45                             E454     E454       54     722A       0
+                text44                             E0C4     E0C4       22     7062       0
+                text43                             DFF4     DFF4       18     6FFA       0
+                text42                             ED0A     ED0A       A6     7685       0
+                text41                             E77A     E77A       72     73BD       0
+                text40                             E00C     E00C       1E     7006       0
+                text39                             F606     F606      130     7B03       0
+                text38                             E502     E502       5C     7281       0
+                text37                             E408     E408       4C     7204       0
+                text36                             E150     E150       28     70A8       0
+                text35                             E0E6     E0E6       22     7073       0
+                text34                             FBC2     FBC2      2F8     7DE1       0
+                text33                             E8D6     E8D6       78     746B       0
+                text32                             F024     F024       DC     7812       0
+                text31                             EF4E     EF4E       D6     77A7       0
+                text30                             EACC     EACC       8A     7566       0
+                text29                             F100     F100       E6     7880       0
+                text28                             E1FC     E1FC       2E     70FE       0
+                text27                             E084     E084       20     7042       0
+                text26                             E0A4     E0A4       20     7052       0
+                text25                             DFDE     DFDE       16     6FEF       0
+                text24                             E02A     E02A       1E     7015       0
+                text23                             E048     E048       1E     7024       0
+                text22                             EE7A     EE7A       D4     773D       0
+                text21                             E066     E066       1E     7033       0
+                text20                             FA02     FA02      1C0     7D01       0
+                text19                             EA4A     EA4A       82     7525       0
+                text18                             F1E6     F1E6       EA     78F3       0
+                text17                             E25C     E25C       46     712E       0
+                text16                             E69A     E69A       70     734D       0
+                text15                             E2A2     E2A2       46     7151       0
+                text14                             E2E8     E2E8       46     7174       0
+                text13                             E32E     E32E       46     7197       0
+                text12                             E178     E178       2C     70BC       0
+                text11                             E94E     E94E       7C     74A7       0
+                text10                             E62C     E62C       6E     7316       0
+                text9                              E4A8     E4A8       5A     7254       0
+                text8                              E7EC     E7EC       74     73F6       0
+                text7                              E55E     E55E       60     72AF       0
+                text6                              E1A4     E1A4       2C     70D2       0
+                text5                              E1D0     E1D0       2C     70E8       0
+                text4                              E12C     E12C       24     7096       0
+                text3                              DF7C     DF7C        A     6FBE       0
+                text2                              EBE4     EBE4       90     75F2       0
+                text1                              F2D0     F2D0      108     7968       0
+                text0                              EDB0     EDB0       CA     76D8       0
+                cstackCOMRAM                          1        1       46        1       1
+                bssBANK1                            100      100        8      100       1
+                dataBANK0                            DF       DF       14       60       1
+                bssBANK0                             60       60       7F       60       1
+                dataCOMRAM                           5A       5A        4        1       1
+                bssCOMRAM                            47       47       13        1       1
                 bitbssCOMRAM                        2F8       5F        1        1       1     8
-                cinit                              E358     E358       44     71AC       0
-                nvBANK0                              E6       E6        C       60       1
+                cinit                              E70A     E70A       70     7385       0
+                nvBANK0                              F3       F3        C       60       1
                 nvCOMRAM                             5E       5E        1        1       1
-                idataBANK0                         E132     E132       18     E132       0
+                idataBANK0                         DFCA     DFCA       14     DFCA       0
+                idataCOMRAM                        DF78     DF78        4     DF78       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 end_init                              0        0        4         0
-                text59                             EB74     EB74       8E         0
-                text58                             E6A6     E6A6       6E         0
-                text57                             F852     F852      136         0
-                text56                             E0E4     E0E4       12         0
-                text55                             F988     F988      146         0
-                text54                             F616     F616      10C         0
-                text53                             EC94     EC94       96         0
-                text52                             FACE     FACE      190         0
-                text51                             E0F6     E0F6       12         0
-                text50                             E86C     E86C       76         0
-                text49                             E326     E326       32         0
-                text48                             E0D6     E0D6        E         0
-                text47                             E108     E108       12         0
-                text46                             E95A     E95A       80         0
-                text45                             E4B4     E4B4       48         0
-                text44                             E206     E206       24         0
-                text43                             E4FC     E4FC       4C         0
-                text42                             E594     E594       54         0
-                text41                             E1C2     E1C2       22         0
-                text40                             E11A     E11A       18         0
-                text39                             EC02     EC02       92         0
-                text38                             E644     E644       62         0
-                text37                             E14A     E14A       1E         0
-                text36                             F722     F722      130         0
-                text35                             E5E8     E5E8       5C         0
-                text34                             E548     E548       4C         0
-                text33                             E24E     E24E       28         0
-                text32                             E1E4     E1E4       22         0
-                text31                             FC5E     FC5E      264         0
-                text30                             E8E2     E8E2       78         0
-                text29                             F0CA     F0CA       D0         0
-                text28                             F26E     F26E       D6         0
-                text27                             EA60     EA60       8A         0
-                text26                             F344     F344       E6         0
-                text25                             F19A     F19A       D4         0
-                text24                             E168     E168       1E         0
-                text23                             E784     E784       74         0
-                text22                             E276     E276       2C         0
-                text21                             E186     E186       1E         0
-                text20                             E7F8     E7F8       74         0
-                text19                             E1A4     E1A4       1E         0
-                text18                             E39C     E39C       46         0
-                text17                             E714     E714       70         0
-                text16                             E3E2     E3E2       46         0
-                text15                             E428     E428       46         0
-                text14                             E46E     E46E       46         0
-                text13                             E2A2     E2A2       2C         0
-                text12                             EF4C     EF4C       BE         0
-                text11                             ED2A     ED2A       B6         0
-                text10                             EDE0     EDE0       B6         0
-                text9                              F00A     F00A       C0         0
-                text8                              EE96     EE96       B6         0
-                text7                              E2CE     E2CE       2C         0
-                text6                              E2FA     E2FA       2C         0
-                text5                              E22A     E22A       24         0
-                text4                              E0CC     E0CC        A         0
-                text3                              EAEA     EAEA       8A         0
-                text2                              F510     F510      106         0
-                text1                              E9DA     E9DA       86         0
-                text0                              F42A     F42A       E6         0
-                cinit                              E358     E358       44         0
-                idataBANK0                         E132     E132       18         0
+                text62                             EB56     EB56       8E         0
+                text61                             E5BE     E5BE       6E         0
+                text60                             F4E4     F4E4      122         0
+                text59                             DF94     DF94       12         0
+                text58                             F736     F736      146         0
+                text57                             F3D8     F3D8      10C         0
+                text56                             EC74     EC74       96         0
+                text55                             F87C     F87C      186         0
+                text54                             DFA6     DFA6       12         0
+                text53                             E860     E860       76         0
+                text52                             E22A     E22A       32         0
+                text51                             DF86     DF86        E         0
+                text50                             DFB8     DFB8       12         0
+                text49                             E9CA     E9CA       80         0
+                text48                             E374     E374       48         0
+                text47                             E108     E108       24         0
+                text46                             E3BC     E3BC       4C         0
+                text45                             E454     E454       54         0
+                text44                             E0C4     E0C4       22         0
+                text43                             DFF4     DFF4       18         0
+                text42                             ED0A     ED0A       A6         0
+                text41                             E77A     E77A       72         0
+                text40                             E00C     E00C       1E         0
+                text39                             F606     F606      130         0
+                text38                             E502     E502       5C         0
+                text37                             E408     E408       4C         0
+                text36                             E150     E150       28         0
+                text35                             E0E6     E0E6       22         0
+                text34                             FBC2     FBC2      2F8         0
+                text33                             E8D6     E8D6       78         0
+                text32                             F024     F024       DC         0
+                text31                             EF4E     EF4E       D6         0
+                text30                             EACC     EACC       8A         0
+                text29                             F100     F100       E6         0
+                text28                             E1FC     E1FC       2E         0
+                text27                             E084     E084       20         0
+                text26                             E0A4     E0A4       20         0
+                text25                             DFDE     DFDE       16         0
+                text24                             E02A     E02A       1E         0
+                text23                             E048     E048       1E         0
+                text22                             EE7A     EE7A       D4         0
+                text21                             E066     E066       1E         0
+                text20                             FA02     FA02      1C0         0
+                text19                             EA4A     EA4A       82         0
+                text18                             F1E6     F1E6       EA         0
+                text17                             E25C     E25C       46         0
+                text16                             E69A     E69A       70         0
+                text15                             E2A2     E2A2       46         0
+                text14                             E2E8     E2E8       46         0
+                text13                             E32E     E32E       46         0
+                text12                             E178     E178       2C         0
+                text11                             E94E     E94E       7C         0
+                text10                             E62C     E62C       6E         0
+                text9                              E4A8     E4A8       5A         0
+                text8                              E7EC     E7EC       74         0
+                text7                              E55E     E55E       60         0
+                text6                              E1A4     E1A4       2C         0
+                text5                              E1D0     E1D0       2C         0
+                text4                              E12C     E12C       24         0
+                text3                              DF7C     DF7C        A         0
+                text2                              EBE4     EBE4       90         0
+                text1                              F2D0     F2D0      108         0
+                text0                              EDB0     EDB0       CA         0
+                cinit                              E70A     E70A       70         0
+                idataBANK0                         DFCA     DFCA       14         0
+                idataCOMRAM                        DF78     DF78        4         0
 
         CLASS   CONST          
 
         CLASS   SMALLCONST     
 
         CLASS   MEDIUMCONST    
-                mediumconst                        FEC2     FEC2      136         0
+                mediumconst                        FEBA     FEBA      13E         0
 
         CLASS   COMRAM         
-                cstackCOMRAM                          1        1       48         1
-                bssCOMRAM                            49       49       15         1
+                cstackCOMRAM                          1        1       46         1
+                dataCOMRAM                           5A       5A        4         1
+                bssCOMRAM                            47       47       13         1
                 bitbssCOMRAM                        2F8       5F        1         1
                 nvCOMRAM                             5E       5E        1         1
 
@@ -201,11 +212,12 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   RAM            
 
         CLASS   BANK0          
-                dataBANK0                            CE       CE       18         1
-                bssBANK0                             60       60       6E         1
-                nvBANK0                              E6       E6        C         1
+                dataBANK0                            DF       DF       14         1
+                bssBANK0                             60       60       7F         1
+                nvBANK0                              F3       F3        C         1
 
         CLASS   BANK1          
+                bssBANK1                            100      100        8         1
 
         CLASS   BANK2          
 
@@ -248,78 +260,83 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 cstackCOMRAM                   000001  00005F  000060         1       1  COMRAM  
-                bssBANK0                       000060  000092  0000F2        60       1  BANK0   
-                text4                          00E0CC  00000A  00E0D6      7066       0  CODE    
-                text48                         00E0D6  00000E  00E0E4      706B       0  CODE    
-                text56                         00E0E4  000012  00E0F6      7072       0  CODE    
-                text51                         00E0F6  000012  00E108      707B       0  CODE    
-                text47                         00E108  000012  00E11A      7084       0  CODE    
-                text40                         00E11A  000018  00E132      708D       0  CODE    
-                idataBANK0                     00E132  000018  00E14A      E132       0  CODE    
-                text37                         00E14A  00001E  00E168      70A5       0  CODE    
-                text24                         00E168  00001E  00E186      70B4       0  CODE    
-                text21                         00E186  00001E  00E1A4      70C3       0  CODE    
-                text19                         00E1A4  00001E  00E1C2      70D2       0  CODE    
-                text41                         00E1C2  000022  00E1E4      70E1       0  CODE    
-                text32                         00E1E4  000022  00E206      70F2       0  CODE    
-                text44                         00E206  000024  00E22A      7103       0  CODE    
-                text5                          00E22A  000024  00E24E      7115       0  CODE    
-                text33                         00E24E  000028  00E276      7127       0  CODE    
-                text22                         00E276  00002C  00E2A2      713B       0  CODE    
-                text13                         00E2A2  00002C  00E2CE      7151       0  CODE    
-                text7                          00E2CE  00002C  00E2FA      7167       0  CODE    
-                text6                          00E2FA  00002C  00E326      717D       0  CODE    
-                text49                         00E326  000032  00E358      7193       0  CODE    
-                cinit                          00E358  000044  00E39C      71AC       0  CODE    
-                text18                         00E39C  000046  00E3E2      71CE       0  CODE    
-                text16                         00E3E2  000046  00E428      71F1       0  CODE    
-                text15                         00E428  000046  00E46E      7214       0  CODE    
-                text14                         00E46E  000046  00E4B4      7237       0  CODE    
-                text45                         00E4B4  000048  00E4FC      725A       0  CODE    
-                text43                         00E4FC  00004C  00E548      727E       0  CODE    
-                text34                         00E548  00004C  00E594      72A4       0  CODE    
-                text42                         00E594  000054  00E5E8      72CA       0  CODE    
-                text35                         00E5E8  00005C  00E644      72F4       0  CODE    
-                text38                         00E644  000062  00E6A6      7322       0  CODE    
-                text58                         00E6A6  00006E  00E714      7353       0  CODE    
-                text17                         00E714  000070  00E784      738A       0  CODE    
-                text23                         00E784  000074  00E7F8      73C2       0  CODE    
-                text20                         00E7F8  000074  00E86C      73FC       0  CODE    
-                text50                         00E86C  000076  00E8E2      7436       0  CODE    
-                text30                         00E8E2  000078  00E95A      7471       0  CODE    
-                text46                         00E95A  000080  00E9DA      74AD       0  CODE    
-                text1                          00E9DA  000086  00EA60      74ED       0  CODE    
-                text27                         00EA60  00008A  00EAEA      7530       0  CODE    
-                text3                          00EAEA  00008A  00EB74      7575       0  CODE    
-                text59                         00EB74  00008E  00EC02      75BA       0  CODE    
-                text39                         00EC02  000092  00EC94      7601       0  CODE    
-                text53                         00EC94  000096  00ED2A      764A       0  CODE    
-                text11                         00ED2A  0000B6  00EDE0      7695       0  CODE    
-                text10                         00EDE0  0000B6  00EE96      76F0       0  CODE    
-                text8                          00EE96  0000B6  00EF4C      774B       0  CODE    
-                text12                         00EF4C  0000BE  00F00A      77A6       0  CODE    
-                text9                          00F00A  0000C0  00F0CA      7805       0  CODE    
-                text29                         00F0CA  0000D0  00F19A      7865       0  CODE    
-                text25                         00F19A  0000D4  00F26E      78CD       0  CODE    
-                text28                         00F26E  0000D6  00F344      7937       0  CODE    
-                text26                         00F344  0000E6  00F42A      79A2       0  CODE    
-                text0                          00F42A  0000E6  00F510      7A15       0  CODE    
-                text2                          00F510  000106  00F616      7A88       0  CODE    
-                text54                         00F616  00010C  00F722      7B0B       0  CODE    
-                text36                         00F722  000130  00F852      7B91       0  CODE    
-                text57                         00F852  000136  00F988      7C29       0  CODE    
-                text55                         00F988  000146  00FACE      7CC4       0  CODE    
-                text52                         00FACE  000190  00FC5E      7D67       0  CODE    
-                text31                         00FC5E  000264  00FEC2      7E2F       0  CODE    
-                mediumconst                    00FEC2  000136  00FFF8      7F61       0  MEDIUMCO
+                bssBANK0                       000060  00009F  0000FF        60       1  BANK0   
+                bssBANK1                       000100  000008  000108       100       1  BANK1   
+                idataCOMRAM                    00DF78  000004  00DF7C      DF78       0  CODE    
+                text3                          00DF7C  00000A  00DF86      6FBE       0  CODE    
+                text51                         00DF86  00000E  00DF94      6FC3       0  CODE    
+                text59                         00DF94  000012  00DFA6      6FCA       0  CODE    
+                text54                         00DFA6  000012  00DFB8      6FD3       0  CODE    
+                text50                         00DFB8  000012  00DFCA      6FDC       0  CODE    
+                idataBANK0                     00DFCA  000014  00DFDE      DFCA       0  CODE    
+                text25                         00DFDE  000016  00DFF4      6FEF       0  CODE    
+                text43                         00DFF4  000018  00E00C      6FFA       0  CODE    
+                text40                         00E00C  00001E  00E02A      7006       0  CODE    
+                text24                         00E02A  00001E  00E048      7015       0  CODE    
+                text23                         00E048  00001E  00E066      7024       0  CODE    
+                text21                         00E066  00001E  00E084      7033       0  CODE    
+                text27                         00E084  000020  00E0A4      7042       0  CODE    
+                text26                         00E0A4  000020  00E0C4      7052       0  CODE    
+                text44                         00E0C4  000022  00E0E6      7062       0  CODE    
+                text35                         00E0E6  000022  00E108      7073       0  CODE    
+                text47                         00E108  000024  00E12C      7084       0  CODE    
+                text4                          00E12C  000024  00E150      7096       0  CODE    
+                text36                         00E150  000028  00E178      70A8       0  CODE    
+                text12                         00E178  00002C  00E1A4      70BC       0  CODE    
+                text6                          00E1A4  00002C  00E1D0      70D2       0  CODE    
+                text5                          00E1D0  00002C  00E1FC      70E8       0  CODE    
+                text28                         00E1FC  00002E  00E22A      70FE       0  CODE    
+                text52                         00E22A  000032  00E25C      7115       0  CODE    
+                text17                         00E25C  000046  00E2A2      712E       0  CODE    
+                text15                         00E2A2  000046  00E2E8      7151       0  CODE    
+                text14                         00E2E8  000046  00E32E      7174       0  CODE    
+                text13                         00E32E  000046  00E374      7197       0  CODE    
+                text48                         00E374  000048  00E3BC      71BA       0  CODE    
+                text46                         00E3BC  00004C  00E408      71DE       0  CODE    
+                text37                         00E408  00004C  00E454      7204       0  CODE    
+                text45                         00E454  000054  00E4A8      722A       0  CODE    
+                text9                          00E4A8  00005A  00E502      7254       0  CODE    
+                text38                         00E502  00005C  00E55E      7281       0  CODE    
+                text7                          00E55E  000060  00E5BE      72AF       0  CODE    
+                text61                         00E5BE  00006E  00E62C      72DF       0  CODE    
+                text10                         00E62C  00006E  00E69A      7316       0  CODE    
+                text16                         00E69A  000070  00E70A      734D       0  CODE    
+                cinit                          00E70A  000070  00E77A      7385       0  CODE    
+                text41                         00E77A  000072  00E7EC      73BD       0  CODE    
+                text8                          00E7EC  000074  00E860      73F6       0  CODE    
+                text53                         00E860  000076  00E8D6      7430       0  CODE    
+                text33                         00E8D6  000078  00E94E      746B       0  CODE    
+                text11                         00E94E  00007C  00E9CA      74A7       0  CODE    
+                text49                         00E9CA  000080  00EA4A      74E5       0  CODE    
+                text19                         00EA4A  000082  00EACC      7525       0  CODE    
+                text30                         00EACC  00008A  00EB56      7566       0  CODE    
+                text62                         00EB56  00008E  00EBE4      75AB       0  CODE    
+                text2                          00EBE4  000090  00EC74      75F2       0  CODE    
+                text56                         00EC74  000096  00ED0A      763A       0  CODE    
+                text42                         00ED0A  0000A6  00EDB0      7685       0  CODE    
+                text0                          00EDB0  0000CA  00EE7A      76D8       0  CODE    
+                text22                         00EE7A  0000D4  00EF4E      773D       0  CODE    
+                text31                         00EF4E  0000D6  00F024      77A7       0  CODE    
+                text32                         00F024  0000DC  00F100      7812       0  CODE    
+                text29                         00F100  0000E6  00F1E6      7880       0  CODE    
+                text18                         00F1E6  0000EA  00F2D0      78F3       0  CODE    
+                text1                          00F2D0  000108  00F3D8      7968       0  CODE    
+                text57                         00F3D8  00010C  00F4E4      79EC       0  CODE    
+                text60                         00F4E4  000122  00F606      7A72       0  CODE    
+                text39                         00F606  000130  00F736      7B03       0  CODE    
+                text58                         00F736  000146  00F87C      7B9B       0  CODE    
+                text55                         00F87C  000186  00FA02      7C3E       0  CODE    
+                text20                         00FA02  0001C0  00FBC2      7D01       0  CODE    
+                text34                         00FBC2  0002F8  00FEBA      7DE1       0  CODE    
+                mediumconst                    00FEBA  00013E  00FFF8      7F5D       0  MEDIUMCO
                 config                         00FFF8  000008  010000      FFF8       0  CONFIG  
 
 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            000F2-000FF               E
-        BANK1            00100-001FF             100
+        BANK0            000FF-000FF               1
+        BANK1            00108-001FF              F8
         BANK10           00A00-00AFF             100
         BANK11           00B00-00BFF             100
         BANK12           00C00-00CFF             100
@@ -333,18 +350,21 @@ UNUSED ADDRESS RANGES
         BANK7            00700-007FF             100
         BANK8            00800-008FF             100
         BANK9            00900-009FF             100
-        BIGRAM           000F2-00EBF             DCE
-        CODE             00004-0E0CB            E0C8
-        CONST            00004-0E0CB            E0C8
-        MEDIUMCONST      00F00-0E0CB            D1CC
-        RAM              000F2-00EBF             100
+        BIGRAM           000FF-000FF               1
+                         00108-00EBF             DB8
+        CODE             00004-0DF77            DF74
+        CONST            00004-0DF77            DF74
+        MEDIUMCONST      00F00-0DF77            D078
+        RAM              000FF-000FF               1
+                         00108-00EBF             100
         SFR              00EC0-00FFF              60
-        SMALLCONST       00F00-0E0CB             100
-        STACK            000F2-00EBF             DCE
+        SMALLCONST       00F00-0DF77             100
+        STACK            00108-00EBF             DB8
 
                                   Symbol Table
 
 ?___awdiv                                   cstackCOMRAM  00001
+?___awmod                                   cstackCOMRAM  00001
 ?___lwdiv                                   cstackCOMRAM  00001
 ?___lwmod                                   cstackCOMRAM  00008
 ?___wmul                                    cstackCOMRAM  00001
@@ -378,13 +398,13 @@ _ADCON1                                     (abs)         00FC1
 _ALRMCFGbits                                (abs)         00F91
 _ANCON0                                     (abs)         00F48
 _ANCON1                                     (abs)         00F49
-_Delay100TCYx                               text51        0E0F6
-_Delay1KTCYx                                text47        0E108
+_Delay100TCYx                               text54        0DFA6
+_Delay1KTCYx                                text50        0DFB8
 _EECON2                                     (abs)         00FA7
 _INTCONbits                                 (abs)         00FF2
 _LATAbits                                   (abs)         00F89
 _LATBbits                                   (abs)         00F8A
-_LCD_INIT_STRING                            mediumconst   0FECD
+_LCD_INIT_STRING                            mediumconst   0FEC5
 _OSCCONbits                                 (abs)         00FD3
 _OSCTUNEbits                                (abs)         00F9B
 _PIE3bits                                   (abs)         00FA3
@@ -394,25 +414,25 @@ _RTCCFG                                     (abs)         00F3F
 _RTCCFGbits                                 (abs)         00F3F
 _RTCVALH                                    (abs)         00F99
 _RTCVALL                                    (abs)         00F98
-_Read_RTC                                   text57        0F852
+_Read_RTC                                   text60        0F4E4
 _RtccAlrmTimeDate                           bssBANK0      00060
-_RtccDate                                   bssCOMRAM     00050
-_RtccReadDate                               text59        0EB74
-_RtccReadTime                               text58        0E6A6
-_RtccTime                                   bssBANK0      000BB
+_RtccDate                                   bssCOMRAM     0004C
+_RtccReadDate                               text62        0EB56
+_RtccReadTime                               text61        0E5BE
+_RtccTime                                   bssCOMRAM     00050
 _RtccTimeDate                               bssBANK0      00068
-_RtccTimeVal                                bssBANK0      0008D
-_RtccWrOn                                   text56        0E0E4
-_RtccWriteDate                              text55        0F988
-_RtccWriteTime                              text54        0F616
-_Rtcc_read_TimeDate                         bssBANK0      00070
-_Setup                                      text45        0E4B4
+_RtccTimeVal                                bssBANK0      00085
+_RtccWrOn                                   text59        0DF94
+_RtccWriteDate                              text58        0F736
+_RtccWriteTime                              text57        0F3D8
+_Rtcc_read_TimeDate                         bssBANK1      00100
+_Setup                                      text48        0E374
 _T1CONbits                                  (abs)         00FCD
 _TRISA                                      (abs)         00F92
 _TRISB                                      (abs)         00F93
 _TRISBbits                                  (abs)         00F93
 _TRISC                                      (abs)         00F94
-_Write_RTC                                  text52        0FACE
+_Write_RTC                                  text55        0F87C
 __CFG_CP0$OFF                               (abs)         00000
 __CFG_CPUDIV$OSC1                           (abs)         00000
 __CFG_DSBOREN$OFF                           (abs)         00000
@@ -457,6 +477,7 @@ __Hbigram                                   bigram        00000
 __HbitbssCOMRAM                             bitbssCOMRAM  00000
 __Hbss                                      bss           00000
 __HbssBANK0                                 bssBANK0      00000
+__HbssBANK1                                 bssBANK1      00000
 __HbssCOMRAM                                bssCOMRAM     00000
 __Hcinit                                    cinit         00000
 __Hclrtext                                  clrtext       00000
@@ -466,12 +487,14 @@ __Hconst                                    const         00000
 __HcstackCOMRAM                             cstackCOMRAM  00000
 __Hdata                                     data          00000
 __HdataBANK0                                dataBANK0     00000
+__HdataCOMRAM                               dataCOMRAM    00000
 __Hend_init                                 end_init      00004
 __Hfarbss                                   farbss        00000
 __Hfardata                                  fardata       00000
 __Hibigdata                                 ibigdata      00000
 __Hidata                                    idata         00000
 __HidataBANK0                               idataBANK0    00000
+__HidataCOMRAM                              idataCOMRAM   00000
 __Hidloc                                    idloc         00000
 __Hifardata                                 ifardata      00000
 __Hinit                                     init          00000
@@ -565,6 +588,9 @@ __Htext58                                   text58        00000
 __Htext59                                   text59        00000
 __Htext6                                    text6         00000
 __Htext60                                   text60        00000
+__Htext61                                   text61        00000
+__Htext62                                   text62        00000
+__Htext63                                   text63        00000
 __Htext7                                    text7         00000
 __Htext8                                    text8         00000
 __Htext9                                    text9         00000
@@ -591,6 +617,7 @@ __Lbigram                                   bigram        00000
 __LbitbssCOMRAM                             bitbssCOMRAM  00000
 __Lbss                                      bss           00000
 __LbssBANK0                                 bssBANK0      00000
+__LbssBANK1                                 bssBANK1      00000
 __LbssCOMRAM                                bssCOMRAM     00000
 __Lcinit                                    cinit         00000
 __Lclrtext                                  clrtext       00000
@@ -600,12 +627,14 @@ __Lconst                                    const         00000
 __LcstackCOMRAM                             cstackCOMRAM  00000
 __Ldata                                     data          00000
 __LdataBANK0                                dataBANK0     00000
+__LdataCOMRAM                               dataCOMRAM    00000
 __Lend_init                                 end_init      00000
 __Lfarbss                                   farbss        00000
 __Lfardata                                  fardata       00000
 __Libigdata                                 ibigdata      00000
 __Lidata                                    idata         00000
 __LidataBANK0                               idataBANK0    00000
+__LidataCOMRAM                              idataCOMRAM   00000
 __Lidloc                                    idloc         00000
 __Lifardata                                 ifardata      00000
 __Linit                                     init          00000
@@ -617,7 +646,7 @@ __Lintret                                   intret        00000
 __Lintsave_regs                             intsave_regs  00000
 __Lirdata                                   irdata        00000
 __Ljflash_buffer                            jflash_buffer 0F800
-__Lmediumconst                              mediumconst   0FEC2
+__Lmediumconst                              mediumconst   0FEBA
 __LnvBANK0                                  nvBANK0       00000
 __LnvCOMRAM                                 nvCOMRAM      00000
 __LnvFARRAM                                 nvFARRAM      00000
@@ -699,174 +728,191 @@ __Ltext58                                   text58        00000
 __Ltext59                                   text59        00000
 __Ltext6                                    text6         00000
 __Ltext60                                   text60        00000
+__Ltext61                                   text61        00000
+__Ltext62                                   text62        00000
+__Ltext63                                   text63        00000
 __Ltext7                                    text7         00000
 __Ltext8                                    text8         00000
 __Ltext9                                    text9         00000
 __S0                                        (abs)         10000
-__S1                                        (abs)         000F2
+__S1                                        (abs)         00108
 __S2                                        (abs)         00000
-___awdiv                                    text53        0EC94
+___awdiv                                    text56        0EC74
 ___awdiv@counter                            cstackCOMRAM  00005
 ___awdiv@dividend                           cstackCOMRAM  00001
 ___awdiv@divisor                            cstackCOMRAM  00003
 ___awdiv@quotient                           cstackCOMRAM  00007
 ___awdiv@sign                               cstackCOMRAM  00006
+___awmod                                    text19        0EA4A
+___awmod@counter                            cstackCOMRAM  00005
+___awmod@dividend                           cstackCOMRAM  00001
+___awmod@divisor                            cstackCOMRAM  00003
+___awmod@sign                               cstackCOMRAM  00006
 ___inthi_sp                                 stack         00000
 ___intlo_sp                                 stack         00000
-___lwdiv                                    text35        0E5E8
+___lwdiv                                    text38        0E502
 ___lwdiv@counter                            cstackCOMRAM  00007
 ___lwdiv@dividend                           cstackCOMRAM  00001
 ___lwdiv@divisor                            cstackCOMRAM  00003
 ___lwdiv@quotient                           cstackCOMRAM  00005
-___lwmod                                    text34        0E548
+___lwmod                                    text37        0E408
 ___lwmod@counter                            cstackCOMRAM  0000C
 ___lwmod@dividend                           cstackCOMRAM  00008
 ___lwmod@divisor                            cstackCOMRAM  0000A
 ___param_bank                               (abs)         00010
 ___rparam_used                              (abs)         00001
 ___sp                                       stack         00000
-___wmul                                     text33        0E24E
+___wmul                                     text36        0E150
 ___wmul@multiplicand                        cstackCOMRAM  00003
 ___wmul@multiplier                          cstackCOMRAM  00001
 ___wmul@product                             cstackCOMRAM  00005
 __accesstop                                 (abs)         00060
 __activetblptr                              (abs)         00002
-__end_of_Delay100TCYx                       text51        0E108
-__end_of_Delay1KTCYx                        text47        0E11A
-__end_of_LCD_INIT_STRING                    mediumconst   0FED1
-__end_of_Read_RTC                           text57        0F988
-__end_of_RtccReadDate                       text59        0EC02
-__end_of_RtccReadTime                       text58        0E714
-__end_of_RtccWrOn                           text56        0E0F6
-__end_of_RtccWriteDate                      text55        0FACE
-__end_of_RtccWriteTime                      text54        0F722
-__end_of_Setup                              text45        0E4FC
-__end_of_Write_RTC                          text52        0FC5E
-__end_of___awdiv                            text53        0ED2A
-__end_of___lwdiv                            text35        0E644
-__end_of___lwmod                            text34        0E594
-__end_of___wmul                             text33        0E276
-__end_of__initialization                    cinit         0E392
-__end_of_actualizar_password                text36        0F852
-__end_of_atoi                               text25        0F26E
-__end_of_cambiar_anio                       text12        0F00A
-__end_of_cambiar_dia                        text10        0EE96
-__end_of_cambiar_fecha                      text39        0EC94
-__end_of_cambiar_hora                       text8         0EF4C
-__end_of_cambiar_horario                    text38        0E6A6
-__end_of_cambiar_mes                        text11        0EDE0
-__end_of_cambiar_minutos                    text9         0F0CA
-__end_of_cambiar_password                   text29        0F19A
-__end_of_caratula                           text28        0F344
-__end_of_clear_display                      text41        0E1E4
-__end_of_confirmar_actualizar_password      text5         0E24E
-__end_of_convertir_a_int_fecha              text24        0E186
-__end_of_convertir_a_int_hora               text21        0E1A4
-__end_of_dpowers                            mediumconst   0FECD
-__end_of_guardar_comando                    text17        0E784
-__end_of_guardar_current_password           text15        0E46E
-__end_of_guardar_elemento_fecha             text23        0E7F8
-__end_of_guardar_elemento_hora              text20        0E86C
-__end_of_guardar_nuevo_password             text16        0E428
-__end_of_guardar_password_temporal          text14        0E4B4
-__end_of_guardar_tecla_presionada           text3         0EB74
-__end_of_imprimir_tecla                     text18        0E3E2
-__end_of_ingresar_comando                   text4         0E0D6
-__end_of_ingresar_password                  text26        0F42A
-__end_of_inicializar_fecha                  text22        0E2A2
-__end_of_inicializar_hora                   text19        0E1C2
-__end_of_isdigit                            text32        0E206
-__end_of_lcd_comand                         text48        0E0E4
-__end_of_lcd_gotoxy                         text44        0E22A
-__end_of_lcd_init                           text46        0E9DA
-__end_of_lcd_putc                           text43        0E548
-__end_of_lcd_putrs                          text42        0E5E8
-__end_of_lcd_send_byte                      text49        0E358
-__end_of_lcd_send_nibble                    text50        0E8E2
-__end_of_leer_teclado                       text2         0F616
-__end_of_main                               text0         0F510
-__end_of_mostrar_guardar_nuevo_password     text6         0E326
-__end_of_mostrar_guardar_password           text7         0E2FA
-__end_of_mostrar_guardar_temporal_password  text13        0E2CE
-__end_of_mostrar_titulo_menu                text40        0E132
-__end_of_restaurar_comando                  text37        0E168
-__end_of_sprintf                            text31        0FEC2
-__end_of_validar_comando                    text1         0EA60
-__end_of_validar_password                   text27        0EAEA
-__end_of_verficar_password                  text30        0E95A
-__initialization                            cinit         0E358
-__mediumconst                               mediumconst   0FEC2
+__end_of_Delay100TCYx                       text54        0DFB8
+__end_of_Delay1KTCYx                        text50        0DFCA
+__end_of_LCD_INIT_STRING                    mediumconst   0FEC9
+__end_of_Read_RTC                           text60        0F606
+__end_of_RtccReadDate                       text62        0EBE4
+__end_of_RtccReadTime                       text61        0E62C
+__end_of_RtccWrOn                           text59        0DFA6
+__end_of_RtccWriteDate                      text58        0F87C
+__end_of_RtccWriteTime                      text57        0F4E4
+__end_of_Setup                              text48        0E3BC
+__end_of_Write_RTC                          text55        0FA02
+__end_of___awdiv                            text56        0ED0A
+__end_of___awmod                            text19        0EACC
+__end_of___lwdiv                            text38        0E55E
+__end_of___lwmod                            text37        0E454
+__end_of___wmul                             text36        0E178
+__end_of__initialization                    cinit         0E770
+__end_of_actualiza_dia                      text24        0E048
+__end_of_actualiza_elemento                 text25        0DFF4
+__end_of_actualizar_hora                    text23        0E066
+__end_of_actualizar_minutos                 text26        0E0C4
+__end_of_actualizar_password                text39        0F736
+__end_of_atoi                               text22        0EF4E
+__end_of_cambiar_anio                       text11        0E9CA
+__end_of_cambiar_dia                        text9         0E502
+__end_of_cambiar_fecha                      text42        0EDB0
+__end_of_cambiar_hora                       text7         0E5BE
+__end_of_cambiar_horario                    text41        0E7EC
+__end_of_cambiar_mes                        text10        0E69A
+__end_of_cambiar_minutos                    text8         0E860
+__end_of_cambiar_password                   text32        0F100
+__end_of_caratula                           text31        0F024
+__end_of_clear_display                      text44        0E0E6
+__end_of_confirmar_actualizar_password      text4         0E150
+__end_of_convertir_a_int                    text21        0E084
+__end_of_dpowers                            mediumconst   0FEC5
+__end_of_guardar_comando                    text16        0E70A
+__end_of_guardar_current_password           text14        0E32E
+__end_of_guardar_elemento                   text20        0FBC2
+__end_of_guardar_nuevo_password             text15        0E2E8
+__end_of_guardar_password_temporal          text13        0E374
+__end_of_guardar_tecla_presionada           text2         0EC74
+__end_of_imprimir_tecla                     text17        0E2A2
+__end_of_ingresar_comando                   text3         0DF86
+__end_of_ingresar_password                  text29        0F1E6
+__end_of_inicializar_fecha                  text28        0E22A
+__end_of_inicializar_hora                   text27        0E0A4
+__end_of_isdigit                            text35        0E108
+__end_of_lcd_comand                         text51        0DF94
+__end_of_lcd_gotoxy                         text47        0E12C
+__end_of_lcd_init                           text49        0EA4A
+__end_of_lcd_putc                           text46        0E408
+__end_of_lcd_putrs                          text45        0E4A8
+__end_of_lcd_send_byte                      text52        0E25C
+__end_of_lcd_send_nibble                    text53        0E8D6
+__end_of_leer_teclado                       text1         0F3D8
+__end_of_main                               text0         0EE7A
+__end_of_mostrar_guardar_nuevo_password     text5         0E1FC
+__end_of_mostrar_guardar_password           text6         0E1D0
+__end_of_mostrar_guardar_temporal_password  text12        0E1A4
+__end_of_mostrar_titulo_menu                text43        0E00C
+__end_of_obtener_dia_mes                    text18        0F2D0
+__end_of_restaurar_comando                  text40        0E02A
+__end_of_sprintf                            text34        0FEBA
+__end_of_validar_password                   text30        0EB56
+__end_of_verficar_password                  text33        0E94E
+__initialization                            cinit         0E70A
+__mediumconst                               mediumconst   0FEBA
 __pbitbssCOMRAM                             bitbssCOMRAM  002F8
 __pbssBANK0                                 bssBANK0      00060
-__pbssCOMRAM                                bssCOMRAM     00049
-__pcinit                                    cinit         0E358
+__pbssBANK1                                 bssBANK1      00100
+__pbssCOMRAM                                bssCOMRAM     00047
+__pcinit                                    cinit         0E70A
 __pcstackCOMRAM                             cstackCOMRAM  00001
-__pdataBANK0                                dataBANK0     000CE
-__pidataBANK0                               idataBANK0    0E132
-__pmediumconst                              mediumconst   0FEC2
-__pnvBANK0                                  nvBANK0       000E6
+__pdataBANK0                                dataBANK0     000DF
+__pdataCOMRAM                               dataCOMRAM    0005A
+__pidataBANK0                               idataBANK0    0DFCA
+__pidataCOMRAM                              idataCOMRAM   0DF78
+__pmediumconst                              mediumconst   0FEBA
+__pnvBANK0                                  nvBANK0       000F3
 __pnvCOMRAM                                 nvCOMRAM      0005E
-__ptext0                                    text0         0F42A
-__ptext1                                    text1         0E9DA
-__ptext10                                   text10        0EDE0
-__ptext11                                   text11        0ED2A
-__ptext12                                   text12        0EF4C
-__ptext13                                   text13        0E2A2
-__ptext14                                   text14        0E46E
-__ptext15                                   text15        0E428
-__ptext16                                   text16        0E3E2
-__ptext17                                   text17        0E714
-__ptext18                                   text18        0E39C
-__ptext19                                   text19        0E1A4
-__ptext2                                    text2         0F510
-__ptext20                                   text20        0E7F8
-__ptext21                                   text21        0E186
-__ptext22                                   text22        0E276
-__ptext23                                   text23        0E784
-__ptext24                                   text24        0E168
-__ptext25                                   text25        0F19A
-__ptext26                                   text26        0F344
-__ptext27                                   text27        0EA60
-__ptext28                                   text28        0F26E
-__ptext29                                   text29        0F0CA
-__ptext3                                    text3         0EAEA
-__ptext30                                   text30        0E8E2
-__ptext31                                   text31        0FC5E
-__ptext32                                   text32        0E1E4
-__ptext33                                   text33        0E24E
-__ptext34                                   text34        0E548
-__ptext35                                   text35        0E5E8
-__ptext36                                   text36        0F722
-__ptext37                                   text37        0E14A
-__ptext38                                   text38        0E644
-__ptext39                                   text39        0EC02
-__ptext4                                    text4         0E0CC
-__ptext40                                   text40        0E11A
-__ptext41                                   text41        0E1C2
-__ptext42                                   text42        0E594
-__ptext43                                   text43        0E4FC
-__ptext44                                   text44        0E206
-__ptext45                                   text45        0E4B4
-__ptext46                                   text46        0E95A
+__ptext0                                    text0         0EDB0
+__ptext1                                    text1         0F2D0
+__ptext10                                   text10        0E62C
+__ptext11                                   text11        0E94E
+__ptext12                                   text12        0E178
+__ptext13                                   text13        0E32E
+__ptext14                                   text14        0E2E8
+__ptext15                                   text15        0E2A2
+__ptext16                                   text16        0E69A
+__ptext17                                   text17        0E25C
+__ptext18                                   text18        0F1E6
+__ptext19                                   text19        0EA4A
+__ptext2                                    text2         0EBE4
+__ptext20                                   text20        0FA02
+__ptext21                                   text21        0E066
+__ptext22                                   text22        0EE7A
+__ptext23                                   text23        0E048
+__ptext24                                   text24        0E02A
+__ptext25                                   text25        0DFDE
+__ptext26                                   text26        0E0A4
+__ptext27                                   text27        0E084
+__ptext28                                   text28        0E1FC
+__ptext29                                   text29        0F100
+__ptext3                                    text3         0DF7C
+__ptext30                                   text30        0EACC
+__ptext31                                   text31        0EF4E
+__ptext32                                   text32        0F024
+__ptext33                                   text33        0E8D6
+__ptext34                                   text34        0FBC2
+__ptext35                                   text35        0E0E6
+__ptext36                                   text36        0E150
+__ptext37                                   text37        0E408
+__ptext38                                   text38        0E502
+__ptext39                                   text39        0F606
+__ptext4                                    text4         0E12C
+__ptext40                                   text40        0E00C
+__ptext41                                   text41        0E77A
+__ptext42                                   text42        0ED0A
+__ptext43                                   text43        0DFF4
+__ptext44                                   text44        0E0C4
+__ptext45                                   text45        0E454
+__ptext46                                   text46        0E3BC
 __ptext47                                   text47        0E108
-__ptext48                                   text48        0E0D6
-__ptext49                                   text49        0E326
-__ptext5                                    text5         0E22A
-__ptext50                                   text50        0E86C
-__ptext51                                   text51        0E0F6
-__ptext52                                   text52        0FACE
-__ptext53                                   text53        0EC94
-__ptext54                                   text54        0F616
-__ptext55                                   text55        0F988
-__ptext56                                   text56        0E0E4
-__ptext57                                   text57        0F852
-__ptext58                                   text58        0E6A6
-__ptext59                                   text59        0EB74
-__ptext6                                    text6         0E2FA
-__ptext60                                   text60        00000
-__ptext7                                    text7         0E2CE
-__ptext8                                    text8         0EE96
-__ptext9                                    text9         0F00A
+__ptext48                                   text48        0E374
+__ptext49                                   text49        0E9CA
+__ptext5                                    text5         0E1D0
+__ptext50                                   text50        0DFB8
+__ptext51                                   text51        0DF86
+__ptext52                                   text52        0E22A
+__ptext53                                   text53        0E860
+__ptext54                                   text54        0DFA6
+__ptext55                                   text55        0F87C
+__ptext56                                   text56        0EC74
+__ptext57                                   text57        0F3D8
+__ptext58                                   text58        0F736
+__ptext59                                   text59        0DF94
+__ptext6                                    text6         0E1A4
+__ptext60                                   text60        0F4E4
+__ptext61                                   text61        0E5BE
+__ptext62                                   text62        0EB56
+__ptext63                                   text63        00000
+__ptext7                                    text7         0E55E
+__ptext8                                    text8         0E7EC
+__ptext9                                    text9         0E4A8
 __ramtop                                    ramtop        00F00
 __size_of_Delay100TCYx                      (abs)         00000
 __size_of_Delay1KTCYx                       (abs)         00000
@@ -879,9 +925,14 @@ __size_of_RtccWriteTime                     (abs)         00000
 __size_of_Setup                             (abs)         00000
 __size_of_Write_RTC                         (abs)         00000
 __size_of___awdiv                           (abs)         00000
+__size_of___awmod                           (abs)         00000
 __size_of___lwdiv                           (abs)         00000
 __size_of___lwmod                           (abs)         00000
 __size_of___wmul                            (abs)         00000
+__size_of_actualiza_dia                     (abs)         00000
+__size_of_actualiza_elemento                (abs)         00000
+__size_of_actualizar_hora                   (abs)         00000
+__size_of_actualizar_minutos                (abs)         00000
 __size_of_actualizar_password               (abs)         00000
 __size_of_atoi                              (abs)         00000
 __size_of_cambiar_anio                      (abs)         00000
@@ -895,12 +946,10 @@ __size_of_cambiar_password                  (abs)         00000
 __size_of_caratula                          (abs)         00000
 __size_of_clear_display                     (abs)         00000
 __size_of_confirmar_actualizar_password     (abs)         00000
-__size_of_convertir_a_int_fecha             (abs)         00000
-__size_of_convertir_a_int_hora              (abs)         00000
+__size_of_convertir_a_int                   (abs)         00000
 __size_of_guardar_comando                   (abs)         00000
 __size_of_guardar_current_password          (abs)         00000
-__size_of_guardar_elemento_fecha            (abs)         00000
-__size_of_guardar_elemento_hora             (abs)         00000
+__size_of_guardar_elemento                  (abs)         00000
 __size_of_guardar_nuevo_password            (abs)         00000
 __size_of_guardar_password_temporal         (abs)         00000
 __size_of_guardar_tecla_presionada          (abs)         00000
@@ -923,154 +972,164 @@ __size_of_mostrar_guardar_nuevo_password    (abs)         00000
 __size_of_mostrar_guardar_password          (abs)         00000
 __size_of_mostrar_guardar_temporal_password (abs)         00000
 __size_of_mostrar_titulo_menu               (abs)         00000
+__size_of_obtener_dia_mes                   (abs)         00000
 __size_of_restaurar_comando                 (abs)         00000
 __size_of_sprintf                           (abs)         00000
-__size_of_validar_comando                   (abs)         00000
 __size_of_validar_password                  (abs)         00000
 __size_of_verficar_password                 (abs)         00000
 __smallconst                                smallconst    00000
-_a                                          bssBANK0      00091
-_activada                                   dataBANK0     000D8
-_actualizar_password                        text36        0F722
-_anio                                       dataBANK0     000DA
-_anio_d                                     nvBANK0       000E6
-_anio_u                                     nvBANK0       000E7
-_atoi                                       text25        0F19A
-_autorizado                                 bssBANK0      00093
-_b                                          bssBANK0      00095
-_buffer2                                    bssBANK0      000A7
-_c                                          bssBANK0      00097
-_cambiar_anio                               text12        0EF4C
-_cambiar_dia                                text10        0EDE0
-_cambiar_fecha                              text39        0EC02
-_cambiar_hora                               text8         0EE96
-_cambiar_horario                            text38        0E644
-_cambiar_mes                                text11        0ED2A
-_cambiar_minutos                            text9         0F00A
-_cambiar_password                           text29        0F0CA
-_caratula                                   text28        0F26E
-_caratula$527                               cstackCOMRAM  00026
-_clear_display                              text41        0E1C2
-_comando                                    dataBANK0     000D5
-_confirmar_actualizar_password              text5         0E22A
-_convertir_a_int_fecha                      text24        0E168
-_convertir_a_int_hora                       text21        0E186
-_current_password                           bssBANK0      00078
-_day                                        bssBANK0      000BF
-_dia                                        dataBANK0     000DC
-_dia_semana                                 nvBANK0       000E8
-_diasem                                     dataBANK0     000DE
-_dpowers                                    mediumconst   0FEC3
-_encendida                                  bssBANK0      00099
-_fecha_d                                    nvBANK0       000E9
-_fecha_u                                    nvBANK0       000EA
+_a                                          bssBANK0      00098
+_activada                                   dataBANK0     000E6
+_actualiza_dia                              text24        0E02A
+_actualiza_elemento                         text25        0DFDE
+_actualizar_hora                            text23        0E048
+_actualizar_minutos                         text26        0E0A4
+_actualizar_password                        text39        0F606
+_anio                                       dataCOMRAM    0005A
+_anio_d                                     nvBANK0       000F3
+_anio_u                                     nvBANK0       000F4
+_atoi                                       text22        0EE7A
+_autorizado                                 bssBANK0      0009A
+_b                                          bssBANK0      0009C
+_buffer2                                    bssBANK0      000B8
+_c                                          bssBANK0      0009E
+_cambiar_anio                               text11        0E94E
+_cambiar_anio$1250                          cstackCOMRAM  00038
+_cambiar_dia                                text9         0E4A8
+_cambiar_fecha                              text42        0ED0A
+_cambiar_hora                               text7         0E55E
+_cambiar_horario                            text41        0E77A
+_cambiar_mes                                text10        0E62C
+_cambiar_mes$1246                           cstackCOMRAM  00038
+_cambiar_minutos                            text8         0E7EC
+_cambiar_minutos$1265                       cstackCOMRAM  00038
+_cambiar_password                           text32        0F024
+_caratula                                   text31        0EF4E
+_caratula$528                               cstackCOMRAM  00026
+_clear_display                              text44        0E0C4
+_comando                                    dataBANK0     000EA
+_confirmar_actualizar_password              text4         0E12C
+_convertir_a_int                            text21        0E066
+_current_password                           bssBANK0      00070
+_dia                                        dataBANK0     000ED
+_dia_semana                                 nvBANK0       000F5
+_diasem                                     dataBANK0     000E8
+_dpowers                                    mediumconst   0FEBB
+_encendida                                  bssBANK0      000A0
+_fecha_d                                    nvBANK0       000F6
+_fecha_u                                    nvBANK0       000F7
 _flag                                       bitbssCOMRAM  002F8
-_guardar_comando                            text17        0E714
-_guardar_current_password                   text15        0E428
-_guardar_elemento_fecha                     text23        0E784
-_guardar_elemento_hora                      text20        0E7F8
-_guardar_nuevo_password                     text16        0E3E2
-_guardar_password_temporal                  text14        0E46E
-_guardar_tecla_presionada                   text3         0EAEA
-_hora                                       dataBANK0     000E0
-_hora_d                                     nvBANK0       000EB
-_hora_u                                     nvBANK0       000EC
-_hour                                       bssBANK0      000C2
-_i                                          bssBANK0      0009B
-_imprimir_tecla                             text18        0E39C
-_ingresar_comando                           text4         0E0CC
-_ingresar_password                          text26        0F344
-_inicializar_fecha                          text22        0E276
-_inicializar_hora                           text19        0E1A4
-_isdigit                                    text32        0E1E4
-_isdigit$2628                               cstackCOMRAM  00002
-_j                                          bssBANK0      0009D
-_k                                          bssBANK0      0009F
-_key                                        bssCOMRAM     0004F
-_lcd_comand                                 text48        0E0D6
-_lcd_gotoxy                                 text44        0E206
-_lcd_init                                   text46        0E95A
-_lcd_putc                                   text43        0E4FC
-_lcd_putrs                                  text42        0E594
-_lcd_send_byte                              text49        0E326
-_lcd_send_nibble                            text50        0E86C
-_leer_teclado                               text2         0F510
-_main                                       text0         0F42A
-_mes                                        dataBANK0     000E2
-_mes_d                                      nvBANK0       000ED
-_mes_u                                      nvBANK0       000EE
-_minutes                                    bssBANK0      000C5
-_minuto                                     dataBANK0     000E4
-_minuto_d                                   nvBANK0       000EF
-_minuto_u                                   nvBANK0       000F0
-_month                                      bssBANK0      000C8
-_mostrar_guardar_nuevo_password             text6         0E2FA
-_mostrar_guardar_password                   text7         0E2CE
-_mostrar_guardar_temporal_password          text13        0E2A2
-_mostrar_titulo_menu                        text40        0E11A
-_new_password                               bssBANK0      0007F
-_ocultar_teclas                             bssBANK0      000A1
-_password                                   dataBANK0     000CE
-_puntero_funcion                            bssCOMRAM     00049
-_restaurar_comando                          text37        0E14A
-_segundo                                    bssBANK0      000A3
+_guardar_comando                            text16        0E69A
+_guardar_current_password                   text14        0E2E8
+_guardar_elemento                           text20        0FA02
+_guardar_nuevo_password                     text15        0E2A2
+_guardar_password_temporal                  text13        0E32E
+_guardar_tecla_presionada                   text2         0EBE4
+_hora                                       dataBANK0     000EF
+_hora_d                                     nvBANK0       000F8
+_hora_u                                     nvBANK0       000F9
+_i                                          bssBANK0      000A2
+_imprimir_tecla                             text17        0E25C
+_ingresar_comando                           text3         0DF7C
+_ingresar_password                          text29        0F100
+_inicializar_fecha                          text28        0E1FC
+_inicializar_hora                           text27        0E084
+_isdigit                                    text35        0E0E6
+_isdigit$2543                               cstackCOMRAM  00002
+_j                                          bssBANK0      000A4
+_k                                          bssBANK0      000A6
+_key                                        bssCOMRAM     0004B
+_lcd_comand                                 text51        0DF86
+_lcd_gotoxy                                 text47        0E108
+_lcd_init                                   text49        0E9CA
+_lcd_putc                                   text46        0E3BC
+_lcd_putrs                                  text45        0E454
+_lcd_send_byte                              text52        0E22A
+_lcd_send_nibble                            text53        0E860
+_leer_teclado                               text1         0F2D0
+_main                                       text0         0EDB0
+_mes                                        dataCOMRAM    0005C
+_mes_d                                      nvBANK0       000FA
+_mes_u                                      nvBANK0       000FB
+_minuto                                     dataBANK0     000F1
+_minuto_d                                   nvBANK0       000FC
+_minuto_u                                   nvBANK0       000FD
+_mostrar_guardar_nuevo_password             text5         0E1D0
+_mostrar_guardar_password                   text6         0E1A4
+_mostrar_guardar_temporal_password          text12        0E178
+_mostrar_titulo_menu                        text43        0DFF4
+_new_password                               bssBANK0      00077
+_obtener_dia_mes                            text18        0F1E6
+_ocultar_teclas                             bssBANK0      000A8
+_password                                   dataBANK0     000DF
+_puntero_funcion                            bssBANK0      000AA
+_restaurar_comando                          text40        0E00C
+_segundo                                    bssBANK0      000AC
 _segundo_d                                  nvCOMRAM      0005E
-_segundo_u                                  nvBANK0       000F1
-_sprintf                                    text31        0FC5E
-_tamanio_anio                               bssCOMRAM     00054
-_tamanio_comando                            bssBANK0      000A5
-_tamanio_dia                                bssCOMRAM     00056
-_tamanio_hora                               bssCOMRAM     00058
-_tamanio_mes                                bssCOMRAM     0005A
-_tamanio_minutos                            bssCOMRAM     0005C
-_tamanio_new_password                       bssCOMRAM     0004B
-_tamanio_password                           bssCOMRAM     0004D
-_temporal                                   bssBANK0      00086
-_validar_comando                            text1         0E9DA
-_validar_password                           text27        0EA60
-_verficar_password                          text30        0E8E2
-_year                                       bssBANK0      000CB
+_segundo_u                                  nvBANK0       000FE
+_sprintf                                    text34        0FBC2
+_tamanio_anio                               bssBANK0      000DB
+_tamanio_comando                            bssBANK0      000AE
+_tamanio_dia                                bssCOMRAM     00054
+_tamanio_hora                               bssCOMRAM     00056
+_tamanio_mes                                bssCOMRAM     00058
+_tamanio_minutos                            bssBANK0      000DD
+_tamanio_new_password                       bssCOMRAM     00047
+_tamanio_password                           bssCOMRAM     00049
+_temporal                                   bssBANK0      0007E
+_validar_password                           text30        0EACC
+_verficar_password                          text33        0E8D6
+actualiza_dia@elemento                      cstackCOMRAM  00016
+actualiza_dia@valor                         cstackCOMRAM  00018
+actualiza_elemento@elemento                 cstackCOMRAM  00016
+actualiza_elemento@valor                    cstackCOMRAM  00018
+actualizar_hora@elemento                    cstackCOMRAM  00016
+actualizar_hora@valor                       cstackCOMRAM  00018
+actualizar_minutos@elemento                 cstackCOMRAM  00016
+actualizar_minutos@valor                    cstackCOMRAM  00018
 actualizar_password@confirmar               cstackCOMRAM  00001
 actualizar_password@j                       cstackCOMRAM  00009
-actualizar_password@j_1623                  cstackCOMRAM  0000B
+actualizar_password@j_1538                  cstackCOMRAM  0000B
 actualizar_password@valor                   cstackCOMRAM  00003
 atoi@a                                      cstackCOMRAM  0000C
 atoi@s                                      cstackCOMRAM  00007
 atoi@sign                                   cstackCOMRAM  0000B
-cambiar_anio@i                              cstackCOMRAM  0002D
-cambiar_anio@tecla                          cstackCOMRAM  0002C
-cambiar_anio@valor                          cstackCOMRAM  0002F
-cambiar_dia@i                               cstackCOMRAM  0002D
-cambiar_dia@tecla                           cstackCOMRAM  0002C
-cambiar_dia@valor                           cstackCOMRAM  0002F
-cambiar_hora@i                              cstackCOMRAM  0002D
-cambiar_hora@tecla                          cstackCOMRAM  0002C
-cambiar_hora@valor                          cstackCOMRAM  0002F
-cambiar_mes@i                               cstackCOMRAM  0002D
-cambiar_mes@tecla                           cstackCOMRAM  0002C
-cambiar_mes@valor                           cstackCOMRAM  0002F
-cambiar_minutos@i                           cstackCOMRAM  0002D
-cambiar_minutos@tecla                       cstackCOMRAM  0002C
-cambiar_minutos@valor                       cstackCOMRAM  0002F
+cambiar_anio@tecla                          cstackCOMRAM  00037
+cambiar_anio@validacion                     cstackCOMRAM  00035
+cambiar_dia@tecla                           cstackCOMRAM  00037
+cambiar_dia@validacion                      cstackCOMRAM  00035
+cambiar_hora@tecla                          cstackCOMRAM  00037
+cambiar_hora@validacion                     cstackCOMRAM  00035
+cambiar_mes@tecla                           cstackCOMRAM  00037
+cambiar_mes@validacion                      cstackCOMRAM  00035
+cambiar_minutos@tecla                       cstackCOMRAM  00037
+cambiar_minutos@validacion                  cstackCOMRAM  00035
 cambiar_password@confirmar                  cstackCOMRAM  00024
 cambiar_password@verifica                   cstackCOMRAM  00026
 caratula@titulo                             cstackCOMRAM  00024
 clear_display@pos                           cstackCOMRAM  0000B
 confirmar_actualizar_password@tecla         cstackCOMRAM  00039
-convertir_a_int_fecha@array                 cstackCOMRAM  0000E
-convertir_a_int_fecha@valor                 cstackCOMRAM  00010
-convertir_a_int_hora@array                  cstackCOMRAM  0000E
-convertir_a_int_hora@valor                  cstackCOMRAM  00010
-end_of_initialization                       cinit         0E392
+convertir_a_int@array                       cstackCOMRAM  0000E
+convertir_a_int@valor                       cstackCOMRAM  00010
+end_of_initialization                       cinit         0E770
+fecha@day                                   bssBANK0      000CC
+fecha@hour                                  bssBANK0      000CF
+fecha@minutes                               bssBANK0      000D2
+fecha@month                                 bssBANK0      000D5
+fecha@valor_max                             bssBANK0      000B4
+fecha@valor_min                             bssBANK0      000B6
+fecha@year                                  bssBANK0      000D8
 guardar_comando@aux                         cstackCOMRAM  00026
 guardar_comando@tecla                       cstackCOMRAM  0003A
 guardar_current_password@valor              cstackCOMRAM  00003
-guardar_elemento_fecha@array                cstackCOMRAM  00024
-guardar_elemento_fecha@tamanio_array        cstackCOMRAM  00026
-guardar_elemento_fecha@tecla                cstackCOMRAM  0002A
-guardar_elemento_hora@array                 cstackCOMRAM  00024
-guardar_elemento_hora@tamanio_array         cstackCOMRAM  00026
-guardar_elemento_hora@tecla                 cstackCOMRAM  0002A
+guardar_elemento@array                      cstackCOMRAM  00024
+guardar_elemento@dato_fecha                 cstackCOMRAM  0002A
+guardar_elemento@doit                       cstackCOMRAM  0002C
+guardar_elemento@i                          cstackCOMRAM  00031
+guardar_elemento@tamanio_array              cstackCOMRAM  00026
+guardar_elemento@tecla                      cstackCOMRAM  00030
+guardar_elemento@validacion                 cstackCOMRAM  00028
+guardar_elemento@valor                      cstackCOMRAM  00033
 guardar_nuevo_password@valor                cstackCOMRAM  00003
 guardar_password_temporal@valor             cstackCOMRAM  00003
 guardar_tecla_presionada@i                  cstackCOMRAM  0003E
@@ -1080,7 +1139,7 @@ imprimir_tecla@tecla                        cstackCOMRAM  00038
 ingresar_comando@key                        cstackCOMRAM  0003B
 ingresar_password@clear                     cstackCOMRAM  0000C
 ingresar_password@i                         cstackCOMRAM  0001E
-ingresar_password@i_565                     cstackCOMRAM  0001C
+ingresar_password@i_566                     cstackCOMRAM  0001C
 intlevel0                                   text          00000
 intlevel1                                   text          00000
 intlevel2                                   text          00000
@@ -1099,26 +1158,22 @@ lcd_send_nibble@nibble                      cstackCOMRAM  00002
 leer_teclado@i                              cstackCOMRAM  00043
 leer_teclado@ocultar                        cstackCOMRAM  00040
 main@ocultar_teclas                         cstackCOMRAM  00045
-main@validacion                             cstackCOMRAM  00047
 mostrar_guardar_nuevo_password@tecla        cstackCOMRAM  00039
 mostrar_guardar_password@tecla              cstackCOMRAM  00039
 mostrar_guardar_temporal_password@tecla     cstackCOMRAM  00039
 mostrar_titulo_menu@titulo_menu             cstackCOMRAM  0000B
-sprintf@ap                                  cstackCOMRAM  0001B
+sprintf@ap                                  cstackCOMRAM  0001C
 sprintf@c                                   cstackCOMRAM  00023
 sprintf@f                                   cstackCOMRAM  0000F
-sprintf@flag                                cstackCOMRAM  0001D
-sprintf@prec                                cstackCOMRAM  00020
+sprintf@flag                                cstackCOMRAM  00020
+sprintf@prec                                cstackCOMRAM  0001B
 sprintf@sp                                  cstackCOMRAM  0000D
 sprintf@val                                 cstackCOMRAM  0001E
 sprintf@width                               cstackCOMRAM  00021
 stackhi                                     (abs)         00EBF
-stacklo                                     (abs)         000F2
+stacklo                                     (abs)         00108
 start                                       init          00000
-start_initialization                        cinit         0E358
-validar_comando@candidato                   cstackCOMRAM  00001
-validar_comando@i                           cstackCOMRAM  00008
-validar_comando@validar                     cstackCOMRAM  00003
+start_initialization                        cinit         0E70A
 validar_password@i                          cstackCOMRAM  00003
 verficar_password@i                         cstackCOMRAM  00005
 verficar_password@verifica                  cstackCOMRAM  00001
@@ -1128,12 +1183,12 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 234 in file "main.c"
+		line 225 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  validacion      2   70[COMRAM] int 
   ocultar_tecl    2   68[COMRAM] int 
+  validacion      2    0        int 
  Return value:  Size  Location     Type
                   2  255[None  ] int 
  Registers used:
@@ -1144,14 +1199,15 @@ FUNCTION INFORMATION:
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        4 bytes
+      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
  Hardware stack levels required when called:    9
  This function calls:
 		_Read_RTC
 		_Setup
+		_atoi
 		_cambiar_fecha
 		_cambiar_horario
 		_cambiar_password
@@ -1159,49 +1215,14 @@ Total ram usage:        4 bytes
 		_ingresar_password
 		_leer_teclado
 		_restaurar_comando
-		_validar_comando
  This function is called by:
 		Startup code after reset
  This function uses a non-reentrant model
 
 
- *************** function _validar_comando *****************
- Defined at:
-		line 29 in file "../../../../../../Program Files/Unimic/unmc_01/sources/teclado.c"
- Parameters:    Size  Location     Type
-  candidato       2    0[COMRAM] PTR unsigned char 
-		 -> STR_27(3), STR_26(3), STR_24(3), STR_23(3), 
-		 -> STR_11(3), 
-  validar         2    2[COMRAM] PTR int 
-		 -> main@validacion(2), 
- Auto vars:     Size  Location     Type
-  i               2    7[COMRAM] int 
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         9       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        9 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_main
-		_mostrar_caratula
- This function uses a non-reentrant model
-
-
  *************** function _leer_teclado *****************
  Defined at:
-		line 67 in file "../../../../../../Program Files/Unimic/unmc_01/sources/teclado.c"
+		line 48 in file "../../../../../../Program Files/Unimic/unmc_01/sources/teclado.c"
  Parameters:    Size  Location     Type
   ocultar         2   63[COMRAM] int 
  Auto vars:     Size  Location     Type
@@ -1243,10 +1264,10 @@ Total ram usage:        5 bytes
 
  *************** function _guardar_tecla_presionada *****************
  Defined at:
-		line 60 in file "../../../../../../Program Files/Unimic/unmc_01/sources/teclado.c"
+		line 41 in file "../../../../../../Program Files/Unimic/unmc_01/sources/teclado.c"
  Parameters:    Size  Location     Type
-  letra           2   59[COMRAM] PTR unsigned char 
-		 -> STR_33(2), STR_32(2), STR_31(2), 
+  letra           2   59[COMRAM] PTR const unsigned char 
+		 -> STR_27(2), STR_26(2), STR_25(2), 
   i               2   61[COMRAM] int 
  Auto vars:     Size  Location     Type
 		None
@@ -1285,7 +1306,7 @@ Total ram usage:        4 bytes
 
  *************** function _ingresar_comando *****************
  Defined at:
-		line 144 in file "main.c"
+		line 141 in file "main.c"
  Parameters:    Size  Location     Type
   key             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1317,7 +1338,7 @@ Total ram usage:        1 bytes
 
  *************** function _confirmar_actualizar_password *****************
  Defined at:
-		line 138 in file "main.c"
+		line 135 in file "main.c"
  Parameters:    Size  Location     Type
   tecla           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1350,7 +1371,7 @@ Total ram usage:        1 bytes
 
  *************** function _mostrar_guardar_nuevo_password *****************
  Defined at:
-		line 130 in file "main.c"
+		line 128 in file "main.c"
  Parameters:    Size  Location     Type
   tecla           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1418,37 +1439,30 @@ Total ram usage:        1 bytes
 
  *************** function _cambiar_hora *****************
  Defined at:
-		line 30 in file "../../../../../../Program Files/Unimic/unmc_01/headers/hora.c"
+		line 149 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
  Parameters:    Size  Location     Type
   tecla           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  tecla           1   43[COMRAM] unsigned char 
-  i               2   44[COMRAM] int 
-  valor           2   46[COMRAM] int 
+  tecla           1   54[COMRAM] unsigned char 
+  validacion      2   52[COMRAM] int 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
-		wreg, fsr0l, fsr0h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+		wreg, fsr0l, fsr0h, fsr2l, fsr2h, status,2, status,0, pclat, tosl, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        6 bytes
+      Locals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        3 bytes
  Hardware stack levels used:    1
- Hardware stack levels required when called:    5
+ Hardware stack levels required when called:    6
  This function calls:
-		_Write_RTC
-		_convertir_a_int_hora
-		_guardar_elemento_hora
-		_inicializar_hora
-		_lcd_gotoxy
-		_lcd_putrs
-		_restaurar_comando
+		_guardar_elemento
  This function is called by:
 		_cambiar_horario
 		_guardar_tecla_presionada
@@ -1458,35 +1472,30 @@ Total ram usage:        6 bytes
 
  *************** function _cambiar_minutos *****************
  Defined at:
-		line 50 in file "../../../../../../Program Files/Unimic/unmc_01/headers/hora.c"
+		line 158 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
  Parameters:    Size  Location     Type
   tecla           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  tecla           1   43[COMRAM] unsigned char 
-  i               2   44[COMRAM] int 
-  valor           2   46[COMRAM] int 
+  tecla           1   54[COMRAM] unsigned char 
+  validacion      2   52[COMRAM] int 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
-		wreg, fsr0l, fsr0h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+		wreg, fsr0l, fsr0h, fsr2l, fsr2h, status,2, status,0, pclat, tosl, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        6 bytes
+      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
  Hardware stack levels used:    1
- Hardware stack levels required when called:    5
+ Hardware stack levels required when called:    6
  This function calls:
-		_Write_RTC
-		_convertir_a_int_hora
-		_guardar_elemento_hora
-		_lcd_gotoxy
-		_lcd_putrs
+		_guardar_elemento
  This function is called by:
 		_cambiar_horario
 		_guardar_tecla_presionada
@@ -1496,37 +1505,31 @@ Total ram usage:        6 bytes
 
  *************** function _cambiar_dia *****************
  Defined at:
-		line 31 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
+		line 91 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
  Parameters:    Size  Location     Type
   tecla           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  tecla           1   43[COMRAM] unsigned char 
-  i               2   44[COMRAM] int 
-  valor           2   46[COMRAM] int 
+  tecla           1   54[COMRAM] unsigned char 
+  validacion      2   52[COMRAM] int 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
-		wreg, fsr0l, fsr0h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+		wreg, fsr0l, fsr0h, fsr2l, fsr2h, status,2, status,0, pclat, tosl, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        6 bytes
+      Locals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        3 bytes
  Hardware stack levels used:    1
- Hardware stack levels required when called:    5
+ Hardware stack levels required when called:    6
  This function calls:
-		_Write_RTC
-		_convertir_a_int_fecha
-		_guardar_elemento_fecha
-		_inicializar_fecha
-		_lcd_gotoxy
-		_lcd_putrs
-		_restaurar_comando
+		_guardar_elemento
+		_obtener_dia_mes
  This function is called by:
 		_cambiar_fecha
 		_guardar_tecla_presionada
@@ -1536,35 +1539,30 @@ Total ram usage:        6 bytes
 
  *************** function _cambiar_mes *****************
  Defined at:
-		line 51 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
+		line 101 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
  Parameters:    Size  Location     Type
   tecla           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  tecla           1   43[COMRAM] unsigned char 
-  i               2   44[COMRAM] int 
-  valor           2   46[COMRAM] int 
+  tecla           1   54[COMRAM] unsigned char 
+  validacion      2   52[COMRAM] int 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
-		wreg, fsr0l, fsr0h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+		wreg, fsr0l, fsr0h, fsr2l, fsr2h, status,2, status,0, pclat, tosl, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        6 bytes
+      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
  Hardware stack levels used:    1
- Hardware stack levels required when called:    5
+ Hardware stack levels required when called:    6
  This function calls:
-		_Write_RTC
-		_convertir_a_int_fecha
-		_guardar_elemento_fecha
-		_lcd_gotoxy
-		_lcd_putrs
+		_guardar_elemento
  This function is called by:
 		_cambiar_fecha
 		_guardar_tecla_presionada
@@ -1574,35 +1572,30 @@ Total ram usage:        6 bytes
 
  *************** function _cambiar_anio *****************
  Defined at:
-		line 70 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
+		line 111 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
  Parameters:    Size  Location     Type
   tecla           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  tecla           1   43[COMRAM] unsigned char 
-  i               2   44[COMRAM] int 
-  valor           2   46[COMRAM] int 
+  tecla           1   54[COMRAM] unsigned char 
+  validacion      2   52[COMRAM] int 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
-		wreg, fsr0l, fsr0h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+		wreg, fsr0l, fsr0h, fsr2l, fsr2h, status,2, status,0, pclat, tosl, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        6 bytes
+      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
  Hardware stack levels used:    1
- Hardware stack levels required when called:    5
+ Hardware stack levels required when called:    6
  This function calls:
-		_Write_RTC
-		_convertir_a_int_fecha
-		_guardar_elemento_fecha
-		_lcd_gotoxy
-		_lcd_putrs
+		_guardar_elemento
  This function is called by:
 		_cambiar_fecha
 		_guardar_tecla_presionada
@@ -1612,7 +1605,7 @@ Total ram usage:        6 bytes
 
  *************** function _mostrar_guardar_temporal_password *****************
  Defined at:
-		line 122 in file "main.c"
+		line 121 in file "main.c"
  Parameters:    Size  Location     Type
   tecla           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1733,7 +1726,7 @@ Total ram usage:        3 bytes
 
  *************** function _guardar_comando *****************
  Defined at:
-		line 10 in file "../../../../../../Program Files/Unimic/unmc_01/sources/teclado.c"
+		line 19 in file "../../../../../../Program Files/Unimic/unmc_01/sources/teclado.c"
  Parameters:    Size  Location     Type
   tecla           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1764,7 +1757,7 @@ Total ram usage:       23 bytes
 
  *************** function _imprimir_tecla *****************
  Defined at:
-		line 41 in file "../../../../../../Program Files/Unimic/unmc_01/sources/teclado.c"
+		line 30 in file "../../../../../../Program Files/Unimic/unmc_01/sources/teclado.c"
  Parameters:    Size  Location     Type
   tecla           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1797,9 +1790,9 @@ Total ram usage:       21 bytes
  This function uses a non-reentrant model
 
 
- *************** function _inicializar_hora *****************
+ *************** function _obtener_dia_mes *****************
  Defined at:
-		line 9 in file "../../../../../../Program Files/Unimic/unmc_01/headers/hora.c"
+		line 76 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1807,7 +1800,7 @@ Total ram usage:       21 bytes
  Return value:  Size  Location     Type
 		None               void
  Registers used:
-		wreg, status,2
+		wreg, status,2, status,0, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -1815,159 +1808,113 @@ Total ram usage:       21 bytes
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		___awmod
+ This function is called by:
+		_cambiar_dia
+ This function uses a non-reentrant model
+
+
+ *************** function ___awmod *****************
+ Defined at:
+		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awmod.c"
+ Parameters:    Size  Location     Type
+  dividend        2    0[COMRAM] int 
+  divisor         2    2[COMRAM] int 
+ Auto vars:     Size  Location     Type
+  sign            1    5[COMRAM] unsigned char 
+  counter         1    4[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  2    0[COMRAM] int 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
+      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        6 bytes
  Hardware stack levels used:    1
  This function calls:
 		Nothing
  This function is called by:
-		_cambiar_hora
+		_obtener_dia_mes
  This function uses a non-reentrant model
 
 
- *************** function _guardar_elemento_hora *****************
+ *************** function _guardar_elemento *****************
  Defined at:
-		line 17 in file "../../../../../../Program Files/Unimic/unmc_01/headers/hora.c"
+		line 12 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
  Parameters:    Size  Location     Type
   tecla           1    wreg     unsigned char 
   array           2   35[COMRAM] PTR unsigned char 
-		 -> minutes(3), hour(3), 
+		 -> fecha@minutes(3), fecha@hour(3), fecha@year(3), fecha@month(3), 
+		 -> fecha@day(3), 
   tamanio_arra    2   37[COMRAM] PTR int 
-		 -> tamanio_hora(2), tamanio_minutos(2), 
+		 -> tamanio_hora(2), tamanio_minutos(2), tamanio_dia(2), tamanio_mes(2), 
+		 -> tamanio_anio(2), 
+  validacion      2   39[COMRAM] int 
+  dato_fecha      2   41[COMRAM] PTR int 
+		 -> minuto(2), hora(2), anio(2), mes(2), 
+		 -> dia(2), 
+  doit            2   43[COMRAM] PTR FTN(PTR int ,const i
+		 -> actualizar_minutos(0), actualizar_hora(0), actualiza_dia(0), actualiza_elemento(0), 
  Auto vars:     Size  Location     Type
-  tecla           1   41[COMRAM] unsigned char 
+  tecla           1   47[COMRAM] unsigned char 
+  i               2   48[COMRAM] int 
+  valor           2   50[COMRAM] int 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+		wreg, fsr0l, fsr0h, fsr2l, fsr2h, status,2, status,0, pclat, tosl, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:        10       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         7       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        7 bytes
+      Totals:        17       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       17 bytes
  Hardware stack levels used:    1
- Hardware stack levels required when called:    2
+ Hardware stack levels required when called:    5
  This function calls:
+		_actualiza_dia
+		_actualiza_elemento
+		_actualizar_hora
+		_actualizar_minutos
+		_convertir_a_int
+		_lcd_gotoxy
+		_lcd_putrs
 		_sprintf
  This function is called by:
+		_cambiar_dia
+		_cambiar_mes
+		_cambiar_anio
 		_cambiar_hora
 		_cambiar_minutos
  This function uses a non-reentrant model
 
 
- *************** function _convertir_a_int_hora *****************
- Defined at:
-		line 25 in file "../../../../../../Program Files/Unimic/unmc_01/headers/hora.c"
- Parameters:    Size  Location     Type
-  array           2   13[COMRAM] PTR unsigned char 
-		 -> minutes(3), hour(3), 
-  valor           2   15[COMRAM] PTR int 
-		 -> cambiar_minutos@valor(2), cambiar_hora@valor(2), 
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        4 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		_atoi
- This function is called by:
-		_cambiar_hora
-		_cambiar_minutos
- This function uses a non-reentrant model
-
-
- *************** function _inicializar_fecha *****************
+ *************** function _convertir_a_int *****************
  Defined at:
 		line 8 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
  Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg, status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_cambiar_dia
- This function uses a non-reentrant model
-
-
- *************** function _guardar_elemento_fecha *****************
- Defined at:
-		line 18 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
- Parameters:    Size  Location     Type
-  tecla           1    wreg     unsigned char 
-  array           2   35[COMRAM] PTR unsigned char 
-		 -> year(3), month(3), day(3), 
-  tamanio_arra    2   37[COMRAM] PTR int 
-		 -> tamanio_dia(2), tamanio_mes(2), tamanio_anio(2), 
- Auto vars:     Size  Location     Type
-  tecla           1   41[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         7       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        7 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		_sprintf
- This function is called by:
-		_cambiar_dia
-		_cambiar_mes
-		_cambiar_anio
- This function uses a non-reentrant model
-
-
- *************** function _convertir_a_int_fecha *****************
- Defined at:
-		line 26 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
- Parameters:    Size  Location     Type
   array           2   13[COMRAM] PTR unsigned char 
-		 -> year(3), month(3), day(3), 
+		 -> fecha@minutes(3), fecha@hour(3), fecha@year(3), fecha@month(3), 
+		 -> fecha@day(3), 
   valor           2   15[COMRAM] PTR int 
-		 -> cambiar_anio@valor(2), cambiar_mes@valor(2), cambiar_dia@valor(2), 
+		 -> guardar_elemento@valor(2), 
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
@@ -1989,9 +1936,7 @@ Total ram usage:        4 bytes
  This function calls:
 		_atoi
  This function is called by:
-		_cambiar_dia
-		_cambiar_mes
-		_cambiar_anio
+		_guardar_elemento
  This function uses a non-reentrant model
 
 
@@ -2000,8 +1945,8 @@ Total ram usage:        4 bytes
 		line 5 in file "C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\atoi.c"
  Parameters:    Size  Location     Type
   s               2    6[COMRAM] PTR const unsigned char 
-		 -> minutes(3), hour(3), year(3), month(3), 
-		 -> day(3), 
+		 -> fecha@minutes(3), fecha@hour(3), fecha@year(3), fecha@month(3), 
+		 -> fecha@day(3), comando(3), 
  Auto vars:     Size  Location     Type
   a               2   11[COMRAM] int 
   sign            1   10[COMRAM] unsigned char 
@@ -2025,8 +1970,209 @@ Total ram usage:        7 bytes
 		___wmul
 		_isdigit
  This function is called by:
-		_convertir_a_int_fecha
-		_convertir_a_int_hora
+		_main
+		_convertir_a_int
+ This function uses a non-reentrant model
+
+
+ *************** function _actualizar_hora *****************
+ Defined at:
+		line 135 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
+ Parameters:    Size  Location     Type
+  elemento        2   21[COMRAM] PTR int 
+		 -> minuto(2), hora(2), anio(2), mes(2), 
+		 -> dia(2), 
+  valor           2   23[COMRAM] const int 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_actualiza_elemento
+		_inicializar_hora
+		_restaurar_comando
+ This function is called by:
+		_cambiar_hora
+		_guardar_elemento
+ This function uses a non-reentrant model
+
+
+ *************** function _actualiza_dia *****************
+ Defined at:
+		line 69 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
+ Parameters:    Size  Location     Type
+  elemento        2   21[COMRAM] PTR int 
+		 -> minuto(2), hora(2), anio(2), mes(2), 
+		 -> dia(2), 
+  valor           2   23[COMRAM] const int 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_actualiza_elemento
+		_inicializar_fecha
+		_restaurar_comando
+ This function is called by:
+		_cambiar_dia
+		_guardar_elemento
+ This function uses a non-reentrant model
+
+
+ *************** function _actualiza_elemento *****************
+ Defined at:
+		line 48 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
+ Parameters:    Size  Location     Type
+  elemento        2   21[COMRAM] PTR int 
+		 -> minuto(2), hora(2), anio(2), mes(2), 
+		 -> dia(2), 
+  valor           2   23[COMRAM] const int 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_Write_RTC
+ This function is called by:
+		_actualiza_dia
+		_cambiar_mes
+		_cambiar_anio
+		_actualizar_hora
+		_guardar_elemento
+ This function uses a non-reentrant model
+
+
+ *************** function _actualizar_minutos *****************
+ Defined at:
+		line 142 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
+ Parameters:    Size  Location     Type
+  elemento        2   21[COMRAM] PTR int 
+		 -> minuto(2), hora(2), anio(2), mes(2), 
+		 -> dia(2), 
+  valor           2   23[COMRAM] const int 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_Write_RTC
+ This function is called by:
+		_cambiar_minutos
+		_guardar_elemento
+ This function uses a non-reentrant model
+
+
+ *************** function _inicializar_hora *****************
+ Defined at:
+		line 127 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_actualizar_hora
+ This function uses a non-reentrant model
+
+
+ *************** function _inicializar_fecha *****************
+ Defined at:
+		line 59 in file "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_actualiza_dia
  This function uses a non-reentrant model
 
 
@@ -2099,7 +2245,7 @@ Total ram usage:        4 bytes
 		line 35 in file "main.c"
  Parameters:    Size  Location     Type
   titulo          2   35[COMRAM] PTR const unsigned char 
-		 -> STR_25(8), STR_12(8), 
+		 -> STR_21(9), 
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
@@ -2125,13 +2271,12 @@ Total ram usage:        4 bytes
 		_sprintf
  This function is called by:
 		_main
-		_mostrar_caratula
  This function uses a non-reentrant model
 
 
  *************** function _cambiar_password *****************
  Defined at:
-		line 196 in file "main.c"
+		line 186 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2201,20 +2346,20 @@ Total ram usage:        6 bytes
   sp              2   12[COMRAM] PTR unsigned char 
 		 -> imprimir_tecla@aux(20), guardar_comando@aux(20), buffer2(20), 
   f               2   14[COMRAM] PTR const unsigned char 
-		 -> STR_38(5), STR_37(5), STR_29(5), STR_28(5), 
-		 -> STR_21(5), STR_10(5), STR_9(5), STR_8(5), 
+		 -> STR_32(18), STR_31(5), STR_23(5), STR_22(5), 
+		 -> STR_19(5), STR_10(5), STR_9(5), STR_8(5), 
 		 -> STR_7(5), STR_2(15), STR_1(15), 
  Auto vars:     Size  Location     Type
   tmpval          4    0        struct .
   cp              3    0        PTR const unsigned char 
   width           2   32[COMRAM] int 
   val             2   29[COMRAM] unsigned int 
-  ap              2   26[COMRAM] PTR void [1]
+  ap              2   27[COMRAM] PTR void [1]
 		 -> ?_sprintf(2), 
   len             2    0        unsigned int 
   c               1   34[COMRAM] char 
-  prec            1   31[COMRAM] char 
-  flag            1   28[COMRAM] unsigned char 
+  flag            1   31[COMRAM] unsigned char 
+  prec            1   26[COMRAM] char 
  Return value:  Size  Location     Type
                   2   12[COMRAM] int 
  Registers used:
@@ -2245,8 +2390,7 @@ Total ram usage:       23 bytes
 		_cambiar_password
 		_guardar_comando
 		_imprimir_tecla
-		_guardar_elemento_fecha
-		_guardar_elemento_hora
+		_guardar_elemento
  This function uses a non-reentrant model
 
 
@@ -2407,7 +2551,7 @@ Total ram usage:       12 bytes
 
  *************** function _restaurar_comando *****************
  Defined at:
-		line 52 in file "../../../../../../Program Files/Unimic/unmc_01/sources/teclado.c"
+		line 10 in file "../../../../../../Program Files/Unimic/unmc_01/sources/teclado.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2431,15 +2575,15 @@ Total ram usage:        0 bytes
 		Nothing
  This function is called by:
 		_main
-		_cambiar_dia
-		_cambiar_hora
+		_actualiza_dia
+		_actualizar_hora
 		_actualizar_password
  This function uses a non-reentrant model
 
 
  *************** function _cambiar_horario *****************
  Defined at:
-		line 181 in file "main.c"
+		line 171 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2470,7 +2614,7 @@ Total ram usage:        0 bytes
 
  *************** function _cambiar_fecha *****************
  Defined at:
-		line 161 in file "main.c"
+		line 151 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2504,8 +2648,8 @@ Total ram usage:        0 bytes
 		line 109 in file "main.c"
  Parameters:    Size  Location     Type
   titulo_menu     2   10[COMRAM] PTR const unsigned char 
-		 -> STR_22(23), STR_20(20), STR_19(27), STR_18(19), 
-		 -> STR_17(22), STR_16(18), STR_15(18), STR_14(19), 
+		 -> STR_20(23), STR_18(20), STR_17(27), STR_16(19), 
+		 -> STR_15(22), STR_14(18), STR_13(18), STR_12(19), 
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
@@ -2536,7 +2680,7 @@ Total ram usage:        2 bytes
 
  *************** function _clear_display *****************
  Defined at:
-		line 155 in file "main.c"
+		line 145 in file "main.c"
  Parameters:    Size  Location     Type
   pos             2   10[COMRAM] const int 
  Auto vars:     Size  Location     Type
@@ -2572,13 +2716,13 @@ Total ram usage:        2 bytes
 		line 221 in file "C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c"
  Parameters:    Size  Location     Type
   ptr             2    8[COMRAM] PTR const unsigned char 
-		 -> minutes(3), hour(3), year(3), month(3), 
-		 -> day(3), STR_36(2), STR_35(2), STR_34(2), 
-		 -> STR_30(2), imprimir_tecla@aux(20), STR_25(8), STR_22(23), 
-		 -> STR_20(20), STR_19(27), STR_18(19), STR_17(22), 
-		 -> STR_16(18), STR_15(18), STR_14(19), STR_13(26), 
-		 -> STR_12(8), STR_6(11), STR_5(17), ingresar_password@clear(16), 
-		 -> STR_4(4), STR_3(3), buffer2(20), 
+		 -> fecha@minutes(3), fecha@hour(3), fecha@year(3), fecha@month(3), 
+		 -> fecha@day(3), STR_30(2), STR_29(2), STR_28(2), 
+		 -> STR_24(2), imprimir_tecla@aux(20), STR_21(9), STR_20(23), 
+		 -> STR_18(20), STR_17(27), STR_16(19), STR_15(22), 
+		 -> STR_14(18), STR_13(18), STR_12(19), STR_11(26), 
+		 -> STR_6(11), STR_5(17), ingresar_password@clear(16), STR_4(4), 
+		 -> STR_3(3), buffer2(20), 
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
@@ -2606,11 +2750,7 @@ Total ram usage:        2 bytes
 		_clear_display
 		_imprimir_tecla
 		_leer_teclado
-		_cambiar_dia
-		_cambiar_mes
-		_cambiar_anio
-		_cambiar_hora
-		_cambiar_minutos
+		_guardar_elemento
  This function uses a non-reentrant model
 
 
@@ -2679,11 +2819,7 @@ Total ram usage:        3 bytes
 		_mostrar_titulo_menu
 		_clear_display
 		_lcd_putc
-		_cambiar_dia
-		_cambiar_mes
-		_cambiar_anio
-		_cambiar_hora
-		_cambiar_minutos
+		_guardar_elemento
  This function uses a non-reentrant model
 
 
@@ -2938,11 +3074,8 @@ Total ram usage:        0 bytes
 		___awdiv
  This function is called by:
 		_Setup
-		_cambiar_dia
-		_cambiar_mes
-		_cambiar_anio
-		_cambiar_hora
-		_cambiar_minutos
+		_actualiza_elemento
+		_actualizar_minutos
  This function uses a non-reentrant model
 
 
@@ -3180,153 +3313,156 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccReadDate.c
-		_RtccReadDate  		CODE           	EB74	0000	143
+		_RtccReadDate  		CODE           	EB56	0000	143
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccReadDate.c estimated size: 143
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
-		_Delay1KTCYx   		CODE           	E108	0000	19
+		_Delay1KTCYx   		CODE           	DFB8	0000	19
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c estimated size: 19
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteTime.c
-		_RtccWriteTime 		CODE           	F616	0000	269
+		_RtccWriteTime 		CODE           	F3D8	0000	269
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteTime.c estimated size: 269
 
 ../../../../../../Program Files/Unimic/unmc_01/sources/alarma.c
-		_guardar_nuevo_		CODE           	E3E2	0000	71
-		_validar_passwo		CODE           	EA60	0000	139
-		_verficar_passw		CODE           	E8E2	0000	121
-		_actualizar_pas		CODE           	F722	0000	305
-		_guardar_passwo		CODE           	E46E	0000	71
-		_guardar_curren		CODE           	E428	0000	71
+		_guardar_nuevo_		CODE           	E2A2	0000	71
+		_validar_passwo		CODE           	EACC	0000	139
+		_verficar_passw		CODE           	E8D6	0000	121
+		_actualizar_pas		CODE           	F606	0000	305
+		_guardar_passwo		CODE           	E32E	0000	71
+		_guardar_curren		CODE           	E2E8	0000	71
 
 ../../../../../../Program Files/Unimic/unmc_01/sources/alarma.c estimated size: 778
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\atoi.c
-		_atoi          		CODE           	F19A	0000	213
+		_atoi          		CODE           	EE7A	0000	213
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\atoi.c estimated size: 213
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
-		___lwmod       		CODE           	E548	0000	77
+		___lwmod       		CODE           	E408	0000	77
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c estimated size: 77
 
+C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awmod.c
+		___awmod       		CODE           	EA4A	0000	131
+
+C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awmod.c estimated size: 131
+
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWrOn.c
-		_RtccWrOn      		CODE           	E0E4	0000	19
+		_RtccWrOn      		CODE           	DF94	0000	19
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWrOn.c estimated size: 19
 
-../../../../../../Program Files/Unimic/unmc_01/headers/hora.c
-		_cambiar_hora  		CODE           	EE96	0000	183
-		_guardar_elemen		CODE           	E7F8	0000	117
-		_inicializar_ho		CODE           	E1A4	0000	31
-		_convertir_a_in		CODE           	E186	0000	31
-		_cambiar_minuto		CODE           	F00A	0000	193
-
-../../../../../../Program Files/Unimic/unmc_01/headers/hora.c estimated size: 555
-
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccReadTime.c
-		_RtccReadTime  		CODE           	E6A6	0000	111
+		_RtccReadTime  		CODE           	E5BE	0000	111
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccReadTime.c estimated size: 111
 
 ../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c
-		_convertir_a_in		CODE           	E168	0000	31
-		_guardar_elemen		CODE           	E784	0000	117
-		_cambiar_dia   		CODE           	EDE0	0000	183
-		_cambiar_mes   		CODE           	ED2A	0000	183
-		_cambiar_anio  		CODE           	EF4C	0000	191
-		_inicializar_fe		CODE           	E276	0000	45
+		_actualiza_elem		CODE           	DFDE	0000	23
+		_cambiar_dia   		CODE           	E4A8	0000	91
+		_cambiar_mes   		CODE           	E62C	0000	111
+		_actualizar_min		CODE           	E0A4	0000	33
+		_cambiar_hora  		CODE           	E55E	0000	97
+		_cambiar_anio  		CODE           	E94E	0000	125
+		_convertir_a_in		CODE           	E066	0000	31
+		_inicializar_ho		CODE           	E084	0000	33
+		_inicializar_fe		CODE           	E1FC	0000	47
+		_actualiza_dia 		CODE           	E02A	0000	31
+		_obtener_dia_me		CODE           	F1E6	0000	235
+		_cambiar_minuto		CODE           	E7EC	0000	117
+		_guardar_elemen		CODE           	FA02	0000	449
+		_actualizar_hor		CODE           	E048	0000	31
 
-../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c estimated size: 750
+../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c estimated size: 1454
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\isdigit.c
-		_isdigit       		CODE           	E1E4	0000	35
+		_isdigit       		CODE           	E0E6	0000	35
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\isdigit.c estimated size: 35
 
 ../../../../../../Program Files/Unimic/unmc_01/sources/teclado.c
-		_restaurar_coma		CODE           	E14A	0000	31
-		_imprimir_tecla		CODE           	E39C	0000	71
-		_guardar_comand		CODE           	E714	0000	113
-		_leer_teclado  		CODE           	F510	0000	263
-		_guardar_tecla_		CODE           	EAEA	0000	139
-		_validar_comand		CODE           	E9DA	0000	135
+		_restaurar_coma		CODE           	E00C	0000	31
+		_imprimir_tecla		CODE           	E25C	0000	71
+		_guardar_comand		CODE           	E69A	0000	113
+		_leer_teclado  		CODE           	F2D0	0000	265
+		_guardar_tecla_		CODE           	EBE4	0000	145
 
-../../../../../../Program Files/Unimic/unmc_01/sources/teclado.c estimated size: 752
+../../../../../../Program Files/Unimic/unmc_01/sources/teclado.c estimated size: 625
 
 shared
-		_dpowers       		MEDIUMCONST    	FEC3	0000	11
-		_LCD_INIT_STRIN		MEDIUMCONST    	FECD	0000	5
-		__initializatio		CODE           	E358	0000	59
+		_dpowers       		MEDIUMCONST    	FEBB	0000	11
+		_LCD_INIT_STRIN		MEDIUMCONST    	FEC5	0000	5
+		__initializatio		CODE           	E70A	0000	103
 
-shared estimated size: 75
+shared estimated size: 119
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
-		___lwdiv       		CODE           	E5E8	0000	93
+		___lwdiv       		CODE           	E502	0000	93
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c estimated size: 93
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-		___awdiv       		CODE           	EC94	0000	151
+		___awdiv       		CODE           	EC74	0000	151
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c estimated size: 151
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c
-		_Delay100TCYx  		CODE           	E0F6	0000	19
+		_Delay100TCYx  		CODE           	DFA6	0000	19
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c estimated size: 19
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\doprnt.c
-		_sprintf       		CODE           	FC5E	0000	613
+		_sprintf       		CODE           	FBC2	0000	761
 
-C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\doprnt.c estimated size: 613
+C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\doprnt.c estimated size: 761
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteDate.c
-		_RtccWriteDate 		CODE           	F988	0000	327
+		_RtccWriteDate 		CODE           	F736	0000	327
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteDate.c estimated size: 327
 
 C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c
-		_lcd_comand    		CODE           	E0D6	0000	15
-		_lcd_putc      		CODE           	E4FC	0000	77
-		_lcd_putrs     		CODE           	E594	0000	85
-		_lcd_send_byte 		CODE           	E326	0000	51
-		_lcd_gotoxy    		CODE           	E206	0000	37
-		_lcd_send_nibbl		CODE           	E86C	0000	119
-		_lcd_init      		CODE           	E95A	0000	129
+		_lcd_comand    		CODE           	DF86	0000	15
+		_lcd_putc      		CODE           	E3BC	0000	77
+		_lcd_putrs     		CODE           	E454	0000	85
+		_lcd_send_byte 		CODE           	E22A	0000	51
+		_lcd_gotoxy    		CODE           	E108	0000	37
+		_lcd_send_nibbl		CODE           	E860	0000	119
+		_lcd_init      		CODE           	E9CA	0000	129
 
 C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c estimated size: 513
 
 main.c
-		_mostrar_guarda		CODE           	E2A2	0000	45
-		_mostrar_guarda		CODE           	E2CE	0000	45
-		_main          		CODE           	F42A	0000	231
-		_cambiar_fecha 		CODE           	EC02	0000	147
-		_cambiar_passwo		CODE           	F0CA	0000	209
-		_mostrar_guarda		CODE           	E2FA	0000	45
-		_clear_display 		CODE           	E1C2	0000	35
-		_Setup         		CODE           	E4B4	0000	73
-		_mostrar_titulo		CODE           	E11A	0000	25
-		_ingresar_coman		CODE           	E0CC	0000	11
-		_ingresar_passw		CODE           	F344	0000	231
-		_cambiar_horari		CODE           	E644	0000	99
-		_confirmar_actu		CODE           	E22A	0000	37
-		_caratula      		CODE           	F26E	0000	215
+		_mostrar_guarda		CODE           	E178	0000	45
+		_mostrar_guarda		CODE           	E1A4	0000	45
+		_main          		CODE           	EDB0	0000	203
+		_cambiar_fecha 		CODE           	ED0A	0000	167
+		_cambiar_passwo		CODE           	F024	0000	221
+		_mostrar_guarda		CODE           	E1D0	0000	45
+		_clear_display 		CODE           	E0C4	0000	35
+		_Setup         		CODE           	E374	0000	73
+		_mostrar_titulo		CODE           	DFF4	0000	25
+		_ingresar_coman		CODE           	DF7C	0000	11
+		_ingresar_passw		CODE           	F100	0000	231
+		_cambiar_horari		CODE           	E77A	0000	115
+		_confirmar_actu		CODE           	E12C	0000	37
+		_caratula      		CODE           	EF4E	0000	215
 
-main.c estimated size: 1448
+main.c estimated size: 1468
 
 ../../../../../../Program Files/Unimic/unmc_01/sources/unmc_rtcc_02.c
-		_Read_RTC      		CODE           	F852	0000	311
-		_Write_RTC     		CODE           	FACE	0000	401
+		_Read_RTC      		CODE           	F4E4	0000	291
+		_Write_RTC     		CODE           	F87C	0000	391
 
-../../../../../../Program Files/Unimic/unmc_01/sources/unmc_rtcc_02.c estimated size: 712
+../../../../../../Program Files/Unimic/unmc_01/sources/unmc_rtcc_02.c estimated size: 682
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
-		___wmul        		CODE           	E24E	0000	41
+		___wmul        		CODE           	E150	0000	41
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c estimated size: 41
 

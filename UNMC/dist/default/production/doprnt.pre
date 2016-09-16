@@ -365,6 +365,11 @@ switch(c = *f++) {
 case 0:
 goto alldone;
 
+# 697
+case 'd':
+case 'i':
+break;
+
 # 802
 default:
 
@@ -374,13 +379,32 @@ continue;
 
 
 case 'u':
-flag |= 0xC0;
+flag |= 0x40;
 break;
 
 
 }
 
-# 1273
+# 1251
+if((flag & 0x40) == 0x00)
+
+{
+
+# 1259
+val = (int)(*(int *)__va_arg((*(int **)ap), (int)0));
+
+if((int)val < 0) {
+flag |= 0x03;
+val = -val;
+}
+
+}
+
+else
+
+
+
+
 {
 
 # 1286
@@ -392,6 +416,10 @@ for(c = 1 ; c != sizeof dpowers/sizeof dpowers[0] ; c++)
 if(val < dpowers[c])
 break;
 
+# 1345
+if(width && flag & 0x03)
+width--;
+
 # 1381
 if(width > c)
 width -= c;
@@ -400,6 +428,12 @@ width = 0;
 
 
 if(flag & 0x04) {
+
+
+
+
+if(flag & 0x03)
+((*sp++ = ('-')));
 
 # 1415
 if(width)
@@ -418,6 +452,10 @@ if(width
 do
 ((*sp++ = (' ')));
 while(--width);
+
+# 1438
+if(flag & 0x03)
+((*sp++ = ('-')));
 
 # 1469
 }

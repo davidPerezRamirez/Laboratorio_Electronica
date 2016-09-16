@@ -24,7 +24,7 @@
 #include <teclado.h>
 #include <alarma.h>
 #include <fecha.h>
-#include <hora.h>
+#include <string.h>
 
 //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
 /// Funcion Caratula
@@ -115,16 +115,14 @@ void mostrar_guardar_password(char tecla){
     
     imprimir_tecla(tecla);
     sprintf(buffer2,"%01u",tecla);
-    guardar_current_password(*buffer2);
-    
+    guardar_current_password(*buffer2);    
 }
 
 void mostrar_guardar_temporal_password(char tecla){    
     
     imprimir_tecla(tecla);
     sprintf(buffer2,"%01u",tecla);
-    guardar_password_temporal(*buffer2);    
-    
+    guardar_password_temporal(*buffer2);        
 }
 
 void mostrar_guardar_nuevo_password(char tecla){    
@@ -132,7 +130,6 @@ void mostrar_guardar_nuevo_password(char tecla){
     imprimir_tecla(tecla);
     sprintf(buffer2,"%01u",tecla);
     guardar_nuevo_password(*buffer2);    
-    
 }
 
 void confirmar_actualizar_password(char tecla){    
@@ -143,13 +140,6 @@ void confirmar_actualizar_password(char tecla){
 
 void ingresar_comando(char key){
     guardar_comando(key);
-}
-void mostrar_caratula(int *validar){
-   
-    validar_comando("xx",validar);        
-        if(*validar){         
-            caratula("Welcome");
-        } 
 }
 
 void clear_display(const int pos){
@@ -231,6 +221,7 @@ Funcion main
 Funcion principal del programa
 ********************************************************************************
 --------------------------------------------------------------------------------*/
+
 int main(void)
 {
 Setup();  
@@ -249,15 +240,34 @@ while(1)
         ingresar_password();
         
     }else{  
-        puntero_funcion = &ingresar_comando; 
+        puntero_funcion = &ingresar_comando;                                                
         
-         validar_comando("00",&validacion);            
-        if(validacion)
-            cambiar_password();
+        switch (atoi(comando))
+        {            
+            case 10 : cambiar_password(); break;
+            case 11 : cambiar_fecha(); break;
+            case 12 : cambiar_horario(); break;
+            default:  caratula("Welcome "); 
+                      if (tamanio_comando >= 2) 
+                        tamanio_comando = 0;
+                      break;
+        }
+        leer_teclado(ocultar_teclas);
+        /**switch (atoi(comando))
+        {
+            case 8 : caratula("Welcome "); break;
+            case 0 : cambiar_password(); break;
+            case 1 : cambiar_fecha(); break;
+            case 2 : cambiar_horario(); break;
+        }**/
         
-        validar_comando("xx",&validacion);        
+        //validar_comando("xx",&validacion);        
+        /**if(!validacion)
+            caratula("Welcome ");
+        
+        validar_comando("00",&validacion);            
         if(validacion)
-            caratula("Welcome");        
+            cambiar_password();                        
         
         validar_comando("01",&validacion);            
         if(validacion)
@@ -267,7 +277,14 @@ while(1)
         if(validacion)
             cambiar_horario();                                         
         
-        leer_teclado(ocultar_teclas);         
+        leer_teclado(ocultar_teclas);**/
+        
+        //sprintf(buffer2,"%01u",atoi(comando));
+        //lcd_gotoxy(10,2);
+        //lcd_putrs(buffer2);
+        //sprintf(buffer2,"%01u",validacion);
+        //lcd_gotoxy(11,2);
+        //lcd_putrs(buffer2);
     }    
    }
 return 0;

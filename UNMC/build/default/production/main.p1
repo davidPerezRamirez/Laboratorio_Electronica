@@ -132,7 +132,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "161 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18.h
 [v __delay `JF8145 ~T0 @X0 0 e ]
 [p i __delay ]
-"21 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
+"19 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
 [v _imprimir_tecla `(v ~T0 @X0 0 ef1`uc ]
 "24 C:/Archivos de programa/Unimic/unmc_01/headers\alarma.h
 [v _guardar_current_password `(v ~T0 @X0 0 ef1`uc ]
@@ -142,29 +142,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _guardar_nuevo_password `(v ~T0 @X0 0 ef1`uc ]
 "18 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
 [v _guardar_comando `(v ~T0 @X0 0 ef1`uc ]
-"20
-[v _validar_comando `(v ~T0 @X0 0 ef2`*uc`*i ]
-"20 C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h
+"32 C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h
 [v _cambiar_anio `(v ~T0 @X0 0 ef1`uc ]
-"19
+"31
 [v _cambiar_mes `(v ~T0 @X0 0 ef1`uc ]
-"18
+"30
 [v _cambiar_dia `(v ~T0 @X0 0 ef1`uc ]
-"16 C:/Archivos de programa/Unimic/unmc_01/headers\hora.h
+"38
 [v _cambiar_minutos `(v ~T0 @X0 0 ef1`uc ]
-"15
+"37
 [v _cambiar_hora `(v ~T0 @X0 0 ef1`uc ]
 "27 C:/Archivos de programa/Unimic/unmc_01/headers\alarma.h
 [v _verficar_password `(v ~T0 @X0 0 ef1`*i ]
 "30
 [v _actualizar_password `(v ~T0 @X0 0 ef2`*i`uc ]
 [p mainexit ]
-"22 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
+"20 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
 [v _restaurar_comando `(v ~T0 @X0 0 ef ]
 "58 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_02.h
 [v _Read_RTC `(v ~T0 @X0 0 ef ]
-"24 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
+"22 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
 [v _leer_teclado `(v ~T0 @X0 0 ef1`i ]
+"67 C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdlib.h
+[v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f26j50.h: 49: extern volatile unsigned char RPOR0 @ 0xEC6;
@@ -7810,12 +7810,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _puntero_funcion `*F8245 ~T0 @X0 1 e ]
 [; ;headers\teclado.h: 16: void (*puntero_funcion)(char);
 [; ;headers\teclado.h: 18: void guardar_comando(char);
-[; ;headers\teclado.h: 19: void guardar_array_comando(char *);
-[; ;headers\teclado.h: 20: void validar_comando(char *, int *);
-[; ;headers\teclado.h: 21: void imprimir_tecla(char);
-[; ;headers\teclado.h: 22: void restaurar_comando();
-[; ;headers\teclado.h: 23: void guardar_tecla_presionada(char *, int);
-[; ;headers\teclado.h: 24: void leer_teclado(int ocultar);
+[; ;headers\teclado.h: 19: void imprimir_tecla(char);
+[; ;headers\teclado.h: 20: void restaurar_comando();
+[; ;headers\teclado.h: 21: static void guardar_tecla_presionada(const char *, int);
+[; ;headers\teclado.h: 22: void leer_teclado(int ocultar);
 [; ;headers\unmc_inout_02.h: 14: char key;
 "12 C:/Archivos de programa/Unimic/unmc_01/headers\alarma.h
 [v _password `uc ~T0 @X0 -> 7 `i e ]
@@ -8084,92 +8082,122 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;headers\unmc_rtcc_02.h: 56: void DelayPORXLCD(void);
 [; ;headers\unmc_rtcc_02.h: 57: void Write_RTC(void);
 [; ;headers\unmc_rtcc_02.h: 58: void Read_RTC(void);
-"7 C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h
-[v _day `uc ~T0 @X0 -> 3 `i e ]
+"6 C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h
+[v _day `uc ~T0 @X0 -> 3 `i s ]
 [i _day
 :U ..
 -> 0 `c
 ..
 ]
-[; ;headers\fecha.h: 7: char day[3] = "";
-"8
-[v _month `uc ~T0 @X0 -> 3 `i e ]
+[; ;headers\fecha.h: 6: static char day[3] = "";
+"7
+[v _month `uc ~T0 @X0 -> 3 `i s ]
 [i _month
 :U ..
 -> 0 `c
 ..
 ]
-[; ;headers\fecha.h: 8: char month[3] = "";
-"9
-[v _year `uc ~T0 @X0 -> 3 `i e ]
+[; ;headers\fecha.h: 7: static char month[3] = "";
+"8
+[v _year `uc ~T0 @X0 -> 3 `i s ]
 [i _year
 :U ..
 -> 0 `c
 ..
 ]
-[; ;headers\fecha.h: 9: char year[3] = "";
-"11
-[v _tamanio_dia `i ~T0 @X0 1 e ]
-[i _tamanio_dia
--> 0 `i
-]
-[; ;headers\fecha.h: 11: int tamanio_dia = 0;
-"12
-[v _tamanio_mes `i ~T0 @X0 1 e ]
-[i _tamanio_mes
--> 0 `i
-]
-[; ;headers\fecha.h: 12: int tamanio_mes = 0;
-"13
-[v _tamanio_anio `i ~T0 @X0 1 e ]
-[i _tamanio_anio
--> 0 `i
-]
-[; ;headers\fecha.h: 13: int tamanio_anio = 0;
-[; ;headers\fecha.h: 15: void inicializar_fecha();
-[; ;headers\fecha.h: 16: void guardar_elemento_fecha(char, char *, int *);
-[; ;headers\fecha.h: 17: void convertir_a_int_fecha(char *, int *);
-[; ;headers\fecha.h: 18: void cambiar_dia(char);
-[; ;headers\fecha.h: 19: void cambiar_mes(char);
-[; ;headers\fecha.h: 20: void cambiar_anio(char);
-[; ;stdlib.h: 108: extern char * itoa(char * buf, int val, int base);
-[; ;stdlib.h: 109: extern char * utoa(char * buf, unsigned val, int base);
-[; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
-[; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
-[; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
-"6 C:/Archivos de programa/Unimic/unmc_01/headers\hora.h
-[v _hour `uc ~T0 @X0 -> 3 `i e ]
+[; ;headers\fecha.h: 8: static char year[3] = "";
+"10
+[v _hour `uc ~T0 @X0 -> 3 `i s ]
 [i _hour
 :U ..
 -> 0 `c
 ..
 ]
-[; ;headers\hora.h: 6: char hour[3] = "";
-"7
-[v _minutes `uc ~T0 @X0 -> 3 `i e ]
+[; ;headers\fecha.h: 10: static char hour[3] = "";
+"11
+[v _minutes `uc ~T0 @X0 -> 3 `i s ]
 [i _minutes
 :U ..
 -> 0 `c
 ..
 ]
-[; ;headers\hora.h: 7: char minutes[3] = "";
-"9
+[; ;headers\fecha.h: 11: static char minutes[3] = "";
+"13
 [v _tamanio_hora `i ~T0 @X0 1 e ]
 [i _tamanio_hora
 -> 0 `i
 ]
-[; ;headers\hora.h: 9: int tamanio_hora = 0;
-"10
+[; ;headers\fecha.h: 13: int tamanio_hora = 0;
+"14
 [v _tamanio_minutos `i ~T0 @X0 1 e ]
 [i _tamanio_minutos
 -> 0 `i
 ]
-[; ;headers\hora.h: 10: int tamanio_minutos = 0;
-[; ;headers\hora.h: 12: void inicializar_hora();
-[; ;headers\hora.h: 13: void guardar_elemento_hora(char, char *, int *);
-[; ;headers\hora.h: 14: void convertir_a_int_hora(char *, int *);
-[; ;headers\hora.h: 15: void cambiar_hora(char);
-[; ;headers\hora.h: 16: void cambiar_minutos(char);
+[; ;headers\fecha.h: 14: int tamanio_minutos = 0;
+"16
+[v _tamanio_dia `i ~T0 @X0 1 e ]
+[i _tamanio_dia
+-> 0 `i
+]
+[; ;headers\fecha.h: 16: int tamanio_dia = 0;
+"17
+[v _tamanio_mes `i ~T0 @X0 1 e ]
+[i _tamanio_mes
+-> 0 `i
+]
+[; ;headers\fecha.h: 17: int tamanio_mes = 0;
+"18
+[v _tamanio_anio `i ~T0 @X0 1 e ]
+[i _tamanio_anio
+-> 0 `i
+]
+[; ;headers\fecha.h: 18: int tamanio_anio = 0;
+"20
+[v _valor_max `i ~T0 @X0 1 s ]
+[; ;headers\fecha.h: 20: static int valor_max;
+"21
+[v _valor_min `i ~T0 @X0 1 s ]
+[; ;headers\fecha.h: 21: static int valor_min;
+[; ;headers\fecha.h: 23: static void convertir_a_int(char *, int *);
+[; ;headers\fecha.h: 24: static void guardar_elemento(char ,char * ,int * ,int ,int * ,void (*doit) (int *,const int));
+[; ;headers\fecha.h: 25: static void actualiza_elemento(int *,const int);
+[; ;headers\fecha.h: 26: static void obtener_dia_mes();
+[; ;headers\fecha.h: 28: static void actualiza_dia(int *,const int);
+[; ;headers\fecha.h: 29: void inicializar_fecha();
+[; ;headers\fecha.h: 30: void cambiar_dia(char);
+[; ;headers\fecha.h: 31: void cambiar_mes(char);
+[; ;headers\fecha.h: 32: void cambiar_anio(char);
+[; ;headers\fecha.h: 34: static void actualizar_hora(int * ,const int );
+[; ;headers\fecha.h: 35: static void actualizar_minutos(int * ,const int );
+[; ;headers\fecha.h: 36: void inicializar_hora();
+[; ;headers\fecha.h: 37: void cambiar_hora(char);
+[; ;headers\fecha.h: 38: void cambiar_minutos(char);
+[; ;string.h: 22: extern void * memcpy(void *, const void *, size_t);
+[; ;string.h: 23: extern void * memmove(void *, const void *, size_t);
+[; ;string.h: 24: extern void * memset(void *, int, size_t);
+[; ;string.h: 42: extern char * strcat(char *, const char *);
+[; ;string.h: 43: extern char * strcpy(char *, const char *);
+[; ;string.h: 44: extern char * strncat(char *, const char *, size_t);
+[; ;string.h: 45: extern char * strncpy(char *, const char *, size_t);
+[; ;string.h: 46: extern char * strdup(const char *);
+[; ;string.h: 47: extern char * strtok(char *, const char *);
+[; ;string.h: 50: extern int memcmp(const void *, const void *, size_t);
+[; ;string.h: 51: extern int strcmp(const char *, const char *);
+[; ;string.h: 52: extern int stricmp(const char *, const char *);
+[; ;string.h: 53: extern int strncmp(const char *, const char *, size_t);
+[; ;string.h: 54: extern int strnicmp(const char *, const char *, size_t);
+[; ;string.h: 55: extern void * memchr(const void *, int, size_t);
+[; ;string.h: 56: extern size_t strcspn(const char *, const char *);
+[; ;string.h: 57: extern char * strpbrk(const char *, const char *);
+[; ;string.h: 58: extern size_t strspn(const char *, const char *);
+[; ;string.h: 59: extern char * strstr(const char *, const char *);
+[; ;string.h: 60: extern char * stristr(const char *, const char *);
+[; ;string.h: 61: extern char * strerror(int);
+[; ;string.h: 62: extern size_t strlen(const char *);
+[; ;string.h: 63: extern char * strchr(const char *, int);
+[; ;string.h: 64: extern char * strichr(const char *, int);
+[; ;string.h: 65: extern char * strrchr(const char *, int);
+[; ;string.h: 66: extern char * strrichr(const char *, int);
 "35 main.c
 [v _caratula `(v ~T0 @X0 1 ef1`*Cuc ]
 "36
@@ -8406,453 +8434,429 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 118: guardar_current_password(*buffer2);
 "118
 [e ( _guardar_current_password (1 *U &U _buffer2 ]
-[; ;main.c: 120: }
-"120
+[; ;main.c: 119: }
+"119
 [e :UE 1050 ]
 }
-"122
+"121
 [v _mostrar_guardar_temporal_password `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;main.c: 122: void mostrar_guardar_temporal_password(char tecla){
+[; ;main.c: 121: void mostrar_guardar_temporal_password(char tecla){
 [e :U _mostrar_guardar_temporal_password ]
 [v _tecla `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 124: imprimir_tecla(tecla);
-"124
+[; ;main.c: 123: imprimir_tecla(tecla);
+"123
 [e ( _imprimir_tecla (1 _tecla ]
-[; ;main.c: 125: sprintf(buffer2,"%01u",tecla);
-"125
+[; ;main.c: 124: sprintf(buffer2,"%01u",tecla);
+"124
 [e ( _sprintf (1 , (. , &U _buffer2 :s 8C -> _tecla `i ]
-[; ;main.c: 126: guardar_password_temporal(*buffer2);
-"126
+[; ;main.c: 125: guardar_password_temporal(*buffer2);
+"125
 [e ( _guardar_password_temporal (1 *U &U _buffer2 ]
-[; ;main.c: 128: }
-"128
+[; ;main.c: 126: }
+"126
 [e :UE 1051 ]
 }
-"130
+"128
 [v _mostrar_guardar_nuevo_password `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;main.c: 130: void mostrar_guardar_nuevo_password(char tecla){
+[; ;main.c: 128: void mostrar_guardar_nuevo_password(char tecla){
 [e :U _mostrar_guardar_nuevo_password ]
 [v _tecla `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 132: imprimir_tecla(tecla);
-"132
+[; ;main.c: 130: imprimir_tecla(tecla);
+"130
 [e ( _imprimir_tecla (1 _tecla ]
-[; ;main.c: 133: sprintf(buffer2,"%01u",tecla);
-"133
+[; ;main.c: 131: sprintf(buffer2,"%01u",tecla);
+"131
 [e ( _sprintf (1 , (. , &U _buffer2 :s 9C -> _tecla `i ]
-[; ;main.c: 134: guardar_nuevo_password(*buffer2);
-"134
+[; ;main.c: 132: guardar_nuevo_password(*buffer2);
+"132
 [e ( _guardar_nuevo_password (1 *U &U _buffer2 ]
-[; ;main.c: 136: }
-"136
+[; ;main.c: 133: }
+"133
 [e :UE 1052 ]
 }
-"138
+"135
 [v _confirmar_actualizar_password `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;main.c: 138: void confirmar_actualizar_password(char tecla){
+[; ;main.c: 135: void confirmar_actualizar_password(char tecla){
 [e :U _confirmar_actualizar_password ]
 [v _tecla `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 140: imprimir_tecla(tecla);
-"140
+[; ;main.c: 137: imprimir_tecla(tecla);
+"137
 [e ( _imprimir_tecla (1 _tecla ]
-[; ;main.c: 141: sprintf(buffer2,"%01u",tecla);
-"141
+[; ;main.c: 138: sprintf(buffer2,"%01u",tecla);
+"138
 [e ( _sprintf (1 , (. , &U _buffer2 :s 10C -> _tecla `i ]
-[; ;main.c: 142: }
-"142
+[; ;main.c: 139: }
+"139
 [e :UE 1053 ]
 }
-"144
+"141
 [v _ingresar_comando `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;main.c: 144: void ingresar_comando(char key){
+[; ;main.c: 141: void ingresar_comando(char key){
 [e :U _ingresar_comando ]
 [v _key `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 145: guardar_comando(key);
-"145
+[; ;main.c: 142: guardar_comando(key);
+"142
 [e ( _guardar_comando (1 _key ]
-[; ;main.c: 146: }
-"146
+[; ;main.c: 143: }
+"143
 [e :UE 1054 ]
 }
-"147
-[v _mostrar_caratula `(v ~T0 @X0 1 ef1`*i ]
-{
-[; ;main.c: 147: void mostrar_caratula(int *validar){
-[e :U _mostrar_caratula ]
-[v _validar `*i ~T0 @X0 1 r1 ]
-[f ]
-[; ;main.c: 149: validar_comando("xx",validar);
-"149
-[e ( _validar_comando (2 , -> :s 11C `*uc _validar ]
-[; ;main.c: 150: if(*validar){
-"150
-[e $ ! != *U _validar -> 0 `i 1056  ]
-{
-[; ;main.c: 151: caratula("Welcome");
-"151
-[e ( _caratula (1 :s 12C ]
-"152
-}
-[e :U 1056 ]
-[; ;main.c: 152: }
-[; ;main.c: 153: }
-"153
-[e :UE 1055 ]
-}
-"155
+"145
 [v _clear_display `(v ~T0 @X0 1 ef1`Ci ]
 {
-[; ;main.c: 155: void clear_display(const int pos){
+[; ;main.c: 145: void clear_display(const int pos){
 [e :U _clear_display ]
 [v _pos `Ci ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 156: lcd_gotoxy(pos,2);
-"156
+[; ;main.c: 146: lcd_gotoxy(pos,2);
+"146
 [e ( _lcd_gotoxy (2 , -> _pos `uc -> -> 2 `i `uc ]
-[; ;main.c: 157: lcd_putrs("                         ");
-"157
-[e ( _lcd_putrs (1 :s 13C ]
-[; ;main.c: 158: lcd_gotoxy(pos,2);
-"158
+[; ;main.c: 147: lcd_putrs("                         ");
+"147
+[e ( _lcd_putrs (1 :s 11C ]
+[; ;main.c: 148: lcd_gotoxy(pos,2);
+"148
 [e ( _lcd_gotoxy (2 , -> _pos `uc -> -> 2 `i `uc ]
-[; ;main.c: 159: }
-"159
-[e :UE 1057 ]
+[; ;main.c: 149: }
+"149
+[e :UE 1055 ]
 }
-"161
+"151
 [v _cambiar_fecha `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 161: void cambiar_fecha(){
+[; ;main.c: 151: void cambiar_fecha(){
 [e :U _cambiar_fecha ]
 [f ]
-[; ;main.c: 163: if (tamanio_anio != 2){
-"163
-[e $ ! != _tamanio_anio -> 2 `i 1059  ]
+[; ;main.c: 153: if (tamanio_anio != 2){
+"153
+[e $ ! != _tamanio_anio -> 2 `i 1057  ]
 {
-[; ;main.c: 164: mostrar_titulo_menu("Inserte anio:     ");
-"164
-[e ( _mostrar_titulo_menu (1 :s 14C ]
-[; ;main.c: 165: puntero_funcion = &cambiar_anio;
-"165
+[; ;main.c: 154: mostrar_titulo_menu("Inserte anio:     ");
+"154
+[e ( _mostrar_titulo_menu (1 :s 12C ]
+[; ;main.c: 155: puntero_funcion = &cambiar_anio;
+"155
 [e = _puntero_funcion &U _cambiar_anio ]
-[; ;main.c: 166: clear_display(tamanio_anio+1);
-"166
+[; ;main.c: 156: clear_display(tamanio_anio+1);
+"156
 [e ( _clear_display (1 + _tamanio_anio -> 1 `i ]
-"168
+"158
 }
-[; ;main.c: 168: }else if (tamanio_mes != 2){
+[; ;main.c: 158: }else if (tamanio_mes != 2){
+[e $U 1058  ]
+[e :U 1057 ]
+[e $ ! != _tamanio_mes -> 2 `i 1059  ]
+{
+[; ;main.c: 159: mostrar_titulo_menu("Inserte mes:     ");
+"159
+[e ( _mostrar_titulo_menu (1 :s 13C ]
+[; ;main.c: 160: puntero_funcion = &cambiar_mes;
+"160
+[e = _puntero_funcion &U _cambiar_mes ]
+[; ;main.c: 161: clear_display(tamanio_mes+1);
+"161
+[e ( _clear_display (1 + _tamanio_mes -> 1 `i ]
+"163
+}
+[; ;main.c: 163: }else if (tamanio_dia != 2){
 [e $U 1060  ]
 [e :U 1059 ]
-[e $ ! != _tamanio_mes -> 2 `i 1061  ]
+[e $ ! != _tamanio_dia -> 2 `i 1061  ]
 {
-[; ;main.c: 169: mostrar_titulo_menu("Inserte mes:     ");
-"169
-[e ( _mostrar_titulo_menu (1 :s 15C ]
-[; ;main.c: 170: puntero_funcion = &cambiar_mes;
-"170
-[e = _puntero_funcion &U _cambiar_mes ]
-[; ;main.c: 171: clear_display(tamanio_mes+1);
-"171
-[e ( _clear_display (1 + _tamanio_mes -> 1 `i ]
-"173
-}
-[; ;main.c: 173: }else if (tamanio_dia != 2){
-[e $U 1062  ]
-[e :U 1061 ]
-[e $ ! != _tamanio_dia -> 2 `i 1063  ]
-{
-[; ;main.c: 174: mostrar_titulo_menu("Inserte dia:     ");
-"174
-[e ( _mostrar_titulo_menu (1 :s 16C ]
-[; ;main.c: 175: puntero_funcion = &cambiar_dia;
-"175
+[; ;main.c: 164: mostrar_titulo_menu("Inserte dia:     ");
+"164
+[e ( _mostrar_titulo_menu (1 :s 14C ]
+[; ;main.c: 165: puntero_funcion = &cambiar_dia;
+"165
 [e = _puntero_funcion &U _cambiar_dia ]
-[; ;main.c: 176: clear_display(tamanio_dia+1);
-"176
+[; ;main.c: 166: clear_display(tamanio_dia+1);
+"166
 [e ( _clear_display (1 + _tamanio_dia -> 1 `i ]
-"178
+"168
 }
-[e :U 1063 ]
-"179
-[e :U 1062 ]
+[e :U 1061 ]
+"169
 [e :U 1060 ]
-[; ;main.c: 178: }
-[; ;main.c: 179: }
-[e :UE 1058 ]
+[e :U 1058 ]
+[; ;main.c: 168: }
+[; ;main.c: 169: }
+[e :UE 1056 ]
 }
-"181
+"171
 [v _cambiar_horario `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 181: void cambiar_horario(){
+[; ;main.c: 171: void cambiar_horario(){
 [e :U _cambiar_horario ]
 [f ]
-[; ;main.c: 183: if (tamanio_minutos != 2){
-"183
-[e $ ! != _tamanio_minutos -> 2 `i 1065  ]
+[; ;main.c: 173: if (tamanio_minutos != 2){
+"173
+[e $ ! != _tamanio_minutos -> 2 `i 1063  ]
 {
-[; ;main.c: 184: mostrar_titulo_menu("Inserte minutos:     ");
-"184
-[e ( _mostrar_titulo_menu (1 :s 17C ]
-[; ;main.c: 185: puntero_funcion = cambiar_minutos;
-"185
+[; ;main.c: 174: mostrar_titulo_menu("Inserte minutos:     ");
+"174
+[e ( _mostrar_titulo_menu (1 :s 15C ]
+[; ;main.c: 175: puntero_funcion = cambiar_minutos;
+"175
 [e = _puntero_funcion &U _cambiar_minutos ]
-[; ;main.c: 186: clear_display(tamanio_minutos+1);
-"186
+[; ;main.c: 176: clear_display(tamanio_minutos+1);
+"176
 [e ( _clear_display (1 + _tamanio_minutos -> 1 `i ]
-"188
+"178
 }
-[; ;main.c: 188: }else if (tamanio_hora != 2){
-[e $U 1066  ]
-[e :U 1065 ]
-[e $ ! != _tamanio_hora -> 2 `i 1067  ]
+[; ;main.c: 178: }else if (tamanio_hora != 2){
+[e $U 1064  ]
+[e :U 1063 ]
+[e $ ! != _tamanio_hora -> 2 `i 1065  ]
 {
-[; ;main.c: 189: mostrar_titulo_menu("Inserte hora:     ");
-"189
-[e ( _mostrar_titulo_menu (1 :s 18C ]
-[; ;main.c: 190: puntero_funcion = cambiar_hora;
-"190
+[; ;main.c: 179: mostrar_titulo_menu("Inserte hora:     ");
+"179
+[e ( _mostrar_titulo_menu (1 :s 16C ]
+[; ;main.c: 180: puntero_funcion = cambiar_hora;
+"180
 [e = _puntero_funcion &U _cambiar_hora ]
-[; ;main.c: 191: clear_display(tamanio_hora+1);
-"191
+[; ;main.c: 181: clear_display(tamanio_hora+1);
+"181
 [e ( _clear_display (1 + _tamanio_hora -> 1 `i ]
-"193
+"183
 }
-[e :U 1067 ]
-"194
-[e :U 1066 ]
-[; ;main.c: 193: }
-[; ;main.c: 194: }
-[e :UE 1064 ]
+[e :U 1065 ]
+"184
+[e :U 1064 ]
+[; ;main.c: 183: }
+[; ;main.c: 184: }
+[e :UE 1062 ]
 }
-"196
+"186
 [v _cambiar_password `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 196: void cambiar_password(){
+[; ;main.c: 186: void cambiar_password(){
 [e :U _cambiar_password ]
 [f ]
-"198
+"188
 [v _verifica `i ~T0 @X0 1 a ]
 [v _confirmar `i ~T0 @X0 1 a ]
-[; ;main.c: 198: int verifica, confirmar;
-[; ;main.c: 200: puntero_funcion = &mostrar_guardar_temporal_password;
-"200
+[; ;main.c: 188: int verifica, confirmar;
+[; ;main.c: 190: puntero_funcion = &mostrar_guardar_temporal_password;
+"190
 [e = _puntero_funcion &U _mostrar_guardar_temporal_password ]
-[; ;main.c: 202: verficar_password(&verifica);
-"202
+[; ;main.c: 192: verficar_password(&verifica);
+"192
 [e ( _verficar_password (1 &U _verifica ]
-[; ;main.c: 203: if(!verifica){
-"203
-[e $ ! ! != _verifica -> 0 `i 1069  ]
+[; ;main.c: 193: if(!verifica){
+"193
+[e $ ! ! != _verifica -> 0 `i 1067  ]
 {
-[; ;main.c: 204: mostrar_titulo_menu("Password actual:          ");
-"204
-[e ( _mostrar_titulo_menu (1 :s 19C ]
-[; ;main.c: 205: clear_display(tamanio_password+1);
-"205
+[; ;main.c: 194: mostrar_titulo_menu("Password actual:          ");
+"194
+[e ( _mostrar_titulo_menu (1 :s 17C ]
+[; ;main.c: 195: clear_display(tamanio_password+1);
+"195
 [e ( _clear_display (1 + _tamanio_password -> 1 `i ]
-"207
+"197
 }
-[; ;main.c: 207: }else {
-[e $U 1070  ]
+[; ;main.c: 197: }else {
+[e $U 1068  ]
+[e :U 1067 ]
+{
+[; ;main.c: 198: if (tamanio_new_password <= 6){
+"198
+[e $ ! <= _tamanio_new_password -> 6 `i 1069  ]
+{
+[; ;main.c: 199: puntero_funcion = &mostrar_guardar_nuevo_password;
+"199
+[e = _puntero_funcion &U _mostrar_guardar_nuevo_password ]
+[; ;main.c: 201: mostrar_titulo_menu("Nuevo pass:        ");
+"201
+[e ( _mostrar_titulo_menu (1 :s 18C ]
+[; ;main.c: 202: clear_display(tamanio_new_password+1);
+"202
+[e ( _clear_display (1 + _tamanio_new_password -> 1 `i ]
+[; ;main.c: 204: if (tamanio_new_password == 6) tamanio_new_password++;
+"204
+[e $ ! == _tamanio_new_password -> 6 `i 1070  ]
+[e ++ _tamanio_new_password -> 1 `i ]
+[e :U 1070 ]
+"206
+}
+[; ;main.c: 206: }else{
+[e $U 1071  ]
 [e :U 1069 ]
 {
-[; ;main.c: 208: if (tamanio_new_password <= 6){
-"208
-[e $ ! <= _tamanio_new_password -> 6 `i 1071  ]
-{
-[; ;main.c: 209: puntero_funcion = &mostrar_guardar_nuevo_password;
-"209
-[e = _puntero_funcion &U _mostrar_guardar_nuevo_password ]
-[; ;main.c: 211: mostrar_titulo_menu("Nuevo pass:        ");
-"211
-[e ( _mostrar_titulo_menu (1 :s 20C ]
-[; ;main.c: 212: clear_display(tamanio_new_password+1);
-"212
-[e ( _clear_display (1 + _tamanio_new_password -> 1 `i ]
-[; ;main.c: 214: if (tamanio_new_password == 6) tamanio_new_password++;
-"214
-[e $ ! == _tamanio_new_password -> 6 `i 1072  ]
-[e ++ _tamanio_new_password -> 1 `i ]
-[e :U 1072 ]
-"216
-}
-[; ;main.c: 216: }else{
-[e $U 1073  ]
-[e :U 1071 ]
-{
-[; ;main.c: 217: puntero_funcion = &confirmar_actualizar_password;
-"217
+[; ;main.c: 207: puntero_funcion = &confirmar_actualizar_password;
+"207
 [e = _puntero_funcion &U _confirmar_actualizar_password ]
-[; ;main.c: 219: sprintf(buffer2,"%01u",key);
-"219
-[e ( _sprintf (1 , (. , &U _buffer2 :s 21C -> _key `i ]
-[; ;main.c: 220: actualizar_password(&confirmar,buffer2[0]);
-"220
+[; ;main.c: 209: sprintf(buffer2,"%01u",key);
+"209
+[e ( _sprintf (1 , (. , &U _buffer2 :s 19C -> _key `i ]
+[; ;main.c: 210: actualizar_password(&confirmar,buffer2[0]);
+"210
 [e ( _actualizar_password (2 , &U _confirmar *U + &U _buffer2 * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer2 `ui `ux ]
-[; ;main.c: 222: mostrar_titulo_menu("Confirme pass:        ");
-"222
-[e ( _mostrar_titulo_menu (1 :s 22C ]
-[; ;main.c: 223: clear_display(tamanio_new_password - 6);
-"223
+[; ;main.c: 212: mostrar_titulo_menu("Confirme pass:        ");
+"212
+[e ( _mostrar_titulo_menu (1 :s 20C ]
+[; ;main.c: 213: clear_display(tamanio_new_password - 6);
+"213
 [e ( _clear_display (1 - _tamanio_new_password -> 6 `i ]
-"224
+"214
 }
-[e :U 1073 ]
+[e :U 1071 ]
+"215
+}
+[e :U 1068 ]
+[; ;main.c: 214: }
+[; ;main.c: 215: }
+[; ;main.c: 216: }
+"216
+[e :UE 1066 ]
+}
 "225
-}
-[e :U 1070 ]
-[; ;main.c: 224: }
-[; ;main.c: 225: }
-[; ;main.c: 226: }
-"226
-[e :UE 1068 ]
-}
-"234
 [v _main `(i ~T0 @X0 1 ef ]
-"235
+"226
 {
-[; ;main.c: 234: int main(void)
-[; ;main.c: 235: {
+[; ;main.c: 225: int main(void)
+[; ;main.c: 226: {
 [e :U _main ]
 [f ]
-[; ;main.c: 236: Setup();
-"236
+[; ;main.c: 227: Setup();
+"227
 [e ( _Setup ..  ]
-[; ;main.c: 237: restaurar_comando();
-"237
+[; ;main.c: 228: restaurar_comando();
+"228
 [e ( _restaurar_comando ..  ]
 [v _ocultar_teclas `i ~T0 @X0 1 a ]
-[; ;main.c: 239: int ocultar_teclas = 1;
-"239
+[; ;main.c: 230: int ocultar_teclas = 1;
+"230
 [e = _ocultar_teclas -> 1 `i ]
-"240
+"231
 [v _validacion `i ~T0 @X0 1 a ]
-[; ;main.c: 240: int validacion;
-[; ;main.c: 242: while(1)
-"242
-[e :U 1076 ]
-[; ;main.c: 243: {
-"243
+[; ;main.c: 231: int validacion;
+[; ;main.c: 233: while(1)
+"233
+[e :U 1074 ]
+[; ;main.c: 234: {
+"234
 {
-[; ;main.c: 244: Read_RTC();
-"244
+[; ;main.c: 235: Read_RTC();
+"235
 [e ( _Read_RTC ..  ]
-[; ;main.c: 246: if (!autorizado){
-"246
-[e $ ! ! != _autorizado -> 0 `i 1078  ]
+[; ;main.c: 237: if (!autorizado){
+"237
+[e $ ! ! != _autorizado -> 0 `i 1076  ]
 {
-[; ;main.c: 247: puntero_funcion = mostrar_guardar_password;
-"247
+[; ;main.c: 238: puntero_funcion = mostrar_guardar_password;
+"238
 [e = _puntero_funcion &U _mostrar_guardar_password ]
-[; ;main.c: 248: leer_teclado(ocultar_teclas);
-"248
+[; ;main.c: 239: leer_teclado(ocultar_teclas);
+"239
 [e ( _leer_teclado (1 _ocultar_teclas ]
-[; ;main.c: 249: ingresar_password();
-"249
+[; ;main.c: 240: ingresar_password();
+"240
 [e ( _ingresar_password ..  ]
-"251
-}
-[; ;main.c: 251: }else{
-[e $U 1079  ]
-[e :U 1078 ]
-{
-[; ;main.c: 252: puntero_funcion = &ingresar_comando;
-"252
-[e = _puntero_funcion &U _ingresar_comando ]
-[; ;main.c: 254: validar_comando("00",&validacion);
-"254
-[e ( _validar_comando (2 , -> :s 23C `*uc &U _validacion ]
-[; ;main.c: 255: if(validacion)
-"255
-[e $ ! != _validacion -> 0 `i 1080  ]
-[; ;main.c: 256: cambiar_password();
-"256
-[e ( _cambiar_password ..  ]
-[e :U 1080 ]
-[; ;main.c: 258: validar_comando("xx",&validacion);
-"258
-[e ( _validar_comando (2 , -> :s 24C `*uc &U _validacion ]
-[; ;main.c: 259: if(validacion)
-"259
-[e $ ! != _validacion -> 0 `i 1081  ]
-[; ;main.c: 260: caratula("Welcome");
-"260
-[e ( _caratula (1 :s 25C ]
-[e :U 1081 ]
-[; ;main.c: 262: validar_comando("01",&validacion);
-"262
-[e ( _validar_comando (2 , -> :s 26C `*uc &U _validacion ]
-[; ;main.c: 263: if(validacion)
-"263
-[e $ ! != _validacion -> 0 `i 1082  ]
-[; ;main.c: 264: cambiar_fecha();
-"264
-[e ( _cambiar_fecha ..  ]
-[e :U 1082 ]
-[; ;main.c: 266: validar_comando("02",&validacion);
-"266
-[e ( _validar_comando (2 , -> :s 27C `*uc &U _validacion ]
-[; ;main.c: 267: if(validacion)
-"267
-[e $ ! != _validacion -> 0 `i 1083  ]
-[; ;main.c: 268: cambiar_horario();
-"268
-[e ( _cambiar_horario ..  ]
-[e :U 1083 ]
-[; ;main.c: 270: leer_teclado(ocultar_teclas);
-"270
-[e ( _leer_teclado (1 _ocultar_teclas ]
-"271
-}
-[e :U 1079 ]
-"272
-}
-[e :U 1075 ]
 "242
-[e $U 1076  ]
+}
+[; ;main.c: 242: }else{
+[e $U 1077  ]
+[e :U 1076 ]
+{
+[; ;main.c: 243: puntero_funcion = &ingresar_comando;
+"243
+[e = _puntero_funcion &U _ingresar_comando ]
+[; ;main.c: 245: switch (atoi(comando))
+"245
+[e $U 1079  ]
+[; ;main.c: 246: {
+"246
+{
+[; ;main.c: 247: case 10 : cambiar_password(); break;
+"247
+[e :U 1080 ]
+[e ( _cambiar_password ..  ]
+[e $U 1078  ]
+[; ;main.c: 248: case 11 : cambiar_fecha(); break;
+"248
+[e :U 1081 ]
+[e ( _cambiar_fecha ..  ]
+[e $U 1078  ]
+[; ;main.c: 249: case 12 : cambiar_horario(); break;
+"249
+[e :U 1082 ]
+[e ( _cambiar_horario ..  ]
+[e $U 1078  ]
+[; ;main.c: 250: default: caratula("Welcome ");
+"250
+[e :U 1083 ]
+[e ( _caratula (1 :s 21C ]
+[; ;main.c: 251: if (tamanio_comando >= 2)
+"251
+[e $ ! >= _tamanio_comando -> 2 `i 1084  ]
+[; ;main.c: 252: tamanio_comando = 0;
+"252
+[e = _tamanio_comando -> 0 `i ]
+[e :U 1084 ]
+[; ;main.c: 253: break;
+"253
+[e $U 1078  ]
+"254
+}
+[; ;main.c: 254: }
+[e $U 1078  ]
+"245
+[e :U 1079 ]
+[e [\ ( _atoi (1 -> &U _comando `*Cuc , $ -> 10 `i 1080
+ , $ -> 11 `i 1081
+ , $ -> 12 `i 1082
+ 1083 ]
+"254
+[e :U 1078 ]
+[; ;main.c: 255: leer_teclado(ocultar_teclas);
+"255
+[e ( _leer_teclado (1 _ocultar_teclas ]
+"288
+}
 [e :U 1077 ]
-[; ;main.c: 271: }
-[; ;main.c: 272: }
-[; ;main.c: 273: return 0;
-"273
+"289
+}
+[e :U 1073 ]
+"233
+[e $U 1074  ]
+[e :U 1075 ]
+[; ;main.c: 288: }
+[; ;main.c: 289: }
+[; ;main.c: 290: return 0;
+"290
 [e ) -> 0 `i ]
-[e $UE 1074  ]
-[; ;main.c: 274: }
-"274
-[e :UE 1074 ]
+[e $UE 1072  ]
+[; ;main.c: 291: }
+"291
+[e :UE 1072 ]
 }
 [p f _sprintf 8422404 ]
-[a 11C 120 120 0 ]
-[a 24C 120 120 0 ]
 [a 2C 37 48 50 117 58 37 48 50 117 58 37 48 50 117 0 ]
 [a 1C 37 48 50 117 47 37 48 50 117 47 37 48 50 117 0 ]
 [a 7C 37 48 49 117 0 ]
 [a 8C 37 48 49 117 0 ]
 [a 9C 37 48 49 117 0 ]
 [a 10C 37 48 49 117 0 ]
-[a 21C 37 48 49 117 0 ]
+[a 19C 37 48 49 117 0 ]
 [a 6C 69 82 82 79 82 32 112 97 115 115 0 ]
-[a 12C 87 101 108 99 111 109 101 0 ]
-[a 25C 87 101 108 99 111 109 101 0 ]
 [a 5C 73 110 115 101 114 116 101 32 112 97 115 115 119 111 114 100 0 ]
 [a 3C 79 78 0 ]
 [a 4C 79 70 70 0 ]
-[a 27C 48 50 0 ]
-[a 26C 48 49 0 ]
-[a 23C 48 48 0 ]
-[a 17C 73 110 115 101 114 116 101 32 109 105 110 117 116 111 115 58 32 32 32 32 32 0 ]
-[a 15C 73 110 115 101 114 116 101 32 109 101 115 58 32 32 32 32 32 0 ]
-[a 14C 73 110 115 101 114 116 101 32 97 110 105 111 58 32 32 32 32 32 0 ]
-[a 18C 73 110 115 101 114 116 101 32 104 111 114 97 58 32 32 32 32 32 0 ]
-[a 16C 73 110 115 101 114 116 101 32 100 105 97 58 32 32 32 32 32 0 ]
-[a 20C 78 117 101 118 111 32 112 97 115 115 58 32 32 32 32 32 32 32 32 0 ]
-[a 22C 67 111 110 102 105 114 109 101 32 112 97 115 115 58 32 32 32 32 32 32 32 32 0 ]
-[a 19C 80 97 115 115 119 111 114 100 32 97 99 116 117 97 108 58 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 13C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 21C 87 101 108 99 111 109 101 32 0 ]
+[a 15C 73 110 115 101 114 116 101 32 109 105 110 117 116 111 115 58 32 32 32 32 32 0 ]
+[a 13C 73 110 115 101 114 116 101 32 109 101 115 58 32 32 32 32 32 0 ]
+[a 12C 73 110 115 101 114 116 101 32 97 110 105 111 58 32 32 32 32 32 0 ]
+[a 16C 73 110 115 101 114 116 101 32 104 111 114 97 58 32 32 32 32 32 0 ]
+[a 14C 73 110 115 101 114 116 101 32 100 105 97 58 32 32 32 32 32 0 ]
+[a 18C 78 117 101 118 111 32 112 97 115 115 58 32 32 32 32 32 32 32 32 0 ]
+[a 20C 67 111 110 102 105 114 109 101 32 112 97 115 115 58 32 32 32 32 32 32 32 32 0 ]
+[a 17C 80 97 115 115 119 111 114 100 32 97 99 116 117 97 108 58 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 11C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]

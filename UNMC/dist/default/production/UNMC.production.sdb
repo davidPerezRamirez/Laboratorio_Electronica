@@ -86,16 +86,6 @@ RTCCPTR_MASK_HRSWEEK 1
 RTCCPTR_MASK_DAYMON 2
 RTCCPTR_MASK_YEAR 3
 ]
-"9 C:/Program Files/Unimic/unmc_01/headers/hora.c
-[v _inicializar_hora inicializar_hora `(v  1 e 0 0 ]
-"17
-[v _guardar_elemento_hora guardar_elemento_hora `(v  1 e 0 0 ]
-"25
-[v _convertir_a_int_hora convertir_a_int_hora `(v  1 e 0 0 ]
-"30
-[v _cambiar_hora cambiar_hora `(v  1 e 0 0 ]
-"50
-[v _cambiar_minutos cambiar_minutos `(v  1 e 0 0 ]
 "6 C:/Program Files/Unimic/unmc_01/sources/alarma.c
 [v _guardar_current_password guardar_current_password `(v  1 e 0 0 ]
 "16
@@ -109,28 +99,42 @@ RTCCPTR_MASK_YEAR 3
 "65
 [v _actualizar_password actualizar_password `(v  1 e 0 0 ]
 "8 C:/Program Files/Unimic/unmc_01/sources/fecha.c
+[v _convertir_a_int convertir_a_int `(v  1 s 0 convertir_a_int ]
+"12
+[v _guardar_elemento guardar_elemento `(v  1 s 0 guardar_elemento ]
+"48
+[v _actualiza_elemento actualiza_elemento `(v  1 s 0 actualiza_elemento ]
+"59
 [v _inicializar_fecha inicializar_fecha `(v  1 e 0 0 ]
-"18
-[v _guardar_elemento_fecha guardar_elemento_fecha `(v  1 e 0 0 ]
-"26
-[v _convertir_a_int_fecha convertir_a_int_fecha `(v  1 e 0 0 ]
-"31
+"69
+[v _actualiza_dia actualiza_dia `(v  1 s 0 actualiza_dia ]
+"76
+[v _obtener_dia_mes obtener_dia_mes `(v  1 s 0 obtener_dia_mes ]
+"91
 [v _cambiar_dia cambiar_dia `(v  1 e 0 0 ]
-"51
+"101
 [v _cambiar_mes cambiar_mes `(v  1 e 0 0 ]
-"70
+"111
 [v _cambiar_anio cambiar_anio `(v  1 e 0 0 ]
+"127
+[v _inicializar_hora inicializar_hora `(v  1 e 0 0 ]
+"135
+[v _actualizar_hora actualizar_hora `(v  1 s 0 actualizar_hora ]
+"142
+[v _actualizar_minutos actualizar_minutos `(v  1 s 0 actualizar_minutos ]
+"149
+[v _cambiar_hora cambiar_hora `(v  1 e 0 0 ]
+"158
+[v _cambiar_minutos cambiar_minutos `(v  1 e 0 0 ]
 "10 C:/Program Files/Unimic/unmc_01/sources/teclado.c
-[v _guardar_comando guardar_comando `(v  1 e 0 0 ]
-"29
-[v _validar_comando validar_comando `(v  1 e 0 0 ]
-"41
-[v _imprimir_tecla imprimir_tecla `(v  1 e 0 0 ]
-"52
 [v _restaurar_comando restaurar_comando `(v  1 e 0 0 ]
-"60
-[v _guardar_tecla_presionada guardar_tecla_presionada `(v  1 e 0 0 ]
-"67
+"19
+[v _guardar_comando guardar_comando `(v  1 e 0 0 ]
+"30
+[v _imprimir_tecla imprimir_tecla `(v  1 e 0 0 ]
+"41
+[v _guardar_tecla_presionada guardar_tecla_presionada `(v  1 s 0 guardar_tecla_presionada ]
+"48
 [v _leer_teclado leer_teclado `(v  1 e 0 0 ]
 "35 C:/Program Files/Unimic/unmc_01/sources/unmc_rtcc_02.c
 [v _Write_RTC Write_RTC `(v  1 e 0 0 ]
@@ -154,6 +158,8 @@ RTCCPTR_MASK_YEAR 3
 [v _atoi atoi `(i  1 e 2 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 "492 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 "63 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\double.c
@@ -212,23 +218,23 @@ RTCCPTR_MASK_YEAR 3
 [v _mostrar_titulo_menu mostrar_titulo_menu `(v  1 e 0 0 ]
 "114
 [v _mostrar_guardar_password mostrar_guardar_password `(v  1 e 0 0 ]
-"122
+"121
 [v _mostrar_guardar_temporal_password mostrar_guardar_temporal_password `(v  1 e 0 0 ]
-"130
+"128
 [v _mostrar_guardar_nuevo_password mostrar_guardar_nuevo_password `(v  1 e 0 0 ]
-"138
+"135
 [v _confirmar_actualizar_password confirmar_actualizar_password `(v  1 e 0 0 ]
-"144
+"141
 [v _ingresar_comando ingresar_comando `(v  1 e 0 0 ]
-"155
+"145
 [v _clear_display clear_display `(v  1 e 0 0 ]
-"161
+"151
 [v _cambiar_fecha cambiar_fecha `(v  1 e 0 0 ]
-"181
+"171
 [v _cambiar_horario cambiar_horario `(v  1 e 0 0 ]
-"196
+"186
 [v _cambiar_password cambiar_password `(v  1 e 0 0 ]
-"234
+"225
 [v _main main `(i  1 e 2 0 ]
 "12 C:/Archivos de programa/Unimic/unmc_01/headers\alarma.h
 [v _password password `[7]uc  1 e 7 0 ]
@@ -246,26 +252,30 @@ RTCCPTR_MASK_YEAR 3
 [v _autorizado autorizado `i  1 e 2 0 ]
 "20
 [v _encendida encendida `i  1 e 2 0 ]
-"7 C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h
-[v _day day `[3]uc  1 e 3 0 ]
-"8
-[v _month month `[3]uc  1 e 3 0 ]
-"9
-[v _year year `[3]uc  1 e 3 0 ]
-"11
-[v _tamanio_dia tamanio_dia `i  1 e 2 0 ]
-"12
-[v _tamanio_mes tamanio_mes `i  1 e 2 0 ]
-"13
-[v _tamanio_anio tamanio_anio `i  1 e 2 0 ]
-"6 C:/Archivos de programa/Unimic/unmc_01/headers\hora.h
-[v _hour hour `[3]uc  1 e 3 0 ]
+"6 C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h
+[v fecha@day day `[3]uc  1 s 3 day ]
 "7
-[v _minutes minutes `[3]uc  1 e 3 0 ]
-"9
-[v _tamanio_hora tamanio_hora `i  1 e 2 0 ]
+[v fecha@month month `[3]uc  1 s 3 month ]
+"8
+[v fecha@year year `[3]uc  1 s 3 year ]
 "10
+[v fecha@hour hour `[3]uc  1 s 3 hour ]
+"11
+[v fecha@minutes minutes `[3]uc  1 s 3 minutes ]
+"13
+[v _tamanio_hora tamanio_hora `i  1 e 2 0 ]
+"14
 [v _tamanio_minutos tamanio_minutos `i  1 e 2 0 ]
+"16
+[v _tamanio_dia tamanio_dia `i  1 e 2 0 ]
+"17
+[v _tamanio_mes tamanio_mes `i  1 e 2 0 ]
+"18
+[v _tamanio_anio tamanio_anio `i  1 e 2 0 ]
+"20
+[v fecha@valor_max valor_max `i  1 s 2 valor_max ]
+"21
+[v fecha@valor_min valor_min `i  1 s 2 valor_min ]
 "12 C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h
 [v _ocultar_teclas ocultar_teclas `i  1 e 2 0 ]
 "13
@@ -346,7 +356,7 @@ RTCCPTR_MASK_YEAR 3
 [v _ANCON0 ANCON0 `VEuc  1 e 1 @3912 ]
 "2577
 [v _ANCON1 ANCON1 `VEuc  1 e 1 @3913 ]
-[s S734 . 1 `uc 1 RA0 1 0 :1:0 
+[s S727 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -356,7 +366,7 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 RA7 1 0 :1:7 
 ]
 "5344
-[s S743 . 1 `uc 1 AN0 1 0 :1:0 
+[s S736 . 1 `uc 1 AN0 1 0 :1:0 
 `uc 1 AN1 1 0 :1:1 
 `uc 1 AN2 1 0 :1:2 
 `uc 1 AN3 1 0 :1:3 
@@ -365,10 +375,10 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 OSC2 1 0 :1:6 
 `uc 1 OSC1 1 0 :1:7 
 ]
-[s S752 . 1 `uc 1 . 1 0 :5:0 
+[s S745 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_SS1 1 0 :1:5 
 ]
-[s S755 . 1 `uc 1 C1INA 1 0 :1:0 
+[s S748 . 1 `uc 1 C1INA 1 0 :1:0 
 `uc 1 C2INA 1 0 :1:1 
 `uc 1 VREF_MINUS 1 0 :1:2 
 `uc 1 VREF_PLUS 1 0 :1:3 
@@ -377,36 +387,36 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 CLKO 1 0 :1:6 
 `uc 1 CLKI 1 0 :1:7 
 ]
-[s S764 . 1 `uc 1 . 1 0 :2:0 
+[s S757 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 CVREF_MINUS 1 0 :1:2 
 `uc 1 C1INB 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 HLVDIN 1 0 :1:5 
 ]
-[s S770 . 1 `uc 1 RP0 1 0 :1:0 
+[s S763 . 1 `uc 1 RP0 1 0 :1:0 
 `uc 1 RP1 1 0 :1:1 
 `uc 1 C2INB 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 RCV 1 0 :1:5 
 ]
-[s S776 . 1 `uc 1 ULPWU 1 0 :1:0 
+[s S769 . 1 `uc 1 ULPWU 1 0 :1:0 
 `uc 1 . 1 0 :4:1 
 `uc 1 RP2 1 0 :1:5 
 ]
-[s S780 . 1 `uc 1 . 1 0 :5:0 
+[s S773 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 LVDIN 1 0 :1:5 
 ]
-[s S783 . 1 `uc 1 . 1 0 :4:0 
+[s S776 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 RA4 1 0 :1:4 
 ]
-[s S786 . 1 `uc 1 . 1 0 :7:0 
+[s S779 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 RJPU 1 0 :1:7 
 ]
-[s S789 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+[s S782 . 1 `uc 1 ULPWUIN 1 0 :1:0 
 ]
-[u S791 . 1 `S734 1 . 1 0 `S743 1 . 1 0 `S752 1 . 1 0 `S755 1 . 1 0 `S764 1 . 1 0 `S770 1 . 1 0 `S776 1 . 1 0 `S780 1 . 1 0 `S783 1 . 1 0 `S786 1 . 1 0 `S789 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES791  1 e 1 @3968 ]
-[s S861 . 1 `uc 1 RC0 1 0 :1:0 
+[u S784 . 1 `S727 1 . 1 0 `S736 1 . 1 0 `S745 1 . 1 0 `S748 1 . 1 0 `S757 1 . 1 0 `S763 1 . 1 0 `S769 1 . 1 0 `S773 1 . 1 0 `S776 1 . 1 0 `S779 1 . 1 0 `S782 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES784  1 e 1 @3968 ]
+[s S854 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -416,17 +426,17 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 RC7 1 0 :1:7 
 ]
 "5857
-[s S870 . 1 `uc 1 T1OSO 1 0 :1:0 
+[s S863 . 1 `uc 1 T1OSO 1 0 :1:0 
 `uc 1 T1OSI 1 0 :1:1 
 `uc 1 AN11 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 D_MINUS 1 0 :1:4 
 `uc 1 D_PLUS 1 0 :1:5 
 ]
-[s S877 . 1 `uc 1 . 1 0 :1:0 
+[s S870 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_UOE 1 0 :1:1 
 ]
-[s S880 . 1 `uc 1 T1CK 1 0 :1:0 
+[s S873 . 1 `uc 1 T1CK 1 0 :1:0 
 `uc 1 nUOE 1 0 :1:1 
 `uc 1 CTPLS 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -435,35 +445,35 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 TX1 1 0 :1:6 
 `uc 1 RX1 1 0 :1:7 
 ]
-[s S889 . 1 `uc 1 RP11 1 0 :1:0 
+[s S882 . 1 `uc 1 RP11 1 0 :1:0 
 `uc 1 RP12 1 0 :1:1 
 `uc 1 RP13 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 CK1 1 0 :1:6 
 `uc 1 DT1 1 0 :1:7 
 ]
-[s S896 . 1 `uc 1 . 1 0 :6:0 
+[s S889 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RP17 1 0 :1:6 
 `uc 1 SDO1 1 0 :1:7 
 ]
-[s S900 . 1 `uc 1 . 1 0 :7:0 
+[s S893 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 RP18 1 0 :1:7 
 ]
-[s S903 . 1 `uc 1 . 1 0 :1:0 
+[s S896 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 CCP2 1 0 :1:1 
 ]
-[s S906 . 1 `uc 1 . 1 0 :2:0 
+[s S899 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 PA1 1 0 :1:2 
 ]
-[s S909 . 1 `uc 1 . 1 0 :1:0 
+[s S902 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 PA2 1 0 :1:1 
 ]
-[s S912 . 1 `uc 1 . 1 0 :3:0 
+[s S905 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 RC3 1 0 :1:3 
 ]
-[u S915 . 1 `S861 1 . 1 0 `S870 1 . 1 0 `S877 1 . 1 0 `S880 1 . 1 0 `S889 1 . 1 0 `S896 1 . 1 0 `S900 1 . 1 0 `S903 1 . 1 0 `S906 1 . 1 0 `S909 1 . 1 0 `S912 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES915  1 e 1 @3970 ]
-[s S982 . 1 `uc 1 LATA0 1 0 :1:0 
+[u S908 . 1 `S854 1 . 1 0 `S863 1 . 1 0 `S870 1 . 1 0 `S873 1 . 1 0 `S882 1 . 1 0 `S889 1 . 1 0 `S893 1 . 1 0 `S896 1 . 1 0 `S899 1 . 1 0 `S902 1 . 1 0 `S905 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES908  1 e 1 @3970 ]
+[s S975 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -473,31 +483,31 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 LATA7 1 0 :1:7 
 ]
 "6274
-[s S991 . 1 `uc 1 LA0 1 0 :1:0 
+[s S984 . 1 `uc 1 LA0 1 0 :1:0 
 ]
-[s S993 . 1 `uc 1 . 1 0 :1:0 
+[s S986 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 LA1 1 0 :1:1 
 ]
-[s S996 . 1 `uc 1 . 1 0 :2:0 
+[s S989 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 LA2 1 0 :1:2 
 ]
-[s S999 . 1 `uc 1 . 1 0 :3:0 
+[s S992 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 LA3 1 0 :1:3 
 ]
-[s S1002 . 1 `uc 1 . 1 0 :4:0 
+[s S995 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 LA4 1 0 :1:4 
 ]
-[s S1005 . 1 `uc 1 . 1 0 :5:0 
+[s S998 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 LA5 1 0 :1:5 
 ]
-[s S1008 . 1 `uc 1 . 1 0 :6:0 
+[s S1001 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 LA6 1 0 :1:6 
 ]
-[s S1011 . 1 `uc 1 . 1 0 :7:0 
+[s S1004 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 LA7 1 0 :1:7 
 ]
-[u S1014 . 1 `S982 1 . 1 0 `S991 1 . 1 0 `S993 1 . 1 0 `S996 1 . 1 0 `S999 1 . 1 0 `S1002 1 . 1 0 `S1005 1 . 1 0 `S1008 1 . 1 0 `S1011 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1014  1 e 1 @3977 ]
+[u S1007 . 1 `S975 1 . 1 0 `S984 1 . 1 0 `S986 1 . 1 0 `S989 1 . 1 0 `S992 1 . 1 0 `S995 1 . 1 0 `S998 1 . 1 0 `S1001 1 . 1 0 `S1004 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1007  1 e 1 @3977 ]
 [s S233 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
@@ -533,26 +543,26 @@ RTCCPTR_MASK_YEAR 3
 ]
 [u S265 . 1 `S233 1 . 1 0 `S242 1 . 1 0 `S244 1 . 1 0 `S247 1 . 1 0 `S250 1 . 1 0 `S253 1 . 1 0 `S256 1 . 1 0 `S259 1 . 1 0 `S262 1 . 1 0 ]
 [v _LATBbits LATBbits `VES265  1 e 1 @3978 ]
-[s S2025 . 1 `uc 1 ALRMPTR 1 0 :2:0 
+[s S1940 . 1 `uc 1 ALRMPTR 1 0 :2:0 
 `uc 1 AMASK 1 0 :4:2 
 `uc 1 CHIME 1 0 :1:6 
 `uc 1 ALRMEN 1 0 :1:7 
 ]
 "6740
-[s S2030 . 1 `uc 1 ALRMPTR0 1 0 :1:0 
+[s S1945 . 1 `uc 1 ALRMPTR0 1 0 :1:0 
 `uc 1 ALRMPTR1 1 0 :1:1 
 `uc 1 AMASK0 1 0 :1:2 
 `uc 1 AMASK1 1 0 :1:3 
 `uc 1 AMASK2 1 0 :1:4 
 `uc 1 AMASK3 1 0 :1:5 
 ]
-[u S2037 . 1 `S2025 1 . 1 0 `S2030 1 . 1 0 ]
-[v _ALRMCFGbits ALRMCFGbits `VES2037  1 e 1 @3985 ]
+[u S1952 . 1 `S1940 1 . 1 0 `S1945 1 . 1 0 ]
+[v _ALRMCFGbits ALRMCFGbits `VES1952  1 e 1 @3985 ]
 "6794
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 "6850
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
-[s S671 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S664 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -562,8 +572,8 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "6867
-[u S680 . 1 `S671 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES680  1 e 1 @3987 ]
+[u S673 . 1 `S664 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES673  1 e 1 @3987 ]
 "6911
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
 "7055
@@ -584,7 +594,7 @@ RTCCPTR_MASK_YEAR 3
 ]
 [u S89 . 1 `S78 1 . 1 0 `S82 1 . 1 0 ]
 [v _OSCTUNEbits OSCTUNEbits `VES89  1 e 1 @3995 ]
-[s S1285 . 1 `uc 1 RTCCIE 1 0 :1:0 
+[s S1310 . 1 `uc 1 RTCCIE 1 0 :1:0 
 `uc 1 TMR3GIE 1 0 :1:1 
 `uc 1 CTMUIE 1 0 :1:2 
 `uc 1 TMR4IE 1 0 :1:3 
@@ -594,28 +604,28 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 SSP2IE 1 0 :1:7 
 ]
 "7958
-[s S1294 . 1 `uc 1 RXB0IE 1 0 :1:0 
+[s S1319 . 1 `uc 1 RXB0IE 1 0 :1:0 
 ]
-[s S1296 . 1 `uc 1 . 1 0 :1:0 
+[s S1321 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RXB1IE 1 0 :1:1 
 ]
-[s S1299 . 1 `uc 1 . 1 0 :1:0 
+[s S1324 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RXBNIE 1 0 :1:1 
 ]
-[s S1302 . 1 `uc 1 . 1 0 :2:0 
+[s S1327 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TXB0IE 1 0 :1:2 
 ]
-[s S1305 . 1 `uc 1 . 1 0 :3:0 
+[s S1330 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 TXB1IE 1 0 :1:3 
 ]
-[s S1308 . 1 `uc 1 . 1 0 :4:0 
+[s S1333 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXB2IE 1 0 :1:4 
 ]
-[s S1311 . 1 `uc 1 . 1 0 :4:0 
+[s S1336 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXBNIE 1 0 :1:4 
 ]
-[u S1314 . 1 `S1285 1 . 1 0 `S1294 1 . 1 0 `S1296 1 . 1 0 `S1299 1 . 1 0 `S1302 1 . 1 0 `S1305 1 . 1 0 `S1308 1 . 1 0 `S1311 1 . 1 0 ]
-[v _PIE3bits PIE3bits `VES1314  1 e 1 @4003 ]
+[u S1339 . 1 `S1310 1 . 1 0 `S1319 1 . 1 0 `S1321 1 . 1 0 `S1324 1 . 1 0 `S1327 1 . 1 0 `S1330 1 . 1 0 `S1333 1 . 1 0 `S1336 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES1339  1 e 1 @4003 ]
 "8239
 [v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
 "10682
@@ -669,7 +679,7 @@ RTCCPTR_MASK_YEAR 3
 ]
 [u S117 . 1 `S104 1 . 1 0 `S110 1 . 1 0 ]
 [v _OSCCONbits OSCCONbits `VES117  1 e 1 @4051 ]
-[s S1832 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S1747 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -679,7 +689,7 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "14949
-[s S1841 . 1 `uc 1 . 1 0 :1:0 
+[s S1756 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -688,74 +698,62 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S1850 . 1 `uc 1 . 1 0 :6:0 
+[s S1765 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S1867 . 1 `S1832 1 . 1 0 `S1841 1 . 1 0 `S1850 1 . 1 0 `S1841 1 . 1 0 `S1850 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES1867  1 e 1 @4082 ]
+[u S1782 . 1 `S1747 1 . 1 0 `S1756 1 . 1 0 `S1765 1 . 1 0 `S1756 1 . 1 0 `S1765 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES1782  1 e 1 @4082 ]
 "354 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\doprnt.c
 [v _dpowers dpowers `C[5]ui  1 s 10 dpowers ]
-"234 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
+"225 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"240
-[v main@validacion validacion `i  1 a 2 70 ]
-"237
+"228
 [v main@ocultar_teclas ocultar_teclas `i  1 a 2 68 ]
-"274
+"291
 } 0
-"29 C:/Program Files/Unimic/unmc_01/sources/teclado.c
-[v _validar_comando validar_comando `(v  1 e 0 0 ]
-{
-"32
-[v validar_comando@i i `i  1 a 2 7 ]
-"29
-[v validar_comando@candidato candidato `*.25uc  1 p 2 0 ]
-[v validar_comando@validar validar `*.39i  1 p 2 2 ]
-"39
-} 0
-"67
+"48 C:/Program Files/Unimic/unmc_01/sources/teclado.c
 [v _leer_teclado leer_teclado `(v  1 e 0 0 ]
 {
-"68
+"49
 [v leer_teclado@i i `i  1 a 2 66 ]
-"67
+"48
 [v leer_teclado@ocultar ocultar `i  1 p 2 63 ]
-"89
+"70
 } 0
-"60
-[v _guardar_tecla_presionada guardar_tecla_presionada `(v  1 e 0 0 ]
+"41
+[v _guardar_tecla_presionada guardar_tecla_presionada `(v  1 s 0 guardar_tecla_presionada ]
 {
-[v guardar_tecla_presionada@letra letra `*.25uc  1 p 2 59 ]
+[v guardar_tecla_presionada@letra letra `*.25Cuc  1 p 2 59 ]
 [v guardar_tecla_presionada@i i `i  1 p 2 61 ]
-"65
+"46
 } 0
-"144 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
+"141 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
 [v _ingresar_comando ingresar_comando `(v  1 e 0 0 ]
 {
 [v ingresar_comando@key key `uc  1 a 1 wreg ]
 [v ingresar_comando@key key `uc  1 a 1 wreg ]
 [v ingresar_comando@key key `uc  1 a 1 58 ]
-"146
+"143
 } 0
-"138
+"135
 [v _confirmar_actualizar_password confirmar_actualizar_password `(v  1 e 0 0 ]
 {
 [v confirmar_actualizar_password@tecla tecla `uc  1 a 1 wreg ]
 [v confirmar_actualizar_password@tecla tecla `uc  1 a 1 wreg ]
-"140
+"137
 [v confirmar_actualizar_password@tecla tecla `uc  1 a 1 56 ]
-"142
+"139
 } 0
-"130
+"128
 [v _mostrar_guardar_nuevo_password mostrar_guardar_nuevo_password `(v  1 e 0 0 ]
 {
 [v mostrar_guardar_nuevo_password@tecla tecla `uc  1 a 1 wreg ]
 [v mostrar_guardar_nuevo_password@tecla tecla `uc  1 a 1 wreg ]
-"132
+"130
 [v mostrar_guardar_nuevo_password@tecla tecla `uc  1 a 1 56 ]
-"136
+"133
 } 0
 "114
 [v _mostrar_guardar_password mostrar_guardar_password `(v  1 e 0 0 ]
@@ -764,83 +762,76 @@ RTCCPTR_MASK_YEAR 3
 [v mostrar_guardar_password@tecla tecla `uc  1 a 1 wreg ]
 "116
 [v mostrar_guardar_password@tecla tecla `uc  1 a 1 56 ]
-"120
+"119
 } 0
-"30 C:/Program Files/Unimic/unmc_01/headers/hora.c
+"149 C:/Program Files/Unimic/unmc_01/sources/fecha.c
 [v _cambiar_hora cambiar_hora `(v  1 e 0 0 ]
 {
 [v cambiar_hora@tecla tecla `uc  1 a 1 wreg ]
-"46
-[v cambiar_hora@i i `i  1 a 2 44 ]
-"31
-[v cambiar_hora@valor valor `i  1 a 2 46 ]
-"30
+"154
+[v cambiar_hora@validacion validacion `i  1 a 2 52 ]
+"149
 [v cambiar_hora@tecla tecla `uc  1 a 1 wreg ]
-[v cambiar_hora@tecla tecla `uc  1 a 1 43 ]
-"48
+"151
+[v cambiar_hora@tecla tecla `uc  1 a 1 54 ]
+"156
 } 0
-"50
+"158
 [v _cambiar_minutos cambiar_minutos `(v  1 e 0 0 ]
 {
 [v cambiar_minutos@tecla tecla `uc  1 a 1 wreg ]
-"66
-[v cambiar_minutos@i i `i  1 a 2 44 ]
-"52
-[v cambiar_minutos@valor valor `i  1 a 2 46 ]
-"50
+"163
+[v cambiar_minutos@validacion validacion `i  1 a 2 52 ]
+"158
 [v cambiar_minutos@tecla tecla `uc  1 a 1 wreg ]
-"52
-[v cambiar_minutos@tecla tecla `uc  1 a 1 43 ]
-"68
+"160
+[v cambiar_minutos@tecla tecla `uc  1 a 1 54 ]
+"165
 } 0
-"31 C:/Program Files/Unimic/unmc_01/sources/fecha.c
+"91
 [v _cambiar_dia cambiar_dia `(v  1 e 0 0 ]
 {
 [v cambiar_dia@tecla tecla `uc  1 a 1 wreg ]
-"47
-[v cambiar_dia@i i `i  1 a 2 44 ]
-"32
-[v cambiar_dia@valor valor `i  1 a 2 46 ]
-"31
+"96
+[v cambiar_dia@validacion validacion `i  1 a 2 52 ]
+"91
 [v cambiar_dia@tecla tecla `uc  1 a 1 wreg ]
-[v cambiar_dia@tecla tecla `uc  1 a 1 43 ]
-"49
+"93
+[v cambiar_dia@tecla tecla `uc  1 a 1 54 ]
+"99
 } 0
-"51
+"101
 [v _cambiar_mes cambiar_mes `(v  1 e 0 0 ]
 {
 [v cambiar_mes@tecla tecla `uc  1 a 1 wreg ]
-"66
-[v cambiar_mes@i i `i  1 a 2 44 ]
-"53
-[v cambiar_mes@valor valor `i  1 a 2 46 ]
-"51
+"106
+[v cambiar_mes@validacion validacion `i  1 a 2 52 ]
+"101
 [v cambiar_mes@tecla tecla `uc  1 a 1 wreg ]
-"53
-[v cambiar_mes@tecla tecla `uc  1 a 1 43 ]
-"68
+"103
+[v cambiar_mes@tecla tecla `uc  1 a 1 54 ]
+"109
 } 0
-"70
+"111
 [v _cambiar_anio cambiar_anio `(v  1 e 0 0 ]
 {
 [v cambiar_anio@tecla tecla `uc  1 a 1 wreg ]
-"85
-[v cambiar_anio@i i `i  1 a 2 44 ]
-"71
-[v cambiar_anio@valor valor `i  1 a 2 46 ]
-"70
+"116
+[v cambiar_anio@validacion validacion `i  1 a 2 52 ]
+"111
 [v cambiar_anio@tecla tecla `uc  1 a 1 wreg ]
-[v cambiar_anio@tecla tecla `uc  1 a 1 43 ]
-"87
+"113
+[v cambiar_anio@tecla tecla `uc  1 a 1 54 ]
+"119
 } 0
-"122 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
+"121 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
 [v _mostrar_guardar_temporal_password mostrar_guardar_temporal_password `(v  1 e 0 0 ]
 {
 [v mostrar_guardar_temporal_password@tecla tecla `uc  1 a 1 wreg ]
 [v mostrar_guardar_temporal_password@tecla tecla `uc  1 a 1 wreg ]
-"124
+"123
 [v mostrar_guardar_temporal_password@tecla tecla `uc  1 a 1 56 ]
-"128
+"126
 } 0
 "16 C:/Program Files/Unimic/unmc_01/sources/alarma.c
 [v _guardar_password_temporal guardar_password_temporal `(v  1 e 0 0 ]
@@ -869,75 +860,71 @@ RTCCPTR_MASK_YEAR 3
 [v guardar_nuevo_password@valor valor `uc  1 a 1 2 ]
 "32
 } 0
-"10 C:/Program Files/Unimic/unmc_01/sources/teclado.c
+"19 C:/Program Files/Unimic/unmc_01/sources/teclado.c
 [v _guardar_comando guardar_comando `(v  1 e 0 0 ]
 {
 [v guardar_comando@tecla tecla `uc  1 a 1 wreg ]
-"12
+"21
 [v guardar_comando@aux aux `[20]uc  1 a 20 37 ]
-"10
-[v guardar_comando@tecla tecla `uc  1 a 1 wreg ]
-"13
-[v guardar_comando@tecla tecla `uc  1 a 1 57 ]
 "19
+[v guardar_comando@tecla tecla `uc  1 a 1 wreg ]
+"22
+[v guardar_comando@tecla tecla `uc  1 a 1 57 ]
+"28
 } 0
-"41
+"30
 [v _imprimir_tecla imprimir_tecla `(v  1 e 0 0 ]
 {
 [v imprimir_tecla@tecla tecla `uc  1 a 1 wreg ]
-"43
+"32
 [v imprimir_tecla@aux aux `[20]uc  1 a 20 35 ]
-"41
+"30
 [v imprimir_tecla@tecla tecla `uc  1 a 1 wreg ]
-"44
+"33
 [v imprimir_tecla@tecla tecla `uc  1 a 1 55 ]
-"50
+"39
 } 0
-"9 C:/Program Files/Unimic/unmc_01/headers/hora.c
-[v _inicializar_hora inicializar_hora `(v  1 e 0 0 ]
+"76 C:/Program Files/Unimic/unmc_01/sources/fecha.c
+[v _obtener_dia_mes obtener_dia_mes `(v  1 s 0 obtener_dia_mes ]
 {
-"15
+"89
 } 0
-"17
-[v _guardar_elemento_hora guardar_elemento_hora `(v  1 e 0 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 {
-[v guardar_elemento_hora@tecla tecla `uc  1 a 1 wreg ]
-[v guardar_elemento_hora@tecla tecla `uc  1 a 1 wreg ]
-[v guardar_elemento_hora@array array `*.39uc  1 p 2 35 ]
-[v guardar_elemento_hora@tamanio_array tamanio_array `*.39i  1 p 2 37 ]
-"19
-[v guardar_elemento_hora@tecla tecla `uc  1 a 1 41 ]
-"23
+"11
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
+"8
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+"35
 } 0
-"25
-[v _convertir_a_int_hora convertir_a_int_hora `(v  1 e 0 0 ]
+"12 C:/Program Files/Unimic/unmc_01/sources/fecha.c
+[v _guardar_elemento guardar_elemento `(v  1 s 0 guardar_elemento ]
 {
-[v convertir_a_int_hora@array array `*.39uc  1 p 2 13 ]
-[v convertir_a_int_hora@valor valor `*.39i  1 p 2 15 ]
-"27
+[v guardar_elemento@tecla tecla `uc  1 a 1 wreg ]
+"42
+[v guardar_elemento@i i `i  1 a 2 48 ]
+"14
+[v guardar_elemento@valor valor `i  1 a 2 50 ]
+"12
+[v guardar_elemento@tecla tecla `uc  1 a 1 wreg ]
+[v guardar_elemento@array array `*.39uc  1 p 2 35 ]
+[v guardar_elemento@tamanio_array tamanio_array `*.39i  1 p 2 37 ]
+[v guardar_elemento@validacion validacion `i  1 p 2 39 ]
+[v guardar_elemento@dato_fecha dato_fecha `*.39i  1 p 2 41 ]
+[v guardar_elemento@doit doit `*.37(v  1 p 2 43 ]
+"14
+[v guardar_elemento@tecla tecla `uc  1 a 1 47 ]
+"46
 } 0
-"8 C:/Program Files/Unimic/unmc_01/sources/fecha.c
-[v _inicializar_fecha inicializar_fecha `(v  1 e 0 0 ]
+"8
+[v _convertir_a_int convertir_a_int `(v  1 s 0 convertir_a_int ]
 {
-"16
-} 0
-"18
-[v _guardar_elemento_fecha guardar_elemento_fecha `(v  1 e 0 0 ]
-{
-[v guardar_elemento_fecha@tecla tecla `uc  1 a 1 wreg ]
-[v guardar_elemento_fecha@tecla tecla `uc  1 a 1 wreg ]
-[v guardar_elemento_fecha@array array `*.39uc  1 p 2 35 ]
-[v guardar_elemento_fecha@tamanio_array tamanio_array `*.39i  1 p 2 37 ]
-"20
-[v guardar_elemento_fecha@tecla tecla `uc  1 a 1 41 ]
-"24
-} 0
-"26
-[v _convertir_a_int_fecha convertir_a_int_fecha `(v  1 e 0 0 ]
-{
-[v convertir_a_int_fecha@array array `*.39uc  1 p 2 13 ]
-[v convertir_a_int_fecha@valor valor `*.39i  1 p 2 15 ]
-"28
+[v convertir_a_int@array array `*.39uc  1 p 2 13 ]
+[v convertir_a_int@valor valor `*.39i  1 p 2 15 ]
+"10
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\atoi.c
 [v _atoi atoi `(i  1 e 2 0 ]
@@ -950,11 +937,49 @@ RTCCPTR_MASK_YEAR 3
 [v atoi@s s `*.39Cuc  1 p 2 6 ]
 "24
 } 0
+"135 C:/Program Files/Unimic/unmc_01/sources/fecha.c
+[v _actualizar_hora actualizar_hora `(v  1 s 0 actualizar_hora ]
+{
+[v actualizar_hora@elemento elemento `*.39i  1 p 2 21 ]
+[v actualizar_hora@valor valor `Ci  1 p 2 23 ]
+"140
+} 0
+"69
+[v _actualiza_dia actualiza_dia `(v  1 s 0 actualiza_dia ]
+{
+[v actualiza_dia@elemento elemento `*.39i  1 p 2 21 ]
+[v actualiza_dia@valor valor `Ci  1 p 2 23 ]
+"74
+} 0
+"48
+[v _actualiza_elemento actualiza_elemento `(v  1 s 0 actualiza_elemento ]
+{
+[v actualiza_elemento@elemento elemento `*.39i  1 p 2 21 ]
+[v actualiza_elemento@valor valor `Ci  1 p 2 23 ]
+"52
+} 0
+"142
+[v _actualizar_minutos actualizar_minutos `(v  1 s 0 actualizar_minutos ]
+{
+[v actualizar_minutos@elemento elemento `*.39i  1 p 2 21 ]
+[v actualizar_minutos@valor valor `Ci  1 p 2 23 ]
+"147
+} 0
+"127
+[v _inicializar_hora inicializar_hora `(v  1 e 0 0 ]
+{
+"133
+} 0
+"59
+[v _inicializar_fecha inicializar_fecha `(v  1 e 0 0 ]
+{
+"67
+} 0
 "89 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
 [v _ingresar_password ingresar_password `(v  1 e 0 0 ]
 {
 "103
-[v ingresar_password@i_565 i `i  1 a 2 27 ]
+[v ingresar_password@i_566 i `i  1 a 2 27 ]
 "91
 [v ingresar_password@i i `i  1 a 2 29 ]
 "90
@@ -974,13 +999,13 @@ RTCCPTR_MASK_YEAR 3
 [v caratula@titulo titulo `*.25Cuc  1 p 2 35 ]
 "51
 } 0
-"196
+"186
 [v _cambiar_password cambiar_password `(v  1 e 0 0 ]
 {
-"198
+"188
 [v cambiar_password@verifica verifica `i  1 a 2 37 ]
 [v cambiar_password@confirmar confirmar `i  1 a 2 35 ]
-"226
+"216
 } 0
 "53 C:/Program Files/Unimic/unmc_01/sources/alarma.c
 [v _verficar_password verficar_password `(v  1 e 0 0 ]
@@ -999,13 +1024,13 @@ RTCCPTR_MASK_YEAR 3
 "528
 [v sprintf@val val `ui  1 a 2 29 ]
 "494
-[v sprintf@ap ap `[1]*.39v  1 a 2 26 ]
+[v sprintf@ap ap `[1]*.39v  1 a 2 27 ]
 "499
 [v sprintf@c c `c  1 a 1 34 ]
-"506
-[v sprintf@prec prec `c  1 a 1 31 ]
 "508
-[v sprintf@flag flag `uc  1 a 1 28 ]
+[v sprintf@flag flag `uc  1 a 1 31 ]
+"506
+[v sprintf@prec prec `c  1 a 1 26 ]
 "492
 [v sprintf@sp sp `*.39uc  1 p 2 12 ]
 [v sprintf@f f `*.25Cuc  1 p 2 14 ]
@@ -1055,29 +1080,29 @@ RTCCPTR_MASK_YEAR 3
 "65 C:/Program Files/Unimic/unmc_01/sources/alarma.c
 [v _actualizar_password actualizar_password `(v  1 e 0 0 ]
 {
-"81
-[v actualizar_password@j_1623 j `i  1 a 2 10 ]
+"80
+[v actualizar_password@j_1538 j `i  1 a 2 10 ]
 "68
 [v actualizar_password@j j `i  1 a 2 8 ]
 "65
 [v actualizar_password@confirmar confirmar `*.39i  1 p 2 0 ]
 [v actualizar_password@valor valor `uc  1 p 1 2 ]
-"90
+"91
 } 0
-"52 C:/Program Files/Unimic/unmc_01/sources/teclado.c
+"10 C:/Program Files/Unimic/unmc_01/sources/teclado.c
 [v _restaurar_comando restaurar_comando `(v  1 e 0 0 ]
 {
-"58
+"17
 } 0
-"181 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
+"171 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\UNMC\main.c
 [v _cambiar_horario cambiar_horario `(v  1 e 0 0 ]
 {
-"194
+"184
 } 0
-"161
+"151
 [v _cambiar_fecha cambiar_fecha `(v  1 e 0 0 ]
 {
-"179
+"169
 } 0
 "109
 [v _mostrar_titulo_menu mostrar_titulo_menu `(v  1 e 0 0 ]
@@ -1085,11 +1110,11 @@ RTCCPTR_MASK_YEAR 3
 [v mostrar_titulo_menu@titulo_menu titulo_menu `*.25Cuc  1 p 2 10 ]
 "112
 } 0
-"155
+"145
 [v _clear_display clear_display `(v  1 e 0 0 ]
 {
 [v clear_display@pos pos `Ci  1 p 2 10 ]
-"159
+"149
 } 0
 "221 C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c
 [v _lcd_putrs lcd_putrs `(v  1 e 0 0 ]
@@ -1194,9 +1219,9 @@ RTCCPTR_MASK_YEAR 3
 "34 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteTime.c
 [v _RtccWriteTime RtccWriteTime `(E7121  1 e 1 0 ]
 {
-[s S1945 . 2 `uc 1 LB 1 0 `uc 1 HB 1 1 ]
+[s S1860 . 2 `uc 1 LB 1 0 `uc 1 HB 1 1 ]
 "36
-[s S1948 . 2 `uc 1 b0 1 0 :1:0 
+[s S1863 . 2 `uc 1 b0 1 0 :1:0 
 `uc 1 b1 1 0 :1:1 
 `uc 1 b2 1 0 :1:2 
 `uc 1 b3 1 0 :1:3 
@@ -1213,10 +1238,10 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 b14 1 1 :1:6 
 `uc 1 b15 1 1 :1:7 
 ]
-[u S1965 . 2 `us 1 Val 2 0 `[2]uc 1 v 2 0 `S1945 1 byte 2 0 `S1948 1 bits 2 0 ]
-[v RtccWriteTime@tempHourWDay tempHourWDay `S1965  1 a 2 9 ]
+[u S1880 . 2 `us 1 Val 2 0 `[2]uc 1 v 2 0 `S1860 1 byte 2 0 `S1863 1 bits 2 0 ]
+[v RtccWriteTime@tempHourWDay tempHourWDay `S1880  1 a 2 9 ]
 "37
-[v RtccWriteTime@tempMinSec tempMinSec `S1965  1 a 2 7 ]
+[v RtccWriteTime@tempMinSec tempMinSec `S1880  1 a 2 7 ]
 "40
 [v RtccWriteTime@wasWrEn wasWrEn `E7121  1 a 1 6 ]
 "42
@@ -1233,9 +1258,9 @@ RTCCPTR_MASK_YEAR 3
 "35 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteDate.c
 [v _RtccWriteDate RtccWriteDate `(E7121  1 e 1 0 ]
 {
-[s S1945 . 2 `uc 1 LB 1 0 `uc 1 HB 1 1 ]
+[s S1860 . 2 `uc 1 LB 1 0 `uc 1 HB 1 1 ]
 "37
-[s S1948 . 2 `uc 1 b0 1 0 :1:0 
+[s S1863 . 2 `uc 1 b0 1 0 :1:0 
 `uc 1 b1 1 0 :1:1 
 `uc 1 b2 1 0 :1:2 
 `uc 1 b3 1 0 :1:3 
@@ -1252,12 +1277,12 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 b14 1 1 :1:6 
 `uc 1 b15 1 1 :1:7 
 ]
-[u S1965 . 2 `us 1 Val 2 0 `[2]uc 1 v 2 0 `S1945 1 byte 2 0 `S1948 1 bits 2 0 ]
-[v RtccWriteDate@tempHourWDay tempHourWDay `S1965  1 a 2 11 ]
+[u S1880 . 2 `us 1 Val 2 0 `[2]uc 1 v 2 0 `S1860 1 byte 2 0 `S1863 1 bits 2 0 ]
+[v RtccWriteDate@tempHourWDay tempHourWDay `S1880  1 a 2 11 ]
 "38
-[v RtccWriteDate@tempDayMonth tempDayMonth `S1965  1 a 2 9 ]
+[v RtccWriteDate@tempDayMonth tempDayMonth `S1880  1 a 2 9 ]
 "39
-[v RtccWriteDate@tempYear tempYear `S1965  1 a 2 6 ]
+[v RtccWriteDate@tempYear tempYear `S1880  1 a 2 6 ]
 "41
 [v RtccWriteDate@wasWrEn wasWrEn `E7121  1 a 1 8 ]
 "43

@@ -9889,11 +9889,9 @@ int tamanio_comando = 0;
 void (*puntero_funcion)(char);
 
 void guardar_comando(char);
-void guardar_array_comando(char *);
-void validar_comando(char *, int *);
 void imprimir_tecla(char);
 void restaurar_comando();
-void guardar_tecla_presionada(char *, int);
+static void guardar_tecla_presionada(const char *, int);
 void leer_teclado(int ocultar);
 
 # 14 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
@@ -10032,46 +10030,72 @@ void DelayPORXLCD(void);
 void Write_RTC(void);
 void Read_RTC(void);
 
-# 7 "C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h"
-char day[3] = "";
-char month[3] = "";
-char year[3] = "";
+# 6 "C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h"
+static char day[3] = "";
+static char month[3] = "";
+static char year[3] = "";
+
+static char hour[3] = "";
+static char minutes[3] = "";
+
+int tamanio_hora = 0;
+int tamanio_minutos = 0;
 
 int tamanio_dia = 0;
 int tamanio_mes = 0;
 int tamanio_anio = 0;
 
+static int valor_max;
+static int valor_min;
+
+static void convertir_a_int(char *, int *);
+static void guardar_elemento(char ,char * ,int * ,int ,int * ,void (*doit) (int *,const int));
+static void actualiza_elemento(int *,const int);
+static void obtener_dia_mes();
+
+static void actualiza_dia(int *,const int);
 void inicializar_fecha();
-void guardar_elemento_fecha(char, char *, int *);
-void convertir_a_int_fecha(char *, int *);
 void cambiar_dia(char);
 void cambiar_mes(char);
 void cambiar_anio(char);
 
-# 108 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdlib.h"
-extern char * itoa(char * buf, int val, int base);
-extern char * utoa(char * buf, unsigned val, int base);
-
-
-
-
-extern char * ltoa(char * buf, long val, int base);
-extern char * ultoa(char * buf, unsigned long val, int base);
-
-extern char * ftoa(float f, int * status);
-
-# 6 "C:/Archivos de programa/Unimic/unmc_01/headers\hora.h"
-char hour[3] = "";
-char minutes[3] = "";
-
-int tamanio_hora = 0;
-int tamanio_minutos = 0;
-
+static void actualizar_hora(int * ,const int );
+static void actualizar_minutos(int * ,const int );
 void inicializar_hora();
-void guardar_elemento_hora(char, char *, int *);
-void convertir_a_int_hora(char *, int *);
 void cambiar_hora(char);
 void cambiar_minutos(char);
+
+# 22 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\string.h"
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+
+# 42
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
 
 # 35 "main.c"
 void caratula(const char * titulo)
@@ -10153,7 +10177,6 @@ void mostrar_guardar_password(char tecla){
 imprimir_tecla(tecla);
 sprintf(buffer2,"%01u",tecla);
 guardar_current_password(*buffer2);
-
 }
 
 void mostrar_guardar_temporal_password(char tecla){
@@ -10161,7 +10184,6 @@ void mostrar_guardar_temporal_password(char tecla){
 imprimir_tecla(tecla);
 sprintf(buffer2,"%01u",tecla);
 guardar_password_temporal(*buffer2);
-
 }
 
 void mostrar_guardar_nuevo_password(char tecla){
@@ -10169,7 +10191,6 @@ void mostrar_guardar_nuevo_password(char tecla){
 imprimir_tecla(tecla);
 sprintf(buffer2,"%01u",tecla);
 guardar_nuevo_password(*buffer2);
-
 }
 
 void confirmar_actualizar_password(char tecla){
@@ -10180,13 +10201,6 @@ sprintf(buffer2,"%01u",tecla);
 
 void ingresar_comando(char key){
 guardar_comando(key);
-}
-void mostrar_caratula(int *validar){
-
-validar_comando("xx",validar);
-if(*validar){
-caratula("Welcome");
-}
 }
 
 void clear_display(const int pos){
@@ -10262,7 +10276,7 @@ clear_display(tamanio_new_password - 6);
 }
 }
 
-# 234
+# 225
 int main(void)
 {
 Setup();
@@ -10283,23 +10297,19 @@ ingresar_password();
 }else{
 puntero_funcion = &ingresar_comando;
 
-validar_comando("00",&validacion);
-if(validacion)
-cambiar_password();
-
-validar_comando("xx",&validacion);
-if(validacion)
-caratula("Welcome");
-
-validar_comando("01",&validacion);
-if(validacion)
-cambiar_fecha();
-
-validar_comando("02",&validacion);
-if(validacion)
-cambiar_horario();
-
+switch (atoi(comando))
+{
+case 10 : cambiar_password(); break;
+case 11 : cambiar_fecha(); break;
+case 12 : cambiar_horario(); break;
+default: caratula("Welcome ");
+if (tamanio_comando >= 2)
+tamanio_comando = 0;
+break;
+}
 leer_teclado(ocultar_teclas);
+
+# 288
 }
 }
 return 0;

@@ -66,7 +66,7 @@ void actualizar_password(int * confirmar, char valor){
     
     *confirmar=1;
     int j=0;
-    //while (i < 6 && *confirmar == 1){
+    
     if ( *confirmar == 1 && tamanio_new_password - tam_pass - 1 < tam_pass){        
         if (new_password[tamanio_new_password - tam_pass - 1] != valor)
             *confirmar = 0;
@@ -75,11 +75,12 @@ void actualizar_password(int * confirmar, char valor){
             tamanio_new_password++;                
     }
     
-    if (*confirmar && tamanio_new_password - tam_pass - 1 >= tam_pass){
-        restaurar_comando();       
+    if (*confirmar && tamanio_new_password - tam_pass - 1 >= tam_pass){        
         
         for (int j=0; j < tam_pass; j++ )
             password[j] = new_password[j];
+        
+        restaurar_comando(); 
         
         new_password[0] = 0;        
         temporal[0] = 0;        

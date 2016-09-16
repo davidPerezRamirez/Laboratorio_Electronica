@@ -9826,11 +9826,9 @@ int tamanio_comando = 0;
 void (*puntero_funcion)(char);
 
 void guardar_comando(char);
-void guardar_array_comando(char *);
-void validar_comando(char *, int *);
 void imprimir_tecla(char);
 void restaurar_comando();
-void guardar_tecla_presionada(char *, int);
+static void guardar_tecla_presionada(const char *, int);
 void leer_teclado(int ocultar);
 
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdarg.h"
@@ -9897,6 +9895,15 @@ extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
 # 10 "../../../../../../Program Files/Unimic/unmc_01/sources/teclado.c"
+void restaurar_comando(){
+tamanio_comando = 0;
+
+comando[0] = 'x';
+comando[1] = 'x';
+comando[2] = 0;
+
+}
+
 void guardar_comando(char tecla){
 
 unsigned char aux[20];
@@ -9905,26 +9912,6 @@ if (tamanio_comando < 2){
 comando[tamanio_comando] = *aux;
 comando [tamanio_comando+1] = 0;
 tamanio_comando++;
-}
-}
-
-void guardar_array_comando(char * array_comando){
-comando[0] = array_comando[0];
-comando[1] = array_comando[1];
-comando[2] = 0;
-
-tamanio_comando = 2;
-}
-
-void validar_comando(char * candidato, int * validar){
-
-*validar=1;
-int i = 0;
-while (i < 2 && *validar == 1){
-if (comando[i] != *(candidato+i))
-*validar = 0;
-
-i++;
 }
 }
 
@@ -9939,15 +9926,7 @@ lcd_putrs(aux);
 }
 }
 
-void restaurar_comando(){
-tamanio_comando = 0;
-
-comando[0]='x';
-comando[1]='x';
-comando[2]=0;
-}
-
-void guardar_tecla_presionada(char * letra, int i){
+static void guardar_tecla_presionada(const char * letra, int i){
 if (PORTAbits.RA5==1){key=i;puntero_funcion(key);while(PORTAbits.RA5==1){};}
 if (PORTAbits.RA7==1){key=(i)+1;puntero_funcion(key);while(PORTAbits.RA7==1){};}
 if (PORTAbits.RA6==1){key=(i)+2;puntero_funcion(key);while(PORTAbits.RA6==1){};}
