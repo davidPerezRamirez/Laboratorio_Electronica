@@ -31,6 +31,10 @@ char key;         //variable key
 //#define mLED_1_Toggle   LED_1 = !LED_1;
 #define LED_2_Toggle    LED_2 = !LED_2;
 #define LED_3_Toggle    LED_3 = !LED_3;
+
+#define Speaker          LATCbits.LATC7
+#define Speaker_On       Speaker = 1;
+#define Speaker_Off      Speaker = 0;
 //
 ///** S W I T C H *****************************************************/
 //#define switch1         PORTAbits.RA1

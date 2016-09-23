@@ -11,6 +11,7 @@
       <itemPath>../../../../../../Program Files/Unimic/unmc_01/headers/fecha.h</itemPath>
       <itemPath>../../../../../../Program Files/Unimic/unmc_01/headers/unmc_rtcc_02.h</itemPath>
       <itemPath>../../../../../../Program Files/Unimic/unmc_01/headers/alarma.h</itemPath>
+      <itemPath>../../../../../../Program Files/Unimic/unmc_01/headers/unmc_inout_03.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

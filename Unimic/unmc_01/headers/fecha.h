@@ -1,6 +1,10 @@
 #include <stdlib.h>
 #include <unmc_rtcc_02.h>
 
+#include <stdio.h>
+#include <unmc_lcd_216.h>
+#include <teclado.h>
+
 #define cantidad_elementos 3
 
 static char day[cantidad_elementos] = "";
@@ -30,10 +34,16 @@ void inicializar_fecha();
 void cambiar_dia(char);
 void cambiar_mes(char);
 void cambiar_anio(char);
+void cancelar_cambio_fecha();
+void borrar_dia();
+void borrar_mes();
+void borrar_anio();
 
 static void actualizar_hora(int * ,const int );
 static void actualizar_minutos(int * ,const int );
 void inicializar_hora();
 void cambiar_hora(char);
 void cambiar_minutos(char);
-
+void cancelar_cambio_hora();
+void borrar_hora();
+void borrar_minutos();

@@ -9790,7 +9790,7 @@ void lcd_setcursor_vb(int8 visible, int8 blink);
 void lcd_puts(char *ptr);
 void lcd_putrs(const char *ptr);
 
-# 14 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
+# 14 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_03.h"
 char key;
 
 
@@ -9820,15 +9820,19 @@ char key;
 
 # 12 "C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h"
 int ocultar_teclas;
-char comando[3]="xx";
-int tamanio_comando = 0;
+char comando[3];
+int tamanio_comando;
 
 void (*puntero_funcion)(char);
+void (*funcion_pulsador_C)(void);
+void (*funcion_pulsador_D)(void);
+void (*funcion_pulsador_B)(void);
 
+void inicializar_teclado();
 void guardar_comando(char);
 void imprimir_tecla(char);
 void restaurar_comando();
-static void guardar_tecla_presionada(const char *, int);
+static void guardar_tecla_presionada(int);
 void leer_teclado(int ocultar);
 
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdarg.h"
@@ -9904,6 +9908,16 @@ comando[2] = 0;
 
 }
 
+void inicializar_teclado(){
+
+funcion_pulsador_B = restaurar_comando;
+funcion_pulsador_C = restaurar_comando;
+funcion_pulsador_D = restaurar_comando;
+
+restaurar_comando();
+}
+
+
 void guardar_comando(char tecla){
 
 unsigned char aux[20];
@@ -9926,11 +9940,10 @@ lcd_putrs(aux);
 }
 }
 
-static void guardar_tecla_presionada(const char * letra, int i){
+static void guardar_tecla_presionada( int i){
 if (PORTAbits.RA5==1){key=i;puntero_funcion(key);while(PORTAbits.RA5==1){};}
 if (PORTAbits.RA7==1){key=(i)+1;puntero_funcion(key);while(PORTAbits.RA7==1){};}
 if (PORTAbits.RA6==1){key=(i)+2;puntero_funcion(key);while(PORTAbits.RA6==1){};}
-if (PORTCbits.RC2==1){key=letra[0]; }
 }
 
 void leer_teclado(int ocultar){
@@ -9938,20 +9951,23 @@ int i;
 ocultar_teclas = ocultar;
 
 LATAbits.LATA0=1;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=0;i=1;
-guardar_tecla_presionada("A",i);
+guardar_tecla_presionada(i);
+if (PORTCbits.RC2==1){key='A';while(PORTCbits.RC2==1){};}
 
 LATAbits.LATA0=0;LATAbits.LATA1=1;LATAbits.LATA2=0;LATAbits.LATA3=0;i=4;
-guardar_tecla_presionada("B",i);
+guardar_tecla_presionada(i);
+if (PORTCbits.RC2==1){key='B';funcion_pulsador_B();while(PORTCbits.RC2==1){};}
 
 LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=1;LATAbits.LATA3=0;i=7;
-guardar_tecla_presionada("C",i);
+guardar_tecla_presionada(i);
+if (PORTCbits.RC2==1){key='C';funcion_pulsador_C();while(PORTCbits.RC2==1){};}
 
 LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=1;
 {
 if (PORTAbits.RA5==1){key='*';lcd_putrs("*");while(PORTAbits.RA5==1){};}
 if (PORTAbits.RA7==1){key=0;puntero_funcion(key);while(PORTAbits.RA7==1){};}
 if (PORTAbits.RA6==1){key='#';lcd_putrs("#");while(PORTAbits.RA6==1){};}
-if (PORTCbits.RC2==1){key='D';lcd_putrs("D");while(PORTCbits.RC2==1){};}
+if (PORTCbits.RC2==1){key='D';funcion_pulsador_D();while(PORTCbits.RC2==1){};}
 }
 _delay((unsigned long)((98)*(8000000/4000.0)));
 

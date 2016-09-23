@@ -1,9 +1,4 @@
 #include <fecha.h>
-#include <stdio.h>
-#include <unmc_lcd_216.h>
-#include <teclado.h>
-
-#define cantidad_elementos 3
 
 static void convertir_a_int(char * array, int * valor){
     *valor = atoi(array);
@@ -68,7 +63,7 @@ void inicializar_fecha(){
 
 static void actualiza_dia(int * elemento,const int valor){
         
-    actualiza_elemento(elemento,valor);
+    actualiza_elemento(elemento,valor);   
     restaurar_comando();
     inicializar_fecha();
 }
@@ -118,6 +113,26 @@ void cambiar_anio(char tecla){
     
 }
 
+void cancelar_cambio_fecha(){
+    inicializar_fecha();
+    restaurar_comando();
+}
+
+void borrar_dia(){
+    *day = 0;
+    tamanio_dia = 0;
+        
+}
+
+void borrar_mes(){
+    *month = 0;
+    tamanio_mes = 0;
+}
+
+void borrar_anio(){
+    *year = 0;
+    tamanio_anio = 0;
+}
 /****************************************************************************
  * 
  FUNCIONES PARA LA ACTUALIZACION DE LA HORA
@@ -135,8 +150,9 @@ void inicializar_hora(){
 static void actualizar_hora(int * elemento,const int valor){
         
     actualiza_elemento(elemento,valor);
+    Write_RTC();
     restaurar_comando();
-    inicializar_hora();
+    inicializar_hora();    
 }
 
 static void actualizar_minutos(int * elemento,const int valor){
@@ -162,4 +178,20 @@ void cambiar_minutos(char tecla){
     
     int validacion = (tamanio_minutos < cantidad_elementos - 1 && tamanio_hora == 0);
     guardar_elemento(tecla,minutes,&tamanio_minutos,validacion,&minuto,actualizar_minutos);
+}
+
+void cancelar_cambio_hora(){
+    inicializar_hora();
+    restaurar_comando();
+}
+
+void borrar_hora(){
+    *hour = 0;
+    tamanio_hora = 0;
+        
+}
+
+void borrar_minutos(){
+    *minutes = 0;
+    tamanio_minutos = 0;
 }

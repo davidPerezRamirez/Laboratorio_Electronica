@@ -1,4 +1,6 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"10 ../../../../../../Program Files/Unimic/unmc_01/sources/alarma.c
+[v _restaurar_comando `(i ~T0 @X0 0 ef ]
 "6359 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
 [s S446 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S446 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
@@ -31,8 +33,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S445 . . . . . . . . . . ]
 "6401
 [v _LATBbits `VS445 ~T0 @X0 0 e@3978 ]
-"83 ../../../../../../Program Files/Unimic/unmc_01/sources/alarma.c
-[v _restaurar_comando `(i ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f26j50.h: 49: extern volatile unsigned char RPOR0 @ 0xEC6;
@@ -7569,106 +7569,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 "14 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h
 [v _key `uc ~T0 @X0 1 e ]
 [; ;headers\unmc_inout_02.h: 14: char key;
-"12 C:/Archivos de programa/Unimic/unmc_01/headers\alarma.h
-[v _password `uc ~T0 @X0 -> 7 `i e ]
-[i _password
-:U ..
--> 49 `c
--> 50 `c
--> 51 `c
--> 52 `c
--> 53 `c
--> 54 `c
--> 0 `c
-..
-]
-[; ;headers\alarma.h: 12: char password[7]="123456";
-"13
-[v _current_password `uc ~T0 @X0 -> 7 `i e ]
-[i _current_password
-:U ..
--> 0 `c
-..
-]
-[; ;headers\alarma.h: 13: char current_password[7]="";
-"14
-[v _temporal `uc ~T0 @X0 -> 7 `i e ]
-[i _temporal
-:U ..
--> 0 `c
-..
-]
-[; ;headers\alarma.h: 14: char temporal[7] = "";
-"15
-[v _new_password `uc ~T0 @X0 -> 7 `i e ]
-[i _new_password
-:U ..
--> 0 `c
-..
-]
-[; ;headers\alarma.h: 15: char new_password[7] = "";
-"17
-[v _tamanio_password `i ~T0 @X0 1 e ]
-[i _tamanio_password
--> 0 `i
-]
-[; ;headers\alarma.h: 17: int tamanio_password=0;
-"18
-[v _tamanio_new_password `i ~T0 @X0 1 e ]
-[i _tamanio_new_password
--> 0 `i
-]
-[; ;headers\alarma.h: 18: int tamanio_new_password=0;
-"19
-[v _autorizado `i ~T0 @X0 1 e ]
-[i _autorizado
--> 0 `i
-]
-[; ;headers\alarma.h: 19: int autorizado=0;
-"20
-[v _encendida `i ~T0 @X0 1 e ]
-[i _encendida
--> 0 `i
-]
-[; ;headers\alarma.h: 20: int encendida = 0;
-"21
-[v _activada `i ~T0 @X0 1 e ]
-[i _activada
--> 1 `i
-]
-[; ;headers\alarma.h: 21: int activada = 1;
-[; ;headers\alarma.h: 24: void guardar_current_password(char);
-[; ;headers\alarma.h: 25: void validar_password();
-[; ;headers\alarma.h: 27: void verficar_password(int *);
-[; ;headers\alarma.h: 28: void guardar_password_temporal(char);
-[; ;headers\alarma.h: 29: void guardar_nuevo_password(char);
-[; ;headers\alarma.h: 30: void actualizar_password(int *, char);
-[; ;math.h: 30: extern double fabs(double);
-[; ;math.h: 31: extern double floor(double);
-[; ;math.h: 32: extern double ceil(double);
-[; ;math.h: 33: extern double modf(double, double *);
-[; ;math.h: 34: extern double sqrt(double);
-[; ;math.h: 35: extern double atof(const char *);
-[; ;math.h: 36: extern double sin(double) ;
-[; ;math.h: 37: extern double cos(double) ;
-[; ;math.h: 38: extern double tan(double) ;
-[; ;math.h: 39: extern double asin(double) ;
-[; ;math.h: 40: extern double acos(double) ;
-[; ;math.h: 41: extern double atan(double);
-[; ;math.h: 42: extern double atan2(double, double) ;
-[; ;math.h: 43: extern double log(double);
-[; ;math.h: 44: extern double log10(double);
-[; ;math.h: 45: extern double pow(double, double) ;
-[; ;math.h: 46: extern double exp(double) ;
-[; ;math.h: 47: extern double sinh(double) ;
-[; ;math.h: 48: extern double cosh(double) ;
-[; ;math.h: 49: extern double tanh(double);
-[; ;math.h: 50: extern double eval_poly(double, const double *, int);
-[; ;math.h: 51: extern double frexp(double, int *);
-[; ;math.h: 52: extern double ldexp(double, int);
-[; ;math.h: 53: extern double fmod(double, double);
-[; ;math.h: 54: extern double trunc(double);
-[; ;math.h: 55: extern double round(double);
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
 [; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
@@ -7699,313 +7599,456 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdio.h: 202: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
 [; ;stdio.h: 206: extern int sprintf(char *, const char *, ...);
 [; ;stdio.h: 207: extern int printf(const char *, ...);
-[; ;stdlib.h: 27: typedef struct {
-[; ;stdlib.h: 28: int rem;
-[; ;stdlib.h: 29: int quot;
-[; ;stdlib.h: 30: } div_t;
-[; ;stdlib.h: 31: typedef struct {
-[; ;stdlib.h: 32: unsigned rem;
-[; ;stdlib.h: 33: unsigned quot;
-[; ;stdlib.h: 34: } udiv_t;
-[; ;stdlib.h: 35: typedef struct {
-[; ;stdlib.h: 36: long quot;
-[; ;stdlib.h: 37: long rem;
-[; ;stdlib.h: 38: } ldiv_t;
-[; ;stdlib.h: 39: typedef struct {
-[; ;stdlib.h: 40: unsigned long quot;
-[; ;stdlib.h: 41: unsigned long rem;
-[; ;stdlib.h: 42: } uldiv_t;
-[; ;stdlib.h: 65: extern double atof(const char *);
-[; ;stdlib.h: 66: extern double strtod(const char *, const char **);
-[; ;stdlib.h: 67: extern int atoi(const char *);
-[; ;stdlib.h: 68: extern unsigned xtoi(const char *);
-[; ;stdlib.h: 69: extern long atol(const char *);
-[; ;stdlib.h: 70: extern long strtol(const char *, char **, int);
-[; ;stdlib.h: 72: extern int rand(void);
-[; ;stdlib.h: 73: extern void srand(unsigned int);
-[; ;stdlib.h: 74: extern void * calloc(size_t, size_t);
-[; ;stdlib.h: 75: extern div_t div(int numer, int denom);
-[; ;stdlib.h: 76: extern udiv_t udiv(unsigned numer, unsigned denom);
-[; ;stdlib.h: 77: extern ldiv_t ldiv(long numer, long denom);
-[; ;stdlib.h: 78: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-[; ;stdlib.h: 79: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 80: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 81: extern unsigned int _rotl(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 82: extern unsigned int _rotr(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 87: extern void * malloc(size_t);
-[; ;stdlib.h: 88: extern void free(void *);
-[; ;stdlib.h: 89: extern void * realloc(void *, size_t);
-[; ;stdlib.h: 98: extern int atexit(void (*)(void));
-[; ;stdlib.h: 99: extern char * getenv(const char *);
-[; ;stdlib.h: 100: extern char ** environ;
-[; ;stdlib.h: 101: extern int system(char *);
-[; ;stdlib.h: 102: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-[; ;stdlib.h: 103: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-[; ;stdlib.h: 104: extern int abs(int);
-[; ;stdlib.h: 105: extern long labs(long);
-[; ;stdlib.h: 108: extern char * itoa(char * buf, int val, int base);
-[; ;stdlib.h: 109: extern char * utoa(char * buf, unsigned val, int base);
-[; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
-[; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
-[; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
-"6 ../../../../../../Program Files/Unimic/unmc_01/sources/alarma.c
-[v _guardar_current_password `(v ~T0 @X0 1 ef1`uc ]
+[; ;headers\unmc_lcd_216.h: 33: typedef unsigned char int8;
+[; ;headers\unmc_lcd_216.h: 34: typedef unsigned int int16;
+[; ;headers\unmc_lcd_216.h: 35: typedef unsigned long int32;
+[; ;headers\unmc_lcd_216.h: 98: void lcd_send_nibble(int8 nibble);
+[; ;headers\unmc_lcd_216.h: 99: int8 lcd_read_nibble(void);
+[; ;headers\unmc_lcd_216.h: 100: int8 lcd_read_byte(void);
+[; ;headers\unmc_lcd_216.h: 101: void lcd_send_byte(int8 address, int8 n);
+[; ;headers\unmc_lcd_216.h: 103: void lcd_init(void);
+[; ;headers\unmc_lcd_216.h: 104: void lcd_gotoxy(int8 x, int8 y);
+[; ;headers\unmc_lcd_216.h: 105: void lcd_putc(int8 c);
+[; ;headers\unmc_lcd_216.h: 106: void lcd_comand(int8 d);
+[; ;headers\unmc_lcd_216.h: 107: void lcd_setcursor_vb(int8 visible, int8 blink);
+[; ;headers\unmc_lcd_216.h: 108: void lcd_puts(char *ptr);
+[; ;headers\unmc_lcd_216.h: 109: void lcd_putrs(const char *ptr);
+"14 C:/Archivos de programa/Unimic/unmc_01/headers\alarma.h
+[v _password `uc ~T0 @X0 -> 7 `i e ]
+[i _password
+:U ..
+-> 49 `c
+-> 50 `c
+-> 51 `c
+-> 52 `c
+-> 53 `c
+-> 54 `c
+-> 0 `c
+..
+]
+[; ;headers\alarma.h: 14: char password[7]="123456";
+"15
+[v _current_password `uc ~T0 @X0 -> 7 `i e ]
+[i _current_password
+:U ..
+-> 0 `c
+..
+]
+[; ;headers\alarma.h: 15: char current_password[7]="";
+"16
+[v _temporal `uc ~T0 @X0 -> 7 `i e ]
+[i _temporal
+:U ..
+-> 0 `c
+..
+]
+[; ;headers\alarma.h: 16: char temporal[7] = "";
+"17
+[v _new_password `uc ~T0 @X0 -> 7 `i e ]
+[i _new_password
+:U ..
+-> 0 `c
+..
+]
+[; ;headers\alarma.h: 17: char new_password[7] = "";
+"19
+[v _tamanio_password `i ~T0 @X0 1 e ]
+[i _tamanio_password
+-> 0 `i
+]
+[; ;headers\alarma.h: 19: int tamanio_password=0;
+"20
+[v _tamanio_new_password `i ~T0 @X0 1 e ]
+[i _tamanio_new_password
+-> 0 `i
+]
+[; ;headers\alarma.h: 20: int tamanio_new_password=0;
+"22
+[v _intentos `i ~T0 @X0 1 e ]
+[i _intentos
+-> 0 `i
+]
+[; ;headers\alarma.h: 22: int intentos = 0;
+"23
+[v _autorizado `i ~T0 @X0 1 e ]
+[i _autorizado
+-> 0 `i
+]
+[; ;headers\alarma.h: 23: int autorizado=0;
+"24
+[v _encendida `i ~T0 @X0 1 e ]
+[i _encendida
+-> 1 `i
+]
+[; ;headers\alarma.h: 24: int encendida = 1;
+"25
+[v _activada `i ~T0 @X0 1 e ]
+[i _activada
+-> 0 `i
+]
+[; ;headers\alarma.h: 25: int activada = 0;
+"26
+[v _intentos_fallidos `i ~T0 @X0 1 e ]
+[i _intentos_fallidos
+-> 0 `i
+]
+[; ;headers\alarma.h: 26: int intentos_fallidos = 0;
+[; ;headers\alarma.h: 28: static void guardar_elemento_arreglo(char*,const char, int *);
+[; ;headers\alarma.h: 30: void cancelar_cambio_password();
+[; ;headers\alarma.h: 31: void inicializar_intentos_ingreso();
+[; ;headers\alarma.h: 33: void guardar_current_password(const char);
+[; ;headers\alarma.h: 34: void validar_password();
+[; ;headers\alarma.h: 36: void verficar_password(int *);
+[; ;headers\alarma.h: 37: void guardar_password_temporal(const char);
+[; ;headers\alarma.h: 38: void guardar_nuevo_password(const char);
+[; ;headers\alarma.h: 39: static void confirmar_nuevo_password(int *, char);
+[; ;headers\alarma.h: 40: void actualizar_password(char);
+[; ;headers\alarma.h: 42: void borrar_nuevo_password();
+[; ;headers\alarma.h: 43: void borrar_temporal_password();
+"3 ../../../../../../Program Files/Unimic/unmc_01/sources/alarma.c
+[v _cancelar_cambio_password `(v ~T0 @X0 1 ef ]
 {
-[; ;alarma.c: 6: void guardar_current_password(char valor){
-[e :U _guardar_current_password ]
-[v _valor `uc ~T0 @X0 1 r1 ]
+[; ;alarma.c: 3: void cancelar_cambio_password(){
+[e :U _cancelar_cambio_password ]
 [f ]
-[; ;alarma.c: 9: if (tamanio_password < 6){
-"9
-[e $ ! < _tamanio_password -> 6 `i 1040  ]
-{
-[; ;alarma.c: 10: current_password[tamanio_password] = valor;
+[; ;alarma.c: 4: new_password[0] = 0;
+"4
+[e = *U + &U _new_password * -> -> -> 0 `i `ui `ux -> -> # *U &U _new_password `ui `ux -> -> 0 `i `uc ]
+[; ;alarma.c: 5: temporal[0] = 0;
+"5
+[e = *U + &U _temporal * -> -> -> 0 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 0 `i `uc ]
+[; ;alarma.c: 7: tamanio_new_password = 0;
+"7
+[e = _tamanio_new_password -> 0 `i ]
+[; ;alarma.c: 8: tamanio_password = 0;
+"8
+[e = _tamanio_password -> 0 `i ]
+[; ;alarma.c: 10: restaurar_comando();
 "10
-[e = *U + &U _current_password * -> -> _tamanio_password `ui `ux -> -> # *U &U _current_password `ui `ux _valor ]
-[; ;alarma.c: 11: current_password [tamanio_password+1] = '\0';
+[e ( _restaurar_comando ..  ]
+[; ;alarma.c: 11: }
 "11
-[e = *U + &U _current_password * -> -> + _tamanio_password -> 1 `i `ui `ux -> -> # *U &U _current_password `ui `ux -> -> 0 `ui `uc ]
-[; ;alarma.c: 12: tamanio_password++;
-"12
-[e ++ _tamanio_password -> 1 `i ]
-"13
+[e :UE 1035 ]
 }
-[e :U 1040 ]
-[; ;alarma.c: 13: }
-[; ;alarma.c: 14: }
+"13
+[v _inicializar_intentos_fallidos `(v ~T0 @X0 1 ef ]
+{
+[; ;alarma.c: 13: void inicializar_intentos_fallidos(){
+[e :U _inicializar_intentos_fallidos ]
+[f ]
+[; ;alarma.c: 14: intentos_fallidos = 0;
 "14
+[e = _intentos_fallidos -> 0 `i ]
+[; ;alarma.c: 15: }
+"15
+[e :UE 1036 ]
+}
+"17
+[v _guardar_elemento_arreglo `(v ~T0 @X0 1 sf3`*uc`Cuc`*i ]
+{
+[; ;alarma.c: 17: static void guardar_elemento_arreglo(char* arreglo,const char valor, int * tamanio){
+[e :U _guardar_elemento_arreglo ]
+[v _arreglo `*uc ~T0 @X0 1 r1 ]
+[v _valor `Cuc ~T0 @X0 1 r2 ]
+[v _tamanio `*i ~T0 @X0 1 r3 ]
+[f ]
+[; ;alarma.c: 19: if (*tamanio < 6){
+"19
+[e $ ! < *U _tamanio -> 6 `i 1038  ]
+{
+[; ;alarma.c: 20: arreglo[*tamanio] = valor;
+"20
+[e = *U + _arreglo * -> *U _tamanio `x -> -> # *U _arreglo `i `x _valor ]
+[; ;alarma.c: 21: arreglo [*tamanio + 1] = '\0';
+"21
+[e = *U + _arreglo * -> + *U _tamanio -> 1 `i `x -> -> # *U _arreglo `i `x -> -> 0 `ui `uc ]
+[; ;alarma.c: 22: (*tamanio)++;
+"22
+[e ++ *U _tamanio -> 1 `i ]
+"23
+}
+[e :U 1038 ]
+[; ;alarma.c: 23: }
+[; ;alarma.c: 25: }
+"25
+[e :UE 1037 ]
+}
+"27
+[v _guardar_current_password `(v ~T0 @X0 1 ef1`Cuc ]
+{
+[; ;alarma.c: 27: void guardar_current_password(const char valor){
+[e :U _guardar_current_password ]
+[v _valor `Cuc ~T0 @X0 1 r1 ]
+[f ]
+[; ;alarma.c: 28: guardar_elemento_arreglo(current_password,valor, &tamanio_password );
+"28
+[e ( _guardar_elemento_arreglo (3 , , &U _current_password _valor &U _tamanio_password ]
+[; ;alarma.c: 29: }
+"29
 [e :UE 1039 ]
 }
-"16
-[v _guardar_password_temporal `(v ~T0 @X0 1 ef1`uc ]
+"31
+[v _guardar_password_temporal `(v ~T0 @X0 1 ef1`Cuc ]
 {
-[; ;alarma.c: 16: void guardar_password_temporal(char valor){
+[; ;alarma.c: 31: void guardar_password_temporal(const char valor){
 [e :U _guardar_password_temporal ]
-[v _valor `uc ~T0 @X0 1 r1 ]
+[v _valor `Cuc ~T0 @X0 1 r1 ]
 [f ]
-[; ;alarma.c: 18: if (tamanio_password < 6){
-"18
-[e $ ! < _tamanio_password -> 6 `i 1042  ]
-{
-[; ;alarma.c: 19: temporal[tamanio_password] = valor;
-"19
-[e = *U + &U _temporal * -> -> _tamanio_password `ui `ux -> -> # *U &U _temporal `ui `ux _valor ]
-[; ;alarma.c: 20: temporal [tamanio_password+1] = '\0';
-"20
-[e = *U + &U _temporal * -> -> + _tamanio_password -> 1 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 0 `ui `uc ]
-[; ;alarma.c: 21: tamanio_password++;
-"21
-[e ++ _tamanio_password -> 1 `i ]
-"22
+[; ;alarma.c: 32: guardar_elemento_arreglo(temporal,valor, &tamanio_password );
+"32
+[e ( _guardar_elemento_arreglo (3 , , &U _temporal _valor &U _tamanio_password ]
+[; ;alarma.c: 33: }
+"33
+[e :UE 1040 ]
 }
-[e :U 1042 ]
-[; ;alarma.c: 22: }
-[; ;alarma.c: 23: }
-"23
-[e :UE 1041 ]
-}
-"25
-[v _guardar_nuevo_password `(v ~T0 @X0 1 ef1`uc ]
+"35
+[v _guardar_nuevo_password `(v ~T0 @X0 1 ef1`Cuc ]
 {
-[; ;alarma.c: 25: void guardar_nuevo_password(char valor){
+[; ;alarma.c: 35: void guardar_nuevo_password(char valor){
 [e :U _guardar_nuevo_password ]
 [v _valor `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;alarma.c: 27: if (tamanio_new_password < 6){
-"27
-[e $ ! < _tamanio_new_password -> 6 `i 1044  ]
-{
-[; ;alarma.c: 28: new_password[tamanio_new_password] = valor;
-"28
-[e = *U + &U _new_password * -> -> _tamanio_new_password `ui `ux -> -> # *U &U _new_password `ui `ux _valor ]
-[; ;alarma.c: 29: new_password [tamanio_new_password+1] = 0;
-"29
-[e = *U + &U _new_password * -> -> + _tamanio_new_password -> 1 `i `ui `ux -> -> # *U &U _new_password `ui `ux -> -> 0 `i `uc ]
-[; ;alarma.c: 30: tamanio_new_password++;
-"30
-[e ++ _tamanio_new_password -> 1 `i ]
-"31
+[; ;alarma.c: 36: guardar_elemento_arreglo(new_password,valor, &tamanio_new_password );
+"36
+[e ( _guardar_elemento_arreglo (3 , , &U _new_password _valor &U _tamanio_new_password ]
+[; ;alarma.c: 37: }
+"37
+[e :UE 1041 ]
 }
-[e :U 1044 ]
-[; ;alarma.c: 31: }
-[; ;alarma.c: 32: }
-"32
-[e :UE 1043 ]
-}
-"34
+"39
 [v _validar_password `(v ~T0 @X0 1 ef ]
 {
-[; ;alarma.c: 34: void validar_password(){
+[; ;alarma.c: 39: void validar_password(){
 [e :U _validar_password ]
 [f ]
-[; ;alarma.c: 36: autorizado = 1;
-"36
-[e = _autorizado -> 1 `i ]
-"37
-[v _i `i ~T0 @X0 1 a ]
-[; ;alarma.c: 37: int i = 0;
-[e = _i -> 0 `i ]
-[; ;alarma.c: 38: while (i < 6 && autorizado==1){
-"38
-[e $U 1046  ]
-[e :U 1047 ]
-{
-[; ;alarma.c: 40: if (current_password[i] != password[i])
-"40
-[e $ ! != -> *U + &U _current_password * -> -> _i `ui `ux -> -> # *U &U _current_password `ui `ux `i -> *U + &U _password * -> -> _i `ui `ux -> -> # *U &U _password `ui `ux `i 1049  ]
-[; ;alarma.c: 41: autorizado = 0;
+[; ;alarma.c: 41: autorizado = 1;
 "41
-[e = _autorizado -> 0 `i ]
-[e :U 1049 ]
-[; ;alarma.c: 43: i++;
+[e = _autorizado -> 1 `i ]
+"42
+[v _i `i ~T0 @X0 1 a ]
+[; ;alarma.c: 42: int i = 0;
+[e = _i -> 0 `i ]
+[; ;alarma.c: 43: while (i < 6 && autorizado==1){
 "43
-[e ++ _i -> 1 `i ]
-"44
-}
-[e :U 1046 ]
-"38
-[e $ && < _i -> 6 `i == _autorizado -> 1 `i 1047  ]
-[e :U 1048 ]
-[; ;alarma.c: 44: }
-[; ;alarma.c: 46: if (autorizado == 1){
-"46
-[e $ ! == _autorizado -> 1 `i 1050  ]
+[e $U 1043  ]
+[e :U 1044 ]
 {
-[; ;alarma.c: 47: tamanio_password = 0;
+[; ;alarma.c: 44: if (current_password[i] != password[i])
+"44
+[e $ ! != -> *U + &U _current_password * -> -> _i `ui `ux -> -> # *U &U _current_password `ui `ux `i -> *U + &U _password * -> -> _i `ui `ux -> -> # *U &U _password `ui `ux `i 1046  ]
+[; ;alarma.c: 45: autorizado = 0;
+"45
+[e = _autorizado -> 0 `i ]
+[e :U 1046 ]
+[; ;alarma.c: 46: i++;
+"46
+[e ++ _i -> 1 `i ]
 "47
-[e = _tamanio_password -> 0 `i ]
-[; ;alarma.c: 48: encendida = 1;
-"48
-[e = _encendida -> 1 `i ]
-[; ;alarma.c: 49: LATBbits.LATB1 = 1;;
+}
+[e :U 1043 ]
+"43
+[e $ && < _i -> 6 `i == _autorizado -> 1 `i 1044  ]
+[e :U 1045 ]
+[; ;alarma.c: 47: }
+[; ;alarma.c: 49: if (autorizado == 1){
 "49
-[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
+[e $ ! == _autorizado -> 1 `i 1047  ]
+{
+[; ;alarma.c: 50: tamanio_password = 0;
 "50
-}
-[e :U 1050 ]
-[; ;alarma.c: 50: }
-[; ;alarma.c: 51: }
+[e = _tamanio_password -> 0 `i ]
+[; ;alarma.c: 51: encendida = 1;
 "51
-[e :UE 1045 ]
-}
+[e = _encendida -> 1 `i ]
+[; ;alarma.c: 52: LATBbits.LATB1 = 1;;
+"52
+[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
 "53
+}
+[e :U 1047 ]
+[; ;alarma.c: 53: }
+[; ;alarma.c: 54: }
+"54
+[e :UE 1042 ]
+}
+"56
 [v _verficar_password `(v ~T0 @X0 1 ef1`*i ]
 {
-[; ;alarma.c: 53: void verficar_password(int * verifica){
+[; ;alarma.c: 56: void verficar_password(int * verifica){
 [e :U _verficar_password ]
 [v _verifica `*i ~T0 @X0 1 r1 ]
 [f ]
-[; ;alarma.c: 55: *verifica=1;
-"55
-[e = *U _verifica -> 1 `i ]
-"56
-[v _i `i ~T0 @X0 1 a ]
-[; ;alarma.c: 56: int i = 0;
-[e = _i -> 0 `i ]
-[; ;alarma.c: 57: while (i < 6 && *verifica == 1){
-"57
-[e $U 1052  ]
-[e :U 1053 ]
-{
-[; ;alarma.c: 58: if (password[i] != *(temporal+i))
+[; ;alarma.c: 58: *verifica=1;
 "58
-[e $ ! != -> *U + &U _password * -> -> _i `ui `ux -> -> # *U &U _password `ui `ux `i -> *U + &U _temporal * -> _i `x -> -> # *U &U _temporal `i `x `i 1055  ]
-[; ;alarma.c: 59: *verifica = 0;
+[e = *U _verifica -> 1 `i ]
 "59
-[e = *U _verifica -> 0 `i ]
-[e :U 1055 ]
-[; ;alarma.c: 61: i++;
-"61
-[e ++ _i -> 1 `i ]
-"62
-}
-[e :U 1052 ]
-"57
-[e $ && < _i -> 6 `i == *U _verifica -> 1 `i 1053  ]
-[e :U 1054 ]
-[; ;alarma.c: 62: }
-[; ;alarma.c: 63: }
-"63
-[e :UE 1051 ]
-}
-"65
-[v _actualizar_password `(v ~T0 @X0 1 ef2`*i`uc ]
+[v _i `i ~T0 @X0 1 a ]
+[; ;alarma.c: 59: int i = 0;
+[e = _i -> 0 `i ]
+[; ;alarma.c: 60: while (i < 6 && *verifica == 1){
+"60
+[e $U 1049  ]
+[e :U 1050 ]
 {
-[; ;alarma.c: 65: void actualizar_password(int * confirmar, char valor){
-[e :U _actualizar_password ]
+[; ;alarma.c: 61: if (password[i] != *(temporal+i))
+"61
+[e $ ! != -> *U + &U _password * -> -> _i `ui `ux -> -> # *U &U _password `ui `ux `i -> *U + &U _temporal * -> _i `x -> -> # *U &U _temporal `i `x `i 1052  ]
+[; ;alarma.c: 62: *verifica = 0;
+"62
+[e = *U _verifica -> 0 `i ]
+[e :U 1052 ]
+[; ;alarma.c: 64: i++;
+"64
+[e ++ _i -> 1 `i ]
+"65
+}
+[e :U 1049 ]
+"60
+[e $ && < _i -> 6 `i == *U _verifica -> 1 `i 1050  ]
+[e :U 1051 ]
+[; ;alarma.c: 65: }
+[; ;alarma.c: 66: }
+"66
+[e :UE 1048 ]
+}
+"68
+[v _confirmar_nuevo_password `(v ~T0 @X0 1 sf2`*i`uc ]
+{
+[; ;alarma.c: 68: static void confirmar_nuevo_password(int * confirmar, char valor){
+[e :U _confirmar_nuevo_password ]
 [v _confirmar `*i ~T0 @X0 1 r1 ]
 [v _valor `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;alarma.c: 67: *confirmar=1;
-"67
-[e = *U _confirmar -> 1 `i ]
-"68
-[v _j `i ~T0 @X0 1 a ]
-[; ;alarma.c: 68: int j=0;
-[e = _j -> 0 `i ]
-[; ;alarma.c: 70: if ( *confirmar == 1 && tamanio_new_password - 6 - 1 < 6){
+[; ;alarma.c: 70: guardar_current_password(valor);
 "70
-[e $ ! && == *U _confirmar -> 1 `i < - - _tamanio_new_password -> 6 `i -> 1 `i -> 6 `i 1057  ]
-{
-[; ;alarma.c: 71: if (new_password[tamanio_new_password - 6 - 1] != valor)
-"71
-[e $ ! != -> *U + &U _new_password * -> -> - - _tamanio_new_password -> 6 `i -> 1 `i `ui `ux -> -> # *U &U _new_password `ui `ux `i -> _valor `i 1058  ]
-[; ;alarma.c: 72: *confirmar = 0;
+[e ( _guardar_current_password (1 _valor ]
+[; ;alarma.c: 72: if (tamanio_password >= 6 && *confirmar){
 "72
-[e = *U _confirmar -> 0 `i ]
-[e $U 1059  ]
+[e $ ! && >= _tamanio_password -> 6 `i != *U _confirmar -> 0 `i 1054  ]
+{
+"73
+[v _i `i ~T0 @X0 1 a ]
+[; ;alarma.c: 73: int i = 0;
+[e = _i -> 0 `i ]
+[; ;alarma.c: 74: while (i < 6 && *confirmar){
 "74
-[e :U 1058 ]
-[; ;alarma.c: 74: else
-[; ;alarma.c: 75: tamanio_new_password++;
+[e $U 1055  ]
+[e :U 1056 ]
+{
+[; ;alarma.c: 75: if (new_password[i] != current_password[i])
 "75
-[e ++ _tamanio_new_password -> 1 `i ]
-[e :U 1059 ]
+[e $ ! != -> *U + &U _new_password * -> -> _i `ui `ux -> -> # *U &U _new_password `ui `ux `i -> *U + &U _current_password * -> -> _i `ui `ux -> -> # *U &U _current_password `ui `ux `i 1058  ]
+[; ;alarma.c: 76: *confirmar = 0;
 "76
-}
-[e :U 1057 ]
-[; ;alarma.c: 76: }
-[; ;alarma.c: 78: if (*confirmar && tamanio_new_password - 6 - 1 >= 6){
+[e = *U _confirmar -> 0 `i ]
+[e :U 1058 ]
+[; ;alarma.c: 77: i++;
+"77
+[e ++ _i -> 1 `i ]
 "78
-[e $ ! && != *U _confirmar -> 0 `i >= - - _tamanio_new_password -> 6 `i -> 1 `i -> 6 `i 1060  ]
-{
-[; ;alarma.c: 80: for (int j=0; j < 6; j++ )
+}
+[e :U 1055 ]
+"74
+[e $ && < _i -> 6 `i != *U _confirmar -> 0 `i 1056  ]
+[e :U 1057 ]
+"79
+}
+[e :U 1054 ]
+[; ;alarma.c: 78: }
+[; ;alarma.c: 79: }
+[; ;alarma.c: 80: }
 "80
+[e :UE 1053 ]
+}
+"82
+[v _actualizar_password `(v ~T0 @X0 1 ef1`uc ]
 {
+[; ;alarma.c: 82: void actualizar_password(char valor){
+[e :U _actualizar_password ]
+[v _valor `uc ~T0 @X0 1 r1 ]
+[f ]
+"84
+[v _confirmar `i ~T0 @X0 1 a ]
+[; ;alarma.c: 84: int confirmar=1;
+[e = _confirmar -> 1 `i ]
+[; ;alarma.c: 85: confirmar_nuevo_password(&confirmar,valor);
+"85
+[e ( _confirmar_nuevo_password (2 , &U _confirmar _valor ]
+[; ;alarma.c: 87: if (confirmar && tamanio_password >= 6){
+"87
+[e $ ! && != _confirmar -> 0 `i >= _tamanio_password -> 6 `i 1060  ]
+{
+"89
 [v _j `i ~T0 @X0 1 a ]
+[; ;alarma.c: 89: int j;
+[; ;alarma.c: 90: for (j=0; j < 6; j++ )
+"90
+{
 [e = _j -> 0 `i ]
 [e $ < _j -> 6 `i 1061  ]
 [e $U 1062  ]
-"81
+"91
 [e :U 1061 ]
-[; ;alarma.c: 81: password[j] = new_password[j];
+[; ;alarma.c: 91: password[j] = new_password[j];
 [e = *U + &U _password * -> -> _j `ui `ux -> -> # *U &U _password `ui `ux *U + &U _new_password * -> -> _j `ui `ux -> -> # *U &U _new_password `ui `ux ]
-"80
+"90
 [e ++ _j -> 1 `i ]
 [e $ < _j -> 6 `i 1061  ]
 [e :U 1062 ]
-"81
+"91
 }
-[; ;alarma.c: 83: restaurar_comando();
-"83
+[; ;alarma.c: 92: restaurar_comando();
+"92
 [e ( _restaurar_comando ..  ]
-[; ;alarma.c: 85: new_password[0] = 0;
-"85
+[; ;alarma.c: 94: new_password[0] = 0;
+"94
 [e = *U + &U _new_password * -> -> -> 0 `i `ui `ux -> -> # *U &U _new_password `ui `ux -> -> 0 `i `uc ]
-[; ;alarma.c: 86: temporal[0] = 0;
-"86
+[; ;alarma.c: 95: temporal[0] = 0;
+"95
 [e = *U + &U _temporal * -> -> -> 0 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 0 `i `uc ]
-[; ;alarma.c: 88: tamanio_new_password = 0;
-"88
+[; ;alarma.c: 97: tamanio_new_password = 0;
+"97
 [e = _tamanio_new_password -> 0 `i ]
-[; ;alarma.c: 89: tamanio_password = 0;
-"89
+[; ;alarma.c: 98: tamanio_password = 0;
+"98
 [e = _tamanio_password -> 0 `i ]
-"90
+"99
 }
 [e :U 1060 ]
-[; ;alarma.c: 90: }
-[; ;alarma.c: 91: }
-"91
-[e :UE 1056 ]
+[; ;alarma.c: 99: }
+[; ;alarma.c: 100: }
+"100
+[e :UE 1059 ]
+}
+"102
+[v _borrar_nuevo_password `(v ~T0 @X0 1 ef ]
+{
+[; ;alarma.c: 102: void borrar_nuevo_password(){
+[e :U _borrar_nuevo_password ]
+[f ]
+[; ;alarma.c: 103: *new_password = 0;
+"103
+[e = *U &U _new_password -> -> 0 `i `uc ]
+[; ;alarma.c: 104: tamanio_new_password = 0;
+"104
+[e = _tamanio_new_password -> 0 `i ]
+[; ;alarma.c: 105: }
+"105
+[e :UE 1064 ]
+}
+"107
+[v _borrar_temporal_password `(v ~T0 @X0 1 ef ]
+{
+[; ;alarma.c: 107: void borrar_temporal_password(){
+[e :U _borrar_temporal_password ]
+[f ]
+[; ;alarma.c: 108: *temporal = 0;
+"108
+[e = *U &U _temporal -> -> 0 `i `uc ]
+[; ;alarma.c: 109: tamanio_password = 0;
+"109
+[e = _tamanio_password -> 0 `i ]
+[; ;alarma.c: 110: }
+"110
+[e :UE 1065 ]
 }

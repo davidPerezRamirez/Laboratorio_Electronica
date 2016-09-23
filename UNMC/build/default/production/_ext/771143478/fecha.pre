@@ -9327,41 +9327,6 @@ void DelayPORXLCD(void);
 void Write_RTC(void);
 void Read_RTC(void);
 
-# 6 "C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h"
-static char day[3] = "";
-static char month[3] = "";
-static char year[3] = "";
-
-static char hour[3] = "";
-static char minutes[3] = "";
-
-int tamanio_hora = 0;
-int tamanio_minutos = 0;
-
-int tamanio_dia = 0;
-int tamanio_mes = 0;
-int tamanio_anio = 0;
-
-static int valor_max;
-static int valor_min;
-
-static void convertir_a_int(char *, int *);
-static void guardar_elemento(char ,char * ,int * ,int ,int * ,void (*doit) (int *,const int));
-static void actualiza_elemento(int *,const int);
-static void obtener_dia_mes();
-
-static void actualiza_dia(int *,const int);
-void inicializar_fecha();
-void cambiar_dia(char);
-void cambiar_mes(char);
-void cambiar_anio(char);
-
-static void actualizar_hora(int * ,const int );
-static void actualizar_minutos(int * ,const int );
-void inicializar_hora();
-void cambiar_hora(char);
-void cambiar_minutos(char);
-
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdarg.h"
 typedef void * va_list[1];
 
@@ -9473,7 +9438,7 @@ void lcd_setcursor_vb(int8 visible, int8 blink);
 void lcd_puts(char *ptr);
 void lcd_putrs(const char *ptr);
 
-# 14 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
+# 14 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_03.h"
 char key;
 
 
@@ -9503,16 +9468,62 @@ char key;
 
 # 12 "C:/Archivos de programa/Unimic/unmc_01/headers\teclado.h"
 int ocultar_teclas;
-char comando[3]="xx";
-int tamanio_comando = 0;
+char comando[3];
+int tamanio_comando;
 
 void (*puntero_funcion)(char);
+void (*funcion_pulsador_C)(void);
+void (*funcion_pulsador_D)(void);
+void (*funcion_pulsador_B)(void);
 
+void inicializar_teclado();
 void guardar_comando(char);
 void imprimir_tecla(char);
 void restaurar_comando();
-static void guardar_tecla_presionada(const char *, int);
+static void guardar_tecla_presionada(int);
 void leer_teclado(int ocultar);
+
+# 10 "C:/Archivos de programa/Unimic/unmc_01/headers\fecha.h"
+static char day[3] = "";
+static char month[3] = "";
+static char year[3] = "";
+
+static char hour[3] = "";
+static char minutes[3] = "";
+
+int tamanio_hora = 0;
+int tamanio_minutos = 0;
+
+int tamanio_dia = 0;
+int tamanio_mes = 0;
+int tamanio_anio = 0;
+
+static int valor_max;
+static int valor_min;
+
+static void convertir_a_int(char *, int *);
+static void guardar_elemento(char ,char * ,int * ,int ,int * ,void (*doit) (int *,const int));
+static void actualiza_elemento(int *,const int);
+static void obtener_dia_mes();
+
+static void actualiza_dia(int *,const int);
+void inicializar_fecha();
+void cambiar_dia(char);
+void cambiar_mes(char);
+void cambiar_anio(char);
+void cancelar_cambio_fecha();
+void borrar_dia();
+void borrar_mes();
+void borrar_anio();
+
+static void actualizar_hora(int * ,const int );
+static void actualizar_minutos(int * ,const int );
+void inicializar_hora();
+void cambiar_hora(char);
+void cambiar_minutos(char);
+void cancelar_cambio_hora();
+void borrar_hora();
+void borrar_minutos();
 
 # 8 "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
 static void convertir_a_int(char * array, int * valor){
@@ -9624,7 +9635,28 @@ guardar_elemento(tecla,year,&tamanio_anio,validacion,&anio,actualiza_elemento);
 
 }
 
-# 127
+void cancelar_cambio_fecha(){
+inicializar_fecha();
+restaurar_comando();
+}
+
+void borrar_dia(){
+*day = 0;
+tamanio_dia = 0;
+
+}
+
+void borrar_mes(){
+*month = 0;
+tamanio_mes = 0;
+}
+
+void borrar_anio(){
+*year = 0;
+tamanio_anio = 0;
+}
+
+# 147
 void inicializar_hora(){
 *hour = 0;
 *minutes = 0;
@@ -9636,6 +9668,7 @@ tamanio_minutos = 0;
 static void actualizar_hora(int * elemento,const int valor){
 
 actualiza_elemento(elemento,valor);
+Write_RTC();
 restaurar_comando();
 inicializar_hora();
 }
@@ -9663,4 +9696,20 @@ valor_max = 59;
 
 int validacion = (tamanio_minutos < 3 - 1 && tamanio_hora == 0);
 guardar_elemento(tecla,minutes,&tamanio_minutos,validacion,&minuto,actualizar_minutos);
+}
+
+void cancelar_cambio_hora(){
+inicializar_hora();
+restaurar_comando();
+}
+
+void borrar_hora(){
+*hour = 0;
+tamanio_hora = 0;
+
+}
+
+void borrar_minutos(){
+*minutes = 0;
+tamanio_minutos = 0;
 }

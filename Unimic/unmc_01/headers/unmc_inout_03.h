@@ -1,15 +1,18 @@
 /*********************************************************************
  *
- *                Unimic XC8  Version 1.1   02 November 2015
+ *                Unimic XC8  Version 1.1   10 September 2015
  *
  *********************************************************************
- * FileName:        unmc_config_03.h
+ * FileName:        unmc_config_01.h
  * Dependencies:
  * Processor:       PIC18F26J50
  * Compiler:        XC8 1.34
  * Company:         Microchip Technology, Inc.
  *
  *********************************************************************/
+
+char key;         //variable key
+
 //
 ///** L E D **********************************************************/
 
@@ -28,15 +31,29 @@
 //#define mLED_1_Toggle   LED_1 = !LED_1;
 #define LED_2_Toggle    LED_2 = !LED_2;
 #define LED_3_Toggle    LED_3 = !LED_3;
+
+#define Speaker          LATCbits.LATC7
+#define Speaker_On       Speaker = 1;
+#define Speaker_Off      Speaker = 0;
+#define Speaker_Toggle	 Speaker = !Speaker;
+
+#define Speaker_2        LATCbits.LATC6
+#define Speaker_2_On     Speaker_2 = 1;
+#define Speaker_2_Off    Speaker_2 = 0;
+#define Speaker_2_Toggle Speaker_2 = !Speaker_2;
 //
 ///** S W I T C H *****************************************************/
-#define switch2         PORTAbits.RA0
-#define switch1         PORTAbits.RA1
-#define switch_Right    PORTAbits.RA2
-#define switch_Up       PORTAbits.RA3
-#define switch_Center   PORTAbits.RA5
-#define switch_Down     PORTAbits.RA6
-#define switch_Left     PORTAbits.RA7
+//#define switch1         PORTAbits.RA1
+//#define switch2         PORTAbits.RA0
 
-/********************************************************************/
+///** KEYBOARD *****************************************************/
+#define row1            LATAbits.LATA0
+#define row2            LATAbits.LATA1
+#define row3            LATAbits.LATA2
+#define row4            LATAbits.LATA3
+#define column1         PORTAbits.RA5
+#define column2         PORTAbits.RA7
+#define column3         PORTAbits.RA6
+#define column4         PORTCbits.RC2
+
 /********************************************************************/

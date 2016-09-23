@@ -9774,55 +9774,6 @@ extern __nonreentrant void _delay3(unsigned char);
 # 14 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
 char key;
 
-# 12 "C:/Archivos de programa/Unimic/unmc_01/headers\alarma.h"
-char password[7]="123456";
-char current_password[7]="";
-char temporal[7] = "";
-char new_password[7] = "";
-
-int tamanio_password=0;
-int tamanio_new_password=0;
-int autorizado=0;
-int encendida = 0;
-int activada = 1;
-
-
-void guardar_current_password(char);
-void validar_password();
-
-void verficar_password(int *);
-void guardar_password_temporal(char);
-void guardar_nuevo_password(char);
-void actualizar_password(int *, char);
-
-# 30 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\math.h"
-extern double fabs(double);
-extern double floor(double);
-extern double ceil(double);
-extern double modf(double, double *);
-extern double sqrt(double);
-extern double atof(const char *);
-extern double sin(double) ;
-extern double cos(double) ;
-extern double tan(double) ;
-extern double asin(double) ;
-extern double acos(double) ;
-extern double atan(double);
-extern double atan2(double, double) ;
-extern double log(double);
-extern double log10(double);
-extern double pow(double, double) ;
-extern double exp(double) ;
-extern double sinh(double) ;
-extern double cosh(double) ;
-extern double tanh(double);
-extern double eval_poly(double, const double *, int);
-extern double frexp(double, int *);
-extern double ldexp(double, int);
-extern double fmod(double, double);
-extern double trunc(double);
-extern double round(double);
-
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdarg.h"
 typedef void * va_list[1];
 
@@ -9886,100 +9837,92 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 27 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdlib.h"
-typedef struct {
-int rem;
-int quot;
-} div_t;
-typedef struct {
-unsigned rem;
-unsigned quot;
-} udiv_t;
-typedef struct {
-long quot;
-long rem;
-} ldiv_t;
-typedef struct {
-unsigned long quot;
-unsigned long rem;
-} uldiv_t;
-
-# 65
-extern double atof(const char *);
-extern double strtod(const char *, const char **);
-extern int atoi(const char *);
-extern unsigned xtoi(const char *);
-extern long atol(const char *);
-extern long strtol(const char *, char **, int);
-
-extern int rand(void);
-extern void srand(unsigned int);
-extern void * calloc(size_t, size_t);
-extern div_t div(int numer, int denom);
-extern udiv_t udiv(unsigned numer, unsigned denom);
-extern ldiv_t ldiv(long numer, long denom);
-extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-extern unsigned int _rotl(unsigned int value, unsigned int shift);
-extern unsigned int _rotr(unsigned int value, unsigned int shift);
-
-
-
-
-extern void * malloc(size_t);
-extern void free(void *);
-extern void * realloc(void *, size_t);
+# 33 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h"
+typedef unsigned char int8;
+typedef unsigned int int16;
+typedef unsigned long int32;
 
 # 98
-extern int atexit(void (*)(void));
-extern char * getenv(const char *);
-extern char ** environ;
-extern int system(char *);
-extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-extern int abs(int);
-extern long labs(long);
+void lcd_send_nibble(int8 nibble);
+int8 lcd_read_nibble(void);
+int8 lcd_read_byte(void);
+void lcd_send_byte(int8 address, int8 n);
 
+void lcd_init(void);
+void lcd_gotoxy(int8 x, int8 y);
+void lcd_putc(int8 c);
+void lcd_comand(int8 d);
+void lcd_setcursor_vb(int8 visible, int8 blink);
+void lcd_puts(char *ptr);
+void lcd_putrs(const char *ptr);
 
-extern char * itoa(char * buf, int val, int base);
-extern char * utoa(char * buf, unsigned val, int base);
+# 14 "C:/Archivos de programa/Unimic/unmc_01/headers\alarma.h"
+char password[7]="123456";
+char current_password[7]="";
+char temporal[7] = "";
+char new_password[7] = "";
 
+int tamanio_password=0;
+int tamanio_new_password=0;
 
+int intentos = 0;
+int autorizado=0;
+int encendida = 1;
+int activada = 0;
+int intentos_fallidos = 0;
 
+static void guardar_elemento_arreglo(char*,const char, int *);
 
-extern char * ltoa(char * buf, long val, int base);
-extern char * ultoa(char * buf, unsigned long val, int base);
+void cancelar_cambio_password();
+void inicializar_intentos_ingreso();
 
-extern char * ftoa(float f, int * status);
+void guardar_current_password(const char);
+void validar_password();
 
-# 6 "../../../../../../Program Files/Unimic/unmc_01/sources/alarma.c"
-void guardar_current_password(char valor){
+void verficar_password(int *);
+void guardar_password_temporal(const char);
+void guardar_nuevo_password(const char);
+static void confirmar_nuevo_password(int *, char);
+void actualizar_password(char);
 
+void borrar_nuevo_password();
+void borrar_temporal_password();
 
-if (tamanio_password < 6){
-current_password[tamanio_password] = valor;
-current_password [tamanio_password+1] = '\0';
-tamanio_password++;
+# 3 "../../../../../../Program Files/Unimic/unmc_01/sources/alarma.c"
+void cancelar_cambio_password(){
+new_password[0] = 0;
+temporal[0] = 0;
+
+tamanio_new_password = 0;
+tamanio_password = 0;
+
+restaurar_comando();
 }
+
+void inicializar_intentos_fallidos(){
+intentos_fallidos = 0;
 }
 
-void guardar_password_temporal(char valor){
+static void guardar_elemento_arreglo(char* arreglo,const char valor, int * tamanio){
 
-if (tamanio_password < 6){
-temporal[tamanio_password] = valor;
-temporal [tamanio_password+1] = '\0';
-tamanio_password++;
+if (*tamanio < 6){
+arreglo[*tamanio] = valor;
+arreglo [*tamanio + 1] = '\0';
+(*tamanio)++;
 }
+
+}
+
+void guardar_current_password(const char valor){
+guardar_elemento_arreglo(current_password,valor, &tamanio_password );
+}
+
+void guardar_password_temporal(const char valor){
+guardar_elemento_arreglo(temporal,valor, &tamanio_password );
 }
 
 void guardar_nuevo_password(char valor){
-
-if (tamanio_new_password < 6){
-new_password[tamanio_new_password] = valor;
-new_password [tamanio_new_password+1] = 0;
-tamanio_new_password++;
-}
+guardar_elemento_arreglo(new_password,valor, &tamanio_new_password );
 }
 
 void validar_password(){
@@ -9987,10 +9930,8 @@ void validar_password(){
 autorizado = 1;
 int i = 0;
 while (i < 6 && autorizado==1){
-
 if (current_password[i] != password[i])
 autorizado = 0;
-
 i++;
 }
 
@@ -10013,24 +9954,30 @@ i++;
 }
 }
 
-void actualizar_password(int * confirmar, char valor){
+static void confirmar_nuevo_password(int * confirmar, char valor){
 
-*confirmar=1;
-int j=0;
+guardar_current_password(valor);
 
-if ( *confirmar == 1 && tamanio_new_password - 6 - 1 < 6){
-if (new_password[tamanio_new_password - 6 - 1] != valor)
+if (tamanio_password >= 6 && *confirmar){
+int i = 0;
+while (i < 6 && *confirmar){
+if (new_password[i] != current_password[i])
 *confirmar = 0;
-
-else
-tamanio_new_password++;
+i++;
+}
+}
 }
 
-if (*confirmar && tamanio_new_password - 6 - 1 >= 6){
+void actualizar_password(char valor){
 
-for (int j=0; j < 6; j++ )
+int confirmar=1;
+confirmar_nuevo_password(&confirmar,valor);
+
+if (confirmar && tamanio_password >= 6){
+
+int j;
+for (j=0; j < 6; j++ )
 password[j] = new_password[j];
-
 restaurar_comando();
 
 new_password[0] = 0;
@@ -10041,3 +9988,12 @@ tamanio_password = 0;
 }
 }
 
+void borrar_nuevo_password(){
+*new_password = 0;
+tamanio_new_password = 0;
+}
+
+void borrar_temporal_password(){
+*temporal = 0;
+tamanio_password = 0;
+}
