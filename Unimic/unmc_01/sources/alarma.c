@@ -1,5 +1,27 @@
 #include <alarma.h>
 
+void inicializar_alarma(){    
+    password[0] = '1';
+    password[1] = '2';
+    password[2] = '3';
+    password[3] = '4';
+    password[4] = '5';           
+    password[5] = '6';
+    password[6] = 0;         
+            
+    *current_password = 0;
+    *temporal = 0;
+    *new_password = 0;
+    
+    tamanio_password=0;
+    tamanio_new_password=0;
+    
+    autorizado=0;
+    encendida = 0;
+    activada = 0;
+    intentos_fallidos = 0;
+}
+
 void cancelar_cambio_password(){
     new_password[0] = 0;        
     temporal[0] = 0;        
@@ -48,8 +70,6 @@ void validar_password(){
     
     if (autorizado == 1){
         tamanio_password = 0;
-        encendida = 1;
-        LED_2_On;
     }
 }
 
@@ -97,6 +117,11 @@ void actualizar_password(char valor){
         tamanio_new_password = 0;
         tamanio_password = 0;
     }
+}
+
+void borrar_current_password(){
+    *current_password = 0;
+    tamanio_password = 0;
 }
 
 void borrar_nuevo_password(){

@@ -9824,6 +9824,7 @@ char comando[3];
 int tamanio_comando;
 
 void (*puntero_funcion)(char);
+void (*funcion_pulsador_A)(void);
 void (*funcion_pulsador_C)(void);
 void (*funcion_pulsador_D)(void);
 void (*funcion_pulsador_B)(void);
@@ -9952,7 +9953,7 @@ ocultar_teclas = ocultar;
 
 LATAbits.LATA0=1;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=0;i=1;
 guardar_tecla_presionada(i);
-if (PORTCbits.RC2==1){key='A';while(PORTCbits.RC2==1){};}
+if (PORTCbits.RC2==1){key='A';funcion_pulsador_A();while(PORTCbits.RC2==1){};}
 
 LATAbits.LATA0=0;LATAbits.LATA1=1;LATAbits.LATA2=0;LATAbits.LATA3=0;i=4;
 guardar_tecla_presionada(i);

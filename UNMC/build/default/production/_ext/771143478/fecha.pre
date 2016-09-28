@@ -9472,6 +9472,7 @@ char comando[3];
 int tamanio_comando;
 
 void (*puntero_funcion)(char);
+void (*funcion_pulsador_A)(void);
 void (*funcion_pulsador_C)(void);
 void (*funcion_pulsador_D)(void);
 void (*funcion_pulsador_B)(void);
@@ -9525,7 +9526,7 @@ void cancelar_cambio_hora();
 void borrar_hora();
 void borrar_minutos();
 
-# 8 "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
+# 3 "../../../../../../Program Files/Unimic/unmc_01/sources/fecha.c"
 static void convertir_a_int(char * array, int * valor){
 *valor = atoi(array);
 }
@@ -9572,7 +9573,7 @@ static void actualiza_elemento(int * elemento,const int valor){
 Write_RTC();
 }
 
-# 59
+# 54
 void inicializar_fecha(){
 *day = 0;
 *month = 0;
@@ -9656,7 +9657,7 @@ void borrar_anio(){
 tamanio_anio = 0;
 }
 
-# 147
+# 142
 void inicializar_hora(){
 *hour = 0;
 *minutes = 0;

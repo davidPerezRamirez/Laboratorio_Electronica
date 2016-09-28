@@ -60,7 +60,7 @@ void leer_teclado(int ocultar){
     
     row1=1;row2=0;row3=0;row4=0;i=1;
     guardar_tecla_presionada(i);
-    if (column4==1){key='A';while(column4==1){};}
+    if (column4==1){key='A';funcion_pulsador_A();while(column4==1){};}
     
     row1=0;row2=1;row3=0;row4=0;i=4;
     guardar_tecla_presionada(i);

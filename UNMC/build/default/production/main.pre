@@ -9887,6 +9887,7 @@ char comando[3];
 int tamanio_comando;
 
 void (*puntero_funcion)(char);
+void (*funcion_pulsador_A)(void);
 void (*funcion_pulsador_C)(void);
 void (*funcion_pulsador_D)(void);
 void (*funcion_pulsador_B)(void);
@@ -9916,21 +9917,21 @@ void lcd_puts(char *ptr);
 void lcd_putrs(const char *ptr);
 
 # 14 "C:/Archivos de programa/Unimic/unmc_01/headers\alarma.h"
-char password[7]="123456";
-char current_password[7]="";
-char temporal[7] = "";
-char new_password[7] = "";
+char password[7];
+char current_password[7];
+char temporal[7];
+char new_password[7];
 
-int tamanio_password=0;
-int tamanio_new_password=0;
+int tamanio_password;
+int tamanio_new_password;
 
-int intentos = 0;
-int autorizado=0;
-int encendida = 1;
-int activada = 0;
-int intentos_fallidos = 0;
+int autorizado;
+int encendida;
+int activada;
+int intentos_fallidos;
 
 static void guardar_elemento_arreglo(char*,const char, int *);
+void inicializar_alarmar();
 
 void cancelar_cambio_password();
 void inicializar_intentos_ingreso();
@@ -9946,6 +9947,7 @@ void actualizar_password(char);
 
 void borrar_nuevo_password();
 void borrar_temporal_password();
+void borrar_current_password();
 
 # 27 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdlib.h"
 typedef struct {
@@ -10121,6 +10123,7 @@ char comando[3];
 int tamanio_comando;
 
 void (*puntero_funcion)(char);
+void (*funcion_pulsador_A)(void);
 void (*funcion_pulsador_C)(void);
 void (*funcion_pulsador_D)(void);
 void (*funcion_pulsador_B)(void);
@@ -10223,9 +10226,10 @@ lcd_putrs(buffer2);
 
 lcd_gotoxy(13,2);
 lcd_putrs((encendida)?"ON":"OFF");
+
 }
 
-# 59
+# 60
 void Setup(void)
 {
 OSCTUNEbits.INTSRC=1;
@@ -10280,7 +10284,7 @@ tamanio_password = 0;
 *current_password = 0;;
 
 for (int i=0;i<4;i++)_delay((unsigned long)((98)*(8000000/4000.0)));
-clear_display(tamanio_password);
+clear_display(tamanio_password+1);
 }
 }
 
@@ -10294,6 +10298,7 @@ void mostrar_guardar_password(char tecla){
 imprimir_tecla(tecla);
 sprintf(buffer2,"%01u",tecla);
 guardar_current_password(*buffer2);
+menu_ingresar_password();
 }
 
 void mostrar_guardar_temporal_password(char tecla){
@@ -10374,12 +10379,14 @@ funcion_pulsador_C = cancelar_cambio_password;
 verficar_password(&verifica);
 if(!verifica){
 puntero_funcion = &mostrar_guardar_temporal_password;
+funcion_pulsador_D = borrar_temporal_password;
 mostrar_titulo_menu("Password actual:          ");
 clear_display(tamanio_password+1);
 
 }else {
 if (tamanio_new_password <= 6){
 puntero_funcion = &mostrar_guardar_nuevo_password;
+funcion_pulsador_D = borrar_nuevo_password;
 
 mostrar_titulo_menu("Nuevo pass:        ");
 clear_display(tamanio_new_password+1);
@@ -10389,6 +10396,7 @@ tamanio_password = 0;
 
 }else {
 puntero_funcion = &confirmar_actualizar_password;
+funcion_pulsador_D = borrar_current_password;
 
 mostrar_titulo_menu("Confirme pass:        ");
 clear_display(tamanio_password+1);
@@ -10419,20 +10427,45 @@ inicializar_intentos_fallidos();
 }
 
 void desactivar_alarma(){
-if (!autorizado){
 inicializar_intentos_fallidos();
 puntero_funcion = mostrar_guardar_password;
 menu_ingresar_password();
-clear_display(tamanio_password);
-}
+clear_display(tamanio_password+1);
 }
 
-# 267
+void accionar_alarma(){
+
+*current_password = 0;
+autorizado = 0;
+tamanio_password = 0;
+
+if(encendida){
+encendida = 0;
+LATBbits.LATB1 = 0;;
+}else
+encendida = 1;
+
+puntero_funcion = mostrar_guardar_password;
+funcion_pulsador_A = ingresar_comando;
+clear_display(tamanio_password+1);
+menu_ingresar_password();
+
+}
+
+# 288
 int main(void)
 {
 Setup();
 inicializar_teclado();
-int ocultar_teclas = 1;
+inicializar_alarma();
+
+lcd_gotoxy(1,1);
+lcd_putrs("Para encender");
+lcd_gotoxy(1,2);
+lcd_putrs("Presione A");
+
+funcion_pulsador_A = accionar_alarma;
+int ocultar_teclas = 1;;
 
 while(1)
 {
@@ -10441,21 +10474,26 @@ Read_RTC();
 if (intentos_fallidos > 2){
 activada = 1;
 mensaje_alarma_activada();
+funcion_pulsador_A = ingresar_comando;
 funcion_pulsador_B = desactivar_alarma;
 }
 
 if (activada)
 activar_sonido_alarma();
-
-if (!autorizado && intentos_fallidos <=2){
-puntero_funcion = mostrar_guardar_password;
-menu_ingresar_password();
-}
-
-if (autorizado){
+if (autorizado)
 desactivar_sonido_alarma();
 
+if (autorizado && !encendida){
+caratula("Welcome ");
 puntero_funcion = &ingresar_comando;
+funcion_pulsador_A = accionar_alarma;
+}
+
+if (autorizado && encendida){
+LATBbits.LATB1 = !LATBbits.LATB1;;
+
+puntero_funcion = &ingresar_comando;
+funcion_pulsador_A = accionar_alarma;
 funcion_pulsador_C = restaurar_comando;
 funcion_pulsador_D = restaurar_comando;
 

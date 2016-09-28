@@ -14,6 +14,7 @@ char comando[3];
 int tamanio_comando;
 
 void (*puntero_funcion)(char);
+void (*funcion_pulsador_A)(void);
 void (*funcion_pulsador_C)(void);
 void (*funcion_pulsador_D)(void);
 void (*funcion_pulsador_B)(void);

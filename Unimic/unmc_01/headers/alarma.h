@@ -11,21 +11,21 @@
 
 #define tam_pass 6
 
-char password[7]="123456";
-char current_password[7]="";
-char temporal[7] = "";
-char new_password[7] = "";
+char password[7];
+char current_password[7];
+char temporal[7];
+char new_password[7];
 
-int tamanio_password=0;
-int tamanio_new_password=0;
+int tamanio_password;
+int tamanio_new_password;
 
-int intentos = 0;
-int autorizado=0;
-int encendida = 1;
-int activada = 0;
-int intentos_fallidos = 0;
+int autorizado;
+int encendida;
+int activada;
+int intentos_fallidos;
 
 static void guardar_elemento_arreglo(char*,const char, int *);
+void inicializar_alarmar();
 
 void cancelar_cambio_password();
 void inicializar_intentos_ingreso();
@@ -41,4 +41,5 @@ void actualizar_password(char);
 
 void borrar_nuevo_password();
 void borrar_temporal_password(); 
+void borrar_current_password();
 

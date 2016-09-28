@@ -48,6 +48,7 @@
         
         lcd_gotoxy(13,2);
         lcd_putrs((encendida)?"ON":"OFF");
+                
     }
     
 //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
@@ -94,7 +95,7 @@ void clear_display(const int pos){
 }    
     
 void menu_ingresar_password(){    
-           
+               
     lcd_comand(0b00001100);             //Enciende display sin cursor y sin blink  
     lcd_gotoxy(1,1);        
     lcd_putrs("Inserte password");    
@@ -110,7 +111,7 @@ void menu_ingresar_password(){
         *current_password = 0;;
         
         for (int i=0;i<4;i++)__delay_ms(98);      
-        clear_display(tamanio_password);
+        clear_display(tamanio_password+1);
     }
 }    
 
@@ -123,7 +124,8 @@ void mostrar_guardar_password(char tecla){
     
     imprimir_tecla(tecla);
     sprintf(buffer2,"%01u",tecla);
-    guardar_current_password(*buffer2);    
+    guardar_current_password(*buffer2);
+    menu_ingresar_password();    
 }
 
 void mostrar_guardar_temporal_password(char tecla){    
@@ -204,12 +206,14 @@ void menu_cambiar_password(){
     verficar_password(&verifica);
     if(!verifica){
         puntero_funcion = &mostrar_guardar_temporal_password;
+        funcion_pulsador_D = borrar_temporal_password;
         mostrar_titulo_menu("Password actual:          ");                 
         clear_display(tamanio_password+1);
                 
     }else {                
         if (tamanio_new_password <= tam_pass){  
             puntero_funcion = &mostrar_guardar_nuevo_password;
+            funcion_pulsador_D = borrar_nuevo_password;
 
             mostrar_titulo_menu("Nuevo pass:        ");
             clear_display(tamanio_new_password+1);
@@ -219,6 +223,7 @@ void menu_cambiar_password(){
         
         }else { 
             puntero_funcion = &confirmar_actualizar_password;
+            funcion_pulsador_D = borrar_current_password;
 
             mostrar_titulo_menu("Confirme pass:        ");
             clear_display(tamanio_password+1);                                                                           
@@ -249,14 +254,29 @@ void desactivar_sonido_alarma(){
 }
 
 void desactivar_alarma(){
-    if (!autorizado){
         inicializar_intentos_fallidos();
         puntero_funcion = mostrar_guardar_password;
         menu_ingresar_password();
-        clear_display(tamanio_password);
-    }
+        clear_display(tamanio_password+1);
 }
 
+void accionar_alarma(){
+
+    *current_password = 0;
+    autorizado = 0;
+    tamanio_password = 0;
+    
+    if(encendida){        
+        encendida = 0;        
+    }else 
+        encendida = 1;    
+
+    puntero_funcion = mostrar_guardar_password;
+    funcion_pulsador_A = ingresar_comando;
+    clear_display(tamanio_password+1);
+    menu_ingresar_password();
+        
+}
 /*------------------------------------------------------------------------------
 ********************************************************************************
 Funcion main
@@ -266,32 +286,47 @@ Funcion principal del programa
 
 int main(void)
 {
-Setup();  
+Setup();
 inicializar_teclado();
+inicializar_alarma();
+
+lcd_gotoxy(1,1);
+lcd_putrs("Para encender");
+lcd_gotoxy(1,2);
+lcd_putrs("Presione A");
+
+funcion_pulsador_A = accionar_alarma;
 int ocultar_teclas = 1;
 
 while(1)
-   {
+   {        
+    
     Read_RTC();
     
     if (intentos_fallidos > 2){
        activada = 1;
        mensaje_alarma_activada();
-       funcion_pulsador_B = desactivar_alarma;
+       funcion_pulsador_A = ingresar_comando;
+       funcion_pulsador_B = desactivar_alarma;       
     }        
     
     if (activada)
-        activar_sonido_alarma();
-    
-    if (!autorizado && intentos_fallidos <=2){         
-        puntero_funcion = mostrar_guardar_password;
-        menu_ingresar_password();        
-    }       
-    
-    if (autorizado){ 
+        activar_sonido_alarma();  
+    if (autorizado)
         desactivar_sonido_alarma();
+    
+    if (autorizado && !encendida){
+        caratula("Welcome ");
+        LED_2_Off;
+        puntero_funcion = &ingresar_comando;
+        funcion_pulsador_A = accionar_alarma;
+    }
+    
+    if (autorizado && encendida){        
+        LED_2_Toggle;
         
         puntero_funcion = &ingresar_comando;
+        funcion_pulsador_A = accionar_alarma;
         funcion_pulsador_C = restaurar_comando;
         funcion_pulsador_D = restaurar_comando;
         

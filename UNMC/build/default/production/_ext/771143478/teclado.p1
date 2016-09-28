@@ -3,6 +3,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v F8188 `(v ~T0 @X0 0 tf ]
 [v F8191 `(v ~T0 @X0 0 tf ]
 [v F8194 `(v ~T0 @X0 0 tf ]
+[v F8197 `(v ~T0 @X0 0 tf ]
 "206 C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "109 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
@@ -7724,20 +7725,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _puntero_funcion `*F8185 ~T0 @X0 1 e ]
 [; ;headers\teclado.h: 16: void (*puntero_funcion)(char);
 "17
-[v _funcion_pulsador_C `*F8188 ~T0 @X0 1 e ]
-[; ;headers\teclado.h: 17: void (*funcion_pulsador_C)(void);
+[v _funcion_pulsador_A `*F8188 ~T0 @X0 1 e ]
+[; ;headers\teclado.h: 17: void (*funcion_pulsador_A)(void);
 "18
-[v _funcion_pulsador_D `*F8191 ~T0 @X0 1 e ]
-[; ;headers\teclado.h: 18: void (*funcion_pulsador_D)(void);
+[v _funcion_pulsador_C `*F8191 ~T0 @X0 1 e ]
+[; ;headers\teclado.h: 18: void (*funcion_pulsador_C)(void);
 "19
-[v _funcion_pulsador_B `*F8194 ~T0 @X0 1 e ]
-[; ;headers\teclado.h: 19: void (*funcion_pulsador_B)(void);
-[; ;headers\teclado.h: 21: void inicializar_teclado();
-[; ;headers\teclado.h: 22: void guardar_comando(char);
-[; ;headers\teclado.h: 23: void imprimir_tecla(char);
-[; ;headers\teclado.h: 24: void restaurar_comando();
-[; ;headers\teclado.h: 25: static void guardar_tecla_presionada(int);
-[; ;headers\teclado.h: 26: void leer_teclado(int ocultar);
+[v _funcion_pulsador_D `*F8194 ~T0 @X0 1 e ]
+[; ;headers\teclado.h: 19: void (*funcion_pulsador_D)(void);
+"20
+[v _funcion_pulsador_B `*F8197 ~T0 @X0 1 e ]
+[; ;headers\teclado.h: 20: void (*funcion_pulsador_B)(void);
+[; ;headers\teclado.h: 22: void inicializar_teclado();
+[; ;headers\teclado.h: 23: void guardar_comando(char);
+[; ;headers\teclado.h: 24: void imprimir_tecla(char);
+[; ;headers\teclado.h: 25: void restaurar_comando();
+[; ;headers\teclado.h: 26: static void guardar_tecla_presionada(int);
+[; ;headers\teclado.h: 27: void leer_teclado(int ocultar);
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
 [; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
@@ -7962,11 +7966,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;teclado.c: 62: guardar_tecla_presionada(i);
 "62
 [e ( _guardar_tecla_presionada (1 _i ]
-[; ;teclado.c: 63: if (PORTCbits.RC2==1){key='A';while(PORTCbits.RC2==1){};}
+[; ;teclado.c: 63: if (PORTCbits.RC2==1){key='A';funcion_pulsador_A();while(PORTCbits.RC2==1){};}
 "63
 [e $ ! == -> . . _PORTCbits 0 2 `i -> 1 `i 1056  ]
 {
 [e = _key -> -> 65 `ui `uc ]
+[e ( *U _funcion_pulsador_A ..  ]
 [e $U 1057  ]
 [e :U 1058 ]
 {
