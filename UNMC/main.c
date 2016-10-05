@@ -68,7 +68,7 @@
     OSCCONbits.SCS1=0;
     TRISA = 0b11110000;
     TRISB = 0;
-    TRISC = 0b00000111;
+    TRISC = 0b01000111;
     //TRISAbits.TRISA0=1;
     //TRISBbits.TRISB0=0;
     //TRISCbits.TRISC0=0;
@@ -242,14 +242,12 @@ void mensaje_alarma_activada(){
 void activar_sonido_alarma(){
     LED_3_Toggle;
     Speaker_Toggle;
-    Speaker_2_Toggle;
 }
 
 void desactivar_sonido_alarma(){
     activada=0;
     LED_3_Off;
     Speaker_Off;
-    Speaker_2_Off;
     inicializar_intentos_fallidos();
 }
 
@@ -258,6 +256,7 @@ void desactivar_alarma(){
         puntero_funcion = mostrar_guardar_password;
         menu_ingresar_password();
         clear_display(tamanio_password+1);
+        restaurar_comando();
 }
 
 void accionar_alarma(){
@@ -277,6 +276,14 @@ void accionar_alarma(){
     menu_ingresar_password();
         
 }
+
+void setear_comando_alarma(){
+    comando[0]='6';
+    comando[1]='6';
+    comando[2]='6';
+    comando[3]=0;
+}
+
 /*------------------------------------------------------------------------------
 ********************************************************************************
 Funcion main
@@ -301,13 +308,13 @@ int ocultar_teclas = 1;
 while(1)
    {        
     
-    Read_RTC();
+    Read_RTC();        
     
-    if (intentos_fallidos > 2){
+    if (intentos_fallidos > 2 ){    
        activada = 1;
        mensaje_alarma_activada();
        funcion_pulsador_A = ingresar_comando;
-       funcion_pulsador_B = desactivar_alarma;       
+       funcion_pulsador_B = desactivar_alarma;
     }        
     
     if (activada)
@@ -325,6 +332,11 @@ while(1)
     if (autorizado && encendida){        
         LED_2_Toggle;
         
+        if(!switch1){
+           setear_comando_alarma();
+        }
+        
+        
         puntero_funcion = &ingresar_comando;
         funcion_pulsador_A = accionar_alarma;
         funcion_pulsador_C = restaurar_comando;
@@ -335,6 +347,10 @@ while(1)
             case 10 : menu_cambiar_password(); break;
             case 11 : menu_cambiar_fecha(); break;
             case 12 : menu_cambiar_horario(); break;
+            case 666: *current_password=0;
+                      autorizado = 0;
+                      intentos_fallidos = 3;                       
+                      break;
             default:  caratula("Welcome "); 
                       if (tamanio_comando >= 2) 
                         tamanio_comando = 0;

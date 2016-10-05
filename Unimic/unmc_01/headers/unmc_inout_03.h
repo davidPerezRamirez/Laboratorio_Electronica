@@ -37,13 +37,9 @@ char key;         //variable key
 #define Speaker_Off      Speaker = 0;
 #define Speaker_Toggle	 Speaker = !Speaker;
 
-#define Speaker_2        LATCbits.LATC6
-#define Speaker_2_On     Speaker_2 = 1;
-#define Speaker_2_Off    Speaker_2 = 0;
-#define Speaker_2_Toggle Speaker_2 = !Speaker_2;
 //
 ///** S W I T C H *****************************************************/
-//#define switch1         PORTAbits.RA1
+#define switch1         PORTCbits.RC6
 //#define switch2         PORTAbits.RA0
 
 ///** KEYBOARD *****************************************************/
