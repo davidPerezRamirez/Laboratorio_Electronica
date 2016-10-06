@@ -1,0 +1,1545 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.34 build -361300703 
+                                                                                               Wed Oct 05 23:39:40 2016
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
+     1                           	processor	18F26J50
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     8                           	psect	text1,global,reloc=2,class=CODE,delta=1
+     9                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text7,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    16                           	psect	text9,global,reloc=2,class=CODE,delta=1
+    17                           	psect	text10,global,reloc=2,class=CODE,delta=1
+    18                           	psect	text11,global,reloc=2,class=CODE,delta=1
+    19                           	psect	text12,global,reloc=2,class=CODE,delta=1
+    20                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    21                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    22  0000                     _ANCON0	set	3912
+    23  0000                     _ANCON1	set	3913
+    24  0000                     _RTCCFGbits	set	3903
+    25  0000                     _ADCON0	set	4034
+    26  0000                     _ADCON1	set	4033
+    27  0000                     _LATCbits	set	3979
+    28  0000                     _OSCCONbits	set	4051
+    29  0000                     _OSCTUNEbits	set	3995
+    30  0000                     _PORTBbits	set	3969
+    31  0000                     _PORTCbits	set	3970
+    32  0000                     _T1CONbits	set	4045
+    33  0000                     _TRISA	set	3986
+    34  0000                     _TRISB	set	3987
+    35  0000                     _TRISC	set	3988
+    36                           
+    37 ;;
+    38 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+    39 ;;
+    40 ;; *************** function _main *****************
+    41 ;; Defined at:
+    42 ;;		line 188 in file "main.c"
+    43 ;; Parameters:    Size  Location     Type
+    44 ;;		None
+    45 ;; Auto vars:     Size  Location     Type
+    46 ;;  unidad          2    7[COMRAM] int 
+    47 ;;  decena          2    5[COMRAM] int 
+    48 ;; Return value:  Size  Location     Type
+    49 ;;                  2   80[None  ] int 
+    50 ;; Registers used:
+    51 ;;		wreg, status,2, status,0, cstack
+    52 ;; Tracked objects:
+    53 ;;		On entry : 0/0
+    54 ;;		On exit  : 0/0
+    55 ;;		Unchanged: 0/0
+    56 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+    57 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+    58 ;;      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+    59 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+    60 ;;      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+    61 ;;Total ram usage:        5 bytes
+    62 ;; Hardware stack levels required when called:    2
+    63 ;; This function calls:
+    64 ;;		_number_to_segment
+    65 ;;		_setup
+    66 ;; This function is called by:
+    67 ;;		Startup code after reset
+    68 ;; This function uses a non-reentrant model
+    69 ;;
+    70                           
+    71                           	psect	text0
+    72  00FF46                     __ptext0:
+    73                           	opt stack 0
+    74  00FF46                     _main:
+    75                           	opt stack 29
+    76                           
+    77                           ;main.c: 190: setup();
+    78                           
+    79                           ;incstack = 0
+    80  00FF46  EC40  F07F         	call	_setup	;wreg free
+    81                           
+    82                           ;main.c: 192: int decena = 0;
+    83  00FF4A  0E00               	movlw	0
+    84  00FF4C  6E07               	movwf	main@decena+1,c
+    85  00FF4E  0E00               	movlw	0
+    86  00FF50  6E06               	movwf	main@decena,c
+    87                           
+    88                           ;main.c: 193: int unidad = 0;
+    89  00FF52  0E00               	movlw	0
+    90  00FF54  6E09               	movwf	main@unidad+1,c
+    91  00FF56  0E00               	movlw	0
+    92  00FF58  6E08               	movwf	main@unidad,c
+    93                           
+    94                           ;main.c: 195: LATCbits.LATC6 = 0;;
+    95  00FF5A  9C8B               	bcf	3979,6,c	;volatile
+    96                           
+    97                           ;main.c: 196: LATCbits.LATC7 = 1;;
+    98  00FF5C  8E8B               	bsf	3979,7,c	;volatile
+    99  00FF5E  D000               	goto	l835
+   100  00FF60                     l835:
+   101                           
+   102                           ;main.c: 200: if (!PORTCbits.RC5){
+   103  00FF60  BA82               	btfsc	3970,5,c	;volatile
+   104  00FF62  D027               	goto	l851
+   105                           
+   106                           ;main.c: 201: unidad++;
+   107  00FF64  4A08               	infsnz	main@unidad,f,c
+   108  00FF66  2A09               	incf	main@unidad+1,f,c
+   109                           
+   110                           ;main.c: 202: if (unidad > 9){
+   111  00FF68  BE09               	btfsc	main@unidad+1,7,c
+   112  00FF6A  D00D               	goto	l845
+   113  00FF6C  5009               	movf	main@unidad+1,w,c
+   114  00FF6E  E104               	bnz	u50
+   115  00FF70  0E0A               	movlw	10
+   116  00FF72  5C08               	subwf	main@unidad,w,c
+   117  00FF74  A0D8               	btfss	status,0,c
+   118  00FF76  D007               	goto	l845
+   119  00FF78                     u50:
+   120                           
+   121                           ;main.c: 203: decena++;
+   122  00FF78  4A06               	infsnz	main@decena,f,c
+   123  00FF7A  2A07               	incf	main@decena+1,f,c
+   124                           
+   125                           ;main.c: 204: unidad = 0;
+   126  00FF7C  0E00               	movlw	0
+   127  00FF7E  6E09               	movwf	main@unidad+1,c
+   128  00FF80  0E00               	movlw	0
+   129  00FF82  6E08               	movwf	main@unidad,c
+   130  00FF84  D000               	goto	l845
+   131  00FF86                     l845:
+   132                           
+   133                           ;main.c: 205: }
+   134                           ;main.c: 207: if (decena > 9){
+   135  00FF86  BE07               	btfsc	main@decena+1,7,c
+   136  00FF88  D00B               	goto	l849
+   137  00FF8A  5007               	movf	main@decena+1,w,c
+   138  00FF8C  E104               	bnz	u60
+   139  00FF8E  0E0A               	movlw	10
+   140  00FF90  5C06               	subwf	main@decena,w,c
+   141  00FF92  A0D8               	btfss	status,0,c
+   142  00FF94  D005               	goto	l849
+   143  00FF96                     u60:
+   144                           
+   145                           ;main.c: 208: decena = 0;
+   146  00FF96  0E00               	movlw	0
+   147  00FF98  6E07               	movwf	main@decena+1,c
+   148  00FF9A  0E00               	movlw	0
+   149  00FF9C  6E06               	movwf	main@decena,c
+   150  00FF9E  D000               	goto	l849
+   151  00FFA0                     l849:
+   152                           
+   153                           ;main.c: 209: }
+   154                           ;main.c: 210: _delay((unsigned long)((98)*(8000000/4000.0)));
+   155  00FFA0  0EFF               	movlw	255
+   156  00FFA2  6E05               	movwf	??_main& (0+255),c
+   157  00FFA4  0E8A               	movlw	138
+   158  00FFA6                     u77:
+   159  00FFA6  2EE8               	decfsz	wreg,f,c
+   160  00FFA8  D7FE               	goto	u77
+   161  00FFAA  2E05               	decfsz	??_main& (0+255),f,c
+   162  00FFAC  D7FC               	goto	u77
+   163  00FFAE  D000               	nop2	
+   164  00FFB0  D000               	goto	l851
+   165  00FFB2                     l851:
+   166                           
+   167                           ;main.c: 211: }
+   168                           ;main.c: 213: LATCbits.LATC7 = 0;;
+   169  00FFB2  9E8B               	bcf	3979,7,c	;volatile
+   170                           
+   171                           ;main.c: 214: number_to_segment(decena);
+   172  00FFB4  C006  F001         	movff	main@decena,number_to_segment@number
+   173  00FFB8  C007  F002         	movff	main@decena+1,number_to_segment@number+1
+   174  00FFBC  EC5B  F07F         	call	_number_to_segment	;wreg free
+   175                           
+   176                           ;main.c: 215: _delay((unsigned long)((10)*(8000000/4000.0)));
+   177  00FFC0  0E1A               	movlw	26
+   178  00FFC2  6E05               	movwf	??_main& (0+255),c
+   179  00FFC4  0EF8               	movlw	248
+   180  00FFC6                     u87:
+   181  00FFC6  2EE8               	decfsz	wreg,f,c
+   182  00FFC8  D7FE               	goto	u87
+   183  00FFCA  2E05               	decfsz	??_main& (0+255),f,c
+   184  00FFCC  D7FC               	goto	u87
+   185  00FFCE  D000               	nop2	
+   186                           
+   187                           ;main.c: 216: LATCbits.LATC7 = 1;;
+   188  00FFD0  8E8B               	bsf	3979,7,c	;volatile
+   189                           
+   190                           ;main.c: 218: LATCbits.LATC6 = 0;;
+   191  00FFD2  9C8B               	bcf	3979,6,c	;volatile
+   192                           
+   193                           ;main.c: 219: number_to_segment(unidad);
+   194  00FFD4  C008  F001         	movff	main@unidad,number_to_segment@number
+   195  00FFD8  C009  F002         	movff	main@unidad+1,number_to_segment@number+1
+   196  00FFDC  EC5B  F07F         	call	_number_to_segment	;wreg free
+   197                           
+   198                           ;main.c: 220: _delay((unsigned long)((10)*(8000000/4000.0)));
+   199  00FFE0  0E1A               	movlw	26
+   200  00FFE2  6E05               	movwf	??_main& (0+255),c
+   201  00FFE4  0EF8               	movlw	248
+   202  00FFE6                     u97:
+   203  00FFE6  2EE8               	decfsz	wreg,f,c
+   204  00FFE8  D7FE               	goto	u97
+   205  00FFEA  2E05               	decfsz	??_main& (0+255),f,c
+   206  00FFEC  D7FC               	goto	u97
+   207  00FFEE  D000               	nop2	
+   208                           
+   209                           ;main.c: 221: LATCbits.LATC6 = 1;;
+   210  00FFF0  8C8B               	bsf	3979,6,c	;volatile
+   211  00FFF2  D7B6               	goto	l835
+   212                           
+   213                           ;main.c: 223: }
+   214                           ;main.c: 225: return 0;
+   215                           ;	Return value of _main is never used
+   216  00FFF4  EF00  F000         	goto	start
+   217  00FFF8                     __end_of_main:
+   218                           	opt stack 0
+   219                           wreg	equ	0xFE8
+   220                           status	equ	0xFD8
+   221                           
+   222                           	psect	cinit
+   223  00FDD6                     __pcinit:
+   224                           	opt stack 0
+   225  00FDD6                     start_initialization:
+   226                           	opt stack 0
+   227  00FDD6                     __initialization:
+   228                           	opt stack 0
+   229  00FDD6                     end_of_initialization:
+   230                           	opt stack 0
+   231  00FDD6                     __end_of__initialization:
+   232                           	opt stack 0
+   233  00FDD6  0E00               	movlw	low (__Lmediumconst shr (0+16))
+   234  00FDD8  6EF8               	movwf	tblptru,c
+   235  00FDDA  0100               	movlb	0
+   236  00FDDC  EFA3  F07F         	goto	_main	;jump to C main() function
+   237                           tblptru	equ	0xFF8
+   238                           wreg	equ	0xFE8
+   239                           status	equ	0xFD8
+   240                           
+   241                           	psect	cstackCOMRAM
+   242  000001                     __pcstackCOMRAM:
+   243                           	opt stack 0
+   244  000001                     number_to_segment@number:
+   245                           	opt stack 0
+   246                           
+   247                           ; 2 bytes @ 0x0
+   248  000001                     	ds	2
+   249  000003                     ??_number_to_segment:
+   250                           
+   251                           ; 0 bytes @ 0x2
+   252  000003                     	ds	2
+   253  000005                     ??_main:
+   254                           
+   255                           ; 0 bytes @ 0x4
+   256  000005                     	ds	1
+   257  000006                     main@decena:
+   258                           	opt stack 0
+   259                           
+   260                           ; 2 bytes @ 0x5
+   261  000006                     	ds	2
+   262  000008                     main@unidad:
+   263                           	opt stack 0
+   264                           
+   265                           ; 2 bytes @ 0x7
+   266  000008                     	ds	2
+   267                           tblptru	equ	0xFF8
+   268                           wreg	equ	0xFE8
+   269                           status	equ	0xFD8
+   270                           
+   271 ;; *************** function _setup *****************
+   272 ;; Defined at:
+   273 ;;		line 26 in file "main.c"
+   274 ;; Parameters:    Size  Location     Type
+   275 ;;		None
+   276 ;; Auto vars:     Size  Location     Type
+   277 ;;		None
+   278 ;; Return value:  Size  Location     Type
+   279 ;;		None               void
+   280 ;; Registers used:
+   281 ;;		wreg, status,2
+   282 ;; Tracked objects:
+   283 ;;		On entry : 0/0
+   284 ;;		On exit  : 0/0
+   285 ;;		Unchanged: 0/0
+   286 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   287 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   288 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   289 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   290 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   291 ;;Total ram usage:        0 bytes
+   292 ;; Hardware stack levels used:    1
+   293 ;; This function calls:
+   294 ;;		Nothing
+   295 ;; This function is called by:
+   296 ;;		_main
+   297 ;; This function uses a non-reentrant model
+   298 ;;
+   299                           
+   300                           	psect	text1
+   301  00FE80                     __ptext1:
+   302                           	opt stack 0
+   303  00FE80                     _setup:
+   304                           	opt stack 30
+   305                           
+   306                           ;main.c: 28: OSCTUNEbits.INTSRC=1;
+   307                           
+   308                           ;incstack = 0
+   309  00FE80  8E9B               	bsf	3995,7,c	;volatile
+   310                           
+   311                           ;main.c: 29: OSCTUNEbits.PLLEN=0;
+   312  00FE82  9C9B               	bcf	3995,6,c	;volatile
+   313                           
+   314                           ;main.c: 30: OSCCONbits.IRCF0=1;
+   315  00FE84  88D3               	bsf	4051,4,c	;volatile
+   316                           
+   317                           ;main.c: 31: OSCCONbits.IRCF1=1;
+   318  00FE86  8AD3               	bsf	4051,5,c	;volatile
+   319                           
+   320                           ;main.c: 32: OSCCONbits.IRCF2=1;
+   321  00FE88  8CD3               	bsf	4051,6,c	;volatile
+   322                           
+   323                           ;main.c: 33: OSCCONbits.SCS0=0;
+   324  00FE8A  90D3               	bcf	4051,0,c	;volatile
+   325                           
+   326                           ;main.c: 34: OSCCONbits.SCS1=0;
+   327  00FE8C  92D3               	bcf	4051,1,c	;volatile
+   328                           
+   329                           ;main.c: 35: TRISA = 0b11110000;
+   330  00FE8E  0EF0               	movlw	240
+   331  00FE90  6E92               	movwf	3986,c	;volatile
+   332                           
+   333                           ;main.c: 36: TRISB = 0;
+   334  00FE92  0E00               	movlw	0
+   335  00FE94  6E93               	movwf	3987,c	;volatile
+   336                           
+   337                           ;main.c: 37: TRISC = 0b00100111;
+   338  00FE96  0E27               	movlw	39
+   339  00FE98  6E94               	movwf	3988,c	;volatile
+   340                           
+   341                           ;main.c: 41: ANCON0=0b11111111;
+   342  00FE9A  010F               	movlb	15	; () banked
+   343  00FE9C  6948               	setf	72,b	;volatile
+   344                           
+   345                           ; BSR set to: 15
+   346                           ;main.c: 43: ANCON1=0b11111111;
+   347  00FE9E  010F               	movlb	15	; () banked
+   348  00FEA0  6949               	setf	73,b	;volatile
+   349                           
+   350                           ;main.c: 44: ADCON0=0b00101101;
+   351  00FEA2  0E2D               	movlw	45
+   352  00FEA4  6EC2               	movwf	4034,c	;volatile
+   353                           
+   354                           ;main.c: 45: ADCON1=0b00010000;
+   355  00FEA6  0E10               	movlw	16
+   356  00FEA8  6EC1               	movwf	4033,c	;volatile
+   357                           
+   358                           ; BSR set to: 15
+   359                           ;main.c: 46: RTCCFGbits.RTCEN=1;
+   360  00FEAA  010F               	movlb	15	; () banked
+   361  00FEAC  8F3F               	bsf	63,7,b	;volatile
+   362                           
+   363                           ; BSR set to: 15
+   364                           ;main.c: 47: RTCCFGbits.RTCWREN=1;
+   365  00FEAE  010F               	movlb	15	; () banked
+   366  00FEB0  8B3F               	bsf	63,5,b	;volatile
+   367                           
+   368                           ; BSR set to: 15
+   369                           ;main.c: 48: T1CONbits.T1OSCEN=1;
+   370  00FEB2  86CD               	bsf	4045,3,c	;volatile
+   371                           
+   372                           ; BSR set to: 15
+   373  00FEB4  0012               	return		;funcret
+   374  00FEB6                     __end_of_setup:
+   375                           	opt stack 0
+   376                           tblptru	equ	0xFF8
+   377                           wreg	equ	0xFE8
+   378                           status	equ	0xFD8
+   379                           
+   380 ;; *************** function _number_to_segment *****************
+   381 ;; Defined at:
+   382 ;;		line 152 in file "main.c"
+   383 ;; Parameters:    Size  Location     Type
+   384 ;;  number          2    0[COMRAM] int 
+   385 ;; Auto vars:     Size  Location     Type
+   386 ;;		None
+   387 ;; Return value:  Size  Location     Type
+   388 ;;		None               void
+   389 ;; Registers used:
+   390 ;;		wreg, status,2, status,0, cstack
+   391 ;; Tracked objects:
+   392 ;;		On entry : 0/0
+   393 ;;		On exit  : 0/0
+   394 ;;		Unchanged: 0/0
+   395 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   396 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   397 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   398 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   399 ;;      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   400 ;;Total ram usage:        4 bytes
+   401 ;; Hardware stack levels used:    1
+   402 ;; Hardware stack levels required when called:    1
+   403 ;; This function calls:
+   404 ;;		_number_0
+   405 ;;		_number_1
+   406 ;;		_number_2
+   407 ;;		_number_3
+   408 ;;		_number_4
+   409 ;;		_number_5
+   410 ;;		_number_6
+   411 ;;		_number_7
+   412 ;;		_number_8
+   413 ;;		_number_9
+   414 ;; This function is called by:
+   415 ;;		_main
+   416 ;; This function uses a non-reentrant model
+   417 ;;
+   418                           
+   419                           	psect	text2
+   420  00FEB6                     __ptext2:
+   421                           	opt stack 0
+   422  00FEB6                     _number_to_segment:
+   423                           	opt stack 29
+   424                           
+   425                           ;main.c: 153: switch(number){
+   426                           
+   427                           ; BSR set to: 15
+   428                           ;incstack = 0
+   429  00FEB6  D01E               	goto	l819
+   430  00FEB8                     l797:
+   431                           
+   432                           ;main.c: 155: number_0();
+   433  00FEB8  ECF0  F07E         	call	_number_0	;wreg free
+   434                           
+   435                           ;main.c: 156: break;
+   436  00FEBC  0012               	return	
+   437  00FEBE                     l799:
+   438                           
+   439                           ;main.c: 158: number_1();
+   440  00FEBE  ECF8  F07E         	call	_number_1	;wreg free
+   441                           
+   442                           ;main.c: 159: break;
+   443  00FEC2  0012               	return	
+   444  00FEC4                     l801:
+   445                           
+   446                           ;main.c: 161: number_2();
+   447  00FEC4  EC00  F07F         	call	_number_2	;wreg free
+   448                           
+   449                           ;main.c: 162: break;
+   450  00FEC8  0012               	return	
+   451  00FECA                     l803:
+   452                           
+   453                           ;main.c: 164: number_3();
+   454  00FECA  EC08  F07F         	call	_number_3	;wreg free
+   455                           
+   456                           ;main.c: 165: break;
+   457  00FECE  0012               	return	
+   458  00FED0                     l805:
+   459                           
+   460                           ;main.c: 167: number_4();
+   461  00FED0  EC10  F07F         	call	_number_4	;wreg free
+   462                           
+   463                           ;main.c: 168: break;
+   464  00FED4  0012               	return	
+   465  00FED6                     l807:
+   466                           
+   467                           ;main.c: 170: number_5();
+   468  00FED6  EC18  F07F         	call	_number_5	;wreg free
+   469                           
+   470                           ;main.c: 171: break;
+   471  00FEDA  0012               	return	
+   472  00FEDC                     l809:
+   473                           
+   474                           ;main.c: 173: number_6();
+   475  00FEDC  EC20  F07F         	call	_number_6	;wreg free
+   476                           
+   477                           ;main.c: 174: break;
+   478  00FEE0  0012               	return	
+   479  00FEE2                     l811:
+   480                           
+   481                           ;main.c: 176: number_7();
+   482  00FEE2  EC28  F07F         	call	_number_7	;wreg free
+   483                           
+   484                           ;main.c: 177: break;
+   485  00FEE6  0012               	return	
+   486  00FEE8                     l813:
+   487                           
+   488                           ;main.c: 179: number_8();
+   489  00FEE8  EC30  F07F         	call	_number_8	;wreg free
+   490                           
+   491                           ;main.c: 180: break;
+   492  00FEEC  0012               	return	
+   493  00FEEE                     l815:
+   494                           
+   495                           ;main.c: 182: number_9();
+   496  00FEEE  EC38  F07F         	call	_number_9	;wreg free
+   497                           
+   498                           ;main.c: 184: }
+   499                           
+   500                           ;main.c: 183: break;
+   501  00FEF2  0012               	return	
+   502  00FEF4                     l819:
+   503  00FEF4  C001  F003         	movff	number_to_segment@number,??_number_to_segment
+   504  00FEF8  C002  F004         	movff	number_to_segment@number+1,??_number_to_segment+1
+   505                           
+   506                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+   507                           ; Switch size 1, requested type "space"
+   508                           ; Number of cases is 1, Range of values is 0 to 0
+   509                           ; switch strategies available:
+   510                           ; Name         Instructions Cycles
+   511                           ; simple_byte            4     3 (average)
+   512                           ;	Chosen strategy is simple_byte
+   513  00FEFC  5004               	movf	??_number_to_segment+1,w,c
+   514  00FEFE  0A00               	xorlw	0	; case 0
+   515  00FF00  A4D8               	btfss	status,2,c
+   516  00FF02  0012               	return	
+   517                           
+   518                           ; Switch size 1, requested type "space"
+   519                           ; Number of cases is 10, Range of values is 0 to 9
+   520                           ; switch strategies available:
+   521                           ; Name         Instructions Cycles
+   522                           ; simple_byte           31    16 (average)
+   523                           ;	Chosen strategy is simple_byte
+   524  00FF04  5003               	movf	??_number_to_segment,w,c
+   525  00FF06  0A00               	xorlw	0	; case 0
+   526  00FF08  B4D8               	btfsc	status,2,c
+   527  00FF0A  D7D6               	goto	l797
+   528  00FF0C  0A01               	xorlw	1	; case 1
+   529  00FF0E  B4D8               	btfsc	status,2,c
+   530  00FF10  D7D6               	goto	l799
+   531  00FF12  0A03               	xorlw	3	; case 2
+   532  00FF14  B4D8               	btfsc	status,2,c
+   533  00FF16  D7D6               	goto	l801
+   534  00FF18  0A01               	xorlw	1	; case 3
+   535  00FF1A  B4D8               	btfsc	status,2,c
+   536  00FF1C  D7D6               	goto	l803
+   537  00FF1E  0A07               	xorlw	7	; case 4
+   538  00FF20  B4D8               	btfsc	status,2,c
+   539  00FF22  D7D6               	goto	l805
+   540  00FF24  0A01               	xorlw	1	; case 5
+   541  00FF26  B4D8               	btfsc	status,2,c
+   542  00FF28  D7D6               	goto	l807
+   543  00FF2A  0A03               	xorlw	3	; case 6
+   544  00FF2C  B4D8               	btfsc	status,2,c
+   545  00FF2E  D7D6               	goto	l809
+   546  00FF30  0A01               	xorlw	1	; case 7
+   547  00FF32  B4D8               	btfsc	status,2,c
+   548  00FF34  D7D6               	goto	l811
+   549  00FF36  0A0F               	xorlw	15	; case 8
+   550  00FF38  B4D8               	btfsc	status,2,c
+   551  00FF3A  D7D6               	goto	l813
+   552  00FF3C  0A01               	xorlw	1	; case 9
+   553  00FF3E  A4D8               	btfss	status,2,c
+   554  00FF40  0012               	return	
+   555  00FF42  D7D5               	goto	l815
+   556  00FF44  0012               	return		;funcret
+   557  00FF46                     __end_of_number_to_segment:
+   558                           	opt stack 0
+   559                           tblptru	equ	0xFF8
+   560                           wreg	equ	0xFE8
+   561                           status	equ	0xFD8
+   562                           
+   563 ;; *************** function _number_9 *****************
+   564 ;; Defined at:
+   565 ;;		line 142 in file "main.c"
+   566 ;; Parameters:    Size  Location     Type
+   567 ;;		None
+   568 ;; Auto vars:     Size  Location     Type
+   569 ;;		None
+   570 ;; Return value:  Size  Location     Type
+   571 ;;		None               void
+   572 ;; Registers used:
+   573 ;;		None
+   574 ;; Tracked objects:
+   575 ;;		On entry : 0/0
+   576 ;;		On exit  : 0/0
+   577 ;;		Unchanged: 0/0
+   578 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   579 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   580 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   581 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   582 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   583 ;;Total ram usage:        0 bytes
+   584 ;; Hardware stack levels used:    1
+   585 ;; This function calls:
+   586 ;;		Nothing
+   587 ;; This function is called by:
+   588 ;;		_number_to_segment
+   589 ;; This function uses a non-reentrant model
+   590 ;;
+   591                           
+   592                           	psect	text3
+   593  00FE70                     __ptext3:
+   594                           	opt stack 0
+   595  00FE70                     _number_9:
+   596                           	opt stack 29
+   597                           
+   598                           ;main.c: 143: PORTBbits.RB7 = 1;;
+   599                           
+   600                           ;incstack = 0
+   601  00FE70  8E81               	bsf	3969,7,c	;volatile
+   602                           
+   603                           ;main.c: 144: PORTBbits.RB6 = 1;;
+   604  00FE72  8C81               	bsf	3969,6,c	;volatile
+   605                           
+   606                           ;main.c: 145: PORTBbits.RB5 = 1;;
+   607  00FE74  8A81               	bsf	3969,5,c	;volatile
+   608                           
+   609                           ;main.c: 146: PORTBbits.RB4 = 1;;
+   610  00FE76  8881               	bsf	3969,4,c	;volatile
+   611                           
+   612                           ;main.c: 147: PORTBbits.RB3 = 0;;
+   613  00FE78  9681               	bcf	3969,3,c	;volatile
+   614                           
+   615                           ;main.c: 148: PORTBbits.RB2 = 1;;
+   616  00FE7A  8481               	bsf	3969,2,c	;volatile
+   617                           
+   618                           ;main.c: 149: PORTBbits.RB1 = 1;;
+   619  00FE7C  8281               	bsf	3969,1,c	;volatile
+   620  00FE7E  0012               	return		;funcret
+   621  00FE80                     __end_of_number_9:
+   622                           	opt stack 0
+   623                           tblptru	equ	0xFF8
+   624                           wreg	equ	0xFE8
+   625                           status	equ	0xFD8
+   626                           
+   627 ;; *************** function _number_8 *****************
+   628 ;; Defined at:
+   629 ;;		line 132 in file "main.c"
+   630 ;; Parameters:    Size  Location     Type
+   631 ;;		None
+   632 ;; Auto vars:     Size  Location     Type
+   633 ;;		None
+   634 ;; Return value:  Size  Location     Type
+   635 ;;		None               void
+   636 ;; Registers used:
+   637 ;;		None
+   638 ;; Tracked objects:
+   639 ;;		On entry : 0/0
+   640 ;;		On exit  : 0/0
+   641 ;;		Unchanged: 0/0
+   642 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   643 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   644 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   645 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   646 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   647 ;;Total ram usage:        0 bytes
+   648 ;; Hardware stack levels used:    1
+   649 ;; This function calls:
+   650 ;;		Nothing
+   651 ;; This function is called by:
+   652 ;;		_number_to_segment
+   653 ;; This function uses a non-reentrant model
+   654 ;;
+   655                           
+   656                           	psect	text4
+   657  00FE60                     __ptext4:
+   658                           	opt stack 0
+   659  00FE60                     _number_8:
+   660                           	opt stack 29
+   661                           
+   662                           ;main.c: 133: PORTBbits.RB7 = 1;;
+   663                           
+   664                           ;incstack = 0
+   665  00FE60  8E81               	bsf	3969,7,c	;volatile
+   666                           
+   667                           ;main.c: 134: PORTBbits.RB6 = 1;;
+   668  00FE62  8C81               	bsf	3969,6,c	;volatile
+   669                           
+   670                           ;main.c: 135: PORTBbits.RB5 = 1;;
+   671  00FE64  8A81               	bsf	3969,5,c	;volatile
+   672                           
+   673                           ;main.c: 136: PORTBbits.RB4 = 1;;
+   674  00FE66  8881               	bsf	3969,4,c	;volatile
+   675                           
+   676                           ;main.c: 137: PORTBbits.RB3 = 1;;
+   677  00FE68  8681               	bsf	3969,3,c	;volatile
+   678                           
+   679                           ;main.c: 138: PORTBbits.RB2 = 1;;
+   680  00FE6A  8481               	bsf	3969,2,c	;volatile
+   681                           
+   682                           ;main.c: 139: PORTBbits.RB1 = 1;;
+   683  00FE6C  8281               	bsf	3969,1,c	;volatile
+   684  00FE6E  0012               	return		;funcret
+   685  00FE70                     __end_of_number_8:
+   686                           	opt stack 0
+   687                           tblptru	equ	0xFF8
+   688                           wreg	equ	0xFE8
+   689                           status	equ	0xFD8
+   690                           
+   691 ;; *************** function _number_7 *****************
+   692 ;; Defined at:
+   693 ;;		line 122 in file "main.c"
+   694 ;; Parameters:    Size  Location     Type
+   695 ;;		None
+   696 ;; Auto vars:     Size  Location     Type
+   697 ;;		None
+   698 ;; Return value:  Size  Location     Type
+   699 ;;		None               void
+   700 ;; Registers used:
+   701 ;;		None
+   702 ;; Tracked objects:
+   703 ;;		On entry : 0/0
+   704 ;;		On exit  : 0/0
+   705 ;;		Unchanged: 0/0
+   706 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   707 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   708 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   709 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   710 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   711 ;;Total ram usage:        0 bytes
+   712 ;; Hardware stack levels used:    1
+   713 ;; This function calls:
+   714 ;;		Nothing
+   715 ;; This function is called by:
+   716 ;;		_number_to_segment
+   717 ;; This function uses a non-reentrant model
+   718 ;;
+   719                           
+   720                           	psect	text5
+   721  00FE50                     __ptext5:
+   722                           	opt stack 0
+   723  00FE50                     _number_7:
+   724                           	opt stack 29
+   725                           
+   726                           ;main.c: 123: PORTBbits.RB7 = 1;;
+   727                           
+   728                           ;incstack = 0
+   729  00FE50  8E81               	bsf	3969,7,c	;volatile
+   730                           
+   731                           ;main.c: 124: PORTBbits.RB6 = 1;;
+   732  00FE52  8C81               	bsf	3969,6,c	;volatile
+   733                           
+   734                           ;main.c: 125: PORTBbits.RB5 = 1;;
+   735  00FE54  8A81               	bsf	3969,5,c	;volatile
+   736                           
+   737                           ;main.c: 126: PORTBbits.RB4 = 0;;
+   738  00FE56  9881               	bcf	3969,4,c	;volatile
+   739                           
+   740                           ;main.c: 127: PORTBbits.RB3 = 0;;
+   741  00FE58  9681               	bcf	3969,3,c	;volatile
+   742                           
+   743                           ;main.c: 128: PORTBbits.RB2 = 0;;
+   744  00FE5A  9481               	bcf	3969,2,c	;volatile
+   745                           
+   746                           ;main.c: 129: PORTBbits.RB1 = 0;;
+   747  00FE5C  9281               	bcf	3969,1,c	;volatile
+   748  00FE5E  0012               	return		;funcret
+   749  00FE60                     __end_of_number_7:
+   750                           	opt stack 0
+   751                           tblptru	equ	0xFF8
+   752                           wreg	equ	0xFE8
+   753                           status	equ	0xFD8
+   754                           
+   755 ;; *************** function _number_6 *****************
+   756 ;; Defined at:
+   757 ;;		line 112 in file "main.c"
+   758 ;; Parameters:    Size  Location     Type
+   759 ;;		None
+   760 ;; Auto vars:     Size  Location     Type
+   761 ;;		None
+   762 ;; Return value:  Size  Location     Type
+   763 ;;		None               void
+   764 ;; Registers used:
+   765 ;;		None
+   766 ;; Tracked objects:
+   767 ;;		On entry : 0/0
+   768 ;;		On exit  : 0/0
+   769 ;;		Unchanged: 0/0
+   770 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   771 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   772 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   773 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   774 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   775 ;;Total ram usage:        0 bytes
+   776 ;; Hardware stack levels used:    1
+   777 ;; This function calls:
+   778 ;;		Nothing
+   779 ;; This function is called by:
+   780 ;;		_number_to_segment
+   781 ;; This function uses a non-reentrant model
+   782 ;;
+   783                           
+   784                           	psect	text6
+   785  00FE40                     __ptext6:
+   786                           	opt stack 0
+   787  00FE40                     _number_6:
+   788                           	opt stack 29
+   789                           
+   790                           ;main.c: 113: PORTBbits.RB7 = 1;;
+   791                           
+   792                           ;incstack = 0
+   793  00FE40  8E81               	bsf	3969,7,c	;volatile
+   794                           
+   795                           ;main.c: 114: PORTBbits.RB6 = 0;;
+   796  00FE42  9C81               	bcf	3969,6,c	;volatile
+   797                           
+   798                           ;main.c: 115: PORTBbits.RB5 = 1;;
+   799  00FE44  8A81               	bsf	3969,5,c	;volatile
+   800                           
+   801                           ;main.c: 116: PORTBbits.RB4 = 1;;
+   802  00FE46  8881               	bsf	3969,4,c	;volatile
+   803                           
+   804                           ;main.c: 117: PORTBbits.RB3 = 1;;
+   805  00FE48  8681               	bsf	3969,3,c	;volatile
+   806                           
+   807                           ;main.c: 118: PORTBbits.RB2 = 1;;
+   808  00FE4A  8481               	bsf	3969,2,c	;volatile
+   809                           
+   810                           ;main.c: 119: PORTBbits.RB1 = 1;;
+   811  00FE4C  8281               	bsf	3969,1,c	;volatile
+   812  00FE4E  0012               	return		;funcret
+   813  00FE50                     __end_of_number_6:
+   814                           	opt stack 0
+   815                           tblptru	equ	0xFF8
+   816                           wreg	equ	0xFE8
+   817                           status	equ	0xFD8
+   818                           
+   819 ;; *************** function _number_5 *****************
+   820 ;; Defined at:
+   821 ;;		line 102 in file "main.c"
+   822 ;; Parameters:    Size  Location     Type
+   823 ;;		None
+   824 ;; Auto vars:     Size  Location     Type
+   825 ;;		None
+   826 ;; Return value:  Size  Location     Type
+   827 ;;		None               void
+   828 ;; Registers used:
+   829 ;;		None
+   830 ;; Tracked objects:
+   831 ;;		On entry : 0/0
+   832 ;;		On exit  : 0/0
+   833 ;;		Unchanged: 0/0
+   834 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   835 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   836 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   837 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   838 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   839 ;;Total ram usage:        0 bytes
+   840 ;; Hardware stack levels used:    1
+   841 ;; This function calls:
+   842 ;;		Nothing
+   843 ;; This function is called by:
+   844 ;;		_number_to_segment
+   845 ;; This function uses a non-reentrant model
+   846 ;;
+   847                           
+   848                           	psect	text7
+   849  00FE30                     __ptext7:
+   850                           	opt stack 0
+   851  00FE30                     _number_5:
+   852                           	opt stack 29
+   853                           
+   854                           ;main.c: 103: PORTBbits.RB7 = 1;;
+   855                           
+   856                           ;incstack = 0
+   857  00FE30  8E81               	bsf	3969,7,c	;volatile
+   858                           
+   859                           ;main.c: 104: PORTBbits.RB6 = 0;;
+   860  00FE32  9C81               	bcf	3969,6,c	;volatile
+   861                           
+   862                           ;main.c: 105: PORTBbits.RB5 = 1;;
+   863  00FE34  8A81               	bsf	3969,5,c	;volatile
+   864                           
+   865                           ;main.c: 106: PORTBbits.RB4 = 1;;
+   866  00FE36  8881               	bsf	3969,4,c	;volatile
+   867                           
+   868                           ;main.c: 107: PORTBbits.RB3 = 0;;
+   869  00FE38  9681               	bcf	3969,3,c	;volatile
+   870                           
+   871                           ;main.c: 108: PORTBbits.RB2 = 1;;
+   872  00FE3A  8481               	bsf	3969,2,c	;volatile
+   873                           
+   874                           ;main.c: 109: PORTBbits.RB1 = 1;;
+   875  00FE3C  8281               	bsf	3969,1,c	;volatile
+   876  00FE3E  0012               	return		;funcret
+   877  00FE40                     __end_of_number_5:
+   878                           	opt stack 0
+   879                           tblptru	equ	0xFF8
+   880                           wreg	equ	0xFE8
+   881                           status	equ	0xFD8
+   882                           
+   883 ;; *************** function _number_4 *****************
+   884 ;; Defined at:
+   885 ;;		line 92 in file "main.c"
+   886 ;; Parameters:    Size  Location     Type
+   887 ;;		None
+   888 ;; Auto vars:     Size  Location     Type
+   889 ;;		None
+   890 ;; Return value:  Size  Location     Type
+   891 ;;		None               void
+   892 ;; Registers used:
+   893 ;;		None
+   894 ;; Tracked objects:
+   895 ;;		On entry : 0/0
+   896 ;;		On exit  : 0/0
+   897 ;;		Unchanged: 0/0
+   898 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   899 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   900 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   901 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   902 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   903 ;;Total ram usage:        0 bytes
+   904 ;; Hardware stack levels used:    1
+   905 ;; This function calls:
+   906 ;;		Nothing
+   907 ;; This function is called by:
+   908 ;;		_number_to_segment
+   909 ;; This function uses a non-reentrant model
+   910 ;;
+   911                           
+   912                           	psect	text8
+   913  00FE20                     __ptext8:
+   914                           	opt stack 0
+   915  00FE20                     _number_4:
+   916                           	opt stack 29
+   917                           
+   918                           ;main.c: 93: PORTBbits.RB7 = 0;;
+   919                           
+   920                           ;incstack = 0
+   921  00FE20  9E81               	bcf	3969,7,c	;volatile
+   922                           
+   923                           ;main.c: 94: PORTBbits.RB6 = 1;;
+   924  00FE22  8C81               	bsf	3969,6,c	;volatile
+   925                           
+   926                           ;main.c: 95: PORTBbits.RB5 = 1;;
+   927  00FE24  8A81               	bsf	3969,5,c	;volatile
+   928                           
+   929                           ;main.c: 96: PORTBbits.RB4 = 0;;
+   930  00FE26  9881               	bcf	3969,4,c	;volatile
+   931                           
+   932                           ;main.c: 97: PORTBbits.RB3 = 0;;
+   933  00FE28  9681               	bcf	3969,3,c	;volatile
+   934                           
+   935                           ;main.c: 98: PORTBbits.RB2 = 1;;
+   936  00FE2A  8481               	bsf	3969,2,c	;volatile
+   937                           
+   938                           ;main.c: 99: PORTBbits.RB1 = 1;;
+   939  00FE2C  8281               	bsf	3969,1,c	;volatile
+   940  00FE2E  0012               	return		;funcret
+   941  00FE30                     __end_of_number_4:
+   942                           	opt stack 0
+   943                           tblptru	equ	0xFF8
+   944                           wreg	equ	0xFE8
+   945                           status	equ	0xFD8
+   946                           
+   947 ;; *************** function _number_3 *****************
+   948 ;; Defined at:
+   949 ;;		line 82 in file "main.c"
+   950 ;; Parameters:    Size  Location     Type
+   951 ;;		None
+   952 ;; Auto vars:     Size  Location     Type
+   953 ;;		None
+   954 ;; Return value:  Size  Location     Type
+   955 ;;		None               void
+   956 ;; Registers used:
+   957 ;;		None
+   958 ;; Tracked objects:
+   959 ;;		On entry : 0/0
+   960 ;;		On exit  : 0/0
+   961 ;;		Unchanged: 0/0
+   962 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   963 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   964 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   965 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   966 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   967 ;;Total ram usage:        0 bytes
+   968 ;; Hardware stack levels used:    1
+   969 ;; This function calls:
+   970 ;;		Nothing
+   971 ;; This function is called by:
+   972 ;;		_number_to_segment
+   973 ;; This function uses a non-reentrant model
+   974 ;;
+   975                           
+   976                           	psect	text9
+   977  00FE10                     __ptext9:
+   978                           	opt stack 0
+   979  00FE10                     _number_3:
+   980                           	opt stack 29
+   981                           
+   982                           ;main.c: 83: PORTBbits.RB7 = 1;;
+   983                           
+   984                           ;incstack = 0
+   985  00FE10  8E81               	bsf	3969,7,c	;volatile
+   986                           
+   987                           ;main.c: 84: PORTBbits.RB6 = 1;;
+   988  00FE12  8C81               	bsf	3969,6,c	;volatile
+   989                           
+   990                           ;main.c: 85: PORTBbits.RB5 = 1;;
+   991  00FE14  8A81               	bsf	3969,5,c	;volatile
+   992                           
+   993                           ;main.c: 86: PORTBbits.RB4 = 1;;
+   994  00FE16  8881               	bsf	3969,4,c	;volatile
+   995                           
+   996                           ;main.c: 87: PORTBbits.RB3 = 0;;
+   997  00FE18  9681               	bcf	3969,3,c	;volatile
+   998                           
+   999                           ;main.c: 88: PORTBbits.RB2 = 0;;
+  1000  00FE1A  9481               	bcf	3969,2,c	;volatile
+  1001                           
+  1002                           ;main.c: 89: PORTBbits.RB1 = 1;;
+  1003  00FE1C  8281               	bsf	3969,1,c	;volatile
+  1004  00FE1E  0012               	return		;funcret
+  1005  00FE20                     __end_of_number_3:
+  1006                           	opt stack 0
+  1007                           tblptru	equ	0xFF8
+  1008                           wreg	equ	0xFE8
+  1009                           status	equ	0xFD8
+  1010                           
+  1011 ;; *************** function _number_2 *****************
+  1012 ;; Defined at:
+  1013 ;;		line 72 in file "main.c"
+  1014 ;; Parameters:    Size  Location     Type
+  1015 ;;		None
+  1016 ;; Auto vars:     Size  Location     Type
+  1017 ;;		None
+  1018 ;; Return value:  Size  Location     Type
+  1019 ;;		None               void
+  1020 ;; Registers used:
+  1021 ;;		None
+  1022 ;; Tracked objects:
+  1023 ;;		On entry : 0/0
+  1024 ;;		On exit  : 0/0
+  1025 ;;		Unchanged: 0/0
+  1026 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+  1027 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1028 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1029 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1030 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1031 ;;Total ram usage:        0 bytes
+  1032 ;; Hardware stack levels used:    1
+  1033 ;; This function calls:
+  1034 ;;		Nothing
+  1035 ;; This function is called by:
+  1036 ;;		_number_to_segment
+  1037 ;; This function uses a non-reentrant model
+  1038 ;;
+  1039                           
+  1040                           	psect	text10
+  1041  00FE00                     __ptext10:
+  1042                           	opt stack 0
+  1043  00FE00                     _number_2:
+  1044                           	opt stack 29
+  1045                           
+  1046                           ;main.c: 73: PORTBbits.RB7 = 1;;
+  1047                           
+  1048                           ;incstack = 0
+  1049  00FE00  8E81               	bsf	3969,7,c	;volatile
+  1050                           
+  1051                           ;main.c: 74: PORTBbits.RB6 = 1;;
+  1052  00FE02  8C81               	bsf	3969,6,c	;volatile
+  1053                           
+  1054                           ;main.c: 75: PORTBbits.RB5 = 0;;
+  1055  00FE04  9A81               	bcf	3969,5,c	;volatile
+  1056                           
+  1057                           ;main.c: 76: PORTBbits.RB4 = 1;;
+  1058  00FE06  8881               	bsf	3969,4,c	;volatile
+  1059                           
+  1060                           ;main.c: 77: PORTBbits.RB3 = 1;;
+  1061  00FE08  8681               	bsf	3969,3,c	;volatile
+  1062                           
+  1063                           ;main.c: 78: PORTBbits.RB2 = 0;;
+  1064  00FE0A  9481               	bcf	3969,2,c	;volatile
+  1065                           
+  1066                           ;main.c: 79: PORTBbits.RB1 = 1;;
+  1067  00FE0C  8281               	bsf	3969,1,c	;volatile
+  1068  00FE0E  0012               	return		;funcret
+  1069  00FE10                     __end_of_number_2:
+  1070                           	opt stack 0
+  1071                           tblptru	equ	0xFF8
+  1072                           wreg	equ	0xFE8
+  1073                           status	equ	0xFD8
+  1074                           
+  1075 ;; *************** function _number_1 *****************
+  1076 ;; Defined at:
+  1077 ;;		line 62 in file "main.c"
+  1078 ;; Parameters:    Size  Location     Type
+  1079 ;;		None
+  1080 ;; Auto vars:     Size  Location     Type
+  1081 ;;		None
+  1082 ;; Return value:  Size  Location     Type
+  1083 ;;		None               void
+  1084 ;; Registers used:
+  1085 ;;		None
+  1086 ;; Tracked objects:
+  1087 ;;		On entry : 0/0
+  1088 ;;		On exit  : 0/0
+  1089 ;;		Unchanged: 0/0
+  1090 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+  1091 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1092 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1093 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1094 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1095 ;;Total ram usage:        0 bytes
+  1096 ;; Hardware stack levels used:    1
+  1097 ;; This function calls:
+  1098 ;;		Nothing
+  1099 ;; This function is called by:
+  1100 ;;		_number_to_segment
+  1101 ;; This function uses a non-reentrant model
+  1102 ;;
+  1103                           
+  1104                           	psect	text11
+  1105  00FDF0                     __ptext11:
+  1106                           	opt stack 0
+  1107  00FDF0                     _number_1:
+  1108                           	opt stack 29
+  1109                           
+  1110                           ;main.c: 63: PORTBbits.RB7 = 0;;
+  1111                           
+  1112                           ;incstack = 0
+  1113  00FDF0  9E81               	bcf	3969,7,c	;volatile
+  1114                           
+  1115                           ;main.c: 64: PORTBbits.RB6 = 1;;
+  1116  00FDF2  8C81               	bsf	3969,6,c	;volatile
+  1117                           
+  1118                           ;main.c: 65: PORTBbits.RB5 = 1;;
+  1119  00FDF4  8A81               	bsf	3969,5,c	;volatile
+  1120                           
+  1121                           ;main.c: 66: PORTBbits.RB4 = 0;;
+  1122  00FDF6  9881               	bcf	3969,4,c	;volatile
+  1123                           
+  1124                           ;main.c: 67: PORTBbits.RB3 = 0;;
+  1125  00FDF8  9681               	bcf	3969,3,c	;volatile
+  1126                           
+  1127                           ;main.c: 68: PORTBbits.RB2 = 0;;
+  1128  00FDFA  9481               	bcf	3969,2,c	;volatile
+  1129                           
+  1130                           ;main.c: 69: PORTBbits.RB1 = 0;;
+  1131  00FDFC  9281               	bcf	3969,1,c	;volatile
+  1132  00FDFE  0012               	return		;funcret
+  1133  00FE00                     __end_of_number_1:
+  1134                           	opt stack 0
+  1135                           tblptru	equ	0xFF8
+  1136                           wreg	equ	0xFE8
+  1137                           status	equ	0xFD8
+  1138                           
+  1139 ;; *************** function _number_0 *****************
+  1140 ;; Defined at:
+  1141 ;;		line 52 in file "main.c"
+  1142 ;; Parameters:    Size  Location     Type
+  1143 ;;		None
+  1144 ;; Auto vars:     Size  Location     Type
+  1145 ;;		None
+  1146 ;; Return value:  Size  Location     Type
+  1147 ;;		None               void
+  1148 ;; Registers used:
+  1149 ;;		None
+  1150 ;; Tracked objects:
+  1151 ;;		On entry : 0/0
+  1152 ;;		On exit  : 0/0
+  1153 ;;		Unchanged: 0/0
+  1154 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+  1155 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1156 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1157 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1158 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1159 ;;Total ram usage:        0 bytes
+  1160 ;; Hardware stack levels used:    1
+  1161 ;; This function calls:
+  1162 ;;		Nothing
+  1163 ;; This function is called by:
+  1164 ;;		_number_to_segment
+  1165 ;; This function uses a non-reentrant model
+  1166 ;;
+  1167                           
+  1168                           	psect	text12
+  1169  00FDE0                     __ptext12:
+  1170                           	opt stack 0
+  1171  00FDE0                     _number_0:
+  1172                           	opt stack 29
+  1173                           
+  1174                           ;main.c: 53: PORTBbits.RB7 = 1;;
+  1175                           
+  1176                           ;incstack = 0
+  1177  00FDE0  8E81               	bsf	3969,7,c	;volatile
+  1178                           
+  1179                           ;main.c: 54: PORTBbits.RB6 = 1;;
+  1180  00FDE2  8C81               	bsf	3969,6,c	;volatile
+  1181                           
+  1182                           ;main.c: 55: PORTBbits.RB5 = 1;;
+  1183  00FDE4  8A81               	bsf	3969,5,c	;volatile
+  1184                           
+  1185                           ;main.c: 56: PORTBbits.RB4 = 1;;
+  1186  00FDE6  8881               	bsf	3969,4,c	;volatile
+  1187                           
+  1188                           ;main.c: 57: PORTBbits.RB3 = 1;;
+  1189  00FDE8  8681               	bsf	3969,3,c	;volatile
+  1190                           
+  1191                           ;main.c: 58: PORTBbits.RB2 = 1;;
+  1192  00FDEA  8481               	bsf	3969,2,c	;volatile
+  1193                           
+  1194                           ;main.c: 59: PORTBbits.RB1 = 0;;
+  1195  00FDEC  9281               	bcf	3969,1,c	;volatile
+  1196  00FDEE  0012               	return		;funcret
+  1197  00FDF0                     __end_of_number_0:
+  1198                           	opt stack 0
+  1199  0000                     tblptru	equ	0xFF8
+  1200                           wreg	equ	0xFE8
+  1201                           status	equ	0xFD8
+  1202                           tblptru	equ	0xFF8
+  1203                           wreg	equ	0xFE8
+  1204                           status	equ	0xFD8
+  1205                           
+  1206                           	psect	rparam
+  1207  0000                     tblptru	equ	0xFF8
+  1208                           wreg	equ	0xFE8
+  1209                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      9       9
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+    BANK8           256      0       0
+    BANK9           256      0       0
+    BANK10          256      0       0
+    BANK11          256      0       0
+    BANK12          256      0       0
+    BANK13          256      0       0
+    BANK14          192      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _main->_number_to_segment
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Critical Paths under _main in BANK8
+
+    None.
+
+Critical Paths under _main in BANK9
+
+    None.
+
+Critical Paths under _main in BANK10
+
+    None.
+
+Critical Paths under _main in BANK11
+
+    None.
+
+Critical Paths under _main in BANK12
+
+    None.
+
+Critical Paths under _main in BANK13
+
+    None.
+
+Critical Paths under _main in BANK14
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 5     5      0     202
+                                              4 COMRAM     5     5      0
+                  _number_to_segment
+                              _setup
+ ---------------------------------------------------------------------------------
+ (1) _setup                                                0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _number_to_segment                                    4     2      2     108
+                                              0 COMRAM     4     2      2
+                           _number_0
+                           _number_1
+                           _number_2
+                           _number_3
+                           _number_4
+                           _number_5
+                           _number_6
+                           _number_7
+                           _number_8
+                           _number_9
+ ---------------------------------------------------------------------------------
+ (2) _number_9                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _number_8                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _number_7                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _number_6                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _number_5                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _number_4                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _number_3                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _number_2                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _number_1                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _number_0                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _number_to_segment
+     _number_0
+     _number_1
+     _number_2
+     _number_3
+     _number_4
+     _number_5
+     _number_6
+     _number_7
+     _number_8
+     _number_9
+   _setup
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F      9       9       1        9.5%
+STACK                0      0       0       2        0.0%
+DATA                 0      0       0       3        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+ABS                  0      0       0       6        0.0%
+BITBANK1           100      0       0       7        0.0%
+BANK1              100      0       0       8        0.0%
+BITBANK2           100      0       0       9        0.0%
+BANK2              100      0       0      10        0.0%
+BITBANK3           100      0       0      11        0.0%
+BANK3              100      0       0      12        0.0%
+BITBANK4           100      0       0      13        0.0%
+BANK4              100      0       0      14        0.0%
+BITBANK5           100      0       0      15        0.0%
+BANK5              100      0       0      16        0.0%
+BITBANK6           100      0       0      17        0.0%
+BANK6              100      0       0      18        0.0%
+BITBANK7           100      0       0      19        0.0%
+BANK7              100      0       0      20        0.0%
+BITBANK8           100      0       0      21        0.0%
+BANK8              100      0       0      22        0.0%
+BITBANK9           100      0       0      23        0.0%
+BANK9              100      0       0      24        0.0%
+BITBANK10          100      0       0      25        0.0%
+BANK10             100      0       0      26        0.0%
+BITBANK11          100      0       0      27        0.0%
+BANK11             100      0       0      28        0.0%
+BITBANK12          100      0       0      29        0.0%
+BANK12             100      0       0      30        0.0%
+BITBANK13          100      0       0      31        0.0%
+BANK13             100      0       0      32        0.0%
+BITBANK14           C0      0       0      33        0.0%
+BANK14              C0      0       0      34        0.0%
+BIGRAM             EBF      0       0      35        0.0%
+BITSFR_2             0      0       0      40        0.0%
+SFR_2                0      0       0      40        0.0%
+BITSFR_1             0      0       0      40        0.0%
+SFR_1                0      0       0      40        0.0%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.34 build -361300703 
+Symbol Table                                                                                   Wed Oct 05 23:39:40 2016
+
+                        u50 FF78                          u60 FF96                          u77 FFA6  
+                        u87 FFC6                          u97 FFE6                __CFG_CP0$OFF 000000  
+                       l801 FEC4                         l811 FEE2                         l803 FECA  
+                       l813 FEE8                         l805 FED0                         l815 FEEE  
+                       l807 FED6                         l809 FEDC                         l819 FEF4  
+                       l851 FFB2                         l835 FF60                         l845 FF86  
+                       l849 FFA0                         l797 FEB8                         l799 FEBE  
+                       wreg 000FE8                        _main FF46               __CFG_T1DIG$ON 000000  
+                      start 0000               __CFG_IESO$OFF 000000                ___param_bank 000010  
+             __CFG_PLLDIV$1 000000                       ?_main 0001                       _TRISA 000F92  
+                     _TRISB 000F93                       _TRISC 000F94              __CFG_FCMEN$OFF 000000  
+                     _setup FE80                       status 000FD8     __CFG_DSWDTOSC$INTOSCREF 000000  
+           __initialization FDD6                __end_of_main FFF8                      ??_main 0005  
+             __activetblptr 000002                      _ADCON0 000FC2                      _ADCON1 000FC1  
+                    _ANCON0 000F48                      _ANCON1 000F49                      ?_setup 0001  
+            __CFG_WDTEN$OFF 000000              __CFG_WPCFG$OFF 000000              __CFG_WPDIS$OFF 000000  
+            __CFG_XINST$OFF 000000              __CFG_STVREN$ON 000000            __end_of_number_0 FDF0  
+          __end_of_number_1 FE00            __end_of_number_2 FE10            __end_of_number_3 FE20  
+          __end_of_number_4 FE30            __end_of_number_5 FE40            __end_of_number_6 FE50  
+          __end_of_number_7 FE60            __end_of_number_8 FE70            __end_of_number_9 FE80  
+                    tblptru 000FF8                  __accesstop 0060     __end_of__initialization FDD6  
+             ___rparam_used 000001              __pcstackCOMRAM 0001               __end_of_setup FEB6  
+           __CFG_DSWDTPS$G2 000000             __CFG_OSC$INTOSC 000000                     ??_setup 0001  
+         _number_to_segment FEB6          ?_number_to_segment 0001         ??_number_to_segment 0003  
+                   __Hparam 0000                     __Lparam 0000                   ?_number_0 0001  
+                 ?_number_1 0001                   ?_number_2 0001                   ?_number_3 0001  
+                 ?_number_4 0001                   ?_number_5 0001                   ?_number_6 0001  
+                 ?_number_7 0001                   ?_number_8 0001                   ?_number_9 0001  
+                   __pcinit FDD6                     __ramtop 0F00                     __ptext0 FF46  
+                   __ptext1 FE80                     __ptext2 FEB6                     __ptext3 FE70  
+                   __ptext4 FE60                     __ptext5 FE50                     __ptext6 FE40  
+                   __ptext7 FE30                     __ptext8 FE20                     __ptext9 FE10  
+                 _T1CONbits 000FCD   __end_of_number_to_segment FF46        end_of_initialization FDD6  
+             __Lmediumconst 0000                  ??_number_0 0001                  ??_number_1 0001  
+                ??_number_2 0001                  ??_number_3 0001                  ??_number_4 0001  
+                ??_number_5 0001                  ??_number_6 0001                  ??_number_7 0001  
+                ??_number_8 0001                  ??_number_9 0001                   _PORTBbits 000F81  
+                 _PORTCbits 000F82            __CFG_DSBOREN$OFF 000000            __CFG_CPUDIV$OSC1 000000  
+                main@decena 0006            __CFG_IOL1WAY$OFF 000000                  main@unidad 0008  
+       __CFG_MSSP7B_EN$MSK7 000000            __CFG_DSWDTEN$OFF 000000  __size_of_number_to_segment 0090  
+       start_initialization FDD6            __CFG_LPT1OSC$OFF 000000           __size_of_number_0 0010  
+         __size_of_number_1 0010           __size_of_number_2 0010           __size_of_number_3 0010  
+         __size_of_number_4 0010           __size_of_number_5 0010           __size_of_number_6 0010  
+         __size_of_number_7 0010           __size_of_number_8 0010           __size_of_number_9 0010  
+      __CFG_RTCOSC$T1OSCREF 000000              __size_of_setup 0036                    _LATCbits 000F8B  
+          __CFG_WDTPS$32768 000000     number_to_segment@number 0001                    __Hrparam 0000  
+                  __Lrparam 0000                    __ptext10 FE00                    __ptext11 FDF0  
+                  __ptext12 FDE0               __size_of_main 00B2                    _number_0 FDE0  
+                  _number_1 FDF0                    _number_2 FE00                    _number_3 FE10  
+                  _number_4 FE20                    _number_5 FE30                    _number_6 FE40  
+                  _number_7 FE50                    _number_8 FE60                    _number_9 FE70  
+               _OSCTUNEbits 000F9B                  _OSCCONbits 000FD3                  _RTCCFGbits 000F3F  
