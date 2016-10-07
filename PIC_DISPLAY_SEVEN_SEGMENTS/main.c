@@ -23,6 +23,8 @@
 #include <unmc_config_01.h>
 #include <unmc_inout_01.h>
 
+#include <unmc_display.h>
+
 void setup(void){  
     
     OSCTUNEbits.INTSRC=1;       //setea el oscilador de 32768 para el RTC
@@ -46,180 +48,52 @@ void setup(void){
     RTCCFGbits.RTCEN=1;
     RTCCFGbits.RTCWREN=1;
     T1CONbits.T1OSCEN=1;
+}
+
+void imprimir_temperatura(int temp){
     
+    int decena = (int)temp / 10;
+    int unidad = temp - (decena*10);
+    
+    DSS_TEN_On;    
+    construir_numero(decena);      
+    DSS_TEN_Off; 
+    
+    DSS_UNIT_On;         
+    construir_numero(unidad);
+    DSS_UNIT_Off;
+  
 }
-
-void number_0(void){
-    DSS_A_On;
-    DSS_B_On;
-    DSS_C_On;
-    DSS_D_On;
-    DSS_E_On;
-    DSS_F_On;
-    DSS_G_Off;
-}
-
-void number_1(void){
-    DSS_A_Off;
-    DSS_B_On;
-    DSS_C_On;
-    DSS_D_Off;
-    DSS_E_Off;
-    DSS_F_Off;
-    DSS_G_Off;
-}
-
-void number_2(void){
-    DSS_A_On;
-    DSS_B_On;
-    DSS_C_Off;
-    DSS_D_On;
-    DSS_E_On;
-    DSS_F_Off;
-    DSS_G_On;
-}
-
-void number_3(void){
-    DSS_A_On;
-    DSS_B_On;
-    DSS_C_On;
-    DSS_D_On;
-    DSS_E_Off;
-    DSS_F_Off;
-    DSS_G_On;
-}
-
-void number_4(void){
-    DSS_A_Off;
-    DSS_B_On;
-    DSS_C_On;
-    DSS_D_Off;
-    DSS_E_Off;
-    DSS_F_On;
-    DSS_G_On;
-}
-
-void number_5(void){
-    DSS_A_On;
-    DSS_B_Off;
-    DSS_C_On;
-    DSS_D_On;
-    DSS_E_Off;
-    DSS_F_On;
-    DSS_G_On;
-}
-
-void number_6(void){
-    DSS_A_On;
-    DSS_B_Off;
-    DSS_C_On;
-    DSS_D_On;
-    DSS_E_On;
-    DSS_F_On;
-    DSS_G_On;
-}
-
-void number_7(void){
-    DSS_A_On;
-    DSS_B_On;
-    DSS_C_On;
-    DSS_D_Off;
-    DSS_E_Off;
-    DSS_F_Off;
-    DSS_G_Off;
-}
-
-void number_8(void){
-    DSS_A_On;
-    DSS_B_On;
-    DSS_C_On;
-    DSS_D_On;
-    DSS_E_On;
-    DSS_F_On;
-    DSS_G_On;
-}
-
-void number_9(void){
-    DSS_A_On;
-    DSS_B_On;
-    DSS_C_On;
-    DSS_D_On;
-    DSS_E_Off;
-    DSS_F_On;
-    DSS_G_On;
-}
-
-void number_to_segment(int number){
-    switch(number){
-        case 0:
-            number_0();
-            break;
-        case 1:
-            number_1();
-            break;
-        case 2:
-            number_2();
-            break;
-        case 3:
-            number_3();
-            break;
-        case 4:
-            number_4();
-            break;
-        case 5:
-            number_5();
-            break;
-        case 6:
-            number_6();
-            break;
-        case 7:
-            number_7();
-            break;
-        case 8:
-            number_8();
-            break;
-        case 9:
-            number_9();
-            break;
-    }
-}
-
 
 int main(void){
     
     setup();
     
-    int decena = 0;
-    int unidad = 0;    
+    int dec = 0;
+    int uni = 0;
+    int temperatura = 0;
+    int contador = 0;  
     
-    DSS_UNIT_On;
-    DSS_TEN_Off;
-    
-    while(1){             
-        
-       if (!switch1){ 
-           unidad++;
-           if (unidad > 9){
-               decena++;
-               unidad = 0;               
+    while(1){                                               
+      
+      //el while evita parpadeo
+      while (contador <10 )  {
+        temperatura = (dec*10) + uni;
+        imprimir_temperatura(temperatura);
+        contador++;
+      }      
+      contador = 0;
+      //if (!switch1){
+           uni++;
+           if (uni > 9){               
+               dec++;
+               uni = 0;               
            }
            
-           if (decena > 9){
-                decena = 0;
-            }
-        __delay_ms(98);   
-       } 
-           
-       DSS_TEN_On;
-       number_to_segment(decena);                                      
-        __delay_ms(10);
-        DSS_TEN_Off; 
-        
-       DSS_UNIT_On;         
-       number_to_segment(unidad);
-       __delay_ms(10);
-       DSS_UNIT_Off;                     
-        
+           if (dec > 9){
+                dec = 0;
+           }
+       //}           
     }
     
     return 0;

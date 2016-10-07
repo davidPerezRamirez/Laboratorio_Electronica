@@ -1,5 +1,5 @@
 
-# 1 "main.c"
+# 1 "Unimic/unmc_01/headers/unmc_display.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9796,31 +9796,6 @@ extern __nonreentrant void _delay3(unsigned char);
 #pragma config WPCFG=OFF
 #pragma config WPDIS=OFF
 
-
-# 15
-#pragma config CPUDIV=OSC1
-#pragma config CP0=OFF
-#pragma config WDTEN=OFF
-#pragma config PLLDIV=1
-#pragma config STVREN=ON
-#pragma config XINST=OFF
-#pragma config XINST=OFF
-#pragma config OSC=INTOSC
-#pragma config T1DIG=ON
-#pragma config LPT1OSC=OFF
-#pragma config FCMEN=OFF
-#pragma config IESO=OFF
-#pragma config WDTPS=32768
-#pragma config DSWDTOSC=INTOSCREF
-#pragma config RTCOSC=T1OSCREF
-#pragma config DSBOREN=OFF
-#pragma config DSWDTEN=OFF
-#pragma config DSWDTPS=G2
-#pragma config IOL1WAY=OFF
-#pragma config MSSP7B_EN=MSK7
-#pragma config WPCFG=OFF
-#pragma config WPDIS=OFF
-
 # 15 "Unimic/unmc_01/headers\unmc_display.h"
 void number_0();
 void number_1();
@@ -9837,78 +9812,173 @@ void apagar_segmentos();
 void construir_numero(int );
 void tiempo_encendido_segmento();
 
-# 28 "main.c"
-void setup(void){
-
-OSCTUNEbits.INTSRC=1;
-OSCTUNEbits.PLLEN=0;
-OSCCONbits.IRCF0=1;
-OSCCONbits.IRCF1=1;
-OSCCONbits.IRCF2=1;
-OSCCONbits.SCS0=0;
-OSCCONbits.SCS1=0;
-TRISA = 0b11110000;
-TRISB = 0;
-TRISC = 0b00100111;
-
-
-
-ANCON0=0b11111111;
-
-ANCON1=0b11111111;
-ADCON0=0b00101101;
-ADCON1=0b00010000;
-RTCCFGbits.RTCEN=1;
-RTCCFGbits.RTCWREN=1;
-T1CONbits.T1OSCEN=1;
+# 3 "Unimic/unmc_01/headers/unmc_display.c"
+void tiempo_encendido_segmento(){
+_delay((unsigned long)((1)*(8000000/4000.0)));
+}
+void encender_A(){
+PORTBbits.RB7 = 1;;
+tiempo_encendido_segmento();
+PORTBbits.RB7 = 0;;
 }
 
-void imprimir_temperatura(int temp){
-
-int decena = (int)temp / 10;
-int unidad = temp - (decena*10);
-
-LATBbits.LATB0 = 0;;
-construir_numero(decena);
-LATBbits.LATB0 = 1;;
-
-LATCbits.LATC7 = 0;;
-construir_numero(unidad);
-LATCbits.LATC7 = 1;;
-
+void encender_B(){
+PORTBbits.RB6 = 1;;
+tiempo_encendido_segmento();
+PORTBbits.RB6 = 0;;
 }
 
-int main(void){
-
-setup();
-
-int dec = 0;
-int uni = 0;
-int temperatura = 0;
-int contador = 0;
-
-while(1){
-
-
-while (contador <10 ) {
-temperatura = (dec*10) + uni;
-imprimir_temperatura(temperatura);
-contador++;
-}
-contador = 0;
-
-uni++;
-if (uni > 9){
-dec++;
-uni = 0;
+void encender_C(){
+PORTBbits.RB5 = 1;;
+tiempo_encendido_segmento();
+PORTBbits.RB5 = 0;;
 }
 
-if (dec > 9){
-dec = 0;
+void encender_D(){
+PORTBbits.RB4 = 1;;
+tiempo_encendido_segmento();
+PORTBbits.RB4 = 0;;
 }
 
+void encender_E(){
+PORTBbits.RB3 = 1;;
+tiempo_encendido_segmento();
+PORTBbits.RB3 = 0;;
 }
 
-return 0;
+void encender_F(){
+PORTBbits.RB2 = 1;;
+tiempo_encendido_segmento();
+PORTBbits.RB2 = 0;;
+}
 
+void encender_G(){
+PORTBbits.RB1 = 1;;
+tiempo_encendido_segmento();
+PORTBbits.RB1 = 0;;
+}
+
+void apagar_segmentos(){
+PORTBbits.RB7 = 0;;
+PORTBbits.RB6 = 0;;
+PORTBbits.RB5 = 0;;
+PORTBbits.RB4 = 0;;
+PORTBbits.RB3 = 0;;
+PORTBbits.RB2 = 0;;
+PORTBbits.RB1 = 0;;
+}
+
+void number_0(void){
+encender_A();
+encender_B();
+encender_C();
+encender_D();
+encender_E();
+encender_F();
+}
+
+void number_1(void){
+encender_B();
+encender_C();
+}
+
+void number_2(void){
+encender_A();
+encender_B();
+encender_D();
+encender_E();
+encender_G();
+}
+
+void number_3(void){
+encender_A();
+encender_B();
+encender_C();
+encender_D();
+encender_G();
+}
+
+void number_4(void){
+encender_B();
+encender_C();
+encender_F();
+encender_G();
+}
+
+void number_5(void){
+encender_A();
+encender_C();
+encender_D();
+encender_F();
+encender_G();
+}
+
+void number_6(void){
+encender_A();
+encender_C();
+encender_D();
+encender_E();
+encender_F();
+encender_G();
+}
+
+void number_7(void){
+encender_A();
+encender_B();
+encender_C();
+}
+
+void number_8(void){
+encender_A();
+encender_B();
+encender_C();
+encender_D();
+encender_E();
+encender_F();
+encender_G();
+}
+
+void number_9(void){
+encender_A();
+encender_B();
+encender_C();
+encender_D();
+encender_F();
+encender_G();
+}
+
+void construir_numero(int number){
+apagar_segmentos();
+switch(number){
+case 0:
+number_0();
+break;
+case 1:
+number_1();
+break;
+case 2:
+number_2();
+break;
+case 3:
+number_3();
+break;
+case 4:
+number_4();
+break;
+case 5:
+number_5();
+break;
+case 6:
+number_6();
+break;
+case 7:
+number_7();
+break;
+case 8:
+number_8();
+break;
+case 9:
+number_9();
+break;
+}
 }
