@@ -5,6 +5,8 @@
 [d frameptr 4065 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
+"32 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
 "63 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\double.c
 [v ___flpack __flpack `(d  1 e 3 0 ]
 "88 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fladd.c
@@ -25,15 +27,21 @@
 [v ___ftmul __ftmul `(f  1 e 3 0 ]
 "20 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 3 0 ]
+"44 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"28 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+"26 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
 [v _setup setup `(v  1 e 0 0 ]
-"53
+"51
 [v _imprimir_temperatura imprimir_temperatura `(v  1 e 0 0 ]
-"68
+"66
+[v _calcular_temperatura calcular_temperatura `(i  1 e 2 0 ]
+"71
+[v _leer_temperatura leer_temperatura `(i  1 e 2 0 ]
+"83
 [v _main main `(i  1 e 2 0 ]
 "3 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
 [v _tiempo_encendido_segmento tiempo_encendido_segmento `(v  1 e 0 0 ]
@@ -91,7 +99,7 @@
 [v _ANCON0 ANCON0 `VEuc  1 e 1 @3912 ]
 "2577
 [v _ANCON1 ANCON1 `VEuc  1 e 1 @3913 ]
-[s S380 . 1 `uc 1 RB0 1 0 :1:0 
+[s S475 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -101,7 +109,7 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "5591
-[s S389 . 1 `uc 1 AN12 1 0 :1:0 
+[s S484 . 1 `uc 1 AN12 1 0 :1:0 
 `uc 1 AN10 1 0 :1:1 
 `uc 1 AN8 1 0 :1:2 
 `uc 1 AN9 1 0 :1:3 
@@ -109,7 +117,7 @@
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S397 . 1 `uc 1 INT0 1 0 :1:0 
+[s S492 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 CTEDG1 1 0 :1:2 
 `uc 1 CTEDG2 1 0 :1:3 
@@ -118,7 +126,7 @@
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S406 . 1 `uc 1 RP3 1 0 :1:0 
+[s S501 . 1 `uc 1 RP3 1 0 :1:0 
 `uc 1 RTCC 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 SCK1 1 0 :1:4 
@@ -126,27 +134,27 @@
 `uc 1 RP9 1 0 :1:6 
 `uc 1 RP10 1 0 :1:7 
 ]
-[s S414 . 1 `uc 1 . 1 0 :1:0 
+[s S509 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RP4 1 0 :1:1 
 `uc 1 VMO 1 0 :1:2 
 `uc 1 VPO 1 0 :1:3 
 `uc 1 SCL1 1 0 :1:4 
 `uc 1 SDA1 1 0 :1:5 
 ]
-[s S421 . 1 `uc 1 . 1 0 :2:0 
+[s S516 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 REFO 1 0 :1:2 
 `uc 1 RP6 1 0 :1:3 
 `uc 1 RP7 1 0 :1:4 
 `uc 1 RP8 1 0 :1:5 
 ]
-[s S427 . 1 `uc 1 . 1 0 :2:0 
+[s S522 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RP5 1 0 :1:2 
 ]
-[s S430 . 1 `uc 1 . 1 0 :3:0 
+[s S525 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S433 . 1 `S380 1 . 1 0 `S389 1 . 1 0 `S397 1 . 1 0 `S406 1 . 1 0 `S414 1 . 1 0 `S421 1 . 1 0 `S427 1 . 1 0 `S430 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES433  1 e 1 @3969 ]
+[u S528 . 1 `S475 1 . 1 0 `S484 1 . 1 0 `S492 1 . 1 0 `S501 1 . 1 0 `S509 1 . 1 0 `S516 1 . 1 0 `S522 1 . 1 0 `S525 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES528  1 e 1 @3969 ]
 [s S168 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
@@ -241,6 +249,46 @@
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "10784
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
+[s S323 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_NOT_DONE 1 0 :1:1 
+]
+"10835
+[s S326 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+`uc 1 VCFG 1 0 :2:6 
+]
+[s S331 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 VCFG0 1 0 :1:6 
+`uc 1 VCFG1 1 0 :1:7 
+]
+[s S340 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 DONE 1 0 :1:1 
+]
+[s S343 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[s S346 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_DONE 1 0 :1:1 
+]
+[s S349 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S352 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 ADCAL 1 0 :1:7 
+]
+[s S355 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GODONE 1 0 :1:1 
+]
+[u S358 . 1 `S323 1 . 1 0 `S326 1 . 1 0 `S331 1 . 1 0 `S340 1 . 1 0 `S343 1 . 1 0 `S346 1 . 1 0 `S349 1 . 1 0 `S352 1 . 1 0 `S355 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES358  1 e 1 @4034 ]
+"10954
+[v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
 [s S105 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 RD16 1 0 :1:1 
 `uc 1 T1SYNC 1 0 :1:2 
@@ -288,34 +336,100 @@
 ]
 [u S60 . 1 `S47 1 . 1 0 `S53 1 . 1 0 ]
 [v _OSCCONbits OSCCONbits `VES60  1 e 1 @4051 ]
-"68 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+"83 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"73
-[v main@uni uni `i  1 a 2 20 ]
-"72
-[v main@dec dec `i  1 a 2 18 ]
-"75
-[v main@contador contador `i  1 a 2 16 ]
-"74
-[v main@temperatura temperatura `i  1 a 2 14 ]
-"101
+"87
+[v main@valor valor `i  1 a 2 66 ]
+"86
+[v main@temperatura temperatura `i  1 a 2 64 ]
+"88
+[v main@i i `i  1 a 2 62 ]
+"112
 } 0
-"28
+"26
 [v _setup setup `(v  1 e 0 0 ]
 {
-"51
+"49
 } 0
-"53
+"71
+[v _leer_temperatura leer_temperatura `(i  1 e 2 0 ]
+{
+"74
+[v leer_temperatura@voltage voltage `i  1 a 2 59 ]
+"81
+} 0
+"66
+[v _calcular_temperatura calcular_temperatura `(i  1 e 2 0 ]
+{
+[v calcular_temperatura@voltage voltage `i  1 p 2 54 ]
+"69
+} 0
+"44 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+{
+"47
+[v ___fttol@lval lval `ul  1 a 4 49 ]
+"46
+[v ___fttol@exp1 exp1 `uc  1 a 1 53 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 48 ]
+"44
+[v ___fttol@f1 f1 `f  1 p 3 39 ]
+"73
+} 0
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+{
+"65
+[v ___ftmul@f3_as_product f3_as_product `um  1 a 3 22 ]
+"64
+[v ___ftmul@sign sign `uc  1 a 1 26 ]
+[v ___ftmul@cntr cntr `uc  1 a 1 25 ]
+[v ___ftmul@exp exp `uc  1 a 1 21 ]
+"62
+[v ___ftmul@f1 f1 `f  1 p 3 12 ]
+[v ___ftmul@f2 f2 `f  1 p 3 15 ]
+"157
+} 0
+"86 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+{
+"88
+[v ___ftadd@exp1 exp1 `uc  1 a 1 38 ]
+[v ___ftadd@exp2 exp2 `uc  1 a 1 37 ]
+[v ___ftadd@sign sign `uc  1 a 1 36 ]
+"86
+[v ___ftadd@f1 f1 `f  1 p 3 27 ]
+[v ___ftadd@f2 f2 `f  1 p 3 30 ]
+"148
+} 0
+"32 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+{
+"34
+[v ___awtoft@sign sign `uc  1 a 1 11 ]
+"32
+[v ___awtoft@c c `i  1 p 2 8 ]
+"42
+} 0
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+{
+[v ___ftpack@arg arg `um  1 p 3 0 ]
+[v ___ftpack@exp exp `uc  1 p 1 3 ]
+[v ___ftpack@sign sign `uc  1 p 1 4 ]
+"86
+} 0
+"51 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
 [v _imprimir_temperatura imprimir_temperatura `(v  1 e 0 0 ]
 {
-"55
-[v imprimir_temperatura@decena decena `i  1 a 2 12 ]
-"56
-[v imprimir_temperatura@unidad unidad `i  1 a 2 10 ]
 "53
+[v imprimir_temperatura@decena decena `i  1 a 2 12 ]
+"54
+[v imprimir_temperatura@unidad unidad `i  1 a 2 10 ]
+"51
 [v imprimir_temperatura@temp temp `i  1 p 2 8 ]
-"66
+"64
 } 0
 "137 C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
 [v _construir_numero construir_numero `(v  1 e 0 0 ]

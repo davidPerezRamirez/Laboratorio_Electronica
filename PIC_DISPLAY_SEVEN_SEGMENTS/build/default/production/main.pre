@@ -9837,7 +9837,7 @@ void apagar_segmentos();
 void construir_numero(int );
 void tiempo_encendido_segmento();
 
-# 28 "main.c"
+# 26 "main.c"
 void setup(void){
 
 OSCTUNEbits.INTSRC=1;
@@ -9847,17 +9847,17 @@ OSCCONbits.IRCF1=1;
 OSCCONbits.IRCF2=1;
 OSCCONbits.SCS0=0;
 OSCCONbits.SCS1=0;
-TRISA = 0b11110000;
+TRISA = 0b11111000;
 TRISB = 0;
-TRISC = 0b00100111;
+TRISC = 0b00000111;
 
 
 
-ANCON0=0b11111111;
+ANCON0=0b11111110;
 
 ANCON1=0b11111111;
-ADCON0=0b00101101;
-ADCON1=0b00010000;
+ADCON0=0b01000000;
+ADCON1=0b00111000;
 RTCCFGbits.RTCEN=1;
 RTCCFGbits.RTCWREN=1;
 T1CONbits.T1OSCEN=1;
@@ -9878,35 +9878,48 @@ LATCbits.LATC7 = 1;;
 
 }
 
+int calcular_temperatura(int voltage){
+
+return (int)(0.588 * voltage - 50);
+}
+
+int leer_temperatura(){
+ADCON0bits.ADON = 1;
+ADCON0bits.GO = 1;
+int voltage;
+
+while (ADCON0bits.GO);
+_delay((unsigned long)((1)*(8000000/4000.0)));
+voltage = ADRESH;
+ADCON0bits.ADON = 0;
+return calcular_temperatura(voltage);
+}
+
 int main(void){
 
 setup();
-
-int dec = 0;
-int uni = 0;
 int temperatura = 0;
-int contador = 0;
+int valor = 99;
+int i;
 
 while(1){
 
-
-while (contador <10 ) {
-temperatura = (dec*10) + uni;
-imprimir_temperatura(temperatura);
-contador++;
+temperatura = leer_temperatura();
+if (temperatura < valor){
+valor--;
+}else{
+if (temperatura > valor){
+valor++;
 }
-contador = 0;
-
-uni++;
-if (uni > 9){
-dec++;
-uni = 0;
+else
+valor = temperatura;
 }
 
-if (dec > 9){
-dec = 0;
+i = 0;
+while (i < 8){
+imprimir_temperatura(valor);
+i++;
 }
-
 }
 
 return 0;

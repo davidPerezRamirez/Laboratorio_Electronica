@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.34\dat\en_msgs.txt -cs \
   -h+dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.sym \
   --cmf=dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.cmf \
-  -z -Q18F26J50 -oC:\Users\ddavi\AppData\Local\Temp\s4pg.6 \
+  -z -Q18F26J50 -oC:\Users\ddavi\AppData\Local\Temp\s98.6 \
   -Mdist/default/production/PIC_DISPLAY_SEVEN_SEGMENTS.production.map -E1 \
   -ver=XC8 -ASTACK=060h-0ebfh -pstack=STACK -ACODE=00h-0FFF7h \
   -ACONST=00h-0FFF7h -ASMALLCONST=0F00h-0FFFhx240,0FF00h-0FFF7h \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\ddavi\AppData\Local\Temp\s4pg.obj \
+  C:\Users\ddavi\AppData\Local\Temp\s98.obj \
   dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj 
 
 Object code version is 3.11
@@ -38,69 +38,83 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ddavi\AppData\Local\Temp\s4pg.obj
+C:\Users\ddavi\AppData\Local\Temp\s98.obj
                 end_init                              0        0        4        0       0
                 config                             FFF8     FFF8        8     FFF8       0
 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-                text24                             FEAE     FEAE       96     7F57       0
-                text23                             FD56     FD56       28     7EAB       0
-                text22                             FC76     FC76       10     7E3B       0
-                text21                             FC86     FC86       10     7E43       0
-                text20                             FC0E     FC0E        A     7E07       0
-                text19                             FC18     FC18        A     7E0C       0
-                text18                             FC22     FC22        A     7E11       0
-                text17                             FC2C     FC2C        A     7E16       0
-                text16                             FC36     FC36        A     7E1B       0
-                text15                             FC40     FC40        A     7E20       0
-                text14                             FCEA     FCEA       1A     7E75       0
-                text13                             FC4A     FC4A        A     7E25       0
-                text12                             FC54     FC54        A     7E2A       0
-                text11                             FCA8     FCA8       16     7E54       0
-                text10                             FCBE     FCBE       16     7E5F       0
-                text9                              FC96     FC96       12     7E4B       0
-                text8                              FCD4     FCD4       16     7E6A       0
-                text7                              FD04     FD04       1A     7E82       0
-                text6                              FC68     FC68        E     7E34       0
-                text5                              FD38     FD38       1E     7E9C       0
-                text4                              FD1E     FD1E       1A     7E8F       0
-                text3                              FE1A     FE1A       94     7F0D       0
-                text2                              FDB4     FDB4       66     7EDA       0
-                text1                              FD7E     FD7E       36     7EBF       0
-                cstackCOMRAM                          1        1       16        1       1
-                cinit                              FC5E     FC5E        A     7E2F       0
-                text0                              FF44     FF44       B4     7FA2       0
+                text31                             FA3E     FA3E       96     7D1F       0
+                text30                             F810     F810       28     7C08       0
+                text29                             F730     F730       10     7B98       0
+                text28                             F740     F740       10     7BA0       0
+                text27                             F6C8     F6C8        A     7B64       0
+                text26                             F6D2     F6D2        A     7B69       0
+                text25                             F6DC     F6DC        A     7B6E       0
+                text24                             F6E6     F6E6        A     7B73       0
+                text23                             F6F0     F6F0        A     7B78       0
+                text22                             F6FA     F6FA        A     7B7D       0
+                text21                             F7A4     F7A4       1A     7BD2       0
+                text20                             F704     F704        A     7B82       0
+                text19                             F70E     F70E        A     7B87       0
+                text18                             F762     F762       16     7BB1       0
+                text17                             F778     F778       16     7BBC       0
+                text16                             F750     F750       12     7BA8       0
+                text15                             F78E     F78E       16     7BC7       0
+                text14                             F7BE     F7BE       1A     7BDF       0
+                text13                             F722     F722        E     7B91       0
+                text12                             F7F2     F7F2       1E     7BF9       0
+                text11                             F7D8     F7D8       1A     7BEC       0
+                text10                             F9AA     F9AA       94     7CD5       0
+                text9                              F944     F944       66     7CA2       0
+                text8                              FB6A     FB6A       C6     7DB5       0
+                text7                              F8A8     F8A8       3C     7C54       0
+                text6                              FE34     FE34      1C4     7F1A       0
+                text5                              FC30     FC30      102     7E18       0
+                text4                              FD32     FD32      102     7E99       0
+                text3                              F8E4     F8E4       60     7C72       0
+                text2                              F838     F838       38     7C1C       0
+                text1                              F870     F870       38     7C38       0
+                cstackCOMRAM                          1        1       44        1       1
+                cinit                              F718     F718        A     7B8C       0
+                text0                              FAD4     FAD4       96     7D6A       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 end_init                              0        0        4         0
-                text24                             FEAE     FEAE       96         0
-                text23                             FD56     FD56       28         0
-                text22                             FC76     FC76       10         0
-                text21                             FC86     FC86       10         0
-                text20                             FC0E     FC0E        A         0
-                text19                             FC18     FC18        A         0
-                text18                             FC22     FC22        A         0
-                text17                             FC2C     FC2C        A         0
-                text16                             FC36     FC36        A         0
-                text15                             FC40     FC40        A         0
-                text14                             FCEA     FCEA       1A         0
-                text13                             FC4A     FC4A        A         0
-                text12                             FC54     FC54        A         0
-                text11                             FCA8     FCA8       16         0
-                text10                             FCBE     FCBE       16         0
-                text9                              FC96     FC96       12         0
-                text8                              FCD4     FCD4       16         0
-                text7                              FD04     FD04       1A         0
-                text6                              FC68     FC68        E         0
-                text5                              FD38     FD38       1E         0
-                text4                              FD1E     FD1E       1A         0
-                text3                              FE1A     FE1A       94         0
-                text2                              FDB4     FDB4       66         0
-                text1                              FD7E     FD7E       36         0
-                cinit                              FC5E     FC5E        A         0
-                text0                              FF44     FF44       B4         0
+                text31                             FA3E     FA3E       96         0
+                text30                             F810     F810       28         0
+                text29                             F730     F730       10         0
+                text28                             F740     F740       10         0
+                text27                             F6C8     F6C8        A         0
+                text26                             F6D2     F6D2        A         0
+                text25                             F6DC     F6DC        A         0
+                text24                             F6E6     F6E6        A         0
+                text23                             F6F0     F6F0        A         0
+                text22                             F6FA     F6FA        A         0
+                text21                             F7A4     F7A4       1A         0
+                text20                             F704     F704        A         0
+                text19                             F70E     F70E        A         0
+                text18                             F762     F762       16         0
+                text17                             F778     F778       16         0
+                text16                             F750     F750       12         0
+                text15                             F78E     F78E       16         0
+                text14                             F7BE     F7BE       1A         0
+                text13                             F722     F722        E         0
+                text12                             F7F2     F7F2       1E         0
+                text11                             F7D8     F7D8       1A         0
+                text10                             F9AA     F9AA       94         0
+                text9                              F944     F944       66         0
+                text8                              FB6A     FB6A       C6         0
+                text7                              F8A8     F8A8       3C         0
+                text6                              FE34     FE34      1C4         0
+                text5                              FC30     FC30      102         0
+                text4                              FD32     FD32      102         0
+                text3                              F8E4     F8E4       60         0
+                text2                              F838     F838       38         0
+                text1                              F870     F870       38         0
+                cinit                              F718     F718        A         0
+                text0                              FAD4     FAD4       96         0
 
         CLASS   CONST          
 
@@ -109,7 +123,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                cstackCOMRAM                          1        1       16         1
+                cstackCOMRAM                          1        1       44         1
 
         CLASS   ABS1           
 
@@ -161,33 +175,40 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                cstackCOMRAM                   000001  000016  000017         1       1  COMRAM  
-                text20                         00FC0E  00000A  00FC18      7E07       0  CODE    
-                text19                         00FC18  00000A  00FC22      7E0C       0  CODE    
-                text18                         00FC22  00000A  00FC2C      7E11       0  CODE    
-                text17                         00FC2C  00000A  00FC36      7E16       0  CODE    
-                text16                         00FC36  00000A  00FC40      7E1B       0  CODE    
-                text15                         00FC40  00000A  00FC4A      7E20       0  CODE    
-                text13                         00FC4A  00000A  00FC54      7E25       0  CODE    
-                text12                         00FC54  00000A  00FC5E      7E2A       0  CODE    
-                cinit                          00FC5E  00000A  00FC68      7E2F       0  CODE    
-                text6                          00FC68  00000E  00FC76      7E34       0  CODE    
-                text22                         00FC76  000010  00FC86      7E3B       0  CODE    
-                text21                         00FC86  000010  00FC96      7E43       0  CODE    
-                text9                          00FC96  000012  00FCA8      7E4B       0  CODE    
-                text11                         00FCA8  000016  00FCBE      7E54       0  CODE    
-                text10                         00FCBE  000016  00FCD4      7E5F       0  CODE    
-                text8                          00FCD4  000016  00FCEA      7E6A       0  CODE    
-                text14                         00FCEA  00001A  00FD04      7E75       0  CODE    
-                text7                          00FD04  00001A  00FD1E      7E82       0  CODE    
-                text4                          00FD1E  00001A  00FD38      7E8F       0  CODE    
-                text5                          00FD38  00001E  00FD56      7E9C       0  CODE    
-                text23                         00FD56  000028  00FD7E      7EAB       0  CODE    
-                text1                          00FD7E  000036  00FDB4      7EBF       0  CODE    
-                text2                          00FDB4  000066  00FE1A      7EDA       0  CODE    
-                text3                          00FE1A  000094  00FEAE      7F0D       0  CODE    
-                text24                         00FEAE  000096  00FF44      7F57       0  CODE    
-                text0                          00FF44  0000B4  00FFF8      7FA2       0  CODE    
+                cstackCOMRAM                   000001  000044  000045         1       1  COMRAM  
+                text27                         00F6C8  00000A  00F6D2      7B64       0  CODE    
+                text26                         00F6D2  00000A  00F6DC      7B69       0  CODE    
+                text25                         00F6DC  00000A  00F6E6      7B6E       0  CODE    
+                text24                         00F6E6  00000A  00F6F0      7B73       0  CODE    
+                text23                         00F6F0  00000A  00F6FA      7B78       0  CODE    
+                text22                         00F6FA  00000A  00F704      7B7D       0  CODE    
+                text20                         00F704  00000A  00F70E      7B82       0  CODE    
+                text19                         00F70E  00000A  00F718      7B87       0  CODE    
+                cinit                          00F718  00000A  00F722      7B8C       0  CODE    
+                text13                         00F722  00000E  00F730      7B91       0  CODE    
+                text29                         00F730  000010  00F740      7B98       0  CODE    
+                text28                         00F740  000010  00F750      7BA0       0  CODE    
+                text16                         00F750  000012  00F762      7BA8       0  CODE    
+                text18                         00F762  000016  00F778      7BB1       0  CODE    
+                text17                         00F778  000016  00F78E      7BBC       0  CODE    
+                text15                         00F78E  000016  00F7A4      7BC7       0  CODE    
+                text21                         00F7A4  00001A  00F7BE      7BD2       0  CODE    
+                text14                         00F7BE  00001A  00F7D8      7BDF       0  CODE    
+                text11                         00F7D8  00001A  00F7F2      7BEC       0  CODE    
+                text12                         00F7F2  00001E  00F810      7BF9       0  CODE    
+                text30                         00F810  000028  00F838      7C08       0  CODE    
+                text2                          00F838  000038  00F870      7C1C       0  CODE    
+                text1                          00F870  000038  00F8A8      7C38       0  CODE    
+                text7                          00F8A8  00003C  00F8E4      7C54       0  CODE    
+                text3                          00F8E4  000060  00F944      7C72       0  CODE    
+                text9                          00F944  000066  00F9AA      7CA2       0  CODE    
+                text10                         00F9AA  000094  00FA3E      7CD5       0  CODE    
+                text31                         00FA3E  000096  00FAD4      7D1F       0  CODE    
+                text0                          00FAD4  000096  00FB6A      7D6A       0  CODE    
+                text8                          00FB6A  0000C6  00FC30      7DB5       0  CODE    
+                text5                          00FC30  000102  00FD32      7E18       0  CODE    
+                text4                          00FD32  000102  00FE34      7E99       0  CODE    
+                text6                          00FE34  0001C4  00FFF8      7F1A       0  CODE    
                 config                         00FFF8  000008  010000      FFF8       0  CONFIG  
 
 
@@ -209,22 +230,31 @@ UNUSED ADDRESS RANGES
         BANK7            00700-007FF             100
         BANK8            00800-008FF             100
         BANK9            00900-009FF             100
-        BIGRAM           00017-00EBF             EA9
-        CODE             00004-0FC0D            FC0A
-        COMRAM           00017-0005F              49
-        CONST            00004-0FC0D            FC0A
-        MEDIUMCONST      00F00-0FC0D            ED0E
+        BIGRAM           00045-00EBF             E7B
+        CODE             00004-0F6C7            F6C4
+        COMRAM           00045-0005F              1B
+        CONST            00004-0F6C7            F6C4
+        MEDIUMCONST      00F00-0F6C7            E7C8
         RAM              00060-00EBF             100
         SFR              00EC0-00FFF              60
-        SMALLCONST       00F00-0FC0D             100
+        SMALLCONST       00F00-0F6C7             100
         STACK            00060-00EBF             E60
 
                                   Symbol Table
 
 ?___awdiv                           cstackCOMRAM  00001
+?___awtoft                          cstackCOMRAM  00009
+?___ftadd                           cstackCOMRAM  0001C
+?___ftmul                           cstackCOMRAM  0000D
+?___ftpack                          cstackCOMRAM  00001
+?___fttol                           cstackCOMRAM  00028
 ?___wmul                            cstackCOMRAM  00001
+?_calcular_temperatura              cstackCOMRAM  00037
+?_leer_temperatura                  cstackCOMRAM  00039
 _ADCON0                             (abs)         00FC2
+_ADCON0bits                         (abs)         00FC2
 _ADCON1                             (abs)         00FC1
+_ADRESH                             (abs)         00FC4
 _ANCON0                             (abs)         00F48
 _ANCON1                             (abs)         00F49
 _LATBbits                           (abs)         00F8A
@@ -318,7 +348,7 @@ __Hrparam                           rparam        00000
 __Hsfr                              sfr           00000
 __Hsmallconst                       smallconst    00000
 __Hspace_0                          (abs)         10000
-__Hspace_1                          (abs)         00017
+__Hspace_1                          (abs)         00045
 __Hspace_2                          (abs)         00000
 __Hstack                            stack         00000
 __Hstruct                           struct        00000
@@ -342,7 +372,14 @@ __Htext21                           text21        00000
 __Htext22                           text22        00000
 __Htext23                           text23        00000
 __Htext24                           text24        00000
+__Htext25                           text25        00000
+__Htext26                           text26        00000
+__Htext27                           text27        00000
+__Htext28                           text28        00000
+__Htext29                           text29        00000
 __Htext3                            text3         00000
+__Htext30                           text30        00000
+__Htext31                           text31        00000
 __Htext4                            text4         00000
 __Htext5                            text5         00000
 __Htext6                            text6         00000
@@ -433,7 +470,14 @@ __Ltext21                           text21        00000
 __Ltext22                           text22        00000
 __Ltext23                           text23        00000
 __Ltext24                           text24        00000
+__Ltext25                           text25        00000
+__Ltext26                           text26        00000
+__Ltext27                           text27        00000
+__Ltext28                           text28        00000
+__Ltext29                           text29        00000
 __Ltext3                            text3         00000
+__Ltext30                           text30        00000
+__Ltext31                           text31        00000
 __Ltext4                            text4         00000
 __Ltext5                            text5         00000
 __Ltext6                            text6         00000
@@ -441,84 +485,129 @@ __Ltext7                            text7         00000
 __Ltext8                            text8         00000
 __Ltext9                            text9         00000
 __S0                                (abs)         10000
-__S1                                (abs)         00017
+__S1                                (abs)         00045
 __S2                                (abs)         00000
-___awdiv                            text24        0FEAE
+___awdiv                            text31        0FA3E
 ___awdiv@counter                    cstackCOMRAM  00005
 ___awdiv@dividend                   cstackCOMRAM  00001
 ___awdiv@divisor                    cstackCOMRAM  00003
 ___awdiv@quotient                   cstackCOMRAM  00007
 ___awdiv@sign                       cstackCOMRAM  00006
+___awtoft                           text7         0F8A8
+___awtoft@c                         cstackCOMRAM  00009
+___awtoft@sign                      cstackCOMRAM  0000C
+___ftadd                            text6         0FE34
+___ftadd@exp1                       cstackCOMRAM  00027
+___ftadd@exp2                       cstackCOMRAM  00026
+___ftadd@f1                         cstackCOMRAM  0001C
+___ftadd@f2                         cstackCOMRAM  0001F
+___ftadd@sign                       cstackCOMRAM  00025
+___ftmul                            text5         0FC30
+___ftmul@cntr                       cstackCOMRAM  0001A
+___ftmul@exp                        cstackCOMRAM  00016
+___ftmul@f1                         cstackCOMRAM  0000D
+___ftmul@f2                         cstackCOMRAM  00010
+___ftmul@f3_as_product              cstackCOMRAM  00017
+___ftmul@sign                       cstackCOMRAM  0001B
+___ftpack                           text8         0FB6A
+___ftpack@arg                       cstackCOMRAM  00001
+___ftpack@exp                       cstackCOMRAM  00004
+___ftpack@sign                      cstackCOMRAM  00005
+___fttol                            text4         0FD32
+___fttol@exp1                       cstackCOMRAM  00036
+___fttol@f1                         cstackCOMRAM  00028
+___fttol@lval                       cstackCOMRAM  00032
+___fttol@sign1                      cstackCOMRAM  00031
 ___inthi_sp                         stack         00000
 ___intlo_sp                         stack         00000
 ___param_bank                       (abs)         00010
 ___rparam_used                      (abs)         00001
 ___sp                               stack         00000
-___wmul                             text23        0FD56
+___wmul                             text30        0F810
 ___wmul@multiplicand                cstackCOMRAM  00003
 ___wmul@multiplier                  cstackCOMRAM  00001
 ___wmul@product                     cstackCOMRAM  00005
 __accesstop                         (abs)         00060
 __activetblptr                      (abs)         00002
-__end_of___awdiv                    text24        0FF44
-__end_of___wmul                     text23        0FD7E
-__end_of__initialization            cinit         0FC5E
-__end_of_apagar_segmentos           text22        0FC86
-__end_of_construir_numero           text3         0FEAE
-__end_of_encender_A                 text20        0FC18
-__end_of_encender_B                 text19        0FC22
-__end_of_encender_C                 text18        0FC2C
-__end_of_encender_D                 text17        0FC36
-__end_of_encender_E                 text16        0FC40
-__end_of_encender_F                 text15        0FC4A
-__end_of_encender_G                 text12        0FC5E
-__end_of_imprimir_temperatura       text2         0FE1A
-__end_of_main                       text0         0FFF8
-__end_of_number_0                   text14        0FD04
-__end_of_number_1                   text13        0FC54
-__end_of_number_2                   text11        0FCBE
-__end_of_number_3                   text10        0FCD4
-__end_of_number_4                   text9         0FCA8
-__end_of_number_5                   text8         0FCEA
-__end_of_number_6                   text7         0FD1E
-__end_of_number_7                   text6         0FC76
-__end_of_number_8                   text5         0FD56
-__end_of_number_9                   text4         0FD38
-__end_of_setup                      text1         0FDB4
-__end_of_tiempo_encendido_segmento  text21        0FC96
-__initialization                    cinit         0FC5E
+__end_of___awdiv                    text31        0FAD4
+__end_of___awtoft                   text7         0F8E4
+__end_of___ftadd                    text6         0FFF8
+__end_of___ftmul                    text5         0FD32
+__end_of___ftpack                   text8         0FC30
+__end_of___fttol                    text4         0FE34
+__end_of___wmul                     text30        0F838
+__end_of__initialization            cinit         0F718
+__end_of_apagar_segmentos           text29        0F740
+__end_of_calcular_temperatura       text3         0F944
+__end_of_construir_numero           text10        0FA3E
+__end_of_encender_A                 text27        0F6D2
+__end_of_encender_B                 text26        0F6DC
+__end_of_encender_C                 text25        0F6E6
+__end_of_encender_D                 text24        0F6F0
+__end_of_encender_E                 text23        0F6FA
+__end_of_encender_F                 text22        0F704
+__end_of_encender_G                 text19        0F718
+__end_of_imprimir_temperatura       text9         0F9AA
+__end_of_leer_temperatura           text2         0F870
+__end_of_main                       text0         0FB6A
+__end_of_number_0                   text21        0F7BE
+__end_of_number_1                   text20        0F70E
+__end_of_number_2                   text18        0F778
+__end_of_number_3                   text17        0F78E
+__end_of_number_4                   text16        0F762
+__end_of_number_5                   text15        0F7A4
+__end_of_number_6                   text14        0F7D8
+__end_of_number_7                   text13        0F730
+__end_of_number_8                   text12        0F810
+__end_of_number_9                   text11        0F7F2
+__end_of_setup                      text1         0F8A8
+__end_of_tiempo_encendido_segmento  text28        0F750
+__initialization                    cinit         0F718
 __mediumconst                       mediumconst   00000
-__pcinit                            cinit         0FC5E
+__pcinit                            cinit         0F718
 __pcstackCOMRAM                     cstackCOMRAM  00001
-__ptext0                            text0         0FF44
-__ptext1                            text1         0FD7E
-__ptext10                           text10        0FCBE
-__ptext11                           text11        0FCA8
-__ptext12                           text12        0FC54
-__ptext13                           text13        0FC4A
-__ptext14                           text14        0FCEA
-__ptext15                           text15        0FC40
-__ptext16                           text16        0FC36
-__ptext17                           text17        0FC2C
-__ptext18                           text18        0FC22
-__ptext19                           text19        0FC18
-__ptext2                            text2         0FDB4
-__ptext20                           text20        0FC0E
-__ptext21                           text21        0FC86
-__ptext22                           text22        0FC76
-__ptext23                           text23        0FD56
-__ptext24                           text24        0FEAE
-__ptext3                            text3         0FE1A
-__ptext4                            text4         0FD1E
-__ptext5                            text5         0FD38
-__ptext6                            text6         0FC68
-__ptext7                            text7         0FD04
-__ptext8                            text8         0FCD4
-__ptext9                            text9         0FC96
+__ptext0                            text0         0FAD4
+__ptext1                            text1         0F870
+__ptext10                           text10        0F9AA
+__ptext11                           text11        0F7D8
+__ptext12                           text12        0F7F2
+__ptext13                           text13        0F722
+__ptext14                           text14        0F7BE
+__ptext15                           text15        0F78E
+__ptext16                           text16        0F750
+__ptext17                           text17        0F778
+__ptext18                           text18        0F762
+__ptext19                           text19        0F70E
+__ptext2                            text2         0F838
+__ptext20                           text20        0F704
+__ptext21                           text21        0F7A4
+__ptext22                           text22        0F6FA
+__ptext23                           text23        0F6F0
+__ptext24                           text24        0F6E6
+__ptext25                           text25        0F6DC
+__ptext26                           text26        0F6D2
+__ptext27                           text27        0F6C8
+__ptext28                           text28        0F740
+__ptext29                           text29        0F730
+__ptext3                            text3         0F8E4
+__ptext30                           text30        0F810
+__ptext31                           text31        0FA3E
+__ptext4                            text4         0FD32
+__ptext5                            text5         0FC30
+__ptext6                            text6         0FE34
+__ptext7                            text7         0F8A8
+__ptext8                            text8         0FB6A
+__ptext9                            text9         0F944
 __ramtop                            ramtop        00F00
 __size_of___awdiv                   (abs)         00000
+__size_of___awtoft                  (abs)         00000
+__size_of___ftadd                   (abs)         00000
+__size_of___ftmul                   (abs)         00000
+__size_of___ftpack                  (abs)         00000
+__size_of___fttol                   (abs)         00000
 __size_of___wmul                    (abs)         00000
 __size_of_apagar_segmentos          (abs)         00000
+__size_of_calcular_temperatura      (abs)         00000
 __size_of_construir_numero          (abs)         00000
 __size_of_encender_A                (abs)         00000
 __size_of_encender_B                (abs)         00000
@@ -528,6 +617,7 @@ __size_of_encender_E                (abs)         00000
 __size_of_encender_F                (abs)         00000
 __size_of_encender_G                (abs)         00000
 __size_of_imprimir_temperatura      (abs)         00000
+__size_of_leer_temperatura          (abs)         00000
 __size_of_main                      (abs)         00000
 __size_of_number_0                  (abs)         00000
 __size_of_number_1                  (abs)         00000
@@ -542,31 +632,34 @@ __size_of_number_9                  (abs)         00000
 __size_of_setup                     (abs)         00000
 __size_of_tiempo_encendido_segmento (abs)         00000
 __smallconst                        smallconst    00000
-_apagar_segmentos                   text22        0FC76
-_construir_numero                   text3         0FE1A
-_encender_A                         text20        0FC0E
-_encender_B                         text19        0FC18
-_encender_C                         text18        0FC22
-_encender_D                         text17        0FC2C
-_encender_E                         text16        0FC36
-_encender_F                         text15        0FC40
-_encender_G                         text12        0FC54
-_imprimir_temperatura               text2         0FDB4
-_main                               text0         0FF44
-_number_0                           text14        0FCEA
-_number_1                           text13        0FC4A
-_number_2                           text11        0FCA8
-_number_3                           text10        0FCBE
-_number_4                           text9         0FC96
-_number_5                           text8         0FCD4
-_number_6                           text7         0FD04
-_number_7                           text6         0FC68
-_number_8                           text5         0FD38
-_number_9                           text4         0FD1E
-_setup                              text1         0FD7E
-_tiempo_encendido_segmento          text21        0FC86
+_apagar_segmentos                   text29        0F730
+_calcular_temperatura               text3         0F8E4
+_construir_numero                   text10        0F9AA
+_encender_A                         text27        0F6C8
+_encender_B                         text26        0F6D2
+_encender_C                         text25        0F6DC
+_encender_D                         text24        0F6E6
+_encender_E                         text23        0F6F0
+_encender_F                         text22        0F6FA
+_encender_G                         text19        0F70E
+_imprimir_temperatura               text9         0F944
+_leer_temperatura                   text2         0F838
+_main                               text0         0FAD4
+_number_0                           text21        0F7A4
+_number_1                           text20        0F704
+_number_2                           text18        0F762
+_number_3                           text17        0F778
+_number_4                           text16        0F750
+_number_5                           text15        0F78E
+_number_6                           text14        0F7BE
+_number_7                           text13        0F722
+_number_8                           text12        0F7F2
+_number_9                           text11        0F7D8
+_setup                              text1         0F870
+_tiempo_encendido_segmento          text28        0F740
+calcular_temperatura@voltage        cstackCOMRAM  00037
 construir_numero@number             cstackCOMRAM  00002
-end_of_initialization               cinit         0FC5E
+end_of_initialization               cinit         0F718
 imprimir_temperatura@decena         cstackCOMRAM  0000D
 imprimir_temperatura@temp           cstackCOMRAM  00009
 imprimir_temperatura@unidad         cstackCOMRAM  0000B
@@ -574,30 +667,29 @@ intlevel0                           text          00000
 intlevel1                           text          00000
 intlevel2                           text          00000
 intlevel3                           text          00000
-main@contador                       cstackCOMRAM  00011
-main@dec                            cstackCOMRAM  00013
-main@temperatura                    cstackCOMRAM  0000F
-main@uni                            cstackCOMRAM  00015
+leer_temperatura@voltage            cstackCOMRAM  0003C
+main@i                              cstackCOMRAM  0003F
+main@temperatura                    cstackCOMRAM  00041
+main@valor                          cstackCOMRAM  00043
 stackhi                             (abs)         00EBF
 stacklo                             (abs)         00060
 start                               init          00000
-start_initialization                cinit         0FC5E
+start_initialization                cinit         0F718
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 68 in file "main.c"
+		line 83 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  uni             2   20[COMRAM] int 
-  dec             2   18[COMRAM] int 
-  contador        2   16[COMRAM] int 
-  temperatura     2   14[COMRAM] int 
+  valor           2   66[COMRAM] int 
+  temperatura     2   64[COMRAM] int 
+  i               2   62[COMRAM] int 
  Return value:  Size  Location     Type
-                  2   36[None  ] int 
+                  2   51[None  ] int 
  Registers used:
 		wreg, status,2, status,0, prodl, prodh, cstack
  Tracked objects:
@@ -606,14 +698,14 @@ FUNCTION INFORMATION:
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         8       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         8       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        8 bytes
+      Locals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         7       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        7 bytes
  Hardware stack levels required when called:    5
  This function calls:
-		___wmul
 		_imprimir_temperatura
+		_leer_temperatura
 		_setup
  This function is called by:
 		Startup code after reset
@@ -622,7 +714,7 @@ Total ram usage:        8 bytes
 
  *************** function _setup *****************
  Defined at:
-		line 28 in file "main.c"
+		line 26 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -649,9 +741,233 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
+ *************** function _leer_temperatura *****************
+ Defined at:
+		line 71 in file "main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  voltage         2   59[COMRAM] int 
+ Return value:  Size  Location     Type
+                  2   56[COMRAM] int 
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        5 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_calcular_temperatura
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _calcular_temperatura *****************
+ Defined at:
+		line 66 in file "main.c"
+ Parameters:    Size  Location     Type
+  voltage         2   54[COMRAM] int 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  2   54[COMRAM] int 
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		___awtoft
+		___ftadd
+		___ftmul
+		___fttol
+ This function is called by:
+		_leer_temperatura
+ This function uses a non-reentrant model
+
+
+ *************** function ___fttol *****************
+ Defined at:
+		line 44 in file "C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c"
+ Parameters:    Size  Location     Type
+  f1              3   39[COMRAM] float 
+ Auto vars:     Size  Location     Type
+  lval            4   49[COMRAM] unsigned long 
+  exp1            1   53[COMRAM] unsigned char 
+  sign1           1   48[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  4   39[COMRAM] long 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:        15       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       15 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_calcular_temperatura
+ This function uses a non-reentrant model
+
+
+ *************** function ___ftmul *****************
+ Defined at:
+		line 62 in file "C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c"
+ Parameters:    Size  Location     Type
+  f1              3   12[COMRAM] float 
+  f2              3   15[COMRAM] float 
+ Auto vars:     Size  Location     Type
+  f3_as_produc    3   22[COMRAM] unsigned um
+  sign            1   26[COMRAM] unsigned char 
+  cntr            1   25[COMRAM] unsigned char 
+  exp             1   21[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  3   12[COMRAM] float 
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:        15       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       15 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		___ftpack
+ This function is called by:
+		_calcular_temperatura
+ This function uses a non-reentrant model
+
+
+ *************** function ___ftadd *****************
+ Defined at:
+		line 86 in file "C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c"
+ Parameters:    Size  Location     Type
+  f1              3   27[COMRAM] float 
+  f2              3   30[COMRAM] float 
+ Auto vars:     Size  Location     Type
+  exp1            1   38[COMRAM] unsigned char 
+  exp2            1   37[COMRAM] unsigned char 
+  sign            1   36[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  3   27[COMRAM] float 
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:        12       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       12 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		___ftpack
+ This function is called by:
+		_calcular_temperatura
+ This function uses a non-reentrant model
+
+
+ *************** function ___awtoft *****************
+ Defined at:
+		line 32 in file "C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c"
+ Parameters:    Size  Location     Type
+  c               2    8[COMRAM] int 
+ Auto vars:     Size  Location     Type
+  sign            1   11[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  3    8[COMRAM] float 
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		___ftpack
+ This function is called by:
+		_calcular_temperatura
+ This function uses a non-reentrant model
+
+
+ *************** function ___ftpack *****************
+ Defined at:
+		line 62 in file "C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c"
+ Parameters:    Size  Location     Type
+  arg             3    0[COMRAM] unsigned um
+  exp             1    3[COMRAM] unsigned char 
+  sign            1    4[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  3    0[COMRAM] float 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         8       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        8 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		___awtoft
+		___ftadd
+		___ftmul
+ This function uses a non-reentrant model
+
+
  *************** function _imprimir_temperatura *****************
  Defined at:
-		line 53 in file "main.c"
+		line 51 in file "main.c"
  Parameters:    Size  Location     Type
   temp            2    8[COMRAM] int 
  Auto vars:     Size  Location     Type
@@ -1404,7 +1720,6 @@ Total ram usage:        6 bytes
 		Nothing
  This function is called by:
 		_imprimir_temperatura
-		_main
  This function uses a non-reentrant model
 
 
@@ -1444,49 +1759,76 @@ Total ram usage:        8 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
+C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+		___ftpack      		CODE           	FB6A	0000	199
+
+C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c estimated size: 199
+
+C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
+		___awtoft      		CODE           	F8A8	0000	61
+
+C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c estimated size: 61
+
+C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+		___ftmul       		CODE           	FC30	0000	259
+
+C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c estimated size: 259
+
 shared
-		__initializatio		CODE           	FC5E	0000	1
+		__initializatio		CODE           	F718	0000	1
 
 shared estimated size: 1
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-		___awdiv       		CODE           	FEAE	0000	151
+		___awdiv       		CODE           	FA3E	0000	151
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c estimated size: 151
 
 Unimic/unmc_01/headers/unmc_display.c
-		_apagar_segment		CODE           	FC76	0000	17
-		_tiempo_encendi		CODE           	FC86	0000	17
-		_encender_A    		CODE           	FC0E	0000	11
-		_encender_B    		CODE           	FC18	0000	11
-		_encender_C    		CODE           	FC22	0000	11
-		_encender_D    		CODE           	FC2C	0000	11
-		_encender_E    		CODE           	FC36	0000	11
-		_encender_F    		CODE           	FC40	0000	11
-		_encender_G    		CODE           	FC54	0000	11
-		_number_0      		CODE           	FCEA	0000	27
-		_number_1      		CODE           	FC4A	0000	11
-		_number_2      		CODE           	FCA8	0000	23
-		_number_3      		CODE           	FCBE	0000	23
-		_number_4      		CODE           	FC96	0000	19
-		_number_5      		CODE           	FCD4	0000	23
-		_number_6      		CODE           	FD04	0000	27
-		_number_7      		CODE           	FC68	0000	15
-		_number_8      		CODE           	FD38	0000	31
-		_number_9      		CODE           	FD1E	0000	27
-		_construir_nume		CODE           	FE1A	0000	149
+		_apagar_segment		CODE           	F730	0000	17
+		_tiempo_encendi		CODE           	F740	0000	17
+		_encender_A    		CODE           	F6C8	0000	11
+		_encender_B    		CODE           	F6D2	0000	11
+		_encender_C    		CODE           	F6DC	0000	11
+		_encender_D    		CODE           	F6E6	0000	11
+		_encender_E    		CODE           	F6F0	0000	11
+		_encender_F    		CODE           	F6FA	0000	11
+		_encender_G    		CODE           	F70E	0000	11
+		_number_0      		CODE           	F7A4	0000	27
+		_number_1      		CODE           	F704	0000	11
+		_number_2      		CODE           	F762	0000	23
+		_number_3      		CODE           	F778	0000	23
+		_number_4      		CODE           	F750	0000	19
+		_number_5      		CODE           	F78E	0000	23
+		_number_6      		CODE           	F7BE	0000	27
+		_number_7      		CODE           	F722	0000	15
+		_number_8      		CODE           	F7F2	0000	31
+		_number_9      		CODE           	F7D8	0000	27
+		_construir_nume		CODE           	F9AA	0000	149
 
 Unimic/unmc_01/headers/unmc_display.c estimated size: 486
 
-main.c
-		_imprimir_tempe		CODE           	FDB4	0000	103
-		_main          		CODE           	FF44	0000	181
-		_setup         		CODE           	FD7E	0000	55
+C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+		___fttol       		CODE           	FD32	0000	259
 
-main.c estimated size: 339
+C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c estimated size: 259
+
+main.c
+		_imprimir_tempe		CODE           	F944	0000	103
+		_main          		CODE           	FAD4	0000	151
+		_leer_temperatu		CODE           	F838	0000	57
+		_calcular_tempe		CODE           	F8E4	0000	97
+		_setup         		CODE           	F870	0000	57
+
+main.c estimated size: 465
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
-		___wmul        		CODE           	FD56	0000	41
+		___wmul        		CODE           	F810	0000	41
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c estimated size: 41
+
+C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+		___ftadd       		CODE           	FE34	0000	453
+
+C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c estimated size: 453
 

@@ -129,6 +129,44 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S455 . . . . . . . . . . ]
 "6533
 [v _LATCbits `VS455 ~T0 @X0 0 e@3979 ]
+"10790
+[s S689 :1 `uc 1 :1 `uc 1 ]
+[n S689 . . GO_NOT_DONE ]
+"10794
+[s S690 :1 `uc 1 :1 `uc 1 :4 `uc 1 :2 `uc 1 ]
+[n S690 . ADON GO_nDONE CHS VCFG ]
+"10800
+[s S691 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S691 . . GO_DONE CHS0 CHS1 CHS2 CHS3 VCFG0 VCFG1 ]
+"10810
+[s S692 :1 `uc 1 :1 `uc 1 ]
+[n S692 . . DONE ]
+"10814
+[s S693 :1 `uc 1 :1 `uc 1 ]
+[n S693 . . GO ]
+"10818
+[s S694 :1 `uc 1 :1 `uc 1 ]
+[n S694 . . NOT_DONE ]
+"10822
+[s S695 :1 `uc 1 :1 `uc 1 ]
+[n S695 . . nDONE ]
+"10826
+[s S696 :7 `uc 1 :1 `uc 1 ]
+[n S696 . . ADCAL ]
+"10830
+[s S697 :1 `uc 1 :1 `uc 1 ]
+[n S697 . . GODONE ]
+"10789
+[u S688 `S689 1 `S690 1 `S691 1 `S692 1 `S693 1 `S694 1 `S695 1 `S696 1 `S697 1 ]
+[n S688 . . . . . . . . . . ]
+"10835
+[v _ADCON0bits `VS688 ~T0 @X0 0 e@4034 ]
+[v F8145 `(v ~T0 @X0 1 tf1`ul ]
+"161 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18.h
+[v __delay `JF8145 ~T0 @X0 0 e ]
+[p i __delay ]
+"10954 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
+[v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
 [p mainexit ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7718,197 +7756,253 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;headers\unmc_display.h: 26: void apagar_segmentos();
 [; ;headers\unmc_display.h: 27: void construir_numero(int );
 [; ;headers\unmc_display.h: 28: void tiempo_encendido_segmento();
-"28 main.c
+"26 main.c
 [v _setup `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 28: void setup(void){
+[; ;main.c: 26: void setup(void){
 [e :U _setup ]
 [f ]
-[; ;main.c: 30: OSCTUNEbits.INTSRC=1;
-"30
+[; ;main.c: 28: OSCTUNEbits.INTSRC=1;
+"28
 [e = . . _OSCTUNEbits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 31: OSCTUNEbits.PLLEN=0;
-"31
+[; ;main.c: 29: OSCTUNEbits.PLLEN=0;
+"29
 [e = . . _OSCTUNEbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 32: OSCCONbits.IRCF0=1;
-"32
+[; ;main.c: 30: OSCCONbits.IRCF0=1;
+"30
 [e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-[; ;main.c: 33: OSCCONbits.IRCF1=1;
-"33
+[; ;main.c: 31: OSCCONbits.IRCF1=1;
+"31
 [e = . . _OSCCONbits 1 4 -> -> 1 `i `uc ]
-[; ;main.c: 34: OSCCONbits.IRCF2=1;
-"34
+[; ;main.c: 32: OSCCONbits.IRCF2=1;
+"32
 [e = . . _OSCCONbits 1 5 -> -> 1 `i `uc ]
-[; ;main.c: 35: OSCCONbits.SCS0=0;
-"35
+[; ;main.c: 33: OSCCONbits.SCS0=0;
+"33
 [e = . . _OSCCONbits 1 0 -> -> 0 `i `uc ]
-[; ;main.c: 36: OSCCONbits.SCS1=0;
-"36
+[; ;main.c: 34: OSCCONbits.SCS1=0;
+"34
 [e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-[; ;main.c: 37: TRISA = 0b11110000;
-"37
-[e = _TRISA -> -> 240 `i `uc ]
-[; ;main.c: 38: TRISB = 0;
-"38
+[; ;main.c: 35: TRISA = 0b11111000;
+"35
+[e = _TRISA -> -> 248 `i `uc ]
+[; ;main.c: 36: TRISB = 0;
+"36
 [e = _TRISB -> -> 0 `i `uc ]
-[; ;main.c: 39: TRISC = 0b00100111;
-"39
-[e = _TRISC -> -> 39 `i `uc ]
-[; ;main.c: 43: ANCON0=0b11111111;
+[; ;main.c: 37: TRISC = 0b00000111;
+"37
+[e = _TRISC -> -> 7 `i `uc ]
+[; ;main.c: 41: ANCON0=0b11111110;
+"41
+[e = _ANCON0 -> -> 254 `i `uc ]
+[; ;main.c: 43: ANCON1=0b11111111;
 "43
-[e = _ANCON0 -> -> 255 `i `uc ]
-[; ;main.c: 45: ANCON1=0b11111111;
-"45
 [e = _ANCON1 -> -> 255 `i `uc ]
-[; ;main.c: 46: ADCON0=0b00101101;
+[; ;main.c: 44: ADCON0=0b01000000;
+"44
+[e = _ADCON0 -> -> 64 `i `uc ]
+[; ;main.c: 45: ADCON1=0b00111000;
+"45
+[e = _ADCON1 -> -> 56 `i `uc ]
+[; ;main.c: 46: RTCCFGbits.RTCEN=1;
 "46
-[e = _ADCON0 -> -> 45 `i `uc ]
-[; ;main.c: 47: ADCON1=0b00010000;
-"47
-[e = _ADCON1 -> -> 16 `i `uc ]
-[; ;main.c: 48: RTCCFGbits.RTCEN=1;
-"48
 [e = . . _RTCCFGbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 49: RTCCFGbits.RTCWREN=1;
-"49
+[; ;main.c: 47: RTCCFGbits.RTCWREN=1;
+"47
 [e = . . _RTCCFGbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 50: T1CONbits.T1OSCEN=1;
-"50
+[; ;main.c: 48: T1CONbits.T1OSCEN=1;
+"48
 [e = . . _T1CONbits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 51: }
-"51
+[; ;main.c: 49: }
+"49
 [e :UE 1034 ]
 }
-"53
+"51
 [v _imprimir_temperatura `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;main.c: 53: void imprimir_temperatura(int temp){
+[; ;main.c: 51: void imprimir_temperatura(int temp){
 [e :U _imprimir_temperatura ]
 [v _temp `i ~T0 @X0 1 r1 ]
 [f ]
-"55
+"53
 [v _decena `i ~T0 @X0 1 a ]
-[; ;main.c: 55: int decena = (int)temp / 10;
+[; ;main.c: 53: int decena = (int)temp / 10;
 [e = _decena / _temp -> 10 `i ]
-"56
+"54
 [v _unidad `i ~T0 @X0 1 a ]
-[; ;main.c: 56: int unidad = temp - (decena*10);
+[; ;main.c: 54: int unidad = temp - (decena*10);
 [e = _unidad - _temp * _decena -> 10 `i ]
-[; ;main.c: 58: LATBbits.LATB0 = 0;;
-"58
+[; ;main.c: 56: LATBbits.LATB0 = 0;;
+"56
 [e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 59: construir_numero(decena);
-"59
+[; ;main.c: 57: construir_numero(decena);
+"57
 [e ( _construir_numero (1 _decena ]
-[; ;main.c: 60: LATBbits.LATB0 = 1;;
-"60
+[; ;main.c: 58: LATBbits.LATB0 = 1;;
+"58
 [e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 62: LATCbits.LATC7 = 0;;
-"62
+[; ;main.c: 60: LATCbits.LATC7 = 0;;
+"60
 [e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
-[; ;main.c: 63: construir_numero(unidad);
-"63
+[; ;main.c: 61: construir_numero(unidad);
+"61
 [e ( _construir_numero (1 _unidad ]
-[; ;main.c: 64: LATCbits.LATC7 = 1;;
-"64
+[; ;main.c: 62: LATCbits.LATC7 = 1;;
+"62
 [e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 66: }
-"66
+[; ;main.c: 64: }
+"64
 [e :UE 1035 ]
 }
-"68
-[v _main `(i ~T0 @X0 1 ef ]
+"66
+[v _calcular_temperatura `(i ~T0 @X0 1 ef1`i ]
 {
-[; ;main.c: 68: int main(void){
-[e :U _main ]
+[; ;main.c: 66: int calcular_temperatura(int voltage){
+[e :U _calcular_temperatura ]
+[v _voltage `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 70: setup();
-"70
-[e ( _setup ..  ]
+[; ;main.c: 68: return (int)(0.588 * voltage - 50);
+"68
+[e ) -> - * .0.588 -> _voltage `d -> -> 50 `i `d `i ]
+[e $UE 1036  ]
+[; ;main.c: 69: }
+"69
+[e :UE 1036 ]
+}
+"71
+[v _leer_temperatura `(i ~T0 @X0 1 ef ]
+{
+[; ;main.c: 71: int leer_temperatura(){
+[e :U _leer_temperatura ]
+[f ]
+[; ;main.c: 72: ADCON0bits.ADON = 1;
 "72
-[v _dec `i ~T0 @X0 1 a ]
-[; ;main.c: 72: int dec = 0;
-[e = _dec -> 0 `i ]
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+[; ;main.c: 73: ADCON0bits.GO = 1;
 "73
-[v _uni `i ~T0 @X0 1 a ]
-[; ;main.c: 73: int uni = 0;
-[e = _uni -> 0 `i ]
+[e = . . _ADCON0bits 4 1 -> -> 1 `i `uc ]
 "74
-[v _temperatura `i ~T0 @X0 1 a ]
-[; ;main.c: 74: int temperatura = 0;
-[e = _temperatura -> 0 `i ]
-"75
-[v _contador `i ~T0 @X0 1 a ]
-[; ;main.c: 75: int contador = 0;
-[e = _contador -> 0 `i ]
-[; ;main.c: 77: while(1){
-"77
-[e :U 1038 ]
-{
-[; ;main.c: 80: while (contador <10 ) {
-"80
-[e $U 1040  ]
-[e :U 1041 ]
-{
-[; ;main.c: 81: temperatura = (dec*10) + uni;
-"81
-[e = _temperatura + * _dec -> 10 `i _uni ]
-[; ;main.c: 82: imprimir_temperatura(temperatura);
-"82
-[e ( _imprimir_temperatura (1 _temperatura ]
-[; ;main.c: 83: contador++;
-"83
-[e ++ _contador -> 1 `i ]
-"84
-}
-[e :U 1040 ]
-"80
-[e $ < _contador -> 10 `i 1041  ]
-[e :U 1042 ]
-[; ;main.c: 84: }
-[; ;main.c: 85: contador = 0;
-"85
-[e = _contador -> 0 `i ]
-[; ;main.c: 87: uni++;
-"87
-[e ++ _uni -> 1 `i ]
-[; ;main.c: 88: if (uni > 9){
-"88
-[e $ ! > _uni -> 9 `i 1043  ]
-{
-[; ;main.c: 89: dec++;
-"89
-[e ++ _dec -> 1 `i ]
-[; ;main.c: 90: uni = 0;
-"90
-[e = _uni -> 0 `i ]
-"91
-}
-[e :U 1043 ]
-[; ;main.c: 91: }
-[; ;main.c: 93: if (dec > 9){
-"93
-[e $ ! > _dec -> 9 `i 1044  ]
-{
-[; ;main.c: 94: dec = 0;
-"94
-[e = _dec -> 0 `i ]
-"95
-}
-[e :U 1044 ]
-"97
-}
-[e :U 1037 ]
-"77
+[v _voltage `i ~T0 @X0 1 a ]
+[; ;main.c: 74: int voltage;
+[; ;main.c: 76: while (ADCON0bits.GO);
+"76
 [e $U 1038  ]
 [e :U 1039 ]
-[; ;main.c: 95: }
-[; ;main.c: 97: }
-[; ;main.c: 99: return 0;
+[e :U 1038 ]
+[e $ != -> . . _ADCON0bits 4 1 `i -> -> -> 0 `i `Vuc `i 1039  ]
+[e :U 1040 ]
+[; ;main.c: 77: _delay((unsigned long)((1)*(8000000/4000.0)));
+"77
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 78: voltage = ADRESH;
+"78
+[e = _voltage -> _ADRESH `i ]
+[; ;main.c: 79: ADCON0bits.ADON = 0;
+"79
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+[; ;main.c: 80: return calcular_temperatura(voltage);
+"80
+[e ) ( _calcular_temperatura (1 _voltage ]
+[e $UE 1037  ]
+[; ;main.c: 81: }
+"81
+[e :UE 1037 ]
+}
+"83
+[v _main `(i ~T0 @X0 1 ef ]
+{
+[; ;main.c: 83: int main(void){
+[e :U _main ]
+[f ]
+[; ;main.c: 85: setup();
+"85
+[e ( _setup ..  ]
+"86
+[v _temperatura `i ~T0 @X0 1 a ]
+[; ;main.c: 86: int temperatura = 0;
+[e = _temperatura -> 0 `i ]
+"87
+[v _valor `i ~T0 @X0 1 a ]
+[; ;main.c: 87: int valor = 99;
+[e = _valor -> 99 `i ]
+"88
+[v _i `i ~T0 @X0 1 a ]
+[; ;main.c: 88: int i;
+[; ;main.c: 90: while(1){
+"90
+[e :U 1043 ]
+{
+[; ;main.c: 92: temperatura = leer_temperatura();
+"92
+[e = _temperatura ( _leer_temperatura ..  ]
+[; ;main.c: 93: if (temperatura < valor){
+"93
+[e $ ! < _temperatura _valor 1045  ]
+{
+[; ;main.c: 94: valor--;
+"94
+[e -- _valor -> 1 `i ]
+"95
+}
+[; ;main.c: 95: }else{
+[e $U 1046  ]
+[e :U 1045 ]
+{
+[; ;main.c: 96: if (temperatura > valor){
+"96
+[e $ ! > _temperatura _valor 1047  ]
+{
+[; ;main.c: 97: valor++;
+"97
+[e ++ _valor -> 1 `i ]
+"98
+}
+[; ;main.c: 98: }
+[e $U 1048  ]
 "99
-[e ) -> 0 `i ]
-[e $UE 1036  ]
-[; ;main.c: 101: }
+[e :U 1047 ]
+[; ;main.c: 99: else
+[; ;main.c: 100: valor = temperatura;
+"100
+[e = _valor _temperatura ]
+[e :U 1048 ]
 "101
-[e :UE 1036 ]
+}
+[e :U 1046 ]
+[; ;main.c: 101: }
+[; ;main.c: 103: i = 0;
+"103
+[e = _i -> 0 `i ]
+[; ;main.c: 104: while (i < 8){
+"104
+[e $U 1049  ]
+[e :U 1050 ]
+{
+[; ;main.c: 105: imprimir_temperatura(valor);
+"105
+[e ( _imprimir_temperatura (1 _valor ]
+[; ;main.c: 106: i++;
+"106
+[e ++ _i -> 1 `i ]
+"107
+}
+[e :U 1049 ]
+"104
+[e $ < _i -> 8 `i 1050  ]
+[e :U 1051 ]
+"108
+}
+[e :U 1042 ]
+"90
+[e $U 1043  ]
+[e :U 1044 ]
+[; ;main.c: 107: }
+[; ;main.c: 108: }
+[; ;main.c: 110: return 0;
+"110
+[e ) -> 0 `i ]
+[e $UE 1041  ]
+[; ;main.c: 112: }
+"112
+[e :UE 1041 ]
 }
