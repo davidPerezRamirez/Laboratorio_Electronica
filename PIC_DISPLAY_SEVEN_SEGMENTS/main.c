@@ -32,7 +32,7 @@ void setup(void){
     OSCCONbits.IRCF2=1;
     OSCCONbits.SCS0=0;          //oscilator INTRC
     OSCCONbits.SCS1=0;
-    TRISA = 0b11111000;
+    TRISA = 0b11111001;
     TRISB = 0;
     TRISC = 0b00000111;
     //TRISAbits.TRISA0=1;
@@ -65,7 +65,7 @@ void imprimir_temperatura(int temp){
 
 int calcular_temperatura(int voltage){
     
-    return (int)(0.588 * voltage - 50);
+    return (int)(0.594 * voltage - 51);
 }
 
 int leer_temperatura(){
@@ -84,27 +84,21 @@ int main(void){
     
     setup();
     int temperatura = 0; 
-    int valor = 99;
     int i;
     
-    while(1){  
+    while(1){               
+                                               
+        temperatura = leer_temperatura(); 
         
-        temperatura = leer_temperatura();
-        if (temperatura < valor){
-            valor--;
-        }else{
-            if (temperatura > valor){
-                valor++;
+        if (temperatura < 0 || temperatura > 99)
+            mostrar_fuera_rango();
+        else{        
+            i = 0;                      
+            while (i < 50){             
+                imprimir_temperatura(temperatura);
+                i++;
             }
-            else
-                valor = temperatura;
         }
-
-        i = 0;
-        while (i < 10){
-            imprimir_temperatura(valor);
-            i++;
-        }         
     }
     
     return 0;

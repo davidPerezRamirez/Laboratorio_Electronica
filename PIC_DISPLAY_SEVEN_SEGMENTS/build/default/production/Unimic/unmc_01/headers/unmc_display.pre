@@ -9811,6 +9811,7 @@ void number_9();
 void apagar_segmentos();
 void construir_numero(int );
 void tiempo_encendido_segmento();
+void mostrar_fuera_rango();
 
 # 3 "Unimic/unmc_01/headers/unmc_display.c"
 void tiempo_encendido_segmento(){
@@ -9866,6 +9867,24 @@ PORTBbits.RB4 = 0;;
 PORTBbits.RB3 = 0;;
 PORTBbits.RB2 = 0;;
 PORTBbits.RB1 = 0;;
+}
+
+void mostrar_fuera_rango(){
+LATBbits.LATB0 = 0;;
+encender_A();
+encender_E();
+encender_F();
+encender_G();
+LATBbits.LATB0 = 1;;
+
+LATCbits.LATC7 = 0;;
+encender_A();
+encender_B();
+encender_C();
+encender_E();
+encender_F();
+encender_G();
+LATCbits.LATC7 = 1;;
 }
 
 void number_0(void){

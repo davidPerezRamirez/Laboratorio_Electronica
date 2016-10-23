@@ -168,6 +168,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "10954 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
 [v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
 [p mainexit ]
+"29 Unimic/unmc_01/headers\unmc_display.h
+[v _mostrar_fuera_rango `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f26j50.h: 49: extern volatile unsigned char RPOR0 @ 0xEC6;
@@ -7756,6 +7758,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;headers\unmc_display.h: 26: void apagar_segmentos();
 [; ;headers\unmc_display.h: 27: void construir_numero(int );
 [; ;headers\unmc_display.h: 28: void tiempo_encendido_segmento();
+[; ;headers\unmc_display.h: 29: void mostrar_fuera_rango();
 "26 main.c
 [v _setup `(v ~T0 @X0 1 ef ]
 {
@@ -7783,9 +7786,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 34: OSCCONbits.SCS1=0;
 "34
 [e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-[; ;main.c: 35: TRISA = 0b11111000;
+[; ;main.c: 35: TRISA = 0b11111001;
 "35
-[e = _TRISA -> -> 248 `i `uc ]
+[e = _TRISA -> -> 249 `i `uc ]
 [; ;main.c: 36: TRISB = 0;
 "36
 [e = _TRISB -> -> 0 `i `uc ]
@@ -7861,9 +7864,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _calcular_temperatura ]
 [v _voltage `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 68: return (int)(0.588 * voltage - 50);
+[; ;main.c: 68: return (int)(0.594 * voltage - 51);
 "68
-[e ) -> - * .0.588 -> _voltage `d -> -> 50 `i `d `i ]
+[e ) -> - * .0.594 -> _voltage `d -> -> 51 `i `d `i ]
 [e $UE 1036  ]
 [; ;main.c: 69: }
 "69
@@ -7922,87 +7925,63 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 86: int temperatura = 0;
 [e = _temperatura -> 0 `i ]
 "87
-[v _valor `i ~T0 @X0 1 a ]
-[; ;main.c: 87: int valor = 99;
-[e = _valor -> 99 `i ]
-"88
 [v _i `i ~T0 @X0 1 a ]
-[; ;main.c: 88: int i;
-[; ;main.c: 90: while(1){
-"90
+[; ;main.c: 87: int i;
+[; ;main.c: 89: while(1){
+"89
 [e :U 1043 ]
 {
-[; ;main.c: 92: temperatura = leer_temperatura();
-"92
+[; ;main.c: 91: temperatura = leer_temperatura();
+"91
 [e = _temperatura ( _leer_temperatura ..  ]
-[; ;main.c: 93: if (temperatura < valor){
+[; ;main.c: 93: if (temperatura < 0 || temperatura > 99)
 "93
-[e $ ! < _temperatura _valor 1045  ]
-{
-[; ;main.c: 94: valor--;
+[e $ ! || < _temperatura -> 0 `i > _temperatura -> 99 `i 1045  ]
+[; ;main.c: 94: mostrar_fuera_rango();
 "94
-[e -- _valor -> 1 `i ]
-"95
-}
-[; ;main.c: 95: }else{
+[e ( _mostrar_fuera_rango ..  ]
 [e $U 1046  ]
+"95
 [e :U 1045 ]
+[; ;main.c: 95: else{
 {
-[; ;main.c: 96: if (temperatura > valor){
+[; ;main.c: 96: i = 0;
 "96
-[e $ ! > _temperatura _valor 1047  ]
-{
-[; ;main.c: 97: valor++;
+[e = _i -> 0 `i ]
+[; ;main.c: 97: while (i < 50){
 "97
-[e ++ _valor -> 1 `i ]
-"98
-}
-[; ;main.c: 98: }
-[e $U 1048  ]
-"99
-[e :U 1047 ]
-[; ;main.c: 99: else
-[; ;main.c: 100: valor = temperatura;
-"100
-[e = _valor _temperatura ]
+[e $U 1047  ]
 [e :U 1048 ]
+{
+[; ;main.c: 98: imprimir_temperatura(temperatura);
+"98
+[e ( _imprimir_temperatura (1 _temperatura ]
+[; ;main.c: 99: i++;
+"99
+[e ++ _i -> 1 `i ]
+"100
+}
+[e :U 1047 ]
+"97
+[e $ < _i -> 50 `i 1048  ]
+[e :U 1049 ]
 "101
 }
 [e :U 1046 ]
-[; ;main.c: 101: }
-[; ;main.c: 103: i = 0;
-"103
-[e = _i -> 0 `i ]
-[; ;main.c: 104: while (i < 8){
-"104
-[e $U 1049  ]
-[e :U 1050 ]
-{
-[; ;main.c: 105: imprimir_temperatura(valor);
-"105
-[e ( _imprimir_temperatura (1 _valor ]
-[; ;main.c: 106: i++;
-"106
-[e ++ _i -> 1 `i ]
-"107
-}
-[e :U 1049 ]
-"104
-[e $ < _i -> 8 `i 1050  ]
-[e :U 1051 ]
-"108
+"102
 }
 [e :U 1042 ]
-"90
+"89
 [e $U 1043  ]
 [e :U 1044 ]
-[; ;main.c: 107: }
-[; ;main.c: 108: }
-[; ;main.c: 110: return 0;
-"110
+[; ;main.c: 100: }
+[; ;main.c: 101: }
+[; ;main.c: 102: }
+[; ;main.c: 104: return 0;
+"104
 [e ) -> 0 `i ]
 [e $UE 1041  ]
-[; ;main.c: 112: }
-"112
+[; ;main.c: 106: }
+"106
 [e :UE 1041 ]
 }

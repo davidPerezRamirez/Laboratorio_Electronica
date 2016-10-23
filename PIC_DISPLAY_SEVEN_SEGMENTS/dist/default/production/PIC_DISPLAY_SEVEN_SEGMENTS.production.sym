@@ -1,19 +1,19 @@
 __CFG_XINST$OFF 0 0 ABS 0
 ___awdiv@counter 5 0 COMRAM 1
 ___awtoft@c 9 0 COMRAM 1
-__end_of_apagar_segmentos F740 0 CODE 0
+__end_of_apagar_segmentos F738 0 CODE 0
 __S0 10000 0 ABS 0
-__S1 45 0 ABS 0
+__S1 42 0 ABS 0
 __S2 0 0 ABS 0
 __CFG_DSWDTPS$G2 0 0 ABS 0
-_apagar_segmentos F730 0 CODE 0
+_apagar_segmentos F728 0 CODE 0
 __Hintentry 0 0 ABS 0
 __Lintentry 0 0 ABS 0
 ___ftadd@f1 1C 0 COMRAM 1
-__end_of___awdiv FAD4 0 CODE 0
+__end_of___awdiv FB6A 0 CODE 0
 ___ftadd@f2 1F 0 COMRAM 1
-__end_of_imprimir_temperatura F9AA 0 CODE 0
-_main FAD4 0 CODE 0
+__end_of_imprimir_temperatura F9D4 0 CODE 0
+_main F9D4 0 CODE 0
 ___sp 0 0 STACK 2
 start 0 0 CODE 0
 ?___ftadd 1C 0 COMRAM 1
@@ -27,14 +27,14 @@ __Hirdata 0 0 CODE 0
 __Lirdata 0 0 CODE 0
 __HRAM 0 0 ABS 0
 __LRAM 1 0 ABS 0
-__end_of_tiempo_encendido_segmento F750 0 CODE 0
+__end_of_tiempo_encendido_segmento F748 0 CODE 0
 ___ftmul@f2 10 0 COMRAM 1
 __CFG_WDTPS$32768 0 0 ABS 0
 __Hconfig 10000 0 CONFIG 0
 __Lconfig FFF8 0 CONFIG 0
 ___ftpack FB6A 0 CODE 0
 __CFG_RTCOSC$T1OSCREF 0 0 ABS 0
-main@i 3F 0 COMRAM 1
+main@i 3E 0 COMRAM 1
 __Hbigram 0 0 ABS 0
 __Lbigram 0 0 ABS 0
 __Hrparam 0 0 COMRAM 1
@@ -52,11 +52,11 @@ ___param_bank 10 0 ABS 0
 __Hnvrram 0 0 COMRAM 1
 __Lnvrram 0 0 COMRAM 1
 __size_of_tiempo_encendido_segmento 0 0 ABS 0
-_setup F870 0 CODE 0
+_setup F89A 0 CODE 0
 ___ftmul@cntr 1A 0 COMRAM 1
 __size_of___ftadd 0 0 ABS 0
 _ADCON0 FC2 0 ABS 0
-_construir_numero F9AA 0 CODE 0
+_construir_numero FA40 0 CODE 0
 _ANCON0 F48 0 ABS 0
 _ADCON1 FC1 0 ABS 0
 _ANCON1 F49 0 ABS 0
@@ -78,7 +78,7 @@ __Lstruct 0 0 COMRAM 1
 __Hbigdata 0 0 BIGRAM 1
 __Lbigdata 0 0 BIGRAM 1
 __Hmediumconst 0 0 MEDIUMCONST 0
-___awtoft F8A8 0 CODE 0
+___awtoft F8D2 0 CODE 0
 __Lmediumconst 0 0 MEDIUMCONST 0
 __Hfarbss 0 0 FARRAM 0
 __Lfarbss 0 0 FARRAM 0
@@ -91,6 +91,7 @@ __CFG_CPUDIV$OSC1 0 0 ABS 0
 __CFG_IOL1WAY$OFF 0 0 ABS 0
 __Habs1 0 0 ABS 0
 __Labs1 0 0 ABS 0
+__end_of_mostrar_fuera_rango F862 0 CODE 0
 ___ftmul@f3_as_product 17 0 COMRAM 1
 __HnvFARRAM 0 0 FARRAM 0
 __LnvFARRAM 0 0 FARRAM 0
@@ -102,13 +103,13 @@ __size_of___fttol 0 0 ABS 0
 ___ftadd@sign 25 0 COMRAM 1
 __Hdata 0 0 ABS 0
 __Ldata 0 0 ABS 0
-__end_of_encender_A F6D2 0 CODE 0
-__end_of_encender_B F6DC 0 CODE 0
-__end_of_encender_C F6E6 0 CODE 0
-__end_of_encender_D F6F0 0 CODE 0
-__end_of_encender_E F6FA 0 CODE 0
-__end_of_encender_F F704 0 CODE 0
-__end_of_encender_G F718 0 CODE 0
+__end_of_encender_A F6CA 0 CODE 0
+__end_of_encender_B F6D4 0 CODE 0
+__end_of_encender_C F6DE 0 CODE 0
+__end_of_encender_D F6E8 0 CODE 0
+__end_of_encender_E F6F2 0 CODE 0
+__end_of_encender_F F6FC 0 CODE 0
+__end_of_encender_G F710 0 CODE 0
 stackhi EBF 0 ABS 0
 __Htemp 0 0 COMRAM 1
 __Ltemp 0 0 COMRAM 1
@@ -119,15 +120,15 @@ __Hinit 0 0 CODE 0
 __Linit 0 0 CODE 0
 __Hintcodelo 0 0 CODE 0
 __Lintcodelo 0 0 CODE 0
-___wmul F810 0 CODE 0
+___wmul F808 0 CODE 0
 __Hrbss 0 0 COMRAM 1
-__end_of_main FB6A 0 CODE 0
+__end_of_main FA40 0 CODE 0
 __Lrbss 0 0 COMRAM 1
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 ___wmul@multiplier 1 0 COMRAM 1
 ___ftmul@sign 1B 0 COMRAM 1
-end_of_initialization F718 0 CODE 0
+end_of_initialization F710 0 CODE 0
 ___awdiv@sign 6 0 COMRAM 1
 __size_of_apagar_segmentos 0 0 ABS 0
 imprimir_temperatura@temp 9 0 COMRAM 1
@@ -137,12 +138,11 @@ __CFG_PLLDIV$1 0 0 ABS 0
 __end_of___ftadd FFF8 0 CODE 0
 _PORTBbits F81 0 ABS 0
 _T1CONbits FCD 0 ABS 0
-main@valor 43 0 COMRAM 1
 ?___awtoft 9 0 COMRAM 1
 __Hibigdata 0 0 CODE 0
 __Libigdata 0 0 CODE 0
-_leer_temperatura F838 0 CODE 0
-__end_of_leer_temperatura F870 0 CODE 0
+_leer_temperatura F862 0 CODE 0
+__end_of_leer_temperatura F89A 0 CODE 0
 __Hifardata 0 0 CODE 0
 __Lifardata 0 0 CODE 0
 __Hbank0 0 0 ABS 0
@@ -173,41 +173,41 @@ __Hbank9 0 0 ABS 0
 __Lbank9 0 0 ABS 0
 __Htext1 0 0 ABS 0
 __Ltext1 0 0 ABS 0
-__ptext0 FAD4 0 CODE 0
+__ptext0 F9D4 0 CODE 0
 __Htext2 0 0 ABS 0
 __Ltext2 0 0 ABS 0
-__ptext1 F870 0 CODE 0
+__ptext1 F89A 0 CODE 0
 __Htext3 0 0 ABS 0
 __Ltext3 0 0 ABS 0
-__ptext2 F838 0 CODE 0
+__ptext2 F830 0 CODE 0
 __Htext4 0 0 ABS 0
 __Ltext4 0 0 ABS 0
-__ptext3 F8E4 0 CODE 0
+__ptext3 F862 0 CODE 0
 __Htext5 0 0 ABS 0
 __Ltext5 0 0 ABS 0
-__ptext4 FD32 0 CODE 0
+__ptext4 F90E 0 CODE 0
 __Htext6 0 0 ABS 0
 __Ltext6 0 0 ABS 0
-__ptext5 FC30 0 CODE 0
+__ptext5 FD32 0 CODE 0
 __Htext7 0 0 ABS 0
 __Ltext7 0 0 ABS 0
-__ptext6 FE34 0 CODE 0
+__ptext6 FC30 0 CODE 0
 __Htext8 0 0 ABS 0
 __Ltext8 0 0 ABS 0
-__ptext7 F8A8 0 CODE 0
+__ptext7 FE34 0 CODE 0
 imprimir_temperatura@unidad B 0 COMRAM 1
 __Htext9 0 0 ABS 0
 __Ltext9 0 0 ABS 0
-__ptext8 FB6A 0 CODE 0
-__ptext9 F944 0 CODE 0
+__ptext8 F8D2 0 CODE 0
+__ptext9 FB6A 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
 leer_temperatura@voltage 3C 0 COMRAM 1
 __CFG_DSWDTOSC$INTOSCREF 0 0 ABS 0
 _OSCTUNEbits F9B 0 ABS 0
 imprimir_temperatura@decena D 0 COMRAM 1
-__end_of__initialization F718 0 CODE 0
-__end_of_calcular_temperatura F944 0 CODE 0
+__end_of__initialization F710 0 CODE 0
+__end_of_calcular_temperatura F96E 0 CODE 0
 ___rparam_used 1 0 ABS 0
 __size_of_calcular_temperatura 0 0 ABS 0
 ___ftadd FE34 0 CODE 0
@@ -229,9 +229,10 @@ __LcstackCOMRAM 0 0 ABS 0
 __CFG_OSC$INTOSC 0 0 ABS 0
 __pcstackCOMRAM 1 0 COMRAM 1
 ___ftpack@sign 5 0 COMRAM 1
-__Hspace_1 45 0 ABS 0
+__size_of_mostrar_fuera_rango 0 0 ABS 0
+__Hspace_1 42 0 ABS 0
 __Lspace_1 0 0 ABS 0
-_encender_A F6C8 0 CODE 0
+_encender_A F6C0 0 CODE 0
 ___ftadd@exp1 27 0 COMRAM 1
 __size_of_setup 0 0 ABS 0
 __Hsmallconst 0 0 SMALLCONST 0
@@ -252,23 +253,23 @@ __Lnvbit 0 0 COMRAM 1
 __Hcinit 0 0 ABS 0
 ___ftmul FC30 0 CODE 0
 __Lcinit 0 0 ABS 0
-__pcinit F718 0 CODE 0
+__pcinit F710 0 CODE 0
 __CFG_DSBOREN$OFF 0 0 ABS 0
-___awdiv FA3E 0 CODE 0
+___awdiv FAD4 0 CODE 0
 __ramtop F00 0 RAM 0
 __mediumconst 0 0 MEDIUMCONST 0
-_encender_B F6D2 0 CODE 0
+_encender_B F6CA 0 CODE 0
 __size_of_main 0 0 ABS 0
 __Hconst 0 0 CODE 0
 __Lconst 0 0 CODE 0
-_encender_C F6DC 0 CODE 0
+_encender_C F6D4 0 CODE 0
 ___fttol@exp1 36 0 COMRAM 1
 __CFG_DSWDTEN$OFF 0 0 ABS 0
-_encender_D F6E6 0 CODE 0
+_encender_D F6DE 0 CODE 0
 ___awtoft@sign C 0 COMRAM 1
 ___ftpack@arg 1 0 COMRAM 1
 __size_of_imprimir_temperatura 0 0 ABS 0
-_encender_E F6F0 0 CODE 0
+_encender_E F6E8 0 CODE 0
 ___ftadd@exp2 26 0 COMRAM 1
 __Hbank10 0 0 ABS 0
 __Lbank10 0 0 ABS 0
@@ -277,8 +278,9 @@ __Lbank11 0 0 ABS 0
 __CFG_FCMEN$OFF 0 0 ABS 0
 __Hbank12 0 0 ABS 0
 __Lbank12 0 0 ABS 0
+_mostrar_fuera_rango F830 0 CODE 0
 __Hbank13 0 0 ABS 0
-_encender_F F6FA 0 CODE 0
+_encender_F F6F2 0 CODE 0
 __Lbank13 0 0 ABS 0
 __Hbank14 0 0 ABS 0
 __Lbank14 0 0 ABS 0
@@ -286,77 +288,80 @@ __Htext10 0 0 ABS 0
 __Ltext10 0 0 ABS 0
 __Htext20 0 0 ABS 0
 __Ltext20 0 0 ABS 0
-__ptext10 F9AA 0 CODE 0
+__ptext10 F96E 0 CODE 0
 __Htext30 0 0 ABS 0
 __Htext11 0 0 ABS 0
 __Ltext30 0 0 ABS 0
 __Ltext11 0 0 ABS 0
-__ptext20 F704 0 CODE 0
+__ptext20 F706 0 CODE 0
 __Htext21 0 0 ABS 0
 __Ltext21 0 0 ABS 0
-__ptext11 F7D8 0 CODE 0
-__ptext30 F810 0 CODE 0
+__ptext11 FA40 0 CODE 0
+__ptext30 F728 0 CODE 0
 __Htext31 0 0 ABS 0
 __Htext12 0 0 ABS 0
 __Ltext31 0 0 ABS 0
 __Ltext12 0 0 ABS 0
-__ptext21 F7A4 0 CODE 0
+__ptext21 F6FC 0 CODE 0
 __Htext22 0 0 ABS 0
 __Ltext22 0 0 ABS 0
-__ptext12 F7F2 0 CODE 0
-__ptext31 FA3E 0 CODE 0
-_encender_G F70E 0 CODE 0
+__ptext12 F7D0 0 CODE 0
+__ptext31 F808 0 CODE 0
+_encender_G F706 0 CODE 0
+__Htext32 0 0 ABS 0
 __Htext13 0 0 ABS 0
+__Ltext32 0 0 ABS 0
 __Ltext13 0 0 ABS 0
-__ptext22 F6FA 0 CODE 0
+__ptext22 F79C 0 CODE 0
 __Htext23 0 0 ABS 0
 __Ltext23 0 0 ABS 0
-__ptext13 F722 0 CODE 0
-_tiempo_encendido_segmento F740 0 CODE 0
+__ptext13 F7EA 0 CODE 0
+__ptext32 FAD4 0 CODE 0
+_tiempo_encendido_segmento F738 0 CODE 0
 _ADCON0bits FC2 0 ABS 0
 __Htext14 0 0 ABS 0
 __Ltext14 0 0 ABS 0
-__ptext23 F6F0 0 CODE 0
+__ptext23 F6F2 0 CODE 0
 __size_of___awdiv 0 0 ABS 0
 __Htext24 0 0 ABS 0
 __Ltext24 0 0 ABS 0
-__ptext14 F7BE 0 CODE 0
+__ptext14 F71A 0 CODE 0
 __Htext15 0 0 ABS 0
 __Ltext15 0 0 ABS 0
-__ptext24 F6E6 0 CODE 0
+__ptext24 F6E8 0 CODE 0
 __Htext25 0 0 ABS 0
 __Ltext25 0 0 ABS 0
-__ptext15 F78E 0 CODE 0
+__ptext15 F7B6 0 CODE 0
 ___inthi_sp 0 0 STACK 2
 __Htext16 0 0 ABS 0
 __Ltext16 0 0 ABS 0
-__ptext25 F6DC 0 CODE 0
+__ptext25 F6DE 0 CODE 0
 __Htext26 0 0 ABS 0
 __Ltext26 0 0 ABS 0
-__ptext16 F750 0 CODE 0
+__ptext16 F786 0 CODE 0
 __Htext17 0 0 ABS 0
 __Ltext17 0 0 ABS 0
-__ptext26 F6D2 0 CODE 0
+__ptext26 F6D4 0 CODE 0
 __Htext27 0 0 ABS 0
 __Ltext27 0 0 ABS 0
-__ptext17 F778 0 CODE 0
+__ptext17 F748 0 CODE 0
 __Htext18 0 0 ABS 0
 __Ltext18 0 0 ABS 0
-__ptext27 F6C8 0 CODE 0
+__ptext27 F6CA 0 CODE 0
 _RTCCFGbits F3F 0 ABS 0
 __Htext28 0 0 ABS 0
 __Ltext28 0 0 ABS 0
-__ptext18 F762 0 CODE 0
+__ptext18 F770 0 CODE 0
 __Htext19 0 0 ABS 0
 __Ltext19 0 0 ABS 0
-__ptext28 F740 0 CODE 0
+__ptext28 F6C0 0 CODE 0
 ___fttol@sign1 31 0 COMRAM 1
 __CFG_WDTEN$OFF 0 0 ABS 0
 __Htext29 0 0 ABS 0
 __Ltext29 0 0 ABS 0
-__ptext19 F70E 0 CODE 0
+__ptext19 F75A 0 CODE 0
 ___intlo_sp 0 0 STACK 2
-__ptext29 F730 0 CODE 0
+__ptext29 F738 0 CODE 0
 _OSCCONbits FD3 0 ABS 0
 __Hend_init 4 0 CODE 0
 __Lend_init 0 0 CODE 0
@@ -364,7 +369,7 @@ ___ftpack@exp 4 0 COMRAM 1
 ___awdiv@divisor 3 0 COMRAM 1
 __Hjflash_buffer F800 0 CODE 0
 __Ljflash_buffer F800 0 CODE 0
-__end_of_setup F8A8 0 CODE 0
+__end_of_setup F8D2 0 CODE 0
 __end_of___ftmul FD32 0 CODE 0
 __CFG_CP0$OFF 0 0 ABS 0
 __smallconst 0 0 SMALLCONST 0
@@ -372,43 +377,43 @@ __CFG_T1DIG$ON 0 0 ABS 0
 __size_of___wmul 0 0 ABS 0
 __Hreset_vec 0 0 CODE 0
 __Lreset_vec 0 0 CODE 0
-_number_0 F7A4 0 CODE 0
-_number_1 F704 0 CODE 0
-_number_2 F762 0 CODE 0
-_number_3 F778 0 CODE 0
+_number_0 F79C 0 CODE 0
+_number_1 F6FC 0 CODE 0
+_number_2 F75A 0 CODE 0
+_number_3 F770 0 CODE 0
 __accesstop 60 0 ABS 0
-__end_of_number_0 F7BE 0 CODE 0
-__end_of_number_1 F70E 0 CODE 0
-__end_of_number_2 F778 0 CODE 0
-__end_of_number_3 F78E 0 CODE 0
-__end_of_number_4 F762 0 CODE 0
-__end_of_number_5 F7A4 0 CODE 0
-__end_of_number_6 F7D8 0 CODE 0
-__end_of_number_7 F730 0 CODE 0
-__end_of_number_8 F810 0 CODE 0
-__end_of_number_9 F7F2 0 CODE 0
-_number_4 F750 0 CODE 0
+__end_of_number_0 F7B6 0 CODE 0
+__end_of_number_1 F706 0 CODE 0
+__end_of_number_2 F770 0 CODE 0
+__end_of_number_3 F786 0 CODE 0
+__end_of_number_4 F75A 0 CODE 0
+__end_of_number_5 F79C 0 CODE 0
+__end_of_number_6 F7D0 0 CODE 0
+__end_of_number_7 F728 0 CODE 0
+__end_of_number_8 F808 0 CODE 0
+__end_of_number_9 F7EA 0 CODE 0
+_number_4 F748 0 CODE 0
 __Hintcode_body 0 0 ABS 0
 __Lintcode_body 0 0 ABS 0
-_number_5 F78E 0 CODE 0
+_number_5 F786 0 CODE 0
 intlevel0 0 0 CODE 0
-_number_6 F7BE 0 CODE 0
+_number_6 F7B6 0 CODE 0
 intlevel1 0 0 CODE 0
 __CFG_WPDIS$OFF 0 0 ABS 0
-_number_7 F722 0 CODE 0
+_number_7 F71A 0 CODE 0
 intlevel2 0 0 CODE 0
 __size_of_leer_temperatura 0 0 ABS 0
-__end_of___awtoft F8E4 0 CODE 0
-_number_8 F7F2 0 CODE 0
+__end_of___awtoft F90E 0 CODE 0
+_number_8 F7EA 0 CODE 0
 intlevel3 0 0 CODE 0
-_number_9 F7D8 0 CODE 0
-__end_of___wmul F838 0 CODE 0
-start_initialization F718 0 CODE 0
-_calcular_temperatura F8E4 0 CODE 0
+_number_9 F7D0 0 CODE 0
+__end_of___wmul F830 0 CODE 0
+start_initialization F710 0 CODE 0
+_calcular_temperatura F90E 0 CODE 0
 ___awdiv@quotient 7 0 COMRAM 1
-main@temperatura 41 0 COMRAM 1
+main@temperatura 40 0 COMRAM 1
 __CFG_IESO$OFF 0 0 ABS 0
-_imprimir_temperatura F944 0 CODE 0
+_imprimir_temperatura F96E 0 CODE 0
 __end_of___fttol FE34 0 CODE 0
 ?_leer_temperatura 39 0 COMRAM 1
 __size_of_number_0 0 0 ABS 0
@@ -423,120 +428,131 @@ __size_of_number_8 0 0 ABS 0
 __size_of_number_9 0 0 ABS 0
 ?_calcular_temperatura 37 0 COMRAM 1
 calcular_temperatura@voltage 37 0 COMRAM 1
-__initialization F718 0 CODE 0
+__initialization F710 0 CODE 0
 __CFG_LPT1OSC$OFF 0 0 ABS 0
 __activetblptr 2 0 ABS 0
 ___wmul@product 5 0 COMRAM 1
 __size_of___ftmul 0 0 ABS 0
-__end_of_construir_numero FA3E 0 CODE 0
+__end_of_construir_numero FAD4 0 CODE 0
 __size_of_construir_numero 0 0 ABS 0
 ___awdiv@dividend 1 0 COMRAM 1
 %segments
 reset_vec 0 3 CODE 0 0
 config FFF8 FFFF CONFIG FFF8 0
-cstackCOMRAM 1 44 COMRAM 1 1
-text6 FE34 FFF7 CODE FE34 0
-text4 FD32 FE33 CODE FD32 0
-text5 FC30 FD31 CODE FC30 0
-text8 FB6A FC2F CODE FB6A 0
-text0 FAD4 FB69 CODE FAD4 0
-text31 FA3E FAD3 CODE FA3E 0
-text10 F9AA FA3D CODE F9AA 0
-text9 F944 F9A9 CODE F944 0
-text3 F8E4 F943 CODE F8E4 0
-text7 F8A8 F8E3 CODE F8A8 0
-text1 F870 F8A7 CODE F870 0
-text2 F838 F86F CODE F838 0
-text30 F810 F837 CODE F810 0
-text12 F7F2 F80F CODE F7F2 0
-text11 F7D8 F7F1 CODE F7D8 0
-text14 F7BE F7D7 CODE F7BE 0
-text21 F7A4 F7BD CODE F7A4 0
-text15 F78E F7A3 CODE F78E 0
-text17 F778 F78D CODE F778 0
-text18 F762 F777 CODE F762 0
-text16 F750 F761 CODE F750 0
-text28 F740 F74F CODE F740 0
-text29 F730 F73F CODE F730 0
-text13 F722 F72F CODE F722 0
-cinit F718 F721 CODE F718 0
-text19 F70E F717 CODE F70E 0
-text20 F704 F70D CODE F704 0
-text22 F6FA F703 CODE F6FA 0
-text23 F6F0 F6F9 CODE F6F0 0
-text24 F6E6 F6EF CODE F6E6 0
-text25 F6DC F6E5 CODE F6DC 0
-text26 F6D2 F6DB CODE F6D2 0
-text27 F6C8 F6D1 CODE F6C8 0
+cstackCOMRAM 1 41 COMRAM 1 1
+text7 FE34 FFF7 CODE FE34 0
+text5 FD32 FE33 CODE FD32 0
+text6 FC30 FD31 CODE FC30 0
+text9 FB6A FC2F CODE FB6A 0
+text32 FAD4 FB69 CODE FAD4 0
+text11 FA40 FAD3 CODE FA40 0
+text0 F9D4 FA3F CODE F9D4 0
+text10 F96E F9D3 CODE F96E 0
+text4 F90E F96D CODE F90E 0
+text8 F8D2 F90D CODE F8D2 0
+text1 F89A F8D1 CODE F89A 0
+text3 F862 F899 CODE F862 0
+text2 F830 F861 CODE F830 0
+text31 F808 F82F CODE F808 0
+text13 F7EA F807 CODE F7EA 0
+text12 F7D0 F7E9 CODE F7D0 0
+text15 F7B6 F7CF CODE F7B6 0
+text22 F79C F7B5 CODE F79C 0
+text16 F786 F79B CODE F786 0
+text18 F770 F785 CODE F770 0
+text19 F75A F76F CODE F75A 0
+text17 F748 F759 CODE F748 0
+text29 F738 F747 CODE F738 0
+text30 F728 F737 CODE F728 0
+text14 F71A F727 CODE F71A 0
+cinit F710 F719 CODE F710 0
+text20 F706 F70F CODE F706 0
+text21 F6FC F705 CODE F6FC 0
+text23 F6F2 F6FB CODE F6F2 0
+text24 F6E8 F6F1 CODE F6E8 0
+text25 F6DE F6E7 CODE F6DE 0
+text26 F6D4 F6DD CODE F6D4 0
+text27 F6CA F6D3 CODE F6CA 0
+text28 F6C0 F6C9 CODE F6C0 0
 %locals
 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
-6911 FAD4 0 CODE 0
+6911 F9D4 0 CODE 0
 main.c
-83 FAD4 0 CODE 0
-85 FAD4 0 CODE 0
-86 FAD8 0 CODE 0
-87 FAE0 0 CODE 0
-92 FAEA 0 CODE 0
-93 FAF6 0 CODE 0
-94 FB0A 0 CODE 0
-95 FB10 0 CODE 0
-96 FB12 0 CODE 0
-97 FB26 0 CODE 0
-98 FB2A 0 CODE 0
-99 FB2C 0 CODE 0
-100 FB2C 0 CODE 0
-103 FB36 0 CODE 0
-104 FB3E 0 CODE 0
-105 FB40 0 CODE 0
-106 FB4C 0 CODE 0
-104 FB52 0 CODE 0
-90 FB64 0 CODE 0
-112 FB66 0 CODE 0
-C:\Users\ddavi\AppData\Local\Temp\s98.
-1325 F718 0 CODE 0
-1327 F718 0 CODE 0
-1330 F718 0 CODE 0
-1336 F718 0 CODE 0
-1338 F718 0 CODE 0
-1339 F71A 0 CODE 0
-1340 F71C 0 CODE 0
-1341 F71E 0 CODE 0
+83 F9D4 0 CODE 0
+85 F9D4 0 CODE 0
+86 F9D8 0 CODE 0
+91 F9E2 0 CODE 0
+93 F9EE 0 CODE 0
+94 FA06 0 CODE 0
+96 FA0C 0 CODE 0
+97 FA14 0 CODE 0
+98 FA16 0 CODE 0
+99 FA22 0 CODE 0
+97 FA28 0 CODE 0
+89 FA3A 0 CODE 0
+106 FA3C 0 CODE 0
+C:\Users\ddavi\AppData\Local\Temp\s3fk.
+1332 F710 0 CODE 0
+1334 F710 0 CODE 0
+1337 F710 0 CODE 0
+1343 F710 0 CODE 0
+1345 F710 0 CODE 0
+1346 F712 0 CODE 0
+1347 F714 0 CODE 0
+1348 F716 0 CODE 0
 main.c
-26 F870 0 CODE 0
-28 F870 0 CODE 0
-29 F872 0 CODE 0
-30 F874 0 CODE 0
-31 F876 0 CODE 0
-32 F878 0 CODE 0
-33 F87A 0 CODE 0
-34 F87C 0 CODE 0
-35 F87E 0 CODE 0
-36 F882 0 CODE 0
-37 F886 0 CODE 0
-41 F88A 0 CODE 0
-43 F890 0 CODE 0
-44 F894 0 CODE 0
-45 F898 0 CODE 0
-46 F89C 0 CODE 0
-47 F8A0 0 CODE 0
-48 F8A4 0 CODE 0
-49 F8A6 0 CODE 0
+26 F89A 0 CODE 0
+28 F89A 0 CODE 0
+29 F89C 0 CODE 0
+30 F89E 0 CODE 0
+31 F8A0 0 CODE 0
+32 F8A2 0 CODE 0
+33 F8A4 0 CODE 0
+34 F8A6 0 CODE 0
+35 F8A8 0 CODE 0
+36 F8AC 0 CODE 0
+37 F8B0 0 CODE 0
+41 F8B4 0 CODE 0
+43 F8BA 0 CODE 0
+44 F8BE 0 CODE 0
+45 F8C2 0 CODE 0
+46 F8C6 0 CODE 0
+47 F8CA 0 CODE 0
+48 F8CE 0 CODE 0
+49 F8D0 0 CODE 0
+Unimic/unmc_01/headers/unmc_display.c
+58 F830 0 CODE 0
+59 F830 0 CODE 0
+60 F832 0 CODE 0
+61 F836 0 CODE 0
+62 F83A 0 CODE 0
+63 F83E 0 CODE 0
+64 F842 0 CODE 0
+66 F844 0 CODE 0
+67 F846 0 CODE 0
+68 F84A 0 CODE 0
+69 F84E 0 CODE 0
+70 F852 0 CODE 0
+71 F856 0 CODE 0
+72 F85A 0 CODE 0
+73 F85E 0 CODE 0
+74 F860 0 CODE 0
 main.c
-71 F838 0 CODE 0
-72 F838 0 CODE 0
-73 F83A 0 CODE 0
-76 F83C 0 CODE 0
-77 F842 0 CODE 0
-78 F850 0 CODE 0
-79 F856 0 CODE 0
-80 F858 0 CODE 0
-81 F86E 0 CODE 0
+71 F862 0 CODE 0
+72 F862 0 CODE 0
+73 F864 0 CODE 0
+76 F866 0 CODE 0
+77 F86C 0 CODE 0
+78 F87A 0 CODE 0
+79 F880 0 CODE 0
+80 F882 0 CODE 0
+81 F898 0 CODE 0
 main.c
-66 F8E4 0 CODE 0
-68 F8E4 0 CODE 0
-69 F942 0 CODE 0
+66 F90E 0 CODE 0
+68 F90E 0 CODE 0
+69 F96C 0 CODE 0
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
 44 FD32 0 CODE 0
 49 FD32 0 CODE 0
@@ -639,13 +655,13 @@ C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
 146 FFD0 0 CODE 0
 148 FFF6 0 CODE 0
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
-32 F8A8 0 CODE 0
-36 F8A8 0 CODE 0
-37 F8AC 0 CODE 0
-38 F8B0 0 CODE 0
-39 F8B8 0 CODE 0
-41 F8BE 0 CODE 0
-42 F8E2 0 CODE 0
+32 F8D2 0 CODE 0
+36 F8D2 0 CODE 0
+37 F8D6 0 CODE 0
+38 F8DA 0 CODE 0
+39 F8E2 0 CODE 0
+41 F8E8 0 CODE 0
+42 F90C 0 CODE 0
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
 62 FB6A 0 CODE 0
 64 FB6A 0 CODE 0
@@ -672,207 +688,207 @@ C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
 85 FC20 0 CODE 0
 86 FC2E 0 CODE 0
 main.c
-51 F944 0 CODE 0
-53 F944 0 CODE 0
-54 F960 0 CODE 0
-56 F988 0 CODE 0
-57 F98A 0 CODE 0
-58 F996 0 CODE 0
-60 F998 0 CODE 0
-61 F99A 0 CODE 0
-62 F9A6 0 CODE 0
-64 F9A8 0 CODE 0
+51 F96E 0 CODE 0
+53 F96E 0 CODE 0
+54 F98A 0 CODE 0
+56 F9B2 0 CODE 0
+57 F9B4 0 CODE 0
+58 F9C0 0 CODE 0
+60 F9C2 0 CODE 0
+61 F9C4 0 CODE 0
+62 F9D0 0 CODE 0
+64 F9D2 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-137 F9AA 0 CODE 0
-138 F9AA 0 CODE 0
-139 F9AE 0 CODE 0
-141 F9B0 0 CODE 0
-142 F9B4 0 CODE 0
-144 F9B6 0 CODE 0
-145 F9BA 0 CODE 0
-147 F9BC 0 CODE 0
-148 F9C0 0 CODE 0
-150 F9C2 0 CODE 0
-151 F9C6 0 CODE 0
-153 F9C8 0 CODE 0
-154 F9CC 0 CODE 0
-156 F9CE 0 CODE 0
-157 F9D2 0 CODE 0
-159 F9D4 0 CODE 0
-160 F9D8 0 CODE 0
-162 F9DA 0 CODE 0
-163 F9DE 0 CODE 0
-165 F9E0 0 CODE 0
-166 F9E4 0 CODE 0
-168 F9E6 0 CODE 0
-170 F9EA 0 CODE 0
-139 F9EC 0 CODE 0
-171 FA3C 0 CODE 0
+155 FA40 0 CODE 0
+156 FA40 0 CODE 0
+157 FA44 0 CODE 0
+159 FA46 0 CODE 0
+160 FA4A 0 CODE 0
+162 FA4C 0 CODE 0
+163 FA50 0 CODE 0
+165 FA52 0 CODE 0
+166 FA56 0 CODE 0
+168 FA58 0 CODE 0
+169 FA5C 0 CODE 0
+171 FA5E 0 CODE 0
+172 FA62 0 CODE 0
+174 FA64 0 CODE 0
+175 FA68 0 CODE 0
+177 FA6A 0 CODE 0
+178 FA6E 0 CODE 0
+180 FA70 0 CODE 0
+181 FA74 0 CODE 0
+183 FA76 0 CODE 0
+184 FA7A 0 CODE 0
+186 FA7C 0 CODE 0
+188 FA80 0 CODE 0
+157 FA82 0 CODE 0
+189 FAD2 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-128 F7D8 0 CODE 0
-129 F7D8 0 CODE 0
-130 F7DC 0 CODE 0
-131 F7E0 0 CODE 0
-132 F7E4 0 CODE 0
-133 F7E8 0 CODE 0
-134 F7EC 0 CODE 0
-135 F7F0 0 CODE 0
+146 F7D0 0 CODE 0
+147 F7D0 0 CODE 0
+148 F7D4 0 CODE 0
+149 F7D8 0 CODE 0
+150 F7DC 0 CODE 0
+151 F7E0 0 CODE 0
+152 F7E4 0 CODE 0
+153 F7E8 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-118 F7F2 0 CODE 0
-119 F7F2 0 CODE 0
-120 F7F6 0 CODE 0
-121 F7FA 0 CODE 0
-122 F7FE 0 CODE 0
-123 F802 0 CODE 0
-124 F806 0 CODE 0
-125 F80A 0 CODE 0
-126 F80E 0 CODE 0
+136 F7EA 0 CODE 0
+137 F7EA 0 CODE 0
+138 F7EE 0 CODE 0
+139 F7F2 0 CODE 0
+140 F7F6 0 CODE 0
+141 F7FA 0 CODE 0
+142 F7FE 0 CODE 0
+143 F802 0 CODE 0
+144 F806 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-112 F722 0 CODE 0
-113 F722 0 CODE 0
-114 F726 0 CODE 0
-115 F72A 0 CODE 0
-116 F72E 0 CODE 0
+130 F71A 0 CODE 0
+131 F71A 0 CODE 0
+132 F71E 0 CODE 0
+133 F722 0 CODE 0
+134 F726 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-103 F7BE 0 CODE 0
-104 F7BE 0 CODE 0
-105 F7C2 0 CODE 0
-106 F7C6 0 CODE 0
-107 F7CA 0 CODE 0
-108 F7CE 0 CODE 0
-109 F7D2 0 CODE 0
-110 F7D6 0 CODE 0
+121 F7B6 0 CODE 0
+122 F7B6 0 CODE 0
+123 F7BA 0 CODE 0
+124 F7BE 0 CODE 0
+125 F7C2 0 CODE 0
+126 F7C6 0 CODE 0
+127 F7CA 0 CODE 0
+128 F7CE 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-95 F78E 0 CODE 0
-96 F78E 0 CODE 0
-97 F792 0 CODE 0
-98 F796 0 CODE 0
-99 F79A 0 CODE 0
-100 F79E 0 CODE 0
-101 F7A2 0 CODE 0
+113 F786 0 CODE 0
+114 F786 0 CODE 0
+115 F78A 0 CODE 0
+116 F78E 0 CODE 0
+117 F792 0 CODE 0
+118 F796 0 CODE 0
+119 F79A 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-88 F750 0 CODE 0
-89 F750 0 CODE 0
-90 F754 0 CODE 0
-91 F758 0 CODE 0
-92 F75C 0 CODE 0
-93 F760 0 CODE 0
+106 F748 0 CODE 0
+107 F748 0 CODE 0
+108 F74C 0 CODE 0
+109 F750 0 CODE 0
+110 F754 0 CODE 0
+111 F758 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-80 F778 0 CODE 0
-81 F778 0 CODE 0
-82 F77C 0 CODE 0
-83 F780 0 CODE 0
-84 F784 0 CODE 0
-85 F788 0 CODE 0
-86 F78C 0 CODE 0
+98 F770 0 CODE 0
+99 F770 0 CODE 0
+100 F774 0 CODE 0
+101 F778 0 CODE 0
+102 F77C 0 CODE 0
+103 F780 0 CODE 0
+104 F784 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-72 F762 0 CODE 0
-73 F762 0 CODE 0
-74 F766 0 CODE 0
-75 F76A 0 CODE 0
-76 F76E 0 CODE 0
-77 F772 0 CODE 0
-78 F776 0 CODE 0
+90 F75A 0 CODE 0
+91 F75A 0 CODE 0
+92 F75E 0 CODE 0
+93 F762 0 CODE 0
+94 F766 0 CODE 0
+95 F76A 0 CODE 0
+96 F76E 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-42 F70E 0 CODE 0
-43 F70E 0 CODE 0
-44 F710 0 CODE 0
-45 F714 0 CODE 0
-46 F716 0 CODE 0
+42 F706 0 CODE 0
+43 F706 0 CODE 0
+44 F708 0 CODE 0
+45 F70C 0 CODE 0
+46 F70E 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-67 F704 0 CODE 0
-68 F704 0 CODE 0
-69 F708 0 CODE 0
-70 F70C 0 CODE 0
+85 F6FC 0 CODE 0
+86 F6FC 0 CODE 0
+87 F700 0 CODE 0
+88 F704 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-58 F7A4 0 CODE 0
-59 F7A4 0 CODE 0
-60 F7A8 0 CODE 0
-61 F7AC 0 CODE 0
-62 F7B0 0 CODE 0
-63 F7B4 0 CODE 0
-64 F7B8 0 CODE 0
-65 F7BC 0 CODE 0
+76 F79C 0 CODE 0
+77 F79C 0 CODE 0
+78 F7A0 0 CODE 0
+79 F7A4 0 CODE 0
+80 F7A8 0 CODE 0
+81 F7AC 0 CODE 0
+82 F7B0 0 CODE 0
+83 F7B4 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-36 F6FA 0 CODE 0
-37 F6FA 0 CODE 0
-38 F6FC 0 CODE 0
-39 F700 0 CODE 0
-40 F702 0 CODE 0
+36 F6F2 0 CODE 0
+37 F6F2 0 CODE 0
+38 F6F4 0 CODE 0
+39 F6F8 0 CODE 0
+40 F6FA 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-30 F6F0 0 CODE 0
-31 F6F0 0 CODE 0
-32 F6F2 0 CODE 0
-33 F6F6 0 CODE 0
-34 F6F8 0 CODE 0
+30 F6E8 0 CODE 0
+31 F6E8 0 CODE 0
+32 F6EA 0 CODE 0
+33 F6EE 0 CODE 0
+34 F6F0 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-24 F6E6 0 CODE 0
-25 F6E6 0 CODE 0
-26 F6E8 0 CODE 0
-27 F6EC 0 CODE 0
-28 F6EE 0 CODE 0
+24 F6DE 0 CODE 0
+25 F6DE 0 CODE 0
+26 F6E0 0 CODE 0
+27 F6E4 0 CODE 0
+28 F6E6 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-18 F6DC 0 CODE 0
-19 F6DC 0 CODE 0
-20 F6DE 0 CODE 0
-21 F6E2 0 CODE 0
-22 F6E4 0 CODE 0
+18 F6D4 0 CODE 0
+19 F6D4 0 CODE 0
+20 F6D6 0 CODE 0
+21 F6DA 0 CODE 0
+22 F6DC 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-12 F6D2 0 CODE 0
-13 F6D2 0 CODE 0
-14 F6D4 0 CODE 0
-15 F6D8 0 CODE 0
-16 F6DA 0 CODE 0
+12 F6CA 0 CODE 0
+13 F6CA 0 CODE 0
+14 F6CC 0 CODE 0
+15 F6D0 0 CODE 0
+16 F6D2 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-6 F6C8 0 CODE 0
-7 F6C8 0 CODE 0
-8 F6CA 0 CODE 0
-9 F6CE 0 CODE 0
-10 F6D0 0 CODE 0
+6 F6C0 0 CODE 0
+7 F6C0 0 CODE 0
+8 F6C2 0 CODE 0
+9 F6C6 0 CODE 0
+10 F6C8 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-3 F740 0 CODE 0
-4 F740 0 CODE 0
-5 F74E 0 CODE 0
+3 F738 0 CODE 0
+4 F738 0 CODE 0
+5 F746 0 CODE 0
 Unimic/unmc_01/headers/unmc_display.c
-48 F730 0 CODE 0
-49 F730 0 CODE 0
-50 F732 0 CODE 0
-51 F734 0 CODE 0
-52 F736 0 CODE 0
-53 F738 0 CODE 0
-54 F73A 0 CODE 0
-55 F73C 0 CODE 0
-56 F73E 0 CODE 0
+48 F728 0 CODE 0
+49 F728 0 CODE 0
+50 F72A 0 CODE 0
+51 F72C 0 CODE 0
+52 F72E 0 CODE 0
+53 F730 0 CODE 0
+54 F732 0 CODE 0
+55 F734 0 CODE 0
+56 F736 0 CODE 0
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
-15 F810 0 CODE 0
-37 F810 0 CODE 0
-38 F81C 0 CODE 0
-39 F824 0 CODE 0
-52 F82C 0 CODE 0
-53 F836 0 CODE 0
+15 F808 0 CODE 0
+37 F808 0 CODE 0
+38 F814 0 CODE 0
+39 F81C 0 CODE 0
+52 F824 0 CODE 0
+53 F82E 0 CODE 0
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-8 FA3E 0 CODE 0
-14 FA3E 0 CODE 0
-15 FA42 0 CODE 0
-16 FA46 0 CODE 0
-17 FA4E 0 CODE 0
-19 FA54 0 CODE 0
-20 FA58 0 CODE 0
-21 FA60 0 CODE 0
-23 FA66 0 CODE 0
-24 FA6E 0 CODE 0
-25 FA76 0 CODE 0
-26 FA7A 0 CODE 0
-27 FA7C 0 CODE 0
-28 FA82 0 CODE 0
-26 FA86 0 CODE 0
-31 FA8E 0 CODE 0
-32 FA94 0 CODE 0
-33 FAA0 0 CODE 0
-34 FAA8 0 CODE 0
-36 FAAC 0 CODE 0
-37 FAB2 0 CODE 0
-39 FAB8 0 CODE 0
-40 FABE 0 CODE 0
-41 FAC8 0 CODE 0
-42 FAD2 0 CODE 0
+8 FAD4 0 CODE 0
+14 FAD4 0 CODE 0
+15 FAD8 0 CODE 0
+16 FADC 0 CODE 0
+17 FAE4 0 CODE 0
+19 FAEA 0 CODE 0
+20 FAEE 0 CODE 0
+21 FAF6 0 CODE 0
+23 FAFC 0 CODE 0
+24 FB04 0 CODE 0
+25 FB0C 0 CODE 0
+26 FB10 0 CODE 0
+27 FB12 0 CODE 0
+28 FB18 0 CODE 0
+26 FB1C 0 CODE 0
+31 FB24 0 CODE 0
+32 FB2A 0 CODE 0
+33 FB36 0 CODE 0
+34 FB3E 0 CODE 0
+36 FB42 0 CODE 0
+37 FB48 0 CODE 0
+39 FB4E 0 CODE 0
+40 FB54 0 CODE 0
+41 FB5E 0 CODE 0
+42 FB68 0 CODE 0

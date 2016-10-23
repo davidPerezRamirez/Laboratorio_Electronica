@@ -1,0 +1,10 @@
+___awdiv: CODE, 4994 0 164
+_main: CODE, 4756 0 238
+_Write_RTC: CODE, 3846 0 328
+_LCD_INIT_STRING: SMALLCONST, 3841 0 4
+_Setup: CODE, 5226 0 56
+__initialization: CODE, 5158 0 58
+_RtccWrOn: CODE, 5282 0 18
+_RtccWriteDate: CODE, 4174 0 320
+_RtccWriteTime: CODE, 4494 0 262
+Total: 1448

@@ -26,6 +26,7 @@
     void apagar_segmentos();
     void construir_numero(int );
     void tiempo_encendido_segmento();
+    void mostrar_fuera_rango();
 
 
 #endif	/* UNMC_INOUT_DISPLAY_H */

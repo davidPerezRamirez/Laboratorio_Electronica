@@ -9836,6 +9836,7 @@ void number_9();
 void apagar_segmentos();
 void construir_numero(int );
 void tiempo_encendido_segmento();
+void mostrar_fuera_rango();
 
 # 26 "main.c"
 void setup(void){
@@ -9847,7 +9848,7 @@ OSCCONbits.IRCF1=1;
 OSCCONbits.IRCF2=1;
 OSCCONbits.SCS0=0;
 OSCCONbits.SCS1=0;
-TRISA = 0b11111000;
+TRISA = 0b11111001;
 TRISB = 0;
 TRISC = 0b00000111;
 
@@ -9880,7 +9881,7 @@ LATCbits.LATC7 = 1;;
 
 int calcular_temperatura(int voltage){
 
-return (int)(0.588 * voltage - 50);
+return (int)(0.594 * voltage - 51);
 }
 
 int leer_temperatura(){
@@ -9899,26 +9900,20 @@ int main(void){
 
 setup();
 int temperatura = 0;
-int valor = 99;
 int i;
 
 while(1){
 
 temperatura = leer_temperatura();
-if (temperatura < valor){
-valor--;
-}else{
-if (temperatura > valor){
-valor++;
-}
-else
-valor = temperatura;
-}
 
+if (temperatura < 0 || temperatura > 99)
+mostrar_fuera_rango();
+else{
 i = 0;
-while (i < 8){
-imprimir_temperatura(valor);
+while (i < 50){
+imprimir_temperatura(temperatura);
 i++;
+}
 }
 }
 

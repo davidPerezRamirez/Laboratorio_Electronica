@@ -55,6 +55,24 @@ void apagar_segmentos(){
     DSS_G_Off;
 }
 
+void mostrar_fuera_rango(){
+    DSS_TEN_On;                
+    encender_A();
+    encender_E();
+    encender_F();
+    encender_G();            
+    DSS_TEN_Off;
+    
+    DSS_UNIT_On;         
+    encender_A();
+    encender_B();
+    encender_C();
+    encender_E();
+    encender_F();
+    encender_G();         
+    DSS_UNIT_Off;
+}
+
 void number_0(void){
     encender_A();
     encender_B();

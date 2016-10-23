@@ -32,6 +32,70 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S406 . . . . . . . . . ]
 "5591
 [v _PORTBbits `VS406 ~T0 @X0 0 e@3969 ]
+"6359
+[s S446 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S446 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"6369
+[s S447 :1 `uc 1 ]
+[n S447 . LB0 ]
+"6372
+[s S448 :1 `uc 1 :1 `uc 1 ]
+[n S448 . . LB1 ]
+"6376
+[s S449 :2 `uc 1 :1 `uc 1 ]
+[n S449 . . LB2 ]
+"6380
+[s S450 :3 `uc 1 :1 `uc 1 ]
+[n S450 . . LB3 ]
+"6384
+[s S451 :4 `uc 1 :1 `uc 1 ]
+[n S451 . . LB4 ]
+"6388
+[s S452 :5 `uc 1 :1 `uc 1 ]
+[n S452 . . LB5 ]
+"6392
+[s S453 :6 `uc 1 :1 `uc 1 ]
+[n S453 . . LB6 ]
+"6396
+[s S454 :7 `uc 1 :1 `uc 1 ]
+[n S454 . . LB7 ]
+"6358
+[u S445 `S446 1 `S447 1 `S448 1 `S449 1 `S450 1 `S451 1 `S452 1 `S453 1 `S454 1 ]
+[n S445 . . . . . . . . . . ]
+"6401
+[v _LATBbits `VS445 ~T0 @X0 0 e@3978 ]
+"6491
+[s S456 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S456 . LATC0 LATC1 LATC2 . LATC4 LATC5 LATC6 LATC7 ]
+"6501
+[s S457 :1 `uc 1 ]
+[n S457 . LC0 ]
+"6504
+[s S458 :1 `uc 1 :1 `uc 1 ]
+[n S458 . . LC1 ]
+"6508
+[s S459 :2 `uc 1 :1 `uc 1 ]
+[n S459 . . LC2 ]
+"6512
+[s S460 :3 `uc 1 :1 `uc 1 ]
+[n S460 . . LC3 ]
+"6516
+[s S461 :4 `uc 1 :1 `uc 1 ]
+[n S461 . . LC4 ]
+"6520
+[s S462 :5 `uc 1 :1 `uc 1 ]
+[n S462 . . LC5 ]
+"6524
+[s S463 :6 `uc 1 :1 `uc 1 ]
+[n S463 . . LC6 ]
+"6528
+[s S464 :7 `uc 1 :1 `uc 1 ]
+[n S464 . . LC7 ]
+"6490
+[u S455 `S456 1 `S457 1 `S458 1 `S459 1 `S460 1 `S461 1 `S462 1 `S463 1 `S464 1 ]
+[n S455 . . . . . . . . . . ]
+"6533
+[v _LATCbits `VS455 ~T0 @X0 0 e@3979 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f26j50.h: 49: extern volatile unsigned char RPOR0 @ 0xEC6;
@@ -7620,6 +7684,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;headers\unmc_display.h: 26: void apagar_segmentos();
 [; ;headers\unmc_display.h: 27: void construir_numero(int );
 [; ;headers\unmc_display.h: 28: void tiempo_encendido_segmento();
+[; ;headers\unmc_display.h: 29: void mostrar_fuera_rango();
 "3 Unimic/unmc_01/headers/unmc_display.c
 [v _tiempo_encendido_segmento `(v ~T0 @X0 1 ef ]
 {
@@ -7798,376 +7863,428 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 1042 ]
 }
 "58
-[v _number_0 `(v ~T0 @X0 1 ef ]
+[v _mostrar_fuera_rango `(v ~T0 @X0 1 ef ]
 {
-[; ;unmc_display.c: 58: void number_0(void){
-[e :U _number_0 ]
+[; ;unmc_display.c: 58: void mostrar_fuera_rango(){
+[e :U _mostrar_fuera_rango ]
 [f ]
-[; ;unmc_display.c: 59: encender_A();
+[; ;unmc_display.c: 59: LATBbits.LATB0 = 0;;
 "59
-[e ( _encender_A ..  ]
-[; ;unmc_display.c: 60: encender_B();
+[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
+[; ;unmc_display.c: 60: encender_A();
 "60
-[e ( _encender_B ..  ]
-[; ;unmc_display.c: 61: encender_C();
+[e ( _encender_A ..  ]
+[; ;unmc_display.c: 61: encender_E();
 "61
-[e ( _encender_C ..  ]
-[; ;unmc_display.c: 62: encender_D();
-"62
-[e ( _encender_D ..  ]
-[; ;unmc_display.c: 63: encender_E();
-"63
 [e ( _encender_E ..  ]
-[; ;unmc_display.c: 64: encender_F();
-"64
+[; ;unmc_display.c: 62: encender_F();
+"62
 [e ( _encender_F ..  ]
-[; ;unmc_display.c: 65: }
-"65
-[e :UE 1043 ]
-}
+[; ;unmc_display.c: 63: encender_G();
+"63
+[e ( _encender_G ..  ]
+[; ;unmc_display.c: 64: LATBbits.LATB0 = 1;;
+"64
+[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
+[; ;unmc_display.c: 66: LATCbits.LATC7 = 0;;
+"66
+[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
+[; ;unmc_display.c: 67: encender_A();
 "67
-[v _number_1 `(v ~T0 @X0 1 ef ]
-{
-[; ;unmc_display.c: 67: void number_1(void){
-[e :U _number_1 ]
-[f ]
+[e ( _encender_A ..  ]
 [; ;unmc_display.c: 68: encender_B();
 "68
 [e ( _encender_B ..  ]
 [; ;unmc_display.c: 69: encender_C();
 "69
 [e ( _encender_C ..  ]
-[; ;unmc_display.c: 70: }
+[; ;unmc_display.c: 70: encender_E();
 "70
+[e ( _encender_E ..  ]
+[; ;unmc_display.c: 71: encender_F();
+"71
+[e ( _encender_F ..  ]
+[; ;unmc_display.c: 72: encender_G();
+"72
+[e ( _encender_G ..  ]
+[; ;unmc_display.c: 73: LATCbits.LATC7 = 1;;
+"73
+[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
+[; ;unmc_display.c: 74: }
+"74
+[e :UE 1043 ]
+}
+"76
+[v _number_0 `(v ~T0 @X0 1 ef ]
+{
+[; ;unmc_display.c: 76: void number_0(void){
+[e :U _number_0 ]
+[f ]
+[; ;unmc_display.c: 77: encender_A();
+"77
+[e ( _encender_A ..  ]
+[; ;unmc_display.c: 78: encender_B();
+"78
+[e ( _encender_B ..  ]
+[; ;unmc_display.c: 79: encender_C();
+"79
+[e ( _encender_C ..  ]
+[; ;unmc_display.c: 80: encender_D();
+"80
+[e ( _encender_D ..  ]
+[; ;unmc_display.c: 81: encender_E();
+"81
+[e ( _encender_E ..  ]
+[; ;unmc_display.c: 82: encender_F();
+"82
+[e ( _encender_F ..  ]
+[; ;unmc_display.c: 83: }
+"83
 [e :UE 1044 ]
 }
-"72
-[v _number_2 `(v ~T0 @X0 1 ef ]
+"85
+[v _number_1 `(v ~T0 @X0 1 ef ]
 {
-[; ;unmc_display.c: 72: void number_2(void){
-[e :U _number_2 ]
+[; ;unmc_display.c: 85: void number_1(void){
+[e :U _number_1 ]
 [f ]
-[; ;unmc_display.c: 73: encender_A();
-"73
-[e ( _encender_A ..  ]
-[; ;unmc_display.c: 74: encender_B();
-"74
+[; ;unmc_display.c: 86: encender_B();
+"86
 [e ( _encender_B ..  ]
-[; ;unmc_display.c: 75: encender_D();
-"75
-[e ( _encender_D ..  ]
-[; ;unmc_display.c: 76: encender_E();
-"76
-[e ( _encender_E ..  ]
-[; ;unmc_display.c: 77: encender_G();
-"77
-[e ( _encender_G ..  ]
-[; ;unmc_display.c: 78: }
-"78
+[; ;unmc_display.c: 87: encender_C();
+"87
+[e ( _encender_C ..  ]
+[; ;unmc_display.c: 88: }
+"88
 [e :UE 1045 ]
 }
-"80
-[v _number_3 `(v ~T0 @X0 1 ef ]
+"90
+[v _number_2 `(v ~T0 @X0 1 ef ]
 {
-[; ;unmc_display.c: 80: void number_3(void){
-[e :U _number_3 ]
+[; ;unmc_display.c: 90: void number_2(void){
+[e :U _number_2 ]
 [f ]
-[; ;unmc_display.c: 81: encender_A();
-"81
+[; ;unmc_display.c: 91: encender_A();
+"91
 [e ( _encender_A ..  ]
-[; ;unmc_display.c: 82: encender_B();
-"82
+[; ;unmc_display.c: 92: encender_B();
+"92
 [e ( _encender_B ..  ]
-[; ;unmc_display.c: 83: encender_C();
-"83
-[e ( _encender_C ..  ]
-[; ;unmc_display.c: 84: encender_D();
-"84
+[; ;unmc_display.c: 93: encender_D();
+"93
 [e ( _encender_D ..  ]
-[; ;unmc_display.c: 85: encender_G();
-"85
+[; ;unmc_display.c: 94: encender_E();
+"94
+[e ( _encender_E ..  ]
+[; ;unmc_display.c: 95: encender_G();
+"95
 [e ( _encender_G ..  ]
-[; ;unmc_display.c: 86: }
-"86
+[; ;unmc_display.c: 96: }
+"96
 [e :UE 1046 ]
 }
-"88
-[v _number_4 `(v ~T0 @X0 1 ef ]
+"98
+[v _number_3 `(v ~T0 @X0 1 ef ]
 {
-[; ;unmc_display.c: 88: void number_4(void){
-[e :U _number_4 ]
+[; ;unmc_display.c: 98: void number_3(void){
+[e :U _number_3 ]
 [f ]
-[; ;unmc_display.c: 89: encender_B();
-"89
+[; ;unmc_display.c: 99: encender_A();
+"99
+[e ( _encender_A ..  ]
+[; ;unmc_display.c: 100: encender_B();
+"100
 [e ( _encender_B ..  ]
-[; ;unmc_display.c: 90: encender_C();
-"90
+[; ;unmc_display.c: 101: encender_C();
+"101
 [e ( _encender_C ..  ]
-[; ;unmc_display.c: 91: encender_F();
-"91
-[e ( _encender_F ..  ]
-[; ;unmc_display.c: 92: encender_G();
-"92
+[; ;unmc_display.c: 102: encender_D();
+"102
+[e ( _encender_D ..  ]
+[; ;unmc_display.c: 103: encender_G();
+"103
 [e ( _encender_G ..  ]
-[; ;unmc_display.c: 93: }
-"93
+[; ;unmc_display.c: 104: }
+"104
 [e :UE 1047 ]
 }
-"95
-[v _number_5 `(v ~T0 @X0 1 ef ]
+"106
+[v _number_4 `(v ~T0 @X0 1 ef ]
 {
-[; ;unmc_display.c: 95: void number_5(void){
-[e :U _number_5 ]
+[; ;unmc_display.c: 106: void number_4(void){
+[e :U _number_4 ]
 [f ]
-[; ;unmc_display.c: 96: encender_A();
-"96
-[e ( _encender_A ..  ]
-[; ;unmc_display.c: 97: encender_C();
-"97
+[; ;unmc_display.c: 107: encender_B();
+"107
+[e ( _encender_B ..  ]
+[; ;unmc_display.c: 108: encender_C();
+"108
 [e ( _encender_C ..  ]
-[; ;unmc_display.c: 98: encender_D();
-"98
-[e ( _encender_D ..  ]
-[; ;unmc_display.c: 99: encender_F();
-"99
+[; ;unmc_display.c: 109: encender_F();
+"109
 [e ( _encender_F ..  ]
-[; ;unmc_display.c: 100: encender_G();
-"100
+[; ;unmc_display.c: 110: encender_G();
+"110
 [e ( _encender_G ..  ]
-[; ;unmc_display.c: 101: }
-"101
+[; ;unmc_display.c: 111: }
+"111
 [e :UE 1048 ]
 }
-"103
-[v _number_6 `(v ~T0 @X0 1 ef ]
-{
-[; ;unmc_display.c: 103: void number_6(void){
-[e :U _number_6 ]
-[f ]
-[; ;unmc_display.c: 104: encender_A();
-"104
-[e ( _encender_A ..  ]
-[; ;unmc_display.c: 105: encender_C();
-"105
-[e ( _encender_C ..  ]
-[; ;unmc_display.c: 106: encender_D();
-"106
-[e ( _encender_D ..  ]
-[; ;unmc_display.c: 107: encender_E();
-"107
-[e ( _encender_E ..  ]
-[; ;unmc_display.c: 108: encender_F();
-"108
-[e ( _encender_F ..  ]
-[; ;unmc_display.c: 109: encender_G();
-"109
-[e ( _encender_G ..  ]
-[; ;unmc_display.c: 110: }
-"110
-[e :UE 1049 ]
-}
-"112
-[v _number_7 `(v ~T0 @X0 1 ef ]
-{
-[; ;unmc_display.c: 112: void number_7(void){
-[e :U _number_7 ]
-[f ]
-[; ;unmc_display.c: 113: encender_A();
 "113
-[e ( _encender_A ..  ]
-[; ;unmc_display.c: 114: encender_B();
+[v _number_5 `(v ~T0 @X0 1 ef ]
+{
+[; ;unmc_display.c: 113: void number_5(void){
+[e :U _number_5 ]
+[f ]
+[; ;unmc_display.c: 114: encender_A();
 "114
-[e ( _encender_B ..  ]
+[e ( _encender_A ..  ]
 [; ;unmc_display.c: 115: encender_C();
 "115
 [e ( _encender_C ..  ]
-[; ;unmc_display.c: 116: }
+[; ;unmc_display.c: 116: encender_D();
 "116
+[e ( _encender_D ..  ]
+[; ;unmc_display.c: 117: encender_F();
+"117
+[e ( _encender_F ..  ]
+[; ;unmc_display.c: 118: encender_G();
+"118
+[e ( _encender_G ..  ]
+[; ;unmc_display.c: 119: }
+"119
+[e :UE 1049 ]
+}
+"121
+[v _number_6 `(v ~T0 @X0 1 ef ]
+{
+[; ;unmc_display.c: 121: void number_6(void){
+[e :U _number_6 ]
+[f ]
+[; ;unmc_display.c: 122: encender_A();
+"122
+[e ( _encender_A ..  ]
+[; ;unmc_display.c: 123: encender_C();
+"123
+[e ( _encender_C ..  ]
+[; ;unmc_display.c: 124: encender_D();
+"124
+[e ( _encender_D ..  ]
+[; ;unmc_display.c: 125: encender_E();
+"125
+[e ( _encender_E ..  ]
+[; ;unmc_display.c: 126: encender_F();
+"126
+[e ( _encender_F ..  ]
+[; ;unmc_display.c: 127: encender_G();
+"127
+[e ( _encender_G ..  ]
+[; ;unmc_display.c: 128: }
+"128
 [e :UE 1050 ]
 }
-"118
-[v _number_8 `(v ~T0 @X0 1 ef ]
+"130
+[v _number_7 `(v ~T0 @X0 1 ef ]
 {
-[; ;unmc_display.c: 118: void number_8(void){
-[e :U _number_8 ]
+[; ;unmc_display.c: 130: void number_7(void){
+[e :U _number_7 ]
 [f ]
-[; ;unmc_display.c: 119: encender_A();
-"119
+[; ;unmc_display.c: 131: encender_A();
+"131
 [e ( _encender_A ..  ]
-[; ;unmc_display.c: 120: encender_B();
-"120
+[; ;unmc_display.c: 132: encender_B();
+"132
 [e ( _encender_B ..  ]
-[; ;unmc_display.c: 121: encender_C();
-"121
+[; ;unmc_display.c: 133: encender_C();
+"133
 [e ( _encender_C ..  ]
-[; ;unmc_display.c: 122: encender_D();
-"122
-[e ( _encender_D ..  ]
-[; ;unmc_display.c: 123: encender_E();
-"123
-[e ( _encender_E ..  ]
-[; ;unmc_display.c: 124: encender_F();
-"124
-[e ( _encender_F ..  ]
-[; ;unmc_display.c: 125: encender_G();
-"125
-[e ( _encender_G ..  ]
-[; ;unmc_display.c: 126: }
-"126
+[; ;unmc_display.c: 134: }
+"134
 [e :UE 1051 ]
 }
-"128
-[v _number_9 `(v ~T0 @X0 1 ef ]
+"136
+[v _number_8 `(v ~T0 @X0 1 ef ]
 {
-[; ;unmc_display.c: 128: void number_9(void){
-[e :U _number_9 ]
+[; ;unmc_display.c: 136: void number_8(void){
+[e :U _number_8 ]
 [f ]
-[; ;unmc_display.c: 129: encender_A();
-"129
+[; ;unmc_display.c: 137: encender_A();
+"137
 [e ( _encender_A ..  ]
-[; ;unmc_display.c: 130: encender_B();
-"130
+[; ;unmc_display.c: 138: encender_B();
+"138
 [e ( _encender_B ..  ]
-[; ;unmc_display.c: 131: encender_C();
-"131
+[; ;unmc_display.c: 139: encender_C();
+"139
 [e ( _encender_C ..  ]
-[; ;unmc_display.c: 132: encender_D();
-"132
+[; ;unmc_display.c: 140: encender_D();
+"140
 [e ( _encender_D ..  ]
-[; ;unmc_display.c: 133: encender_F();
-"133
+[; ;unmc_display.c: 141: encender_E();
+"141
+[e ( _encender_E ..  ]
+[; ;unmc_display.c: 142: encender_F();
+"142
 [e ( _encender_F ..  ]
-[; ;unmc_display.c: 134: encender_G();
-"134
+[; ;unmc_display.c: 143: encender_G();
+"143
 [e ( _encender_G ..  ]
-[; ;unmc_display.c: 135: }
-"135
+[; ;unmc_display.c: 144: }
+"144
 [e :UE 1052 ]
 }
-"137
+"146
+[v _number_9 `(v ~T0 @X0 1 ef ]
+{
+[; ;unmc_display.c: 146: void number_9(void){
+[e :U _number_9 ]
+[f ]
+[; ;unmc_display.c: 147: encender_A();
+"147
+[e ( _encender_A ..  ]
+[; ;unmc_display.c: 148: encender_B();
+"148
+[e ( _encender_B ..  ]
+[; ;unmc_display.c: 149: encender_C();
+"149
+[e ( _encender_C ..  ]
+[; ;unmc_display.c: 150: encender_D();
+"150
+[e ( _encender_D ..  ]
+[; ;unmc_display.c: 151: encender_F();
+"151
+[e ( _encender_F ..  ]
+[; ;unmc_display.c: 152: encender_G();
+"152
+[e ( _encender_G ..  ]
+[; ;unmc_display.c: 153: }
+"153
+[e :UE 1053 ]
+}
+"155
 [v _construir_numero `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;unmc_display.c: 137: void construir_numero(int number){
+[; ;unmc_display.c: 155: void construir_numero(int number){
 [e :U _construir_numero ]
 [v _number `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;unmc_display.c: 138: apagar_segmentos();
-"138
-[e ( _apagar_segmentos ..  ]
-[; ;unmc_display.c: 139: switch(number){
-"139
-[e $U 1055  ]
-{
-[; ;unmc_display.c: 140: case 0:
-"140
-[e :U 1056 ]
-[; ;unmc_display.c: 141: number_0();
-"141
-[e ( _number_0 ..  ]
-[; ;unmc_display.c: 142: break;
-"142
-[e $U 1054  ]
-[; ;unmc_display.c: 143: case 1:
-"143
-[e :U 1057 ]
-[; ;unmc_display.c: 144: number_1();
-"144
-[e ( _number_1 ..  ]
-[; ;unmc_display.c: 145: break;
-"145
-[e $U 1054  ]
-[; ;unmc_display.c: 146: case 2:
-"146
-[e :U 1058 ]
-[; ;unmc_display.c: 147: number_2();
-"147
-[e ( _number_2 ..  ]
-[; ;unmc_display.c: 148: break;
-"148
-[e $U 1054  ]
-[; ;unmc_display.c: 149: case 3:
-"149
-[e :U 1059 ]
-[; ;unmc_display.c: 150: number_3();
-"150
-[e ( _number_3 ..  ]
-[; ;unmc_display.c: 151: break;
-"151
-[e $U 1054  ]
-[; ;unmc_display.c: 152: case 4:
-"152
-[e :U 1060 ]
-[; ;unmc_display.c: 153: number_4();
-"153
-[e ( _number_4 ..  ]
-[; ;unmc_display.c: 154: break;
-"154
-[e $U 1054  ]
-[; ;unmc_display.c: 155: case 5:
-"155
-[e :U 1061 ]
-[; ;unmc_display.c: 156: number_5();
+[; ;unmc_display.c: 156: apagar_segmentos();
 "156
-[e ( _number_5 ..  ]
-[; ;unmc_display.c: 157: break;
+[e ( _apagar_segmentos ..  ]
+[; ;unmc_display.c: 157: switch(number){
 "157
-[e $U 1054  ]
-[; ;unmc_display.c: 158: case 6:
+[e $U 1056  ]
+{
+[; ;unmc_display.c: 158: case 0:
 "158
-[e :U 1062 ]
-[; ;unmc_display.c: 159: number_6();
+[e :U 1057 ]
+[; ;unmc_display.c: 159: number_0();
 "159
-[e ( _number_6 ..  ]
+[e ( _number_0 ..  ]
 [; ;unmc_display.c: 160: break;
 "160
-[e $U 1054  ]
-[; ;unmc_display.c: 161: case 7:
+[e $U 1055  ]
+[; ;unmc_display.c: 161: case 1:
 "161
-[e :U 1063 ]
-[; ;unmc_display.c: 162: number_7();
+[e :U 1058 ]
+[; ;unmc_display.c: 162: number_1();
 "162
-[e ( _number_7 ..  ]
+[e ( _number_1 ..  ]
 [; ;unmc_display.c: 163: break;
 "163
-[e $U 1054  ]
-[; ;unmc_display.c: 164: case 8:
+[e $U 1055  ]
+[; ;unmc_display.c: 164: case 2:
 "164
-[e :U 1064 ]
-[; ;unmc_display.c: 165: number_8();
+[e :U 1059 ]
+[; ;unmc_display.c: 165: number_2();
 "165
-[e ( _number_8 ..  ]
+[e ( _number_2 ..  ]
 [; ;unmc_display.c: 166: break;
 "166
-[e $U 1054  ]
-[; ;unmc_display.c: 167: case 9:
+[e $U 1055  ]
+[; ;unmc_display.c: 167: case 3:
 "167
-[e :U 1065 ]
-[; ;unmc_display.c: 168: number_9();
+[e :U 1060 ]
+[; ;unmc_display.c: 168: number_3();
 "168
-[e ( _number_9 ..  ]
+[e ( _number_3 ..  ]
 [; ;unmc_display.c: 169: break;
 "169
-[e $U 1054  ]
+[e $U 1055  ]
+[; ;unmc_display.c: 170: case 4:
 "170
-}
-[; ;unmc_display.c: 170: }
-[e $U 1054  ]
-"139
-[e :U 1055 ]
-[e [\ _number , $ -> 0 `i 1056
- , $ -> 1 `i 1057
- , $ -> 2 `i 1058
- , $ -> 3 `i 1059
- , $ -> 4 `i 1060
- , $ -> 5 `i 1061
- , $ -> 6 `i 1062
- , $ -> 7 `i 1063
- , $ -> 8 `i 1064
- , $ -> 9 `i 1065
- 1054 ]
-"170
-[e :U 1054 ]
-[; ;unmc_display.c: 171: }
+[e :U 1061 ]
+[; ;unmc_display.c: 171: number_4();
 "171
-[e :UE 1053 ]
+[e ( _number_4 ..  ]
+[; ;unmc_display.c: 172: break;
+"172
+[e $U 1055  ]
+[; ;unmc_display.c: 173: case 5:
+"173
+[e :U 1062 ]
+[; ;unmc_display.c: 174: number_5();
+"174
+[e ( _number_5 ..  ]
+[; ;unmc_display.c: 175: break;
+"175
+[e $U 1055  ]
+[; ;unmc_display.c: 176: case 6:
+"176
+[e :U 1063 ]
+[; ;unmc_display.c: 177: number_6();
+"177
+[e ( _number_6 ..  ]
+[; ;unmc_display.c: 178: break;
+"178
+[e $U 1055  ]
+[; ;unmc_display.c: 179: case 7:
+"179
+[e :U 1064 ]
+[; ;unmc_display.c: 180: number_7();
+"180
+[e ( _number_7 ..  ]
+[; ;unmc_display.c: 181: break;
+"181
+[e $U 1055  ]
+[; ;unmc_display.c: 182: case 8:
+"182
+[e :U 1065 ]
+[; ;unmc_display.c: 183: number_8();
+"183
+[e ( _number_8 ..  ]
+[; ;unmc_display.c: 184: break;
+"184
+[e $U 1055  ]
+[; ;unmc_display.c: 185: case 9:
+"185
+[e :U 1066 ]
+[; ;unmc_display.c: 186: number_9();
+"186
+[e ( _number_9 ..  ]
+[; ;unmc_display.c: 187: break;
+"187
+[e $U 1055  ]
+"188
+}
+[; ;unmc_display.c: 188: }
+[e $U 1055  ]
+"157
+[e :U 1056 ]
+[e [\ _number , $ -> 0 `i 1057
+ , $ -> 1 `i 1058
+ , $ -> 2 `i 1059
+ , $ -> 3 `i 1060
+ , $ -> 4 `i 1061
+ , $ -> 5 `i 1062
+ , $ -> 6 `i 1063
+ , $ -> 7 `i 1064
+ , $ -> 8 `i 1065
+ , $ -> 9 `i 1066
+ 1055 ]
+"188
+[e :U 1055 ]
+[; ;unmc_display.c: 189: }
+"189
+[e :UE 1054 ]
 }

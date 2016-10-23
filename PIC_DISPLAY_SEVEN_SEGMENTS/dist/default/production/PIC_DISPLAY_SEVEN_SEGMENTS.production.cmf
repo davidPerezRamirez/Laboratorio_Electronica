@@ -11,44 +11,45 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-cinit CODE 0 F718 F718 A 1
-text0 CODE 0 FAD4 FAD4 96 1
-text1 CODE 0 F870 F870 38 1
-text2 CODE 0 F838 F838 38 1
-text3 CODE 0 F8E4 F8E4 60 1
-text4 CODE 0 FD32 FD32 102 1
-text5 CODE 0 FC30 FC30 102 1
-text6 CODE 0 FE34 FE34 1C4 1
-text7 CODE 0 F8A8 F8A8 3C 1
-text8 CODE 0 FB6A FB6A C6 1
-text9 CODE 0 F944 F944 66 1
-text10 CODE 0 F9AA F9AA 94 1
-text11 CODE 0 F7D8 F7D8 1A 1
-text12 CODE 0 F7F2 F7F2 1E 1
-text13 CODE 0 F722 F722 E 1
-text14 CODE 0 F7BE F7BE 1A 1
-text15 CODE 0 F78E F78E 16 1
-text16 CODE 0 F750 F750 12 1
-text17 CODE 0 F778 F778 16 1
-text18 CODE 0 F762 F762 16 1
-text19 CODE 0 F70E F70E A 1
-text20 CODE 0 F704 F704 A 1
-text21 CODE 0 F7A4 F7A4 1A 1
-text22 CODE 0 F6FA F6FA A 1
-text23 CODE 0 F6F0 F6F0 A 1
-text24 CODE 0 F6E6 F6E6 A 1
-text25 CODE 0 F6DC F6DC A 1
-text26 CODE 0 F6D2 F6D2 A 1
-text27 CODE 0 F6C8 F6C8 A 1
-text28 CODE 0 F740 F740 10 1
-text29 CODE 0 F730 F730 10 1
-text30 CODE 0 F810 F810 28 1
-text31 CODE 0 FA3E FA3E 96 1
-cstackCOMRAM COMRAM 1 1 1 44 1
-$C:\Users\ddavi\AppData\Local\Temp\s98.obj
+$C:\Users\ddavi\AppData\Local\Temp\s3fk.obj
 end_init CODE 0 0 0 4 1
 config CONFIG 0 FFF8 FFF8 8 1
+$dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+cinit CODE 0 F710 F710 A 1
+text0 CODE 0 F9D4 F9D4 6C 1
+text1 CODE 0 F89A F89A 38 1
+text2 CODE 0 F830 F830 32 1
+text3 CODE 0 F862 F862 38 1
+text4 CODE 0 F90E F90E 60 1
+text5 CODE 0 FD32 FD32 102 1
+text6 CODE 0 FC30 FC30 102 1
+text7 CODE 0 FE34 FE34 1C4 1
+text8 CODE 0 F8D2 F8D2 3C 1
+text9 CODE 0 FB6A FB6A C6 1
+text10 CODE 0 F96E F96E 66 1
+text11 CODE 0 FA40 FA40 94 1
+text12 CODE 0 F7D0 F7D0 1A 1
+text13 CODE 0 F7EA F7EA 1E 1
+text14 CODE 0 F71A F71A E 1
+text15 CODE 0 F7B6 F7B6 1A 1
+text16 CODE 0 F786 F786 16 1
+text17 CODE 0 F748 F748 12 1
+text18 CODE 0 F770 F770 16 1
+text19 CODE 0 F75A F75A 16 1
+text20 CODE 0 F706 F706 A 1
+text21 CODE 0 F6FC F6FC A 1
+text22 CODE 0 F79C F79C 1A 1
+text23 CODE 0 F6F2 F6F2 A 1
+text24 CODE 0 F6E8 F6E8 A 1
+text25 CODE 0 F6DE F6DE A 1
+text26 CODE 0 F6D4 F6D4 A 1
+text27 CODE 0 F6CA F6CA A 1
+text28 CODE 0 F6C0 F6C0 A 1
+text29 CODE 0 F738 F738 10 1
+text30 CODE 0 F728 F728 10 1
+text31 CODE 0 F808 F808 28 1
+text32 CODE 0 FAD4 FAD4 96 1
+cstackCOMRAM COMRAM 1 1 1 41 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -67,18 +68,18 @@ BANK6 600-6FF 1
 BANK7 700-7FF 1
 BANK8 800-8FF 1
 BANK9 900-9FF 1
-CONST 4-F6C7 1
+CONST 4-F6BF 1
 STACK 60-EBF 1
-SMALLCONST F00-F6C7 1
-CODE 4-F6C7 1
+SMALLCONST F00-F6BF 1
+CODE 4-F6BF 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
 BANK13 D00-DFF 1
 BANK14 E00-EBF 1
-BIGRAM 45-EBF 1
-COMRAM 45-5F 1
-MEDIUMCONST F00-F6C7 1
+BIGRAM 42-EBF 1
+COMRAM 42-5F 1
+MEDIUMCONST F00-F6BF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -93,377 +94,386 @@ MEDIUMCONST F00-F6C7 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-F6C8 text27 CODE >6:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6C8 text27 CODE >7:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6CA text27 CODE >8:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6CE text27 CODE >9:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6D0 text27 CODE >10:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6D2 text26 CODE >12:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6D2 text26 CODE >13:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6D4 text26 CODE >14:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6D8 text26 CODE >15:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6DA text26 CODE >16:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6DC text25 CODE >18:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6DC text25 CODE >19:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6DE text25 CODE >20:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6E2 text25 CODE >21:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6E4 text25 CODE >22:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6E6 text24 CODE >24:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6E6 text24 CODE >25:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6E8 text24 CODE >26:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6EC text24 CODE >27:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6EE text24 CODE >28:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6F0 text23 CODE >30:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6F0 text23 CODE >31:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6F2 text23 CODE >32:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6F6 text23 CODE >33:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6F8 text23 CODE >34:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6FA text22 CODE >36:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6FA text22 CODE >37:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F6FC text22 CODE >38:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F700 text22 CODE >39:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F702 text22 CODE >40:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F704 text20 CODE >67:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F704 text20 CODE >68:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F708 text20 CODE >69:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F70C text20 CODE >70:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F70E text19 CODE >42:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F70E text19 CODE >43:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F710 text19 CODE >44:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F714 text19 CODE >45:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F716 text19 CODE >46:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F718 cinit CODE >1325:C:\Users\ddavi\AppData\Local\Temp\s98.
-F718 cinit CODE >1327:C:\Users\ddavi\AppData\Local\Temp\s98.
-F718 cinit CODE >1330:C:\Users\ddavi\AppData\Local\Temp\s98.
-F718 cinit CODE >1336:C:\Users\ddavi\AppData\Local\Temp\s98.
-F718 cinit CODE >1338:C:\Users\ddavi\AppData\Local\Temp\s98.
-F71A cinit CODE >1339:C:\Users\ddavi\AppData\Local\Temp\s98.
-F71C cinit CODE >1340:C:\Users\ddavi\AppData\Local\Temp\s98.
-F71E cinit CODE >1341:C:\Users\ddavi\AppData\Local\Temp\s98.
-F722 text13 CODE >112:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F722 text13 CODE >113:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F726 text13 CODE >114:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F72A text13 CODE >115:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F72E text13 CODE >116:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F730 text29 CODE >48:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F730 text29 CODE >49:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F732 text29 CODE >50:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F734 text29 CODE >51:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F736 text29 CODE >52:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F738 text29 CODE >53:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F73A text29 CODE >54:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F73C text29 CODE >55:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F73E text29 CODE >56:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F740 text28 CODE >3:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F740 text28 CODE >4:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F74E text28 CODE >5:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F750 text16 CODE >88:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F750 text16 CODE >89:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F754 text16 CODE >90:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F758 text16 CODE >91:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F75C text16 CODE >92:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F760 text16 CODE >93:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F762 text18 CODE >72:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F762 text18 CODE >73:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F766 text18 CODE >74:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F76A text18 CODE >75:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F76E text18 CODE >76:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F772 text18 CODE >77:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F776 text18 CODE >78:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F778 text17 CODE >80:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F778 text17 CODE >81:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F77C text17 CODE >82:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F780 text17 CODE >83:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F784 text17 CODE >84:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F788 text17 CODE >85:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F78C text17 CODE >86:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F78E text15 CODE >95:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F78E text15 CODE >96:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F792 text15 CODE >97:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F796 text15 CODE >98:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F79A text15 CODE >99:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F79E text15 CODE >100:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7A2 text15 CODE >101:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7A4 text21 CODE >58:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7A4 text21 CODE >59:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7A8 text21 CODE >60:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7AC text21 CODE >61:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7B0 text21 CODE >62:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7B4 text21 CODE >63:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7B8 text21 CODE >64:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7BC text21 CODE >65:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7BE text14 CODE >103:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7BE text14 CODE >104:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7C2 text14 CODE >105:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7C6 text14 CODE >106:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7CA text14 CODE >107:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7CE text14 CODE >108:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7D2 text14 CODE >109:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7D6 text14 CODE >110:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7D8 text11 CODE >128:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7D8 text11 CODE >129:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7DC text11 CODE >130:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7E0 text11 CODE >131:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7E4 text11 CODE >132:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7E8 text11 CODE >133:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7EC text11 CODE >134:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7F0 text11 CODE >135:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7F2 text12 CODE >118:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7F2 text12 CODE >119:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7F6 text12 CODE >120:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7FA text12 CODE >121:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F7FE text12 CODE >122:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F802 text12 CODE >123:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F806 text12 CODE >124:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F80A text12 CODE >125:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F80E text12 CODE >126:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F810 text30 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
-F810 text30 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
-F81C text30 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
-F824 text30 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
-F82C text30 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
-F836 text30 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
-F838 text2 CODE >71:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F838 text2 CODE >72:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F83A text2 CODE >73:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F83C text2 CODE >76:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F842 text2 CODE >77:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F850 text2 CODE >78:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F856 text2 CODE >79:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F858 text2 CODE >80:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F86E text2 CODE >81:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F870 text1 CODE >26:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F870 text1 CODE >28:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F872 text1 CODE >29:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F874 text1 CODE >30:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F876 text1 CODE >31:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F878 text1 CODE >32:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F87A text1 CODE >33:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F87C text1 CODE >34:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F87E text1 CODE >35:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F882 text1 CODE >36:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F886 text1 CODE >37:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F88A text1 CODE >41:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F890 text1 CODE >43:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F894 text1 CODE >44:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F898 text1 CODE >45:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F89C text1 CODE >46:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F8A0 text1 CODE >47:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F8A4 text1 CODE >48:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F8A6 text1 CODE >49:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F8A8 text7 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
-F8A8 text7 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
-F8AC text7 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
-F8B0 text7 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
-F8B8 text7 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
-F8BE text7 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
-F8E2 text7 CODE >42:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
-F8E4 text3 CODE >66:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F8E4 text3 CODE >68:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F942 text3 CODE >69:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F944 text9 CODE >51:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F944 text9 CODE >53:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F960 text9 CODE >54:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F988 text9 CODE >56:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F98A text9 CODE >57:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F996 text9 CODE >58:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F998 text9 CODE >60:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F99A text9 CODE >61:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F9A6 text9 CODE >62:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F9A8 text9 CODE >64:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-F9AA text10 CODE >137:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9AA text10 CODE >138:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9AE text10 CODE >139:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9B0 text10 CODE >141:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9B4 text10 CODE >142:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9B6 text10 CODE >144:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9BA text10 CODE >145:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9BC text10 CODE >147:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9C0 text10 CODE >148:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9C2 text10 CODE >150:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9C6 text10 CODE >151:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9C8 text10 CODE >153:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9CC text10 CODE >154:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9CE text10 CODE >156:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9D2 text10 CODE >157:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9D4 text10 CODE >159:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9D8 text10 CODE >160:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9DA text10 CODE >162:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9DE text10 CODE >163:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9E0 text10 CODE >165:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9E4 text10 CODE >166:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9E6 text10 CODE >168:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9EA text10 CODE >170:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-F9EC text10 CODE >139:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-FA3C text10 CODE >171:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
-FA3E text31 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FA3E text31 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FA42 text31 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FA46 text31 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FA4E text31 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FA54 text31 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FA58 text31 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FA60 text31 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FA66 text31 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FA6E text31 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FA76 text31 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FA7A text31 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FA7C text31 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FA82 text31 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FA86 text31 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FA8E text31 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FA94 text31 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FAA0 text31 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FAA8 text31 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FAAC text31 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FAB2 text31 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FAB8 text31 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FABE text31 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FAC8 text31 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FAD2 text31 CODE >42:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-FAD4 text0 CODE >6911:C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
-FAD4 text0 CODE >83:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FAD4 text0 CODE >85:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FAD8 text0 CODE >86:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FAE0 text0 CODE >87:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FAEA text0 CODE >92:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FAF6 text0 CODE >93:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FB0A text0 CODE >94:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FB10 text0 CODE >95:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FB12 text0 CODE >96:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FB26 text0 CODE >97:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FB2A text0 CODE >98:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FB2C text0 CODE >99:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FB2C text0 CODE >100:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FB36 text0 CODE >103:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FB3E text0 CODE >104:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FB40 text0 CODE >105:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FB4C text0 CODE >106:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FB52 text0 CODE >104:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FB64 text0 CODE >90:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FB66 text0 CODE >112:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
-FB6A text8 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FB6A text8 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FB7A text8 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FB88 text8 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FB8A text8 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FB8C text8 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FB96 text8 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FBB4 text8 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FBB6 text8 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FBB8 text8 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FBC4 text8 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FBCE text8 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FBEC text8 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FBEE text8 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FBF0 text8 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FBFA text8 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FC06 text8 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FC0A text8 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FC0E text8 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FC12 text8 CODE >82:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FC16 text8 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FC1C text8 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FC20 text8 CODE >85:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FC2E text8 CODE >86:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
-FC30 text5 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FC30 text5 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FC4A text5 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FC58 text5 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FC72 text5 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FC80 text5 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FC86 text5 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FC8A text5 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FC8E text5 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FC92 text5 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FC94 text5 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FC96 text5 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FCA2 text5 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FCAE text5 CODE >134:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FCB4 text5 CODE >136:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FCB8 text5 CODE >137:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FCC6 text5 CODE >138:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FCCE text5 CODE >139:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FCD6 text5 CODE >140:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FCDC text5 CODE >143:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FCE2 text5 CODE >145:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FCE6 text5 CODE >146:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FCF4 text5 CODE >147:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FCFC text5 CODE >148:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FD04 text5 CODE >149:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FD0A text5 CODE >156:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FD30 text5 CODE >157:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
-FD32 text4 CODE >44:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FD32 text4 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FD4C text4 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FD5E text4 CODE >51:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FD84 text4 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FD86 text4 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FD92 text4 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FDA0 text4 CODE >55:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FDA4 text4 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FDA8 text4 CODE >57:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FDB2 text4 CODE >58:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FDC6 text4 CODE >60:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FDD0 text4 CODE >61:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FDD4 text4 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FDD6 text4 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FDDC text4 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FDEE text4 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FDF0 text4 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FDFA text4 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FDFE text4 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FE08 text4 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FE0E text4 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FE20 text4 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FE32 text4 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
-FE34 text6 CODE >86:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FE34 text6 CODE >90:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FE48 text6 CODE >91:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FE5C text6 CODE >92:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FE78 text6 CODE >93:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FE86 text6 CODE >94:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FEA2 text6 CODE >95:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FEB0 text6 CODE >96:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FEB4 text6 CODE >97:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FEB8 text6 CODE >98:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FEBC text6 CODE >99:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FEBE text6 CODE >100:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FEC0 text6 CODE >101:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FEC2 text6 CODE >102:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FECE text6 CODE >103:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FED0 text6 CODE >104:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FEDC text6 CODE >106:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FEE4 text6 CODE >110:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FEEC text6 CODE >111:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FEEE text6 CODE >112:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF06 text6 CODE >113:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF08 text6 CODE >114:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF10 text6 CODE >115:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF14 text6 CODE >113:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF1E text6 CODE >117:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF28 text6 CODE >121:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF30 text6 CODE >122:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF32 text6 CODE >123:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF4A text6 CODE >124:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF4C text6 CODE >125:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF54 text6 CODE >126:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF58 text6 CODE >124:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF64 text6 CODE >129:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF68 text6 CODE >131:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF74 text6 CODE >132:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF80 text6 CODE >133:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF80 text6 CODE >134:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF84 text6 CODE >136:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF90 text6 CODE >137:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FF9E text6 CODE >139:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FFA2 text6 CODE >140:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FFAE text6 CODE >141:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FFB2 text6 CODE >142:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FFBE text6 CODE >143:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FFCA text6 CODE >144:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FFD0 text6 CODE >146:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
-FFF6 text6 CODE >148:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+F6C0 text28 CODE >6:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6C0 text28 CODE >7:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6C2 text28 CODE >8:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6C6 text28 CODE >9:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6C8 text28 CODE >10:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6CA text27 CODE >12:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6CA text27 CODE >13:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6CC text27 CODE >14:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6D0 text27 CODE >15:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6D2 text27 CODE >16:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6D4 text26 CODE >18:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6D4 text26 CODE >19:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6D6 text26 CODE >20:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6DA text26 CODE >21:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6DC text26 CODE >22:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6DE text25 CODE >24:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6DE text25 CODE >25:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6E0 text25 CODE >26:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6E4 text25 CODE >27:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6E6 text25 CODE >28:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6E8 text24 CODE >30:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6E8 text24 CODE >31:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6EA text24 CODE >32:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6EE text24 CODE >33:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6F0 text24 CODE >34:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6F2 text23 CODE >36:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6F2 text23 CODE >37:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6F4 text23 CODE >38:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6F8 text23 CODE >39:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6FA text23 CODE >40:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6FC text21 CODE >85:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F6FC text21 CODE >86:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F700 text21 CODE >87:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F704 text21 CODE >88:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F706 text20 CODE >42:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F706 text20 CODE >43:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F708 text20 CODE >44:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F70C text20 CODE >45:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F70E text20 CODE >46:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F710 cinit CODE >1332:C:\Users\ddavi\AppData\Local\Temp\s3fk.
+F710 cinit CODE >1334:C:\Users\ddavi\AppData\Local\Temp\s3fk.
+F710 cinit CODE >1337:C:\Users\ddavi\AppData\Local\Temp\s3fk.
+F710 cinit CODE >1343:C:\Users\ddavi\AppData\Local\Temp\s3fk.
+F710 cinit CODE >1345:C:\Users\ddavi\AppData\Local\Temp\s3fk.
+F712 cinit CODE >1346:C:\Users\ddavi\AppData\Local\Temp\s3fk.
+F714 cinit CODE >1347:C:\Users\ddavi\AppData\Local\Temp\s3fk.
+F716 cinit CODE >1348:C:\Users\ddavi\AppData\Local\Temp\s3fk.
+F71A text14 CODE >130:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F71A text14 CODE >131:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F71E text14 CODE >132:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F722 text14 CODE >133:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F726 text14 CODE >134:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F728 text30 CODE >48:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F728 text30 CODE >49:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F72A text30 CODE >50:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F72C text30 CODE >51:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F72E text30 CODE >52:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F730 text30 CODE >53:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F732 text30 CODE >54:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F734 text30 CODE >55:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F736 text30 CODE >56:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F738 text29 CODE >3:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F738 text29 CODE >4:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F746 text29 CODE >5:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F748 text17 CODE >106:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F748 text17 CODE >107:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F74C text17 CODE >108:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F750 text17 CODE >109:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F754 text17 CODE >110:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F758 text17 CODE >111:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F75A text19 CODE >90:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F75A text19 CODE >91:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F75E text19 CODE >92:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F762 text19 CODE >93:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F766 text19 CODE >94:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F76A text19 CODE >95:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F76E text19 CODE >96:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F770 text18 CODE >98:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F770 text18 CODE >99:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F774 text18 CODE >100:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F778 text18 CODE >101:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F77C text18 CODE >102:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F780 text18 CODE >103:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F784 text18 CODE >104:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F786 text16 CODE >113:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F786 text16 CODE >114:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F78A text16 CODE >115:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F78E text16 CODE >116:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F792 text16 CODE >117:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F796 text16 CODE >118:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F79A text16 CODE >119:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F79C text22 CODE >76:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F79C text22 CODE >77:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7A0 text22 CODE >78:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7A4 text22 CODE >79:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7A8 text22 CODE >80:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7AC text22 CODE >81:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7B0 text22 CODE >82:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7B4 text22 CODE >83:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7B6 text15 CODE >121:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7B6 text15 CODE >122:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7BA text15 CODE >123:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7BE text15 CODE >124:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7C2 text15 CODE >125:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7C6 text15 CODE >126:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7CA text15 CODE >127:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7CE text15 CODE >128:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7D0 text12 CODE >146:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7D0 text12 CODE >147:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7D4 text12 CODE >148:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7D8 text12 CODE >149:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7DC text12 CODE >150:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7E0 text12 CODE >151:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7E4 text12 CODE >152:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7E8 text12 CODE >153:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7EA text13 CODE >136:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7EA text13 CODE >137:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7EE text13 CODE >138:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7F2 text13 CODE >139:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7F6 text13 CODE >140:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7FA text13 CODE >141:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F7FE text13 CODE >142:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F802 text13 CODE >143:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F806 text13 CODE >144:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F808 text31 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
+F808 text31 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
+F814 text31 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
+F81C text31 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
+F824 text31 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
+F82E text31 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
+F830 text2 CODE >58:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F830 text2 CODE >59:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F832 text2 CODE >60:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F836 text2 CODE >61:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F83A text2 CODE >62:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F83E text2 CODE >63:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F842 text2 CODE >64:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F844 text2 CODE >66:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F846 text2 CODE >67:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F84A text2 CODE >68:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F84E text2 CODE >69:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F852 text2 CODE >70:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F856 text2 CODE >71:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F85A text2 CODE >72:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F85E text2 CODE >73:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F860 text2 CODE >74:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+F862 text3 CODE >71:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F862 text3 CODE >72:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F864 text3 CODE >73:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F866 text3 CODE >76:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F86C text3 CODE >77:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F87A text3 CODE >78:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F880 text3 CODE >79:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F882 text3 CODE >80:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F898 text3 CODE >81:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F89A text1 CODE >26:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F89A text1 CODE >28:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F89C text1 CODE >29:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F89E text1 CODE >30:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F8A0 text1 CODE >31:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F8A2 text1 CODE >32:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F8A4 text1 CODE >33:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F8A6 text1 CODE >34:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F8A8 text1 CODE >35:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F8AC text1 CODE >36:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F8B0 text1 CODE >37:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F8B4 text1 CODE >41:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F8BA text1 CODE >43:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F8BE text1 CODE >44:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F8C2 text1 CODE >45:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F8C6 text1 CODE >46:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F8CA text1 CODE >47:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F8CE text1 CODE >48:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F8D0 text1 CODE >49:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F8D2 text8 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
+F8D2 text8 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
+F8D6 text8 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
+F8DA text8 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
+F8E2 text8 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
+F8E8 text8 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
+F90C text8 CODE >42:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
+F90E text4 CODE >66:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F90E text4 CODE >68:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F96C text4 CODE >69:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F96E text10 CODE >51:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F96E text10 CODE >53:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F98A text10 CODE >54:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F9B2 text10 CODE >56:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F9B4 text10 CODE >57:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F9C0 text10 CODE >58:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F9C2 text10 CODE >60:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F9C4 text10 CODE >61:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F9D0 text10 CODE >62:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F9D2 text10 CODE >64:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F9D4 text0 CODE >6911:C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
+F9D4 text0 CODE >83:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F9D4 text0 CODE >85:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F9D8 text0 CODE >86:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F9E2 text0 CODE >91:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+F9EE text0 CODE >93:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+FA06 text0 CODE >94:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+FA0C text0 CODE >96:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+FA14 text0 CODE >97:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+FA16 text0 CODE >98:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+FA22 text0 CODE >99:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+FA28 text0 CODE >97:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+FA3A text0 CODE >89:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+FA3C text0 CODE >106:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\main.c
+FA40 text11 CODE >155:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA40 text11 CODE >156:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA44 text11 CODE >157:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA46 text11 CODE >159:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA4A text11 CODE >160:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA4C text11 CODE >162:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA50 text11 CODE >163:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA52 text11 CODE >165:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA56 text11 CODE >166:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA58 text11 CODE >168:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA5C text11 CODE >169:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA5E text11 CODE >171:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA62 text11 CODE >172:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA64 text11 CODE >174:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA68 text11 CODE >175:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA6A text11 CODE >177:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA6E text11 CODE >178:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA70 text11 CODE >180:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA74 text11 CODE >181:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA76 text11 CODE >183:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA7A text11 CODE >184:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA7C text11 CODE >186:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA80 text11 CODE >188:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FA82 text11 CODE >157:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FAD2 text11 CODE >189:C:\Users\ddavi\Documents\GitHub\Laboratorio_Electronica\PIC_DISPLAY_SEVEN_SEGMENTS\Unimic/unmc_01/headers/unmc_display.c
+FAD4 text32 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FAD4 text32 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FAD8 text32 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FADC text32 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FAE4 text32 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FAEA text32 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FAEE text32 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FAF6 text32 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FAFC text32 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FB04 text32 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FB0C text32 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FB10 text32 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FB12 text32 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FB18 text32 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FB1C text32 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FB24 text32 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FB2A text32 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FB36 text32 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FB3E text32 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FB42 text32 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FB48 text32 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FB4E text32 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FB54 text32 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FB5E text32 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FB68 text32 CODE >42:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+FB6A text9 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FB6A text9 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FB7A text9 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FB88 text9 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FB8A text9 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FB8C text9 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FB96 text9 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FBB4 text9 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FBB6 text9 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FBB8 text9 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FBC4 text9 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FBCE text9 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FBEC text9 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FBEE text9 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FBF0 text9 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FBFA text9 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FC06 text9 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FC0A text9 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FC0E text9 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FC12 text9 CODE >82:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FC16 text9 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FC1C text9 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FC20 text9 CODE >85:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FC2E text9 CODE >86:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+FC30 text6 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FC30 text6 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FC4A text6 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FC58 text6 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FC72 text6 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FC80 text6 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FC86 text6 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FC8A text6 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FC8E text6 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FC92 text6 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FC94 text6 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FC96 text6 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FCA2 text6 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FCAE text6 CODE >134:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FCB4 text6 CODE >136:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FCB8 text6 CODE >137:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FCC6 text6 CODE >138:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FCCE text6 CODE >139:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FCD6 text6 CODE >140:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FCDC text6 CODE >143:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FCE2 text6 CODE >145:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FCE6 text6 CODE >146:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FCF4 text6 CODE >147:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FCFC text6 CODE >148:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FD04 text6 CODE >149:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FD0A text6 CODE >156:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FD30 text6 CODE >157:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+FD32 text5 CODE >44:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FD32 text5 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FD4C text5 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FD5E text5 CODE >51:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FD84 text5 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FD86 text5 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FD92 text5 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FDA0 text5 CODE >55:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FDA4 text5 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FDA8 text5 CODE >57:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FDB2 text5 CODE >58:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FDC6 text5 CODE >60:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FDD0 text5 CODE >61:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FDD4 text5 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FDD6 text5 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FDDC text5 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FDEE text5 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FDF0 text5 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FDFA text5 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FDFE text5 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FE08 text5 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FE0E text5 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FE20 text5 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FE32 text5 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+FE34 text7 CODE >86:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FE34 text7 CODE >90:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FE48 text7 CODE >91:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FE5C text7 CODE >92:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FE78 text7 CODE >93:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FE86 text7 CODE >94:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FEA2 text7 CODE >95:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FEB0 text7 CODE >96:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FEB4 text7 CODE >97:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FEB8 text7 CODE >98:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FEBC text7 CODE >99:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FEBE text7 CODE >100:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FEC0 text7 CODE >101:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FEC2 text7 CODE >102:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FECE text7 CODE >103:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FED0 text7 CODE >104:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FEDC text7 CODE >106:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FEE4 text7 CODE >110:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FEEC text7 CODE >111:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FEEE text7 CODE >112:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF06 text7 CODE >113:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF08 text7 CODE >114:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF10 text7 CODE >115:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF14 text7 CODE >113:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF1E text7 CODE >117:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF28 text7 CODE >121:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF30 text7 CODE >122:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF32 text7 CODE >123:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF4A text7 CODE >124:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF4C text7 CODE >125:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF54 text7 CODE >126:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF58 text7 CODE >124:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF64 text7 CODE >129:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF68 text7 CODE >131:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF74 text7 CODE >132:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF80 text7 CODE >133:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF80 text7 CODE >134:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF84 text7 CODE >136:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF90 text7 CODE >137:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FF9E text7 CODE >139:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FFA2 text7 CODE >140:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FFAE text7 CODE >141:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FFB2 text7 CODE >142:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FFBE text7 CODE >143:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FFCA text7 CODE >144:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FFD0 text7 CODE >146:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+FFF6 text7 CODE >148:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -479,26 +489,26 @@ FFF6 text6 CODE >148:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\f
 ___awdiv@counter 5 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hspace_0 10000 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__Hspace_1 45 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__Hspace_1 42 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hspace_2 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __CFG_T1DIG$ON 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_leer_temperatura F870 0 CODE 0 text2 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_leer_temperatura F89A 0 CODE 0 text3 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __size_of_calcular_temperatura 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ddavi\AppData\Local\Temp\s98.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ddavi\AppData\Local\Temp\s3fk.obj
 ___awtoft@sign C 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __size_of_leer_temperatura 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 _T1CONbits FCD 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __CFG_WPCFG$OFF 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-main@i 3F 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+main@i 3E 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-___sp 0 0 STACK 2 stack C:\Users\ddavi\AppData\Local\Temp\s98.obj
-_main FAD4 0 CODE 0 text0 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_calcular_temperatura F944 0 CODE 0 text3 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+___sp 0 0 STACK 2 stack C:\Users\ddavi\AppData\Local\Temp\s3fk.obj
+_main F9D4 0 CODE 0 text0 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_calcular_temperatura F96E 0 CODE 0 text4 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 ___ftadd@f1 1C 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 ___ftadd@f2 1F 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-start 0 0 CODE 0 init C:\Users\ddavi\AppData\Local\Temp\s98.obj
+start 0 0 CODE 0 init C:\Users\ddavi\AppData\Local\Temp\s3fk.obj
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __size_of___ftadd 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __size_of___ftmul 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
@@ -508,11 +518,11 @@ __CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.p
 ?___wmul 1 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hpowerup 0 0 CODE 0 powerup dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __size_of_tiempo_encendido_segmento 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\ddavi\AppData\Local\Temp\s98.obj
-intlevel0 0 0 CODE 0 text C:\Users\ddavi\AppData\Local\Temp\s98.obj
-intlevel1 0 0 CODE 0 text C:\Users\ddavi\AppData\Local\Temp\s98.obj
-intlevel2 0 0 CODE 0 text C:\Users\ddavi\AppData\Local\Temp\s98.obj
-intlevel3 0 0 CODE 0 text C:\Users\ddavi\AppData\Local\Temp\s98.obj
+__accesstop 60 0 ABS 0 - C:\Users\ddavi\AppData\Local\Temp\s3fk.obj
+intlevel0 0 0 CODE 0 text C:\Users\ddavi\AppData\Local\Temp\s3fk.obj
+intlevel1 0 0 CODE 0 text C:\Users\ddavi\AppData\Local\Temp\s3fk.obj
+intlevel2 0 0 CODE 0 text C:\Users\ddavi\AppData\Local\Temp\s3fk.obj
+intlevel3 0 0 CODE 0 text C:\Users\ddavi\AppData\Local\Temp\s3fk.obj
 imprimir_temperatura@decena D 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 _OSCCONbits FD3 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
@@ -529,22 +539,23 @@ _ADRESH FC4 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.product
 _ANCON0 F48 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 _ANCON1 F49 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 ___awdiv@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\ddavi\AppData\Local\Temp\s98.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\ddavi\AppData\Local\Temp\s3fk.obj
 leer_temperatura@voltage 3C 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\ddavi\AppData\Local\Temp\s98.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\ddavi\AppData\Local\Temp\s3fk.obj
 __size_of___awtoft 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of___wmul F838 0 CODE 0 text30 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of___wmul F830 0 CODE 0 text31 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__size_of_mostrar_fuera_rango 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 ___fttol@f1 28 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hintcodelo 0 0 CODE 0 intcodelo dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 ___awdiv@divisor 3 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __size_of___ftpack 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of___awdiv FAD4 0 CODE 0 text31 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of___ftadd FFF8 0 CODE 0 text6 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of___ftmul FD32 0 CODE 0 text5 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of___fttol FE34 0 CODE 0 text4 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of___awdiv FB6A 0 CODE 0 text32 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of___ftadd FFF8 0 CODE 0 text7 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of___ftmul FD32 0 CODE 0 text6 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of___fttol FE34 0 CODE 0 text5 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __size_of_encender_A 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __size_of_encender_B 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __size_of_encender_C 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
@@ -558,24 +569,25 @@ __size_of_setup 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.p
 construir_numero@number 2 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lintcodelo 0 0 CODE 0 intcodelo dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-start_initialization F718 0 CODE 0 cinit dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+start_initialization F710 0 CODE 0 cinit dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-___awtoft F8A8 0 CODE 0 text7 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_mostrar_fuera_rango F830 0 CODE 0 text2 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+___awtoft F8D2 0 CODE 0 text8 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __size_of_imprimir_temperatura 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_tiempo_encendido_segmento F740 0 CODE 0 text28 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_tiempo_encendido_segmento F738 0 CODE 0 text29 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 ?_leer_temperatura 39 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 ___rparam_used 1 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __CFG_WDTPS$32768 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of___awtoft F8E4 0 CODE 0 text7 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of___awtoft F90E 0 CODE 0 text8 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 ___fttol@exp1 36 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 ___fttol@lval 32 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_apagar_segmentos F730 0 CODE 0 text29 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-___ftpack FB6A 0 CODE 0 text8 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_apagar_segmentos F728 0 CODE 0 text30 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+___ftpack FB6A 0 CODE 0 text9 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __CFG_WPDIS$OFF 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_imprimir_temperatura F9AA 0 CODE 0 text9 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_imprimir_temperatura F9D4 0 CODE 0 text10 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 ___ftpack@arg 1 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 ___ftpack@exp 4 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of___ftpack FC30 0 CODE 0 text8 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of___ftpack FC30 0 CODE 0 text9 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hbank0 0 0 ABS 0 bank0 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hbank1 0 0 ABS 0 bank1 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hbank2 0 0 ABS 0 bank2 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
@@ -613,7 +625,7 @@ __Hbank13 0 0 ABS 0 bank13 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.pr
 __Hbank14 0 0 ABS 0 bank14 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\ddavi\AppData\Local\Temp\s98.obj
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\ddavi\AppData\Local\Temp\s3fk.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hconfig 10000 0 CONFIG 0 config dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __CFG_LPT1OSC$OFF 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
@@ -667,22 +679,23 @@ __Lrbss 0 0 COMRAM 1 rbss dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.pro
 __Ltemp 0 0 COMRAM 1 temp dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Ltext 0 0 ABS 0 text dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __CFG_XINST$OFF 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-___wmul F810 0 CODE 0 text30 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+___wmul F808 0 CODE 0 text31 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hintret 0 0 ABS 0 intret dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hirdata 0 0 CODE 0 irdata dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __S0 10000 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__S1 45 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__S1 42 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __S2 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_calcular_temperatura F8E4 0 CODE 0 text3 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_calcular_temperatura F90E 0 CODE 0 text4 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hjflash_buffer F800 0 CODE 0 jflash_buffer dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __CFG_OSC$INTOSC 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __CFG_DSWDTPS$G2 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __CFG_PLLDIV$1 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_mostrar_fuera_rango F862 0 CODE 0 text2 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 ___awtoft@c 9 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_apagar_segmentos F740 0 CODE 0 text29 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_apagar_segmentos F738 0 CODE 0 text30 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lintentry 0 0 ABS 0 intentry dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hramtop F00 0 RAM 0 ramtop dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 _RTCCFGbits F3F 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
@@ -713,37 +726,39 @@ __Htext28 0 0 ABS 0 text28 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.pr
 __Htext29 0 0 ABS 0 text29 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Htext30 0 0 ABS 0 text30 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Htext31 0 0 ABS 0 text31 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__Htext32 0 0 ABS 0 text32 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __CFG_DSBOREN$OFF 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 ?___awtoft 9 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __CFG_DSWDTEN$OFF 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_construir_numero F9AA 0 CODE 0 text10 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_construir_numero FA40 0 CODE 0 text11 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 calcular_temperatura@voltage 37 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext10 F9AA 0 CODE 0 text10 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext11 F7D8 0 CODE 0 text11 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext12 F7F2 0 CODE 0 text12 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext13 F722 0 CODE 0 text13 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext14 F7BE 0 CODE 0 text14 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext15 F78E 0 CODE 0 text15 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext16 F750 0 CODE 0 text16 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext17 F778 0 CODE 0 text17 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext18 F762 0 CODE 0 text18 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext19 F70E 0 CODE 0 text19 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext20 F704 0 CODE 0 text20 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext21 F7A4 0 CODE 0 text21 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext22 F6FA 0 CODE 0 text22 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext23 F6F0 0 CODE 0 text23 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext24 F6E6 0 CODE 0 text24 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext25 F6DC 0 CODE 0 text25 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext26 F6D2 0 CODE 0 text26 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext27 F6C8 0 CODE 0 text27 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext28 F740 0 CODE 0 text28 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext29 F730 0 CODE 0 text29 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext30 F810 0 CODE 0 text30 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext31 FA3E 0 CODE 0 text31 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-___awdiv FA3E 0 CODE 0 text31 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-___ftadd FE34 0 CODE 0 text6 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-___ftmul FC30 0 CODE 0 text5 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-___fttol FD32 0 CODE 0 text4 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext10 F96E 0 CODE 0 text10 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext11 FA40 0 CODE 0 text11 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext12 F7D0 0 CODE 0 text12 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext13 F7EA 0 CODE 0 text13 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext14 F71A 0 CODE 0 text14 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext15 F7B6 0 CODE 0 text15 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext16 F786 0 CODE 0 text16 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext17 F748 0 CODE 0 text17 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext18 F770 0 CODE 0 text18 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext19 F75A 0 CODE 0 text19 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext20 F706 0 CODE 0 text20 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext21 F6FC 0 CODE 0 text21 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext22 F79C 0 CODE 0 text22 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext23 F6F2 0 CODE 0 text23 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext24 F6E8 0 CODE 0 text24 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext25 F6DE 0 CODE 0 text25 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext26 F6D4 0 CODE 0 text26 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext27 F6CA 0 CODE 0 text27 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext28 F6C0 0 CODE 0 text28 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext29 F738 0 CODE 0 text29 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext30 F728 0 CODE 0 text30 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext31 F808 0 CODE 0 text31 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext32 FAD4 0 CODE 0 text32 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+___awdiv FAD4 0 CODE 0 text32 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+___ftadd FE34 0 CODE 0 text7 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+___ftmul FC30 0 CODE 0 text6 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+___fttol FD32 0 CODE 0 text5 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lbank10 0 0 ABS 0 bank10 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lbank11 0 0 ABS 0 bank11 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lbank12 0 0 ABS 0 bank12 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
@@ -761,9 +776,8 @@ _LATCbits F8B 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.produ
 ?_calcular_temperatura 37 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-main@valor 43 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-stackhi EBF 0 ABS 0 - C:\Users\ddavi\AppData\Local\Temp\s98.obj
-stacklo 60 0 ABS 0 - C:\Users\ddavi\AppData\Local\Temp\s98.obj
+stackhi EBF 0 ABS 0 - C:\Users\ddavi\AppData\Local\Temp\s3fk.obj
+stacklo 60 0 ABS 0 - C:\Users\ddavi\AppData\Local\Temp\s3fk.obj
 __Lintcode 0 0 CODE 0 intcode dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
@@ -776,7 +790,7 @@ ___ftmul@sign 1B 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEV
 __CFG_DSWDTOSC$INTOSCREF 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lend_init 0 0 CODE 0 end_init dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-end_of_initialization F718 0 CODE 0 cinit dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+end_of_initialization F710 0 CODE 0 cinit dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hintentry 0 0 ABS 0 intentry dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
@@ -798,18 +812,18 @@ __size_of_number_7 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENT
 __size_of_number_8 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __size_of_number_9 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__pcinit F718 0 CODE 0 cinit dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_construir_numero FA3E 0 CODE 0 text10 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext0 FAD4 0 CODE 0 text0 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext1 F870 0 CODE 0 text1 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext2 F838 0 CODE 0 text2 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext3 F8E4 0 CODE 0 text3 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext4 FD32 0 CODE 0 text4 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext5 FC30 0 CODE 0 text5 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext6 FE34 0 CODE 0 text6 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext7 F8A8 0 CODE 0 text7 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext8 FB6A 0 CODE 0 text8 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ptext9 F944 0 CODE 0 text9 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__pcinit F710 0 CODE 0 cinit dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_construir_numero FAD4 0 CODE 0 text11 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext0 F9D4 0 CODE 0 text0 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext1 F89A 0 CODE 0 text1 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext2 F830 0 CODE 0 text2 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext3 F862 0 CODE 0 text3 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext4 F90E 0 CODE 0 text4 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext5 FD32 0 CODE 0 text5 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext6 FC30 0 CODE 0 text6 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext7 FE34 0 CODE 0 text7 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext8 F8D2 0 CODE 0 text8 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ptext9 FB6A 0 CODE 0 text9 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Ltext10 0 0 ABS 0 text10 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Ltext11 0 0 ABS 0 text11 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
@@ -833,54 +847,55 @@ __Ltext28 0 0 ABS 0 text28 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.pr
 __Ltext29 0 0 ABS 0 text29 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Ltext30 0 0 ABS 0 text30 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Ltext31 0 0 ABS 0 text31 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__ramtop F00 0 RAM 0 ramtop C:\Users\ddavi\AppData\Local\Temp\s98.obj
+__Ltext32 0 0 ABS 0 text32 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__ramtop F00 0 RAM 0 ramtop C:\Users\ddavi\AppData\Local\Temp\s3fk.obj
 __size_of_construir_numero 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_imprimir_temperatura F944 0 CODE 0 text9 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_imprimir_temperatura F96E 0 CODE 0 text10 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_encender_A F6C8 0 CODE 0 text27 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_encender_B F6D2 0 CODE 0 text26 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_encender_C F6DC 0 CODE 0 text25 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_encender_D F6E6 0 CODE 0 text24 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_encender_E F6F0 0 CODE 0 text23 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_encender_F F6FA 0 CODE 0 text22 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_encender_G F70E 0 CODE 0 text19 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_encender_A F6C0 0 CODE 0 text28 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_encender_B F6CA 0 CODE 0 text27 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_encender_C F6D4 0 CODE 0 text26 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_encender_D F6DE 0 CODE 0 text25 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_encender_E F6E8 0 CODE 0 text24 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_encender_F F6F2 0 CODE 0 text23 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_encender_G F706 0 CODE 0 text20 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 ___param_bank 10 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_leer_temperatura F838 0 CODE 0 text2 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_leer_temperatura F862 0 CODE 0 text3 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 ___ftmul@exp 16 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of__initialization F718 0 CODE 0 cinit dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of__initialization F710 0 CODE 0 cinit dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 ___ftpack@sign 5 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-main@temperatura 41 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+main@temperatura 40 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_number_0 F7A4 0 CODE 0 text21 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_number_1 F704 0 CODE 0 text20 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_number_2 F762 0 CODE 0 text18 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_number_3 F778 0 CODE 0 text17 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_number_4 F750 0 CODE 0 text16 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_number_5 F78E 0 CODE 0 text15 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_number_6 F7BE 0 CODE 0 text14 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_number_7 F722 0 CODE 0 text13 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_number_8 F7F2 0 CODE 0 text12 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_number_9 F7D8 0 CODE 0 text11 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_number_0 F79C 0 CODE 0 text22 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_number_1 F6FC 0 CODE 0 text21 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_number_2 F75A 0 CODE 0 text19 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_number_3 F770 0 CODE 0 text18 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_number_4 F748 0 CODE 0 text17 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_number_5 F786 0 CODE 0 text16 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_number_6 F7B6 0 CODE 0 text15 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_number_7 F71A 0 CODE 0 text14 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_number_8 F7EA 0 CODE 0 text13 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_number_9 F7D0 0 CODE 0 text12 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hend_init 4 0 CODE 0 end_init dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_main FB6A 0 CODE 0 text0 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_main FA40 0 CODE 0 text0 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 _TRISA F92 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 _TRISB F93 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 _TRISC F94 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_number_0 F7BE 0 CODE 0 text21 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_number_1 F70E 0 CODE 0 text20 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_number_2 F778 0 CODE 0 text18 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_number_3 F78E 0 CODE 0 text17 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_number_4 F762 0 CODE 0 text16 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_number_5 F7A4 0 CODE 0 text15 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_number_6 F7D8 0 CODE 0 text14 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_number_7 F730 0 CODE 0 text13 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_number_8 F810 0 CODE 0 text12 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_number_9 F7F2 0 CODE 0 text11 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_setup F8A8 0 CODE 0 text1 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_number_0 F7B6 0 CODE 0 text22 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_number_1 F706 0 CODE 0 text21 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_number_2 F770 0 CODE 0 text19 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_number_3 F786 0 CODE 0 text18 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_number_4 F75A 0 CODE 0 text17 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_number_5 F79C 0 CODE 0 text16 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_number_6 F7D0 0 CODE 0 text15 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_number_7 F728 0 CODE 0 text14 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_number_8 F808 0 CODE 0 text13 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_number_9 F7EA 0 CODE 0 text12 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_setup F8D2 0 CODE 0 text1 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __CFG_CP0$OFF 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __HRAM 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hbss 0 0 RAM 1 bss dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
@@ -890,18 +905,18 @@ __LRAM 1 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production
 __Lbss 0 0 RAM 1 bss dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lram 0 0 ABS 0 ram dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Lsfr 0 0 ABS 0 sfr dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-_setup F870 0 CODE 0 text1 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+_setup F89A 0 CODE 0 text1 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 ___fttol@sign1 31 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __CFG_CPUDIV$OSC1 0 0 ABS 0 - dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__initialization F718 0 CODE 0 cinit dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_encender_A F6D2 0 CODE 0 text27 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_encender_B F6DC 0 CODE 0 text26 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_encender_C F6E6 0 CODE 0 text25 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_encender_D F6F0 0 CODE 0 text24 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_encender_E F6FA 0 CODE 0 text23 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_encender_F F704 0 CODE 0 text22 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_encender_G F718 0 CODE 0 text19 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
-__end_of_tiempo_encendido_segmento F750 0 CODE 0 text28 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__initialization F710 0 CODE 0 cinit dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_encender_A F6CA 0 CODE 0 text28 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_encender_B F6D4 0 CODE 0 text27 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_encender_C F6DE 0 CODE 0 text26 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_encender_D F6E8 0 CODE 0 text25 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_encender_E F6F2 0 CODE 0 text24 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_encender_F F6FC 0 CODE 0 text23 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_encender_G F710 0 CODE 0 text20 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
+__end_of_tiempo_encendido_segmento F748 0 CODE 0 text29 dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 ___wmul@product 5 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
 __Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\PIC_DISPLAY_SEVEN_SEGMENTS.production.obj
@@ -933,39 +948,40 @@ ___ftmul@f3_as_product 17 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC_DI
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 F718 F718 A 1
-text0 0 FAD4 FAD4 96 1
-text1 0 F870 F870 38 1
-text2 0 F838 F838 38 1
-text3 0 F8E4 F8E4 60 1
-text4 0 FD32 FD32 102 1
-text5 0 FC30 FC30 102 1
-text6 0 FE34 FE34 1C4 1
-text7 0 F8A8 F8A8 3C 1
-text8 0 FB6A FB6A C6 1
-text9 0 F944 F944 66 1
-text10 0 F9AA F9AA 94 1
-text11 0 F7D8 F7D8 1A 1
-text12 0 F7F2 F7F2 1E 1
-text13 0 F722 F722 E 1
-text14 0 F7BE F7BE 1A 1
-text15 0 F78E F78E 16 1
-text16 0 F750 F750 12 1
-text17 0 F778 F778 16 1
-text18 0 F762 F762 16 1
-text19 0 F70E F70E A 1
-text20 0 F704 F704 A 1
-text21 0 F7A4 F7A4 1A 1
-text22 0 F6FA F6FA A 1
-text23 0 F6F0 F6F0 A 1
-text24 0 F6E6 F6E6 A 1
-text25 0 F6DC F6DC A 1
-text26 0 F6D2 F6D2 A 1
-text27 0 F6C8 F6C8 A 1
-text28 0 F740 F740 10 1
-text29 0 F730 F730 10 1
-text30 0 F810 F810 28 1
-text31 0 FA3E FA3E 96 1
-cstackCOMRAM 1 1 1 44 1
+cinit 0 F710 F710 A 1
+text0 0 F9D4 F9D4 6C 1
+text1 0 F89A F89A 38 1
+text2 0 F830 F830 32 1
+text3 0 F862 F862 38 1
+text4 0 F90E F90E 60 1
+text5 0 FD32 FD32 102 1
+text6 0 FC30 FC30 102 1
+text7 0 FE34 FE34 1C4 1
+text8 0 F8D2 F8D2 3C 1
+text9 0 FB6A FB6A C6 1
+text10 0 F96E F96E 66 1
+text11 0 FA40 FA40 94 1
+text12 0 F7D0 F7D0 1A 1
+text13 0 F7EA F7EA 1E 1
+text14 0 F71A F71A E 1
+text15 0 F7B6 F7B6 1A 1
+text16 0 F786 F786 16 1
+text17 0 F748 F748 12 1
+text18 0 F770 F770 16 1
+text19 0 F75A F75A 16 1
+text20 0 F706 F706 A 1
+text21 0 F6FC F6FC A 1
+text22 0 F79C F79C 1A 1
+text23 0 F6F2 F6F2 A 1
+text24 0 F6E8 F6E8 A 1
+text25 0 F6DE F6DE A 1
+text26 0 F6D4 F6D4 A 1
+text27 0 F6CA F6CA A 1
+text28 0 F6C0 F6C0 A 1
+text29 0 F738 F738 10 1
+text30 0 F728 F728 10 1
+text31 0 F808 F808 28 1
+text32 0 FAD4 FAD4 96 1
+cstackCOMRAM 1 1 1 41 1
 reset_vec 0 0 0 4 1
 config 0 FFF8 FFF8 8 1
