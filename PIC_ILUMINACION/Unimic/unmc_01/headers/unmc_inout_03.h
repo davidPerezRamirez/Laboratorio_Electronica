@@ -35,6 +35,7 @@ char key;         //variable key
 #define Speaker          LATCbits.LATC7
 #define Speaker_On       Speaker = 1;
 #define Speaker_Off      Speaker = 0;
+
 //
 ///** S W I T C H *****************************************************/
 #define switch1         PORTAbits.RA1
@@ -51,3 +52,13 @@ char key;         //variable key
 #define column4         PORTCbits.RC2
 
 /********************************************************************/
+
+#define lista_leds_rojo_on       row4=1;
+#define lista_leds_rojo_off      row4=0;
+#define lista_leds_verde         LATAbits.LATA5
+#define lista_leds_verde_on      lista_leds_verde = 1;
+#define lista_leds_verde_off     lista_leds_verde = 0; 
+#define lista_leds_azul          LATAbits.LATA7
+#define lista_leds_azul_on       lista_leds_azul = 1;
+#define lista_leds_azul_off      lista_leds_azul = 0;
+

@@ -103,6 +103,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ANCON0 `Vuc ~T0 @X0 0 e@3912 ]
 "2577
 [v _ANCON1 `Vuc ~T0 @X0 0 e@3913 ]
+"10784
+[v _ADCON0 `Vuc ~T0 @X0 0 e@4034 ]
+"10682
+[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
 "13132
 [s S844 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :2 `uc 1 ]
 [n S844 . TMR1ON RD16 T1SYNC T1OSCEN T1CKPS TMR1CS ]
@@ -155,11 +159,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S445 . . . . . . . . . . ]
 "6401
 [v _LATBbits `VS445 ~T0 @X0 0 e@3978 ]
-[v F8145 `(v ~T0 @X0 1 tf1`ul ]
-"161 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18.h
-[v __delay `JF8145 ~T0 @X0 0 e ]
-[p i __delay ]
-"6232 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
+"6232
 [s S436 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S436 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
 "6242
@@ -191,7 +191,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S435 . . . . . . . . . . ]
 "6274
 [v _LATAbits `VS435 ~T0 @X0 0 e@3977 ]
-"5275
+[v F8145 `(v ~T0 @X0 1 tf1`ul ]
+"161 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18.h
+[v __delay `JF8145 ~T0 @X0 0 e ]
+[p i __delay ]
+"5275 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
 [s S395 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S395 . RA0 RA1 RA2 RA3 . RA5 RA6 RA7 ]
 "5285
@@ -229,6 +233,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S394 . . . . . . . . . . . . ]
 "5344
 [v _PORTAbits `VS394 ~T0 @X0 0 e@3968 ]
+"10790
+[s S689 :1 `uc 1 :1 `uc 1 ]
+[n S689 . . GO_NOT_DONE ]
+"10794
+[s S690 :1 `uc 1 :1 `uc 1 :4 `uc 1 :2 `uc 1 ]
+[n S690 . ADON GO_nDONE CHS VCFG ]
+"10800
+[s S691 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S691 . . GO_DONE CHS0 CHS1 CHS2 CHS3 VCFG0 VCFG1 ]
+"10810
+[s S692 :1 `uc 1 :1 `uc 1 ]
+[n S692 . . DONE ]
+"10814
+[s S693 :1 `uc 1 :1 `uc 1 ]
+[n S693 . . GO ]
+"10818
+[s S694 :1 `uc 1 :1 `uc 1 ]
+[n S694 . . NOT_DONE ]
+"10822
+[s S695 :1 `uc 1 :1 `uc 1 ]
+[n S695 . . nDONE ]
+"10826
+[s S696 :7 `uc 1 :1 `uc 1 ]
+[n S696 . . ADCAL ]
+"10830
+[s S697 :1 `uc 1 :1 `uc 1 ]
+[n S697 . . GODONE ]
+"10789
+[u S688 `S689 1 `S690 1 `S691 1 `S692 1 `S693 1 `S694 1 `S695 1 `S696 1 `S697 1 ]
+[n S688 . . . . . . . . . . ]
+"10835
+[v _ADCON0bits `VS688 ~T0 @X0 0 e@4034 ]
+"10954
+[v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
 [p mainexit ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -8216,21 +8254,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 47: OSCCONbits.SCS1=0;
 "47
 [e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-[; ;main.c: 48: TRISA = 0b11110000;
+[; ;main.c: 48: TRISA = 0b01010011;
 "48
-[e = _TRISA -> -> 240 `i `uc ]
+[e = _TRISA -> -> 83 `i `uc ]
 [; ;main.c: 49: TRISB = 0;
 "49
 [e = _TRISB -> -> 0 `i `uc ]
 [; ;main.c: 50: TRISC = 0b00000111;
 "50
 [e = _TRISC -> -> 7 `i `uc ]
-[; ;main.c: 54: ANCON0=0b11111111;
+[; ;main.c: 54: ANCON0=0b11111110;
 "54
-[e = _ANCON0 -> -> 255 `i `uc ]
-[; ;main.c: 56: ANCON1=0b11111111;
+[e = _ANCON0 -> -> 254 `i `uc ]
+[; ;main.c: 56: ANCON1=0b1111111;
 "56
-[e = _ANCON1 -> -> 255 `i `uc ]
+[e = _ANCON1 -> -> 127 `i `uc ]
+[; ;main.c: 57: ADCON0=0b00000000;
+"57
+[e = _ADCON0 -> -> 0 `i `uc ]
+[; ;main.c: 58: ADCON1=0b00111000;
+"58
+[e = _ADCON1 -> -> 56 `i `uc ]
 [; ;main.c: 59: RTCCFGbits.RTCEN=1;
 "59
 [e = . . _RTCCFGbits 0 7 -> -> 1 `i `uc ]
@@ -8252,132 +8296,144 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 65: LATBbits.LATB0 = 0;;
 "65
 [e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 66: }
+[; ;main.c: 66: LATAbits.LATA3=0;;
 "66
+[e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 67: LATAbits.LATA7 = 0;;
+"67
+[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
+[; ;main.c: 68: LATAbits.LATA5 = 0;;
+"68
+[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 69: }
+"69
 [e :UE 1039 ]
 }
-"68
+"71
 [v _encender_led `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;main.c: 68: void encender_led(int led){
+[; ;main.c: 71: void encender_led(int led){
 [e :U _encender_led ]
 [v _led `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 69: switch(led){
-"69
+[; ;main.c: 72: switch(led){
+"72
 [e $U 1042  ]
 {
-[; ;main.c: 70: case 1: LATBbits.LATB2 = 1;;LATBbits.LATB1 = 0;;LATBbits.LATB0 = 0;;break;
-"70
+[; ;main.c: 73: case 1: LATBbits.LATB2 = 1;;LATBbits.LATB1 = 0;;LATBbits.LATB0 = 0;;break;
+"73
 [e :U 1043 ]
 [e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
 [e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
 [e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
 [e $U 1041  ]
-[; ;main.c: 71: case 2: LATBbits.LATB1 = 1;;LATBbits.LATB2 = 0;;LATBbits.LATB0 = 0;;break;
-"71
+[; ;main.c: 74: case 2: LATBbits.LATB1 = 1;;LATBbits.LATB2 = 0;;LATBbits.LATB0 = 0;;break;
+"74
 [e :U 1044 ]
 [e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
 [e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
 [e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
 [e $U 1041  ]
-[; ;main.c: 72: case 3: LATBbits.LATB0 = 1;;LATBbits.LATB2 = 0;;LATBbits.LATB1 = 0;;break;
-"72
+[; ;main.c: 75: case 3: LATBbits.LATB0 = 1;;LATBbits.LATB2 = 0;;LATBbits.LATB1 = 0;;break;
+"75
 [e :U 1045 ]
 [e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
 [e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
 [e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
 [e $U 1041  ]
-"73
-}
-[; ;main.c: 73: }
+[; ;main.c: 76: case 4: LATAbits.LATA3=1;;break;
+"76
+[e :U 1046 ]
+[e = . . _LATAbits 0 3 -> -> 1 `i `uc ]
 [e $U 1041  ]
-"69
+[; ;main.c: 77: case 5: LATAbits.LATA7 = 1;;break;
+"77
+[e :U 1047 ]
+[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
+[e $U 1041  ]
+[; ;main.c: 78: case 6: LATAbits.LATA5 = 1;;break;
+"78
+[e :U 1048 ]
+[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+[e $U 1041  ]
+"79
+}
+[; ;main.c: 79: }
+[e $U 1041  ]
+"72
 [e :U 1042 ]
 [e [\ _led , $ -> 1 `i 1043
  , $ -> 2 `i 1044
  , $ -> 3 `i 1045
+ , $ -> 4 `i 1046
+ , $ -> 5 `i 1047
+ , $ -> 6 `i 1048
  1041 ]
-"73
+"79
 [e :U 1041 ]
-[; ;main.c: 74: }
-"74
+[; ;main.c: 80: }
+"80
 [e :UE 1040 ]
 }
-"76
+"82
 [v _apagar_led `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;main.c: 76: void apagar_led(int led){
+[; ;main.c: 82: void apagar_led(int led){
 [e :U _apagar_led ]
 [v _led `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 77: switch(led){
-"77
-[e $U 1048  ]
+[; ;main.c: 83: switch(led){
+"83
+[e $U 1051  ]
 {
-[; ;main.c: 78: case 1: LATBbits.LATB2 = 0;;break;
-"78
-[e :U 1049 ]
-[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
-[e $U 1047  ]
-[; ;main.c: 79: case 2: LATBbits.LATB1 = 0;;break;
-"79
-[e :U 1050 ]
-[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-[e $U 1047  ]
-[; ;main.c: 80: case 3: LATBbits.LATB0 = 0;;break;
-"80
-[e :U 1051 ]
-[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
-[e $U 1047  ]
-"81
-}
-[; ;main.c: 81: }
-[e $U 1047  ]
-"77
-[e :U 1048 ]
-[e [\ _led , $ -> 1 `i 1049
- , $ -> 2 `i 1050
- , $ -> 3 `i 1051
- 1047 ]
-"81
-[e :U 1047 ]
-[; ;main.c: 82: }
-"82
-[e :UE 1046 ]
-}
+[; ;main.c: 84: case 1: LATBbits.LATB2 = 0;;break;
 "84
-[v _activar_retardo `(v ~T0 @X0 1 ef1`i ]
-{
-[; ;main.c: 84: void activar_retardo(int cant_retardo){
-[e :U _activar_retardo ]
-[v _cant_retardo `i ~T0 @X0 1 r1 ]
-[f ]
-[v _i `i ~T0 @X0 1 a ]
-[; ;main.c: 85: int i = 0;
+[e :U 1052 ]
+[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
+[e $U 1050  ]
+[; ;main.c: 85: case 2: LATBbits.LATB1 = 0;;break;
 "85
-[e = _i -> 0 `i ]
-[; ;main.c: 87: while (i < cant_retardo){
-"87
-[e $U 1053  ]
+[e :U 1053 ]
+[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
+[e $U 1050  ]
+[; ;main.c: 86: case 3: LATBbits.LATB0 = 0;;break;
+"86
 [e :U 1054 ]
-{
-[; ;main.c: 88: _delay((unsigned long)((500)*(8000000/4000000.0)));
+[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
+[e $U 1050  ]
+[; ;main.c: 87: case 4: LATAbits.LATA3=0;; break;
+"87
+[e :U 1055 ]
+[e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
+[e $U 1050  ]
+[; ;main.c: 88: case 5: LATAbits.LATA7 = 0;; break;
 "88
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-[; ;main.c: 89: i++;
+[e :U 1056 ]
+[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
+[e $U 1050  ]
+[; ;main.c: 89: case 6: LATAbits.LATA5 = 0;; break;
 "89
-[e ++ _i -> 1 `i ]
+[e :U 1057 ]
+[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
+[e $U 1050  ]
 "90
 }
-[e :U 1053 ]
-"87
-[e $ < _i _cant_retardo 1054  ]
-[e :U 1055 ]
 [; ;main.c: 90: }
+[e $U 1050  ]
+"83
+[e :U 1051 ]
+[e [\ _led , $ -> 1 `i 1052
+ , $ -> 2 `i 1053
+ , $ -> 3 `i 1054
+ , $ -> 4 `i 1055
+ , $ -> 5 `i 1056
+ , $ -> 6 `i 1057
+ 1050 ]
+"90
+[e :U 1050 ]
 [; ;main.c: 91: }
 "91
-[e :UE 1052 ]
+[e :UE 1049 ]
 }
 "93
 [v _intensidad_led `(v ~T0 @X0 1 ef2`i`i ]
@@ -8387,148 +8443,354 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _num_led `i ~T0 @X0 1 r1 ]
 [v _intensidad `i ~T0 @X0 1 r2 ]
 [f ]
-[; ;main.c: 95: encender_led(num_led);
+[v _i `i ~T0 @X0 1 a ]
+[; ;main.c: 95: int i = 1;
 "95
-[e ( _encender_led (1 _num_led ]
-[; ;main.c: 96: activar_retardo(intensidad);
-"96
-[e ( _activar_retardo (1 _intensidad ]
-[; ;main.c: 98: apagar_led(num_led);
+[e = _i -> 1 `i ]
+[; ;main.c: 97: while (i < 32 + 1){
+"97
+[e $U 1059  ]
+[e :U 1060 ]
+{
+[; ;main.c: 98: if (i < intensidad)
 "98
-[e ( _apagar_led (1 _num_led ]
-[; ;main.c: 99: activar_retardo(32 - intensidad);
+[e $ ! < _i _intensidad 1062  ]
+[; ;main.c: 99: encender_led(num_led);
 "99
-[e ( _activar_retardo (1 - -> 32 `i _intensidad ]
-[; ;main.c: 100: }
+[e ( _encender_led (1 _num_led ]
+[e $U 1063  ]
 "100
-[e :UE 1056 ]
+[e :U 1062 ]
+[; ;main.c: 100: else
+[; ;main.c: 101: apagar_led(num_led);
+"101
+[e ( _apagar_led (1 _num_led ]
+[e :U 1063 ]
+[; ;main.c: 103: _delay((unsigned long)((500)*(8000000/4000000.0)));
+"103
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;main.c: 104: i++;
+"104
+[e ++ _i -> 1 `i ]
+"105
 }
-"102
+[e :U 1059 ]
+"97
+[e $ < _i + -> 32 `i -> 1 `i 1060  ]
+[e :U 1061 ]
+[; ;main.c: 105: }
+[; ;main.c: 106: }
+"106
+[e :UE 1058 ]
+}
+"108
 [v _leer_teclado `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 102: void leer_teclado(){
+[; ;main.c: 108: void leer_teclado(){
 [e :U _leer_teclado ]
 [f ]
-[; ;main.c: 103: LATAbits.LATA0=1;
-"103
+[; ;main.c: 109: LATAbits.LATA0=1;
+"109
 [e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 104: LATAbits.LATA1=0;
-"104
+[; ;main.c: 110: LATAbits.LATA1=0;
+"110
 [e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 105: LATAbits.LATA2=0;
-"105
+[; ;main.c: 111: LATAbits.LATA2=0;
+"111
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 106: LATAbits.LATA3=0;
-"106
+[; ;main.c: 112: LATAbits.LATA3=0;
+"112
 [e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 107: {
-"107
+[; ;main.c: 113: {
+"113
 {
-[; ;main.c: 108: if (PORTAbits.RA5==1&&LATAbits.LATA0==1){key=1;intensidad_led(1,1);}
-"108
-[e $ ! && == -> . . _PORTAbits 0 5 `i -> 1 `i == -> . . _LATAbits 0 0 `i -> 1 `i 1058  ]
+[; ;main.c: 114: if (PORTAbits.RA5==1&&LATAbits.LATA0==1){key=1;intensidad_led(1,1);}
+"114
+[e $ ! && == -> . . _PORTAbits 0 5 `i -> 1 `i == -> . . _LATAbits 0 0 `i -> 1 `i 1065  ]
 {
 [e = _key -> -> 1 `i `uc ]
 [e ( _intensidad_led (2 , -> 1 `i -> 1 `i ]
 }
-[e :U 1058 ]
-[; ;main.c: 109: if (PORTAbits.RA7==1&&LATAbits.LATA0==1){key=2;intensidad_led(2,2);}
-"109
-[e $ ! && == -> . . _PORTAbits 0 7 `i -> 1 `i == -> . . _LATAbits 0 0 `i -> 1 `i 1059  ]
+[e :U 1065 ]
+[; ;main.c: 115: if (PORTAbits.RA7==1&&LATAbits.LATA0==1){key=2;intensidad_led(2,2);}
+"115
+[e $ ! && == -> . . _PORTAbits 0 7 `i -> 1 `i == -> . . _LATAbits 0 0 `i -> 1 `i 1066  ]
 {
 [e = _key -> -> 2 `i `uc ]
 [e ( _intensidad_led (2 , -> 2 `i -> 2 `i ]
 }
-[e :U 1059 ]
-[; ;main.c: 110: if (PORTAbits.RA6==1&&LATAbits.LATA0==1){key=3;intensidad_led(3,4);}
-"110
-[e $ ! && == -> . . _PORTAbits 0 6 `i -> 1 `i == -> . . _LATAbits 0 0 `i -> 1 `i 1060  ]
+[e :U 1066 ]
+[; ;main.c: 116: if (PORTAbits.RA6==1&&LATAbits.LATA0==1){key=3;intensidad_led(3,4);}
+"116
+[e $ ! && == -> . . _PORTAbits 0 6 `i -> 1 `i == -> . . _LATAbits 0 0 `i -> 1 `i 1067  ]
 {
 [e = _key -> -> 3 `i `uc ]
 [e ( _intensidad_led (2 , -> 3 `i -> 4 `i ]
 }
-[e :U 1060 ]
-"111
-}
-[; ;main.c: 111: }
-[; ;main.c: 112: LATAbits.LATA0=0;
-"112
-[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 113: LATAbits.LATA1=1;
-"113
-[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 114: LATAbits.LATA2=0;
-"114
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 115: LATAbits.LATA3=0;
-"115
-[e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 116: {
-"116
-{
-[; ;main.c: 117: if (PORTAbits.RA5==1&&LATAbits.LATA1==1){key=4;intensidad_led(1,8);}
+[e :U 1067 ]
 "117
-[e $ ! && == -> . . _PORTAbits 0 5 `i -> 1 `i == -> . . _LATAbits 0 1 `i -> 1 `i 1061  ]
+}
+[; ;main.c: 117: }
+[; ;main.c: 118: LATAbits.LATA0=0;
+"118
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 119: LATAbits.LATA1=1;
+"119
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 120: LATAbits.LATA2=0;
+"120
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 121: LATAbits.LATA3=0;
+"121
+[e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 122: {
+"122
+{
+[; ;main.c: 123: if (PORTAbits.RA5==1&&LATAbits.LATA1==1){key=4;intensidad_led(1,8);}
+"123
+[e $ ! && == -> . . _PORTAbits 0 5 `i -> 1 `i == -> . . _LATAbits 0 1 `i -> 1 `i 1068  ]
 {
 [e = _key -> -> 4 `i `uc ]
 [e ( _intensidad_led (2 , -> 1 `i -> 8 `i ]
 }
-[e :U 1061 ]
-[; ;main.c: 118: if (PORTAbits.RA7==1&&LATAbits.LATA1==1){key=5;intensidad_led(2,16);}
-"118
-[e $ ! && == -> . . _PORTAbits 0 7 `i -> 1 `i == -> . . _LATAbits 0 1 `i -> 1 `i 1062  ]
+[e :U 1068 ]
+[; ;main.c: 124: if (PORTAbits.RA7==1&&LATAbits.LATA1==1){key=5;intensidad_led(2,16);}
+"124
+[e $ ! && == -> . . _PORTAbits 0 7 `i -> 1 `i == -> . . _LATAbits 0 1 `i -> 1 `i 1069  ]
 {
 [e = _key -> -> 5 `i `uc ]
 [e ( _intensidad_led (2 , -> 2 `i -> 16 `i ]
 }
-[e :U 1062 ]
-[; ;main.c: 119: if (PORTAbits.RA6==1&&LATAbits.LATA1==1){key=6;intensidad_led(3,25);}
-"119
-[e $ ! && == -> . . _PORTAbits 0 6 `i -> 1 `i == -> . . _LATAbits 0 1 `i -> 1 `i 1063  ]
+[e :U 1069 ]
+[; ;main.c: 125: if (PORTAbits.RA6==1&&LATAbits.LATA1==1){key=6;intensidad_led(3,31);}
+"125
+[e $ ! && == -> . . _PORTAbits 0 6 `i -> 1 `i == -> . . _LATAbits 0 1 `i -> 1 `i 1070  ]
 {
 [e = _key -> -> 6 `i `uc ]
-[e ( _intensidad_led (2 , -> 3 `i -> 25 `i ]
+[e ( _intensidad_led (2 , -> 3 `i -> 31 `i ]
 }
-[e :U 1063 ]
-"120
+[e :U 1070 ]
+"126
 }
-[; ;main.c: 120: }
-[; ;main.c: 121: }
-"121
-[e :UE 1057 ]
+[; ;main.c: 126: }
+[; ;main.c: 127: }
+"127
+[e :UE 1064 ]
 }
-"128
-[v _main `(i ~T0 @X0 1 ef ]
 "129
+[v _flash_leds `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;main.c: 128: int main(void)
-[; ;main.c: 129: {
+[; ;main.c: 129: void flash_leds(int intensidad){
+[e :U _flash_leds ]
+[v _intensidad `i ~T0 @X0 1 r1 ]
+[f ]
+"130
+[v _contador `i ~T0 @X0 1 a ]
+[; ;main.c: 130: int contador = 0;
+[e = _contador -> 0 `i ]
+[; ;main.c: 131: while (contador < 15){
+"131
+[e $U 1072  ]
+[e :U 1073 ]
+{
+[; ;main.c: 132: intensidad_led(4,intensidad);
+"132
+[e ( _intensidad_led (2 , -> 4 `i _intensidad ]
+[; ;main.c: 133: intensidad_led(5,intensidad);
+"133
+[e ( _intensidad_led (2 , -> 5 `i _intensidad ]
+[; ;main.c: 134: intensidad_led(6,intensidad);
+"134
+[e ( _intensidad_led (2 , -> 6 `i _intensidad ]
+[; ;main.c: 135: apagar_led(4);
+"135
+[e ( _apagar_led (1 -> 4 `i ]
+[; ;main.c: 136: apagar_led(5);
+"136
+[e ( _apagar_led (1 -> 5 `i ]
+[; ;main.c: 137: apagar_led(6);
+"137
+[e ( _apagar_led (1 -> 6 `i ]
+[; ;main.c: 138: contador++;
+"138
+[e ++ _contador -> 1 `i ]
+"139
+}
+[e :U 1072 ]
+"131
+[e $ < _contador -> 15 `i 1073  ]
+[e :U 1074 ]
+[; ;main.c: 139: }
+[; ;main.c: 140: }
+"140
+[e :UE 1071 ]
+}
+"142
+[v _activar_led `(v ~T0 @X0 1 ef2`i`*i ]
+{
+[; ;main.c: 142: void activar_led(int intensidad, int *id_led){
+[e :U _activar_led ]
+[v _intensidad `i ~T0 @X0 1 r1 ]
+[v _id_led `*i ~T0 @X0 1 r2 ]
+[f ]
+"144
+[v _contador `i ~T0 @X0 1 a ]
+[; ;main.c: 144: int contador = 0;
+[e = _contador -> 0 `i ]
+[; ;main.c: 146: while (contador < 15){
+"146
+[e $U 1076  ]
+[e :U 1077 ]
+{
+[; ;main.c: 147: intensidad_led((*id_led),intensidad);
+"147
+[e ( _intensidad_led (2 , *U _id_led _intensidad ]
+[; ;main.c: 148: contador++;
+"148
+[e ++ _contador -> 1 `i ]
+"149
+}
+[e :U 1076 ]
+"146
+[e $ < _contador -> 15 `i 1077  ]
+[e :U 1078 ]
+[; ;main.c: 149: }
+[; ;main.c: 150: contador = 0;
+"150
+[e = _contador -> 0 `i ]
+[; ;main.c: 151: (*id_led)++;
+"151
+[e ++ *U _id_led -> 1 `i ]
+[; ;main.c: 152: if ((*id_led) > 6)
+"152
+[e $ ! > *U _id_led -> 6 `i 1079  ]
+[; ;main.c: 153: (*id_led) = 4;
+"153
+[e = *U _id_led -> 4 `i ]
+[e :U 1079 ]
+[; ;main.c: 154: apagar_led((*id_led));
+"154
+[e ( _apagar_led (1 *U _id_led ]
+[; ;main.c: 155: }
+"155
+[e :UE 1075 ]
+}
+"158
+[v _calcular_intensidad `(i ~T0 @X0 1 ef1`i ]
+{
+[; ;main.c: 158: int calcular_intensidad(int voltage){
+[e :U _calcular_intensidad ]
+[v _voltage `i ~T0 @X0 1 r1 ]
+[f ]
+[; ;main.c: 159: return (int)(0.125 * voltage);
+"159
+[e ) -> * .0.125 -> _voltage `d `i ]
+[e $UE 1080  ]
+[; ;main.c: 160: }
+"160
+[e :UE 1080 ]
+}
+"162
+[v _leer_intensidad `(i ~T0 @X0 1 ef ]
+{
+[; ;main.c: 162: int leer_intensidad(){
+[e :U _leer_intensidad ]
+[f ]
+[; ;main.c: 163: ADCON0bits.ADON = 1;
+"163
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+[; ;main.c: 164: ADCON0bits.GO = 1;
+"164
+[e = . . _ADCON0bits 4 1 -> -> 1 `i `uc ]
+"165
+[v _voltage `i ~T0 @X0 1 a ]
+[; ;main.c: 165: int voltage;
+[; ;main.c: 167: while (ADCON0bits.GO);
+"167
+[e $U 1082  ]
+[e :U 1083 ]
+[e :U 1082 ]
+[e $ != -> . . _ADCON0bits 4 1 `i -> -> -> 0 `i `Vuc `i 1083  ]
+[e :U 1084 ]
+[; ;main.c: 168: _delay((unsigned long)((1)*(8000000/4000.0)));
+"168
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 169: voltage = ADRESH;
+"169
+[e = _voltage -> _ADRESH `i ]
+[; ;main.c: 170: ADCON0bits.ADON = 0;
+"170
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+[; ;main.c: 171: return calcular_intensidad(voltage);
+"171
+[e ) ( _calcular_intensidad (1 _voltage ]
+[e $UE 1081  ]
+[; ;main.c: 172: }
+"172
+[e :UE 1081 ]
+}
+"183
+[v _main `(i ~T0 @X0 1 ef ]
+"184
+{
+[; ;main.c: 183: int main(void)
+[; ;main.c: 184: {
 [e :U _main ]
 [f ]
-[; ;main.c: 130: Setup();
-"130
+[; ;main.c: 185: Setup();
+"185
 [e ( _Setup ..  ]
-[; ;main.c: 131: while(1)
-"131
-[e :U 1066 ]
-[; ;main.c: 132: {
-"132
+"186
+[v _intensidad `i ~T0 @X0 1 a ]
+[; ;main.c: 186: int intensidad = 32;
+[e = _intensidad -> 32 `i ]
+"187
+[v _id_led `i ~T0 @X0 1 a ]
+[; ;main.c: 187: int id_led = 4;
+[e = _id_led -> 4 `i ]
+[; ;main.c: 189: while(1)
+"189
+[e :U 1087 ]
+[; ;main.c: 190: {
+"190
 {
-[; ;main.c: 133: leer_teclado();
-"133
-[e ( _leer_teclado ..  ]
-"134
+[; ;main.c: 192: intensidad = leer_intensidad();
+"192
+[e = _intensidad ( _leer_intensidad ..  ]
+[; ;main.c: 193: if (PORTAbits.RA1 == 0){
+"193
+[e $ ! == -> . . _PORTAbits 0 1 `i -> 0 `i 1089  ]
+{
+[; ;main.c: 194: if (intensidad > 28)
+"194
+[e $ ! > _intensidad -> 28 `i 1090  ]
+[; ;main.c: 195: flash_leds(leer_intensidad());
+"195
+[e ( _flash_leds (1 ( _leer_intensidad ..  ]
+[e $U 1091  ]
+"196
+[e :U 1090 ]
+[; ;main.c: 196: else
+[; ;main.c: 197: activar_led(intensidad, &id_led);
+"197
+[e ( _activar_led (2 , _intensidad &U _id_led ]
+[e :U 1091 ]
+"198
 }
-[e :U 1065 ]
-"131
-[e $U 1066  ]
-[e :U 1067 ]
-[; ;main.c: 134: }
-[; ;main.c: 135: return 0;
-"135
+[e :U 1089 ]
+"199
+}
+[e :U 1086 ]
+"189
+[e $U 1087  ]
+[e :U 1088 ]
+[; ;main.c: 198: }
+[; ;main.c: 199: }
+[; ;main.c: 200: return 0;
+"200
 [e ) -> 0 `i ]
-[e $UE 1064  ]
-[; ;main.c: 136: }
-"136
-[e :UE 1064 ]
+[e $UE 1085  ]
+[; ;main.c: 201: }
+"201
+[e :UE 1085 ]
 }

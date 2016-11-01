@@ -10001,17 +10001,17 @@ OSCCONbits.IRCF1=1;
 OSCCONbits.IRCF2=1;
 OSCCONbits.SCS0=0;
 OSCCONbits.SCS1=0;
-TRISA = 0b11110000;
+TRISA = 0b01010011;
 TRISB = 0;
 TRISC = 0b00000111;
 
 
 
-ANCON0=0b11111111;
+ANCON0=0b11111110;
 
-ANCON1=0b11111111;
-
-
+ANCON1=0b1111111;
+ADCON0=0b00000000;
+ADCON1=0b00111000;
 RTCCFGbits.RTCEN=1;
 RTCCFGbits.RTCWREN=1;
 T1CONbits.T1OSCEN=1;
@@ -10019,6 +10019,9 @@ Write_RTC();
 LATBbits.LATB2 = 0;;
 LATBbits.LATB1 = 0;;
 LATBbits.LATB0 = 0;;
+LATAbits.LATA3=0;;
+LATAbits.LATA7 = 0;;
+LATAbits.LATA5 = 0;;
 }
 
 void encender_led(int led){
@@ -10026,6 +10029,9 @@ switch(led){
 case 1: LATBbits.LATB2 = 1;;LATBbits.LATB1 = 0;;LATBbits.LATB0 = 0;;break;
 case 2: LATBbits.LATB1 = 1;;LATBbits.LATB2 = 0;;LATBbits.LATB0 = 0;;break;
 case 3: LATBbits.LATB0 = 1;;LATBbits.LATB2 = 0;;LATBbits.LATB1 = 0;;break;
+case 4: LATAbits.LATA3=1;;break;
+case 5: LATAbits.LATA7 = 1;;break;
+case 6: LATAbits.LATA5 = 1;;break;
 }
 }
 
@@ -10034,25 +10040,25 @@ switch(led){
 case 1: LATBbits.LATB2 = 0;;break;
 case 2: LATBbits.LATB1 = 0;;break;
 case 3: LATBbits.LATB0 = 0;;break;
-}
-}
-
-void activar_retardo(int cant_retardo){
-int i = 0;
-
-while (i < cant_retardo){
-_delay((unsigned long)((500)*(8000000/4000000.0)));
-i++;
+case 4: LATAbits.LATA3=0;; break;
+case 5: LATAbits.LATA7 = 0;; break;
+case 6: LATAbits.LATA5 = 0;; break;
 }
 }
 
 void intensidad_led(int num_led, int intensidad){
 
-encender_led(num_led);
-activar_retardo(intensidad);
+int i = 1;
 
+while (i < 32 + 1){
+if (i < intensidad)
+encender_led(num_led);
+else
 apagar_led(num_led);
-activar_retardo(32 - intensidad);
+
+_delay((unsigned long)((500)*(8000000/4000000.0)));
+i++;
+}
 }
 
 void leer_teclado(){
@@ -10072,17 +10078,72 @@ LATAbits.LATA3=0;
 {
 if (PORTAbits.RA5==1&&LATAbits.LATA1==1){key=4;intensidad_led(1,8);}
 if (PORTAbits.RA7==1&&LATAbits.LATA1==1){key=5;intensidad_led(2,16);}
-if (PORTAbits.RA6==1&&LATAbits.LATA1==1){key=6;intensidad_led(3,25);}
+if (PORTAbits.RA6==1&&LATAbits.LATA1==1){key=6;intensidad_led(3,31);}
 }
 }
 
-# 128
+void flash_leds(int intensidad){
+int contador = 0;
+while (contador < 15){
+intensidad_led(4,intensidad);
+intensidad_led(5,intensidad);
+intensidad_led(6,intensidad);
+apagar_led(4);
+apagar_led(5);
+apagar_led(6);
+contador++;
+}
+}
+
+void activar_led(int intensidad, int *id_led){
+
+int contador = 0;
+
+while (contador < 15){
+intensidad_led((*id_led),intensidad);
+contador++;
+}
+contador = 0;
+(*id_led)++;
+if ((*id_led) > 6)
+(*id_led) = 4;
+apagar_led((*id_led));
+}
+
+
+int calcular_intensidad(int voltage){
+return (int)(0.125 * voltage);
+}
+
+int leer_intensidad(){
+ADCON0bits.ADON = 1;
+ADCON0bits.GO = 1;
+int voltage;
+
+while (ADCON0bits.GO);
+_delay((unsigned long)((1)*(8000000/4000.0)));
+voltage = ADRESH;
+ADCON0bits.ADON = 0;
+return calcular_intensidad(voltage);
+}
+
+# 183
 int main(void)
 {
 Setup();
+int intensidad = 32;
+int id_led = 4;
+
 while(1)
 {
-leer_teclado();
+
+intensidad = leer_intensidad();
+if (PORTAbits.RA1 == 0){
+if (intensidad > 28)
+flash_leds(leer_intensidad());
+else
+activar_led(intensidad, &id_led);
+}
 }
 return 0;
 }

@@ -45,17 +45,17 @@
     OSCCONbits.IRCF2=1;
     OSCCONbits.SCS0=0;              //oscilator INTRC
     OSCCONbits.SCS1=0;
-    TRISA = 0b11110000;
+    TRISA = 0b01010011;
     TRISB = 0;
     TRISC = 0b00000111;
     //TRISAbits.TRISA0=1;
     //TRISBbits.TRISB0=0;
     //TRISCbits.TRISC0=0;
-    ANCON0=0b11111111;              // Config AN7 to AN0 Digital Ports
-    //ANCON1=0b10010111;            // Config AN11 Analog Port
-    ANCON1=0b11111111;              // Config AN12 to AN8 Digital Ports
-    //ADCON0=0b00101101;
-    //ADCON1=0b00010000;            Sin Conversor AD
+    ANCON0=0b11111110;          // Config AN7 to AN0 Digital Ports
+    //ANCON1=0b10010111;        // Config AN11 Analog Port
+    ANCON1=0b1111111;          // Config AN12 to AN8 Digital Ports
+    ADCON0=0b00000000;          // Control AN11 Analog Port
+    ADCON1=0b00111000;           //Sin Conversor AD
     RTCCFGbits.RTCEN=1;
     RTCCFGbits.RTCWREN=1;
     T1CONbits.T1OSCEN=1;
@@ -63,6 +63,9 @@
     LED_1_Off;
     LED_2_Off;
     LED_3_Off;
+    lista_leds_rojo_off;
+    lista_leds_azul_off;
+    lista_leds_verde_off;
     }
     
     void encender_led(int led){
@@ -70,6 +73,9 @@
             case 1: LED_1_On;LED_2_Off;LED_3_Off;break;
             case 2: LED_2_On;LED_1_Off;LED_3_Off;break;
             case 3: LED_3_On;LED_1_Off;LED_2_Off;break;
+            case 4: lista_leds_rojo_on;break;
+            case 5: lista_leds_azul_on;break;
+            case 6: lista_leds_verde_on;break;
         }
     }
     
@@ -78,25 +84,25 @@
             case 1: LED_1_Off;break;
             case 2: LED_2_Off;break;
             case 3: LED_3_Off;break;
-        }
-    }
-    
-    void activar_retardo(int cant_retardo){
-        int i = 0;
-        
-        while (i < cant_retardo){
-            __delay_us(RETARDO_INTENSIDAD);
-            i++;
+            case 4: lista_leds_rojo_off; break;
+            case 5: lista_leds_azul_off; break;
+            case 6: lista_leds_verde_off; break;
         }
     }
     
     void intensidad_led(int num_led, int intensidad){     
         
-        encender_led(num_led);
-        activar_retardo(intensidad);       
+        int i = 1;
         
-        apagar_led(num_led);
-        activar_retardo(MAX_NIVEL_INTENSIDAD - intensidad);    
+        while (i < MAX_NIVEL_INTENSIDAD + 1){            
+            if (i < intensidad)
+                encender_led(num_led);            
+            else
+               apagar_led(num_led);
+            
+            __delay_us(RETARDO_INTENSIDAD);
+            i++;
+        }   
     }
     
     void leer_teclado(){
@@ -116,9 +122,58 @@
         {
             if (column1==1&&row2==1){key=4;intensidad_led(1,8);}
             if (column2==1&&row2==1){key=5;intensidad_led(2,16);}
-            if (column3==1&&row2==1){key=6;intensidad_led(3,25);}
+            if (column3==1&&row2==1){key=6;intensidad_led(3,31);}
         }
     }
+    
+    void flash_leds(int intensidad){
+        int contador = 0;
+        while (contador < 15){
+            intensidad_led(4,intensidad);
+            intensidad_led(5,intensidad);
+            intensidad_led(6,intensidad);
+            apagar_led(4);
+            apagar_led(5);            
+            apagar_led(6);           
+            contador++;
+        }   
+    }
+   
+    void activar_led(int intensidad, int *id_led){
+                
+        int contador = 0;
+        
+        while (contador < 15){
+                intensidad_led((*id_led),intensidad);            
+                contador++;
+        }
+        contador = 0;
+        (*id_led)++;
+        if ((*id_led) > 6)
+            (*id_led) = 4;   
+        apagar_led((*id_led));
+    }
+    
+/****************************************************/    
+    int calcular_intensidad(int voltage){    
+        return (int)(0.125 * voltage);
+    }    
+    
+    int leer_intensidad(){
+    ADCON0bits.ADON = 1;
+    ADCON0bits.GO = 1;
+    int voltage;
+    
+    while (ADCON0bits.GO);
+    __delay_ms(1);
+    voltage = ADRESH;
+    ADCON0bits.ADON = 0;   
+    return calcular_intensidad(voltage);
+}
+    
+/****************************************************/ 
+    
+    
 /*------------------------------------------------------------------------------
 ********************************************************************************
 Funcion main
@@ -128,9 +183,19 @@ Funcion principal del programa
 int main(void)
 {
 Setup();
+int intensidad = 32;
+int id_led = 4;
+
 while(1)
-    {
-        leer_teclado();        
+    {   
+    
+        intensidad = leer_intensidad();
+        if (switch1 == 0){            
+            if (intensidad > 28)
+                flash_leds(leer_intensidad());
+            else
+                activar_led(intensidad, &id_led);                  
+        }            
     }
 return 0;
 }
